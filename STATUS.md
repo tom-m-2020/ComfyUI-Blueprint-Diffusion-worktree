@@ -10,6 +10,8 @@
 - Ordinary tiling, Mixture of Diffusers, MultiDiffusion, ElasticDiffusion,
   DyPE, and SpotEdit compared.
 - Three falsifiable candidate architectures ranked.
+- Phase 2 FLUX.2 coarse-global/local-fusion falsification harness, real
+  composition-scale run, intermediate visualizations, telemetry, and report.
 
 ## Validation status
 
@@ -17,22 +19,26 @@
 - FLUX.2 sparse mechanics: supported by prior local runtime evidence, with
   provenance recorded in the audit.
 - Z-Image and Anima selective execution: not runtime-qualified.
-- Blueprint semantic quality, compute reduction, wall-clock acceleration, and
-  VRAM reduction: not yet qualified.
+- Candidate-1 semantic premise: one controlled composition-stress case found
+  credible global-plan benefit over tiled-only.
+- Straight scalar local-residual fusion: falsified as a sufficient mechanism in
+  that case; it trades global structure for local sharpness.
+- Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
 ## Active blockers / unknowns
 
-- Whether a low-density global prediction actually governs high-resolution
-  local composition in T2I.
-- A validated cross-resolution prediction-fusion rule for modern flow DiTs.
+- Whether the observed reduced-global control generalizes across prompts,
+  seeds, sizes, and global resolutions.
+- A cross-resolution fusion rule that admits local high-frequency information
+  without importing crop-local low-frequency scene alternatives.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Run one controlled FLUX.2 Klein wide-canvas experiment comparing dense,
-tiled-only, low-resolution-global-only, and global-plus-local-residual
-predictions at identical seed, prompt, sigma schedule, and sampler settings.
-Instrument per-step token work and retain intermediate predictions. Keep all
-code and outputs under `experiments/`.
+Run one fixed-filter frequency-content falsifier on the same FLUX.2 setup:
+separate local-minus-global corrections into low/high spatial-frequency parts,
+measure which part carries semantic divergence, and test one high-pass-only
+local correction. Do not add timestep scheduling, sparse execution, or
+production infrastructure yet.

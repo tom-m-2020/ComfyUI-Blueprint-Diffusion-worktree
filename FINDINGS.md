@@ -59,3 +59,44 @@ Evidence and detailed reasoning are in `BLUEPRINT_ARCHITECTURE_AUDIT.md`.
 - Prior native FLUX.2 SpotEdit evidence is reused only for sparse executor,
   K/V-cache, coordinate, and lifecycle feasibility; it is not treated as a T2I
   algorithm or image-quality result.
+
+## 2026-08-29 — FLUX.2 coarse-global/local-fusion falsification
+
+Detailed implementation, parameters, images, and evidence are in
+`experiments/FLUX2_COARSE_GLOBAL_LOCAL_REPORT.md` and
+`experiments/flux2_coarse_global_local_results/report.json`.
+
+### Runtime evidence
+
+- A controlled 1024 x 512 FLUX.2 Klein 4B W4A8, CFG-1, four-step Euler run
+  compared dense, three overlapping 512 x 512 local crops, a 512 x 256 reduced
+  global prediction, and global-plus-local correction strengths 0.25, 0.5,
+  0.75, and 1.0. All variants and intermediate estimates were finite; assembled
+  coverage was exactly complete.
+- Dense produced the requested one continuous bridge, one centered train, left
+  lighthouse, and right tower. Tiled-only produced incompatible repeated bridge
+  spans/towers, train segments, and a second lighthouse. Reduced global-only
+  preserved the requested whole-scene arrangement but was blurred/ghosted.
+- Scalar fusion showed a strict tradeoff. Alpha 0.25 preserved the global plan
+  but added little fidelity. Alpha 0.5 and 0.75 increasingly imported the local
+  crops' alternative bridge/object layout. Alpha 1 is algebraically tiled-only
+  at each assembled evaluation.
+- The local-minus-global correction norm was 0.64 times the mapped-global norm
+  at the first evaluation and about 0.72–1.07 later. Correction maps covered
+  global geometry and object placement, not merely high-frequency detail.
+- Per-step approximate image-token work was 2048 dense, 3072 tiled-only, 512
+  global-only, and 3584 global-plus-local. This full-coverage falsification run
+  does not demonstrate compute savings.
+- Peak CUDA allocation was about 2.45 GiB global-only, 2.50 GiB tiled/fused,
+  and 2.60 GiB dense in this process. The dense wall time included first-run
+  warmup, so timing is not a qualified speed comparison.
+
+### Conclusion
+
+- The reduced global prediction credibly controlled cross-region composition
+  better than tiled-only in this stress case.
+- Unfiltered scalar local residuals did not recover strong local fidelity
+  without replacing that composition. The residual contains competing
+  low-frequency/semantic predictions.
+- Candidate 1 needs revision; this result neither validates the original fusion
+  nor rejects the broader reduced-global hypothesis.

@@ -25,3 +25,17 @@ model-specific selected-token executor.
 Reason: this is the smallest experiment that can falsify the central semantic
 hypothesis. Sparse execution would optimize a global-context mechanism whose
 ability to preserve T2I composition is not yet established.
+
+## 2026-08-29 — Do not use unfiltered scalar local residual fusion
+
+The Phase 2 experiment found that the reduced global prediction carried a
+coherent whole-scene plan, but `local - mapped_global` also carried incompatible
+low-frequency bridge geometry and duplicated objects. A scalar correction
+strength only moved between blurred global structure and sharp tiled structure;
+it did not isolate local fidelity.
+
+Therefore the unfiltered scalar residual is not an acceptable Candidate-1
+fusion contract. Candidate 1 remains open in revised form because the global
+branch itself showed useful compositional control. The next experiment will
+test the smallest fixed low/high-frequency separation before any production or
+sparse-execution work.
