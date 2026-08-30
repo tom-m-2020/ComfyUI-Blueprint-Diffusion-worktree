@@ -67,3 +67,17 @@ Candidate 2 is therefore the leading mechanism for the next experiment. This
 is not a final architecture selection and does not authorize a generalized
 sparse executor, cache lifecycle, production node, or cross-model API. The next
 test remains one evaluation and extends only to all three existing crops.
+
+## 2026-08-30 — Advance Candidate 2 to a minimal trajectory test
+
+The Phase 2d probe shared one fresh compact-global K/V capture across all three
+crops. Every crop moved toward dense, assembled low-frequency and total error
+fell, and pre-blend overlap disagreement dropped by about 63%. Visually, the
+context assembly suppressed the left/center crop-local towers and recovered a
+single coherent bridge organization with one lighthouse and one right tower.
+
+Candidate 2 has therefore passed the single-evaluation semantic gate and should
+advance to a minimal four-step trajectory with fresh global context at every
+evaluation. This is not a production architecture decision: stale caching,
+block selection, sparse execution, VRAM optimization, generalized lifecycle,
+and cross-model APIs remain out of scope until trajectory behavior is known.

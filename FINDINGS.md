@@ -173,3 +173,36 @@ Detailed implementation and evidence are in
   context changes local prediction inside the transformer and suppressed one
   concrete crop-local duplicate-object alternative. Generalization across
   crops, sigmas, and a trajectory remains untested.
+
+## 2026-08-30 — Candidate-2 all-crop one-evaluation assembly probe
+
+Detailed evidence is in `experiments/FLUX2_CANDIDATE2_ALL_CROP_REPORT.md`
+and `experiments/flux2_candidate2_all_crop_results/report.json`.
+
+### Runtime evidence
+
+- One same-sigma compact-global K/V capture was shared unchanged across all
+  three Phase-2 crops. Each crop used compact context in all 25 FLUX.2 blocks;
+  assembly used the unchanged normalized overlap weights and no output-space
+  global fusion.
+- Every crop moved toward its dense reference. RMS errors changed from
+  0.867/0.941/0.679 tiled-only to 0.582/0.600/0.565 with context. Corresponding
+  low-frequency RMS errors changed from 0.657/0.711/0.464 to
+  0.396/0.433/0.379.
+- Full assembled RMS versus dense fell from 0.758 to 0.569 and low-frequency
+  RMS from 0.547 to 0.386. Prediction RMS stayed stable and coverage was
+  exactly one everywhere.
+- Pre-blend aggregate overlap disagreement fell from 0.849 RMS tiled-only to
+  0.312 with context. The 0–1 and 1–2 overlap pairs both improved materially,
+  so normalized blending is not hiding the measured consistency gain.
+- Visually, context removed crop-local dark supports/towers from the left and
+  center crops, retained one left lighthouse and one right stone tower, and
+  produced a continuous bridge deck/cable organization and water horizon much
+  closer to dense. A distinct centered train was not interpretable in any
+  first-sigma decoded x0, so train count/placement remains unqualified.
+
+### Conclusion
+
+- Candidate 2 has strong positive evidence at one evaluation across all three
+  regions. The next unresolved semantic question is trajectory persistence,
+  not whether compact global context can influence multiple local predictions.
