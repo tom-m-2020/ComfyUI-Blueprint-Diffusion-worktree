@@ -12,6 +12,8 @@
 - Three falsifiable candidate architectures ranked.
 - Phase 2 FLUX.2 coarse-global/local-fusion falsification harness, real
   composition-scale run, intermediate visualizations, telemetry, and report.
+- Phase 2b fixed-frequency correction falsifier with two fixed Gaussian scales,
+  real outputs, residual visualizations, telemetry, and focused report.
 
 ## Validation status
 
@@ -23,6 +25,9 @@
   credible global-plan benefit over tiled-only.
 - Straight scalar local-residual fusion: falsified as a sufficient mechanism in
   that case; it trades global structure for local sharpness.
+- Fixed high-pass output fusion: partially restrains compositional replacement
+  and recovers detail, but semantic objects and geometry remain in the
+  high-pass correction; it is not a sufficient fusion contract.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -30,15 +35,14 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- A cross-resolution fusion rule that admits local high-frequency information
-  without importing crop-local low-frequency scene alternatives.
+- A mechanism that prevents crop-local semantic invention rather than merely
+  attenuating its low spatial frequencies.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Run one fixed-filter frequency-content falsifier on the same FLUX.2 setup:
-separate local-minus-global corrections into low/high spatial-frequency parts,
-measure which part carries semantic divergence, and test one high-pass-only
-local correction. Do not add timestep scheduling, sparse execution, or
-production infrastructure yet.
+Run the smallest one-evaluation Candidate-2 test: determine whether local
+high-resolution queries consuming compact whole-canvas global context suppress
+the bridge/lighthouse semantic alternatives before output projection. Do not
+build a generalized executor or production nodes.

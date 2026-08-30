@@ -100,3 +100,39 @@ Detailed implementation, parameters, images, and evidence are in
   low-frequency/semantic predictions.
 - Candidate 1 needs revision; this result neither validates the original fusion
   nor rejects the broader reduced-global hypothesis.
+
+## 2026-08-30 — FLUX.2 fixed-frequency correction falsifier
+
+Detailed parameters, outputs, and limitations are in
+`experiments/FLUX2_FIXED_FREQUENCY_REPORT.md` and
+`experiments/flux2_fixed_frequency_results/report.json`.
+
+### Runtime evidence
+
+- On the identical Phase-2 run, a fixed Gaussian high-pass correction at alpha
+  0.75 restrained but did not remove crop-local semantic divergence. Sigma 1
+  latent token preserved much more of the reduced-global bridge silhouette and
+  recovered visible train, cable, water, and masonry detail; it still produced
+  a duplicate lighthouse and alternative/ghost bridge lines. Sigma 2 admitted
+  a clearly incompatible second bridge organization.
+- The decoded high-pass diagnostics visibly contain bridge decks/cables,
+  towers, and lighthouse silhouettes. Direct residual VAE decodes are
+  out-of-distribution visualizations, but the same semantic leakage appears in
+  the final denoised images.
+- Sigma-1 low/high correction RMS ratio fell from 1.55 at the first evaluation
+  to 0.55 at the last; sigma-2 fell from 0.88 to 0.38. Increasing high-pass norm
+  share did not imply semantic purity.
+- Versus global-only, final low-frequency MAE was 0.311 for unfiltered alpha
+  0.75, 0.095 for high-pass sigma 1, and 0.161 for high-pass sigma 2. Their
+  high-frequency gains were respectively 0.309, 0.197, and 0.270. These are
+  descriptive image-space diagnostics, not perceptual metrics.
+- Model work was unchanged: 512 image tokens/one forward for global-only and
+  3,584 tokens/four forwards for each local variant per evaluation. Filtering
+  does not establish compute or VRAM savings.
+
+### Conclusion
+
+- Fixed output-space frequency splitting partially works as a restraint, not
+  as a semantic/detail separator. Candidate 1 survives only in revised form;
+  explicit global context or feature-aware fusion is now the higher-value
+  direction than further scalar/filter sweeps.

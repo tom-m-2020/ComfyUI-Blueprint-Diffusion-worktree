@@ -1,0 +1,3386 @@
+{
+  "configuration": {
+    "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+    "text_encoder": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\text_encoders\\f2k4_Comfy-Org_vae-text-encorder-for-flux-klein-4b_text_encoders\\qwen_3_4b_fp4_flux2.safetensors",
+    "vae": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\vae\\Comfy-Org_vae-text-encorder-for-flux-klein-9b_vae\\flux2-vae.safetensors",
+    "prompt": "A cinematic wide-angle photograph of one enormous red suspension bridge forming a single continuous horizontal structure from the far left edge to the far right edge, crossing behind one yellow vintage train centered on the bridge; exactly one white lighthouse stands on the left shore and exactly one dark stone tower stands on the right shore, asymmetric composition, continuous bridge cables and deck, coherent perspective, sunset light",
+    "seed": 20260829,
+    "sampler": "Euler, zero churn, one assembled prediction per accepted step",
+    "cfg": 1.0,
+    "steps": 4,
+    "sigmas": [
+      1.0,
+      0.9614368677139282,
+      0.8925943970680237,
+      0.7347596883773804,
+      0.0
+    ],
+    "target_image_hw": [
+      512,
+      1024
+    ],
+    "target_latent_hw": [
+      32,
+      64
+    ],
+    "global_image_hw": [
+      256,
+      512
+    ],
+    "global_latent_hw": [
+      16,
+      32
+    ],
+    "crop_image_hw": [
+      512,
+      512
+    ],
+    "crop_latent_hw": [
+      32,
+      32
+    ],
+    "overlap_pixels": 128,
+    "crops": [
+      {
+        "index": 0,
+        "y": 0,
+        "x": 0,
+        "height": 32,
+        "width": 32
+      },
+      {
+        "index": 1,
+        "y": 0,
+        "x": 24,
+        "height": 32,
+        "width": 32
+      },
+      {
+        "index": 2,
+        "y": 0,
+        "x": 32,
+        "height": 32,
+        "width": 32
+      }
+    ],
+    "alpha": 0.75,
+    "filter_sigmas_latent_tokens": [
+      1.0,
+      2.0
+    ],
+    "fusion": "mapped_global + alpha * (residual - GaussianLowPass(residual))",
+    "previous_tiled_only": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_coarse_global_local_results\\B_TILED_ONLY.png"
+  },
+  "comparisons": {
+    "A_GLOBAL_ONLY": {
+      "low_frequency_mae_vs_global_only": 0.0,
+      "high_frequency_rms": 0.24042390286922455,
+      "high_frequency_gain_over_global_only": 0.0
+    },
+    "B_UNFILTERED_alpha_0.75": {
+      "low_frequency_mae_vs_global_only": 0.3109820485115051,
+      "high_frequency_rms": 0.5495733022689819,
+      "high_frequency_gain_over_global_only": 0.3091493844985962
+    },
+    "C_HIGHPASS_sigma_1_alpha_0.75": {
+      "low_frequency_mae_vs_global_only": 0.09491711854934692,
+      "high_frequency_rms": 0.4375579059123993,
+      "high_frequency_gain_over_global_only": 0.19713400304317474
+    },
+    "C_HIGHPASS_sigma_2_alpha_0.75": {
+      "low_frequency_mae_vs_global_only": 0.16080205142498016,
+      "high_frequency_rms": 0.5100520849227905,
+      "high_frequency_gain_over_global_only": 0.2696281671524048
+    }
+  },
+  "variants": {
+    "A_GLOBAL_ONLY": {
+      "seconds": 8.728970600292087,
+      "peak_allocated_gib": 2.4480466842651367,
+      "peak_increment_gib": 2.4401121139526367,
+      "correction_strength": null,
+      "filter_sigma": null,
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 373.5133972167969,
+        "rms": 0.729520320892334,
+        "mean": -0.04591437429189682,
+        "std": 0.728075385093689,
+        "min": -3.3522443771362305,
+        "max": 3.1523239612579346,
+        "finite": true
+      },
+      "final_image": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_fixed_frequency_results\\A_GLOBAL_ONLY.png",
+      "evaluations": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "evaluation_identity": "A_GLOBAL_ONLY:euler:0:sigma=1",
+          "model_forwards": 1,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 302.1514892578125,
+                "rms": 1.18027925491333,
+                "mean": -0.020491721108555794,
+                "std": 1.1801104545593262,
+                "min": -4.532550811767578,
+                "max": 6.210041522979736,
+                "finite": true
+              },
+              "seconds": 1.1347001995891333
+            }
+          ],
+          "executed_image_tokens": 512,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 302.1514892578125,
+            "rms": 1.18027925491333,
+            "mean": -0.020491721108555794,
+            "std": 1.1801104545593262,
+            "min": -4.532550811767578,
+            "max": 6.210041522979736,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 565.4713134765625,
+            "rms": 1.1044361591339111,
+            "mean": -0.020491724833846092,
+            "std": 1.104248046875,
+            "min": -3.930410146713257,
+            "max": 5.67900276184082,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 565.4713134765625,
+            "rms": 1.1044361591339111,
+            "mean": -0.020491724833846092,
+            "std": 1.104248046875,
+            "min": -3.930410146713257,
+            "max": 5.67900276184082,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          }
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "evaluation_identity": "A_GLOBAL_ONLY:euler:1:sigma=0.961436868",
+          "model_forwards": 1,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 204.34339904785156,
+                "rms": 0.7982164025306702,
+                "mean": -0.03589010238647461,
+                "std": 0.7974151968955994,
+                "min": -3.9408609867095947,
+                "max": 4.56829833984375,
+                "finite": true
+              },
+              "seconds": 0.18209690041840076
+            }
+          ],
+          "executed_image_tokens": 512,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 204.34339904785156,
+            "rms": 0.7982164025306702,
+            "mean": -0.03589010238647461,
+            "std": 0.7974151968955994,
+            "min": -3.9408609867095947,
+            "max": 4.56829833984375,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 360.783935546875,
+            "rms": 0.7046561241149902,
+            "mean": -0.03589010238647461,
+            "std": 0.7037428617477417,
+            "min": -3.1927523612976074,
+            "max": 3.882962465286255,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 360.783935546875,
+            "rms": 0.7046561241149902,
+            "mean": -0.03589010238647461,
+            "std": 0.7037428617477417,
+            "min": -3.1927523612976074,
+            "max": 3.882962465286255,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          }
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "evaluation_identity": "A_GLOBAL_ONLY:euler:2:sigma=0.892594397",
+          "model_forwards": 1,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 202.96604919433594,
+                "rms": 0.79283607006073,
+                "mean": -0.03689790517091751,
+                "std": 0.7919831275939941,
+                "min": -4.122196197509766,
+                "max": 3.685091733932495,
+                "finite": true
+              },
+              "seconds": 0.18167740013450384
+            }
+          ],
+          "executed_image_tokens": 512,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 202.96604919433594,
+            "rms": 0.79283607006073,
+            "mean": -0.03689790517091751,
+            "std": 0.7919831275939941,
+            "min": -4.122196197509766,
+            "max": 3.685091733932495,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 366.0711669921875,
+            "rms": 0.7149827480316162,
+            "mean": -0.03689790517091751,
+            "std": 0.714031457901001,
+            "min": -3.2627952098846436,
+            "max": 3.0361413955688477,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 366.0711669921875,
+            "rms": 0.7149827480316162,
+            "mean": -0.03689790517091751,
+            "std": 0.714031457901001,
+            "min": -3.2627952098846436,
+            "max": 3.0361413955688477,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          }
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "evaluation_identity": "A_GLOBAL_ONLY:euler:3:sigma=0.734759688",
+          "model_forwards": 1,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 203.2106475830078,
+                "rms": 0.7937915921211243,
+                "mean": -0.04591437429189682,
+                "std": 0.7924686670303345,
+                "min": -3.6472434997558594,
+                "max": 3.5055952072143555,
+                "finite": true
+              },
+              "seconds": 0.18307510018348694
+            }
+          ],
+          "executed_image_tokens": 512,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 203.2106475830078,
+            "rms": 0.7937915921211243,
+            "mean": -0.04591437429189682,
+            "std": 0.7924686670303345,
+            "min": -3.6472434997558594,
+            "max": 3.5055952072143555,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 373.514404296875,
+            "rms": 0.729520320892334,
+            "mean": -0.04591437801718712,
+            "std": 0.728075385093689,
+            "min": -3.3522443771362305,
+            "max": 3.1523239612579346,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 373.514404296875,
+            "rms": 0.729520320892334,
+            "mean": -0.04591437801718712,
+            "std": 0.728075385093689,
+            "min": -3.3522443771362305,
+            "max": 3.1523239612579346,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          }
+        }
+      ]
+    },
+    "B_UNFILTERED_alpha_0.75": {
+      "seconds": 3.9001650996506214,
+      "peak_allocated_gib": 2.5023908615112305,
+      "peak_increment_gib": 0.17793798446655273,
+      "correction_strength": 0.75,
+      "filter_sigma": null,
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 417.85797119140625,
+        "rms": 0.8161301016807556,
+        "mean": -0.02803393453359604,
+        "std": 0.8156499862670898,
+        "min": -3.417968273162842,
+        "max": 4.149582862854004,
+        "finite": true
+      },
+      "final_image": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_fixed_frequency_results\\B_UNFILTERED_alpha_0.75.png",
+      "evaluations": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "evaluation_identity": "B_UNFILTERED_alpha_0.75:euler:0:sigma=1",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 302.1514892578125,
+                "rms": 1.18027925491333,
+                "mean": -0.020491721108555794,
+                "std": 1.1801104545593262,
+                "min": -4.532550811767578,
+                "max": 6.210041522979736,
+                "finite": true
+              },
+              "seconds": 0.18189220037311316
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 388.5127868652344,
+                "rms": 1.0731251239776611,
+                "mean": -0.0315391905605793,
+                "std": 1.0726656913757324,
+                "min": -4.847813606262207,
+                "max": 6.50709342956543,
+                "finite": true
+              },
+              "seconds": 0.2682112008333206
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 396.3046569824219,
+                "rms": 1.0946472883224487,
+                "mean": -0.0407114140689373,
+                "std": 1.093894124031067,
+                "min": -4.181291580200195,
+                "max": 5.778291702270508,
+                "finite": true
+              },
+              "seconds": 0.2601999007165432
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 391.7599792480469,
+                "rms": 1.0820943117141724,
+                "mean": -0.038398377597332,
+                "std": 1.0814169645309448,
+                "min": -4.710050106048584,
+                "max": 6.5958757400512695,
+                "finite": true
+              },
+              "seconds": 0.26205109991133213
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 302.1514892578125,
+            "rms": 1.18027925491333,
+            "mean": -0.020491721108555794,
+            "std": 1.1801104545593262,
+            "min": -4.532550811767578,
+            "max": 6.210041522979736,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 565.4713134765625,
+            "rms": 1.1044361591339111,
+            "mean": -0.020491724833846092,
+            "std": 1.104248046875,
+            "min": -3.930410146713257,
+            "max": 5.67900276184082,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 519.4025268554688,
+            "rms": 1.0144580602645874,
+            "mean": -0.03347962349653244,
+            "std": 1.0139074325561523,
+            "min": -4.515428066253662,
+            "max": 5.9241943359375,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          }
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "evaluation_identity": "B_UNFILTERED_alpha_0.75:euler:1:sigma=0.961436868",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 203.4642333984375,
+                "rms": 0.7947821617126465,
+                "mean": -0.03317657485604286,
+                "std": 0.7940954566001892,
+                "min": -4.85322380065918,
+                "max": 5.486598014831543,
+                "finite": true
+              },
+              "seconds": 0.1815659999847412
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 309.89129638671875,
+                "rms": 0.8559619188308716,
+                "mean": -0.014505202881991863,
+                "std": 0.8558422327041626,
+                "min": -4.229213237762451,
+                "max": 5.8593268394470215,
+                "finite": true
+              },
+              "seconds": 0.26292419992387295
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 310.4466857910156,
+                "rms": 0.857495903968811,
+                "mean": -0.03600393980741501,
+                "std": 0.8567430377006531,
+                "min": -4.811343193054199,
+                "max": 5.11514949798584,
+                "finite": true
+              },
+              "seconds": 0.2606714004650712
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 307.7203063964844,
+                "rms": 0.8499652743339539,
+                "mean": -0.03237941861152649,
+                "std": 0.8493515253067017,
+                "min": -4.162286758422852,
+                "max": 4.909979820251465,
+                "finite": true
+              },
+              "seconds": 0.25865420047193766
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 203.4642333984375,
+            "rms": 0.7947821617126465,
+            "mean": -0.03317657485604286,
+            "std": 0.7940954566001892,
+            "min": -4.85322380065918,
+            "max": 5.486598014831543,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 359.1001281738281,
+            "rms": 0.7013674378395081,
+            "mean": -0.033176571130752563,
+            "std": 0.7005836367607117,
+            "min": -3.6313652992248535,
+            "max": 3.8116862773895264,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 375.88702392578125,
+            "rms": 0.7341543436050415,
+            "mean": -0.02692173235118389,
+            "std": 0.733661949634552,
+            "min": -3.6890077590942383,
+            "max": 4.9018659591674805,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          }
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "evaluation_identity": "B_UNFILTERED_alpha_0.75:euler:2:sigma=0.892594397",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 201.3716583251953,
+                "rms": 0.7866079807281494,
+                "mean": -0.030584754422307014,
+                "std": 0.7860191464424133,
+                "min": -3.549044370651245,
+                "max": 3.7743031978607178,
+                "finite": true
+              },
+              "seconds": 0.18202160019427538
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 319.42279052734375,
+                "rms": 0.8822891116142273,
+                "mean": -0.01390182413160801,
+                "std": 0.8821829557418823,
+                "min": -4.04232120513916,
+                "max": 5.028200149536133,
+                "finite": true
+              },
+              "seconds": 0.26102920062839985
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 317.79644775390625,
+                "rms": 0.8777969479560852,
+                "mean": -0.034946903586387634,
+                "std": 0.8771044015884399,
+                "min": -4.323229789733887,
+                "max": 4.442379474639893,
+                "finite": true
+              },
+              "seconds": 0.26249529980123043
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 323.0757751464844,
+                "rms": 0.8923791646957397,
+                "mean": -0.028640266507864,
+                "std": 0.8919228315353394,
+                "min": -4.3549580574035645,
+                "max": 6.289538860321045,
+                "finite": true
+              },
+              "seconds": 0.26101440005004406
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 201.3716583251953,
+            "rms": 0.7866079807281494,
+            "mean": -0.030584754422307014,
+            "std": 0.7860191464424133,
+            "min": -3.549044370651245,
+            "max": 3.7743031978607178,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 358.6594543457031,
+            "rms": 0.7005067467689514,
+            "mean": -0.030584752559661865,
+            "std": 0.6998400688171387,
+            "min": -3.1403257846832275,
+            "max": 3.577620506286621,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 398.3014221191406,
+            "rms": 0.7779324650764465,
+            "mean": -0.02446882799267769,
+            "std": 0.7775490880012512,
+            "min": -3.229231119155884,
+            "max": 4.120634078979492,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          }
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "evaluation_identity": "B_UNFILTERED_alpha_0.75:euler:3:sigma=0.734759688",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 200.16253662109375,
+                "rms": 0.7818849086761475,
+                "mean": -0.04194863140583038,
+                "std": 0.7807647585868835,
+                "min": -3.071087598800659,
+                "max": 3.861025810241699,
+                "finite": true
+              },
+              "seconds": 0.18286609929054976
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 330.5575866699219,
+                "rms": 0.9130449295043945,
+                "mean": -0.014217379502952099,
+                "std": 0.9129377007484436,
+                "min": -3.8573598861694336,
+                "max": 5.159792900085449,
+                "finite": true
+              },
+              "seconds": 0.2626037998124957
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 324.97906494140625,
+                "rms": 0.897636353969574,
+                "mean": -0.0349782295525074,
+                "std": 0.89695805311203,
+                "min": -4.275491714477539,
+                "max": 5.068030834197998,
+                "finite": true
+              },
+              "seconds": 0.2613254999741912
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 332.2098693847656,
+                "rms": 0.9176088571548462,
+                "mean": -0.03244200721383095,
+                "std": 0.9170386791229248,
+                "min": -3.8007211685180664,
+                "max": 5.650129318237305,
+                "finite": true
+              },
+              "seconds": 0.261111699976027
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 200.16253662109375,
+            "rms": 0.7818849086761475,
+            "mean": -0.04194863140583038,
+            "std": 0.7807647585868835,
+            "min": -3.071087598800659,
+            "max": 3.861025810241699,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 359.8241882324219,
+            "rms": 0.702781617641449,
+            "mean": -0.04194863140583038,
+            "std": 0.701529860496521,
+            "min": -2.702411651611328,
+            "max": 3.0915799140930176,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 417.8586120605469,
+            "rms": 0.8161301016807556,
+            "mean": -0.02803393453359604,
+            "std": 0.8156500458717346,
+            "min": -3.417968273162842,
+            "max": 4.149582862854004,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          }
+        }
+      ]
+    },
+    "C_HIGHPASS_sigma_1_alpha_0.75": {
+      "seconds": 3.992330599576235,
+      "peak_allocated_gib": 2.5033674240112305,
+      "peak_increment_gib": 0.17891454696655273,
+      "correction_strength": 0.75,
+      "filter_sigma": 1.0,
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 415.6982116699219,
+        "rms": 0.8119122385978699,
+        "mean": -0.046992864459753036,
+        "std": 0.8105526566505432,
+        "min": -3.6283175945281982,
+        "max": 3.9855313301086426,
+        "finite": true
+      },
+      "final_image": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_fixed_frequency_results\\C_HIGHPASS_sigma_1_alpha_0.75.png",
+      "evaluations": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "evaluation_identity": "C_HIGHPASS_sigma_1_alpha_0.75:euler:0:sigma=1",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 302.1514892578125,
+                "rms": 1.18027925491333,
+                "mean": -0.020491721108555794,
+                "std": 1.1801104545593262,
+                "min": -4.532550811767578,
+                "max": 6.210041522979736,
+                "finite": true
+              },
+              "seconds": 0.18316369969397783
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 388.5127868652344,
+                "rms": 1.0731251239776611,
+                "mean": -0.0315391905605793,
+                "std": 1.0726656913757324,
+                "min": -4.847813606262207,
+                "max": 6.50709342956543,
+                "finite": true
+              },
+              "seconds": 0.2634524991735816
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 396.3046569824219,
+                "rms": 1.0946472883224487,
+                "mean": -0.0407114140689373,
+                "std": 1.093894124031067,
+                "min": -4.181291580200195,
+                "max": 5.778291702270508,
+                "finite": true
+              },
+              "seconds": 0.2609510999172926
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 391.7599792480469,
+                "rms": 1.0820943117141724,
+                "mean": -0.038398377597332,
+                "std": 1.0814169645309448,
+                "min": -4.710050106048584,
+                "max": 6.5958757400512695,
+                "finite": true
+              },
+              "seconds": 0.2664256999269128
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 302.1514892578125,
+            "rms": 1.18027925491333,
+            "mean": -0.020491721108555794,
+            "std": 1.1801104545593262,
+            "min": -4.532550811767578,
+            "max": 6.210041522979736,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 565.4713134765625,
+            "rms": 1.1044361591339111,
+            "mean": -0.020491724833846092,
+            "std": 1.104248046875,
+            "min": -3.930410146713257,
+            "max": 5.67900276184082,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 573.3298950195312,
+            "rms": 1.119784951210022,
+            "mean": -0.020357739180326462,
+            "std": 1.1196019649505615,
+            "min": -4.771844387054443,
+            "max": 5.739267349243164,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          },
+          "filter_sigma_latent_tokens": 1.0,
+          "filter_kernel_size": 7,
+          "correction_low": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 269.5892639160156,
+            "rms": 0.526541531085968,
+            "mean": -0.017495840787887573,
+            "std": 0.5262517929077148,
+            "min": -5.584103584289551,
+            "max": 3.215636730194092,
+            "finite": true
+          },
+          "correction_high": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 173.64862060546875,
+            "rms": 0.33915746212005615,
+            "mean": 0.00017863741959445179,
+            "std": 0.3391580581665039,
+            "min": -3.0453951358795166,
+            "max": 3.4910879135131836,
+            "finite": true
+          },
+          "low_to_high_norm_ratio": 1.5524987355271016,
+          "low_fraction_of_split_norm_sum": 0.6082270341287767,
+          "high_fraction_of_split_norm_sum": 0.3917729658712234
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "evaluation_identity": "C_HIGHPASS_sigma_1_alpha_0.75:euler:1:sigma=0.961436868",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 203.50833129882812,
+                "rms": 0.7949544191360474,
+                "mean": -0.03633461892604828,
+                "std": 0.7941297292709351,
+                "min": -4.272397041320801,
+                "max": 4.351931571960449,
+                "finite": true
+              },
+              "seconds": 0.1837315997108817
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 308.8147888183594,
+                "rms": 0.8529883623123169,
+                "mean": -0.013206355273723602,
+                "std": 0.8528894186019897,
+                "min": -4.645567893981934,
+                "max": 5.6540913581848145,
+                "finite": true
+              },
+              "seconds": 0.26348540000617504
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 311.0611877441406,
+                "rms": 0.8591932654380798,
+                "mean": -0.023677321150898933,
+                "std": 0.8588702082633972,
+                "min": -4.042105674743652,
+                "max": 5.686548233032227,
+                "finite": true
+              },
+              "seconds": 0.260143700055778
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 306.5229797363281,
+                "rms": 0.8466581106185913,
+                "mean": -0.03064536675810814,
+                "std": 0.8461065292358398,
+                "min": -3.948901414871216,
+                "max": 4.699926853179932,
+                "finite": true
+              },
+              "seconds": 0.26390739995986223
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 203.50833129882812,
+            "rms": 0.7949544191360474,
+            "mean": -0.03633461892604828,
+            "std": 0.7941297292709351,
+            "min": -4.272397041320801,
+            "max": 4.351931571960449,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 360.1333312988281,
+            "rms": 0.7033854126930237,
+            "mean": -0.03633461892604828,
+            "std": 0.7024476528167725,
+            "min": -3.215428352355957,
+            "max": 3.9315295219421387,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 392.5939025878906,
+            "rms": 0.7667849659919739,
+            "mean": -0.036306992173194885,
+            "std": 0.7659263610839844,
+            "min": -3.621438980102539,
+            "max": 4.072208404541016,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          },
+          "filter_sigma_latent_tokens": 1.0,
+          "filter_kernel_size": 7,
+          "correction_low": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 219.36085510253906,
+            "rms": 0.4284391403198242,
+            "mean": 0.0172272901982069,
+            "std": 0.42809349298477173,
+            "min": -2.998795986175537,
+            "max": 3.663208246231079,
+            "finite": true
+          },
+          "correction_high": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 237.20062255859375,
+            "rms": 0.4632824659347534,
+            "mean": 3.6835946957580745e-05,
+            "std": 0.46328336000442505,
+            "min": -4.4333624839782715,
+            "max": 5.356085300445557,
+            "finite": true
+          },
+          "low_to_high_norm_ratio": 0.9247903851869197,
+          "low_fraction_of_split_norm_sum": 0.4804629077036416,
+          "high_fraction_of_split_norm_sum": 0.5195370922963585
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "evaluation_identity": "C_HIGHPASS_sigma_1_alpha_0.75:euler:2:sigma=0.892594397",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 202.70762634277344,
+                "rms": 0.7918266654014587,
+                "mean": -0.03731369227170944,
+                "std": 0.7909530997276306,
+                "min": -4.151080131530762,
+                "max": 3.959263563156128,
+                "finite": true
+              },
+              "seconds": 0.18274160008877516
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 314.0725402832031,
+                "rms": 0.8675110340118408,
+                "mean": -0.014274395070970058,
+                "std": 0.867396891117096,
+                "min": -4.102896213531494,
+                "max": 5.057912826538086,
+                "finite": true
+              },
+              "seconds": 0.26326669938862324
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 305.2432861328125,
+                "rms": 0.8431234359741211,
+                "mean": -0.030676783993840218,
+                "std": 0.8425683975219727,
+                "min": -4.392704963684082,
+                "max": 4.760957717895508,
+                "finite": true
+              },
+              "seconds": 0.2605192996561527
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 318.4660339355469,
+                "rms": 0.8796464204788208,
+                "mean": -0.029738647863268852,
+                "std": 0.8791469931602478,
+                "min": -5.001262664794922,
+                "max": 6.476160526275635,
+                "finite": true
+              },
+              "seconds": 0.2825943995267153
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 202.70762634277344,
+            "rms": 0.7918266654014587,
+            "mean": -0.03731369227170944,
+            "std": 0.7909530997276306,
+            "min": -4.151080131530762,
+            "max": 3.959263563156128,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 365.64263916015625,
+            "rms": 0.7141457796096802,
+            "mean": -0.03731369227170944,
+            "std": 0.7131717205047607,
+            "min": -3.2384605407714844,
+            "max": 3.2455475330352783,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 403.403076171875,
+            "rms": 0.7878966331481934,
+            "mean": -0.03739669919013977,
+            "std": 0.7870100736618042,
+            "min": -3.8388166427612305,
+            "max": 3.9598171710968018,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          },
+          "filter_sigma_latent_tokens": 1.0,
+          "filter_kernel_size": 7,
+          "correction_low": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 159.86354064941406,
+            "rms": 0.31223347783088684,
+            "mean": 0.01615992560982704,
+            "std": 0.3118155896663666,
+            "min": -2.1763694286346436,
+            "max": 2.242839813232422,
+            "finite": true
+          },
+          "correction_high": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 235.2519989013672,
+            "rms": 0.4594765603542328,
+            "mean": -0.00011067435843870044,
+            "std": 0.45947742462158203,
+            "min": -3.4957964420318604,
+            "max": 3.9677298069000244,
+            "finite": true
+          },
+          "low_to_high_norm_ratio": 0.6795416888952309,
+          "low_fraction_of_split_norm_sum": 0.40459947698125903,
+          "high_fraction_of_split_norm_sum": 0.5954005230187409
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "evaluation_identity": "C_HIGHPASS_sigma_1_alpha_0.75:euler:3:sigma=0.734759688",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 203.31607055664062,
+                "rms": 0.7942034006118774,
+                "mean": -0.04699953645467758,
+                "std": 0.7928175330162048,
+                "min": -4.11113977432251,
+                "max": 3.3597445487976074,
+                "finite": true
+              },
+              "seconds": 0.18669210001826286
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 323.19891357421875,
+                "rms": 0.8927192687988281,
+                "mean": -0.02417030930519104,
+                "std": 0.8923954367637634,
+                "min": -4.513858795166016,
+                "max": 4.884609699249268,
+                "finite": true
+              },
+              "seconds": 0.26306150015443563
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 310.0552673339844,
+                "rms": 0.856414794921875,
+                "mean": -0.03837224841117859,
+                "std": 0.8555579781532288,
+                "min": -4.342587471008301,
+                "max": 4.606160640716553,
+                "finite": true
+              },
+              "seconds": 0.2605364006012678
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 321.8251647949219,
+                "rms": 0.8889248371124268,
+                "mean": -0.02358386665582657,
+                "std": 0.8886153697967529,
+                "min": -4.25154972076416,
+                "max": 4.389442443847656,
+                "finite": true
+              },
+              "seconds": 0.26273220032453537
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 203.31607055664062,
+            "rms": 0.7942034006118774,
+            "mean": -0.04699953645467758,
+            "std": 0.7928175330162048,
+            "min": -4.11113977432251,
+            "max": 3.3597445487976074,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 374.2738342285156,
+            "rms": 0.7310035824775696,
+            "mean": -0.04699953645467758,
+            "std": 0.7294924855232239,
+            "min": -3.297443151473999,
+            "max": 3.1756391525268555,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 415.6990661621094,
+            "rms": 0.8119122385978699,
+            "mean": -0.046992868185043335,
+            "std": 0.8105526566505432,
+            "min": -3.628317356109619,
+            "max": 3.9855313301086426,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          },
+          "filter_sigma_latent_tokens": 1.0,
+          "filter_kernel_size": 7,
+          "correction_low": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 130.15060424804688,
+            "rms": 0.25420039892196655,
+            "mean": 0.022251883521676064,
+            "std": 0.25322505831718445,
+            "min": -1.3990962505340576,
+            "max": 1.8576825857162476,
+            "finite": true
+          },
+          "correction_high": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 234.80877685546875,
+            "rms": 0.4586108922958374,
+            "mean": 8.892733603715897e-06,
+            "std": 0.45861178636550903,
+            "min": -3.4995532035827637,
+            "max": 3.796020984649658,
+            "finite": true
+          },
+          "low_to_high_norm_ratio": 0.554283387490912,
+          "low_fraction_of_split_norm_sum": 0.3566166839019586,
+          "high_fraction_of_split_norm_sum": 0.6433833160980414
+        }
+      ]
+    },
+    "C_HIGHPASS_sigma_2_alpha_0.75": {
+      "seconds": 3.9334883000701666,
+      "peak_allocated_gib": 2.5033674240112305,
+      "peak_increment_gib": 0.17891454696655273,
+      "correction_strength": 0.75,
+      "filter_sigma": 2.0,
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 434.1363830566406,
+        "rms": 0.8479240536689758,
+        "mean": -0.05007677152752876,
+        "std": 0.846445620059967,
+        "min": -3.428053855895996,
+        "max": 4.166993141174316,
+        "finite": true
+      },
+      "final_image": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_fixed_frequency_results\\C_HIGHPASS_sigma_2_alpha_0.75.png",
+      "evaluations": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "evaluation_identity": "C_HIGHPASS_sigma_2_alpha_0.75:euler:0:sigma=1",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 302.1514892578125,
+                "rms": 1.18027925491333,
+                "mean": -0.020491721108555794,
+                "std": 1.1801104545593262,
+                "min": -4.532550811767578,
+                "max": 6.210041522979736,
+                "finite": true
+              },
+              "seconds": 0.18260639999061823
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 388.5127868652344,
+                "rms": 1.0731251239776611,
+                "mean": -0.0315391905605793,
+                "std": 1.0726656913757324,
+                "min": -4.847813606262207,
+                "max": 6.50709342956543,
+                "finite": true
+              },
+              "seconds": 0.2639317000284791
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 396.3046569824219,
+                "rms": 1.0946472883224487,
+                "mean": -0.0407114140689373,
+                "std": 1.093894124031067,
+                "min": -4.181291580200195,
+                "max": 5.778291702270508,
+                "finite": true
+              },
+              "seconds": 0.2622672002762556
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 391.7599792480469,
+                "rms": 1.0820943117141724,
+                "mean": -0.038398377597332,
+                "std": 1.0814169645309448,
+                "min": -4.710050106048584,
+                "max": 6.5958757400512695,
+                "finite": true
+              },
+              "seconds": 0.26452500000596046
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 302.1514892578125,
+            "rms": 1.18027925491333,
+            "mean": -0.020491721108555794,
+            "std": 1.1801104545593262,
+            "min": -4.532550811767578,
+            "max": 6.210041522979736,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 565.4713134765625,
+            "rms": 1.1044361591339111,
+            "mean": -0.020491724833846092,
+            "std": 1.104248046875,
+            "min": -3.930410146713257,
+            "max": 5.67900276184082,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 574.4799194335938,
+            "rms": 1.1220310926437378,
+            "mean": -0.020764146000146866,
+            "std": 1.1218410730361938,
+            "min": -5.0572404861450195,
+            "max": 6.2784647941589355,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          },
+          "filter_sigma_latent_tokens": 2.0,
+          "filter_kernel_size": 13,
+          "correction_low": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 213.8347625732422,
+            "rms": 0.41764602065086365,
+            "mean": -0.0169539712369442,
+            "std": 0.41730254888534546,
+            "min": -2.805023431777954,
+            "max": 2.1486892700195312,
+            "finite": true
+          },
+          "correction_high": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 242.20913696289062,
+            "rms": 0.47306472063064575,
+            "mean": -0.0003632337902672589,
+            "std": 0.47306546568870544,
+            "min": -5.547788619995117,
+            "max": 5.40013313293457,
+            "finite": true
+          },
+          "low_to_high_norm_ratio": 0.8828517588335417,
+          "low_fraction_of_split_norm_sum": 0.4688907422964,
+          "high_fraction_of_split_norm_sum": 0.5311092577036
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "evaluation_identity": "C_HIGHPASS_sigma_2_alpha_0.75:euler:1:sigma=0.961436868",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 203.11073303222656,
+                "rms": 0.793401300907135,
+                "mean": -0.03888151794672012,
+                "std": 0.7924540638923645,
+                "min": -4.334701061248779,
+                "max": 3.9208548069000244,
+                "finite": true
+              },
+              "seconds": 0.18476300034672022
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 310.0259094238281,
+                "rms": 0.8563337326049805,
+                "mean": -0.014146395027637482,
+                "std": 0.8562201261520386,
+                "min": -4.032482624053955,
+                "max": 5.214941024780273,
+                "finite": true
+              },
+              "seconds": 0.26196369994431734
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 306.37188720703125,
+                "rms": 0.846240758895874,
+                "mean": -0.03239307925105095,
+                "std": 0.845623791217804,
+                "min": -4.322664737701416,
+                "max": 5.522105693817139,
+                "finite": true
+              },
+              "seconds": 0.2609190996736288
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 313.111083984375,
+                "rms": 0.8648553490638733,
+                "mean": -0.025902442634105682,
+                "std": 0.8644707202911377,
+                "min": -4.074069976806641,
+                "max": 5.303048133850098,
+                "finite": true
+              },
+              "seconds": 0.2622324004769325
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 203.11073303222656,
+            "rms": 0.793401300907135,
+            "mean": -0.03888151794672012,
+            "std": 0.7924540638923645,
+            "min": -4.334701061248779,
+            "max": 3.9208548069000244,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 359.6273498535156,
+            "rms": 0.7023971676826477,
+            "mean": -0.03888151794672012,
+            "std": 0.701321542263031,
+            "min": -3.2894461154937744,
+            "max": 3.6389012336730957,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 400.24114990234375,
+            "rms": 0.7817209959030151,
+            "mean": -0.03912905603647232,
+            "std": 0.7807425856590271,
+            "min": -3.474024534225464,
+            "max": 4.59184455871582,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          },
+          "filter_sigma_latent_tokens": 2.0,
+          "filter_kernel_size": 13,
+          "correction_low": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 172.76368713378906,
+            "rms": 0.33742907643318176,
+            "mean": 0.01782449707388878,
+            "std": 0.3369586169719696,
+            "min": -1.9975354671478271,
+            "max": 2.2753195762634277,
+            "finite": true
+          },
+          "correction_high": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 299.64056396484375,
+            "rms": 0.5852354764938354,
+            "mean": -0.00033005161094479263,
+            "std": 0.5852364897727966,
+            "min": -3.8867764472961426,
+            "max": 5.1724853515625,
+            "finite": true
+          },
+          "low_to_high_norm_ratio": 0.5765697569373788,
+          "low_fraction_of_split_norm_sum": 0.36571154203630973,
+          "high_fraction_of_split_norm_sum": 0.6342884579636903
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "evaluation_identity": "C_HIGHPASS_sigma_2_alpha_0.75:euler:2:sigma=0.892594397",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 202.14492797851562,
+                "rms": 0.7896286249160767,
+                "mean": -0.03914643079042435,
+                "std": 0.7886636853218079,
+                "min": -3.948948383331299,
+                "max": 4.244719505310059,
+                "finite": true
+              },
+              "seconds": 0.18379459995776415
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 318.6664123535156,
+                "rms": 0.8801999688148499,
+                "mean": -0.013416407629847527,
+                "std": 0.8801010251045227,
+                "min": -4.184617042541504,
+                "max": 5.36898136138916,
+                "finite": true
+              },
+              "seconds": 0.264032400213182
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 318.26800537109375,
+                "rms": 0.8790994882583618,
+                "mean": -0.03225744888186455,
+                "std": 0.8785108327865601,
+                "min": -4.374429225921631,
+                "max": 4.277245044708252,
+                "finite": true
+              },
+              "seconds": 0.25862339977175
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 322.73870849609375,
+                "rms": 0.8914481401443481,
+                "mean": -0.030407043173909187,
+                "std": 0.8909328579902649,
+                "min": -4.629544258117676,
+                "max": 5.519344329833984,
+                "finite": true
+              },
+              "seconds": 0.2623576996847987
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 202.14492797851562,
+            "rms": 0.7896286249160767,
+            "mean": -0.03914643079042435,
+            "std": 0.7886636853218079,
+            "min": -3.948948383331299,
+            "max": 4.244719505310059,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 364.2315673828125,
+            "rms": 0.7113897800445557,
+            "mean": -0.039146438241004944,
+            "std": 0.7103132009506226,
+            "min": -2.9352476596832275,
+            "max": 3.422941207885742,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 417.5911865234375,
+            "rms": 0.8156077861785889,
+            "mean": -0.03943709284067154,
+            "std": 0.8146553635597229,
+            "min": -3.7684566974639893,
+            "max": 3.999877452850342,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          },
+          "filter_sigma_latent_tokens": 2.0,
+          "filter_kernel_size": 13,
+          "correction_low": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 145.02301025390625,
+            "rms": 0.28324806690216064,
+            "mean": 0.018016286194324493,
+            "std": 0.2826750576496124,
+            "min": -1.356536865234375,
+            "max": 1.8244781494140625,
+            "finite": true
+          },
+          "correction_high": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 303.1374816894531,
+            "rms": 0.5920653939247131,
+            "mean": -0.0003875465481542051,
+            "std": 0.5920663475990295,
+            "min": -4.274673938751221,
+            "max": 5.617785453796387,
+            "finite": true
+          },
+          "low_to_high_norm_ratio": 0.4784067263660716,
+          "low_fraction_of_split_norm_sum": 0.3235961510686554,
+          "high_fraction_of_split_norm_sum": 0.6764038489313445
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "evaluation_identity": "C_HIGHPASS_sigma_2_alpha_0.75:euler:3:sigma=0.734759688",
+          "model_forwards": 4,
+          "calls": [
+            {
+              "role": "global",
+              "input_latent_hw": [
+                16,
+                32
+              ],
+              "image_tokens": 512,
+              "rope_options": {
+                "scale_y": 2.066666666666667,
+                "scale_x": 2.032258064516129
+              },
+              "geometry": {
+                "target_extent_hw": [
+                  32,
+                  64
+                ]
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  16,
+                  32
+                ],
+                "norm": 202.36212158203125,
+                "rms": 0.7904770374298096,
+                "mean": -0.04988950863480568,
+                "std": 0.7889072299003601,
+                "min": -4.082091331481934,
+                "max": 3.3875980377197266,
+                "finite": true
+              },
+              "seconds": 0.18348889984190464
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 0.0
+              },
+              "geometry": {
+                "index": 0,
+                "y": 0,
+                "x": 0,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 326.209228515625,
+                "rms": 0.9010341763496399,
+                "mean": -0.02654683217406273,
+                "std": 0.900646448135376,
+                "min": -4.211688995361328,
+                "max": 5.129222869873047,
+                "finite": true
+              },
+              "seconds": 0.26396260038018227
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 24.0
+              },
+              "geometry": {
+                "index": 1,
+                "y": 0,
+                "x": 24,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 318.7187805175781,
+                "rms": 0.880344569683075,
+                "mean": -0.042805265635252,
+                "std": 0.8793066740036011,
+                "min": -4.480920791625977,
+                "max": 4.412701606750488,
+                "finite": true
+              },
+              "seconds": 0.2610414996743202
+            },
+            {
+              "role": "local",
+              "input_latent_hw": [
+                32,
+                32
+              ],
+              "image_tokens": 1024,
+              "rope_options": {
+                "shift_y": 0.0,
+                "shift_x": 32.0
+              },
+              "geometry": {
+                "index": 2,
+                "y": 0,
+                "x": 32,
+                "height": 32,
+                "width": 32
+              },
+              "prediction": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "norm": 330.31976318359375,
+                "rms": 0.912388026714325,
+                "mean": -0.028921112418174744,
+                "std": 0.9119330644607544,
+                "min": -4.431827545166016,
+                "max": 4.470694541931152,
+                "finite": true
+              },
+              "seconds": 0.26307940017431974
+            }
+          ],
+          "executed_image_tokens": 3584,
+          "global_prediction": {
+            "shape": [
+              1,
+              128,
+              16,
+              32
+            ],
+            "norm": 202.36212158203125,
+            "rms": 0.7904770374298096,
+            "mean": -0.04988950863480568,
+            "std": 0.7889072299003601,
+            "min": -4.082091331481934,
+            "max": 3.3875980377197266,
+            "finite": true
+          },
+          "mapped_global_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 373.22308349609375,
+            "rms": 0.7289513349533081,
+            "mean": -0.04988951236009598,
+            "std": 0.7272435426712036,
+            "min": -2.8939013481140137,
+            "max": 3.1522257328033447,
+            "finite": true
+          },
+          "assembled_prediction": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 434.1371154785156,
+            "rms": 0.8479240536689758,
+            "mean": -0.05007677525281906,
+            "std": 0.8464456796646118,
+            "min": -3.428053855895996,
+            "max": 4.166993141174316,
+            "finite": true
+          },
+          "coverage": {
+            "shape": [
+              1,
+              1,
+              32,
+              64
+            ],
+            "norm": 45.25483322143555,
+            "rms": 1.0,
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0,
+            "max": 1.0,
+            "finite": true
+          },
+          "filter_sigma_latent_tokens": 2.0,
+          "filter_kernel_size": 13,
+          "correction_low": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 112.80903625488281,
+            "rms": 0.220330148935318,
+            "mean": 0.021451536566019058,
+            "std": 0.2192838042974472,
+            "min": -1.0812816619873047,
+            "max": 1.519263505935669,
+            "finite": true
+          },
+          "correction_high": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 293.9183654785156,
+            "rms": 0.5740593075752258,
+            "mean": -0.00024968929938040674,
+            "std": 0.5740603804588318,
+            "min": -4.072582244873047,
+            "max": 5.689159393310547,
+            "finite": true
+          },
+          "low_to_high_norm_ratio": 0.3838107770884727,
+          "low_fraction_of_split_norm_sum": 0.27735784649401823,
+          "high_fraction_of_split_norm_sum": 0.7226421535059817
+        }
+      ]
+    }
+  }
+}
