@@ -334,3 +334,35 @@ and `experiments/flux2_candidate2_equal_budget_multiscale_results/report.json`.
   at the visible failure location using naive concatenated K/V. Local-region
   density can reinforce the incompatible local semantic alternative. Whether
   distributed nonlocal native-density evidence is sufficient remains unknown.
+
+## 2026-08-30 — Distributed nonlocal evidence discriminator
+
+Detailed evidence is in `experiments/FLUX2_DISTRIBUTED_NONLOCAL_REPORT.md`
+and `experiments/flux2_candidate2_distributed_nonlocal_results/report.json`.
+
+### Runtime evidence
+
+- The exact late state reproduced with zero diagnostic updates. Uniform,
+  failure-local, and nonlocal variants each supplied 1152 external generated
+  K/V and used identical `1536x2688` local attention in all 25 blocks.
+- The content-blind nonlocal selector excluded center crop `x=24..55`, then
+  sampled 480 of 768 native positions from the left strip and 160 of 256 from
+  the right using evenly spaced row-major ranks. With 512 unchanged coarse
+  tokens, nonlocal contained 1152 tokens, 1150 unique RoPE positions, and two
+  retained exact coordinate duplicates.
+- RMS versus dense was 0.328 uniform, 0.398 failure-local, 0.330 nonlocal, and
+  0.180 dense. Low-frequency RMS was 0.162, 0.208, 0.165, and 0.099.
+  Prediction norms remained stable.
+- Nonlocal avoided failure-local's enlarged lighthouse/stone/landmass failure,
+  but retained the original duplicate lighthouse and stone structure at roughly
+  uniform-control severity. It did not materially improve train, bridge, or
+  horizon semantics over uniform 1152.
+- Nonlocal capture is not an efficiency result: it used separate coarse, left,
+  and right source forwards and selected K/V only afterward.
+
+### Conclusion
+
+- Simple distributed nonlocal spatial reallocation is not supported as the
+  missing semantic mechanism at this token budget. It is preferable to
+  failure-local concentration but does not cross the dense-context semantic
+  threshold or beat uniform 1152.

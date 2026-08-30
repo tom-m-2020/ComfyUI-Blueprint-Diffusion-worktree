@@ -29,6 +29,8 @@
   and 2048-token global K/V through the identical integration path.
 - Phase 2h zero-update equal-external-token probe comparing uniform 1152 K/V
   against 512 coarse plus 640 fixed center-region K/V and dense 2048 K/V.
+- Phase 2i zero-update discriminator comparing uniform and failure-local 1152
+  against 512 coarse plus 640 deterministically distributed nonlocal K/V.
 
 ## Validation status
 
@@ -62,6 +64,9 @@
   tokens at the affected center region worsened RMS and enlarged the duplicate
   lighthouse/stone failure versus uniform 1152. Naive local-density
   concatenation is insufficient.
+- Distributed-nonlocal discriminator: balanced nonlocal tokens reversed the
+  failure-local amplification but neither removed the duplicate nor improved
+  on uniform 1152. Simple spatial reallocation is substantially weakened.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -69,15 +74,15 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- Whether distributed nonlocal native-density evidence, rather than extra
-  density at the visible failure location, preserves the object-count evidence
-  lost by compact and uniform-intermediate branches.
+- Why dense source K/V crosses the object-uniqueness threshold when uniform,
+  failure-local, and distributed-nonlocal 1152-token representations do not:
+  source hidden interaction, pairwise coverage, and representation composition
+  remain unresolved possibilities.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-At the same reproduced late state and 1152-token budget, retain the 512-token
-coarse grid and distribute 640 fixed native-density samples outside the center
-crop. Compare against uniform 1152 using the same external-K/V integration and
-perform no sampler update.
+Pause density/layout sweeps. Reassess the dense-versus-concatenated source
+hidden-trajectory difference before defining another falsifier; do not advance
+to trajectories, caching, sparse execution, or production infrastructure.
