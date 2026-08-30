@@ -123,3 +123,17 @@ integration path, but the next diagnostic should test whether a fixed
 multiscale/nonuniform representation can preserve the missing localized
 evidence at approximately the failed intermediate token budget. This does not
 authorize adaptive selection, caching, sparse execution, or production code.
+
+## 2026-08-30 — Reject naive failure-region multiscale concatenation
+
+At the same 1152-token external-context budget and identical local attention
+dimensions, concatenating 512 coarse whole-canvas K/V with 640 native-density
+tokens from the affected center region increased error and reinforced the
+duplicate lighthouse/stone alternative relative to uniform 1152.
+
+Do not increase density in that region or advance this construction toward a
+trajectory. Candidate 2 remains active because dense distributed context still
+removes the duplicate, but the localization hypothesis is weakened. The next
+probe may distinguish distributed nonlocal evidence from failure-local density;
+it must remain fixed, one-state, zero-update, and experimental. This decision
+does not authorize adaptive selection or generalized multiscale infrastructure.

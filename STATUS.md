@@ -27,6 +27,8 @@
   25-block integration path.
 - Phase 2g no-update late-state discriminator comparing uniform 512-, 1152-,
   and 2048-token global K/V through the identical integration path.
+- Phase 2h zero-update equal-external-token probe comparing uniform 1152 K/V
+  against 512 coarse plus 640 fixed center-region K/V and dense 2048 K/V.
 
 ## Validation status
 
@@ -56,6 +58,10 @@
 - Intermediate-density discriminator: a uniform 1152-token grid improved RMS
   modestly but retained the duplicate lighthouse and stone structure. It is not
   a sufficient semantic threshold before dense cost in this case.
+- Equal-budget multiscale discriminator: concentrating 640 native-density
+  tokens at the affected center region worsened RMS and enlarged the duplicate
+  lighthouse/stone failure versus uniform 1152. Naive local-density
+  concatenation is insufficient.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -63,15 +69,15 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- Whether a nonuniform or multiscale representation can preserve the
-  late-stage object-count evidence lost by both uniform 512- and 1152-token
-  branches without approaching a dense global forward.
+- Whether distributed nonlocal native-density evidence, rather than extra
+  density at the visible failure location, preserves the object-count evidence
+  lost by compact and uniform-intermediate branches.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-At the same reproduced late state, compare the failed uniform 1152-token branch
-against one fixed roughly equal-budget multiscale representation: a 512-token
-whole-canvas grid plus denser center-right global tokens. Keep the identical
-external-K/V integration and perform no sampler update.
+At the same reproduced late state and 1152-token budget, retain the 512-token
+coarse grid and distribute 640 fixed native-density samples outside the center
+crop. Compare against uniform 1152 using the same external-K/V integration and
+perform no sampler update.
