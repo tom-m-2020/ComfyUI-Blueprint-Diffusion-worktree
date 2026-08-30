@@ -108,3 +108,18 @@ execution as an efficient architecture, and dense K/V's residual stone-tower
 divergence means the integration mechanism is not exact. Test one intermediate
 density before considering multiscale design, trajectory changes, caching,
 sparse execution, or production infrastructure.
+
+## 2026-08-30 — Do not pursue a uniform-density sweep
+
+The fixed 1152-token `24x48` branch improved numerical agreement over the
+512-token branch but retained the target duplicate lighthouse and stone
+structure. The useful semantic threshold was therefore not reached at 56.25%
+of dense global token density, while changed local attention-context work had
+already risen to 75% of the dense-context value.
+
+Do not continue a uniform-resolution parameter sweep. Candidate 2 remains
+active because dense global context removes the duplicate through the same
+integration path, but the next diagnostic should test whether a fixed
+multiscale/nonuniform representation can preserve the missing localized
+evidence at approximately the failed intermediate token budget. This does not
+authorize adaptive selection, caching, sparse execution, or production code.

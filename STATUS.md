@@ -25,6 +25,8 @@
 - Phase 2f no-update late-state diagnostic comparing local-only, 512-token
   compact K/V, and 2048-token dense full-canvas K/V through the identical
   25-block integration path.
+- Phase 2g no-update late-state discriminator comparing uniform 512-, 1152-,
+  and 2048-token global K/V through the identical integration path.
 
 ## Validation status
 
@@ -51,6 +53,9 @@
 - Duplicate-lighthouse discriminator: dense K/V removed the duplicate while
   compact K/V retained it and had roughly twice the dense-crop RMS error. The
   primary observed failure is compact representation loss.
+- Intermediate-density discriminator: a uniform 1152-token grid improved RMS
+  modestly but retained the duplicate lighthouse and stone structure. It is not
+  a sufficient semantic threshold before dense cost in this case.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -58,13 +63,15 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- The smallest whole-canvas token density/representation that preserves the
-  late-stage object-count evidence lost by the 512-token branch.
+- Whether a nonuniform or multiscale representation can preserve the
+  late-stage object-count evidence lost by both uniform 512- and 1152-token
+  branches without approaching a dense global forward.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-At the same reproduced late state, test one fixed `24 x 48` intermediate global
-grid (1152 tokens) through the identical integration path. Do not run a sweep or
-sampler update.
+At the same reproduced late state, compare the failed uniform 1152-token branch
+against one fixed roughly equal-budget multiscale representation: a 512-token
+whole-canvas grid plus denser center-right global tokens. Keep the identical
+external-K/V integration and perform no sampler update.
