@@ -191,3 +191,14 @@ supported only when its context source performs broad dense interaction in the
 tested case; whether a different cheap mechanism can preserve that information
 is unresolved. No trajectory, caching, sparse executor, or production
 infrastructure is authorized.
+
+## 2026-08-30 — Do not treat five dense source blocks as sufficient
+
+The first five dense double blocks recover substantially more numerical and
+geometric benefit than the final five dense single blocks, but neither range
+suppresses the duplicate lighthouse at a 20% dense-edge budget.
+
+Record early source depth as the stronger locus of broad-interaction value, but
+do not adopt an early-five policy or automatically sweep block counts. Candidate
+2 still lacks a cheap sufficient source-context contract. No trajectory,
+caching, sparse executor, or production implementation is authorized.
