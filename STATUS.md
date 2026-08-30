@@ -19,6 +19,9 @@
 - Phase 2d one-evaluation all-crop assembly probe using one shared compact-global
   capture, unchanged Phase-2 overlap weights, per-crop/full metrics, and decoded
   diagnostics.
+- Phase 2e four-step Euler trajectory comparing dense, tiled-only, and fresh
+  per-evaluation compact-global-context tiled sampling with strict K/V lifetime
+  and one-update assertions.
 
 ## Validation status
 
@@ -39,6 +42,9 @@
 - Candidate-2 all-crop premise: strong positive first-sigma evidence. All three
   crops moved toward dense and aggregate pre-blend overlap RMS fell from 0.849
   to 0.312; trajectory persistence remains unknown.
+- Candidate-2 trajectory: partial semantic pass. Context stayed closer to dense
+  and more overlap-consistent at all four evaluations while retaining detail,
+  but one extra lighthouse-like object emerged at later steps.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -46,14 +52,13 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- Whether fresh same-sigma compact context remains authoritative through actual
-  sampler updates and later steps where train identity/detail becomes visible.
+- Whether the remaining duplicate lighthouse is caused by compact-global token
+  density/information loss or by the external-K/V integration policy itself.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Run a minimal four-step Euler comparison of dense, tiled-only, and all-crop
-compact-global-context assembly, refreshing global K/V from the current latent
-at every evaluation. Do not add stale caching, block selection, production
-nodes, or generalized infrastructure.
+At the late evaluation where duplication is visible, compare compact-global K/V
+against diagnostic dense-full-canvas K/V from the identical current latent and
+sigma. Do not update the sampler or optimize/cache either branch.
