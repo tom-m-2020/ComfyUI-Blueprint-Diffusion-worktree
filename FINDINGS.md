@@ -275,3 +275,31 @@ and `experiments/flux2_candidate2_dense_vs_compact_results/report.json`.
   representation loss, not a general failure of the external-K/V mechanism.
   Global representation quality/density becomes the next research variable,
   while residual dense-context divergence remains an explicit limitation.
+
+## 2026-08-30 — Intermediate global-density discriminator
+
+Detailed evidence is in `experiments/FLUX2_INTERMEDIATE_DENSITY_REPORT.md`
+and `experiments/flux2_candidate2_intermediate_density_results/report.json`.
+
+### Runtime evidence
+
+- The exact Phase-2f late accepted state and center crop were reproduced with
+  matching GPU-side statistics. The three-way diagnostic performed zero
+  sampler updates and changed only global grid density and its whole-canvas
+  RoPE mapping through the same all-25-block external-K/V path.
+- For 512/1152/2048 global tokens, local attention dimensions were respectively
+  `1536x2048`, `1536x2688`, and `1536x3584`. Changed QK products were
+  1.0x/1.3125x/1.75x relative to 512 tokens; these are not total-model FLOPs.
+- RMS versus dense crop was 0.372/0.328/0.180 and low-frequency RMS was
+  0.188/0.162/0.099. Prediction RMS remained stable.
+- The 1152-token branch modestly improved train, bridge, and horizon agreement,
+  but retained the same extra center-right lighthouse and dark stone structure
+  as the 512-token branch. Dense K/V removed the lighthouse, though it still
+  retained a reduced stone structure and was not identical to dense execution.
+
+### Conclusion
+
+- A uniform `24x48` intermediate grid is insufficient for the target semantic
+  failure. It closes only a minority of the compact-to-dense numerical gap and
+  does not reach the duplicate-removal threshold. This does not prove that all
+  1152-token representations are insufficient.
