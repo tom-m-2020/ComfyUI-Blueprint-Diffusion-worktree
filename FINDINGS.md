@@ -456,3 +456,30 @@ and `experiments/flux2_candidate2_cross_window_propagation_results/report.json`.
   observed dense-source semantic constraint. This topology does not replace
   broad per-layer interaction; fully dense attention is still not proven to be
   the only sufficient mechanism.
+
+## 2026-08-30 — Dense-block necessity discriminator
+
+Detailed evidence is in `experiments/FLUX2_DENSE_BLOCK_NECESSITY_REPORT.md`
+and `experiments/flux2_candidate2_dense_block_necessity_results/report.json`.
+
+### Runtime evidence
+
+- Early dense used source ordinals 0–4 (all five double blocks); late dense used
+  ordinals 20–24 (single blocks 15–19). Each retained 20% of the all-dense
+  image-image edge budget with unchanged source/local token dimensions.
+- RMS versus dense was 0.180 all-dense, 0.227 early-dense, 0.247 late-dense,
+  and 0.252 no-mixing. Low-frequency RMS was 0.099, 0.124, 0.127, and 0.134.
+  Early dense recovers materially more numerical/geometric benefit than late.
+- Early-dense K/V tracked all-dense exactly through capture ordinal 5 and first
+  diverged at 6, after the first restricted source result. Late-dense tracked
+  no-mixing through capture ordinal 20 and first diverged at 21, after its first
+  dense source result.
+- Neither partial range suppressed the duplicate lighthouse. Early dense
+  improved train and bridge organization but retained the lighthouse/stone pair;
+  late dense remained much closer to the restricted semantic result.
+
+### Conclusion
+
+- Five early dense blocks are more useful than five late dense blocks, but both
+  are insufficient for object uniqueness. Early broad interaction alone is not
+  preserved through a long restricted tail at the final K/V interface.

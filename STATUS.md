@@ -37,6 +37,8 @@
   fixed 16x16 windowed, and no-image-image source attention.
 - Phase 2l zero-update cross-window propagation discriminator using alternating
   unshifted and clipped shifted-by-(8,8) 16x16 source windows.
+- Phase 2m zero-update dense-depth discriminator comparing all-dense, first-five
+  dense, last-five dense, and no-image-image source interaction.
 
 ## Validation status
 
@@ -84,6 +86,9 @@
   analytical canvas reachability across depth but retained the duplicate and
   performed worse than fixed windows and no mixing. Reachability alone is
   insufficient.
+- Dense-depth discriminator: the first five dense double blocks recover much
+  more numerical/geometric benefit than the last five single blocks, but neither
+  removes the duplicate. A 20% dense-depth budget is insufficient in both ranges.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -91,14 +96,14 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- What source-interaction property beyond graph reachability preserves the dense
-  semantic constraint: direct comparison range, per-layer bandwidth, and hidden-
-  state information preservation remain unresolved.
+- How much repeated broad interaction is needed to preserve early global
+  organization through later source depth. Phase 2m establishes an early-depth
+  advantage but not a sufficient five-block range.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Stop window topology experiments. Reassess Candidate 2's source-context cost and
-the value of direct broad interaction before defining another falsifier; do not
-advance to trajectories, caching, sparse execution, or production.
+Do not sweep block counts or placements. Reassess Candidate 2's remaining dense-
+source cost and whether the observed early-depth advantage justifies another
+bounded falsifier; do not advance to trajectories, caching, or production.
