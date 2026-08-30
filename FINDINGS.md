@@ -303,3 +303,34 @@ and `experiments/flux2_candidate2_intermediate_density_results/report.json`.
   failure. It closes only a minority of the compact-to-dense numerical gap and
   does not reach the duplicate-removal threshold. This does not prove that all
   1152-token representations are insufficient.
+
+## 2026-08-30 — Equal-budget multiscale global-context probe
+
+Detailed evidence is in `experiments/FLUX2_EQUAL_BUDGET_MULTISCALE_REPORT.md`
+and `experiments/flux2_candidate2_equal_budget_multiscale_results/report.json`.
+
+### Runtime evidence
+
+- The exact Phase-2f/2g state and center crop were reproduced. The diagnostic
+  performed zero updates and held the local all-25-block integration fixed.
+- Uniform and multiscale variants both supplied 1152 external global tokens
+  and used `1536x2688` local Q-by-K attention. Multiscale concatenated 512
+  unchanged coarse whole-canvas tokens with 640 native-density tokens from
+  `y=8..27, x=24..55`; overlapping coordinates were not deduplicated.
+- RMS versus dense was 0.328 uniform, 0.398 multiscale, and 0.180 dense.
+  Low-frequency RMS was 0.162, 0.208, and 0.099 respectively. Multiscale was
+  therefore 21.5% worse in total RMS and 27.9% worse in low-frequency RMS than
+  the equal-token uniform control.
+- Visually, multiscale enlarged the duplicate center-right lighthouse/stone
+  complex and worsened train and nearby bridge alignment. Dense context removed
+  the lighthouse. Prediction RMS remained stable, excluding gross collapse.
+- Equal external-token and local-attention budgets do not imply equal total
+  compute: multiscale used two source captures and duplicated text/forward
+  overhead, whereas uniform and dense used one capture.
+
+### Conclusion
+
+- The missing evidence is not recovered by concentrating the spare token budget
+  at the visible failure location using naive concatenated K/V. Local-region
+  density can reinforce the incompatible local semantic alternative. Whether
+  distributed nonlocal native-density evidence is sufficient remains unknown.
