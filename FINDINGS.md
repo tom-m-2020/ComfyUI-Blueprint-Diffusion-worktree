@@ -397,3 +397,33 @@ Detailed evidence is in
   constructing source hidden features, not only on exposing 2048 native
   positions at the final external-K/V interface. The experiment does not show
   which blocks or fraction of global interaction is sufficient.
+
+## 2026-08-30 — Source interaction range discriminator
+
+Detailed evidence is in `experiments/FLUX2_SOURCE_INTERACTION_RANGE_REPORT.md`
+and `experiments/flux2_candidate2_source_interaction_range_results/report.json`.
+
+### Runtime evidence
+
+- All variants retained 2048 source image tokens, native coordinates,
+  `2560x2560` source attention tensors, and identical `1536x3584` local
+  external-K/V attention. The diagnostic performed zero updates.
+- The windowed source used eight fixed nonoverlapping `16x16` windows in all 25
+  blocks. Image queries retained all text keys and 256 same-window image keys;
+  text queries retained ordinary connectivity. This preserves 524,288 of
+  4,194,304 dense image-image edges, or 12.5%.
+- RMS versus the ordinary dense crop was 0.180 dense, 0.249 windowed, and 0.252
+  with no image-image source interaction. Low-frequency RMS was 0.099, 0.132,
+  and 0.134. Windowing improved only about 1.3% over no mixing.
+- Block-0 K/V remained exactly equal across variants. Later windowed K/V stayed
+  closer to ordinary than no-mixing K/V, confirming meaningful within-window
+  interaction, but the duplicate lighthouse returned under both restrictions.
+- Windowed source execution retained globally plausible decoded structure and
+  modestly better source-level numerical agreement, yet did not preserve train,
+  bridge, stone-structure, or horizon semantics at the local output.
+
+### Conclusion
+
+- Independent 16x16 source windows are insufficient for the observed semantic
+  constraint. Candidate 2 needs cross-window information propagation or larger-
+  range interaction; direct dense pairwise attention is not yet proven necessary.
