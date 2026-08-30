@@ -16,6 +16,9 @@
   real outputs, residual visualizations, telemetry, and focused report.
 - Phase 2c one-evaluation Candidate-2 probe with same-sigma compact-global K/V
   injected into local generated-query attention across all 25 Klein blocks.
+- Phase 2d one-evaluation all-crop assembly probe using one shared compact-global
+  capture, unchanged Phase-2 overlap weights, per-crop/full metrics, and decoded
+  diagnostics.
 
 ## Validation status
 
@@ -33,6 +36,9 @@
 - Candidate-2 semantic premise: positive for one high-noise left-crop
   evaluation. Compact context removed an invented tower and moved bridge
   geometry toward dense while retaining local structure.
+- Candidate-2 all-crop premise: strong positive first-sigma evidence. All three
+  crops moved toward dense and aggregate pre-blend overlap RMS fell from 0.849
+  to 0.312; trajectory persistence remains unknown.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -40,15 +46,14 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- A mechanism that prevents crop-local semantic invention rather than merely
-  attenuating its low spatial frequencies; Candidate 2 is promising but only
-  one crop/evaluation is qualified.
+- Whether fresh same-sigma compact context remains authoritative through actual
+  sampler updates and later steps where train identity/detail becomes visible.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-At the same first sigma, reuse the Phase-2 three-crop geometry and assemble one
-prediction where every crop consumes the same fresh compact-global K/V. Compare
-against one-evaluation tiled-only and dense references before adding a sampling
-trajectory or generalized executor.
+Run a minimal four-step Euler comparison of dense, tiled-only, and all-crop
+compact-global-context assembly, refreshing global K/V from the current latent
+at every evaluation. Do not add stale caching, block selection, production
+nodes, or generalized infrastructure.
