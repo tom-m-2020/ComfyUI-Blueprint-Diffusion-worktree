@@ -166,3 +166,15 @@ a sufficient architectural contract. This is not a decision to run ordinary
 dense source forwards in production, nor evidence that every block or global
 edge is necessary. Do not proceed to production, caching, or a generalized
 sparse executor until a cheaper sufficient interaction pattern is established.
+
+## 2026-08-30 — Reject isolated 16x16 windows as the source-context contract
+
+Fixed 16x16 windows preserved meaningful within-window hidden interaction and
+12.5% of dense image-image connectivity, but the duplicate lighthouse returned
+at approximately the no-mixing severity and numerical gains were marginal.
+
+Do not adopt independent fixed windows or automatically sweep window sizes.
+Candidate 2 continues to require cross-window information flow, though this
+result does not prove direct fully dense attention is necessary: gradual or
+structured cross-window propagation remains untested. No production executor,
+trajectory, caching, or generalized infrastructure is authorized.

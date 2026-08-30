@@ -33,6 +33,8 @@
   against 512 coarse plus 640 deterministically distributed nonlocal K/V.
 - Phase 2j zero-update dense-source interaction ablation retaining all 2048
   native source positions while blocking image-to-image source attention.
+- Phase 2k zero-update interaction-range discriminator comparing ordinary dense,
+  fixed 16x16 windowed, and no-image-image source attention.
 
 ## Validation status
 
@@ -73,6 +75,9 @@
   restored the duplicate lighthouse and increased dense-crop RMS by 40% despite
   unchanged 2048-token source and local-interface geometry. Global source
   interaction is required for the observed dense-context success.
+- Source-range discriminator: fixed 16x16 windows retained 12.5% of dense
+  image-image connectivity but restored the duplicate at near no-mixing severity.
+  Within-window interaction alone is insufficient.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -80,14 +85,14 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- Which subset or form of source global interaction is sufficient; Phase 2j
-  establishes that removing all image-image source mixing is too destructive,
-  but does not localize the requirement to blocks or interaction ranges.
+- Whether the required cross-window information needs direct long-range
+  pairwise attention or can propagate through a cheaper structured mechanism
+  across blocks. Phase 2k does not distinguish these.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Do not resume density/layout sweeps. Any next falsifier must target the minimum
-sufficient source-interaction contract rather than external token placement;
-do not advance to trajectories, caching, sparse execution, or production.
+Do not sweep window sizes. Pause at the source-interaction boundary; any next
+falsifier must explicitly distinguish direct long-range attention from gradual
+cross-window propagation, without trajectories, caching, or production work.
