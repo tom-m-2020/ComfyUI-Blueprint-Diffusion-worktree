@@ -94,3 +94,17 @@ Do not proceed to stale caching, block selection, sparse execution, or
 production integration. The next decision must distinguish compact-context
 information loss from a limitation of the external-K/V integration mechanism,
 using dense full-canvas K/V only as a late-evaluation diagnostic reference.
+
+## 2026-08-30 — Treat global representation quality as Candidate 2's next bottleneck
+
+The Phase 2f controlled diagnostic changed only external global K/V density and
+source. Dense full-canvas K/V removed the duplicate lighthouse retained by the
+512-token compact branch and cut dense-crop RMS from 0.372 to 0.180, while using
+the same local execution and integration policy.
+
+Candidate 2 therefore remains active, with global representation quality/token
+density as the next research bottleneck. This does not authorize dense global
+execution as an efficient architecture, and dense K/V's residual stone-tower
+divergence means the integration mechanism is not exact. Test one intermediate
+density before considering multiscale design, trajectory changes, caching,
+sparse execution, or production infrastructure.

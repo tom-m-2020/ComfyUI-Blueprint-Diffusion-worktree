@@ -22,6 +22,9 @@
 - Phase 2e four-step Euler trajectory comparing dense, tiled-only, and fresh
   per-evaluation compact-global-context tiled sampling with strict K/V lifetime
   and one-update assertions.
+- Phase 2f no-update late-state diagnostic comparing local-only, 512-token
+  compact K/V, and 2048-token dense full-canvas K/V through the identical
+  25-block integration path.
 
 ## Validation status
 
@@ -45,6 +48,9 @@
 - Candidate-2 trajectory: partial semantic pass. Context stayed closer to dense
   and more overlap-consistent at all four evaluations while retaining detail,
   but one extra lighthouse-like object emerged at later steps.
+- Duplicate-lighthouse discriminator: dense K/V removed the duplicate while
+  compact K/V retained it and had roughly twice the dense-crop RMS error. The
+  primary observed failure is compact representation loss.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -52,13 +58,13 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- Whether the remaining duplicate lighthouse is caused by compact-global token
-  density/information loss or by the external-K/V integration policy itself.
+- The smallest whole-canvas token density/representation that preserves the
+  late-stage object-count evidence lost by the 512-token branch.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-At the late evaluation where duplication is visible, compare compact-global K/V
-against diagnostic dense-full-canvas K/V from the identical current latent and
-sigma. Do not update the sampler or optimize/cache either branch.
+At the same reproduced late state, test one fixed `24 x 48` intermediate global
+grid (1152 tokens) through the identical integration path. Do not run a sweep or
+sampler update.
