@@ -14,6 +14,8 @@
   composition-scale run, intermediate visualizations, telemetry, and report.
 - Phase 2b fixed-frequency correction falsifier with two fixed Gaussian scales,
   real outputs, residual visualizations, telemetry, and focused report.
+- Phase 2c one-evaluation Candidate-2 probe with same-sigma compact-global K/V
+  injected into local generated-query attention across all 25 Klein blocks.
 
 ## Validation status
 
@@ -28,6 +30,9 @@
 - Fixed high-pass output fusion: partially restrains compositional replacement
   and recovers detail, but semantic objects and geometry remain in the
   high-pass correction; it is not a sufficient fusion contract.
+- Candidate-2 semantic premise: positive for one high-noise left-crop
+  evaluation. Compact context removed an invented tower and moved bridge
+  geometry toward dense while retaining local structure.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -36,13 +41,14 @@
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
 - A mechanism that prevents crop-local semantic invention rather than merely
-  attenuating its low spatial frequencies.
+  attenuating its low spatial frequencies; Candidate 2 is promising but only
+  one crop/evaluation is qualified.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Run the smallest one-evaluation Candidate-2 test: determine whether local
-high-resolution queries consuming compact whole-canvas global context suppress
-the bridge/lighthouse semantic alternatives before output projection. Do not
-build a generalized executor or production nodes.
+At the same first sigma, reuse the Phase-2 three-crop geometry and assemble one
+prediction where every crop consumes the same fresh compact-global K/V. Compare
+against one-evaluation tiled-only and dense references before adding a sampling
+trajectory or generalized executor.

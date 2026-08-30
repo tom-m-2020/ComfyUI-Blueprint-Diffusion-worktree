@@ -54,3 +54,16 @@ next project milestone. Candidate 1 remains viable only in revised form; the
 next experiment should test whether explicit compact global context prevents
 semantic divergence during local model execution. This decision adds no
 production implementation or generalized infrastructure.
+
+## 2026-08-30 — Prioritize Candidate 2 for the next semantic experiment
+
+The Phase 2c one-evaluation probe found that same-sigma compact-global K/V
+inside all FLUX.2 transformer blocks removed a crop-local invented tower and
+moved bridge geometry substantially closer to the dense reference without
+destroying local structure. This is stronger semantic evidence than either
+unfiltered or fixed-frequency output fusion produced.
+
+Candidate 2 is therefore the leading mechanism for the next experiment. This
+is not a final architecture selection and does not authorize a generalized
+sparse executor, cache lifecycle, production node, or cross-model API. The next
+test remains one evaluation and extends only to all three existing crops.

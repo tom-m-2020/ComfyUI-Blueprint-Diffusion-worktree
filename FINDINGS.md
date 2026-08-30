@@ -136,3 +136,40 @@ Detailed parameters, outputs, and limitations are in
   as a semantic/detail separator. Candidate 1 survives only in revised form;
   explicit global context or feature-aware fusion is now the higher-value
   direction than further scalar/filter sweeps.
+
+## 2026-08-30 — Candidate-2 one-evaluation compact-global-context probe
+
+Detailed implementation and evidence are in
+`experiments/FLUX2_CANDIDATE2_ONE_EVAL_REPORT.md` and
+`experiments/flux2_candidate2_one_eval_results/report.json`.
+
+### Runtime evidence
+
+- At the first Phase-2 sigma, all 25 FLUX.2 Klein blocks were instrumented so
+  1024 left-crop generated queries could attend to 512 same-current-latent
+  compact-global generated K/V tokens. Local and global K used their own RoPE;
+  ordinary text-query attention output was restored, and no cross-step cache or
+  sampler update was used.
+- The ordinary left crop independently invented a large dark tower at its right
+  boundary. Compact global context removed it, retained the single left
+  lighthouse, moved bridge slope/deck geometry toward the dense reference, and
+  retained visible cable, deck, shoreline, and water structure.
+- Context-versus-dense-crop RMS was 0.582 versus 0.867 for local-only; the
+  low-frequency RMS difference was 0.396 versus 0.657. Context changed the
+  local prediction substantially (0.617 RMS versus local-only) without a norm
+  instability: prediction RMS was 1.0725 context and 1.0731 local-only.
+- Per modified block, normal local attention was 1536 Q by 1536 K including
+  text. Context attention was 1536 Q by 2048 K, ordered as Q `[text, local]`
+  and K/V `[text, local, compact-global]`; only generated query attention
+  output retained the augmented result.
+- This unoptimized probe retained all layers' compact K/V concurrently and
+  recomputed ordinary attention to restore text output. Its roughly 3.76 GiB
+  peak versus 2.50 GiB local-only is not a production VRAM result or evidence
+  of efficiency.
+
+### Conclusion
+
+- Candidate 2 has positive single-evaluation semantic evidence: compact global
+  context changes local prediction inside the transformer and suppressed one
+  concrete crop-local duplicate-object alternative. Generalization across
+  crops, sigmas, and a trajectory remains untested.
