@@ -366,3 +366,34 @@ and `experiments/flux2_candidate2_distributed_nonlocal_results/report.json`.
   missing semantic mechanism at this token budget. It is preferable to
   failure-local concentration but does not cross the dense-context semantic
   threshold or beat uniform 1152.
+
+## 2026-08-30 — Dense-source interaction ablation
+
+Detailed evidence is in
+`experiments/FLUX2_DENSE_SOURCE_INTERACTION_ABLATION_REPORT.md` and
+`experiments/flux2_candidate2_dense_source_interaction_ablation_results/report.json`.
+
+### Runtime evidence
+
+- At the exact late state, both variants retained all 2048 native source image
+  positions, ordinary source projections/MLPs/residuals, `2560x2560` source
+  Q-by-K geometry, and identical `1536x3584` local external-K/V attention.
+- The restricted source masked only image-query to image-key edges in all 25
+  FLUX.2 blocks. Text queries retained all text/image keys and image queries
+  retained all text keys. Per block, 4,194,304 image-image edges were blocked.
+- Captured source K/V was identical at double block 0, before any ablated
+  mixing could affect hidden states, then diverged from double block 1 onward.
+  This confirms that source hidden-trajectory interaction was the changed path.
+- RMS versus the ordinary dense crop increased from 0.180 with ordinary dense
+  source K/V to 0.252 with restricted source K/V. Low-frequency RMS increased
+  from 0.099 to 0.134; prediction RMS remained stable.
+- The extra center-right lighthouse suppressed by ordinary dense source K/V
+  reappeared under the restriction, alongside regressions in train, bridge, and
+  horizon alignment.
+
+### Conclusion
+
+- The successful dense context depends on global image-token interaction while
+  constructing source hidden features, not only on exposing 2048 native
+  positions at the final external-K/V interface. The experiment does not show
+  which blocks or fraction of global interaction is sufficient.

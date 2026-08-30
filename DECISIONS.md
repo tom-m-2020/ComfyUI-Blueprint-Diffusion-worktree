@@ -152,3 +152,17 @@ local integration path, but the next investigation must first reassess what
 dense source execution contributes beyond external token count and placement.
 No trajectory, caching, adaptive selection, sparse executor, or production work
 is authorized by this result.
+
+## 2026-08-30 — Treat source global interaction as a Candidate-2 requirement
+
+With all 2048 native source positions retained, blocking image-to-image source
+attention in all 25 blocks restored the duplicate lighthouse and materially
+degraded the local prediction. Block-0 captured K/V remained identical and
+later blocks diverged, isolating the accumulated source hidden interaction.
+
+Candidate 2 must therefore account for global interaction during context
+construction; a final-interface bag of independently formed spatial K/V is not
+a sufficient architectural contract. This is not a decision to run ordinary
+dense source forwards in production, nor evidence that every block or global
+edge is necessary. Do not proceed to production, caching, or a generalized
+sparse executor until a cheaper sufficient interaction pattern is established.

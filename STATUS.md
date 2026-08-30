@@ -31,6 +31,8 @@
   against 512 coarse plus 640 fixed center-region K/V and dense 2048 K/V.
 - Phase 2i zero-update discriminator comparing uniform and failure-local 1152
   against 512 coarse plus 640 deterministically distributed nonlocal K/V.
+- Phase 2j zero-update dense-source interaction ablation retaining all 2048
+  native source positions while blocking image-to-image source attention.
 
 ## Validation status
 
@@ -67,6 +69,10 @@
 - Distributed-nonlocal discriminator: balanced nonlocal tokens reversed the
   failure-local amplification but neither removed the duplicate nor improved
   on uniform 1152. Simple spatial reallocation is substantially weakened.
+- Dense-source interaction discriminator: blocking source image-image mixing
+  restored the duplicate lighthouse and increased dense-crop RMS by 40% despite
+  unchanged 2048-token source and local-interface geometry. Global source
+  interaction is required for the observed dense-context success.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -74,15 +80,14 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- Why dense source K/V crosses the object-uniqueness threshold when uniform,
-  failure-local, and distributed-nonlocal 1152-token representations do not:
-  source hidden interaction, pairwise coverage, and representation composition
-  remain unresolved possibilities.
+- Which subset or form of source global interaction is sufficient; Phase 2j
+  establishes that removing all image-image source mixing is too destructive,
+  but does not localize the requirement to blocks or interaction ranges.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Pause density/layout sweeps. Reassess the dense-versus-concatenated source
-hidden-trajectory difference before defining another falsifier; do not advance
-to trajectories, caching, sparse execution, or production infrastructure.
+Do not resume density/layout sweeps. Any next falsifier must target the minimum
+sufficient source-interaction contract rather than external token placement;
+do not advance to trajectories, caching, sparse execution, or production.
