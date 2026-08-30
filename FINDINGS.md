@@ -242,3 +242,36 @@ and `experiments/flux2_candidate2_four_step_results/report.json`.
 - Candidate 2 partially passes the trajectory semantic gate. Fresh compact
   context remains beneficial across the schedule and permits detail, but object
   uniqueness is not yet reliable.
+
+## 2026-08-30 — Late-state dense-K/V versus compact-K/V diagnostic
+
+Detailed evidence is in `experiments/FLUX2_DENSE_VS_COMPACT_KV_REPORT.md`
+and `experiments/flux2_candidate2_dense_vs_compact_results/report.json`.
+
+### Runtime evidence
+
+- The Phase-2e accepted context latent before evaluation 2 was reproduced after
+  exactly two Euler updates with matching GPU-side statistics at sigma
+  0.8925944. The diagnostic performed zero updates and returned the accepted
+  latent bit-exactly (`max_abs=0`).
+- On affected center crop 1, compact and dense global context used the identical
+  25-block external-K/V integration, local query/MLP/residual path, text output
+  restoration, and final projection. Only global source/density and its
+  corresponding full-canvas RoPE differed: 512 versus 2048 generated K/V and
+  per-block `1536x2048` versus `1536x3584` Q-by-K attention.
+- RMS versus the dense crop was 0.416 local-only, 0.372 compact K/V, and 0.180
+  dense K/V. Low-frequency RMS was 0.228, 0.188, and 0.099 respectively.
+  Prediction RMS remained stable.
+- Compact K/V retained the extra small lighthouse beside a dark stone
+  structure. Dense K/V removed the lighthouse and substantially improved train,
+  bridge, cable, horizon, and water alignment without suppressing detail.
+- Dense K/V still retained a reduced dark stone tower absent from the dense
+  crop except as a tiny distant silhouette. External K/V is therefore not exact
+  even when global information is dense.
+
+### Conclusion
+
+- The trajectory's duplicate-lighthouse failure is evidence of compact
+  representation loss, not a general failure of the external-K/V mechanism.
+  Global representation quality/density becomes the next research variable,
+  while residual dense-context divergence remains an explicit limitation.
