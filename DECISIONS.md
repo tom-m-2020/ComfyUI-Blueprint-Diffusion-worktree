@@ -178,3 +178,16 @@ Candidate 2 continues to require cross-window information flow, though this
 result does not prove direct fully dense attention is necessary: gradual or
 structured cross-window propagation remains untested. No production executor,
 trajectory, caching, or generalized infrastructure is authorized.
+
+## 2026-08-30 — Do not equate cross-depth reachability with sufficient context
+
+Alternating shifted windows made all source tokens transitively reachable from
+the full canvas, yet the duplicate lighthouse remained and numerical behavior
+was worse than fixed windows and no mixing. Graph connectivity by itself is not
+a sufficient Candidate-2 source-context contract.
+
+Do not continue with another window topology automatically. Candidate 2 remains
+supported only when its context source performs broad dense interaction in the
+tested case; whether a different cheap mechanism can preserve that information
+is unresolved. No trajectory, caching, sparse executor, or production
+infrastructure is authorized.

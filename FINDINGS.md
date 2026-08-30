@@ -427,3 +427,32 @@ and `experiments/flux2_candidate2_source_interaction_range_results/report.json`.
 - Independent 16x16 source windows are insufficient for the observed semantic
   constraint. Candidate 2 needs cross-window information propagation or larger-
   range interaction; direct dense pairwise attention is not yet proven necessary.
+
+## 2026-08-30 — Cross-window propagation discriminator
+
+Detailed evidence is in `experiments/FLUX2_CROSS_WINDOW_PROPAGATION_REPORT.md`
+and `experiments/flux2_candidate2_cross_window_propagation_results/report.json`.
+
+### Runtime evidence
+
+- Alternating source blocks used unshifted `16x16` windows at even execution
+  ordinals and non-wrapping clipped windows shifted by `(8,8)` at odd ordinals.
+  Unshifted/shifted blocks retained 12.5%/8.20% of dense image-image edges.
+- Analytical dependency propagation reached the full canvas: some tokens could
+  depend on all 2048 image positions after ordinal 3, and all tokens could do so
+  by the final source block. Source/local tensor dimensions remained unchanged.
+- RMS versus dense was 0.180 ordinary, 0.249 fixed, 0.261 alternating shifted,
+  and 0.252 no-mixing. Low-frequency RMS was 0.099, 0.132, 0.138, and 0.134.
+  Shifted propagation was worse than both restricted controls.
+- Fixed and alternating captures matched through ordinal 1 and first diverged
+  at ordinal 2, exactly after the first shifted attention result. The partition
+  schedule—not input/capture geometry—caused the changed hidden trajectory.
+- The duplicate lighthouse, dark stone structure, and train/bridge divergence
+  remained under alternating windows despite final full-canvas reachability.
+
+### Conclusion
+
+- Transitive full-canvas graph reachability across depth is insufficient for the
+  observed dense-source semantic constraint. This topology does not replace
+  broad per-layer interaction; fully dense attention is still not proven to be
+  the only sufficient mechanism.
