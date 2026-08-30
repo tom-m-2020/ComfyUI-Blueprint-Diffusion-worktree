@@ -35,6 +35,8 @@
   native source positions while blocking image-to-image source attention.
 - Phase 2k zero-update interaction-range discriminator comparing ordinary dense,
   fixed 16x16 windowed, and no-image-image source attention.
+- Phase 2l zero-update cross-window propagation discriminator using alternating
+  unshifted and clipped shifted-by-(8,8) 16x16 source windows.
 
 ## Validation status
 
@@ -78,6 +80,10 @@
 - Source-range discriminator: fixed 16x16 windows retained 12.5% of dense
   image-image connectivity but restored the duplicate at near no-mixing severity.
   Within-window interaction alone is insufficient.
+- Cross-window propagation discriminator: alternating windows achieved full
+  analytical canvas reachability across depth but retained the duplicate and
+  performed worse than fixed windows and no mixing. Reachability alone is
+  insufficient.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -85,14 +91,14 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- Whether the required cross-window information needs direct long-range
-  pairwise attention or can propagate through a cheaper structured mechanism
-  across blocks. Phase 2k does not distinguish these.
+- What source-interaction property beyond graph reachability preserves the dense
+  semantic constraint: direct comparison range, per-layer bandwidth, and hidden-
+  state information preservation remain unresolved.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Do not sweep window sizes. Pause at the source-interaction boundary; any next
-falsifier must explicitly distinguish direct long-range attention from gradual
-cross-window propagation, without trajectories, caching, or production work.
+Stop window topology experiments. Reassess Candidate 2's source-context cost and
+the value of direct broad interaction before defining another falsifier; do not
+advance to trajectories, caching, sparse execution, or production.
