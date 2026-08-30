@@ -206,3 +206,39 @@ and `experiments/flux2_candidate2_all_crop_results/report.json`.
 - Candidate 2 has strong positive evidence at one evaluation across all three
   regions. The next unresolved semantic question is trajectory persistence,
   not whether compact global context can influence multiple local predictions.
+
+## 2026-08-30 — Candidate-2 minimal four-step trajectory
+
+Detailed evidence is in `experiments/FLUX2_CANDIDATE2_FOUR_STEP_REPORT.md`
+and `experiments/flux2_candidate2_four_step_results/report.json`.
+
+### Runtime evidence
+
+- Dense, three-crop tiled-only, and fresh compact-global-context tiled variants
+  completed identical four-step Euler schedules with four accepted updates.
+  Every context evaluation captured 25 fresh same-current-latent/sigma K/V
+  layers once, shared the identical objects across all three crops, cleared
+  them after assembly, and consumed exactly one assembled prediction in one
+  update. Weak-reference checks found no prior-evaluation K/V survival.
+- Context prediction RMS versus the dense trajectory was lower than tiled-only
+  at every evaluation: 0.569/0.601/0.643/0.652 versus
+  0.758/0.793/0.840/0.864. Low-frequency error was also lower at every step.
+- Pre-blend overlap RMS stayed lower throughout: context
+  0.312/0.382/0.291/0.181 versus tiled 0.849/0.734/0.548/0.304. Every crop was
+  closer to its dense reference region at every evaluation.
+- The context final retained high-detail bridge cables/truss, one continuous
+  long train, water, lighthouse, and masonry detail while suppressing tiled
+  output's incompatible bridge spans, extra central support, and separated
+  train segments. Compact context did not collapse local detail.
+- A second small lighthouse-like object emerged near the center-right during
+  later context evaluations and remained in the final. Candidate 2 therefore
+  reduced but did not eliminate semantic duplication.
+- Work remained 1/3/4 forwards and 2048/3072/3584 generated image tokens per
+  evaluation for dense/tiled/context. The unoptimized all-layer K/V retention
+  peaked near 3.77 GiB and is not an efficiency result.
+
+### Conclusion
+
+- Candidate 2 partially passes the trajectory semantic gate. Fresh compact
+  context remains beneficial across the schedule and permits detail, but object
+  uniqueness is not yet reliable.

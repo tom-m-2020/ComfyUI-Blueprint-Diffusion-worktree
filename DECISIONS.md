@@ -81,3 +81,16 @@ advance to a minimal four-step trajectory with fresh global context at every
 evaluation. This is not a production architecture decision: stale caching,
 block selection, sparse execution, VRAM optimization, generalized lifecycle,
 and cross-model APIs remain out of scope until trajectory behavior is known.
+
+## 2026-08-30 — Keep Candidate 2 active but do not optimize it yet
+
+The Phase 2e trajectory showed persistent numerical and visible benefit from
+fresh compact-global context across all four Euler evaluations, with detailed
+late-stage bridge and train structure. It also produced a surviving duplicate
+lighthouse-like object. Candidate 2 therefore remains the leading architecture
+but has only partially passed the trajectory semantic gate.
+
+Do not proceed to stale caching, block selection, sparse execution, or
+production integration. The next decision must distinguish compact-context
+information loss from a limitation of the external-K/V integration mechanism,
+using dense full-canvas K/V only as a late-evaluation diagnostic reference.
