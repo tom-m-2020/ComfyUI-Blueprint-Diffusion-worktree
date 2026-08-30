@@ -202,3 +202,15 @@ Record early source depth as the stronger locus of broad-interaction value, but
 do not adopt an early-five policy or automatically sweep block counts. Candidate
 2 still lacks a cheap sufficient source-context contract. No trajectory,
 caching, sparse executor, or production implementation is authorized.
+
+## 2026-08-30 — Reject isolated dense refresh as a maintenance contract
+
+Adding dense source blocks at ordinals 10, 15, and 20 to the early-five policy
+increased the dense edge budget from 20% to 32% but slightly worsened final
+error and left the duplicate lighthouse unchanged. Later refreshes briefly
+reduced some K/V divergence, yet restricted blocks erased those gains.
+
+Do not adopt this early-plus-refresh policy or sweep refresh schedules. Candidate
+2's cheap source-context premise is materially weakened under hard no-image-
+image restriction. No trajectory, caching, sparse executor, or production work
+is authorized.

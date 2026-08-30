@@ -483,3 +483,30 @@ and `experiments/flux2_candidate2_dense_block_necessity_results/report.json`.
 - Five early dense blocks are more useful than five late dense blocks, but both
   are insufficient for object uniqueness. Early broad interaction alone is not
   preserved through a long restricted tail at the final K/V interface.
+
+## 2026-08-30 — Sparse dense-refresh maintenance probe
+
+Detailed evidence is in `experiments/FLUX2_SPARSE_DENSE_REFRESH_REPORT.md`
+and `experiments/flux2_candidate2_sparse_dense_refresh_results/report.json`.
+
+### Runtime evidence
+
+- The fixed refresh schedule used dense source ordinals
+  `0,1,2,3,4,10,15,20`: eight blocks and 32% of the all-dense image-image edge
+  budget. All tensor geometry and the local external-K/V path remained fixed.
+- RMS versus dense was 0.180 all-dense, 0.227 early-only, 0.232 periodic refresh,
+  and 0.252 no-mixing. Low-frequency RMS was 0.099, 0.124, 0.126, and 0.134.
+  Refresh was slightly worse than early-only despite three additional dense
+  blocks.
+- Refresh ordinal 10 immediately increased K/V divergence from all-dense.
+  Refreshes 15 and 20 briefly reduced K divergence at the following capture,
+  but the gains disappeared and reversed before the next refresh/final capture.
+- The duplicate lighthouse, dark stone structure, and horizon failure remained
+  at early-only severity; train and bridge organization did not materially
+  improve.
+
+### Conclusion
+
+- Early global planning plus isolated dense refreshes at 10/15/20 is
+  insufficient. Dense events can briefly correct feature divergence, but the
+  no-image-image blocks do not maintain that correction through source depth.

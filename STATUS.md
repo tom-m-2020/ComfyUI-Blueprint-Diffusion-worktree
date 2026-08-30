@@ -39,6 +39,8 @@
   unshifted and clipped shifted-by-(8,8) 16x16 source windows.
 - Phase 2m zero-update dense-depth discriminator comparing all-dense, first-five
   dense, last-five dense, and no-image-image source interaction.
+- Phase 2n zero-update maintenance probe comparing early-only against early
+  dense plus fixed refreshes at ordinals 10, 15, and 20.
 
 ## Validation status
 
@@ -89,6 +91,9 @@
 - Dense-depth discriminator: the first five dense double blocks recover much
   more numerical/geometric benefit than the last five single blocks, but neither
   removes the duplicate. A 20% dense-depth budget is insufficient in both ranges.
+- Sparse-refresh discriminator: three later dense refresh blocks briefly reduce
+  some K/V divergence but gains decay through restricted blocks; final error is
+  worse than early-only and the duplicate remains.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -96,14 +101,14 @@
 
 - Whether the observed reduced-global control generalizes across prompts,
   seeds, sizes, and global resolutions.
-- How much repeated broad interaction is needed to preserve early global
-  organization through later source depth. Phase 2m establishes an early-depth
-  advantage but not a sufficient five-block range.
+- Whether any cheaper source mechanism can maintain globally organized hidden
+  states through later depth. Hard no-image-image transitions discard both an
+  early plan and isolated refresh corrections in the tested policies.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Do not sweep block counts or placements. Reassess Candidate 2's remaining dense-
-source cost and whether the observed early-depth advantage justifies another
-bounded falsifier; do not advance to trajectories, caching, or production.
+Do not sweep refresh schedules. Reassess Candidate 2's efficiency premise after
+the failed maintenance contract; do not advance to trajectories, caching,
+sparse execution, or production.
