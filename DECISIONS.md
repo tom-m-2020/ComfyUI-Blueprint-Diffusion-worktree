@@ -39,3 +39,18 @@ fusion contract. Candidate 1 remains open in revised form because the global
 branch itself showed useful compositional control. The next experiment will
 test the smallest fixed low/high-frequency separation before any production or
 sparse-execution work.
+
+## 2026-08-30 — Do not adopt fixed output-space frequency splitting as the fusion contract
+
+The Phase 2b experiment found that a sigma-1 high-pass correction can restrain
+global-plan replacement and recover useful detail, but bridge geometry, tower
+silhouettes, and duplicated lighthouse structure remain in the high-pass
+component and final image. A broader sigma-2 split admits still more of the
+alternative composition.
+
+Therefore a fixed spatial-frequency split is not an acceptable final
+Candidate-1 fusion contract, and further scalar/filter-scale sweeps are not the
+next project milestone. Candidate 1 remains viable only in revised form; the
+next experiment should test whether explicit compact global context prevents
+semantic divergence during local model execution. This decision adds no
+production implementation or generalized infrastructure.
