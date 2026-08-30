@@ -137,3 +137,18 @@ removes the duplicate, but the localization hypothesis is weakened. The next
 probe may distinguish distributed nonlocal evidence from failure-local density;
 it must remain fixed, one-state, zero-update, and experimental. This decision
 does not authorize adaptive selection or generalized multiscale infrastructure.
+
+## 2026-08-30 — Stop simple 1152-token spatial-reallocation probes
+
+Distributed native-density samples outside the active crop eliminated the
+failure-local amplification but did not suppress the original duplicate or
+improve over uniform 1152. Along with the failed uniform-intermediate and
+failure-local probes, this substantially weakens simple token placement as the
+explanation for dense context's semantic advantage.
+
+Do not proceed automatically to another density/layout sweep. Candidate 2 is
+not rejected because dense K/V still removes the duplicate through the same
+local integration path, but the next investigation must first reassess what
+dense source execution contributes beyond external token count and placement.
+No trajectory, caching, adaptive selection, sparse executor, or production work
+is authorized by this result.
