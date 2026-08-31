@@ -41,6 +41,9 @@
   dense, last-five dense, and no-image-image source interaction.
 - Phase 2n zero-update maintenance probe comparing early-only against early
   dense plus fixed refreshes at ordinals 10, 15, and 20.
+- Phase 3 Candidate-3 research/design pass defining persistent low/high states,
+  a synchronized Euler lifecycle, three ranked state-coupling rules, compute
+  bounds, failure criteria, and one selected FLUX.2 falsification experiment.
 
 ## Validation status
 
@@ -94,6 +97,9 @@
 - Sparse-refresh discriminator: three later dense refresh blocks briefly reduce
   some K/V divergence but gains decay through restricted blocks; final error is
   worse than early-only and the duplicate remains.
+- Candidate-3 design contract: complete. The first test is a hard accepted-state
+  global anchor with exact `D(H) = G` synchronization, not prediction-residual
+  fusion. No Candidate-3 trajectory has been run yet.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -104,11 +110,17 @@
 - Whether any cheaper source mechanism can maintain globally organized hidden
   states through later depth. Hard no-image-image transitions discard both an
   early plan and isolated refresh corrections in the tested policies.
+- Whether a normal 512-token trajectory initialized by restriction of the
+  full-canvas noise remains a valid/coherent global branch despite the mapped-
+  noise variance shift.
+- Whether exact accepted-state coarse anchoring suppresses semantic alternatives
+  or merely confines them to the high-resolution restriction nullspace.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Do not sweep refresh schedules. Reassess Candidate 2's efficiency premise after
-the failed maintenance contract; do not advance to trajectories, caching,
-sparse execution, or production.
+Candidate 2 semantic research is paused. Implement only the documented
+Candidate-3 four-step hard-global-anchor falsifier with dense, tiled-only, and
+uncoupled-dual controls. Do not add alternate coupling rules, parameter sweeps,
+production nodes, caching, or sparse execution.

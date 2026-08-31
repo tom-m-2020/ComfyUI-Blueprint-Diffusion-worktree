@@ -510,3 +510,55 @@ and `experiments/flux2_candidate2_sparse_dense_refresh_results/report.json`.
 - Early global planning plus isolated dense refreshes at 10/15/20 is
   insufficient. Dense events can briefly correct feature divergence, but the
   no-image-image blocks do not maintain that correction through source depth.
+
+## 2026-08-31 — Candidate-3 coupled-trajectory design contract
+
+Detailed design is in
+`experiments/CANDIDATE3_COUPLED_TRAJECTORY_DESIGN.md`.
+
+### Confirmed boundary and architectural inference
+
+- Candidate 3 requires two persistent accepted states at the same sigma: a
+  low-density whole-canvas latent `G` and a high-resolution full-canvas latent
+  `H`. A resized global prediction fused into one high-resolution prediction is
+  still Candidate 1, not a coupled trajectory.
+- The smallest exact accepted-state invariant for the Phase-2 2:1 spatial
+  grids is `D(H_i) = G_i`, where `D` is fixed `2x2` area restriction and `U`
+  is its nearest-neighbor right inverse.
+- One synchronized Euler interval can independently propose `G*` from one
+  normal 512-token global forward and `H*` from one assembly of the three
+  1024-token crop forwards, then accept
+  `G_next = G*` and `H_next = H* + U(G* - D(H*))` exactly once.
+- This rule has causal `G -> H` state flow and no `H -> G` flow. It cannot be
+  reduced to two independent trajectories because every accepted `H` is a
+  direct function of the independently evolved `G` and must satisfy the
+  cross-state invariant.
+- Mapped initialization `G_0 = D(H_0)` preserves spatial identity and exact
+  initial consistency but reduces the global noise variance (fourfold for
+  ideal independent samples under nonoverlapping `2x2` area restriction).
+  The global branch must therefore be qualified independently in the probe; a
+  malformed global-only trajectory makes the coupling result inconclusive.
+- Fixed spatial scale separation is not assumed to equal semantic/detail
+  separation. Prior Phase-2 evidence predicts the key failure mode: duplicate
+  objects may remain in the nullspace of `D` even when coarse state consistency
+  is exact.
+
+### Compute inference
+
+- With complete three-crop coverage, Candidate 3 executes 3584 generated-token
+  positions per evaluation versus 2048 for dense (`1.75x` token-linear work).
+  Its approximate image-image attention matrix work is 81.25% of dense, but
+  this does not establish total-FLOP, VRAM, or wall-clock savings.
+- Candidate 3's distinct potential advantage is semantic: the 512-token branch
+  performs an ordinary complete globally interacting trajectory instead of
+  approximating dense high-resolution hidden interaction through compact
+  external K/V. Efficiency would require later selective local coverage or
+  evaluation reduction and remains unqualified.
+
+### Selected falsifier
+
+- Test one hard accepted-state global anchor over the existing four-step FLUX.2
+  setup, with dense, tiled-only, and uncoupled-dual controls. Do not add a
+  coupling-strength sweep or bidirectional consensus until this strongest,
+  parameter-free rule establishes that state coupling controls composition
+  without reducing `H` to an upscaled global result.
