@@ -389,3 +389,15 @@ local/overlap token execution—as the one Phase-6b cost center. This does not y
 select crop geometry, batching, selective execution, caching, or another
 optimization mechanism. Do not prioritize global cadence or coupling kernels
 without contrary measurements.
+
+## 2026-08-31 — Do not batch Blueprint crops through scalar FLUX.2 RoPE options
+
+Reject naive local-crop batching at the current adapter boundary. Native FLUX.2
+constructs one scalar-offset image-ID grid and repeats it across batch, so a
+batched call would assign one crop's absolute coordinates to every element.
+Vector offsets are rejected by the native grid constructor and the public
+forward does not accept explicit per-batch image IDs.
+
+Do not publish incorrect crop batching or benchmark it as an optimization.
+Correct batching requires a separately authorized adapter/backend coordinate
+change and a new sequential-versus-batched prediction equivalence gate.

@@ -870,3 +870,24 @@ Detailed evidence is in
 - Token counts and QxK dimensions are recorded as work descriptors, not FLOP
   estimates. The measured conclusion is that sequential local execution lowers
   peak activation memory at larger geometry while increasing total runtime.
+
+## 2026-08-31 — Native FLUX.2 crop batching coordinate boundary
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_CROP_BATCHING_FEASIBILITY.md` and
+`experiments/flux2_candidate3_crop_batching_results/report.json`.
+
+- Native `Flux.process_img` constructs one image-position grid from scalar
+  `rope_options` and repeats that grid over the entire input batch. Distinct
+  absolute crop offsets are not representable per batch element through the
+  current transformer-options adapter.
+- A real call to the exact native method with `[2,128,32,32]` input and scalar
+  `(0,24)` shifts produced bit-identical `[0,24]` to `[31,55]` coordinates for
+  both batch elements. It would silently mis-coordinate the second crop.
+- Vector shifts fail in native `torch.linspace` because its start/end must be
+  scalars. `Flux.forward` exposes no explicit `img_ids` input.
+- Correct crop batching therefore requires an adapter/backend change that can
+  construct or accept per-batch image IDs. Spatial crop concatenation is not an
+  equivalent fallback because it changes attention and geometry.
+- The correctness gate failed before model benchmarking; no batch-size-2/4
+  performance or memory claim is made.
