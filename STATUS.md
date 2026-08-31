@@ -140,9 +140,12 @@
   is an explicit custom Euler `SAMPLER` used with the existing ComfyUI guider
   and `SamplerCustomAdvanced`. State, interval coordination, block-DCT
   geometry, crop assembly, terminal release, and model-family coordinates have
-  distinct fail-closed ownership. No production algorithm code was added.
+  distinct fail-closed ownership.
+- Candidate-3 first production slice: implemented under
+  `target/ComfyUI-Blueprint-Diffusion/`. Ten focused unit tests pass. The real
+  FLUX.2 regression is bit-exact with the research harness at every required
+  state/prediction/proposal boundary and final H; no divergence exists.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
-- No production code or nodes were added.
 
 ## Active blockers / unknowns
 
@@ -163,10 +166,8 @@
 
 ## Next concrete milestone
 
-Candidate 2 semantic research remains paused. Candidate 3 with 24x48 block-DCT,
-hard nonterminal coupling, and terminal release is selected for initial
-implementation. The next milestone is only the fail-closed first production
-slice defined in `CANDIDATE3_PRODUCTION_ARCHITECTURE.md`: native FLUX.2 Klein,
-fixed geometry/crops, CFG 1 T2I, and zero-churn Euler through
-`SamplerCustomAdvanced`. Do not add another geometry sweep, optimization, or
-unsupported sampler/model policy.
+Candidate 2 semantic research remains paused. The fail-closed Candidate-3
+production slice is implemented and equivalent. The next milestone should be
+workflow-level ComfyUI node registration/execution qualification and user-facing
+error validation using the existing fixed contract. Do not add another geometry
+sweep, optimization, unsupported sampler/model policy, or new algorithm.

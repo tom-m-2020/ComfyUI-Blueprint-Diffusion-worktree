@@ -5,7 +5,7 @@ node.zip
 !.gitkeep
 references/*
 !references/.gitkeep
-target/ComfyUI-Blueprint-Diffusion
+target/ComfyUI-Blueprint-Diffusion/
 !target/.gitkeep
 docs/official/*
 !docs/official/.gitkeep

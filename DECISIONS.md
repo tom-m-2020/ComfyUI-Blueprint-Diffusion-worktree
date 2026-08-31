@@ -333,3 +333,15 @@ the FLUX.2 coordinate adapter. This is an interface boundary, not a promise of
 Z-Image or Anima support; those families remain fail-closed until qualified.
 The first production slice is deliberately restricted to the exact native
 FLUX.2 Klein, CFG-1 T2I, fixed geometry/crops, zero-churn Euler contract.
+
+## 2026-08-31 — Accept the first Candidate-3 production slice as equivalent
+
+The production sampler is bit-exact with the qualified research harness at all
+required prediction, proposal, accepted-state, initialization, and final-output
+boundaries. Retain the explicit custom `SAMPLER`, immutable pair-state,
+block-DCT geometry, fixed crop assembly, terminal policy, and FLUX.2 adapter as
+the initial production structure.
+
+This accepts only equivalence to the fixed research contract. It does not
+authorize broader geometry, CFG, samplers, editing, model families, caching,
+sparse execution, or performance claims.

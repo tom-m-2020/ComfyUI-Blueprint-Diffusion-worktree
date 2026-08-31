@@ -774,3 +774,25 @@ Detailed design is in `CANDIDATE3_PRODUCTION_ARCHITECTURE.md`.
   accepted interval (1152 global plus 3 x 1024 local). This remains a semantic
   architecture selection; compute, acceleration, and VRAM advantages are not
   yet qualified.
+
+## 2026-08-31 — Candidate-3 first production slice equivalence
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_PRODUCTION_EQUIVALENCE_REPORT.md` and
+`experiments/flux2_candidate3_production_equivalence_results/report.json`.
+
+- The explicit production `SAMPLER` path is bit-exact with the existing
+  Phase-3 experiment path at initial H/G, every global and assembled-local
+  denoised prediction, every Euler proposal, every accepted G/H, and final H.
+  All compared RMS and maximum-absolute differences are zero.
+- The production lifecycle records four atomic accepted intervals. Each has
+  exactly one 1152-token global and three 1024-token local guider predictions;
+  terminal release occurs only on interval 3.
+- Startup block-DCT right-inverse error was `7.15e-7`. Nonterminal accepted
+  invariant errors were at most `7.15e-7`, below the fixed `2e-6` tolerance.
+- Normal production telemetry contains only scalar and shape summaries. The
+  equivalence harness alone injects a capture sink that detaches full tensors
+  to CPU for boundary comparison.
+- Sequential wall times are not a performance comparison because the research
+  path ran first and paid cold-run costs. This result qualifies control/tensor
+  equivalence only, not acceleration or VRAM reduction.
