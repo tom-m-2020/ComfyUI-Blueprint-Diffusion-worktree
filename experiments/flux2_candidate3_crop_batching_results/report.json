@@ -1,0 +1,64 @@
+{
+  "comfy_source": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy\\ldm\\flux\\model.py",
+  "source_sha256": "5fc574e119694e8732ee36b8192507492368a3464310634943606ff6aea200f7",
+  "tested_method": "comfy.ldm.flux.model.Flux.process_img",
+  "input_crop_batch_shape": [
+    2,
+    128,
+    32,
+    32
+  ],
+  "requested_offsets_yx": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      24.0,
+      32.0
+    ]
+  ],
+  "scalar_options_control": {
+    "shape": [
+      2,
+      1024,
+      3
+    ],
+    "batch_0": {
+      "first_yx": [
+        0.0,
+        24.0
+      ],
+      "last_yx": [
+        31.0,
+        55.0
+      ]
+    },
+    "batch_1": {
+      "first_yx": [
+        0.0,
+        24.0
+      ],
+      "last_yx": [
+        31.0,
+        55.0
+      ]
+    },
+    "batch_ids_bit_exact": true
+  },
+  "vector_options_attempt": {
+    "type": "RuntimeError",
+    "message": "linspace only supports 0-dimensional start and end tensors, but got start with 1 dimension(s) and end with 1 dimension(s)."
+  },
+  "forward_signature": "(self, x, timestep, context, y=None, guidance=None, ref_latents=None, control=None, transformer_options={}, **kwargs)",
+  "process_img_source": "    def process_img(self, x, index=0, h_offset=0, w_offset=0, transformer_options={}):\n        bs, c, h, w = x.shape\n        patch_size = self.patch_size\n        x = comfy.ldm.common_dit.pad_to_patch_size(x, (patch_size, patch_size))\n\n        img = rearrange(x, \"b c (h ph) (w pw) -> b (h w) (c ph pw)\", ph=patch_size, pw=patch_size)\n        h_len = ((h + (patch_size // 2)) // patch_size)\n        w_len = ((w + (patch_size // 2)) // patch_size)\n\n        h_offset = ((h_offset + (patch_size // 2)) // patch_size)\n        w_offset = ((w_offset + (patch_size // 2)) // patch_size)\n\n        steps_h = h_len\n        steps_w = w_len\n\n        rope_options = transformer_options.get(\"rope_options\", None)\n        if rope_options is not None:\n            h_len = (h_len - 1.0) * rope_options.get(\"scale_y\", 1.0) + 1.0\n            w_len = (w_len - 1.0) * rope_options.get(\"scale_x\", 1.0) + 1.0\n\n            index += rope_options.get(\"shift_t\", 0.0)\n            h_offset += rope_options.get(\"shift_y\", 0.0)\n            w_offset += rope_options.get(\"shift_x\", 0.0)\n\n        img_ids = torch.zeros((steps_h, steps_w, len(self.params.axes_dim)), device=x.device, dtype=torch.float32)\n        img_ids[:, :, 0] = img_ids[:, :, 1] + index\n        img_ids[:, :, 1] = img_ids[:, :, 1] + torch.linspace(h_offset, h_len - 1 + h_offset, steps=steps_h, device=x.device, dtype=torch.float32).unsqueeze(1)\n        img_ids[:, :, 2] = img_ids[:, :, 2] + torch.linspace(w_offset, w_len - 1 + w_offset, steps=steps_w, device=x.device, dtype=torch.float32).unsqueeze(0)\n        return img, repeat(img_ids, \"h w c -> b (h w) c\", b=bs)\n",
+  "facts": {
+    "process_img_called_once_for_batched_x": true,
+    "single_img_ids_grid_repeated_over_batch": true,
+    "scalar_shift_assigns_same_coordinates_to_every_batch_element": true,
+    "vector_shift_accepted": false,
+    "forward_accepts_explicit_img_ids": false
+  },
+  "existing_adapter_boundary_feasible": false,
+  "verdict": "CROP BATCHING REQUIRES ADAPTER/BACKEND CHANGE"
+}

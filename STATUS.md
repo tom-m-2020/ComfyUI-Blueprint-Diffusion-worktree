@@ -162,6 +162,10 @@
   peak reserved at 1024x2048. Local crop forwards are the dominant cost.
 - Physical free VRAM, alternate GPUs/backends, and optimized performance remain
   unqualified.
+- Candidate-3 crop batching feasibility: stopped at the correctness gate.
+  Current native FLUX.2 repeats one scalar-offset image-ID grid over the batch;
+  vector offsets fail and no explicit per-batch `img_ids` interface exists.
+  No invalid batching benchmark or production change was made.
 
 ## Active blockers / unknowns
 
@@ -184,6 +188,7 @@
 
 Candidate 2 semantic research remains paused. The fail-closed Candidate-3
 production slice is implemented, research-equivalent, and live-workflow
-qualified across the tested target geometries. The measured Phase-6b target is
-local crop model work, but no optimization mechanism is selected or authorized
-automatically. Do not add another geometry sweep or broaden sampler/model scope.
+qualified across the tested target geometries. Local crop model work remains
+the measured optimization target, but ordinary crop batching is blocked by the
+native FLUX.2 coordinate boundary. Any next step requires explicit authority
+for an adapter/backend experiment; do not broaden sampler/model scope.
