@@ -891,3 +891,23 @@ Detailed evidence is in
   equivalent fallback because it changes attention and geometry.
 - The correctness gate failed before model benchmarking; no batch-size-2/4
   performance or memory claim is made.
+
+## 2026-08-31 — Runtime per-batch FLUX.2 coordinate override discriminator
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_RUNTIME_COORDINATE_BATCH_AUDIT.md` and
+`experiments/flux2_candidate3_runtime_coordinate_batch_results/report.json`.
+
+- `Flux.process_img` can be narrowly overridden on one loaded model instance to
+  construct `[B,T,axes]` image IDs with distinct absolute offsets. For crops
+  `(0,0)` and `(24,24)`, patched IDs matched both sequential native grids
+  bit-exactly, and the original method was restored.
+- Exact IDs are insufficient for end-to-end equivalence on the qualified W4A8
+  runtime. Batched predictions differed from sequential by `0.4189/0.4297`
+  maximum and `0.0296/0.0356` RMS for the two crops.
+- An ordinary control batching the same crop twice with the same scalar offset
+  showed the same `0.4189` maximum and `0.0296` RMS drift. The failure lies in
+  batch-size-sensitive guider/model/backend execution, not distinct coordinate
+  construction.
+- `Flux2Adapter` alone cannot deliver the required sequential prediction
+  ensemble. Correcting B=2 execution requires a deeper backend investigation.
