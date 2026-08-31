@@ -171,6 +171,10 @@
   materially different even for duplicated inputs with identical scalar
   coordinates. Adapter-only batching is not qualified; no production change or
   performance claim was made.
+- B=1/B=2 localization: the first mismatch is now isolated to the unquantized
+  bfloat16 `Flux.img_in` output, after exact sampler input, patchification, IDs,
+  and embedding input. It amplifies through the model to the known prediction
+  drift. Production remains unchanged and crop batching remains unqualified.
 
 ## Active blockers / unknowns
 
@@ -195,6 +199,6 @@ Candidate 2 semantic research remains paused. The fail-closed Candidate-3
 production slice is implemented, research-equivalent, and live-workflow
 qualified across the tested target geometries. Local crop model work remains
 the measured optimization target, but ordinary crop batching is blocked by
-batch-size-sensitive native execution below coordinate construction. Any next
-step requires explicit authority for a deeper guider/model/backend audit; do
-not broaden sampler/model scope automatically.
+batch-size-sensitive unquantized embedding execution below coordinate
+construction. Any next step requires explicit authority for backend linear/GEMM
+equivalence work; do not broaden sampler/model scope automatically.

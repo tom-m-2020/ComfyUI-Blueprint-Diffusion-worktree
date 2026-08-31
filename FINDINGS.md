@@ -911,3 +911,26 @@ Detailed evidence is in
   construction.
 - `Flux2Adapter` alone cannot deliver the required sequential prediction
   ensemble. Correcting B=2 execution requires a deeper backend investigation.
+
+## 2026-09-01 — B=1 versus duplicated B=2 divergence localization
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_B1_B2_DIVERGENCE_LOCALIZATION.md` and
+`experiments/flux2_candidate3_b1_b2_divergence_results/report.json`.
+
+- Sampler input, patchified image tokens, absolute image IDs, and the input to
+  `Flux.img_in` are bit-exact between B=1 and each duplicated B=2 element.
+- The first differing tensor is `Flux.img_in` output: bfloat16
+  `[B,1024,3072]`, with max absolute difference `0.00390625` and RMS
+  `3.4613e-6` for each B=2 element versus B=1.
+- `img_in` is an unquantized `comfy.ops.Linear` in this checkpoint: its
+  `[3072,128]` weight is plain bfloat16, `quant_format` and `layout_type` are
+  absent, and it has no input or pre-quant scale. The first divergence is
+  therefore batch-shape-sensitive embedding linear execution, not W4A8
+  scaling or a quantized operator.
+- Text projection and RoPE remain exact. The timestep embedding also diverges
+  from an exact input, independently confirming that batch-shape-sensitive
+  linear execution exists before attention.
+- The initial embedding difference amplifies to `0.418861` max and `0.029550`
+  RMS at the final prediction. No claim is made about the lower-level CUDA GEMM
+  cause without a separate backend/kernel investigation.
