@@ -288,3 +288,17 @@ the terminal-release lifecycle fixed. It does not adopt DCT coupling for
 production and does not authorize a geometry/operator sweep. Specifically do
 not substitute ordinary bilinear resizing, an anisotropic `16x64`/`32x32`
 state, or a global pseudoinverse without new evidence.
+
+## 2026-08-31 — Retain 24x48 block-DCT as the leading Candidate-3 geometry
+
+Under the fixed Phase-3c scene and lifecycle, 24x48 block-DCT terminal release
+removed the small second car and two thin extra trees that survived 16x32
+mean/nearest coupling. It also improved final and low-frequency error versus
+dense, preserved local detail, and showed no visible macroblock artifacts.
+
+Retain this geometry for further Candidate-3 research, but do not productionize
+it. The experiment changed both spatial bandwidth and the mapped-noise variance
+(0.563 versus about 0.25), so it does not establish density as the sole cause.
+It also raises runtime and global token work. No geometry sweep, alternate
+operator, soft coupling, or production optimization is authorized by this
+decision.

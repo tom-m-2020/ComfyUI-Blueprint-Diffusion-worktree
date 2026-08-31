@@ -685,3 +685,37 @@ Detailed analysis is in
 - The operator preserves aspect ratio and equal per-axis sampling. Its main new
   assumptions are a separable rectangular passband, even-reflected local DCT
   boundaries, and possible `4x4` macroblock artifacts.
+
+## 2026-08-31 — Candidate-3 higher-bandwidth runtime result
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_HIGHER_BANDWIDTH_REPORT.md` and
+`experiments/flux2_candidate3_higher_bandwidth_results/report.json`.
+
+### Runtime evidence
+
+- Synthetic `D(U(G))` maximum error was `7.15e-7` before model load. Every
+  nonterminal coupled acceptance remained within `9.54e-7` maximum error.
+  D/E lifecycle isolation and C.H/B.H bit-exactness also passed.
+- Mapped 24x48 G noise variance was 0.563112 of H, close to the predicted
+  0.5625 and materially different from Phase 3c's approximately 0.25. The
+  decoded global branch was independently coherent and unique.
+- Terminal-release 24x48 removed the Phase-3c small second car and two thin
+  extra trees while preserving one centered person, one left car, one right
+  tree, perspective, ground continuity, and sharp local detail.
+- Final RMS versus dense improved from 0.676254 at 16x32 to 0.549170 at 24x48;
+  low-frequency RMS improved from 0.354860 to 0.245447. Terminal overlap RMS
+  was 0.242493 versus tiled-only 0.261909.
+- No decoded 4x4/3x3 block pattern was visible in sky, ground, horizon, tree
+  boundaries, or large gradients. The hard terminal projection still ghosted
+  details, so terminal release remains necessary.
+- E runtime increased from 3.898 to 4.419 seconds and peak CUDA allocation from
+  2.4987 to 2.5135 GiB versus the 16x32 run. These are run-specific telemetry,
+  not broad performance claims.
+
+### Conclusion
+
+- The selected 24x48 block-DCT geometry resolves the known secondary
+  duplication under the complete operator/noise contract and becomes the
+  leading Candidate-3 research geometry. The result does not isolate bandwidth
+  from initialization variance and does not authorize production.

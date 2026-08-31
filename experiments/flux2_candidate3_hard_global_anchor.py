@@ -44,20 +44,89 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--prompt", default=phase2.PROMPT)
     parser.add_argument("--seed", type=int, default=20260829)
+    parser.add_argument(
+        "--global-geometry",
+        choices=("mean_16x32", "block_dct_24x48"),
+        default="mean_16x32",
+    )
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
 
-def restrict(value: torch.Tensor) -> torch.Tensor:
+def mean_restrict(value: torch.Tensor) -> torch.Tensor:
     """D: nonoverlapping 2x2 area restriction."""
     if value.shape[-2] % 2 or value.shape[-1] % 2:
         raise ValueError(f"D requires even spatial dimensions, got {value.shape[-2:]}")
     return F.avg_pool2d(value, kernel_size=2, stride=2)
 
 
-def prolong(value: torch.Tensor) -> torch.Tensor:
+def mean_prolong(value: torch.Tensor) -> torch.Tensor:
     """U: 2x nearest-neighbor prolongation; D(U(x)) == x."""
     return F.interpolate(value, scale_factor=2, mode="nearest")
+
+
+def dct_matrix(size: int, device: torch.device, dtype: torch.dtype) -> torch.Tensor:
+    positions = torch.arange(size, device=device, dtype=torch.float64)
+    frequencies = positions[:, None]
+    matrix = torch.cos(math.pi / size * (positions[None, :] + 0.5) * frequencies)
+    matrix[0] *= math.sqrt(1.0 / size)
+    matrix[1:] *= math.sqrt(2.0 / size)
+    return matrix.to(dtype=dtype)
+
+
+def _blocks_to_grid(blocks: torch.Tensor) -> torch.Tensor:
+    batch, channels, blocks_y, blocks_x, local_h, local_w = blocks.shape
+    return blocks.permute(0, 1, 2, 4, 3, 5).reshape(
+        batch, channels, blocks_y * local_h, blocks_x * local_w
+    )
+
+
+def _grid_to_blocks(value: torch.Tensor, block_h: int, block_w: int) -> torch.Tensor:
+    batch, channels, height, width = value.shape
+    if height % block_h or width % block_w:
+        raise ValueError(
+            f"Grid {value.shape[-2:]} is not divisible by block {(block_h, block_w)}."
+        )
+    blocks_y = height // block_h
+    blocks_x = width // block_w
+    return value.reshape(batch, channels, blocks_y, block_h, blocks_x, block_w).permute(
+        0, 1, 2, 4, 3, 5
+    )
+
+
+def block_dct_restrict(value: torch.Tensor) -> torch.Tensor:
+    """D: local constant-preserving 4x4 -> 3x3 orthonormal DCT restriction."""
+    work = value.float()
+    blocks = _grid_to_blocks(work, 4, 4)
+    q4 = dct_matrix(4, work.device, work.dtype)
+    q3 = dct_matrix(3, work.device, work.dtype)
+    coefficients = torch.matmul(torch.matmul(q4, blocks), q4.T)
+    retained = coefficients[..., :3, :3]
+    global_blocks = 0.75 * torch.matmul(torch.matmul(q3.T, retained), q3)
+    return _blocks_to_grid(global_blocks).to(dtype=value.dtype)
+
+
+def block_dct_prolong(value: torch.Tensor) -> torch.Tensor:
+    """U: local 3x3 -> 4x4 zero-padded orthonormal DCT synthesis."""
+    work = value.float()
+    blocks = _grid_to_blocks(work, 3, 3)
+    q3 = dct_matrix(3, work.device, work.dtype)
+    q4 = dct_matrix(4, work.device, work.dtype)
+    retained = torch.matmul(torch.matmul(q3, blocks), q3.T)
+    coefficients = torch.zeros(
+        (*retained.shape[:-2], 4, 4), dtype=work.dtype, device=work.device
+    )
+    coefficients[..., :3, :3] = retained
+    high_blocks = (4.0 / 3.0) * torch.matmul(torch.matmul(q4.T, coefficients), q4)
+    return _blocks_to_grid(high_blocks).to(dtype=value.dtype)
+
+
+def geometry_operators(name: str):
+    if name == "mean_16x32":
+        return mean_restrict, mean_prolong, (16, 32)
+    if name == "block_dct_24x48":
+        return block_dct_restrict, block_dct_prolong, (24, 48)
+    raise ValueError(name)
 
 
 def tensor_difference(value: torch.Tensor, reference: torch.Tensor) -> dict[str, float]:
@@ -168,13 +237,19 @@ class TrajectoryTrace:
 
 
 class Candidate3Sampler(phase2.comfy.samplers.Sampler):
-    def __init__(self, variant, target_hw, global_hw, crops, trace, seed) -> None:
+    def __init__(
+        self, variant, target_hw, global_hw, crops, trace, seed,
+        restrict_fn, prolong_fn, operator_name,
+    ) -> None:
         self.variant = variant
         self.target_hw = target_hw
         self.global_hw = global_hw
         self.crops = crops
         self.trace = trace
         self.seed = seed
+        self.restrict = restrict_fn
+        self.prolong = prolong_fn
+        self.operator_name = operator_name
         self.global_rope = phase2.rope_for_global(*target_hw, *global_hw)
 
     def local_prediction(self, model, h, sigma, base_options, step):
@@ -237,7 +312,7 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
         if denoise_mask is not None:
             raise ValueError("This T2I falsifier does not use a mask.")
         h = noise
-        g = restrict(h) if self.variant in {"uncoupled", "hard_anchor", "terminal_release"} else None
+        g = self.restrict(h) if self.variant in {"uncoupled", "hard_anchor", "terminal_release"} else None
         total = len(sigmas) - 1
         previous_projection = None
 
@@ -296,11 +371,11 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
                 g_derivative = (g - g_prediction) / sigma
                 g_proposal = g + g_derivative * (sigma_next - sigma)
                 self.trace.g_proposals[step] = g_proposal.detach().float().cpu()
-                coarse_h_proposal = restrict(h_proposal)
+                coarse_h_proposal = self.restrict(h_proposal)
                 consistency_delta = g_proposal - coarse_h_proposal
-                projection = prolong(consistency_delta)
+                projection = self.prolong(consistency_delta)
                 coarse_global_update = g_proposal - g
-                coarse_local_update = coarse_h_proposal - restrict(h)
+                coarse_local_update = coarse_h_proposal - self.restrict(h)
 
                 release_terminal = self.variant == "terminal_release" and float(sigma_next) == 0.0
                 apply_projection = self.variant in {"hard_anchor", "terminal_release"} and not release_terminal
@@ -313,13 +388,13 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
                 g_next = g_proposal
 
                 before = tensor_difference(coarse_h_proposal, g_proposal)
-                after = tensor_difference(restrict(h_next), g_next)
+                after = tensor_difference(self.restrict(h_next), g_next)
                 if apply_projection and after["max_abs"] > 1e-5:
                     raise AssertionError(f"D(H_next) != G_next at step {step}: {after}")
                 if apply_projection and not torch.equal(
-                    restrict(applied_projection), consistency_delta
+                    self.restrict(applied_projection), consistency_delta
                 ):
-                    difference = tensor_difference(restrict(applied_projection), consistency_delta)
+                    difference = tensor_difference(self.restrict(applied_projection), consistency_delta)
                     if difference["max_abs"] > 1e-6:
                         raise AssertionError(f"D/U projection identity failed: {difference}")
 
@@ -354,6 +429,7 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
                         "global_forwards": 1,
                         "local_forwards": 3,
                         "global_rope_options": self.global_rope,
+                        "global_operator": self.operator_name,
                         "shared_sigma_for_global_and_local": all(
                             call["sigma"] == float(sigma) for call in calls
                         ),
@@ -436,15 +512,24 @@ def save_contact_sheet(paths: list[tuple[str, Path]], output: Path) -> None:
 def dry_run() -> None:
     torch.manual_seed(3)
     h = torch.randn(1, 2, 8, 12)
-    g = restrict(h)
-    identity = tensor_difference(restrict(prolong(g)), g)
+    g = mean_restrict(h)
+    identity = tensor_difference(mean_restrict(mean_prolong(g)), g)
     g_proposal = g + 0.1 * torch.randn_like(g)
     h_proposal = h + 0.1 * torch.randn_like(h)
-    h_next = h_proposal + prolong(g_proposal - restrict(h_proposal))
-    invariant = tensor_difference(restrict(h_next), g_proposal)
+    h_next = h_proposal + mean_prolong(g_proposal - mean_restrict(h_proposal))
+    invariant = tensor_difference(mean_restrict(h_next), g_proposal)
     if identity["max_abs"] > 1e-7 or invariant["max_abs"] > 1e-6:
         raise AssertionError({"identity": identity, "invariant": invariant})
-    print(json.dumps({"D_U_identity": identity, "accepted_invariant": invariant}, indent=2))
+    dct_h = torch.randn(1, 2, 8, 12)
+    dct_g = block_dct_restrict(dct_h)
+    dct_identity = tensor_difference(block_dct_restrict(block_dct_prolong(dct_g)), dct_g)
+    if dct_identity["max_abs"] > 2e-6:
+        raise AssertionError({"block_dct_identity": dct_identity})
+    print(json.dumps({
+        "mean_D_U_identity": identity,
+        "mean_accepted_invariant": invariant,
+        "block_dct_D_U_identity": dct_identity,
+    }, indent=2))
 
 
 def main() -> None:
@@ -456,7 +541,7 @@ def main() -> None:
 
     width, height = 1024, 512
     target_hw = (height // 16, width // 16)
-    global_hw = (256 // 16, 512 // 16)
+    restrict_fn, prolong_fn, global_hw = geometry_operators(args.global_geometry)
     crop_hw = (512 // 16, 512 // 16)
     overlap_pixels = 128
     seed = args.seed
@@ -464,6 +549,16 @@ def main() -> None:
     crops = phase2.crops_for_canvas(*target_hw, *crop_hw, overlap_pixels // 16)
     sigmas = phase2.get_schedule(4, math.prod(target_hw)).float().clone()
     global_rope = phase2.rope_for_global(*target_hw, *global_hw)
+
+    synthetic_generator = torch.Generator().manual_seed(314159)
+    synthetic_g = torch.randn((1, 3, *global_hw), generator=synthetic_generator)
+    synthetic_right_inverse = tensor_difference(
+        restrict_fn(prolong_fn(synthetic_g)), synthetic_g
+    )
+    if synthetic_right_inverse["max_abs"] > 2e-6:
+        raise AssertionError(
+            f"Synthetic D(U(G)) right inverse failed before model load: {synthetic_right_inverse}"
+        )
 
     model = phase2.comfy.sd.load_diffusion_model(str(phase2.MODEL_PATH), model_options={})
     vae = phase2.comfy.sd.VAE(
@@ -479,14 +574,16 @@ def main() -> None:
     phase2.comfy.model_management.soft_empty_cache()
 
     noise = torch.randn((1, 128, *target_hw), generator=torch.Generator().manual_seed(seed))
-    mapped_global_noise = restrict(noise)
+    mapped_global_noise = restrict_fn(noise)
     initialization = {
         "H_0": phase2.stats(noise),
-        "G_0_equals_D_H_0": tensor_difference(mapped_global_noise, restrict(noise)),
+        "G_0_equals_D_H_0": tensor_difference(mapped_global_noise, restrict_fn(noise)),
         "G_0": phase2.stats(mapped_global_noise),
         "variance_ratio_G_to_H": float(mapped_global_noise.float().var() / noise.float().var()),
         "adjacent_correlation_H": adjacent_correlation(noise),
         "adjacent_correlation_G": adjacent_correlation(mapped_global_noise),
+        "operator": args.global_geometry,
+        "predicted_variance_ratio": 0.5625 if args.global_geometry == "block_dct_24x48" else 0.25,
     }
 
     outputs: dict[str, torch.Tensor] = {}
@@ -494,7 +591,10 @@ def main() -> None:
     for name, variant in VARIANTS:
         print(f"Running {name}...", flush=True)
         trace = TrajectoryTrace(name, variant)
-        sampler = Candidate3Sampler(variant, target_hw, global_hw, crops, trace, seed)
+        sampler = Candidate3Sampler(
+            variant, target_hw, global_hw, crops, trace, seed,
+            restrict_fn, prolong_fn, args.global_geometry,
+        )
         outputs[name] = run_trajectory(model, noise, positive, negative, sigmas, sampler, seed)
         traces[name] = trace
 
@@ -643,22 +743,32 @@ def main() -> None:
             "sigmas": sigmas.tolist(),
             "target_image_hw": [height, width],
             "target_latent_hw": list(target_hw),
-            "global_image_hw": [256, 512],
+            "global_image_hw": [global_hw[0] * 16, global_hw[1] * 16],
             "global_latent_hw": list(global_hw),
             "crop_image_hw": [512, 512],
             "crop_latent_hw": list(crop_hw),
             "overlap_pixels": overlap_pixels,
             "crops": [crop.__dict__ for crop in crops],
-            "D": "torch.avg_pool2d(kernel_size=2, stride=2)",
-            "U": "torch.interpolate(scale_factor=2, mode='nearest')",
+            "global_geometry_operator": args.global_geometry,
+            "D": (
+                "blockwise constant-preserving orthonormal DCT 4x4 -> retained 3x3 -> spatial 3x3"
+                if args.global_geometry == "block_dct_24x48" else
+                "torch.avg_pool2d(kernel_size=2, stride=2)"
+            ),
+            "U": (
+                "blockwise spatial 3x3 -> DCT 3x3 -> zero-pad 4x4 -> orthonormal synthesis"
+                if args.global_geometry == "block_dct_24x48" else
+                "torch.interpolate(scale_factor=2, mode='nearest')"
+            ),
+            "synthetic_right_inverse_before_model": synthetic_right_inverse,
             "global_coordinate_convention": {
-                "description": "16x32 low-density grid spans the full 32x64 target coordinate endpoints",
+                "description": f"{global_hw[0]}x{global_hw[1]} global grid spans the full 32x64 target coordinate endpoints",
                 "rope_options": global_rope,
                 "y_coordinate": f"y_global * {global_rope['scale_y']}",
                 "x_coordinate": f"x_global * {global_rope['scale_x']}",
                 "endpoint_mapping": {
-                    "global_y_0_to_15": [0.0, 31.0],
-                    "global_x_0_to_31": [0.0, 63.0],
+                    f"global_y_0_to_{global_hw[0] - 1}": [0.0, 31.0],
+                    f"global_x_0_to_{global_hw[1] - 1}": [0.0, 63.0],
                 },
             },
             "coupling": "G_next=G*; H_next=H*+U(G*-D(H*))",
@@ -711,7 +821,7 @@ def main() -> None:
             "terminal_release_vs_dense": phase2d.comparison(outputs["E_TERMINAL_RELEASE"], outputs["A_DENSE"]),
             "terminal_release_vs_hard_anchor": phase2d.comparison(outputs["E_TERMINAL_RELEASE"], outputs["D_HARD_GLOBAL_ANCHOR"]),
             "terminal_release_coarse_consistency": phase2d.comparison(
-                restrict(outputs["E_TERMINAL_RELEASE"]),
+                restrict_fn(outputs["E_TERMINAL_RELEASE"]),
                 traces["E_TERMINAL_RELEASE"].g_after[3],
             ),
         },

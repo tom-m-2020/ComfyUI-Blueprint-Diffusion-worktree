@@ -54,6 +54,9 @@
   person/car/tree prompt and seed, with all five controls and real outputs.
 - Candidate-3 higher-bandwidth geometry design selecting one exact-right-inverse
   `24x48` block-DCT operator pair; no model or sampler execution.
+- Phase 3d 24x48 block-DCT higher-bandwidth discriminator with synthetic and
+  accepted-state invariant checks, all five trajectories, decoded artifact
+  inspection, performance telemetry, and focused report.
 
 ## Validation status
 
@@ -122,6 +125,10 @@
   and numerical agreement without restoring the tiled-only second person or
   competing large tree, but a small duplicate car and two thin extra trees
   remain under both D and E.
+- Candidate-3 24x48 result: the known extra car/trees are removed, numerical
+  agreement improves materially, global decoding is valid, and no macroblock
+  artifacts are visible. Runtime/global work increases as expected; terminal
+  release remains necessary.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -146,7 +153,7 @@
 
 Candidate 2 semantic research remains paused. Preserve terminal release as
 preferable to terminal projection in the tested Candidate-3 lifecycle, but do
-not proceed to production or soft anchoring. If authorized, the next single
-runtime setup is `24x48` G with blockwise `4x4 -> 3x3` DCT restriction/synthesis
-and otherwise unchanged Phase-3c lifecycle. Do not substitute a resize
-pseudoinverse, anisotropic geometry, or geometry sweep.
+not proceed to production or soft anchoring. Treat 24x48 block-DCT as the
+leading experimental geometry, with the noise-distribution confound explicitly
+open. Stop at this discriminator; do not begin a geometry sweep, production
+integration, or optimization automatically.
