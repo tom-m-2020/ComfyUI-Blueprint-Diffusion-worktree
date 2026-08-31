@@ -123,6 +123,7 @@ class TestValidation(unittest.TestCase):
             torch.tensor([1.0, 0.75, 0.75, 0.25, 0.0]),
             torch.tensor([1.0, 0.75, 0.5, 0.25, 0.1]),
             torch.tensor([1.0, 0.75, float("nan"), 0.25, 0.0]),
+            torch.tensor([0.9, 0.7, 0.5, 0.25, 0.0]),
         )
         for sigmas in invalid:
             with self.subTest(sigmas=sigmas):

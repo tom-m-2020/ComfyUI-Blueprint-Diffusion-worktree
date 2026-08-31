@@ -796,3 +796,27 @@ Detailed evidence is in
 - Sequential wall times are not a performance comparison because the research
   path ran first and paid cold-run costs. This result qualifies control/tensor
   equivalence only, not acceleration or VRAM reduction.
+
+## 2026-08-31 — Candidate-3 live ComfyUI workflow qualification
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_LIVE_WORKFLOW_REPORT.md` and
+`experiments/live_comfyui_candidate3_results/report.json`.
+
+- The production package registers from ComfyUI's ordinary `custom_nodes`
+  directory as `Blueprint Candidate-3 Euler Sampler`, outputs a normal
+  `SAMPLER`, and executes through `BasicGuider`, `SamplerCustomAdvanced`, and
+  the normal VAE decode/save path.
+- Three valid queue executions, including one after `/free` model/cache unload
+  and one after invalid runs plus cancellation, each emitted four websocket
+  previews and produced the same decoded RGB pixel hash.
+- Cancellation after the first interval produced `execution_interrupted` and
+  no final output. The next valid execution completed identically, providing
+  live evidence that per-invocation `(G,H)` state does not poison later runs.
+- Wrong resolution, CFG, model family, masks, nonempty input, partial denoise,
+  sigma count, schedule orientation/termination, and spatial conditioning all
+  failed with targeted errors and zero preview frames.
+- Live partial-denoise testing showed that ComfyUI's inherited `max_denoise`
+  heuristic is not a sufficiently strict fixed-slice guard. Requiring
+  `sigma[0] == 1.0` is the explicit supported-schedule boundary; this changes
+  validation only, not the qualified algorithm.

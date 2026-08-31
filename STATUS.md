@@ -145,6 +145,11 @@
   `target/ComfyUI-Blueprint-Diffusion/`. Ten focused unit tests pass. The real
   FLUX.2 regression is bit-exact with the research harness at every required
   state/prediction/proposal boundary and final H; no divergence exists.
+- Candidate-3 live workflow: qualified as an ordinary custom node in ComfyUI
+  0.33.0. Registration, `BasicGuider`/`SamplerCustomAdvanced`, 1024x512 empty
+  latent, four interval previews, normal VAE decode, exact decoded-pixel seed
+  reproducibility, unload/reload, cancellation recovery, and all requested
+  fail-closed controls pass. A loadable workflow is saved under `experiments/`.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 
 ## Active blockers / unknowns
@@ -167,7 +172,7 @@
 ## Next concrete milestone
 
 Candidate 2 semantic research remains paused. The fail-closed Candidate-3
-production slice is implemented and equivalent. The next milestone should be
-workflow-level ComfyUI node registration/execution qualification and user-facing
-error validation using the existing fixed contract. Do not add another geometry
-sweep, optimization, unsupported sampler/model policy, or new algorithm.
+production slice is implemented, research-equivalent, and live-workflow
+qualified. Any next milestone requires explicit scope; do not add another
+geometry sweep, optimization, unsupported sampler/model policy, or new
+algorithm automatically.
