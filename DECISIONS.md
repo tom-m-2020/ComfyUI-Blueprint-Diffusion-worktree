@@ -401,3 +401,16 @@ forward does not accept explicit per-batch image IDs.
 Do not publish incorrect crop batching or benchmark it as an optimization.
 Correct batching requires a separately authorized adapter/backend coordinate
 change and a new sequential-versus-batched prediction equivalence gate.
+
+## 2026-08-31 — Do not promote the runtime coordinate override to production
+
+The experiment-only `process_img` override proves that distinct per-batch crop
+IDs can be constructed narrowly and exactly without modifying transformer
+blocks. It does not make crop predictions equivalent: the qualified native
+W4A8 path changes materially at batch size two even for duplicated input and
+identical scalar coordinates.
+
+Do not add this override to `Flux2Adapter` or benchmark it as Candidate-3
+optimization. The remaining blocker is below coordinate preparation and
+requires a separately scoped guider/model/backend investigation. Accepting the
+observed drift would change the qualified prediction ensemble.

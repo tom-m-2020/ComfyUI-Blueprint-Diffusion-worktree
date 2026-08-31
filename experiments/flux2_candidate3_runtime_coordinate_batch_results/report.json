@@ -1,0 +1,129 @@
+{
+  "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+  "prompt": "A cinematic wide-angle photograph of exactly one large full-body woman standing centered in the foreground, exactly one red vintage car on the left and exactly one tall green tree on the right, continuous ground, coherent perspective, no duplicate people, cars, or trees",
+  "seed": 20260831,
+  "implementation_scope": "experiment-only instance method override of Flux.process_img; restored immediately after one batched call",
+  "target_H_shape": [
+    128,
+    64
+  ],
+  "sigma": 1.0,
+  "accepted_state_source": "initial H from mapped ordinary noise at sigma[0]",
+  "input_batch_shape": [
+    2,
+    128,
+    32,
+    32
+  ],
+  "crop_order": [
+    0,
+    4
+  ],
+  "crops": [
+    {
+      "index": 0,
+      "y": 0,
+      "x": 0,
+      "height": 32,
+      "width": 32
+    },
+    {
+      "index": 4,
+      "y": 24,
+      "x": 24,
+      "height": 32,
+      "width": 32
+    }
+  ],
+  "absolute_coordinate_endpoints": [
+    {
+      "first_yx": [
+        0,
+        0
+      ],
+      "last_yx": [
+        31,
+        31
+      ]
+    },
+    {
+      "first_yx": [
+        24,
+        24
+      ],
+      "last_yx": [
+        55,
+        55
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs": 0.4188613295555115,
+      "rms": 0.02955017425119877,
+      "bit_exact": false,
+      "finite": true
+    },
+    {
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs": 0.4296875,
+      "rms": 0.035615768283605576,
+      "bit_exact": false,
+      "finite": true
+    }
+  ],
+  "coordinate_id_comparisons": [
+    {
+      "bit_exact": true,
+      "max_abs": 0.0
+    },
+    {
+      "bit_exact": true,
+      "max_abs": 0.0
+    }
+  ],
+  "ordinary_same_crop_same_coordinate_batch_control": [
+    {
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs": 0.4188613295555115,
+      "rms": 0.02955017425119877,
+      "bit_exact": false,
+      "finite": true
+    },
+    {
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "max_abs": 0.4188613295555115,
+      "rms": 0.02955017425119877,
+      "bit_exact": false,
+      "finite": true
+    }
+  ],
+  "tolerance": 2e-05,
+  "within_tolerance": false,
+  "coordinate_ids_bit_exact": true,
+  "ordinary_batch_within_tolerance": false,
+  "original_method_restored": true,
+  "no_cross_crop_attention": "batch dimension remains independent; no spatial concatenation",
+  "verdict": "NATIVE BATCH EXECUTION NOT EQUIVALENT"
+}

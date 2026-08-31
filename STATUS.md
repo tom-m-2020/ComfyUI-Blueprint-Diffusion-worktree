@@ -166,6 +166,11 @@
   Current native FLUX.2 repeats one scalar-offset image-ID grid over the batch;
   vector offsets fail and no explicit per-batch `img_ids` interface exists.
   No invalid batching benchmark or production change was made.
+- Runtime coordinate follow-up: a scoped `process_img` override produced
+  bit-exact per-batch absolute IDs, but native B=2 predictions remained
+  materially different even for duplicated inputs with identical scalar
+  coordinates. Adapter-only batching is not qualified; no production change or
+  performance claim was made.
 
 ## Active blockers / unknowns
 
@@ -189,6 +194,7 @@
 Candidate 2 semantic research remains paused. The fail-closed Candidate-3
 production slice is implemented, research-equivalent, and live-workflow
 qualified across the tested target geometries. Local crop model work remains
-the measured optimization target, but ordinary crop batching is blocked by the
-native FLUX.2 coordinate boundary. Any next step requires explicit authority
-for an adapter/backend experiment; do not broaden sampler/model scope.
+the measured optimization target, but ordinary crop batching is blocked by
+batch-size-sensitive native execution below coordinate construction. Any next
+step requires explicit authority for a deeper guider/model/backend audit; do
+not broaden sampler/model scope automatically.
