@@ -50,6 +50,8 @@
 - Phase 3b terminal-release discriminator adding one fixed lifecycle variant,
   with D/E bit-exact pre-acceptance controls, final metrics, decoded comparison,
   and focused report.
+- Phase 3c fixed-lifecycle generalization qualification using a new asymmetric
+  person/car/tree prompt and seed, with all five controls and real outputs.
 
 ## Validation status
 
@@ -114,6 +116,10 @@
   the hard-coupled single-scene organization, removes most terminal ghosting,
   and improves final/low-frequency RMS versus both hard anchoring and tiled-only.
   D/E differ only at final acceptance.
+- Candidate-3 generalization: partial. Terminal release again improves detail
+  and numerical agreement without restoring the tiled-only second person or
+  competing large tree, but a small duplicate car and two thin extra trees
+  remain under both D and E.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -136,8 +142,8 @@
 
 ## Next concrete milestone
 
-Candidate 2 semantic research remains paused. Preserve terminal release as the
-current Candidate-3 research policy, but do not implement production or proceed
-automatically to soft anchoring. The next work, if authorized, should qualify
-this fixed lifecycle on another composition-stress prompt/seed rather than
-altering coupling strength, operators, or schedule.
+Candidate 2 semantic research remains paused. Preserve terminal release as
+preferable to terminal projection in the tested Candidate-3 lifecycle, but do
+not proceed to production or soft anchoring. Exact secondary-object uniqueness
+remains unresolved under fixed intermediate coarse consistency; stop at this
+qualification boundary unless a new discriminator is explicitly requested.

@@ -634,3 +634,32 @@ Detailed evidence is in
   proposal can remain authoritative without immediately abandoning the global
   scene plan. This is positive Candidate-3 evidence, not yet a general or
   production-qualified policy.
+
+## 2026-08-31 — Candidate-3 terminal-release generalization result
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_TERMINAL_RELEASE_GENERALIZATION_REPORT.md` and
+`experiments/flux2_candidate3_terminal_release_generalization_results/report.json`.
+
+### Runtime evidence
+
+- With only prompt and seed changed, every lifecycle control passed: C.H was
+  bit-exact with B.H, D/E were bit-exact through terminal proposal, all
+  intermediate invariants held, and only final H acceptance differed.
+- Terminal release reduced final RMS versus dense to 0.676254, from 0.755579
+  for hard anchoring and 0.756690 for tiled-only. Low-frequency RMS fell to
+  0.354860 from 0.449037 and 0.444719 respectively.
+- E preserved one centered person, the dominant left red car, the dominant
+  right tree, coherent perspective, and continuous ground while removing most
+  D terminal ghosting. It did not restore tiled-only's second person or second
+  competing large tree.
+- E retained one small extra background car and two thin extra trees. These
+  were already present in D's identical terminal proposal and survived D's
+  projection, so terminal release did not cause the semantic extras.
+
+### Conclusion
+
+- Terminal release's detail-preserving lifecycle effect generalizes to a second
+  non-architectural scene, but fixed intermediate coarse consistency does not
+  guarantee exact secondary-object uniqueness. Candidate 3 receives partial
+  generalization evidence and remains unqualified for production.
