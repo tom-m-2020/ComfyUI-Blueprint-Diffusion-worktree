@@ -663,3 +663,25 @@ Detailed evidence is in
   non-architectural scene, but fixed intermediate coarse consistency does not
   guarantee exact secondary-object uniqueness. Candidate 3 receives partial
   generalization evidence and remains unqualified for production.
+
+## 2026-08-31 — Candidate-3 higher-bandwidth geometry selection
+
+Detailed analysis is in
+`experiments/CANDIDATE3_HIGHER_BANDWIDTH_GEOMETRY_NOTE.md`.
+
+### Mathematical result
+
+- A `24x48` global state admits a clean local right-inverse pair by partitioning
+  H into `4x4` blocks, retaining each block's lowest `3x3` orthonormal DCT
+  coefficients, and reconstructing a spatial `3x3` G block with scale `3/4`.
+  U performs the inverse `3x3` DCT, zero-pads to `4x4`, synthesizes with the
+  `4x4` basis, and scales by `4/3`.
+- `D(U(G)) = G` for every G in exact arithmetic. The construction is the direct
+  higher-bandwidth generalization of current `2x2 mean / nearest`, which is the
+  same block-DCT pair retaining only DC.
+- The 1152-token state is 2.25x current G and 56.25% of dense. With unchanged
+  local coverage, generated-token work rises 17.86% and approximate image-image
+  attention matrix work rises 31.25% versus current Candidate 3.
+- The operator preserves aspect ratio and equal per-axis sampling. Its main new
+  assumptions are a separable rectangular passband, even-reflected local DCT
+  boundaries, and possible `4x4` macroblock artifacts.

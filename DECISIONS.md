@@ -275,3 +275,16 @@ thin trees survived both hard and released terminal states, showing that exact
 intermediate `D(H)=G` does not guarantee object uniqueness. Do not proceed
 automatically to soft anchoring, production integration, or another policy
 sweep.
+
+## 2026-08-31 — Select 24x48 block-DCT geometry for one bandwidth probe
+
+For the next Candidate-3 runtime experiment, use a `24x48` global state formed
+by independent `4x4 H -> 3x3 G` constant-preserving orthonormal DCT restriction,
+with zero-padded DCT synthesis as U. This pair preserves aspect ratio and
+satisfies `D(U(G))=G` in exact arithmetic without a global resize pseudoinverse.
+
+This selection authorizes only one controlled higher-bandwidth experiment with
+the terminal-release lifecycle fixed. It does not adopt DCT coupling for
+production and does not authorize a geometry/operator sweep. Specifically do
+not substitute ordinary bilinear resizing, an anisotropic `16x64`/`32x32`
+state, or a global pseudoinverse without new evidence.

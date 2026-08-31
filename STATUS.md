@@ -52,6 +52,8 @@
   and focused report.
 - Phase 3c fixed-lifecycle generalization qualification using a new asymmetric
   person/car/tree prompt and seed, with all five controls and real outputs.
+- Candidate-3 higher-bandwidth geometry design selecting one exact-right-inverse
+  `24x48` block-DCT operator pair; no model or sampler execution.
 
 ## Validation status
 
@@ -144,6 +146,7 @@
 
 Candidate 2 semantic research remains paused. Preserve terminal release as
 preferable to terminal projection in the tested Candidate-3 lifecycle, but do
-not proceed to production or soft anchoring. Exact secondary-object uniqueness
-remains unresolved under fixed intermediate coarse consistency; stop at this
-qualification boundary unless a new discriminator is explicitly requested.
+not proceed to production or soft anchoring. If authorized, the next single
+runtime setup is `24x48` G with blockwise `4x4 -> 3x3` DCT restriction/synthesis
+and otherwise unchanged Phase-3c lifecycle. Do not substitute a resize
+pseudoinverse, anisotropic geometry, or geometry sweep.
