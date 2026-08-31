@@ -375,3 +375,17 @@ Reject axes below 32 rather than padding local model inputs or inventing
 out-of-canvas coordinate semantics. This phase does not change Candidate-3
 lifecycle, terminal release, CFG/model/sampler boundaries, or authorize
 optimization.
+
+## 2026-08-31 — Target local crop model work in Phase 6b
+
+The Phase-6a baseline establishes that Candidate-3 currently trades runtime for
+peak allocator memory. At 1024x2048 it is 1.90x slower than dense while reducing
+peak allocated/reserved memory by 331/744 MiB. Local crop forwards consume
+14.908 seconds and 76.6% of measured Blueprint model time; DCT, assembly,
+coupling, Euler arithmetic, and coordinator overhead together remain below 1%.
+
+Select local crop model work—the number of local forwards and repeated
+local/overlap token execution—as the one Phase-6b cost center. This does not yet
+select crop geometry, batching, selective execution, caching, or another
+optimization mechanism. Do not prioritize global cadence or coupling kernels
+without contrary measurements.
