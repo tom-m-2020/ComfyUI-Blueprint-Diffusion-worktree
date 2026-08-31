@@ -345,3 +345,15 @@ the initial production structure.
 This accepts only equivalence to the fixed research contract. It does not
 authorize broader geometry, CFG, samplers, editing, model families, caching,
 sparse execution, or performance claims.
+
+## 2026-08-31 — Qualify the fixed Candidate-3 slice for ordinary ComfyUI use
+
+Accept `BlueprintCandidate3EulerSampler` as live-qualified for the exact native
+FLUX.2 Klein 4B, CFG-1, 1024x512 empty-latent, four-interval contract through
+`SamplerCustomAdvanced`. Retain strict rejection of every unqualified path.
+
+Make full denoise explicit by requiring the first sigma to equal 1.0. The live
+partial-denoise control demonstrated that ComfyUI's broader `max_denoise`
+classification cannot define this fixed production boundary. This decision is
+a validation constraint and does not alter Candidate-3 coupling or authorize
+additional schedules.
