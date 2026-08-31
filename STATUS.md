@@ -136,6 +136,11 @@
   variance improves error and suppresses some extras but leaves residual tree/
   vehicle-like structure and worsens overlap; only 24x48 fully resolves the
   known duplication.
+- Candidate-3 production architecture design: complete. The selected boundary
+  is an explicit custom Euler `SAMPLER` used with the existing ComfyUI guider
+  and `SamplerCustomAdvanced`. State, interval coordination, block-DCT
+  geometry, crop assembly, terminal release, and model-family coordinates have
+  distinct fail-closed ownership. No production algorithm code was added.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -158,10 +163,10 @@
 
 ## Next concrete milestone
 
-Candidate 2 semantic research remains paused. Preserve terminal release as
-preferable to terminal projection in the tested Candidate-3 lifecycle, but do
-not proceed to production or soft anchoring. Treat 24x48 block-DCT as the
-leading experimental geometry. The mapped-noise confound is narrowed: scale
-contributes, but does not explain the complete semantic gain. Stop at this
-discriminator; do not begin a scaling/geometry sweep, production integration,
-or optimization automatically.
+Candidate 2 semantic research remains paused. Candidate 3 with 24x48 block-DCT,
+hard nonterminal coupling, and terminal release is selected for initial
+implementation. The next milestone is only the fail-closed first production
+slice defined in `CANDIDATE3_PRODUCTION_ARCHITECTURE.md`: native FLUX.2 Klein,
+fixed geometry/crops, CFG 1 T2I, and zero-churn Euler through
+`SamplerCustomAdvanced`. Do not add another geometry sweep, optimization, or
+unsupported sampler/model policy.

@@ -314,3 +314,22 @@ Retain 24x48 block-DCT as the leading Candidate-3 research geometry. Record
 mapped-state scale as a real contributing factor, not the primary complete
 explanation. This does not distinguish token density from DCT retained content
 and does not authorize another scale/operator sweep or production work.
+
+## 2026-08-31 — Select Candidate 3 and an explicit custom Euler sampler boundary
+
+Select Candidate 3 for the initial Blueprint Diffusion implementation with the
+qualified 24x48 block-DCT global state, hard nonterminal accepted-state
+coupling, and terminal release.
+
+Implement lifecycle ownership as an explicit custom ComfyUI `SAMPLER` used
+through the existing guider and `SamplerCustomAdvanced`. Do not implement the
+algorithm as a stateless model patch: two persistent states and atomic pair
+acceptance belong at the sampler-interval boundary. Do not use a hidden
+`SAMPLER_SAMPLE` model wrapper for the first slice because it obscures the
+Euler-only restriction and makes ordinary sampler selection misleading.
+
+Separate the generic coordinator/state/policy/operator/planner interfaces from
+the FLUX.2 coordinate adapter. This is an interface boundary, not a promise of
+Z-Image or Anima support; those families remain fail-closed until qualified.
+The first production slice is deliberately restricted to the exact native
+FLUX.2 Klein, CFG-1 T2I, fixed geometry/crops, zero-churn Euler contract.

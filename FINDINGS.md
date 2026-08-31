@@ -748,3 +748,29 @@ Detailed evidence is in
   bandwidth or block-DCT content because only that branch fully removes
   secondary duplication and improves overlap. Token density versus DCT content
   remains intentionally unresolved.
+
+## 2026-08-31 — Candidate-3 production boundary audit
+
+Detailed design is in `CANDIDATE3_PRODUCTION_ARCHITECTURE.md`.
+
+- Candidate 3 must own sampler-interval acceptance, not merely model
+  prediction. ComfyUI's ordinary Euler loop invokes its callback before the
+  Euler assignment and then unconditionally assigns one `x`; neither a model
+  patch nor that callback can publish an atomic persistent `(G,H)` pair.
+- ComfyUI's existing guider lifecycle is reusable. `CFGGuider.inner_sample`
+  prepares conditioning/model options and invokes the selected `Sampler.sample`;
+  `SamplerCustomAdvanced` already accepts an arbitrary `SAMPLER`, guider,
+  noise, sigmas, and latent. A custom Candidate-3 `SAMPLER` can therefore own
+  the two-state Euler loop without forking ComfyUI or bypassing its guider.
+- A `SAMPLER_SAMPLE` wrapper could replace the sampler body from a patched
+  model, but it would make an ordinary sampler selection misleading and hide
+  the fail-closed Euler restriction. The cleaner first UI boundary is an
+  explicit Blueprint Euler sampler node, not `MODEL -> patched MODEL`.
+- Generic production ownership separates interval coordination, immutable
+  accepted state, D/U geometry, crop planning/assembly, terminal policy, and a
+  model-family adapter. Only the adapter translates generic canvas/region
+  coordinates into FLUX.2 RoPE/model options.
+- The fixed 24x48 block-DCT contract executes 4224 generated image tokens per
+  accepted interval (1152 global plus 3 x 1024 local). This remains a semantic
+  architecture selection; compute, acceleration, and VRAM advantages are not
+  yet qualified.
