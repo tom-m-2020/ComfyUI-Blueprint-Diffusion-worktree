@@ -26,7 +26,7 @@ if "blueprint_diffusion" not in sys.modules:
 from blueprint_diffusion.adapters.flux2 import Flux2Adapter
 from blueprint_diffusion.geometry.block_dct import BlockDCTGeometry
 from blueprint_diffusion.policies import HardNonterminalTerminalRelease
-from blueprint_diffusion.regions import FixedCropPlanner, OverlapAssembler
+from blueprint_diffusion.regions import FixedCropPlanner, OverlapAssembler, Region
 from blueprint_diffusion.sampling.euler import BlueprintEulerSampler, validate_schedule
 from blueprint_diffusion.sampling.euler import BlueprintCoordinator
 from blueprint_diffusion.state import BlueprintState
@@ -34,7 +34,7 @@ from blueprint_diffusion.state import BlueprintState
 
 class TestBlockDCTGeometry(unittest.TestCase):
     def setUp(self):
-        self.geometry = BlockDCTGeometry()
+        self.geometry = BlockDCTGeometry((32, 64))
 
     def test_right_inverse(self):
         value = torch.randn(1, 3, 24, 48, generator=torch.Generator().manual_seed(7))
@@ -45,6 +45,29 @@ class TestBlockDCTGeometry(unittest.TestCase):
         value = torch.full((1, 2, 32, 64), 3.25)
         reconstructed = self.geometry.prolong(self.geometry.restrict(value))
         self.assertLessEqual(float((reconstructed - value).abs().max()), 2e-6)
+
+    def test_arbitrary_compatible_geometries(self):
+        generator = torch.Generator().manual_seed(8)
+        for high_hw in ((32, 32), (64, 32), (32, 80), (36, 68)):
+            with self.subTest(high_hw=high_hw):
+                geometry = BlockDCTGeometry(high_hw)
+                expected_global = tuple(value // 4 * 3 for value in high_hw)
+                self.assertEqual(geometry.GLOBAL_HW, expected_global)
+                global_value = torch.randn(1, 2, *expected_global, generator=generator)
+                self.assertLessEqual(
+                    geometry.max_right_inverse_error(global_value),
+                    geometry.TOLERANCE,
+                )
+                high_value = torch.full((1, 2, *high_hw), 2.5)
+                reconstructed = geometry.prolong(geometry.restrict(high_value))
+                self.assertLessEqual(
+                    float((reconstructed - high_value).abs().max()), 2e-6
+                )
+
+    def test_incompatible_geometry_fails(self):
+        for high_hw in ((31, 64), (32, 66), (0, 32)):
+            with self.subTest(high_hw=high_hw), self.assertRaises(ValueError):
+                BlockDCTGeometry(high_hw)
 
 
 class TestRegions(unittest.TestCase):
@@ -57,6 +80,70 @@ class TestRegions(unittest.TestCase):
         self.assertTrue(torch.equal(assembled, torch.ones_like(assembled)))
         self.assertTrue(torch.allclose(coverage[:, :, :, :24], torch.ones_like(coverage[:, :, :, :24])))
 
+    def test_portrait_square_and_wide_coverage(self):
+        planner = FixedCropPlanner()
+        assembler = OverlapAssembler()
+        expected = {
+            (64, 32): ((0, 0), (24, 0), (32, 0)),
+            (32, 32): ((0, 0),),
+            (32, 80): ((0, 0), (0, 24), (0, 48)),
+            (64, 80): tuple(
+                (y, x) for y in (0, 24, 32) for x in (0, 24, 48)
+            ),
+        }
+        for target_hw, positions in expected.items():
+            with self.subTest(target_hw=target_hw):
+                regions = planner.plan(target_hw)
+                self.assertEqual(tuple((r.y, r.x) for r in regions), positions)
+                predictions = [torch.ones(1, 2, 32, 32) for _ in regions]
+                assembled, coverage = assembler.assemble(
+                    predictions, regions, target_hw
+                )
+                self.assertGreater(float(coverage.min()), 0.0)
+                self.assertTrue(torch.equal(assembled, torch.ones_like(assembled)))
+
+    def test_small_or_indivisible_target_fails(self):
+        for target_hw in ((28, 32), (32, 28), (33, 64)):
+            with self.subTest(target_hw=target_hw), self.assertRaises(ValueError):
+                FixedCropPlanner().plan(target_hw)
+
+
+class TestFluxCoordinates(unittest.TestCase):
+    def test_global_endpoint_scale_and_crop_offsets(self):
+        calls = []
+
+        def guider(value, sigma, *, model_options, seed):
+            calls.append(model_options["transformer_options"]["rope_options"])
+            return torch.zeros_like(value)
+
+        adapter = Flux2Adapter()
+        base_options = {"transformer_options": {"sentinel": True}}
+        g = torch.zeros(1, 2, 24, 60)
+        adapter.predict_global(
+            guider=guider,
+            g=g,
+            sigma=torch.tensor(1.0),
+            canvas=(32, 80),
+            model_options=base_options,
+            seed=1,
+        )
+        region = Region(0, 0, 48)
+        adapter.predict_region(
+            guider=guider,
+            h_view=torch.zeros(1, 2, 32, 32),
+            sigma=torch.tensor(1.0),
+            canvas=(32, 80),
+            region=region,
+            model_options=base_options,
+            seed=1,
+        )
+        self.assertEqual(
+            calls[0],
+            {"scale_y": 31.0 / 23.0, "scale_x": 79.0 / 59.0},
+        )
+        self.assertEqual(calls[1], {"shift_y": 0.0, "shift_x": 48.0})
+        self.assertEqual(base_options, {"transformer_options": {"sentinel": True}})
+
 
 class TestStateAndPolicy(unittest.TestCase):
     def test_state_is_frozen(self):
@@ -65,7 +152,7 @@ class TestStateAndPolicy(unittest.TestCase):
             state.ordinal = 1
 
     def test_nonterminal_coupling_invariant(self):
-        geometry = BlockDCTGeometry()
+        geometry = BlockDCTGeometry((32, 64))
         policy = HardNonterminalTerminalRelease()
         h_star = torch.randn(1, 2, 32, 64, generator=torch.Generator().manual_seed(1))
         g_star = torch.randn(1, 2, 24, 48, generator=torch.Generator().manual_seed(2))
@@ -77,7 +164,7 @@ class TestStateAndPolicy(unittest.TestCase):
         self.assertLessEqual(error, geometry.TOLERANCE)
 
     def test_terminal_release(self):
-        geometry = BlockDCTGeometry()
+        geometry = BlockDCTGeometry((32, 64))
         policy = HardNonterminalTerminalRelease()
         h_star = torch.randn(1, 2, 32, 64, generator=torch.Generator().manual_seed(3))
         g_star = torch.randn(1, 2, 24, 48, generator=torch.Generator().manual_seed(4))
@@ -131,7 +218,7 @@ class TestValidation(unittest.TestCase):
                     validate_schedule(sigmas)
 
     def test_fail_closed_geometry_batch_and_model(self):
-        geometry = BlockDCTGeometry()
+        geometry = BlockDCTGeometry((32, 64))
         with self.assertRaises(ValueError):
             geometry.validate_high(torch.zeros(2, 128, 32, 64))
         with self.assertRaises(ValueError):

@@ -150,6 +150,11 @@
   latent, four interval previews, normal VAE decode, exact decoded-pixel seed
   reproducibility, unload/reload, cancellation recovery, and all requested
   fail-closed controls pass. A loadable workflow is saved under `experiments/`.
+- Candidate-3 arbitrary geometry: implemented without lifecycle or algorithm
+  changes. Latent axes at least 32 and divisible by four use dynamic block-DCT
+  G geometry, deterministic 32x32 crop coverage, and absolute FLUX.2
+  coordinates. Fifteen unit tests pass; real square, portrait, and >2:1 wide
+  four-step workflows each completed with four previews and normal VAE output.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 
 ## Active blockers / unknowns
@@ -173,6 +178,6 @@
 
 Candidate 2 semantic research remains paused. The fail-closed Candidate-3
 production slice is implemented, research-equivalent, and live-workflow
-qualified. Any next milestone requires explicit scope; do not add another
+qualified across the tested target geometries. Any next milestone requires explicit scope; do not add another
 geometry sweep, optimization, unsupported sampler/model policy, or new
 algorithm automatically.

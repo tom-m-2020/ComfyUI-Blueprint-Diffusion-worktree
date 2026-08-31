@@ -145,8 +145,9 @@ def invalid_prompts() -> dict[str, tuple[dict, str]]:
     cases = {}
 
     prompt = base_prompt("BlueprintPhase4c_invalid_resolution")
-    prompt["7"]["inputs"]["width"] = 768
-    cases["wrong_resolution"] = (prompt, "requires latent grid")
+    prompt["6"]["inputs"]["width"] = 784
+    prompt["7"]["inputs"]["width"] = 784
+    cases["wrong_resolution"] = (prompt, "divisible by 4")
 
     prompt = base_prompt("BlueprintPhase4c_invalid_cfg")
     prompt["4"] = {"class_type": "CFGGuider", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["3", 0], "cfg": 2.0}}
