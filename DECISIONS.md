@@ -302,3 +302,15 @@ it. The experiment changed both spatial bandwidth and the mapped-noise variance
 It also raises runtime and global token work. No geometry sweep, alternate
 operator, soft coupling, or production optimization is authorized by this
 decision.
+
+## 2026-08-31 — Do not attribute the 24x48 gain to variance alone
+
+At matched initial G variance, scaled 16x32 improves over original 16x32 but
+retains secondary tree/vehicle-like structure and worsens terminal overlap.
+The 24x48 block-DCT branch alone removes all known extras and achieves the best
+numerical and overlap agreement.
+
+Retain 24x48 block-DCT as the leading Candidate-3 research geometry. Record
+mapped-state scale as a real contributing factor, not the primary complete
+explanation. This does not distinguish token density from DCT retained content
+and does not authorize another scale/operator sweep or production work.
