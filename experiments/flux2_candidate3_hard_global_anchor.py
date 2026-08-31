@@ -46,7 +46,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=20260829)
     parser.add_argument(
         "--global-geometry",
-        choices=("mean_16x32", "block_dct_24x48"),
+        choices=("mean_16x32", "scaled_mean_16x32", "block_dct_24x48"),
         default="mean_16x32",
     )
     parser.add_argument("--dry-run", action="store_true")
@@ -63,6 +63,16 @@ def mean_restrict(value: torch.Tensor) -> torch.Tensor:
 def mean_prolong(value: torch.Tensor) -> torch.Tensor:
     """U: 2x nearest-neighbor prolongation; D(U(x)) == x."""
     return F.interpolate(value, scale_factor=2, mode="nearest")
+
+
+def scaled_mean_restrict(value: torch.Tensor) -> torch.Tensor:
+    """D: variance-matched 1.5 * nonoverlapping 2x2 area restriction."""
+    return 1.5 * mean_restrict(value)
+
+
+def scaled_mean_prolong(value: torch.Tensor) -> torch.Tensor:
+    """U: exact right inverse, (2/3) * 2x nearest prolongation."""
+    return (2.0 / 3.0) * mean_prolong(value)
 
 
 def dct_matrix(size: int, device: torch.device, dtype: torch.dtype) -> torch.Tensor:
@@ -124,6 +134,8 @@ def block_dct_prolong(value: torch.Tensor) -> torch.Tensor:
 def geometry_operators(name: str):
     if name == "mean_16x32":
         return mean_restrict, mean_prolong, (16, 32)
+    if name == "scaled_mean_16x32":
+        return scaled_mean_restrict, scaled_mean_prolong, (16, 32)
     if name == "block_dct_24x48":
         return block_dct_restrict, block_dct_prolong, (24, 48)
     raise ValueError(name)
@@ -417,6 +429,10 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
                             applied_projection.float().square().mean().sqrt()
                             / h_proposal.float().square().mean().sqrt()
                         ),
+                        "projection_available_rms_to_h_proposal_rms": float(
+                            projection.float().square().mean().sqrt()
+                            / h_proposal.float().square().mean().sqrt()
+                        ),
                         "consistency_after_acceptance": after,
                         "coarse_global_update": phase2.stats(coarse_global_update),
                         "coarse_local_update": phase2.stats(coarse_local_update),
@@ -525,10 +541,17 @@ def dry_run() -> None:
     dct_identity = tensor_difference(block_dct_restrict(block_dct_prolong(dct_g)), dct_g)
     if dct_identity["max_abs"] > 2e-6:
         raise AssertionError({"block_dct_identity": dct_identity})
+    scaled_g = scaled_mean_restrict(h)
+    scaled_identity = tensor_difference(
+        scaled_mean_restrict(scaled_mean_prolong(scaled_g)), scaled_g
+    )
+    if scaled_identity["max_abs"] > 1e-6:
+        raise AssertionError({"scaled_mean_identity": scaled_identity})
     print(json.dumps({
         "mean_D_U_identity": identity,
         "mean_accepted_invariant": invariant,
         "block_dct_D_U_identity": dct_identity,
+        "scaled_mean_D_U_identity": scaled_identity,
     }, indent=2))
 
 
@@ -583,7 +606,10 @@ def main() -> None:
         "adjacent_correlation_H": adjacent_correlation(noise),
         "adjacent_correlation_G": adjacent_correlation(mapped_global_noise),
         "operator": args.global_geometry,
-        "predicted_variance_ratio": 0.5625 if args.global_geometry == "block_dct_24x48" else 0.25,
+        "predicted_variance_ratio": (
+            0.5625 if args.global_geometry in {"scaled_mean_16x32", "block_dct_24x48"}
+            else 0.25
+        ),
     }
 
     outputs: dict[str, torch.Tensor] = {}
@@ -753,11 +779,15 @@ def main() -> None:
             "D": (
                 "blockwise constant-preserving orthonormal DCT 4x4 -> retained 3x3 -> spatial 3x3"
                 if args.global_geometry == "block_dct_24x48" else
+                "1.5 * torch.avg_pool2d(kernel_size=2, stride=2)"
+                if args.global_geometry == "scaled_mean_16x32" else
                 "torch.avg_pool2d(kernel_size=2, stride=2)"
             ),
             "U": (
                 "blockwise spatial 3x3 -> DCT 3x3 -> zero-pad 4x4 -> orthonormal synthesis"
                 if args.global_geometry == "block_dct_24x48" else
+                "(2/3) * torch.interpolate(scale_factor=2, mode='nearest')"
+                if args.global_geometry == "scaled_mean_16x32" else
                 "torch.interpolate(scale_factor=2, mode='nearest')"
             ),
             "synthetic_right_inverse_before_model": synthetic_right_inverse,

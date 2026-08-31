@@ -719,3 +719,32 @@ Detailed evidence is in
   duplication under the complete operator/noise contract and becomes the
   leading Candidate-3 research geometry. The result does not isolate bandwidth
   from initialization variance and does not authorize production.
+
+## 2026-08-31 — Candidate-3 mapped-noise-variance discriminator
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_MAPPED_VARIANCE_REPORT.md` and
+`experiments/flux2_candidate3_mapped_variance_results/report.json`.
+
+### Runtime evidence
+
+- The scaled 16x32 pair achieved synthetic right-inverse maximum error
+  `2.38e-7` and measured G/H noise variance 0.563771, closely matching 24x48
+  block-DCT's 0.563112. All lifecycle and nonterminal invariants passed.
+- Variance matching improved final RMS versus dense from 0.676254 to 0.645287
+  and low-frequency RMS from 0.354860 to 0.313597, showing that mapped-state
+  scale/statistics contribute to Phase 3d's gain.
+- The scaled 16x32 result retained one thin extra tree and a small ambiguous
+  vehicle-like horizon remnant. It improved but did not match 24x48's exact
+  person/car/tree uniqueness. Terminal overlap also worsened from 0.248414 to
+  0.288335, whereas 24x48 achieved 0.242493.
+- All three global branches decoded valid unique scene plans. Residual extras
+  emerge in coupled H rather than from an invalid global trajectory.
+
+### Conclusion
+
+- Both mapped-state statistics and spatial/operator bandwidth contribute. The
+  matched-variance control leaves strong evidence for additional 24x48
+  bandwidth or block-DCT content because only that branch fully removes
+  secondary duplication and improves overlap. Token density versus DCT content
+  remains intentionally unresolved.

@@ -1,0 +1,1665 @@
+{
+  "configuration": {
+    "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+    "text_encoder": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\text_encoders\\f2k4_Comfy-Org_vae-text-encorder-for-flux-klein-4b_text_encoders\\qwen_3_4b_fp4_flux2.safetensors",
+    "vae": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\vae\\Comfy-Org_vae-text-encorder-for-flux-klein-9b_vae\\flux2-vae.safetensors",
+    "prompt": "A cinematic wide-angle photograph of exactly one large full-body woman standing centered in the foreground, occupying most of the image height; exactly one red vintage car parked on the far left; exactly one tall green tree on the far right; asymmetric left-center-right composition, continuous dry ground plane, coherent perspective and scale, distant low hills, sunset light, no duplicate people, no duplicate cars, no duplicate trees",
+    "seed": 20260831,
+    "cfg": 1.0,
+    "sigmas": [
+      1.0,
+      0.9614368677139282,
+      0.8925943970680237,
+      0.7347596883773804,
+      0.0
+    ],
+    "target_hw": [
+      32,
+      64
+    ],
+    "crop_hw": [
+      32,
+      32
+    ],
+    "crops": [
+      {
+        "index": 0,
+        "y": 0,
+        "x": 0,
+        "height": 32,
+        "width": 32
+      },
+      {
+        "index": 1,
+        "y": 0,
+        "x": 24,
+        "height": 32,
+        "width": 32
+      },
+      {
+        "index": 2,
+        "y": 0,
+        "x": 32,
+        "height": 32,
+        "width": 32
+      }
+    ],
+    "overlap_pixels": 128,
+    "lifecycle": "hard nonterminal acceptance; terminal local-H release",
+    "dense_reference_is_metric_target_not_candidate_variant": true
+  },
+  "synthetic_right_inverse_before_model": {
+    "mean_16x32": {
+      "global_hw": [
+        16,
+        32
+      ],
+      "rms": 0.0,
+      "mean_abs": 0.0,
+      "max_abs": 0.0,
+      "norm": 0.0
+    },
+    "scaled_mean_16x32": {
+      "global_hw": [
+        16,
+        32
+      ],
+      "rms": 4.61578792965156e-08,
+      "mean_abs": 2.0052972615758335e-08,
+      "max_abs": 2.384185791015625e-07,
+      "norm": 2.3354243694484467e-06
+    },
+    "block_dct_24x48": {
+      "global_hw": [
+        24,
+        48
+      ],
+      "rms": 1.5728102198409033e-07,
+      "mean_abs": 1.1489605356018728e-07,
+      "max_abs": 9.5367431640625e-07,
+      "norm": 1.1936789633182343e-05
+    }
+  },
+  "initialization": {
+    "A_ORIGINAL_16X32": {
+      "geometry": "mean_16x32",
+      "H_0": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 511.60675048828125,
+        "rms": 0.9992338418960571,
+        "mean": -0.00012862973380833864,
+        "std": 0.9992357492446899,
+        "min": -4.8333587646484375,
+        "max": 4.761590957641602,
+        "finite": true
+      },
+      "G_0": {
+        "shape": [
+          1,
+          128,
+          16,
+          32
+        ],
+        "norm": 128.04556274414062,
+        "rms": 0.5001780390739441,
+        "mean": -0.00012862973380833864,
+        "std": 0.5001818537712097,
+        "min": -2.051804542541504,
+        "max": 2.2151432037353516,
+        "finite": true
+      },
+      "variance_ratio_G_to_H": 0.2505647540092468,
+      "predicted_variance_ratio": 0.25,
+      "adjacent_correlation_G": {
+        "horizontal": 0.0040207416750490665,
+        "vertical": -0.0024252592120319605
+      },
+      "D_H_identity": {
+        "rms": 0.0,
+        "mean_abs": 0.0,
+        "max_abs": 0.0,
+        "norm": 0.0
+      }
+    },
+    "B_VARIANCE_MATCHED_16X32": {
+      "geometry": "scaled_mean_16x32",
+      "H_0": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 511.60675048828125,
+        "rms": 0.9992338418960571,
+        "mean": -0.00012862973380833864,
+        "std": 0.9992357492446899,
+        "min": -4.8333587646484375,
+        "max": 4.761590957641602,
+        "finite": true
+      },
+      "G_0": {
+        "shape": [
+          1,
+          128,
+          16,
+          32
+        ],
+        "norm": 192.06837463378906,
+        "rms": 0.7502670884132385,
+        "mean": -0.00019294442608952522,
+        "std": 0.750272810459137,
+        "min": -3.077706813812256,
+        "max": 3.3227148056030273,
+        "finite": true
+      },
+      "variance_ratio_G_to_H": 0.5637707114219666,
+      "predicted_variance_ratio": 0.5625,
+      "adjacent_correlation_G": {
+        "horizontal": 0.00402073934674263,
+        "vertical": -0.0024252543225884438
+      },
+      "D_H_identity": {
+        "rms": 0.0,
+        "mean_abs": 0.0,
+        "max_abs": 0.0,
+        "norm": 0.0
+      }
+    },
+    "C_BLOCK_DCT_24X48": {
+      "geometry": "block_dct_24x48",
+      "H_0": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 511.60675048828125,
+        "rms": 0.9992338418960571,
+        "mean": -0.00012862973380833864,
+        "std": 0.9992357492446899,
+        "min": -4.8333587646484375,
+        "max": 4.761590957641602,
+        "finite": true
+      },
+      "G_0": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "norm": 287.93505859375,
+        "rms": 0.7498316168785095,
+        "mean": -0.000128628991660662,
+        "std": 0.7498341202735901,
+        "min": -3.056464433670044,
+        "max": 3.2886736392974854,
+        "finite": true
+      },
+      "variance_ratio_G_to_H": 0.5631116032600403,
+      "predicted_variance_ratio": 0.5625,
+      "adjacent_correlation_G": {
+        "horizontal": -0.001597585272975266,
+        "vertical": -0.0025299459230154753
+      },
+      "D_H_identity": {
+        "rms": 0.0,
+        "mean_abs": 0.0,
+        "max_abs": 0.0,
+        "norm": 0.0
+      }
+    }
+  },
+  "dense_reference": {
+    "seconds": 8.674497700296342,
+    "peak_allocated_gib": 2.60105037689209,
+    "final": {
+      "shape": [
+        1,
+        128,
+        32,
+        64
+      ],
+      "norm": 499.58526611328125,
+      "rms": 0.9757534265518188,
+      "mean": -0.035661108791828156,
+      "std": 0.9751033782958984,
+      "min": -6.356286525726318,
+      "max": 5.861445426940918,
+      "finite": true
+    },
+    "output": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\DENSE_REFERENCE_FINAL.png"
+  },
+  "variants": {
+    "A_ORIGINAL_16X32": {
+      "geometry": "mean_16x32",
+      "global_hw": [
+        16,
+        32
+      ],
+      "global_tokens": 512,
+      "seconds": 3.905592099763453,
+      "peak_allocated_gib": 2.498724937438965,
+      "atomic_acceptances": 4,
+      "final_H": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 477.9461364746094,
+        "rms": 0.9334896206855774,
+        "mean": -0.04207497835159302,
+        "std": 0.9325426816940308,
+        "min": -6.6675519943237305,
+        "max": 5.918878555297852,
+        "finite": true
+      },
+      "final_G": {
+        "shape": [
+          1,
+          128,
+          16,
+          32
+        ],
+        "norm": 206.1574249267578,
+        "rms": 0.8053022623062134,
+        "mean": -0.05502714216709137,
+        "std": 0.803426206111908,
+        "min": -3.7324600219726562,
+        "max": 3.9608676433563232,
+        "finite": true
+      },
+      "vs_dense": {
+        "absolute": {
+          "max_abs": 7.1767988204956055,
+          "mean_abs": 0.44427812099456787,
+          "rms": 0.6762540936470032
+        },
+        "low_frequency": {
+          "max_abs": 2.530641555786133,
+          "mean_abs": 0.25219202041625977,
+          "rms": 0.3548597991466522
+        },
+        "value_stats": {
+          "shape": [
+            1,
+            128,
+            32,
+            64
+          ],
+          "norm": 477.9461364746094,
+          "rms": 0.9334896206855774,
+          "mean": -0.04207497835159302,
+          "std": 0.9325426816940308,
+          "min": -6.6675519943237305,
+          "max": 5.918878555297852,
+          "finite": true
+        },
+        "reference_stats": {
+          "shape": [
+            1,
+            128,
+            32,
+            64
+          ],
+          "norm": 499.58526611328125,
+          "rms": 0.9757534265518188,
+          "mean": -0.035661108791828156,
+          "std": 0.9751033782958984,
+          "min": -6.356286525726318,
+          "max": 5.861445426940918,
+          "finite": true
+        },
+        "residual_norm": 346.2412109375,
+        "relative_residual_to_reference_norm": 0.6930572905626676
+      },
+      "terminal_D_H_minus_G": {
+        "absolute": {
+          "max_abs": 3.0868518352508545,
+          "mean_abs": 0.24338644742965698,
+          "rms": 0.3441362977027893
+        },
+        "low_frequency": {
+          "max_abs": 1.0011794567108154,
+          "mean_abs": 0.1435120552778244,
+          "rms": 0.1848427653312683
+        },
+        "value_stats": {
+          "shape": [
+            1,
+            128,
+            16,
+            32
+          ],
+          "norm": 193.5050506591797,
+          "rms": 0.7558792233467102,
+          "mean": -0.04207497835159302,
+          "std": 0.7547130584716797,
+          "min": -2.920680046081543,
+          "max": 3.140151023864746,
+          "finite": true
+        },
+        "reference_stats": {
+          "shape": [
+            1,
+            128,
+            16,
+            32
+          ],
+          "norm": 206.1574249267578,
+          "rms": 0.8053022623062134,
+          "mean": -0.05502714216709137,
+          "std": 0.803426206111908,
+          "min": -3.7324600219726562,
+          "max": 3.9608676433563232,
+          "finite": true
+        },
+        "residual_norm": 88.09886932373047,
+        "relative_residual_to_reference_norm": 0.427337843179937
+      },
+      "projection_records": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9614368677139282,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 18.122169494628906,
+            "rms": 0.03539486229419708,
+            "mean": 1.3146462151780725e-05,
+            "std": 0.035394925624132156,
+            "min": -0.24637019634246826,
+            "max": 0.2813149392604828,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 18.122169494628906,
+            "rms": 0.03539486229419708,
+            "mean": 1.3146462151780725e-05,
+            "std": 0.035394925624132156,
+            "min": -0.24637019634246826,
+            "max": 0.2813149392604828,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.03646301105618477,
+          "consistency_after_acceptance": {
+            "rms": 2.9058886852340038e-08,
+            "mean_abs": 1.6581699568973818e-08,
+            "max_abs": 2.384185791015625e-07,
+            "norm": 7.43907503419905e-06
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.7380361557006836,
+                "mean_abs": 1.2481436729431152,
+                "max_abs": 6.771484375
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 1.056908369064331,
+                "mean_abs": 0.6374004483222961,
+                "max_abs": 6.703125
+              }
+            ],
+            "aggregate_rms": 1.2621347078303455,
+            "aggregate_mean_abs": 0.7900862395763397,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 3584,
+          "global_rope_options": {
+            "scale_y": 2.066666666666667,
+            "scale_x": 2.032258064516129
+          }
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "sigma_next": 0.8925943970680237,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 15.984026908874512,
+            "rms": 0.03121880255639553,
+            "mean": -0.0004950050497427583,
+            "std": 0.031214937567710876,
+            "min": -0.28185373544692993,
+            "max": 0.27947089076042175,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 15.984026908874512,
+            "rms": 0.03121880255639553,
+            "mean": -0.0004950050497427583,
+            "std": 0.031214937567710876,
+            "min": -0.28185373544692993,
+            "max": 0.27947089076042175,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.033719874918460846,
+          "consistency_after_acceptance": {
+            "rms": 2.7693378257254153e-08,
+            "mean_abs": 1.580420772029356e-08,
+            "max_abs": 2.384185791015625e-07,
+            "norm": 7.089504833857063e-06
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.8883936405181885,
+                "mean_abs": 0.5716459155082703,
+                "max_abs": 5.903823375701904
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.4486638307571411,
+                "mean_abs": 0.26717624068260193,
+                "max_abs": 6.482187271118164
+              }
+            ],
+            "aggregate_rms": 0.5901569520169971,
+            "aggregate_mean_abs": 0.3432936519384384,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 3584,
+          "global_rope_options": {
+            "scale_y": 2.066666666666667,
+            "scale_x": 2.032258064516129
+          }
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "sigma_next": 0.7347596883773804,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 35.39554977416992,
+            "rms": 0.06913193315267563,
+            "mean": -0.0012245355173945427,
+            "std": 0.06912121921777725,
+            "min": -0.7203181982040405,
+            "max": 0.6408951878547668,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 35.39554977416992,
+            "rms": 0.06913193315267563,
+            "mean": -0.0012245355173945427,
+            "std": 0.06912121921777725,
+            "min": -0.7203181982040405,
+            "max": 0.6408951878547668,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.0825827345252037,
+          "consistency_after_acceptance": {
+            "rms": 2.5892662236515207e-08,
+            "mean_abs": 1.4401404513364469e-08,
+            "max_abs": 2.384185791015625e-07,
+            "norm": 6.628521532547893e-06
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.5703682899475098,
+                "mean_abs": 0.3774922490119934,
+                "max_abs": 6.143559455871582
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.31321510672569275,
+                "mean_abs": 0.18988284468650818,
+                "max_abs": 5.449707508087158
+              }
+            ],
+            "aggregate_rms": 0.3935832540968482,
+            "aggregate_mean_abs": 0.2367851883172989,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 3584,
+          "global_rope_options": {
+            "scale_y": 2.066666666666667,
+            "scale_x": 2.032258064516129
+          }
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "sigma_next": 0.0,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 176.19776916503906,
+            "rms": 0.3441362679004669,
+            "mean": -0.012952161021530628,
+            "std": 0.3438931107521057,
+            "min": -3.0868518352508545,
+            "max": 2.845399856567383,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 0.0,
+            "rms": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.0,
+          "consistency_after_acceptance": {
+            "rms": 0.3441362679004669,
+            "mean_abs": 0.24338644742965698,
+            "max_abs": 3.0868518352508545,
+            "norm": 88.09888458251953
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.3660691976547241,
+                "mean_abs": 0.258683979511261,
+                "max_abs": 3.9263720512390137
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.1939343810081482,
+                "mean_abs": 0.1237715408205986,
+                "max_abs": 3.174391508102417
+              }
+            ],
+            "aggregate_rms": 0.2484141131855488,
+            "aggregate_mean_abs": 0.15749964863061905,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 3584,
+          "global_rope_options": {
+            "scale_y": 2.066666666666667,
+            "scale_x": 2.032258064516129
+          }
+        }
+      ],
+      "final_output": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\A_ORIGINAL_16X32_FINAL.png",
+      "global_output": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\A_ORIGINAL_16X32_GLOBAL_FINAL.png"
+    },
+    "B_VARIANCE_MATCHED_16X32": {
+      "geometry": "scaled_mean_16x32",
+      "global_hw": [
+        16,
+        32
+      ],
+      "global_tokens": 512,
+      "seconds": 3.9089215006679296,
+      "peak_allocated_gib": 2.498724937438965,
+      "atomic_acceptances": 4,
+      "final_H": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 465.24835205078125,
+        "rms": 0.9086896181106567,
+        "mean": -0.038685720413923264,
+        "std": 0.9078674912452698,
+        "min": -6.30900239944458,
+        "max": 5.721685409545898,
+        "finite": true
+      },
+      "final_G": {
+        "shape": [
+          1,
+          128,
+          16,
+          32
+        ],
+        "norm": 214.18922424316406,
+        "rms": 0.8366773128509521,
+        "mean": -0.05075662210583687,
+        "std": 0.8351427316665649,
+        "min": -3.871223211288452,
+        "max": 4.5867462158203125,
+        "finite": true
+      },
+      "vs_dense": {
+        "absolute": {
+          "max_abs": 6.378113746643066,
+          "mean_abs": 0.41474461555480957,
+          "rms": 0.6452869176864624
+        },
+        "low_frequency": {
+          "max_abs": 2.4809155464172363,
+          "mean_abs": 0.22160457074642181,
+          "rms": 0.3135974705219269
+        },
+        "value_stats": {
+          "shape": [
+            1,
+            128,
+            32,
+            64
+          ],
+          "norm": 465.24835205078125,
+          "rms": 0.9086896181106567,
+          "mean": -0.038685720413923264,
+          "std": 0.9078674912452698,
+          "min": -6.30900239944458,
+          "max": 5.721685409545898,
+          "finite": true
+        },
+        "reference_stats": {
+          "shape": [
+            1,
+            128,
+            32,
+            64
+          ],
+          "norm": 499.58526611328125,
+          "rms": 0.9757534265518188,
+          "mean": -0.035661108791828156,
+          "std": 0.9751033782958984,
+          "min": -6.356286525726318,
+          "max": 5.861445426940918,
+          "finite": true
+        },
+        "residual_norm": 330.3858642578125,
+        "relative_residual_to_reference_norm": 0.6613202723694764
+      },
+      "terminal_D_H_minus_G": {
+        "absolute": {
+          "max_abs": 3.8302221298217773,
+          "mean_abs": 0.38985347747802734,
+          "rms": 0.5173888206481934
+        },
+        "low_frequency": {
+          "max_abs": 1.4105108976364136,
+          "mean_abs": 0.2187233865261078,
+          "rms": 0.27541878819465637
+        },
+        "value_stats": {
+          "shape": [
+            1,
+            128,
+            16,
+            32
+          ],
+          "norm": 264.132568359375,
+          "rms": 1.0317683219909668,
+          "mean": -0.058028582483530045,
+          "std": 1.0301430225372314,
+          "min": -4.114672660827637,
+          "max": 4.532784938812256,
+          "finite": true
+        },
+        "reference_stats": {
+          "shape": [
+            1,
+            128,
+            16,
+            32
+          ],
+          "norm": 214.18922424316406,
+          "rms": 0.8366773128509521,
+          "mean": -0.05075662210583687,
+          "std": 0.8351427316665649,
+          "min": -3.871223211288452,
+          "max": 4.5867462158203125,
+          "finite": true
+        },
+        "residual_norm": 132.45150756835938,
+        "relative_residual_to_reference_norm": 0.6183854861810893
+      },
+      "projection_records": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9614368677139282,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 14.49899673461914,
+            "rms": 0.02831835299730301,
+            "mean": 0.0003163682413287461,
+            "std": 0.028316641226410866,
+            "min": -0.20245644450187683,
+            "max": 0.22698520123958588,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 14.49899673461914,
+            "rms": 0.02831835299730301,
+            "mean": 0.0003163682413287461,
+            "std": 0.028316641226410866,
+            "min": -0.20245644450187683,
+            "max": 0.22698520123958588,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.029172945767641068,
+          "consistency_after_acceptance": {
+            "rms": 5.170227979078845e-08,
+            "mean_abs": 3.085733624175191e-08,
+            "max_abs": 4.76837158203125e-07,
+            "norm": 1.3235783626441844e-05
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.7380361557006836,
+                "mean_abs": 1.2481436729431152,
+                "max_abs": 6.771484375
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 1.056908369064331,
+                "mean_abs": 0.6374004483222961,
+                "max_abs": 6.703125
+              }
+            ],
+            "aggregate_rms": 1.2621347078303455,
+            "aggregate_mean_abs": 0.7900862395763397,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 3584,
+          "global_rope_options": {
+            "scale_y": 2.066666666666667,
+            "scale_x": 2.032258064516129
+          }
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "sigma_next": 0.8925943970680237,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 14.884748458862305,
+            "rms": 0.02907177433371544,
+            "mean": 0.0004800924507435411,
+            "std": 0.029067862778902054,
+            "min": -0.2301023304462433,
+            "max": 0.22784321010112762,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 14.884748458862305,
+            "rms": 0.02907177433371544,
+            "mean": 0.0004800924507435411,
+            "std": 0.029067862778902054,
+            "min": -0.2301023304462433,
+            "max": 0.22784321010112762,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.03142635524272919,
+          "consistency_after_acceptance": {
+            "rms": 4.9021693371287256e-08,
+            "mean_abs": 2.9444191085303828e-08,
+            "max_abs": 4.76837158203125e-07,
+            "norm": 1.2549553503049538e-05
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.9463005065917969,
+                "mean_abs": 0.6286224722862244,
+                "max_abs": 6.587344646453857
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.49754729866981506,
+                "mean_abs": 0.2920002341270447,
+                "max_abs": 5.922601699829102
+              }
+            ],
+            "aggregate_rms": 0.6399501060058651,
+            "aggregate_mean_abs": 0.3761557936668396,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 3584,
+          "global_rope_options": {
+            "scale_y": 2.066666666666667,
+            "scale_x": 2.032258064516129
+          }
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "sigma_next": 0.7347596883773804,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 35.40426254272461,
+            "rms": 0.069148950278759,
+            "mean": 0.0012969474773854017,
+            "std": 0.06913692504167557,
+            "min": -0.563596248626709,
+            "max": 0.5382667779922485,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 35.40426254272461,
+            "rms": 0.069148950278759,
+            "mean": 0.0012969474773854017,
+            "std": 0.06913692504167557,
+            "min": -0.563596248626709,
+            "max": 0.5382667779922485,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.0828332006931305,
+          "consistency_after_acceptance": {
+            "rms": 4.5214260779857796e-08,
+            "mean_abs": 2.6958870691373704e-08,
+            "max_abs": 4.76837158203125e-07,
+            "norm": 1.1574850759643596e-05
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.7553310990333557,
+                "mean_abs": 0.5115303993225098,
+                "max_abs": 6.610777378082275
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.38480862975120544,
+                "mean_abs": 0.21998679637908936,
+                "max_abs": 6.004092216491699
+              }
+            ],
+            "aggregate_rms": 0.5036760218257141,
+            "aggregate_mean_abs": 0.29287269711494446,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 3584,
+          "global_rope_options": {
+            "scale_y": 2.066666666666667,
+            "scale_x": 2.032258064516129
+          }
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "sigma_next": 0.0,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 176.60205078125,
+            "rms": 0.3449258804321289,
+            "mean": 0.004847971722483635,
+            "std": 0.3448924720287323,
+            "min": -2.4621145725250244,
+            "max": 2.5534815788269043,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 0.0,
+            "rms": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.0,
+          "consistency_after_acceptance": {
+            "rms": 0.5173888206481934,
+            "mean_abs": 0.38985347747802734,
+            "max_abs": 3.8302221298217773,
+            "norm": 132.4515380859375
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.43926405906677246,
+                "mean_abs": 0.3082374334335327,
+                "max_abs": 4.615209102630615
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.21571174263954163,
+                "mean_abs": 0.13728787004947662,
+                "max_abs": 3.3552112579345703
+              }
+            ],
+            "aggregate_rms": 0.28833468414942975,
+            "aggregate_mean_abs": 0.18002525717020035,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 3584,
+          "global_rope_options": {
+            "scale_y": 2.066666666666667,
+            "scale_x": 2.032258064516129
+          }
+        }
+      ],
+      "final_output": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\B_VARIANCE_MATCHED_16X32_FINAL.png",
+      "global_output": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\B_VARIANCE_MATCHED_16X32_GLOBAL_FINAL.png"
+    },
+    "C_BLOCK_DCT_24X48": {
+      "geometry": "block_dct_24x48",
+      "global_hw": [
+        24,
+        48
+      ],
+      "global_tokens": 1152,
+      "seconds": 4.418795499950647,
+      "peak_allocated_gib": 2.5134992599487305,
+      "atomic_acceptances": 4,
+      "final_H": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "norm": 481.6387023925781,
+        "rms": 0.9407021403312683,
+        "mean": -0.04046538844704628,
+        "std": 0.9398331642150879,
+        "min": -5.934738636016846,
+        "max": 5.868425369262695,
+        "finite": true
+      },
+      "final_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "norm": 350.1264343261719,
+        "rms": 0.9117882251739502,
+        "mean": -0.0458335280418396,
+        "std": 0.9106386303901672,
+        "min": -5.471521854400635,
+        "max": 5.887639999389648,
+        "finite": true
+      },
+      "vs_dense": {
+        "absolute": {
+          "max_abs": 6.292014122009277,
+          "mean_abs": 0.34085139632225037,
+          "rms": 0.5491700172424316
+        },
+        "low_frequency": {
+          "max_abs": 2.26749324798584,
+          "mean_abs": 0.16950520873069763,
+          "rms": 0.24544742703437805
+        },
+        "value_stats": {
+          "shape": [
+            1,
+            128,
+            32,
+            64
+          ],
+          "norm": 481.6387023925781,
+          "rms": 0.9407021403312683,
+          "mean": -0.04046538844704628,
+          "std": 0.9398331642150879,
+          "min": -5.934738636016846,
+          "max": 5.868425369262695,
+          "finite": true
+        },
+        "reference_stats": {
+          "shape": [
+            1,
+            128,
+            32,
+            64
+          ],
+          "norm": 499.58526611328125,
+          "rms": 0.9757534265518188,
+          "mean": -0.035661108791828156,
+          "std": 0.9751033782958984,
+          "min": -6.356286525726318,
+          "max": 5.861445426940918,
+          "finite": true
+        },
+        "residual_norm": 281.1739196777344,
+        "relative_residual_to_reference_norm": 0.5628146759916215
+      },
+      "terminal_D_H_minus_G": {
+        "absolute": {
+          "max_abs": 3.778430461883545,
+          "mean_abs": 0.23136813938617706,
+          "rms": 0.3293851912021637
+        },
+        "low_frequency": {
+          "max_abs": 1.2240335941314697,
+          "mean_abs": 0.10481766611337662,
+          "rms": 0.13836129009723663
+        },
+        "value_stats": {
+          "shape": [
+            1,
+            128,
+            24,
+            48
+          ],
+          "norm": 327.2436828613281,
+          "rms": 0.8521981835365295,
+          "mean": -0.04046538844704628,
+          "std": 0.851239800453186,
+          "min": -4.6554789543151855,
+          "max": 4.285091876983643,
+          "finite": true
+        },
+        "reference_stats": {
+          "shape": [
+            1,
+            128,
+            24,
+            48
+          ],
+          "norm": 350.1264343261719,
+          "rms": 0.9117882251739502,
+          "mean": -0.0458335280418396,
+          "std": 0.9106386303901672,
+          "min": -5.471521854400635,
+          "max": 5.887639999389648,
+          "finite": true
+        },
+        "residual_norm": 126.48387145996094,
+        "relative_residual_to_reference_norm": 0.36125199087975945
+      },
+      "projection_records": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9614368677139282,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 17.251707077026367,
+            "rms": 0.03369474038481712,
+            "mean": 4.9287074944004416e-05,
+            "std": 0.03369476646184921,
+            "min": -0.2763180136680603,
+            "max": 0.31886065006256104,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 17.251707077026367,
+            "rms": 0.03369474038481712,
+            "mean": 4.9287074944004416e-05,
+            "std": 0.03369476646184921,
+            "min": -0.2763180136680603,
+            "max": 0.31886065006256104,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.034711580723524094,
+          "consistency_after_acceptance": {
+            "rms": 8.474263779589819e-08,
+            "mean_abs": 6.116215445217676e-08,
+            "max_abs": 7.152557373046875e-07,
+            "norm": 3.254117473261431e-05
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.7380361557006836,
+                "mean_abs": 1.2481436729431152,
+                "max_abs": 6.771484375
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 1.056908369064331,
+                "mean_abs": 0.6374004483222961,
+                "max_abs": 6.703125
+              }
+            ],
+            "aggregate_rms": 1.2621347078303455,
+            "aggregate_mean_abs": 0.7900862395763397,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 4224,
+          "global_rope_options": {
+            "scale_y": 1.3478260869565217,
+            "scale_x": 1.3404255319148937
+          }
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "sigma_next": 0.8925943970680237,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 17.314088821411133,
+            "rms": 0.03381657972931862,
+            "mean": -0.00024856728850863874,
+            "std": 0.03381573408842087,
+            "min": -0.3625326156616211,
+            "max": 0.36950933933258057,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 17.314088821411133,
+            "rms": 0.03381657972931862,
+            "mean": -0.00024856728850863874,
+            "std": 0.03381573408842087,
+            "min": -0.3625326156616211,
+            "max": 0.36950933933258057,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.0365196131169796,
+          "consistency_after_acceptance": {
+            "rms": 8.095189940604541e-08,
+            "mean_abs": 5.8352320309040806e-08,
+            "max_abs": 5.960464477539062e-07,
+            "norm": 3.108552846242674e-05
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.9202901721000671,
+                "mean_abs": 0.6002169251441956,
+                "max_abs": 6.159205436706543
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.4829978942871094,
+                "mean_abs": 0.29234927892684937,
+                "max_abs": 5.9639129638671875
+              }
+            ],
+            "aggregate_rms": 0.6218510455401322,
+            "aggregate_mean_abs": 0.3693161755800247,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 4224,
+          "global_rope_options": {
+            "scale_y": 1.3478260869565217,
+            "scale_x": 1.3404255319148937
+          }
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "sigma_next": 0.7347596883773804,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 36.221683502197266,
+            "rms": 0.07074546813964844,
+            "mean": -0.0005681801121681929,
+            "std": 0.07074332237243652,
+            "min": -0.9067406058311462,
+            "max": 0.8282079696655273,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 36.221683502197266,
+            "rms": 0.07074546813964844,
+            "mean": -0.0005681801121681929,
+            "std": 0.07074332237243652,
+            "min": -0.9067406058311462,
+            "max": 0.8282079696655273,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.08442236483097076,
+          "consistency_after_acceptance": {
+            "rms": 7.511810906635219e-08,
+            "mean_abs": 5.3907683650322724e-08,
+            "max_abs": 4.76837158203125e-07,
+            "norm": 2.8845352062489837e-05
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.5375238060951233,
+                "mean_abs": 0.3853411078453064,
+                "max_abs": 6.429469108581543
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.3429800271987915,
+                "mean_abs": 0.20064370334148407,
+                "max_abs": 7.280223369598389
+              }
+            ],
+            "aggregate_rms": 0.40057387461696753,
+            "aggregate_mean_abs": 0.24681805074214935,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 4224,
+          "global_rope_options": {
+            "scale_y": 1.3478260869565217,
+            "scale_x": 1.3404255319148937
+          }
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "sigma_next": 0.0,
+          "projection_available": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 168.64523315429688,
+            "rms": 0.3293852210044861,
+            "mean": -0.005368141457438469,
+            "std": 0.3293420970439911,
+            "min": -4.500306129455566,
+            "max": 4.076179504394531,
+            "finite": true
+          },
+          "projection_applied": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 0.0,
+            "rms": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "finite": true
+          },
+          "projection_rms_to_h_proposal_rms": 0.0,
+          "consistency_after_acceptance": {
+            "rms": 0.3293852210044861,
+            "mean_abs": 0.23136813938617706,
+            "max_abs": 3.778430461883545,
+            "norm": 126.48391723632812
+          },
+          "overlap_disagreement": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.3630366027355194,
+                "mean_abs": 0.26776933670043945,
+                "max_abs": 2.824232339859009
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.18566545844078064,
+                "mean_abs": 0.12066557258367538,
+                "max_abs": 2.6879000663757324
+              }
+            ],
+            "aggregate_rms": 0.2424925490407087,
+            "aggregate_mean_abs": 0.15744151175022125,
+            "elements": 131072
+          },
+          "model_forwards": 4,
+          "executed_image_tokens": 4224,
+          "global_rope_options": {
+            "scale_y": 1.3478260869565217,
+            "scale_x": 1.3404255319148937
+          }
+        }
+      ],
+      "final_output": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\C_BLOCK_DCT_24X48_FINAL.png",
+      "global_output": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\C_BLOCK_DCT_24X48_GLOBAL_FINAL.png"
+    }
+  },
+  "outputs": {
+    "final_comparison": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\FINAL_COMPARISON.png",
+    "global_comparison": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_mapped_variance_results\\GLOBAL_COMPARISON.png"
+  }
+}
