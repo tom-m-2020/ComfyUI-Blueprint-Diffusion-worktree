@@ -414,3 +414,12 @@ Do not add this override to `Flux2Adapter` or benchmark it as Candidate-3
 optimization. The remaining blocker is below coordinate preparation and
 requires a separately scoped guider/model/backend investigation. Accepting the
 observed drift would change the qualified prediction ensemble.
+
+## 2026-09-01 — Keep crop batching blocked after embedding-path localization
+
+The duplicated-input control localizes the first B=1/B=2 mismatch to the
+unquantized bfloat16 `Flux.img_in` linear output, before transformer attention.
+The mismatch is small there but grows materially by final projection. Do not
+relax the sequential-equivalence gate or modify Blueprint semantics. A future
+attempt must explicitly qualify batch-shape-invariant embedding/backend linear
+execution before crop batching can be reconsidered.

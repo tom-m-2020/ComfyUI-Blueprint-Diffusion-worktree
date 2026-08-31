@@ -1,0 +1,1312 @@
+{
+  "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+  "seed": 20260831,
+  "prompt": "A cinematic wide-angle photograph of exactly one large full-body woman standing centered in the foreground, exactly one red vintage car on the left and exactly one tall green tree on the right, continuous ground, coherent perspective, no duplicate people, cars, or trees",
+  "control": "B=1 crop versus B=2 identical duplicated crop",
+  "target_H_shape": [
+    128,
+    64
+  ],
+  "region": {
+    "index": 0,
+    "y": 0,
+    "x": 0,
+    "height": 32,
+    "width": 32
+  },
+  "sigma": 1.0,
+  "B1_input_shape": [
+    1,
+    128,
+    32,
+    32
+  ],
+  "B2_input_shape": [
+    2,
+    128,
+    32,
+    32
+  ],
+  "tolerance": 2e-05,
+  "boundaries_in_execution_order": [
+    {
+      "name": "calculate_input.latent",
+      "dtype": "torch.float32",
+      "shape_B1": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "module": null,
+      "shape_B2": [
+        2,
+        128,
+        32,
+        32
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "calculate_input.sigma",
+      "dtype": "torch.float32",
+      "shape_B1": [
+        1
+      ],
+      "module": null,
+      "shape_B2": [
+        2
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "calculate_input.output",
+      "dtype": "torch.float32",
+      "shape_B1": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "module": null,
+      "shape_B2": [
+        2,
+        128,
+        32,
+        32
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "model_core.args[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "module": "comfy.ldm.flux.model.Flux",
+      "shape_B2": [
+        2,
+        128,
+        32,
+        32
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "model_core.args[1]",
+      "dtype": "torch.float32",
+      "shape_B1": [
+        1
+      ],
+      "module": "comfy.ldm.flux.model.Flux",
+      "shape_B2": [
+        2
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "model_core.kwargs.context",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        7680
+      ],
+      "module": "comfy.ldm.flux.model.Flux",
+      "shape_B2": [
+        2,
+        512,
+        7680
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "process_img.input",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "module": null,
+      "shape_B2": [
+        2,
+        128,
+        32,
+        32
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "process_img.tokens",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        128
+      ],
+      "module": null,
+      "shape_B2": [
+        2,
+        1024,
+        128
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "process_img.img_ids",
+      "dtype": "torch.float32",
+      "shape_B1": [
+        1,
+        1024,
+        4
+      ],
+      "module": null,
+      "shape_B2": [
+        2,
+        1024,
+        4
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "img_in.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        128
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        128
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "img_in.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.00390625,
+          "rms": 3.461286496531102e-06,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.00390625,
+          "rms": 3.461286496531102e-06,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "time_in.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        256
+      ],
+      "module": "comfy.ldm.flux.layers.MLPEmbedder",
+      "shape_B2": [
+        2,
+        256
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "time_in.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        3072
+      ],
+      "module": "comfy.ldm.flux.layers.MLPEmbedder",
+      "shape_B2": [
+        2,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0078125,
+          "rms": 0.0005587012856267393,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0078125,
+          "rms": 0.0005587012856267393,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "txt_in.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        7680
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        7680
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "txt_in.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "pe_embedder.input[0]",
+      "dtype": "torch.float32",
+      "shape_B1": [
+        1,
+        1536,
+        4
+      ],
+      "module": "comfy.ldm.flux.layers.EmbedND",
+      "shape_B2": [
+        2,
+        1536,
+        4
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "pe_embedder.output",
+      "dtype": "torch.float32",
+      "shape_B1": [
+        1,
+        1,
+        1536,
+        64,
+        2,
+        2
+      ],
+      "module": "comfy.ldm.flux.layers.EmbedND",
+      "shape_B2": [
+        2,
+        1,
+        1536,
+        64,
+        2,
+        2
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "bit_exact": true
+        }
+      ],
+      "material": false
+    },
+    {
+      "name": "double0.img_qkv.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.25,
+          "rms": 0.005678737536072731,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.25,
+          "rms": 0.005678737536072731,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.img_qkv.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        9216
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        9216
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 1.0,
+          "rms": 0.03477873653173447,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 1.0,
+          "rms": 0.03477873653173447,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.txt_qkv.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.125,
+          "rms": 0.004330892581492662,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.125,
+          "rms": 0.004330892581492662,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.txt_qkv.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        9216
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        9216
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 1.0,
+          "rms": 0.029538709670305252,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 1.0,
+          "rms": 0.029538709670305252,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.attention_output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1536,
+        3072
+      ],
+      "module": null,
+      "shape_B2": [
+        2,
+        1536,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.25,
+          "rms": 0.013095684349536896,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.25,
+          "rms": 0.013095684349536896,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.img_attn_proj.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.2265625,
+          "rms": 0.014801978133618832,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.2265625,
+          "rms": 0.014801978133618832,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.img_attn_proj.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.53125,
+          "rms": 0.052257489413022995,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.53125,
+          "rms": 0.052257489413022995,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.img_mlp_in.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.15625,
+          "rms": 0.005119095090776682,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.15625,
+          "rms": 0.005119095090776682,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.img_mlp_in.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        18432
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        18432
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.15625,
+          "rms": 0.010922803543508053,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.15625,
+          "rms": 0.010922803543508053,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.img_mlp_out.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        9216
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        9216
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.6875,
+          "rms": 0.004457472357898951,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.6875,
+          "rms": 0.004457472357898951,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.img_mlp_out.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        1024,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.21875,
+          "rms": 0.015763340517878532,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.21875,
+          "rms": 0.015763340517878532,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.txt_attn_proj.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.25,
+          "rms": 0.008734624832868576,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.25,
+          "rms": 0.008734624832868576,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.txt_attn_proj.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 1.0,
+          "rms": 0.0389433316886425,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 1.0,
+          "rms": 0.0389433316886425,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.txt_mlp_in.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.125,
+          "rms": 0.0030045241583138704,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.125,
+          "rms": 0.0030045241583138704,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.txt_mlp_in.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        18432
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        18432
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.125,
+          "rms": 0.00779358297586441,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.125,
+          "rms": 0.00779358297586441,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.txt_mlp_out.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        9216
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        9216
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 1.0,
+          "rms": 0.005117431748658419,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 1.0,
+          "rms": 0.005117431748658419,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.txt_mlp_out.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        3072
+      ],
+      "module": "comfy.ops.Linear",
+      "shape_B2": [
+        2,
+        512,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.75,
+          "rms": 0.02045563980937004,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.75,
+          "rms": 0.02045563980937004,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.output[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        3072
+      ],
+      "module": "comfy.ldm.flux.layers.DoubleStreamBlock",
+      "shape_B2": [
+        2,
+        1024,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 2.0,
+          "rms": 0.019741138443350792,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 2.0,
+          "rms": 0.019741138443350792,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "double0.output[1]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        512,
+        3072
+      ],
+      "module": "comfy.ldm.flux.layers.DoubleStreamBlock",
+      "shape_B2": [
+        2,
+        512,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 16.0,
+          "rms": 0.07916257530450821,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 16.0,
+          "rms": 0.07916257530450821,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "final_layer.input[0]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        3072
+      ],
+      "module": "comfy.ldm.flux.layers.LastLayer",
+      "shape_B2": [
+        2,
+        1024,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 76.0,
+          "rms": 1.7635661363601685,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 76.0,
+          "rms": 1.7635661363601685,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "final_layer.input[1]",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        3072
+      ],
+      "module": "comfy.ldm.flux.layers.LastLayer",
+      "shape_B2": [
+        2,
+        3072
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.0078125,
+          "rms": 0.0005587012856267393,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.0078125,
+          "rms": 0.0005587012856267393,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "final_layer.output",
+      "dtype": "torch.bfloat16",
+      "shape_B1": [
+        1,
+        1024,
+        128
+      ],
+      "module": "comfy.ldm.flux.layers.LastLayer",
+      "shape_B2": [
+        2,
+        1024,
+        128
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.41886138916015625,
+          "rms": 0.02955017425119877,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.41886138916015625,
+          "rms": 0.02955017425119877,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    },
+    {
+      "name": "guider_prediction",
+      "dtype": "torch.float32",
+      "shape_B1": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "module": null,
+      "shape_B2": [
+        2,
+        128,
+        32,
+        32
+      ],
+      "elements": [
+        {
+          "batch_index": 0,
+          "max_abs": 0.4188613295555115,
+          "rms": 0.02955017425119877,
+          "bit_exact": false
+        },
+        {
+          "batch_index": 1,
+          "max_abs": 0.4188613295555115,
+          "rms": 0.02955017425119877,
+          "bit_exact": false
+        }
+      ],
+      "material": true
+    }
+  ],
+  "first_material_divergence": {
+    "name": "img_in.output",
+    "dtype": "torch.bfloat16",
+    "shape_B1": [
+      1,
+      1024,
+      3072
+    ],
+    "module": "comfy.ops.Linear",
+    "shape_B2": [
+      2,
+      1024,
+      3072
+    ],
+    "elements": [
+      {
+        "batch_index": 0,
+        "max_abs": 0.00390625,
+        "rms": 3.461286496531102e-06,
+        "bit_exact": false
+      },
+      {
+        "batch_index": 1,
+        "max_abs": 0.00390625,
+        "rms": 3.461286496531102e-06,
+        "bit_exact": false
+      }
+    ],
+    "material": true
+  },
+  "img_in_operator": {
+    "module": "comfy.ops.Linear",
+    "weight_type": "torch.nn.parameter.Parameter",
+    "weight_shape": [
+      3072,
+      128
+    ],
+    "weight_dtype": "torch.bfloat16",
+    "quant_format": null,
+    "layout_type": null,
+    "has_input_scale": false,
+    "has_pre_quant_scale": false,
+    "full_precision_mm": false
+  },
+  "prediction_comparison": {
+    "dtype": "torch.float32",
+    "shape_B1": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "module": null,
+    "shape_B2": [
+      2,
+      128,
+      32,
+      32
+    ],
+    "elements": [
+      {
+        "batch_index": 0,
+        "max_abs": 0.4188613295555115,
+        "rms": 0.02955017425119877,
+        "bit_exact": false
+      },
+      {
+        "batch_index": 1,
+        "max_abs": 0.4188613295555115,
+        "rms": 0.02955017425119877,
+        "bit_exact": false
+      }
+    ],
+    "material": true
+  },
+  "restored_runtime_methods": true,
+  "verdict": "DIVERGENCE IN INPUT/EMBEDDING PATH"
+}
