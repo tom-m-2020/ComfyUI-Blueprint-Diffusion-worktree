@@ -1,0 +1,390 @@
+{
+  "prompt": "A cinematic wide-angle photograph of exactly one large full-body woman standing centered in the foreground, occupying most of the image height; exactly one red vintage car parked on the far left; exactly one tall green tree on the far right; asymmetric left-center-right composition, continuous dry ground plane, coherent perspective and scale, distant low hills, sunset light, no duplicate people, no duplicate cars, no duplicate trees",
+  "seed": 20260831,
+  "sigmas": [
+    1.0,
+    0.9614368677139282,
+    0.8925943970680237,
+    0.7347596883773804,
+    0.0
+  ],
+  "tolerance": 2e-06,
+  "equivalent": true,
+  "first_divergence": null,
+  "comparisons": {
+    "initial_H": {
+      "-1": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      }
+    },
+    "initial_G": {
+      "-1": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      }
+    },
+    "x0_G": {
+      "0": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "1": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "2": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "3": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      }
+    },
+    "assembled_x0_H": {
+      "0": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "1": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "2": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "3": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      }
+    },
+    "G_star": {
+      "0": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "1": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "2": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "3": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      }
+    },
+    "H_star": {
+      "0": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "1": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "2": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "3": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      }
+    },
+    "accepted_G": {
+      "0": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "1": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "2": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "3": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      }
+    },
+    "accepted_H": {
+      "0": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "1": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "2": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      },
+      "3": {
+        "rms": 0.0,
+        "max_abs": 0.0,
+        "bit_exact": true,
+        "within_tolerance": true
+      }
+    },
+    "final_H": {
+      "rms": 0.0,
+      "max_abs": 0.0,
+      "bit_exact": true,
+      "within_tolerance": true
+    }
+  },
+  "lifecycle": {
+    "accepted_intervals": 4,
+    "all_have_four_predictions": true,
+    "all_have_1152_global_tokens": true,
+    "all_have_3072_local_tokens": true,
+    "nonterminal_invariants_pass": true,
+    "terminal_release_only_last": true
+  },
+  "reference_seconds": 10.597718000411987,
+  "production_seconds": 4.308509299531579,
+  "production_telemetry": [
+    {
+      "event": "initialize",
+      "right_inverse_max_abs": 7.152557373046875e-07,
+      "H": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "rms": 0.9992339015007019,
+        "mean": -0.00012862926814705133,
+        "max_abs": 4.8333587646484375,
+        "finite": true
+      },
+      "G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.7498316168785095,
+        "mean": -0.00012862912262789905,
+        "max_abs": 3.2886738777160645,
+        "finite": true
+      }
+    },
+    {
+      "event": "accepted_interval",
+      "ordinal": 0,
+      "evaluation_id": "864384d77c1847cf88fbf3951bfe7acc:0:sigma=1:next=0.961436868",
+      "sigma": 1.0,
+      "sigma_next": 0.9614368677139282,
+      "terminal_release": false,
+      "model_predictions": 4,
+      "global_tokens": 1152,
+      "local_tokens": 3072,
+      "coverage_min": 1.0,
+      "coverage_max": 1.0,
+      "projection_rms": 0.03369474038481712,
+      "invariant_max_abs": 7.152557373046875e-07,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "rms": 0.9708221554756165,
+        "mean": -0.001104429131373763,
+        "max_abs": 4.710845947265625,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.7292025685310364,
+        "mean": -0.001104429131373763,
+        "max_abs": 3.140446901321411,
+        "finite": true
+      }
+    },
+    {
+      "event": "accepted_interval",
+      "ordinal": 1,
+      "evaluation_id": "864384d77c1847cf88fbf3951bfe7acc:1:sigma=0.961436868:next=0.892594397",
+      "sigma": 0.9614368677139282,
+      "sigma_next": 0.8925943970680237,
+      "terminal_release": false,
+      "model_predictions": 4,
+      "global_tokens": 1152,
+      "local_tokens": 3072,
+      "coverage_min": 1.0,
+      "coverage_max": 1.0,
+      "projection_rms": 0.03381657972931862,
+      "invariant_max_abs": 5.960464477539062e-07,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "rms": 0.9260643720626831,
+        "mean": -0.0041259704157710075,
+        "max_abs": 4.5247802734375,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.6975924968719482,
+        "mean": -0.0041259704157710075,
+        "max_abs": 2.978571891784668,
+        "finite": true
+      }
+    },
+    {
+      "event": "accepted_interval",
+      "ordinal": 2,
+      "evaluation_id": "864384d77c1847cf88fbf3951bfe7acc:2:sigma=0.892594397:next=0.734759688",
+      "sigma": 0.8925943970680237,
+      "sigma_next": 0.7347596883773804,
+      "terminal_release": false,
+      "model_predictions": 4,
+      "global_tokens": 1152,
+      "local_tokens": 3072,
+      "coverage_min": 1.0,
+      "coverage_max": 1.0,
+      "projection_rms": 0.07074546813964844,
+      "invariant_max_abs": 4.76837158203125e-07,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "rms": 0.8398132920265198,
+        "mean": -0.011155551299452782,
+        "max_abs": 4.2182488441467285,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.645042896270752,
+        "mean": -0.011155551299452782,
+        "max_abs": 2.785061836242676,
+        "finite": true
+      }
+    },
+    {
+      "event": "accepted_interval",
+      "ordinal": 3,
+      "evaluation_id": "864384d77c1847cf88fbf3951bfe7acc:3:sigma=0.734759688:next=0",
+      "sigma": 0.7347596883773804,
+      "sigma_next": 0.0,
+      "terminal_release": true,
+      "model_predictions": 4,
+      "global_tokens": 1152,
+      "local_tokens": 3072,
+      "coverage_min": 1.0,
+      "coverage_max": 1.0,
+      "projection_rms": 0.3293852210044861,
+      "invariant_max_abs": null,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "rms": 0.9407021403312683,
+        "mean": -0.04046538844704628,
+        "max_abs": 5.934738636016846,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.911788284778595,
+        "mean": -0.0458335280418396,
+        "max_abs": 5.887639999389648,
+        "finite": true
+      }
+    }
+  ]
+}
