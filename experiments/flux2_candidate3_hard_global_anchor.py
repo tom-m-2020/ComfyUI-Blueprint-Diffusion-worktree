@@ -1,8 +1,8 @@
-"""Candidate-3 four-step hard-global-anchor falsifier.
+"""Candidate-3 hard-global-anchor and terminal-release falsifier.
 
-Experiment only. Runs exactly dense, tiled-only, uncoupled dual, and hard
-global-anchor trajectories. No production integration, external K/V, alternate
-coupling, cache, or parameter sweep.
+Experiment only. Runs dense, tiled-only, uncoupled dual, hard global-anchor,
+and terminal-release trajectories. No production integration, external K/V,
+alternate coupling, cache, or parameter sweep.
 """
 
 from __future__ import annotations
@@ -31,6 +31,7 @@ VARIANTS = (
     ("B_TILED_ONLY", "tiled"),
     ("C_UNCOUPLED_DUAL", "uncoupled"),
     ("D_HARD_GLOBAL_ANCHOR", "hard_anchor"),
+    ("E_TERMINAL_RELEASE", "terminal_release"),
 )
 
 
@@ -234,7 +235,7 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
         if denoise_mask is not None:
             raise ValueError("This T2I falsifier does not use a mask.")
         h = noise
-        g = restrict(h) if self.variant in {"uncoupled", "hard_anchor"} else None
+        g = restrict(h) if self.variant in {"uncoupled", "hard_anchor", "terminal_release"} else None
         total = len(sigmas) - 1
         previous_projection = None
 
@@ -299,7 +300,9 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
                 coarse_global_update = g_proposal - g
                 coarse_local_update = coarse_h_proposal - restrict(h)
 
-                if self.variant == "hard_anchor":
+                release_terminal = self.variant == "terminal_release" and float(sigma_next) == 0.0
+                apply_projection = self.variant in {"hard_anchor", "terminal_release"} and not release_terminal
+                if apply_projection:
                     h_next = h_proposal + projection
                     applied_projection = projection
                 else:
@@ -309,9 +312,9 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
 
                 before = tensor_difference(coarse_h_proposal, g_proposal)
                 after = tensor_difference(restrict(h_next), g_next)
-                if self.variant == "hard_anchor" and after["max_abs"] > 1e-5:
+                if apply_projection and after["max_abs"] > 1e-5:
                     raise AssertionError(f"D(H_next) != G_next at step {step}: {after}")
-                if self.variant == "hard_anchor" and not torch.equal(
+                if apply_projection and not torch.equal(
                     restrict(applied_projection), consistency_delta
                 ):
                     difference = tensor_difference(restrict(applied_projection), consistency_delta)
@@ -327,6 +330,12 @@ class Candidate3Sampler(phase2.comfy.samplers.Sampler):
                         "consistency_before_projection": before,
                         "projection_available": phase2.stats(projection),
                         "projection_applied": phase2.stats(applied_projection),
+                        "projection_policy": (
+                            "terminal_release" if release_terminal else
+                            "hard_projection" if apply_projection else
+                            "uncoupled"
+                        ),
+                        "terminal_interval": float(sigma_next) == 0.0,
                         "projection_rms_to_h_proposal_rms": float(
                             applied_projection.float().square().mean().sqrt()
                             / h_proposal.float().square().mean().sqrt()
@@ -409,7 +418,8 @@ def save_contact_sheet(paths: list[tuple[str, Path]], output: Path) -> None:
     images = [(label, Image.open(path).convert("RGB")) for label, path in paths]
     width = max(image.width for _, image in images)
     height = max(image.height for _, image in images)
-    sheet = Image.new("RGB", (width * 2, (height + 32) * 2), "white")
+    rows = math.ceil(len(images) / 2)
+    sheet = Image.new("RGB", (width * 2, (height + 32) * rows), "white")
     draw = ImageDraw.Draw(sheet)
     for index, (label, image) in enumerate(images):
         x = (index % 2) * width
@@ -503,12 +513,56 @@ def main() -> None:
         if g_difference["max_abs"] > 1e-5:
             raise AssertionError(f"C.G != D.G at accepted step {step}: {g_difference}")
 
+    hard_vs_release_before = []
+    hard_vs_release_after = []
+    hard_vs_release_prediction = []
+    hard_vs_release_proposal = []
+    hard_vs_release_global = []
+    for step in range(4):
+        before = tensor_difference(
+            traces["D_HARD_GLOBAL_ANCHOR"].h_before[step],
+            traces["E_TERMINAL_RELEASE"].h_before[step],
+        )
+        prediction = tensor_difference(
+            traces["D_HARD_GLOBAL_ANCHOR"].h_predictions[step],
+            traces["E_TERMINAL_RELEASE"].h_predictions[step],
+        )
+        proposal = tensor_difference(
+            traces["D_HARD_GLOBAL_ANCHOR"].h_proposals[step],
+            traces["E_TERMINAL_RELEASE"].h_proposals[step],
+        )
+        after = tensor_difference(
+            traces["D_HARD_GLOBAL_ANCHOR"].h_after[step],
+            traces["E_TERMINAL_RELEASE"].h_after[step],
+        )
+        global_state = tensor_difference(
+            traces["D_HARD_GLOBAL_ANCHOR"].g_after[step],
+            traces["E_TERMINAL_RELEASE"].g_after[step],
+        )
+        hard_vs_release_before.append({"step": step, **before})
+        hard_vs_release_prediction.append({"step": step, **prediction})
+        hard_vs_release_proposal.append({"step": step, **proposal})
+        hard_vs_release_after.append({"step": step, **after})
+        hard_vs_release_global.append({"step": step, **global_state})
+        if before["max_abs"] > 1e-5 or prediction["max_abs"] > 1e-5 or proposal["max_abs"] > 1e-5:
+            raise AssertionError(
+                f"D/E diverged before acceptance at step {step}: "
+                f"before={before}, prediction={prediction}, proposal={proposal}"
+            )
+        if step < 3 and after["max_abs"] > 1e-5:
+            raise AssertionError(f"D/E earlier accepted states differ at step {step}: {after}")
+        if global_state["max_abs"] > 1e-5:
+            raise AssertionError(f"D/E global accepted states differ at step {step}: {global_state}")
+    if hard_vs_release_after[3]["max_abs"] == 0.0:
+        raise AssertionError("D/E final accepted H unexpectedly remained identical.")
+
     per_step = []
     for step in range(4):
         dense_prediction = traces["A_DENSE"].h_predictions[step]
         tiled_prediction = traces["B_TILED_ONLY"].h_predictions[step]
         uncoupled_prediction = traces["C_UNCOUPLED_DUAL"].h_predictions[step]
         coupled_prediction = traces["D_HARD_GLOBAL_ANCHOR"].h_predictions[step]
+        release_prediction = traces["E_TERMINAL_RELEASE"].h_predictions[step]
         per_step.append(
             {
                 "step": step,
@@ -516,6 +570,7 @@ def main() -> None:
                 "tiled_prediction_vs_dense": phase2d.comparison(tiled_prediction, dense_prediction),
                 "uncoupled_prediction_vs_dense": phase2d.comparison(uncoupled_prediction, dense_prediction),
                 "coupled_prediction_vs_dense": phase2d.comparison(coupled_prediction, dense_prediction),
+                "terminal_release_prediction_vs_dense": phase2d.comparison(release_prediction, dense_prediction),
                 "coupled_h_state_vs_dense": phase2d.comparison(
                     traces["D_HARD_GLOBAL_ANCHOR"].h_after[step],
                     traces["A_DENSE"].h_after[step],
@@ -527,6 +582,7 @@ def main() -> None:
                 "uncoupled_h_equals_tiled": uncoupled_equivalence[step],
                 "uncoupled_g_equals_coupled_g": global_equivalence[step],
                 "hard_anchor_coupling": traces["D_HARD_GLOBAL_ANCHOR"].evaluations[step],
+                "terminal_release_coupling": traces["E_TERMINAL_RELEASE"].evaluations[step],
             }
         )
 
@@ -544,7 +600,7 @@ def main() -> None:
             phase2.save_pixels(estimate, args.output_dir / f"{name}_STEP_{step:02d}_DENOISED.png")
             phase2.save_pixels(accepted, args.output_dir / f"{name}_STEP_{step:02d}_ACCEPTED_H.png")
 
-    for name in ("C_UNCOUPLED_DUAL", "D_HARD_GLOBAL_ANCHOR"):
+    for name in ("C_UNCOUPLED_DUAL", "D_HARD_GLOBAL_ANCHOR", "E_TERMINAL_RELEASE"):
         for step in range(4):
             with torch.inference_mode():
                 g_prediction = vae.decode(traces[name].g_predictions[step]).cpu()
@@ -562,6 +618,15 @@ def main() -> None:
         )
 
     save_contact_sheet(final_paths, args.output_dir / "FINAL_COMPARISON.png")
+    save_contact_sheet(
+        [
+            ("TERMINAL LOCAL PROPOSAL", args.output_dir / "D_HARD_GLOBAL_ANCHOR_STEP_03_PROPOSED_H.png"),
+            ("HARD-PROJECTED FINAL", args.output_dir / "D_HARD_GLOBAL_ANCHOR_FINAL.png"),
+            ("TERMINAL-RELEASE FINAL", args.output_dir / "E_TERMINAL_RELEASE_FINAL.png"),
+            ("LOW-DENSITY G FINAL", args.output_dir / "D_HARD_GLOBAL_ANCHOR_STEP_03_ACCEPTED_G.png"),
+        ],
+        args.output_dir / "TERMINAL_RELEASE_COMPARISON.png",
+    )
 
     report = {
         "configuration": {
@@ -594,6 +659,7 @@ def main() -> None:
                 },
             },
             "coupling": "G_next=G*; H_next=H*+U(G*-D(H*))",
+            "terminal_release": "when sigma_next==0: G_next=G*; H_next=H*",
             "forbidden_mechanisms_present": False,
         },
         "initialization": initialization,
@@ -604,9 +670,20 @@ def main() -> None:
             "candidate3_forwards_per_evaluation": {"global": 1, "local": 3, "total": 4},
             "candidate3_atomic_pair_acceptances": {
                 name: traces[name].atomic_acceptances
-                for name in ("C_UNCOUPLED_DUAL", "D_HARD_GLOBAL_ANCHOR")
+                for name in ("C_UNCOUPLED_DUAL", "D_HARD_GLOBAL_ANCHOR", "E_TERMINAL_RELEASE")
             },
             "crop_state_updates": 0,
+            "hard_vs_terminal_release": {
+                "H_before_each_evaluation": hard_vs_release_before,
+                "H_prediction_each_evaluation": hard_vs_release_prediction,
+                "H_proposal_each_evaluation": hard_vs_release_proposal,
+                "H_after_each_acceptance": hard_vs_release_after,
+                "G_after_each_acceptance": hard_vs_release_global,
+                "only_final_H_acceptance_differs": (
+                    all(item["max_abs"] == 0.0 for item in hard_vs_release_after[:3])
+                    and hard_vs_release_after[3]["max_abs"] > 0.0
+                ),
+            },
         },
         "per_step": per_step,
         "trajectories": {
@@ -628,9 +705,16 @@ def main() -> None:
             "uncoupled_vs_tiled": phase2d.comparison(outputs["C_UNCOUPLED_DUAL"], outputs["B_TILED_ONLY"]),
             "hard_anchor_vs_dense": phase2d.comparison(outputs["D_HARD_GLOBAL_ANCHOR"], outputs["A_DENSE"]),
             "hard_anchor_vs_tiled": phase2d.comparison(outputs["D_HARD_GLOBAL_ANCHOR"], outputs["B_TILED_ONLY"]),
+            "terminal_release_vs_dense": phase2d.comparison(outputs["E_TERMINAL_RELEASE"], outputs["A_DENSE"]),
+            "terminal_release_vs_hard_anchor": phase2d.comparison(outputs["E_TERMINAL_RELEASE"], outputs["D_HARD_GLOBAL_ANCHOR"]),
+            "terminal_release_coarse_consistency": phase2d.comparison(
+                restrict(outputs["E_TERMINAL_RELEASE"]),
+                traces["E_TERMINAL_RELEASE"].g_after[3],
+            ),
         },
         "outputs": {name: str(path) for name, path in final_paths},
         "final_comparison": str(args.output_dir / "FINAL_COMPARISON.png"),
+        "terminal_release_comparison": str(args.output_dir / "TERMINAL_RELEASE_COMPARISON.png"),
     }
     (args.output_dir / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(

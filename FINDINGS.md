@@ -603,3 +603,34 @@ Detailed evidence is in
   trajectories. Exact hard coarse equality after every proposal overconstrains
   local detail, especially across the terminal Euler interval. This rejects the
   tested hard-acceptance rule, not Candidate 3 as a class.
+
+## 2026-08-31 — Candidate-3 terminal-release lifecycle result
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_TERMINAL_RELEASE_REPORT.md` and
+`experiments/flux2_candidate3_terminal_release_results/report.json`.
+
+### Runtime evidence
+
+- Hard-anchor and terminal-release `H` states, local predictions, and Euler
+  proposals were bit-exact through the terminal proposal. Their accepted `G`
+  states were bit-exact throughout, and accepted `H` differed only at final
+  acceptance. The lifecycle intervention is therefore isolated.
+- The unchanged terminal local proposal preserved the prior coupled
+  trajectory's single bridge, centered train, left lighthouse, right stone
+  tower, and horizon/water continuity. Omitting the final projection did not
+  restore tiled-only semantic duplication.
+- Terminal release reduced final RMS versus dense from 0.808925 to 0.727491 and
+  low-frequency RMS from 0.476675 to 0.381146. Terminal overlap disagreement
+  remained exactly 0.260869 because D/E used the same crop predictions.
+- The released terminal coarse mismatch had RMS 0.349332 and max 3.423378,
+  exactly the correction applied by the hard control. Keeping that mismatch
+  removed most cable, train, deck, support, lighthouse, and tower ghosting.
+
+### Conclusion
+
+- In this case, hard coarse consistency is useful as an intermediate-state
+  organizer but harmful as a terminal latent constraint. The local final model
+  proposal can remain authoritative without immediately abandoning the global
+  scene plan. This is positive Candidate-3 evidence, not yet a general or
+  production-qualified policy.

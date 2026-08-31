@@ -245,3 +245,18 @@ ghosted/doubled otherwise useful local cable, deck, train, support, lighthouse,
 and tower detail. This decision rejects the tested all-step hard rule, not
 Candidate 3. No soft coupling, consensus, production sampler, or generalized
 infrastructure is authorized by this result.
+
+## 2026-08-31 — Retain hard coupling only for nonterminal accepted states
+
+The terminal-release control was identical to hard anchoring through every
+state and proposal that could influence a later model evaluation. Accepting the
+terminal local proposal without projection preserved the global single-scene
+organization, removed most projection ghosting, and materially improved both
+absolute and low-frequency error versus dense.
+
+For Candidate-3 research, treat hard coarse equality as an intermediate-state
+organization policy, not a required terminal-state invariant. The decoded
+terminal `H` may intentionally differ from final `G` after both have taken the
+same Euler interval. This is a bounded research decision from one controlled
+case; it does not authorize production integration, soft anchoring, schedule
+sweeps, or generalized lifecycle infrastructure.

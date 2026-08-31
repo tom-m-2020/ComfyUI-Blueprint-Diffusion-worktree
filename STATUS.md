@@ -47,6 +47,9 @@
 - Phase 3 four-step hard-global-anchor falsifier with dense, tiled-only,
   uncoupled-dual, and coupled trajectories; real outputs, state/projection
   telemetry, lifecycle assertions, and focused report.
+- Phase 3b terminal-release discriminator adding one fixed lifecycle variant,
+  with D/E bit-exact pre-acceptance controls, final metrics, decoded comparison,
+  and focused report.
 
 ## Validation status
 
@@ -107,6 +110,10 @@
   overconstrained. The global branch is valid; C.H equals B.H exactly; all
   lifecycle/invariant checks pass. Projection grows to 38.4% of proposed-H RMS
   and the terminal acceptance visibly ghosts fine structure.
+- Candidate-3 terminal release: sufficient in the controlled case. It preserves
+  the hard-coupled single-scene organization, removes most terminal ghosting,
+  and improves final/low-frequency RMS versus both hard anchoring and tiled-only.
+  D/E differ only at final acceptance.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -129,9 +136,8 @@
 
 ## Next concrete milestone
 
-Candidate 2 semantic research remains paused. Do not adopt the exact all-step
-hard-anchor rule. The highest-value next discriminator is a fixed terminal-
-release lifecycle probe: retain hard coupling only for states consumed by a
-later model evaluation, then accept the terminal local proposal without coarse
-projection. Do not combine it with a strength sweep, alternate coupling rule,
-production node, cache, or sparse execution.
+Candidate 2 semantic research remains paused. Preserve terminal release as the
+current Candidate-3 research policy, but do not implement production or proceed
+automatically to soft anchoring. The next work, if authorized, should qualify
+this fixed lifecycle on another composition-stress prompt/seed rather than
+altering coupling strength, operators, or schedule.
