@@ -42,6 +42,8 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=ROOT / "experiments" / "flux2_candidate3_hard_global_anchor_results",
     )
+    parser.add_argument("--prompt", default=phase2.PROMPT)
+    parser.add_argument("--seed", type=int, default=20260829)
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
@@ -457,7 +459,8 @@ def main() -> None:
     global_hw = (256 // 16, 512 // 16)
     crop_hw = (512 // 16, 512 // 16)
     overlap_pixels = 128
-    seed = 20260829
+    seed = args.seed
+    prompt = args.prompt
     crops = phase2.crops_for_canvas(*target_hw, *crop_hw, overlap_pixels // 16)
     sigmas = phase2.get_schedule(4, math.prod(target_hw)).float().clone()
     global_rope = phase2.rope_for_global(*target_hw, *global_hw)
@@ -469,7 +472,7 @@ def main() -> None:
     clip = phase2.comfy.sd.load_clip(
         [str(phase2.TEXT_ENCODER_PATH)], clip_type=phase2.comfy.sd.CLIPType.FLUX2
     )
-    positive = clip.encode_from_tokens_scheduled(clip.tokenize(phase2.PROMPT))
+    positive = clip.encode_from_tokens_scheduled(clip.tokenize(prompt))
     negative = clip.encode_from_tokens_scheduled(clip.tokenize(""))
     del clip
     phase2.comfy.model_management.unload_all_models()
@@ -633,7 +636,7 @@ def main() -> None:
             "model": str(phase2.MODEL_PATH),
             "text_encoder": str(phase2.TEXT_ENCODER_PATH),
             "vae": str(phase2.VAE_PATH),
-            "prompt": phase2.PROMPT,
+            "prompt": prompt,
             "seed": seed,
             "cfg": 1.0,
             "sampler": "four-step zero-churn Euler; one atomic accepted interval",

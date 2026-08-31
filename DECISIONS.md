@@ -260,3 +260,18 @@ terminal `H` may intentionally differ from final `G` after both have taken the
 same Euler interval. This is a bounded research decision from one controlled
 case; it does not authorize production integration, soft anchoring, schedule
 sweeps, or generalized lifecycle infrastructure.
+
+## 2026-08-31 — Keep terminal release, but do not productionize Candidate 3
+
+The fixed terminal-release lifecycle again outperformed all-step hard
+projection numerically and visually under a different prompt and seed. It did
+not cause tiled-only's duplicate person/large-tree scene to return, confirming
+that local terminal authority is compatible with meaningful retained global
+organization in a second case.
+
+Retain terminal release as the preferred Candidate-3 research lifecycle, but do
+not treat Candidate 3 as production-qualified. A small second car and two extra
+thin trees survived both hard and released terminal states, showing that exact
+intermediate `D(H)=G` does not guarantee object uniqueness. Do not proceed
+automatically to soft anchoring, production integration, or another policy
+sweep.
