@@ -214,3 +214,19 @@ Do not adopt this early-plus-refresh policy or sweep refresh schedules. Candidat
 2's cheap source-context premise is materially weakened under hard no-image-
 image restriction. No trajectory, caching, sparse executor, or production work
 is authorized.
+
+## 2026-08-31 — Test Candidate 3 with a hard accepted-state global anchor first
+
+Candidate 2 semantic work is paused. The first Candidate-3 experiment will use
+two persistent same-sigma states and independently compute an ordinary
+low-density global Euler proposal plus an assembled high-resolution local Euler
+proposal. It will then keep the global proposal authoritative and project the
+accepted high-resolution state to satisfy `D(H_next) = G_next` exactly.
+
+This parameter-free rule is selected ahead of soft anchoring and bidirectional
+consensus because it gives the strongest causal discriminator without allowing
+crop-local low-frequency alternatives to rewrite the global trajectory. The
+experiment must include an uncoupled dual control and must qualify the mapped-
+noise global branch independently. This is a decision about one falsification
+probe, not adoption of Candidate 3, a production sampler, or a claim of compute
+efficiency.
