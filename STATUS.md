@@ -155,7 +155,13 @@
   G geometry, deterministic 32x32 crop coverage, and absolute FLUX.2
   coordinates. Fifteen unit tests pass; real square, portrait, and >2:1 wide
   four-step workflows each completed with four previews and normal VAE output.
-- Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
+- Candidate-3 performance baseline: qualified on 512x512, 1024x512,
+  1280x512, and 1024x2048 with matched dense controls, cold/warm runs, CUDA
+  events, allocator peaks, per-interval work, and valid decodes. Current
+  Blueprint is 1.77x-2.25x slower but saves 331 MiB peak allocated and 744 MiB
+  peak reserved at 1024x2048. Local crop forwards are the dominant cost.
+- Physical free VRAM, alternate GPUs/backends, and optimized performance remain
+  unqualified.
 
 ## Active blockers / unknowns
 
@@ -178,6 +184,6 @@
 
 Candidate 2 semantic research remains paused. The fail-closed Candidate-3
 production slice is implemented, research-equivalent, and live-workflow
-qualified across the tested target geometries. Any next milestone requires explicit scope; do not add another
-geometry sweep, optimization, unsupported sampler/model policy, or new
-algorithm automatically.
+qualified across the tested target geometries. The measured Phase-6b target is
+local crop model work, but no optimization mechanism is selected or authorized
+automatically. Do not add another geometry sweep or broaden sampler/model scope.

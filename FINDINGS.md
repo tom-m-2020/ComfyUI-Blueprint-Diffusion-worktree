@@ -843,3 +843,30 @@ Detailed evidence is in
   each with four previews, normal decode/save, and all runtime coarse-state
   invariants intact. Visual inspection found no gross seam, coordinate, or
   macroblock failure. This does not establish broad semantic generalization.
+
+## 2026-08-31 — Candidate-3 performance characterization
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_PERFORMANCE_CHARACTERIZATION.md` and
+`experiments/flux2_candidate3_performance_results/report.json`.
+
+- Under matched native FLUX.2 Klein W4A8 conditions, current Blueprint warm
+  sampling is slower than dense at every tested geometry: 1.77x at 512x512,
+  2.25x at 1024x512, 1.97x at 1280x512, and 1.90x at 1024x2048.
+- Blueprint has no peak allocator-memory advantage at 512x512. At 1024x2048,
+  it reduces peak allocated memory by 331 MiB (10.0%) and peak reserved memory
+  by 744 MiB (17.5%) relative to dense. The memory advantage grows over the
+  tested target sizes but remains a PyTorch allocator result, not physical-free-
+  VRAM evidence.
+- The 1024x2048 case completed for both variants on the 12 GiB RTX 3060. Dense
+  warm sampling took 10.233 s; Blueprint took 19.475 s.
+- At 1024x2048, 15 crops execute 15360 local spatial tokens for 8192 unique H
+  tokens (1.875x redundancy). Local forwards take 14.908 s, 76.6% of Blueprint
+  model time; the global branch takes 4.440 s. Model calls collectively account
+  for over 99% of warm sampling time.
+- DCT, overlap assembly, Euler arithmetic, coupling, invariant validation, and
+  other coordinator work are not current performance bottlenecks. Their total
+  is about 0.65% at 1024x2048.
+- Token counts and QxK dimensions are recorded as work descriptors, not FLOP
+  estimates. The measured conclusion is that sequential local execution lowers
+  peak activation memory at larger geometry while increasing total runtime.
