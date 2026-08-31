@@ -357,3 +357,21 @@ partial-denoise control demonstrated that ComfyUI's broader `max_denoise`
 classification cannot define this fixed production boundary. This decision is
 a validation constraint and does not alter Candidate-3 coupling or authorize
 additional schedules.
+
+## 2026-08-31 — Generalize Candidate-3 geometry without changing semantics
+
+Support target latent grids with both axes at least 32 and divisible by four.
+Instantiate the existing 4-to-3 block-DCT geometry from each run's accepted H,
+so G is exactly three quarters of H on each axis and the same right-inverse
+coupling contract applies blockwise.
+
+Use deterministic 32x32 crops with stride 24 and append the end-aligned final
+start on each axis. This preserves the qualified 32x64 crop plan exactly while
+providing full normalized coverage for other aspect ratios. Keep local FLUX.2
+coordinates as absolute crop offsets and map the global grid to both full-canvas
+coordinate endpoints independently by axis.
+
+Reject axes below 32 rather than padding local model inputs or inventing
+out-of-canvas coordinate semantics. This phase does not change Candidate-3
+lifecycle, terminal release, CFG/model/sampler boundaries, or authorize
+optimization.

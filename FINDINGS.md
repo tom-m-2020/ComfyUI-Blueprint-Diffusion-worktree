@@ -820,3 +820,26 @@ Detailed evidence is in
   heuristic is not a sufficiently strict fixed-slice guard. Requiring
   `sigma[0] == 1.0` is the explicit supported-schedule boundary; this changes
   validation only, not the qualified algorithm.
+
+## 2026-08-31 — Candidate-3 arbitrary target geometry
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_ARBITRARY_GEOMETRY_REPORT.md` and
+`experiments/live_comfyui_candidate3_geometry_results/report.json`.
+
+- The block-DCT 4-to-3 operator generalizes without changing its mathematics:
+  any positive H axes divisible by four map to G axes equal to three quarters
+  of H. Right-inverse and constant preservation remain within `2e-6` across
+  tested rectangular and non-crop-aligned block grids.
+- Ordinary local model calls impose the separate practical minimum of 32 latent
+  positions per axis. Smaller grids are rejected instead of padded or assigned
+  out-of-canvas coordinates.
+- Fixed 32x32 crops at stride 24 with an end-aligned final start reproduce the
+  original 32x64 three-crop plan and give deterministic normalized full
+  coverage for portrait, square, wide, and two-dimensional crop grids.
+- FLUX.2 global RoPE uses endpoint-preserving per-axis scales
+  `(H-1)/(G-1)`; local crops use their absolute latent-grid Y/X offsets.
+- Real four-step ComfyUI runs succeeded at 512x512, 512x1024, and 1280x512,
+  each with four previews, normal decode/save, and all runtime coarse-state
+  invariants intact. Visual inspection found no gross seam, coordinate, or
+  macroblock failure. This does not establish broad semantic generalization.
