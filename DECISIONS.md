@@ -230,3 +230,18 @@ experiment must include an uncoupled dual control and must qualify the mapped-
 noise global branch independently. This is a decision about one falsification
 probe, not adoption of Candidate 3, a production sampler, or a claim of compute
 efficiency.
+
+## 2026-08-31 — Reject exact hard projection as an all-step acceptance rule
+
+The hard global anchor passed every lifecycle and numerical integrity check and
+caused later local proposals to follow the valid low-density trajectory's
+single-bridge organization. It therefore supplies positive evidence for
+persistent two-state coupling.
+
+Do not adopt exact `D(H_next) = G_next` projection after every proposal as the
+Candidate-3 contract. Projection magnitude grew through the trajectory and
+reached 38.4% of proposed-H RMS at the terminal interval, where it visibly
+ghosted/doubled otherwise useful local cable, deck, train, support, lighthouse,
+and tower detail. This decision rejects the tested all-step hard rule, not
+Candidate 3. No soft coupling, consensus, production sampler, or generalized
+infrastructure is authorized by this result.

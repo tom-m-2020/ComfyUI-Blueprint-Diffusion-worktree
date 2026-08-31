@@ -562,3 +562,44 @@ Detailed design is in
   coupling-strength sweep or bidirectional consensus until this strongest,
   parameter-free rule establishes that state coupling controls composition
   without reducing `H` to an upscaled global result.
+
+## 2026-08-31 — Candidate-3 hard-global-anchor runtime result
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_HARD_GLOBAL_ANCHOR_REPORT.md` and
+`experiments/flux2_candidate3_hard_global_anchor_results/report.json`.
+
+### Runtime evidence
+
+- The mapped global initialization had 0.248667 of the high-resolution noise
+  variance, as expected for nonoverlapping `2x2` area restriction. Despite that
+  shift, the independently evolved `G` trajectory was finite and visibly valid:
+  one coherent bridge, centered train, left lighthouse, right stone tower, and
+  continuous horizon/water.
+- The uncoupled control's accepted `H` was bit-exact with tiled-only at all four
+  steps. Uncoupled and hard-anchor `G` were also bit-exact. Every Candidate-3
+  evaluation performed exactly one 512-token global plus three 1024-token local
+  forwards, followed by one atomic pair acceptance; no crop updated state.
+- Hard acceptance enforced `D(H_next) = G_next` with maximum error
+  `2.38419e-7` at every step under the documented endpoint-spanning global RoPE
+  mapping (`scale_y=31/15`, `scale_x=63/31`).
+- Projection RMS grew monotonically from 0.02597 to 0.34933, and from 2.68% to
+  38.37% of proposed-H RMS. Global/local coarse update cosines remained positive
+  at 0.74–0.86, while consecutive projection cosines rose to 0.77. The branches
+  agree broadly in direction but retain an increasing, persistent state-scale
+  mismatch rather than converging.
+- Hard anchoring reduced final latent RMS versus dense from 0.8639 to 0.8089 and
+  low-frequency RMS from 0.5016 to 0.4767. Late pre-blend overlap disagreement
+  also fell relative to tiled-only.
+- The final local proposal before terminal projection followed the global
+  single-bridge plan and contained useful high-resolution detail. The terminal
+  exact projection visibly doubled/smeared cables, deck, train, supports,
+  lighthouse, and tower structure.
+
+### Conclusion
+
+- Persistent low-density state can causally organize later crop predictions in
+  this case, so coarse state coupling has semantic value beyond independent
+  trajectories. Exact hard coarse equality after every proposal overconstrains
+  local detail, especially across the terminal Euler interval. This rejects the
+  tested hard-acceptance rule, not Candidate 3 as a class.
