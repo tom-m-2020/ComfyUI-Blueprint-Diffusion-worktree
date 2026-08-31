@@ -44,6 +44,9 @@
 - Phase 3 Candidate-3 research/design pass defining persistent low/high states,
   a synchronized Euler lifecycle, three ranked state-coupling rules, compute
   bounds, failure criteria, and one selected FLUX.2 falsification experiment.
+- Phase 3 four-step hard-global-anchor falsifier with dense, tiled-only,
+  uncoupled-dual, and coupled trajectories; real outputs, state/projection
+  telemetry, lifecycle assertions, and focused report.
 
 ## Validation status
 
@@ -99,7 +102,11 @@
   worse than early-only and the duplicate remains.
 - Candidate-3 design contract: complete. The first test is a hard accepted-state
   global anchor with exact `D(H) = G` synchronization, not prediction-residual
-  fusion. No Candidate-3 trajectory has been run yet.
+  fusion.
+- Candidate-3 hard-anchor result: composition is controlled but local detail is
+  overconstrained. The global branch is valid; C.H equals B.H exactly; all
+  lifecycle/invariant checks pass. Projection grows to 38.4% of proposed-H RMS
+  and the terminal acceptance visibly ghosts fine structure.
 - Compute, wall-clock acceleration, and general VRAM reduction: not qualified.
 - No production code or nodes were added.
 
@@ -114,13 +121,17 @@
   full-canvas noise remains a valid/coherent global branch despite the mapped-
   noise variance shift.
 - Whether exact accepted-state coarse anchoring suppresses semantic alternatives
-  or merely confines them to the high-resolution restriction nullspace.
+  or merely confines them to the high-resolution restriction nullspace. The
+  first run shows semantic control, but exact terminal projection damages
+  detail.
 - Cache validity and block-level sparse propagation for Z-Image and Anima.
 - Whether periodic global refresh is sufficient after early denoising.
 
 ## Next concrete milestone
 
-Candidate 2 semantic research is paused. Implement only the documented
-Candidate-3 four-step hard-global-anchor falsifier with dense, tiled-only, and
-uncoupled-dual controls. Do not add alternate coupling rules, parameter sweeps,
-production nodes, caching, or sparse execution.
+Candidate 2 semantic research remains paused. Do not adopt the exact all-step
+hard-anchor rule. The highest-value next discriminator is a fixed terminal-
+release lifecycle probe: retain hard coupling only for states consumed by a
+later model evaluation, then accept the terminal local proposal without coarse
+projection. Do not combine it with a strength sweep, alternate coupling rule,
+production node, cache, or sparse execution.
