@@ -287,13 +287,18 @@ class TestStateAndPolicy(unittest.TestCase):
 
 class TestValidation(unittest.TestCase):
     def test_schedule_validation(self):
-        validate_schedule(torch.tensor([1.0, 0.75, 0.5, 0.25, 0.0]))
+        for steps in (1, 2, 4, 8, 20):
+            with self.subTest(steps=steps):
+                validate_schedule(torch.linspace(1.0, 0.0, steps + 1))
         invalid = (
-            torch.tensor([1.0, 0.5, 0.0]),
+            torch.tensor([]),
+            torch.tensor([1.0]),
+            torch.tensor([[1.0, 0.0]]),
             torch.tensor([1.0, 0.75, 0.75, 0.25, 0.0]),
             torch.tensor([1.0, 0.75, 0.5, 0.25, 0.1]),
             torch.tensor([1.0, 0.75, float("nan"), 0.25, 0.0]),
             torch.tensor([0.9, 0.7, 0.5, 0.25, 0.0]),
+            torch.tensor([1.0, 0.5, 0.0, -0.1]),
         )
         for sigmas in invalid:
             with self.subTest(sigmas=sigmas):
@@ -323,6 +328,7 @@ class TestValidation(unittest.TestCase):
 
     def test_fail_closed_mask_and_edit_latent(self):
         sampler = BlueprintEulerSampler()
+        sampler.last_telemetry = ({"stale": True},)
         with self.assertRaises(ValueError):
             sampler.sample(
                 None,
@@ -333,6 +339,7 @@ class TestValidation(unittest.TestCase):
                 torch.zeros(1, 128, 32, 64),
                 torch.ones(1, 1, 32, 64),
             )
+        self.assertEqual(sampler.last_telemetry, ())
         with self.assertRaises(ValueError):
             sampler.sample(
                 None,

@@ -217,6 +217,11 @@
   not accumulate with longer schedules, all invariants pass, and only the
   terminal global call is omitted. A separate production validation/API task
   is now justified.
+- Variable-step Euler production support: implemented and qualified. Full-
+  denoise strictly decreasing schedules now accept at least one interval.
+  Production is boundary-by-boundary bit-exact with Phase 7a at 1/2/4/8/20
+  steps and with the frozen four-step baseline; live H64/H48 workflows pass at
+  4/8/20 steps with exact repeated decoded hashes.
 
 ## Active blockers / unknowns
 
@@ -270,3 +275,8 @@ Phase 7a qualifies ordinary longer full-denoise CONST-flow Euler schedules up
 to 20 steps experimentally. The next production task may generalize schedule
 cardinality only; it must retain strict descent, sigma 1 → exact zero, current
 terminal behavior, and all existing fail-closed boundaries.
+
+Phase 7b completes that production generalization. Variable step cardinality
+is now supported under the same full-denoise CONST-flow contract; partial
+denoise, alternate samplers, CFG>1, masks/editing, and other model families
+remain unsupported and fail closed.

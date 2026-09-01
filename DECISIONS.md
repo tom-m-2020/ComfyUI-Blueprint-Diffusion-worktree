@@ -502,3 +502,15 @@ generalize only schedule validation and loop cardinality while retaining sigma
 1 start, exact-zero termination, strict descent, fresh global work on every
 nonterminal interval, and the terminal global omission. This evidence does not
 authorize alternate samplers, partial denoise, or changed coupling.
+
+## 2026-09-01 — Support variable full-denoise Euler cardinality in production
+
+Accept any one-or-more-interval sigma schedule that begins at exactly 1, ends
+at exact zero, is finite, remains positive before the terminal value, and is
+strictly decreasing. Keep CONST-flow/full-denoise enforcement and every prior
+model, CFG, conditioning, geometry, crop, DCT, coupling, cadence, and terminal
+policy unchanged. The loop, preview total, telemetry ordinals, and terminal
+selection derive only from `len(sigmas)-1`. This generalization is supported by
+Phase-7a semantic evidence, bit-exact production/reference regression through
+20 steps, the unchanged frozen four-step baseline, and fresh live ComfyUI
+qualification. It does not imply support for partial denoise or other samplers.
