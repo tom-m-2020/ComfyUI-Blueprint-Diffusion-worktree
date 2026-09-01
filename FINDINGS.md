@@ -1052,3 +1052,26 @@ Detailed evidence is in
   adjacent-strip RMS is diagnostic rather than a standalone quality gate.
 - A fresh live ComfyUI process qualified both production mappings with four
   previews, normal VAE/save output, and identical repeated decoded hashes.
+
+## 2026-09-01 — Terminal global prediction is causally dead for returned H
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_GLOBAL_REFRESH_CADENCE.md` and
+`experiments/flux2_candidate3_global_refresh_cadence_results/report.json`.
+
+- Reusing interval 2's global denoised estimate only at terminal interval 3
+  produces final H exactly equal to the four-fresh-forward baseline in three
+  H=64x128 scenes and one H=48x96 scene. Final RMS, max error, and low-frequency
+  RMS are all zero.
+- This exactness follows from terminal release: interval-3 G does not project
+  into terminal H. All applied nonterminal projections and accepted states are
+  already identical before the skipped call.
+- The policy saves one of four global forwards, 24.8% mean global CUDA time,
+  and 6.6% mean sampling wall time. Peak allocator memory is unchanged.
+- Final G is not equivalent: its RMS is 3.6-4.5% below baseline when advanced
+  with the stale terminal estimate. The result qualifies removal/redefinition
+  of causally dead terminal G work, not faithful stale-G tracking.
+- Skipping any nonterminal refresh changes accepted H. Early-2, alternating,
+  and early-only policies show increasing final/low-frequency divergence and
+  projection demand; alternating/early-only visibly alter bridge towers and
+  cable geometry.

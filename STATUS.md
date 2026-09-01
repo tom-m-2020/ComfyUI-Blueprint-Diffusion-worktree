@@ -200,6 +200,11 @@
   48x48/stride36; all other shapes retain 32x32/stride24. Seven semantic stress
   pairs, bit-exact repeats, 17 unit tests, and fresh live ComfyUI runs pass.
   Mean warm wall gains are 17.2% and 18.6%, respectively.
+- Global-refresh cadence discriminator: complete, experiment-only. Fresh global
+  estimates at 0/1/2 with stale reuse only at terminal interval 3 are exactly
+  output-equivalent across four scenes and save 6.6% mean wall time. Skipping
+  a nonterminal refresh changes accepted H, increases later projection demand,
+  and can alter bridge geometry. Production was not changed.
 
 ## Active blockers / unknowns
 
@@ -244,3 +249,7 @@ production geometry policy is introduced.
 Phase 6h completes that qualification. The two exact mappings are now the
 production policy; no generic largest-fitting-window rule is implied or
 qualified.
+
+Phase 6i qualifies one narrow follow-up: eliminate or redefine the causally
+dead terminal global prediction while preserving coordinator/API contracts.
+Do not infer a nonterminal periodic cadence from this result.
