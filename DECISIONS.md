@@ -478,3 +478,15 @@ mean wall time. Advance this narrow lifecycle optimization for a separate
 production/API qualification. Do not skip intervals 0-2: stale estimates used
 on nonterminal intervals alter accepted H and can visibly reorganize long
 structures. Phase 6i makes no production change.
+
+## 2026-09-01 — Omit terminal global execution and retain G as unsynchronized diagnostic state
+
+Production no longer performs a global prediction or constructs `G*` when
+`sigma_next == 0`. Terminal release accepts the fresh local `H*` directly.
+Keep the last accepted nonterminal `G` tensor in the frozen state rather than
+making `G` optional, but label it `retained_preterminal_unsynchronized` and do
+not assert terminal `D(H)=G`. This is the smallest honest API contract: it
+preserves nonterminal state ownership and avoids a broad optional-state
+refactor while eliminating one of four global forwards. Frozen-baseline tensor
+regression, unit tests, warm timing, and live ComfyUI workflows all qualify the
+change. This decision does not authorize skipping any nonterminal global call.

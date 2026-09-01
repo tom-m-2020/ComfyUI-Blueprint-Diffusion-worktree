@@ -1075,3 +1075,26 @@ Detailed evidence is in
   and early-only policies show increasing final/low-frequency divergence and
   projection demand; alternating/early-only visibly alter bridge towers and
   cable geometry.
+
+## 2026-09-01 — Terminal global-forward elimination is production-equivalent
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_TERMINAL_GLOBAL_ELIMINATION.md` and
+`experiments/flux2_candidate3_terminal_global_elimination_results/report.json`.
+
+- The production coordinator now omits the terminal global model call and
+  proposal. It retains the last nonterminal `G` only as explicitly
+  unsynchronized diagnostic state; terminal returned `H` is authoritative.
+- Across the Phase-6i four-scene matrix, initial states, all local predictions
+  and proposals, all accepted H states, nonterminal global predictions and
+  proposals, nonterminal G states, and final H were bit-exact with the frozen
+  four-global-forward production baseline.
+- Runtime telemetry confirms fresh global calls only at ordinals 0/1/2, fresh
+  local sets and previews at all four ordinals, no terminal `x0_G`/`G*`, and
+  unchanged nonterminal coarse invariants.
+- Warm sampling wall time fell 6.06% in aggregate (per-case 3.36–7.49%). Peak
+  allocated/reserved memory did not materially fall because larger
+  nonterminal/local forwards continue to determine the peak.
+- A fresh live ComfyUI process qualified normal BasicGuider → Blueprint sampler
+  → SamplerCustomAdvanced → VAE Decode → Save Image execution at H=64x128 and
+  H=48x96, with four first-run previews and exact repeated decoded hashes.
