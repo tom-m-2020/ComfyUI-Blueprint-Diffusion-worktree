@@ -175,6 +175,10 @@
   bfloat16 `Flux.img_in` output, after exact sampler input, patchification, IDs,
   and embedding input. It amplifies through the model to the known prediction
   drift. Production remains unchanged and crop batching remains unqualified.
+- Batched-trajectory probe: experiment-only B=2 scheduling retained visible
+  bridge/train and person/car/tree semantics and all nonterminal coupling
+  invariants, but its warm wall-time gain was only 3% while peak allocated and
+  reserved memory increased. No production batching change is justified.
 
 ## Active blockers / unknowns
 
@@ -199,6 +203,6 @@ Candidate 2 semantic research remains paused. The fail-closed Candidate-3
 production slice is implemented, research-equivalent, and live-workflow
 qualified across the tested target geometries. Local crop model work remains
 the measured optimization target, but ordinary crop batching is blocked by
-batch-size-sensitive unquantized embedding execution below coordinate
-construction. Any next step requires explicit authority for backend linear/GEMM
-equivalence work; do not broaden sampler/model scope automatically.
+batch-size-sensitive unquantized embedding execution and has no meaningful
+measured warm speed benefit at the three-crop geometry. Do not promote it or
+broadly change sampler/model scope automatically.

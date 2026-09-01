@@ -934,3 +934,26 @@ Detailed evidence is in
 - The initial embedding difference amplifies to `0.418861` max and `0.029550`
   RMS at the final prediction. No claim is made about the lower-level CUDA GEMM
   cause without a separate backend/kernel investigation.
+
+## 2026-09-01 — Batched Candidate-3 trajectory semantic/performance probe
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_BATCHED_TRAJECTORY_SEMANTIC_QUALIFICATION.md` and
+`experiments/flux2_candidate3_batched_trajectory_results/report.json`.
+
+- Experiment-only B=2 scheduling used exact per-element coordinates and
+  reduced three local calls to two while leaving all Candidate-3 state and
+  coupling semantics unchanged.
+- In bridge/train and person/car/tree, final batched decodes retained the same
+  object count, placement, composition, continuity, and visible detail as the
+  sequential controls. No new seam or coordinate displacement was visible.
+- Assembled local predictions differed by roughly `0.027-0.056` RMS across
+  steps, but hard nonterminal coupling reduced accepted-H drift to at most
+  `0.0049` RMS before terminal release. Accepted G remained bit-exact and all
+  nonterminal D(H)=G checks remained below `7.2e-7` max error.
+- The useful warm timing was 4.48 s sequential versus 4.35 s batched, only
+  1.03x. Peak allocated/reserved memory increased by approximately 155/297 MiB.
+  The larger first-scene apparent speedup included first-use setup and is not a
+  steady-state claim.
+- Therefore B=2 is semantically promising in these two cases but does not have
+  a meaningful measured speed benefit at the 1024x512 three-crop geometry.

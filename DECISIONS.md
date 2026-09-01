@@ -423,3 +423,12 @@ The mismatch is small there but grows materially by final projection. Do not
 relax the sequential-equivalence gate or modify Blueprint semantics. A future
 attempt must explicitly qualify batch-shape-invariant embedding/backend linear
 execution before crop batching can be reconsidered.
+
+## 2026-09-01 — Do not productionize B=2 crop scheduling at three-crop geometry
+
+The experiment-only trajectory retained the two qualified scenes' visible
+semantics, so the known numerical B=1/B=2 drift is not an immediate semantic
+failure in these cases. However, the useful warm run improved sampling wall
+time by only 3% and increased peak allocated/reserved CUDA memory. Keep the
+scoped coordinate override and batched scheduling out of production; the
+measured benefit does not justify the numerical and memory tradeoff.
