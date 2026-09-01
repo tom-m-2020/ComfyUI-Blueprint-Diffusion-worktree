@@ -461,3 +461,11 @@ a shape-aware policy is separately qualified. The next eligible configuration
 is 64x64/stride48 at H=64x128: it improved warm sampling time 16.6% with
 preserved visible semantics, but its higher adjacent-boundary metric requires
 additional boundary-placement and long-structure validation first.
+
+## 2026-09-01 — Select larger windows for exactly two qualified H geometries
+
+Use 64x64/stride48 only for H=64x128 and 48x48/stride36 only for H=48x96.
+Keep 32x32/stride24 for every other target. The two mappings passed multiple
+semantic boundary/long-structure scenes, bit-exact recomputation, Candidate-3
+lifecycle checks, material warm runtime gates, unit tests, and live ComfyUI.
+Do not infer a largest-fitting or interpolated policy from these two points.

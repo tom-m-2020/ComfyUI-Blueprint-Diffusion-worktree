@@ -195,6 +195,11 @@
   decodes preserve person/car/tree semantics with no visible seams, but final
   adjacent-strip RMS rises for the two faster configurations. Results are
   geometry-dependent and no production policy was changed.
+- Geometry-dependent window qualification: complete and productionized for two
+  exact shapes. H=64x128 now uses 64x64/stride48 and H=48x96 uses
+  48x48/stride36; all other shapes retain 32x32/stride24. Seven semantic stress
+  pairs, bit-exact repeats, 17 unit tests, and fresh live ComfyUI runs pass.
+  Mean warm wall gains are 17.2% and 18.6%, respectively.
 
 ## Active blockers / unknowns
 
@@ -235,3 +240,7 @@ Phase 6g finds a promising but shape-specific local-window crossover. The next
 qualification target is 64x64/stride48 specifically at H=64x128, with more
 boundary placements and a compatible long-geometry semantic prompt before any
 production geometry policy is introduced.
+
+Phase 6h completes that qualification. The two exact mappings are now the
+production policy; no generic largest-fitting-window rule is implied or
+qualified.

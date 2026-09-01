@@ -102,6 +102,38 @@ class TestRegions(unittest.TestCase):
                 self.assertGreater(float(coverage.min()), 0.0)
                 self.assertTrue(torch.equal(assembled, torch.ones_like(assembled)))
 
+    def test_exact_qualified_geometry_window_selection(self):
+        expected = {
+            (64, 128): (64, 48, ((0, 0), (0, 48), (0, 64))),
+            (48, 96): (48, 36, ((0, 0), (0, 36), (0, 48))),
+        }
+        planner = FixedCropPlanner()
+        assembler = OverlapAssembler()
+        for target_hw, (crop_size, stride, positions) in expected.items():
+            with self.subTest(target_hw=target_hw):
+                regions = planner.plan(target_hw)
+                self.assertEqual(tuple((r.y, r.x) for r in regions), positions)
+                self.assertTrue(
+                    all((r.height, r.width) == (crop_size, crop_size) for r in regions)
+                )
+                self.assertEqual(positions[1][1] - positions[0][1], stride)
+                predictions = [
+                    torch.ones(1, 2, crop_size, crop_size) for _ in regions
+                ]
+                assembled, coverage = assembler.assemble(
+                    predictions, regions, target_hw
+                )
+                self.assertGreater(float(coverage.min()), 0.0)
+                self.assertTrue(torch.equal(assembled, torch.ones_like(assembled)))
+
+    def test_unlisted_geometry_retains_32_by_32_policy(self):
+        regions = FixedCropPlanner().plan((64, 80))
+        self.assertEqual(len(regions), 9)
+        self.assertTrue(all((r.height, r.width) == (32, 32) for r in regions))
+        self.assertEqual(
+            tuple(sorted({r.x for r in regions})), (0, 24, 48)
+        )
+
     def test_small_or_indivisible_target_fails(self):
         for target_hw in ((28, 32), (32, 28), (33, 64)):
             with self.subTest(target_hw=target_hw), self.assertRaises(ValueError):

@@ -1031,3 +1031,24 @@ Detailed evidence is in
 - Larger local windows can help at favorable target shapes, but no fixed window
   universally dominates. Deterministic end alignment and nonlinear per-forward
   attention cost must be included in any geometry policy.
+
+## 2026-09-01 — Two exact local-window policies are production-qualified
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_GEOMETRY_WINDOW_PRODUCTION_QUALIFICATION.md` and
+`experiments/flux2_candidate3_geometry_window_qualification_results/report.json`.
+
+- Across four H=64x128 scenes, 64x64/stride48 preserved person/car/tree,
+  bridge/train, centered-subject, and overlap-subject semantics while reducing
+  mean warm sampling wall time 17.2% and local CUDA time 22.2%.
+- Across three H=48x96 scenes, 48x48/stride36 preserved person/car/tree,
+  centered-robot, and full-width-train semantics while reducing mean wall time
+  18.6% and local CUDA time 24.0%.
+- Every baseline/candidate run and deterministic recomputation passed the same
+  Candidate-3 lifecycle/invariants; all final latent repeats were bit-exact.
+- Candidate overlap disagreement improved in every scene. Adjacent-strip RMS
+  sometimes rose, but no corresponding seam, missing part, displacement,
+  duplication, horizon break, or detail loss was visible. This confirms why
+  adjacent-strip RMS is diagnostic rather than a standalone quality gate.
+- A fresh live ComfyUI process qualified both production mappings with four
+  previews, normal VAE/save output, and identical repeated decoded hashes.
