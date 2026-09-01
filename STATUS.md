@@ -205,6 +205,12 @@
   output-equivalent across four scenes and save 6.6% mean wall time. Skipping
   a nonterminal refresh changes accepted H, increases later projection demand,
   and can alter bridge geometry. Production was not changed.
+- Terminal global-forward elimination: productionized and qualified. The
+  terminal interval now performs fresh local work only and retains prior G as
+  explicitly unsynchronized diagnostic state. All requested real-model tensor
+  boundaries are bit-exact with the frozen four-global baseline across four
+  scenes; 18 tests and fresh live H64/H48 workflows pass. Aggregate warm wall
+  time improved 6.06%, with no material peak-memory change.
 
 ## Active blockers / unknowns
 
@@ -250,6 +256,6 @@ Phase 6h completes that qualification. The two exact mappings are now the
 production policy; no generic largest-fitting-window rule is implied or
 qualified.
 
-Phase 6i qualifies one narrow follow-up: eliminate or redefine the causally
-dead terminal global prediction while preserving coordinator/API contracts.
-Do not infer a nonterminal periodic cadence from this result.
+Phase 6j completes that narrow production optimization. The causally dead
+terminal global forward is eliminated; no nonterminal cadence reduction is
+qualified or pending from this evidence.

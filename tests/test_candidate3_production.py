@@ -193,19 +193,21 @@ class TestStateAndPolicy(unittest.TestCase):
         )
         error = float((geometry.restrict(accepted.h) - accepted.g).abs().max())
         self.assertFalse(accepted.terminal_release)
+        self.assertTrue(accepted.global_synchronized)
         self.assertLessEqual(error, geometry.TOLERANCE)
 
     def test_terminal_release(self):
-        geometry = BlockDCTGeometry((32, 64))
         policy = HardNonterminalTerminalRelease()
         h_star = torch.randn(1, 2, 32, 64, generator=torch.Generator().manual_seed(3))
-        g_star = torch.randn(1, 2, 24, 48, generator=torch.Generator().manual_seed(4))
-        accepted = policy.accept(
-            g_star=g_star, h_star=h_star, sigma_next=0.0, geometry=geometry
+        retained_g = torch.randn(1, 2, 24, 48, generator=torch.Generator().manual_seed(4))
+        accepted = policy.accept_terminal(
+            retained_g=retained_g, h_star=h_star, sigma_next=0.0
         )
         self.assertTrue(accepted.terminal_release)
         self.assertIs(accepted.h, h_star)
-        self.assertIs(accepted.g, g_star)
+        self.assertIs(accepted.g, retained_g)
+        self.assertIsNone(accepted.projection_rms)
+        self.assertFalse(accepted.global_synchronized)
 
     def test_coordinator_detects_model_mutation(self):
         class MutatingAdapter:
@@ -232,6 +234,55 @@ class TestStateAndPolicy(unittest.TestCase):
                 model_options={},
                 seed=1,
             )
+
+    def test_terminal_coordinator_skips_global_and_retains_diagnostic_g(self):
+        class TerminalAdapter:
+            def __init__(self):
+                self.global_calls = 0
+                self.local_calls = 0
+
+            def validate_run(self, **kwargs):
+                pass
+
+            def predict_global(self, **kwargs):
+                self.global_calls += 1
+                raise AssertionError("Terminal interval must not predict global state.")
+
+            def predict_region(self, *, h_view, **kwargs):
+                self.local_calls += 1
+                return torch.zeros_like(h_view)
+
+            def describe_work(self, *, global_shape, crops):
+                from blueprint_diffusion.adapters.base import WorkEstimate
+                return WorkEstimate(
+                    global_tokens=global_shape[-2] * global_shape[-1],
+                    local_tokens=sum(region.height * region.width for region in crops),
+                    model_predictions=1 + len(crops),
+                )
+
+        coordinator = BlueprintCoordinator()
+        adapter = TerminalAdapter()
+        coordinator.adapter = adapter
+        h = torch.randn(1, 2, 32, 64, generator=torch.Generator().manual_seed(10))
+        initialized = coordinator.initialize(h, torch.tensor(1.0))
+        state = BlueprintState(initialized.g, initialized.h, 0.25, 3, "accepted:2")
+        next_state, _ = coordinator.evaluate(
+            guider=object(),
+            state=state,
+            sigma=torch.tensor(0.25),
+            sigma_next=torch.tensor(0.0),
+            model_options={},
+            seed=1,
+        )
+        accepted = coordinator.telemetry[-1]
+        self.assertEqual(adapter.global_calls, 0)
+        self.assertEqual(adapter.local_calls, len(coordinator.planner.plan((32, 64))))
+        self.assertIs(next_state.g, state.g)
+        self.assertFalse(accepted["global_forward_performed"])
+        self.assertTrue(accepted["terminal_global_unused"])
+        self.assertFalse(accepted["global_synchronized"])
+        self.assertEqual(accepted["global_state_status"], "retained_preterminal_unsynchronized")
+        self.assertIsNone(accepted["projection_rms"])
 
 
 class TestValidation(unittest.TestCase):
