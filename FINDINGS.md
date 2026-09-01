@@ -1122,3 +1122,26 @@ Detailed evidence is in
   semantic reference.
 - Sampling wall time scales with forward count, while peak allocated/reserved
   CUDA memory remained constant across step counts for each geometry.
+
+## 2026-09-01 — Variable-step production is reference-exact and live-qualified
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_VARIABLE_STEP_PRODUCTION_QUALIFICATION.md` and
+`experiments/flux2_candidate3_variable_step_production_results/report.json`.
+
+- Production schedule validation now accepts one or more full-denoise,
+  strictly decreasing CONST-flow Euler intervals from sigma exactly 1 to exact
+  zero. Model, conditioning, sampler-family, geometry, and lifecycle limits are
+  unchanged.
+- Production is bit-exact with the Phase-7a coordinator path at every captured
+  boundary for 1/2/4/8/20 steps. The prior four-step frozen four-scene
+  regression also remains bit-exact.
+- Measured counts are exactly `steps - 1` global forwards, three local forwards
+  per interval at the two production-qualified geometries, and one preview per
+  interval. Only the terminal interval omits global execution.
+- Fresh live ComfyUI workflows at H=64x128 and H=48x96 passed at 4/8/20 steps
+  through BasicGuider, SamplerCustomAdvanced, VAE decode, and Save Image. Every
+  repeated queue produced an identical decoded RGB hash.
+- Clearing detached telemetry at invocation start prevents failed/cancelled
+  sampler reuse from presenting a prior successful run's telemetry; accepted
+  coordinator state remains invocation-local and atomic.
