@@ -442,3 +442,13 @@ become invalid for the next crop after one transformer block. The resulting
 active prediction and decoded geometry fail badly, while measured time improves
 only 4% and peak memory increases. Exact replacement would require recomputing
 the skipped tokens' hidden evolution, defeating the optimization premise.
+
+## 2026-09-01 — Retain stride 24 overlap after the Phase-6f discriminator
+
+Do not change Candidate-3 production crop stride from 24 based on this probe.
+Stride 32 materially lowers local calls and runtime, but a person crossing a
+tile boundary develops duplicate/offset body structure and both tested scenes
+show higher adjacent-boundary discontinuity. Stride 28 remains visually close
+to current but deterministic end alignment leaves the same crop count and
+executed-token work at both qualified geometries. Candidate-3's persistent
+global trajectory does not eliminate the tested need for local overlap.

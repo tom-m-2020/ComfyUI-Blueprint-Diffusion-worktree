@@ -982,3 +982,29 @@ Detailed evidence is in
   the same prior attention/MLP/residual stack, essentially restoring the
   repeated work. Cross-crop K/V reuse therefore fails under the fixed current
   Candidate-3 crop contract.
+
+## 2026-09-01 — Candidate-3 local overlap remains necessary
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_OVERLAP_NECESSITY.md` and
+`experiments/flux2_candidate3_overlap_necessity_results/report.json`.
+
+- Deterministic end alignment makes nominal overlap nonuniform. At 32x64,
+  stride 28 still produces three crops with actual adjacent overlaps 4 and 28;
+  at 64x128 it still produces 3x5 crops with final-axis overlaps 28 and 20. It
+  therefore executes exactly the same local tokens as stride 24 at both tested
+  geometries.
+- Stride 32 reduced crops from 3 to 2 and 15 to 8, reducing warm sampling wall
+  time from 4.202 to 3.214 seconds and 20.050 to 12.788 seconds. Peak allocated
+  memory changed by less than 4 MiB and peak reserved memory was unchanged.
+- Persistent global coupling preserved broad bridge and person/car/tree scene
+  organization without overlap, but did not ensure boundary-local semantics.
+  The centered person, positioned on a crop boundary, acquired a visible
+  duplicate/offset shoulder-torso structure.
+- Final adjacent-boundary strip RMS rose from 0.6379 to 0.7913 (bridge) and
+  0.8382 to 0.9971 (stress) for stride 32 versus current. This metric is not
+  overlap RMS; it compares immediately adjacent assembled strips where no
+  common crop prediction exists.
+- Global coupling can replace some broad compositional function of overlap,
+  but not its tested cross-boundary local reconstruction function. Zero
+  overlap fails the quality gate; stride 28 supplies no measured work benefit.
