@@ -190,6 +190,11 @@
   time by 23.5%/36.2%, but produced a visible boundary-local duplicate torso
   structure in the 1024x2048 person case and raised boundary-strip RMS in both
   cases. All lifecycle/invariant checks passed. Keep production stride 24.
+- Local-window scale probe: complete. At 1024x2048, 48x48 is 6.9% slower while
+  64x64 is 16.6% faster; at 768x1536, 48x48 is 20.2% faster. Larger-window
+  decodes preserve person/car/tree semantics with no visible seams, but final
+  adjacent-strip RMS rises for the two faster configurations. Results are
+  geometry-dependent and no production policy was changed.
 
 ## Active blockers / unknowns
 
@@ -225,3 +230,8 @@ but is not quality-safe. Persistent global coupling preserves broad composition
 without overlap yet does not prevent crop-boundary object reconstruction
 failures. The current overlap policy remains qualified; no production change
 is pending.
+
+Phase 6g finds a promising but shape-specific local-window crossover. The next
+qualification target is 64x64/stride48 specifically at H=64x128, with more
+boundary placements and a compatible long-geometry semantic prompt before any
+production geometry policy is introduced.
