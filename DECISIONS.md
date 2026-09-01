@@ -490,3 +490,15 @@ preserves nonterminal state ownership and avoids a broad optional-state
 refactor while eliminating one of four global forwards. Frozen-baseline tensor
 regression, unit tests, warm timing, and live ComfyUI workflows all qualify the
 change. This decision does not authorize skipping any nonterminal global call.
+
+## 2026-09-01 — Advance variable Euler step counts to a separate production task
+
+The unchanged Candidate-3 lifecycle passed 4/8/12/20-step full-denoise
+CONST-flow schedules across four semantic controls. Repeated hard projections
+did not accumulate: mean and worst projection/H* ratios declined with schedule
+length, all nonterminal invariants held, and decoded composition/boundaries
+remained stable. Production remains unchanged in Phase 7a. A following task may
+generalize only schedule validation and loop cardinality while retaining sigma
+1 start, exact-zero termination, strict descent, fresh global work on every
+nonterminal interval, and the terminal global omission. This evidence does not
+authorize alternate samplers, partial denoise, or changed coupling.

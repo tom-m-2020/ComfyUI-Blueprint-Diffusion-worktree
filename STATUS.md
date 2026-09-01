@@ -211,6 +211,12 @@
   boundaries are bit-exact with the frozen four-global baseline across four
   scenes; 18 tests and fresh live H64/H48 workflows pass. Aggregate warm wall
   time improved 6.06%, with no material peak-memory change.
+- Step-count generalization: experiment complete; production unchanged. The
+  unchanged Candidate-3 lifecycle remains numerically and semantically stable
+  at 4/8/12/20 Euler steps across four required scenes. Projection demand does
+  not accumulate with longer schedules, all invariants pass, and only the
+  terminal global call is omitted. A separate production validation/API task
+  is now justified.
 
 ## Active blockers / unknowns
 
@@ -259,3 +265,8 @@ qualified.
 Phase 6j completes that narrow production optimization. The causally dead
 terminal global forward is eliminated; no nonterminal cadence reduction is
 qualified or pending from this evidence.
+
+Phase 7a qualifies ordinary longer full-denoise CONST-flow Euler schedules up
+to 20 steps experimentally. The next production task may generalize schedule
+cardinality only; it must retain strict descent, sigma 1 → exact zero, current
+terminal behavior, and all existing fail-closed boundaries.

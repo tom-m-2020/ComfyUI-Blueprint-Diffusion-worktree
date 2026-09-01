@@ -1098,3 +1098,27 @@ Detailed evidence is in
 - A fresh live ComfyUI process qualified normal BasicGuider → Blueprint sampler
   → SamplerCustomAdvanced → VAE Decode → Save Image execution at H=64x128 and
   H=48x96, with four first-run previews and exact repeated decoded hashes.
+
+## 2026-09-01 — Candidate-3 hard coupling is stable through 20 Euler steps
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_STEP_COUNT_GENERALIZATION.md` and
+`experiments/flux2_candidate3_step_count_generalization_results/report.json`.
+
+- Four, eight, twelve, and twenty-step full-denoise CONST-flow schedules were
+  tested across three H=64x128 semantic controls and one H=48x96 control using
+  the unchanged production coordinator operations.
+- All 16 Blueprint trajectories were finite, used fresh global predictions on
+  every nonterminal interval, omitted only the terminal global call, executed
+  exactly three local crops per interval, and kept nonterminal `D(H)=G` error
+  at or below `9.54e-7`.
+- Mean projection/H* ratio decreased from 6.59% at four steps to 2.27% at
+  twenty steps. The worst interval ratio decreased from 12.91% to 9.84%; more
+  coupling applications did not produce growing correction demand.
+- Person/car/tree, bridge/train, and boundary-crossing astronaut compositions
+  retained object uniqueness, geometry, continuous horizons/ground, and clean
+  crop boundaries through 20 steps. No progressive blur, ghosting, anatomy
+  split, duplication, or seam was observed relative to each schedule's dense
+  semantic reference.
+- Sampling wall time scales with forward count, while peak allocated/reserved
+  CUDA memory remained constant across step counts for each geometry.
