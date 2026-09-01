@@ -184,6 +184,12 @@
   crop B after block 0. Active prediction RMS reached 0.705 with severe decoded
   geometry loss; the invalid path was only 4% faster and used more peak memory.
   This optimization direction fails under the fixed crop contract.
+- Overlap-necessity probe: complete. Stride 28 preserved the two tested scenes
+  but retained the same 3/15 crop counts because deterministic end alignment
+  increased the final overlaps. Stride 32 cut crops to 2/8 and warm sampling
+  time by 23.5%/36.2%, but produced a visible boundary-local duplicate torso
+  structure in the 1024x2048 person case and raised boundary-strip RMS in both
+  cases. All lifecycle/invariant checks passed. Keep production stride 24.
 
 ## Active blockers / unknowns
 
@@ -213,3 +219,9 @@ measured warm speed benefit at the three-crop geometry. Cross-crop selective
 K/V reuse also fails because overlap hidden evolution is crop-context-specific.
 Do not promote either mechanism or broadly change sampler/model scope
 automatically.
+
+Phase 6f additionally shows that removing overlap is a real performance lever
+but is not quality-safe. Persistent global coupling preserves broad composition
+without overlap yet does not prevent crop-boundary object reconstruction
+failures. The current overlap policy remains qualified; no production change
+is pending.
