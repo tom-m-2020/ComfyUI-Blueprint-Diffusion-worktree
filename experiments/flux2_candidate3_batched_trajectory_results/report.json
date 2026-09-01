@@ -1,0 +1,1170 @@
+{
+  "configuration": {
+    "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+    "target_latent_hw": [
+      32,
+      64
+    ],
+    "global_latent_hw": [
+      24,
+      48
+    ],
+    "crops": [
+      {
+        "index": 0,
+        "y": 0,
+        "x": 0,
+        "height": 32,
+        "width": 32
+      },
+      {
+        "index": 1,
+        "y": 0,
+        "x": 24,
+        "height": 32,
+        "width": 32
+      },
+      {
+        "index": 2,
+        "y": 0,
+        "x": 32,
+        "height": 32,
+        "width": 32
+      }
+    ],
+    "batch_size": 2,
+    "sigmas": [
+      1.0,
+      0.9614368677139282,
+      0.8925943970680237,
+      0.7347596883773804,
+      0.0
+    ],
+    "lifecycle": "hard block-DCT coupling nonterminal; terminal release",
+    "coordinate_override": "scoped runtime process_img override; no core/production edit"
+  },
+  "scenes": {
+    "bridge_train": {
+      "prompt": "A cinematic wide-angle photograph of one enormous red suspension bridge forming a single continuous horizontal structure from the far left edge to the far right edge, crossing behind one yellow vintage train centered on the bridge; exactly one white lighthouse stands on the left shore and exactly one dark stone tower stands on the right shore, asymmetric composition, continuous bridge cables and deck, coherent perspective, sunset light",
+      "seed": 20260829,
+      "sequential_performance": {
+        "sampling_wall_seconds": 11.866808299906552,
+        "baseline_allocated_gib": 3.6241250038146973,
+        "baseline_reserved_gib": 3.94140625,
+        "peak_allocated_gib": 6.136327266693115,
+        "peak_reserved_gib": 6.361328125
+      },
+      "batched_performance": {
+        "sampling_wall_seconds": 4.388855599798262,
+        "baseline_allocated_gib": 5.9464111328125,
+        "baseline_reserved_gib": 6.361328125,
+        "peak_allocated_gib": 6.288415431976318,
+        "peak_reserved_gib": 6.607421875
+      },
+      "speedup": 2.7038502475342368,
+      "per_interval": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "assembled_x0_H": {
+            "rms": 0.030979692935943604,
+            "mean_abs": 0.018279237672686577,
+            "max_abs": 0.33203125,
+            "norm": 15.861527442932129
+          },
+          "accepted_H": {
+            "rms": 0.00043859181459993124,
+            "mean_abs": 0.0002674930728971958,
+            "max_abs": 0.005697488784790039,
+            "norm": 0.2245587408542633
+          },
+          "accepted_G": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "batched_D_H_minus_G": {
+            "rms": 8.752557079105827e-08,
+            "mean_abs": 6.347621450686347e-08,
+            "max_abs": 7.152557373046875e-07,
+            "norm": 3.3609787351451814e-05
+          },
+          "sequential_projection_rms": 0.02706267312169075,
+          "batched_projection_rms": 0.02698245458304882,
+          "projection_difference": {
+            "rms": 0.0011112529318779707,
+            "mean_abs": 0.0006529680686071515,
+            "max_abs": 0.012067869305610657,
+            "norm": 0.5689597725868225
+          },
+          "sequential_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.0761687755584717,
+                "mean_abs": 0.6887116432189941,
+                "max_abs": 8.03125
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.758334755897522,
+                "mean_abs": 0.46320804953575134,
+                "max_abs": 8.625
+              }
+            ],
+            "aggregate_rms": 0.8490220418479371,
+            "aggregate_mean_abs": 0.5195839405059814,
+            "elements": 131072
+          },
+          "batched_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.0723084211349487,
+                "mean_abs": 0.6861966848373413,
+                "max_abs": 8.03125
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.7640072107315063,
+                "mean_abs": 0.4691081643104553,
+                "max_abs": 8.53125
+              }
+            ],
+            "aggregate_rms": 0.85161116224766,
+            "aggregate_mean_abs": 0.5233802795410156,
+            "elements": 131072
+          },
+          "actual_batched_local_calls": 2
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "assembled_x0_H": {
+            "rms": 0.05649342015385628,
+            "mean_abs": 0.02888231724500656,
+            "max_abs": 2.231813669204712,
+            "norm": 28.924596786499023
+          },
+          "accepted_H": {
+            "rms": 0.0025457756128162146,
+            "mean_abs": 0.0012930857483297586,
+            "max_abs": 0.08448755741119385,
+            "norm": 1.3034329414367676
+          },
+          "accepted_G": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "batched_D_H_minus_G": {
+            "rms": 8.381222471598448e-08,
+            "mean_abs": 6.073719305277336e-08,
+            "max_abs": 7.152557373046875e-07,
+            "norm": 3.218386336811818e-05
+          },
+          "sequential_projection_rms": 0.039324745535850525,
+          "batched_projection_rms": 0.039349205791950226,
+          "projection_difference": {
+            "rms": 0.00317119131796062,
+            "mean_abs": 0.0017343941144645214,
+            "max_abs": 0.0880967229604721,
+            "norm": 1.623644232749939
+          },
+          "sequential_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.8472228050231934,
+                "mean_abs": 0.5483931303024292,
+                "max_abs": 7.991943836212158
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.5321249961853027,
+                "mean_abs": 0.3152680993080139,
+                "max_abs": 5.513239860534668
+              }
+            ],
+            "aggregate_rms": 0.6259507458104726,
+            "aggregate_mean_abs": 0.37354935705661774,
+            "elements": 131072
+          },
+          "batched_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.8503116965293884,
+                "mean_abs": 0.5497199296951294,
+                "max_abs": 7.781630039215088
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.537182629108429,
+                "mean_abs": 0.3180241584777832,
+                "max_abs": 5.363015174865723
+              }
+            ],
+            "aggregate_rms": 0.6302232635452939,
+            "aggregate_mean_abs": 0.37594808638095856,
+            "elements": 131072
+          },
+          "actual_batched_local_calls": 2
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "assembled_x0_H": {
+            "rms": 0.04000554978847504,
+            "mean_abs": 0.02296849526464939,
+            "max_abs": 0.8119878768920898,
+            "norm": 20.482751846313477
+          },
+          "accepted_H": {
+            "rms": 0.004863353446125984,
+            "mean_abs": 0.002821397501975298,
+            "max_abs": 0.12599462270736694,
+            "norm": 2.4900283813476562
+          },
+          "accepted_G": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "batched_D_H_minus_G": {
+            "rms": 7.643142652113966e-08,
+            "mean_abs": 5.51245378233034e-08,
+            "max_abs": 4.76837158203125e-07,
+            "norm": 2.9349645046750084e-05
+          },
+          "sequential_projection_rms": 0.07211583852767944,
+          "batched_projection_rms": 0.07203236222267151,
+          "projection_difference": {
+            "rms": 0.005651617888361216,
+            "mean_abs": 0.0033785253763198853,
+            "max_abs": 0.11057721078395844,
+            "norm": 2.893618106842041
+          },
+          "sequential_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.4641193747520447,
+                "mean_abs": 0.3380841016769409,
+                "max_abs": 3.396042823791504
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.37299156188964844,
+                "mean_abs": 0.2223607748746872,
+                "max_abs": 5.160310745239258
+              }
+            ],
+            "aggregate_rms": 0.3977357537585316,
+            "aggregate_mean_abs": 0.2512916028499603,
+            "elements": 131072
+          },
+          "batched_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.4608697295188904,
+                "mean_abs": 0.336262047290802,
+                "max_abs": 3.486696720123291
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.37136420607566833,
+                "mean_abs": 0.22239112854003906,
+                "max_abs": 5.202151298522949
+              }
+            ],
+            "aggregate_rms": 0.3956434794263826,
+            "aggregate_mean_abs": 0.2508588582277298,
+            "elements": 131072
+          },
+          "actual_batched_local_calls": 2
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "assembled_x0_H": {
+            "rms": 0.03623778373003006,
+            "mean_abs": 0.01937093399465084,
+            "max_abs": 2.1563525199890137,
+            "norm": 18.553672790527344
+          },
+          "accepted_H": {
+            "rms": 0.03623778373003006,
+            "mean_abs": 0.01937093399465084,
+            "max_abs": 2.1563525199890137,
+            "norm": 18.553672790527344
+          },
+          "accepted_G": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "batched_D_H_minus_G": {
+            "rms": 0.3203009366989136,
+            "mean_abs": 0.2253151684999466,
+            "max_abs": 3.6167778968811035,
+            "norm": 122.99549102783203
+          },
+          "sequential_projection_rms": 0.3200553059577942,
+          "batched_projection_rms": 0.3203009366989136,
+          "projection_difference": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "sequential_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.315326452255249,
+                "mean_abs": 0.235826313495636,
+                "max_abs": 2.1755776405334473
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.21022067964076996,
+                "mean_abs": 0.13457241654396057,
+                "max_abs": 3.7426819801330566
+              }
+            ],
+            "aggregate_rms": 0.24083654406221167,
+            "aggregate_mean_abs": 0.15988588333129883,
+            "elements": 131072
+          },
+          "batched_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.3156040608882904,
+                "mean_abs": 0.23585161566734314,
+                "max_abs": 2.173245429992676
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.2101273536682129,
+                "mean_abs": 0.13418880105018616,
+                "max_abs": 3.9206318855285645
+              }
+            ],
+            "aggregate_rms": 0.24086637249834356,
+            "aggregate_mean_abs": 0.1596045047044754,
+            "elements": 131072
+          },
+          "actual_batched_local_calls": 2
+        }
+      ],
+      "final_H_difference": {
+        "rms": 0.03623778373003006,
+        "mean_abs": 0.01937093399465084,
+        "max_abs": 2.1563525199890137,
+        "norm": 18.553672790527344
+      },
+      "outputs": {
+        "sequential": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_batched_trajectory_results\\bridge_train_SEQUENTIAL.png",
+        "batched": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_batched_trajectory_results\\bridge_train_BATCHED_B2.png"
+      },
+      "actual_local_calls_per_interval": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actual_total_forwards_per_interval": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "coordinate_offsets_per_interval": [
+        [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              24.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              32.0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              24.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              32.0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              24.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              32.0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              24.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              32.0
+            ]
+          ]
+        ]
+      ]
+    },
+    "person_car_tree": {
+      "prompt": "A cinematic wide-angle photograph of exactly one large full-body woman standing centered in the foreground, exactly one red vintage car on the left and exactly one tall green tree on the right, continuous ground, coherent perspective, no duplicate people, cars, or trees",
+      "seed": 20260831,
+      "sequential_performance": {
+        "sampling_wall_seconds": 4.483571099117398,
+        "baseline_allocated_gib": 6.105809211730957,
+        "baseline_reserved_gib": 6.384765625,
+        "peak_allocated_gib": 6.295114994049072,
+        "peak_reserved_gib": 6.3984375
+      },
+      "batched_performance": {
+        "sampling_wall_seconds": 4.351109299808741,
+        "baseline_allocated_gib": 6.105809211730957,
+        "baseline_reserved_gib": 6.3984375,
+        "peak_allocated_gib": 6.446714878082275,
+        "peak_reserved_gib": 6.685546875
+      },
+      "speedup": 1.0304432249758655,
+      "per_interval": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "assembled_x0_H": {
+            "rms": 0.026642335578799248,
+            "mean_abs": 0.014979825355112553,
+            "max_abs": 0.34375,
+            "norm": 13.64080810546875
+          },
+          "accepted_H": {
+            "rms": 0.00044224876910448074,
+            "mean_abs": 0.00025467248633503914,
+            "max_abs": 0.008366137742996216,
+            "norm": 0.2264307290315628
+          },
+          "accepted_G": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "batched_D_H_minus_G": {
+            "rms": 8.842033594191889e-08,
+            "mean_abs": 6.401798202659847e-08,
+            "max_abs": 7.152557373046875e-07,
+            "norm": 3.395337625988759e-05
+          },
+          "sequential_projection_rms": 0.04176707565784454,
+          "batched_projection_rms": 0.041656479239463806,
+          "projection_difference": {
+            "rms": 0.0009273572941310704,
+            "mean_abs": 0.0005244845524430275,
+            "max_abs": 0.01285494863986969,
+            "norm": 0.4748055040836334
+          },
+          "sequential_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.7048369646072388,
+                "mean_abs": 1.2704927921295166,
+                "max_abs": 6.4375
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 1.1141748428344727,
+                "mean_abs": 0.7297024726867676,
+                "max_abs": 6.3515625
+              }
+            ],
+            "aggregate_rms": 1.2875001166630664,
+            "aggregate_mean_abs": 0.8649000525474548,
+            "elements": 131072
+          },
+          "batched_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.7013328075408936,
+                "mean_abs": 1.2663788795471191,
+                "max_abs": 6.46875
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 1.1110212802886963,
+                "mean_abs": 0.7287928462028503,
+                "max_abs": 6.28125
+              }
+            ],
+            "aggregate_rms": 1.2842933517455066,
+            "aggregate_mean_abs": 0.8631893396377563,
+            "elements": 131072
+          },
+          "actual_batched_local_calls": 2
+        },
+        {
+          "step": 1,
+          "sigma": 0.9614368677139282,
+          "assembled_x0_H": {
+            "rms": 0.04433852434158325,
+            "mean_abs": 0.02510216273367405,
+            "max_abs": 1.1766794919967651,
+            "norm": 22.701255798339844
+          },
+          "accepted_H": {
+            "rms": 0.0020124311558902264,
+            "mean_abs": 0.0011539364932104945,
+            "max_abs": 0.04453766345977783,
+            "norm": 1.030361294746399
+          },
+          "accepted_G": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "batched_D_H_minus_G": {
+            "rms": 8.411834073740465e-08,
+            "mean_abs": 6.098988336589173e-08,
+            "max_abs": 5.960464477539062e-07,
+            "norm": 3.230141010135412e-05
+          },
+          "sequential_projection_rms": 0.03584318235516548,
+          "batched_projection_rms": 0.0358922965824604,
+          "projection_difference": {
+            "rms": 0.002487999852746725,
+            "mean_abs": 0.001464412547647953,
+            "max_abs": 0.07105861604213715,
+            "norm": 1.2738527059555054
+          },
+          "sequential_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.0927940607070923,
+                "mean_abs": 0.7576673030853271,
+                "max_abs": 7.826696872711182
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.6061850786209106,
+                "mean_abs": 0.3611513078212738,
+                "max_abs": 6.069070339202881
+              }
+            ],
+            "aggregate_rms": 0.7577235376110261,
+            "aggregate_mean_abs": 0.46028029918670654,
+            "elements": 131072
+          },
+          "batched_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 1.0949026346206665,
+                "mean_abs": 0.7580559253692627,
+                "max_abs": 7.736562252044678
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.6034048795700073,
+                "mean_abs": 0.3598164916038513,
+                "max_abs": 6.159204959869385
+              }
+            ],
+            "aggregate_rms": 0.7568197137878059,
+            "aggregate_mean_abs": 0.45937633514404297,
+            "elements": 131072
+          },
+          "actual_batched_local_calls": 2
+        },
+        {
+          "step": 2,
+          "sigma": 0.8925943970680237,
+          "assembled_x0_H": {
+            "rms": 0.03713688254356384,
+            "mean_abs": 0.020927462726831436,
+            "max_abs": 0.8758933544158936,
+            "norm": 19.01399803161621
+          },
+          "accepted_H": {
+            "rms": 0.0045194197446107864,
+            "mean_abs": 0.0025932674761861563,
+            "max_abs": 0.09933221340179443,
+            "norm": 2.3139359951019287
+          },
+          "accepted_G": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "batched_D_H_minus_G": {
+            "rms": 7.755315323265677e-08,
+            "mean_abs": 5.600523067528229e-08,
+            "max_abs": 4.76837158203125e-07,
+            "norm": 2.978037991852034e-05
+          },
+          "sequential_projection_rms": 0.07448093593120575,
+          "batched_projection_rms": 0.07451675087213516,
+          "projection_difference": {
+            "rms": 0.005113551858812571,
+            "mean_abs": 0.0029771053232252598,
+            "max_abs": 0.11270615458488464,
+            "norm": 2.618131399154663
+          },
+          "sequential_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.717063844203949,
+                "mean_abs": 0.4713933765888214,
+                "max_abs": 9.358294486999512
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.3154759109020233,
+                "mean_abs": 0.2067931592464447,
+                "max_abs": 6.893199920654297
+              }
+            ],
+            "aggregate_rms": 0.45076481509867317,
+            "aggregate_mean_abs": 0.2729432061314583,
+            "elements": 131072
+          },
+          "batched_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.7222738265991211,
+                "mean_abs": 0.47341442108154297,
+                "max_abs": 9.121198654174805
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.3173334002494812,
+                "mean_abs": 0.2077154815196991,
+                "max_abs": 6.9664201736450195
+              }
+            ],
+            "aggregate_rms": 0.45381189767461055,
+            "aggregate_mean_abs": 0.27414020895957947,
+            "elements": 131072
+          },
+          "actual_batched_local_calls": 2
+        },
+        {
+          "step": 3,
+          "sigma": 0.7347596883773804,
+          "assembled_x0_H": {
+            "rms": 0.03759947419166565,
+            "mean_abs": 0.018552927300333977,
+            "max_abs": 1.9778343439102173,
+            "norm": 19.250852584838867
+          },
+          "accepted_H": {
+            "rms": 0.03759947419166565,
+            "mean_abs": 0.018552929162979126,
+            "max_abs": 1.9778343439102173,
+            "norm": 19.250852584838867
+          },
+          "accepted_G": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "batched_D_H_minus_G": {
+            "rms": 0.3612455129623413,
+            "mean_abs": 0.25723156332969666,
+            "max_abs": 3.974351167678833,
+            "norm": 138.7181396484375
+          },
+          "sequential_projection_rms": 0.3618937134742737,
+          "batched_projection_rms": 0.3612455427646637,
+          "projection_difference": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0,
+            "norm": 0.0
+          },
+          "sequential_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.418489009141922,
+                "mean_abs": 0.29664966464042664,
+                "max_abs": 3.8804495334625244
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.19962991774082184,
+                "mean_abs": 0.12955516576766968,
+                "max_abs": 2.6075360774993896
+              }
+            ],
+            "aggregate_rms": 0.2714264862859512,
+            "aggregate_mean_abs": 0.17132879048585892,
+            "elements": 131072
+          },
+          "batched_overlap": {
+            "pairs": [
+              {
+                "crop_pair": [
+                  0,
+                  1
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 24,
+                  "height": 32,
+                  "width": 8
+                },
+                "rms": 0.4211716055870056,
+                "mean_abs": 0.2984532117843628,
+                "max_abs": 3.972294330596924
+              },
+              {
+                "crop_pair": [
+                  1,
+                  2
+                ],
+                "absolute_overlap": {
+                  "y": 0,
+                  "x": 32,
+                  "height": 32,
+                  "width": 24
+                },
+                "rms": 0.19924287497997284,
+                "mean_abs": 0.12928281724452972,
+                "max_abs": 2.766829490661621
+              }
+            ],
+            "aggregate_rms": 0.27224928315648894,
+            "aggregate_mean_abs": 0.1715754121541977,
+            "elements": 131072
+          },
+          "actual_batched_local_calls": 2
+        }
+      ],
+      "final_H_difference": {
+        "rms": 0.03759947419166565,
+        "mean_abs": 0.018552929162979126,
+        "max_abs": 1.9778343439102173,
+        "norm": 19.250852584838867
+      },
+      "outputs": {
+        "sequential": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_batched_trajectory_results\\person_car_tree_SEQUENTIAL.png",
+        "batched": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_batched_trajectory_results\\person_car_tree_BATCHED_B2.png"
+      },
+      "actual_local_calls_per_interval": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actual_total_forwards_per_interval": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "coordinate_offsets_per_interval": [
+        [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              24.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              32.0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              24.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              32.0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              24.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              32.0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              24.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              32.0
+            ]
+          ]
+        ]
+      ]
+    }
+  }
+}
