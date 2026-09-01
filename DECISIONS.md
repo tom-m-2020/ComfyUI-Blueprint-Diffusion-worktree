@@ -432,3 +432,13 @@ failure in these cases. However, the useful warm run improved sampling wall
 time by only 3% and increased peak allocated/reserved CUDA memory. Keep the
 scoped coordinate override and batched scheduling out of production; the
 measured benefit does not justify the numerical and memory tradeoff.
+
+## 2026-09-01 — Reject cross-crop overlap K/V reuse under the fixed crop contract
+
+Do not add the experiment-local sparse executor or cross-crop K/V cache to
+Candidate-3 production. Although it genuinely omits repeated generated-token
+work, overlap features from one crop encode that crop's surrounding context and
+become invalid for the next crop after one transformer block. The resulting
+active prediction and decoded geometry fail badly, while measured time improves
+only 4% and peak memory increases. Exact replacement would require recomputing
+the skipped tokens' hidden evolution, defeating the optimization premise.

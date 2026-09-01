@@ -957,3 +957,28 @@ Detailed evidence is in
   steady-state claim.
 - Therefore B=2 is semantically promising in these two cases but does not have
   a meaningful measured speed benefit at the 1024x512 three-crop geometry.
+
+## 2026-09-01 — Selective overlap-token execution fails the correctness gate
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_SELECTIVE_OVERLAP_AUDIT.md` and
+`experiments/flux2_candidate3_selective_overlap_results/report.json`.
+
+- Prior SpotEdit mechanics transfer mechanically: an experiment-local FLUX.2
+  executor skipped `img_in`, double/single token-local projections, MLPs,
+  residual work, and final projection for 256 of 1,024 generated crop tokens,
+  while 768 active queries attended to full 1,536-token K/V.
+- Same-H, same-sigma, same-coordinate overlap K/V remapped from crop A is exact
+  for crop B at double block 0. After one block the overlap hidden trajectory is
+  crop-context-dependent: block-1 overlap K/V differs by key RMS `0.716` and
+  value RMS `2.65`, and active hidden first diverges at double block 1.
+- Active final prediction error is RMS `0.7050`, max `6.7662`; low-pass RMS is
+  `0.4846`. The decoded result loses major bridge structure and introduces a
+  rectangular discontinuity. This is a semantic failure, not tolerable drift.
+- The invalid path measured only 4.0% faster at the core while increasing peak
+  allocated/reserved memory by `0.459/0.281` GiB. Full text execution, K/V
+  storage/reassembly, and full-context attention remain.
+- Exact crop-B context would require propagating skipped overlap hidden through
+  the same prior attention/MLP/residual stack, essentially restoring the
+  repeated work. Cross-crop K/V reuse therefore fails under the fixed current
+  Candidate-3 crop contract.

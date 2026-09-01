@@ -179,6 +179,11 @@
   bridge/train and person/car/tree semantics and all nonterminal coupling
   invariants, but its warm wall-time gain was only 3% while peak allocated and
   reserved memory increased. No production batching change is justified.
+- Selective-overlap probe: 25% of crop-B generated-token-local work was truly
+  skipped with full K/V context, but crop-A overlap features became invalid for
+  crop B after block 0. Active prediction RMS reached 0.705 with severe decoded
+  geometry loss; the invalid path was only 4% faster and used more peak memory.
+  This optimization direction fails under the fixed crop contract.
 
 ## Active blockers / unknowns
 
@@ -204,5 +209,7 @@ production slice is implemented, research-equivalent, and live-workflow
 qualified across the tested target geometries. Local crop model work remains
 the measured optimization target, but ordinary crop batching is blocked by
 batch-size-sensitive unquantized embedding execution and has no meaningful
-measured warm speed benefit at the three-crop geometry. Do not promote it or
-broadly change sampler/model scope automatically.
+measured warm speed benefit at the three-crop geometry. Cross-crop selective
+K/V reuse also fails because overlap hidden evolution is crop-context-specific.
+Do not promote either mechanism or broadly change sampler/model scope
+automatically.
