@@ -469,3 +469,12 @@ Keep 32x32/stride24 for every other target. The two mappings passed multiple
 semantic boundary/long-structure scenes, bit-exact recomputation, Candidate-3
 lifecycle checks, material warm runtime gates, unit tests, and live ComfyUI.
 Do not infer a largest-fitting or interpolated policy from these two points.
+
+## 2026-09-01 — Advance terminal-only global refresh omission, not stale cadence
+
+The interval-3 global model call is causally dead for returned H under terminal
+release, and stale reuse there is exactly output-equivalent while saving 6.6%
+mean wall time. Advance this narrow lifecycle optimization for a separate
+production/API qualification. Do not skip intervals 0-2: stale estimates used
+on nonterminal intervals alter accepted H and can visibly reorganize long
+structures. Phase 6i makes no production change.
