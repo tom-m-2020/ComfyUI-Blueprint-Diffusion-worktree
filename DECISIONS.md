@@ -452,3 +452,12 @@ show higher adjacent-boundary discontinuity. Stride 28 remains visually close
 to current but deterministic end alignment leaves the same crop count and
 executed-token work at both qualified geometries. Candidate-3's persistent
 global trajectory does not eliminate the tested need for local overlap.
+
+## 2026-09-01 — Do not adopt one fixed larger local window after Phase 6g
+
+Larger windows have a measured, geometry-dependent crossover rather than a
+universal advantage. Keep the production 32x32/stride24 policy unchanged until
+a shape-aware policy is separately qualified. The next eligible configuration
+is 64x64/stride48 at H=64x128: it improved warm sampling time 16.6% with
+preserved visible semantics, but its higher adjacent-boundary metric requires
+additional boundary-placement and long-structure validation first.

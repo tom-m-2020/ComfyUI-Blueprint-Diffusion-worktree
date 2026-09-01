@@ -1008,3 +1008,26 @@ Detailed evidence is in
 - Global coupling can replace some broad compositional function of overlap,
   but not its tested cross-boundary local reconstruction function. Zero
   overlap fails the quality gate; stride 28 supplies no measured work benefit.
+
+## 2026-09-01 — Local-window runtime crossover is geometry-dependent
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_LOCAL_WINDOW_SCALE.md` and
+`experiments/flux2_candidate3_local_window_scale_results/report.json`.
+
+- At H=64x128, 48x48/stride36 reduces calls from 15 to 8 but increases local
+  tokens from 15,360 to 18,432. It is 6.9% slower in sampling wall time. Fewer
+  calls do not offset its larger token and attention work.
+- At H=64x128, 64x64/stride48 uses three crops and 12,288 local tokens. It cuts
+  local CUDA time 21.7% and warm sampling wall time 16.6% while retaining the
+  person/car/tree scene without visible duplication or seams.
+- At H=48x96, 48x48/stride36 uses three crops and 6,912 tokens versus current's
+  eight crops and 8,192 tokens. It cuts local CUDA time 25.4% and wall time
+  20.2% with no visible semantic regression.
+- Ordinary terminal overlap disagreement improves for both larger windows,
+  but final adjacent-strip RMS is 14.3% above current for 64x64 at H=64x128
+  and 6.2% above current for 48x48 at H=48x96. This is a measurable boundary
+  tradeoff even though no seam was visible in the decoded controls.
+- Larger local windows can help at favorable target shapes, but no fixed window
+  universally dominates. Deterministic end alignment and nonlinear per-forward
+  attention cost must be included in any geometry policy.
