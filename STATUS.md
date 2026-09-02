@@ -290,3 +290,57 @@ matched dense results remain substantially more coherent above it. The next
 milestone is one bounded/adaptive global-state-density discriminator at a
 known failing canvas, not another resolution sweep. The repeated-run
 inference-tensor error remains a separate backend warm-reuse issue.
+
+Phase 8b is complete with no production changes. At fixed 2048x4096, neither
+8→4 nor 8→3 bounded block-DCT G restores coherence. Both greatly reduce
+global runtime, but 8→4 fragments the bridge in its first global x0 and 8→3
+removes most bridge geometry; final H remains fragmented. Current 4→3 global
+x0 is coherent through all nonterminal intervals, so excessive G density is
+not the main supported explanation. The next milestone is one fixed-geometry
+lifecycle-localization probe tracing assembled local H*, coupled accepted H,
+and terminal release at this same canvas.
+
+Phase 8c is complete with no production changes. It causally localizes the
+2048x4096 failure: terminal H_star equals fragmented assembled local x0_H, and
+production releases it during the dominant sigma-to-zero interval. One fresh
+terminal global prediction plus hard projection restores a coherent bridge;
+retained high-sigma G3 without a fresh prediction fails completely. Exact hard
+projection is not production-qualified because its correction exceeds H_star
+RMS and visibly damages fine structure. Any next terminal-policy work requires
+a separate design/qualification task rather than directly reverting the
+production lifecycle.
+
+Phase 8d is complete with no production changes. Fresh current-G generated
+K/V consumed by all terminal local crops repairs fragmentation before assembly
+and yields one usable bridge scene with no hard output projection. Required
+projection RMS falls by 57.2%, and overlap disagreement falls by 71.9%.
+However, the native GPU-resident 18,432-token all-block cache OOMs; the
+completed CPU-offloaded diagnostic requires a 5.27 GiB host cache, 290 GiB of
+aggregate transfers, and 98.34 s of terminal context-local CUDA time. The
+semantic mechanism is established, but no production implementation or
+efficiency contract is qualified.
+
+Phase 8e is complete with no production changes. Among the five fixed local
+consumption policies, only all 25 blocks retain Phase-8d semantics. Single-only
+is a strong but unqualified partial result with floating bridge alternatives;
+double-only and both ten-block placements fragment materially. The minimum
+qualified set is therefore double 0–4 plus single 0–19. No narrower early
+prefix or block-count sweep is justified. Context-through-depth remains the
+semantic contract, while its 290 GiB transfer and 95.89 s terminal-local cost
+remain unqualified for production.
+
+Phase 8f is complete with no production changes. The full 96×192 current-G
+source was executed once and held constant; only post-interaction K/V rows
+exposed to all 25 local blocks changed. Uniform 2×2 decimation to 4,608 rows
+and 4×4 decimation to 1,152 rows both catastrophically restore independent
+bridge systems. Full 18,432-row consumption remains the only qualified density.
+The large measured transfer/runtime reductions of the decimated paths are not
+usable. No intermediate density or broader sweep is justified by this result.
+
+Phase 8g is complete with no production changes. Exact full and 2×2-selection
+controls reproduce Phase 8f. A 4,608-token consumer field formed from
+nonoverlapping arithmetic means of all four pre-RoPE K vectors and all four V
+vectors, then positioned at exact four-axis geometric cell centers, remains
+catastrophically fragmented and is numerically worse than selection. Simple
+fixed spatial aggregation is not qualified, and no pooling/density sweep is
+pending from this evidence.
