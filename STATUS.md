@@ -280,3 +280,13 @@ Phase 7b completes that production generalization. Variable step cardinality
 is now supported under the same full-denoise CONST-flow contract; partial
 denoise, alternate samplers, CFG>1, masks/editing, and other model families
 remain unsupported and fail closed.
+
+Phase 8a is complete with no production changes. Fresh dense and Blueprint
+runs both execute through 2048x4096, and Blueprint lowers peak CUDA allocator
+memory, but Candidate-3 semantic coherence fails as scale increases.
+Degradation begins around 2048x2048/1536x3072 and becomes severe by
+2048x3072. The largest coherent Blueprint result in this ladder is 1536x2048;
+matched dense results remain substantially more coherent above it. The next
+milestone is one bounded/adaptive global-state-density discriminator at a
+known failing canvas, not another resolution sweep. The repeated-run
+inference-tensor error remains a separate backend warm-reuse issue.

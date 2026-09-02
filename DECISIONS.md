@@ -514,3 +514,15 @@ selection derive only from `len(sigmas)-1`. This generalization is supported by
 Phase-7a semantic evidence, bit-exact production/reference regression through
 20 steps, the unchanged frozen four-step baseline, and fresh live ComfyUI
 qualification. It does not imply support for partial denoise or other samplers.
+
+## 2026-09-02 — Stop the scaling ladder and test bounded global-state density
+
+Do not extend Phase 8a beyond 2048x4096 or treat successful execution as a
+usable-resolution qualification. The uncapped `G=(3/4 H_y, 3/4 H_x)`
+trajectory remains coherent at 1536x2048 but fragments globally at larger
+canvases while matched dense generation remains coherent. No evidence yet
+assigns this failure to local crops. Test the narrower causal hypothesis that
+the authoritative global trajectory exceeded FLUX.2 Klein's useful
+spatial/token regime by comparing bounded/adaptive G density at one known
+failing geometry. Do not promote a production geometry change until that
+discriminator succeeds.

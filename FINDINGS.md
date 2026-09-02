@@ -1145,3 +1145,27 @@ Detailed evidence is in
 - Clearing detached telemetry at invocation start prevents failed/cancelled
   sampler reuse from presenting a prior successful run's telemetry; accepted
   coordinator state remains invocation-local and atomic.
+
+## 2026-09-02 — Phase 8a finds a semantic frontier before the execution frontier
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_PRACTICAL_SCALING_FRONTIER.md` and
+`experiments/flux2_candidate3_practical_scaling_frontier_results/report.json`.
+
+- Fresh dense and Blueprint executions both completed through 2048x4096;
+  neither reached OOM. Blueprint reduced peak CUDA allocated/reserved memory
+  at every matched point.
+- Blueprint remained coherent at 1536x2048, began degrading near 2048x2048,
+  fragmented clearly at 1536x3072, and produced severe repeated structures at
+  2048x3072 and 2048x4096. A boundary-subject control produced repeated
+  astronauts. Matched dense outputs remained substantially more coherent.
+- Dynamic block-DCT geometry keeps G at 9/16 of H token count, not a fixed
+  budget. G grew from 72x96 = 6,912 to 96x192 = 18,432 tokens, exceeding the
+  full 12,288-token H grid at 1536x2048 and the previously qualified
+  8,192-token H grid.
+- Evidence does not assign the failure to local crops. Because G is the
+  authoritative nonterminal trajectory, the next supported hypothesis is that
+  growing G exceeded the model's useful spatial/token regime.
+- Immediate repeated execution at 2048x4096 failed for both methods with
+  `Cannot set version_counter for inference tensor`. Fresh successes classify
+  this separately as a warm-reuse/backend issue, not OOM or semantic frontier.
