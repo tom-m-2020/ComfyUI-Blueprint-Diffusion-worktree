@@ -526,3 +526,71 @@ the authoritative global trajectory exceeded FLUX.2 Klein's useful
 spatial/token regime by comparing bounded/adaptive G density at one known
 failing geometry. Do not promote a production geometry change until that
 discriminator succeeds.
+
+## 2026-09-02 — Do not advance simple bounded block-DCT global density
+
+Reject 8→4 and 8→3 per-block DCT restriction as the next Candidate-3
+production direction. Although they reduce global CUDA time substantially,
+they do not restore the 2048x4096 scene: 8→4 introduces disconnected bridge
+alternatives in the first global prediction and 8→3 removes essential bridge
+geometry. The current 4→3 global prediction remains coherent even though final
+H fragments. Before changing coordinates or coupling, localize the first
+fragmented H boundary under current geometry by decoding assembled local H*,
+hard-coupled accepted H, and terminal release in one fixed-canvas probe. This
+decision does not authorize another DCT ratio or variance sweep.
+
+## 2026-09-02 — Treat terminal local-only authority as the large-scale failure mechanism
+
+At 2048x4096, production terminal release publishes the fragmented assembled
+local x0_H because the terminal Euler H_star is numerically equal to x0_H. A
+fresh terminal global proposal followed by exact coarse projection restores a
+single coherent bridge from the identical preterminal state; retained G3 does
+not, because it remains a high-sigma state. Record terminal local-only
+authority as the causal failure mechanism for this schedule. Do not restore
+hard terminal projection in production automatically: its projection RMS is
+larger than H_star RMS and it introduces fine-detail softness/ghosting. A new
+terminal coupling rule, if pursued, requires a separate research design and
+qualification task.
+
+## 2026-09-02 — Advance terminal internal global context as a semantic mechanism only
+
+At the fixed failing 2048x4096 state, fresh current-G K/V inside all 25 FLUX.2
+blocks makes terminal crop predictions mutually compatible and restores a
+single scene without hard output projection. Record internal terminal global
+context as the first mechanism that both preserves detail and repairs the
+large-canvas failure before assembly. Do not productionize the tested path:
+18,432-token all-block K/V OOMs when retained on the 12 GB GPU, while CPU
+offload incurs a 5.27 GiB host cache, roughly 290 GiB aggregate transfers, and
+large runtime cost. Candidate-3 remains the state/lifecycle architecture; this
+does not reopen Candidate 2 as a separate trajectory or authorize a new
+compression/density sweep.
+
+## 2026-09-02 — Retain all-depth local context as the current semantic contract
+
+Do not advance double-only, single-only, early-ten, or late-ten local context
+consumption. Only all 25 FLUX.2 blocks reproduce the qualified Phase-8d scene;
+single-only retains a main bridge but fails the floating-fragment gate, and the
+other subsets regress further. Treat context persistence through local depth as
+the current semantic requirement. This does not authorize production work or
+another contiguous block-count sweep: the tested all-depth CPU-offloaded path
+remains far too transfer- and runtime-heavy.
+
+## 2026-09-02 — Reject fixed regular post-interaction K/V decimation
+
+Do not advance one-per-2×2 or one-per-4×4 spatial sampling of full-source
+current-G K/V. Even after ordinary dense 96×192 source interaction, 4,608
+consumer positions catastrophically fragment the terminal bridge scene; 1,152
+is worse. Retain all 18,432 positions as the current qualified semantic
+contract. This is a rejection of these fixed regular layouts, not evidence
+that every token is irreducible or authorization for learned compression,
+saliency, quantization, streaming redesign, production changes, or a density
+sweep.
+
+## 2026-09-02 — Reject fixed 2×2 arithmetic K/V aggregation
+
+Do not advance arithmetic mean pooling of each 2×2 post-interaction current-G
+K/V cell. Pooling every pre-RoPE K and V contributor exactly once at a
+geometric-center RoPE coordinate does not improve the failed 4,608-token scene;
+it is numerically and semantically at least as fragmented as regular selection.
+This decision does not authorize another pooling function, density/window
+sweep, learned compression, token merging, quantization, or production change.

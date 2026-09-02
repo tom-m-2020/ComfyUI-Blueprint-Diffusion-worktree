@@ -1,0 +1,2401 @@
+{
+  "configuration": {
+    "target_pixels_hw": [
+      2048,
+      4096
+    ],
+    "H_shape": [
+      128,
+      256
+    ],
+    "steps": 4,
+    "cfg": 1.0,
+    "production_changes": false,
+    "dense_reference": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_practical_scaling_frontier_results\\2048x4096_bridge_dense_cold.png"
+  },
+  "variants": {
+    "A_CURRENT_4_TO_3": {
+      "variant": "A_CURRENT_4_TO_3",
+      "operator": {
+        "block_high": 4,
+        "block_global": 3,
+        "H_shape": [
+          128,
+          256
+        ],
+        "G_shape": [
+          96,
+          192
+        ],
+        "G_tokens": 18432,
+        "right_inverse_max_abs_float32": 1.1920928955078125e-06,
+        "constant_restriction_max_abs": 0.0,
+        "constant_prolongation_max_abs": 1.1920928955078125e-07,
+        "scale_restrict": 0.75,
+        "scale_prolong": 1.3333333333333333,
+        "coordinate_scale_y": 1.3368421052631578,
+        "coordinate_scale_x": 1.3350785340314135,
+        "coordinate_first_yx": [
+          0.0,
+          0.0
+        ],
+        "coordinate_last_yx": [
+          127.0,
+          255.0
+        ]
+      },
+      "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+      "seed": 20260901,
+      "sigmas": [
+        1.0,
+        0.9991771578788757,
+        0.9975355267524719,
+        0.9926428198814392,
+        0.0
+      ],
+      "initial_state": {
+        "H0": {
+          "shape": [
+            1,
+            128,
+            128,
+            256
+          ],
+          "rms": 0.999802827835083,
+          "mean": -6.471702363342047e-06,
+          "variance": 0.999605655670166,
+          "max_abs": 5.380846977233887,
+          "finite": true
+        },
+        "G0": {
+          "shape": [
+            1,
+            128,
+            96,
+            192
+          ],
+          "rms": 0.7494820952415466,
+          "mean": -6.471449978562305e-06,
+          "variance": 0.5617234110832214,
+          "max_abs": 4.137506484985352,
+          "finite": true
+        },
+        "G0_over_H0_variance": 0.5619450211524963
+      },
+      "work_integrity": {
+        "crop_rectangles": [
+          [
+            0,
+            0,
+            0,
+            32,
+            32
+          ],
+          [
+            1,
+            0,
+            24,
+            32,
+            32
+          ],
+          [
+            2,
+            0,
+            48,
+            32,
+            32
+          ],
+          [
+            3,
+            0,
+            72,
+            32,
+            32
+          ],
+          [
+            4,
+            0,
+            96,
+            32,
+            32
+          ],
+          [
+            5,
+            0,
+            120,
+            32,
+            32
+          ],
+          [
+            6,
+            0,
+            144,
+            32,
+            32
+          ],
+          [
+            7,
+            0,
+            168,
+            32,
+            32
+          ],
+          [
+            8,
+            0,
+            192,
+            32,
+            32
+          ],
+          [
+            9,
+            0,
+            216,
+            32,
+            32
+          ],
+          [
+            10,
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            11,
+            24,
+            0,
+            32,
+            32
+          ],
+          [
+            12,
+            24,
+            24,
+            32,
+            32
+          ],
+          [
+            13,
+            24,
+            48,
+            32,
+            32
+          ],
+          [
+            14,
+            24,
+            72,
+            32,
+            32
+          ],
+          [
+            15,
+            24,
+            96,
+            32,
+            32
+          ],
+          [
+            16,
+            24,
+            120,
+            32,
+            32
+          ],
+          [
+            17,
+            24,
+            144,
+            32,
+            32
+          ],
+          [
+            18,
+            24,
+            168,
+            32,
+            32
+          ],
+          [
+            19,
+            24,
+            192,
+            32,
+            32
+          ],
+          [
+            20,
+            24,
+            216,
+            32,
+            32
+          ],
+          [
+            21,
+            24,
+            224,
+            32,
+            32
+          ],
+          [
+            22,
+            48,
+            0,
+            32,
+            32
+          ],
+          [
+            23,
+            48,
+            24,
+            32,
+            32
+          ],
+          [
+            24,
+            48,
+            48,
+            32,
+            32
+          ],
+          [
+            25,
+            48,
+            72,
+            32,
+            32
+          ],
+          [
+            26,
+            48,
+            96,
+            32,
+            32
+          ],
+          [
+            27,
+            48,
+            120,
+            32,
+            32
+          ],
+          [
+            28,
+            48,
+            144,
+            32,
+            32
+          ],
+          [
+            29,
+            48,
+            168,
+            32,
+            32
+          ],
+          [
+            30,
+            48,
+            192,
+            32,
+            32
+          ],
+          [
+            31,
+            48,
+            216,
+            32,
+            32
+          ],
+          [
+            32,
+            48,
+            224,
+            32,
+            32
+          ],
+          [
+            33,
+            72,
+            0,
+            32,
+            32
+          ],
+          [
+            34,
+            72,
+            24,
+            32,
+            32
+          ],
+          [
+            35,
+            72,
+            48,
+            32,
+            32
+          ],
+          [
+            36,
+            72,
+            72,
+            32,
+            32
+          ],
+          [
+            37,
+            72,
+            96,
+            32,
+            32
+          ],
+          [
+            38,
+            72,
+            120,
+            32,
+            32
+          ],
+          [
+            39,
+            72,
+            144,
+            32,
+            32
+          ],
+          [
+            40,
+            72,
+            168,
+            32,
+            32
+          ],
+          [
+            41,
+            72,
+            192,
+            32,
+            32
+          ],
+          [
+            42,
+            72,
+            216,
+            32,
+            32
+          ],
+          [
+            43,
+            72,
+            224,
+            32,
+            32
+          ],
+          [
+            44,
+            96,
+            0,
+            32,
+            32
+          ],
+          [
+            45,
+            96,
+            24,
+            32,
+            32
+          ],
+          [
+            46,
+            96,
+            48,
+            32,
+            32
+          ],
+          [
+            47,
+            96,
+            72,
+            32,
+            32
+          ],
+          [
+            48,
+            96,
+            96,
+            32,
+            32
+          ],
+          [
+            49,
+            96,
+            120,
+            32,
+            32
+          ],
+          [
+            50,
+            96,
+            144,
+            32,
+            32
+          ],
+          [
+            51,
+            96,
+            168,
+            32,
+            32
+          ],
+          [
+            52,
+            96,
+            192,
+            32,
+            32
+          ],
+          [
+            53,
+            96,
+            216,
+            32,
+            32
+          ],
+          [
+            54,
+            96,
+            224,
+            32,
+            32
+          ]
+        ],
+        "crop_count": 55,
+        "local_forwards": 220,
+        "local_tokens_per_interval": 56320,
+        "local_token_executions_generation": 225280,
+        "global_forwards": 3,
+        "H0_sha256": "98aba634f2bdb0c30e4ebd6acb22636a26c564868fd20812e0c44ef20285e76d",
+        "terminal_only_final": true,
+        "all_nonterminal_invariants": true,
+        "finite_final": true
+      },
+      "performance": {
+        "sampling_wall_seconds": 105.38842059999979,
+        "baseline_allocated_bytes": 2495862272,
+        "baseline_reserved_bytes": 2560622592,
+        "peak_allocated_bytes": 18650104832,
+        "peak_reserved_bytes": 19740491776,
+        "global_cuda_ms_by_interval": [
+          9869.681640625,
+          9496.2080078125,
+          9528.544921875
+        ],
+        "global_cuda_ms_total": 28894.4345703125,
+        "local_cuda_ms_total": 74754.64981079102
+      },
+      "projection_and_overlap": [
+        {
+          "ordinal": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9991771578788757,
+          "projection_rms": 0.0007263903971761465,
+          "H_star_rms": 0.9992870688438416,
+          "projection_over_H_star": 0.0007269086329882844,
+          "invariant_max_abs": 9.5367431640625e-07,
+          "overlap_pairwise_rms": 1.0096995676922635,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 1,
+          "sigma": 0.9991771578788757,
+          "sigma_next": 0.9975355267524719,
+          "projection_rms": 0.0014684407506138086,
+          "H_star_rms": 0.9982755780220032,
+          "projection_over_H_star": 0.0014709773362615933,
+          "invariant_max_abs": 7.152557373046875e-07,
+          "overlap_pairwise_rms": 1.0159977043640558,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 2,
+          "sigma": 0.9975355267524719,
+          "sigma_next": 0.9926428198814392,
+          "projection_rms": 0.004435431677848101,
+          "H_star_rms": 0.9952822923660278,
+          "projection_over_H_star": 0.004456455934028528,
+          "invariant_max_abs": 9.5367431640625e-07,
+          "overlap_pairwise_rms": 1.0314770144107361,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 3,
+          "sigma": 0.9926428198814392,
+          "sigma_next": 0.0,
+          "projection_rms": null,
+          "H_star_rms": 0.8460513949394226,
+          "projection_over_H_star": null,
+          "invariant_max_abs": null,
+          "overlap_pairwise_rms": 1.0002077318391938,
+          "overlap_compared_values": 4194304
+        }
+      ],
+      "telemetry": [
+        {
+          "event": "initialize",
+          "right_inverse_max_abs": 9.5367431640625e-07,
+          "H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.999802827835083,
+            "mean": -6.471629603765905e-06,
+            "max_abs": 5.380846977233887,
+            "finite": true
+          },
+          "G": {
+            "shape": [
+              1,
+              128,
+              96,
+              192
+            ],
+            "rms": 0.7494820952415466,
+            "mean": -6.4716314227553084e-06,
+            "max_abs": 4.137506484985352,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 0,
+          "evaluation_id": "012fa70d075e48f8beb59cc30a1d76a3:0:sigma=1:next=0.999177158",
+          "sigma": 1.0,
+          "sigma_next": 0.9991771578788757,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 18432,
+          "executed_global_tokens": 18432,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.0007263903971761465,
+          "invariant_max_abs": 9.5367431640625e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.9993005394935608,
+            "mean": -4.8682151827961206e-05,
+            "max_abs": 5.378304481506348,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              96,
+              192
+            ],
+            "rms": 0.7491236329078674,
+            "mean": -4.8681951739126816e-05,
+            "max_abs": 4.136117935180664,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 1,
+          "evaluation_id": "012fa70d075e48f8beb59cc30a1d76a3:1:sigma=0.999177158:next=0.997535527",
+          "sigma": 0.9991771578788757,
+          "sigma_next": 0.9975355267524719,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 18432,
+          "executed_global_tokens": 18432,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.0014684407506138086,
+          "invariant_max_abs": 7.152557373046875e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.998288631439209,
+            "mean": -0.0001370399841107428,
+            "max_abs": 5.373351097106934,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              96,
+              192
+            ],
+            "rms": 0.7483934760093689,
+            "mean": -0.0001370399259030819,
+            "max_abs": 4.133142471313477,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 2,
+          "evaluation_id": "012fa70d075e48f8beb59cc30a1d76a3:2:sigma=0.997535527:next=0.99264282",
+          "sigma": 0.9975355267524719,
+          "sigma_next": 0.9926428198814392,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 18432,
+          "executed_global_tokens": 18432,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.004435431677848101,
+          "invariant_max_abs": 9.5367431640625e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.9952322244644165,
+            "mean": -0.00043393814121373,
+            "max_abs": 5.359368801116943,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              96,
+              192
+            ],
+            "rms": 0.7461365461349487,
+            "mean": -0.00043393817031756043,
+            "max_abs": 4.122974872589111,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 3,
+          "evaluation_id": "012fa70d075e48f8beb59cc30a1d76a3:3:sigma=0.99264282:next=0",
+          "sigma": 0.9926428198814392,
+          "sigma_next": 0.0,
+          "terminal_release": true,
+          "global_forward_performed": false,
+          "terminal_global_unused": true,
+          "global_synchronized": false,
+          "global_state_status": "retained_preterminal_unsynchronized",
+          "model_predictions": 55,
+          "global_tokens": 18432,
+          "executed_global_tokens": 0,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": null,
+          "invariant_max_abs": null,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.8460514545440674,
+            "mean": -0.026514513418078423,
+            "max_abs": 6.358271598815918,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              96,
+              192
+            ],
+            "rms": 0.7461365461349487,
+            "mean": -0.00043393817031756043,
+            "max_abs": 4.122974872589111,
+            "finite": true
+          }
+        }
+      ],
+      "decoded": {
+        "A_CURRENT_4_TO_3_FINAL_H": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\A_CURRENT_4_TO_3_FINAL_H.png",
+          "dimensions_wh": [
+            4096,
+            2048
+          ],
+          "sha256_rgb": "e4f624ea0160a5193bea0266942367e7c781896f20fb90dee0a4372bc17c2fbc"
+        },
+        "A_CURRENT_4_TO_3_STEP_00_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\A_CURRENT_4_TO_3_STEP_00_GLOBAL_X0.png",
+          "dimensions_wh": [
+            3072,
+            1536
+          ],
+          "sha256_rgb": "51e8c951bc7b108732e839fd7847a2c5e9c04ef573d8f29b6efe34379ee15123"
+        },
+        "A_CURRENT_4_TO_3_STEP_01_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\A_CURRENT_4_TO_3_STEP_01_GLOBAL_X0.png",
+          "dimensions_wh": [
+            3072,
+            1536
+          ],
+          "sha256_rgb": "23aabe0a880ade1b68ddb0f0d7fbb07eac3ab1316afa5b30fa0b432299065293"
+        },
+        "A_CURRENT_4_TO_3_STEP_02_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\A_CURRENT_4_TO_3_STEP_02_GLOBAL_X0.png",
+          "dimensions_wh": [
+            3072,
+            1536
+          ],
+          "sha256_rgb": "156a60ededea109761c8327867ac1b9cf52a3a7b8176610d1f89cdbdcc90f1d9"
+        },
+        "A_CURRENT_4_TO_3_STEP_00_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\A_CURRENT_4_TO_3_STEP_00_ACCEPTED_G.png",
+          "dimensions_wh": [
+            3072,
+            1536
+          ],
+          "sha256_rgb": "cdcd75ea44418b831ed946fb379236f6bc11d6701489a392489dee89353f2e2b"
+        },
+        "A_CURRENT_4_TO_3_STEP_01_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\A_CURRENT_4_TO_3_STEP_01_ACCEPTED_G.png",
+          "dimensions_wh": [
+            3072,
+            1536
+          ],
+          "sha256_rgb": "fa0e369839534641ff02b9fa30a23deca0708afc9c6a9f3140897621fd8da917"
+        },
+        "A_CURRENT_4_TO_3_STEP_02_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\A_CURRENT_4_TO_3_STEP_02_ACCEPTED_G.png",
+          "dimensions_wh": [
+            3072,
+            1536
+          ],
+          "sha256_rgb": "9667f97f5bc60338e19a35ac6a35716b14b275b602f453c462ff5d2f77546adf"
+        }
+      }
+    },
+    "B_BOUNDED_8_TO_4": {
+      "variant": "B_BOUNDED_8_TO_4",
+      "operator": {
+        "block_high": 8,
+        "block_global": 4,
+        "H_shape": [
+          128,
+          256
+        ],
+        "G_shape": [
+          64,
+          128
+        ],
+        "G_tokens": 8192,
+        "right_inverse_max_abs_float32": 7.152557373046875e-07,
+        "constant_restriction_max_abs": 0.0,
+        "constant_prolongation_max_abs": 2.384185791015625e-07,
+        "scale_restrict": 0.5,
+        "scale_prolong": 2.0,
+        "coordinate_scale_y": 2.015873015873016,
+        "coordinate_scale_x": 2.0078740157480315,
+        "coordinate_first_yx": [
+          0.0,
+          0.0
+        ],
+        "coordinate_last_yx": [
+          127.0,
+          255.0
+        ]
+      },
+      "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+      "seed": 20260901,
+      "sigmas": [
+        1.0,
+        0.9991771578788757,
+        0.9975355267524719,
+        0.9926428198814392,
+        0.0
+      ],
+      "initial_state": {
+        "H0": {
+          "shape": [
+            1,
+            128,
+            128,
+            256
+          ],
+          "rms": 0.999802827835083,
+          "mean": -6.471702363342047e-06,
+          "variance": 0.999605655670166,
+          "max_abs": 5.380846977233887,
+          "finite": true
+        },
+        "G0": {
+          "shape": [
+            1,
+            128,
+            64,
+            128
+          ],
+          "rms": 0.499372661113739,
+          "mean": -6.4717314671725035e-06,
+          "variance": 0.24937304854393005,
+          "max_abs": 2.476717233657837,
+          "finite": true
+        },
+        "G0_over_H0_variance": 0.24947142601013184
+      },
+      "work_integrity": {
+        "crop_rectangles": [
+          [
+            0,
+            0,
+            0,
+            32,
+            32
+          ],
+          [
+            1,
+            0,
+            24,
+            32,
+            32
+          ],
+          [
+            2,
+            0,
+            48,
+            32,
+            32
+          ],
+          [
+            3,
+            0,
+            72,
+            32,
+            32
+          ],
+          [
+            4,
+            0,
+            96,
+            32,
+            32
+          ],
+          [
+            5,
+            0,
+            120,
+            32,
+            32
+          ],
+          [
+            6,
+            0,
+            144,
+            32,
+            32
+          ],
+          [
+            7,
+            0,
+            168,
+            32,
+            32
+          ],
+          [
+            8,
+            0,
+            192,
+            32,
+            32
+          ],
+          [
+            9,
+            0,
+            216,
+            32,
+            32
+          ],
+          [
+            10,
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            11,
+            24,
+            0,
+            32,
+            32
+          ],
+          [
+            12,
+            24,
+            24,
+            32,
+            32
+          ],
+          [
+            13,
+            24,
+            48,
+            32,
+            32
+          ],
+          [
+            14,
+            24,
+            72,
+            32,
+            32
+          ],
+          [
+            15,
+            24,
+            96,
+            32,
+            32
+          ],
+          [
+            16,
+            24,
+            120,
+            32,
+            32
+          ],
+          [
+            17,
+            24,
+            144,
+            32,
+            32
+          ],
+          [
+            18,
+            24,
+            168,
+            32,
+            32
+          ],
+          [
+            19,
+            24,
+            192,
+            32,
+            32
+          ],
+          [
+            20,
+            24,
+            216,
+            32,
+            32
+          ],
+          [
+            21,
+            24,
+            224,
+            32,
+            32
+          ],
+          [
+            22,
+            48,
+            0,
+            32,
+            32
+          ],
+          [
+            23,
+            48,
+            24,
+            32,
+            32
+          ],
+          [
+            24,
+            48,
+            48,
+            32,
+            32
+          ],
+          [
+            25,
+            48,
+            72,
+            32,
+            32
+          ],
+          [
+            26,
+            48,
+            96,
+            32,
+            32
+          ],
+          [
+            27,
+            48,
+            120,
+            32,
+            32
+          ],
+          [
+            28,
+            48,
+            144,
+            32,
+            32
+          ],
+          [
+            29,
+            48,
+            168,
+            32,
+            32
+          ],
+          [
+            30,
+            48,
+            192,
+            32,
+            32
+          ],
+          [
+            31,
+            48,
+            216,
+            32,
+            32
+          ],
+          [
+            32,
+            48,
+            224,
+            32,
+            32
+          ],
+          [
+            33,
+            72,
+            0,
+            32,
+            32
+          ],
+          [
+            34,
+            72,
+            24,
+            32,
+            32
+          ],
+          [
+            35,
+            72,
+            48,
+            32,
+            32
+          ],
+          [
+            36,
+            72,
+            72,
+            32,
+            32
+          ],
+          [
+            37,
+            72,
+            96,
+            32,
+            32
+          ],
+          [
+            38,
+            72,
+            120,
+            32,
+            32
+          ],
+          [
+            39,
+            72,
+            144,
+            32,
+            32
+          ],
+          [
+            40,
+            72,
+            168,
+            32,
+            32
+          ],
+          [
+            41,
+            72,
+            192,
+            32,
+            32
+          ],
+          [
+            42,
+            72,
+            216,
+            32,
+            32
+          ],
+          [
+            43,
+            72,
+            224,
+            32,
+            32
+          ],
+          [
+            44,
+            96,
+            0,
+            32,
+            32
+          ],
+          [
+            45,
+            96,
+            24,
+            32,
+            32
+          ],
+          [
+            46,
+            96,
+            48,
+            32,
+            32
+          ],
+          [
+            47,
+            96,
+            72,
+            32,
+            32
+          ],
+          [
+            48,
+            96,
+            96,
+            32,
+            32
+          ],
+          [
+            49,
+            96,
+            120,
+            32,
+            32
+          ],
+          [
+            50,
+            96,
+            144,
+            32,
+            32
+          ],
+          [
+            51,
+            96,
+            168,
+            32,
+            32
+          ],
+          [
+            52,
+            96,
+            192,
+            32,
+            32
+          ],
+          [
+            53,
+            96,
+            216,
+            32,
+            32
+          ],
+          [
+            54,
+            96,
+            224,
+            32,
+            32
+          ]
+        ],
+        "crop_count": 55,
+        "local_forwards": 220,
+        "local_tokens_per_interval": 56320,
+        "local_token_executions_generation": 225280,
+        "global_forwards": 3,
+        "H0_sha256": "98aba634f2bdb0c30e4ebd6acb22636a26c564868fd20812e0c44ef20285e76d",
+        "terminal_only_final": true,
+        "all_nonterminal_invariants": true,
+        "finite_final": true
+      },
+      "performance": {
+        "sampling_wall_seconds": 84.35466880000013,
+        "baseline_allocated_bytes": 2495862272,
+        "baseline_reserved_bytes": 2560622592,
+        "peak_allocated_bytes": 18650104832,
+        "peak_reserved_bytes": 19740491776,
+        "global_cuda_ms_by_interval": [
+          2859.798828125,
+          2690.9892578125,
+          2699.83203125
+        ],
+        "global_cuda_ms_total": 8250.6201171875,
+        "local_cuda_ms_total": 74515.50918579102
+      },
+      "projection_and_overlap": [
+        {
+          "ordinal": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9991771578788757,
+          "projection_rms": 0.0006549966055899858,
+          "H_star_rms": 0.9992870688438416,
+          "projection_over_H_star": 0.0006554639062304749,
+          "invariant_max_abs": 4.76837158203125e-07,
+          "overlap_pairwise_rms": 1.0096995676922635,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 1,
+          "sigma": 0.9991771578788757,
+          "sigma_next": 0.9975355267524719,
+          "projection_rms": 0.0013239498948678374,
+          "H_star_rms": 0.998262882232666,
+          "projection_over_H_star": 0.0013262537538276048,
+          "invariant_max_abs": 4.76837158203125e-07,
+          "overlap_pairwise_rms": 1.0140120683592522,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 2,
+          "sigma": 0.9975355267524719,
+          "sigma_next": 0.9926428198814392,
+          "projection_rms": 0.004071625415235758,
+          "H_star_rms": 0.9952554106712341,
+          "projection_over_H_star": 0.004091035699559488,
+          "invariant_max_abs": 4.76837158203125e-07,
+          "overlap_pairwise_rms": 1.0311303443537199,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 3,
+          "sigma": 0.9926428198814392,
+          "sigma_next": 0.0,
+          "projection_rms": null,
+          "H_star_rms": 0.8448412418365479,
+          "projection_over_H_star": null,
+          "invariant_max_abs": null,
+          "overlap_pairwise_rms": 1.0042166959874335,
+          "overlap_compared_values": 4194304
+        }
+      ],
+      "telemetry": [
+        {
+          "event": "initialize",
+          "right_inverse_max_abs": 7.152557373046875e-07,
+          "H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.999802827835083,
+            "mean": -6.471629603765905e-06,
+            "max_abs": 5.380846977233887,
+            "finite": true
+          },
+          "G": {
+            "shape": [
+              1,
+              128,
+              64,
+              128
+            ],
+            "rms": 0.499372661113739,
+            "mean": -6.471789674833417e-06,
+            "max_abs": 2.476717233657837,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 0,
+          "evaluation_id": "d10f00770700428ba58d19ce14192b5b:0:sigma=1:next=0.999177158",
+          "sigma": 1.0,
+          "sigma_next": 0.9991771578788757,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 8192,
+          "executed_global_tokens": 8192,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.0006549966055899858,
+          "invariant_max_abs": 4.76837158203125e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.9992874264717102,
+            "mean": -4.100009391549975e-05,
+            "max_abs": 5.378471374511719,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              64,
+              128
+            ],
+            "rms": 0.4991339147090912,
+            "mean": -4.100013757124543e-05,
+            "max_abs": 2.475682258605957,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 1,
+          "evaluation_id": "d10f00770700428ba58d19ce14192b5b:1:sigma=0.999177158:next=0.997535527",
+          "sigma": 0.9991771578788757,
+          "sigma_next": 0.9975355267524719,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 8192,
+          "executed_global_tokens": 8192,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.0013239498948678374,
+          "invariant_max_abs": 4.76837158203125e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.998260498046875,
+            "mean": -0.00010836340516107157,
+            "max_abs": 5.373820781707764,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              64,
+              128
+            ],
+            "rms": 0.4986545443534851,
+            "mean": -0.0001083635725080967,
+            "max_abs": 2.4736173152923584,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 2,
+          "evaluation_id": "d10f00770700428ba58d19ce14192b5b:2:sigma=0.997535527:next=0.99264282",
+          "sigma": 0.9975355267524719,
+          "sigma_next": 0.9926428198814392,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 8192,
+          "executed_global_tokens": 8192,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.004071625415235758,
+          "invariant_max_abs": 4.76837158203125e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.9952204823493958,
+            "mean": -0.0003109474200755358,
+            "max_abs": 5.360894203186035,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              64,
+              128
+            ],
+            "rms": 0.4972016215324402,
+            "mean": -0.00031094724545255303,
+            "max_abs": 2.4640612602233887,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 3,
+          "evaluation_id": "d10f00770700428ba58d19ce14192b5b:3:sigma=0.99264282:next=0",
+          "sigma": 0.9926428198814392,
+          "sigma_next": 0.0,
+          "terminal_release": true,
+          "global_forward_performed": false,
+          "terminal_global_unused": true,
+          "global_synchronized": false,
+          "global_state_status": "retained_preterminal_unsynchronized",
+          "model_predictions": 55,
+          "global_tokens": 8192,
+          "executed_global_tokens": 0,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": null,
+          "invariant_max_abs": null,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.8448411822319031,
+            "mean": -0.02654924988746643,
+            "max_abs": 6.423074722290039,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              64,
+              128
+            ],
+            "rms": 0.4972016215324402,
+            "mean": -0.00031094724545255303,
+            "max_abs": 2.4640612602233887,
+            "finite": true
+          }
+        }
+      ],
+      "decoded": {
+        "B_BOUNDED_8_TO_4_FINAL_H": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\B_BOUNDED_8_TO_4_FINAL_H.png",
+          "dimensions_wh": [
+            4096,
+            2048
+          ],
+          "sha256_rgb": "6181f79639db6ffc54e1ca77bfdfb7018077afb9f741d1ef4601d99fe387999f"
+        },
+        "B_BOUNDED_8_TO_4_STEP_00_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\B_BOUNDED_8_TO_4_STEP_00_GLOBAL_X0.png",
+          "dimensions_wh": [
+            2048,
+            1024
+          ],
+          "sha256_rgb": "aa066c833f90c3acced6e78269cca8e782bcd9b3e64bb1a60ea905f84267dad2"
+        },
+        "B_BOUNDED_8_TO_4_STEP_01_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\B_BOUNDED_8_TO_4_STEP_01_GLOBAL_X0.png",
+          "dimensions_wh": [
+            2048,
+            1024
+          ],
+          "sha256_rgb": "0f003c4ca752b2cdf46096573f21f18ce9ff7eae7e68e71df9812b0a3f8f9257"
+        },
+        "B_BOUNDED_8_TO_4_STEP_02_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\B_BOUNDED_8_TO_4_STEP_02_GLOBAL_X0.png",
+          "dimensions_wh": [
+            2048,
+            1024
+          ],
+          "sha256_rgb": "6a6a466f0d5f0eaea0282e830c9e662509255d58469ef8e7e1f0ab3d1f302c3f"
+        },
+        "B_BOUNDED_8_TO_4_STEP_00_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\B_BOUNDED_8_TO_4_STEP_00_ACCEPTED_G.png",
+          "dimensions_wh": [
+            2048,
+            1024
+          ],
+          "sha256_rgb": "19ae4bb3a161f6e90b4d57b208463f347069f191bf495f32c34f87662c1e0217"
+        },
+        "B_BOUNDED_8_TO_4_STEP_01_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\B_BOUNDED_8_TO_4_STEP_01_ACCEPTED_G.png",
+          "dimensions_wh": [
+            2048,
+            1024
+          ],
+          "sha256_rgb": "ca9c4f75b10ed71bfb1f4fa1821a2e962c15fc6b19703b5cf84aa1164e7ab6e0"
+        },
+        "B_BOUNDED_8_TO_4_STEP_02_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\B_BOUNDED_8_TO_4_STEP_02_ACCEPTED_G.png",
+          "dimensions_wh": [
+            2048,
+            1024
+          ],
+          "sha256_rgb": "2d6b08e39ea8556d2d860131482e03e3b8e6ccb9354d898c0ac15378271845ed"
+        }
+      }
+    },
+    "C_BOUNDED_8_TO_3": {
+      "variant": "C_BOUNDED_8_TO_3",
+      "operator": {
+        "block_high": 8,
+        "block_global": 3,
+        "H_shape": [
+          128,
+          256
+        ],
+        "G_shape": [
+          48,
+          96
+        ],
+        "G_tokens": 4608,
+        "right_inverse_max_abs_float32": 7.152557373046875e-07,
+        "constant_restriction_max_abs": 0.0,
+        "constant_prolongation_max_abs": 1.1920928955078125e-07,
+        "scale_restrict": 0.375,
+        "scale_prolong": 2.6666666666666665,
+        "coordinate_scale_y": 2.702127659574468,
+        "coordinate_scale_x": 2.6842105263157894,
+        "coordinate_first_yx": [
+          0.0,
+          0.0
+        ],
+        "coordinate_last_yx": [
+          127.0,
+          255.0
+        ]
+      },
+      "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+      "seed": 20260901,
+      "sigmas": [
+        1.0,
+        0.9991771578788757,
+        0.9975355267524719,
+        0.9926428198814392,
+        0.0
+      ],
+      "initial_state": {
+        "H0": {
+          "shape": [
+            1,
+            128,
+            128,
+            256
+          ],
+          "rms": 0.999802827835083,
+          "mean": -6.471702363342047e-06,
+          "variance": 0.999605655670166,
+          "max_abs": 5.380846977233887,
+          "finite": true
+        },
+        "G0": {
+          "shape": [
+            1,
+            128,
+            48,
+            96
+          ],
+          "rms": 0.3743143677711487,
+          "mean": -6.471605502156308e-06,
+          "variance": 0.14011125266551971,
+          "max_abs": 1.9539315700531006,
+          "finite": true
+        },
+        "G0_over_H0_variance": 0.1401665210723877
+      },
+      "work_integrity": {
+        "crop_rectangles": [
+          [
+            0,
+            0,
+            0,
+            32,
+            32
+          ],
+          [
+            1,
+            0,
+            24,
+            32,
+            32
+          ],
+          [
+            2,
+            0,
+            48,
+            32,
+            32
+          ],
+          [
+            3,
+            0,
+            72,
+            32,
+            32
+          ],
+          [
+            4,
+            0,
+            96,
+            32,
+            32
+          ],
+          [
+            5,
+            0,
+            120,
+            32,
+            32
+          ],
+          [
+            6,
+            0,
+            144,
+            32,
+            32
+          ],
+          [
+            7,
+            0,
+            168,
+            32,
+            32
+          ],
+          [
+            8,
+            0,
+            192,
+            32,
+            32
+          ],
+          [
+            9,
+            0,
+            216,
+            32,
+            32
+          ],
+          [
+            10,
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            11,
+            24,
+            0,
+            32,
+            32
+          ],
+          [
+            12,
+            24,
+            24,
+            32,
+            32
+          ],
+          [
+            13,
+            24,
+            48,
+            32,
+            32
+          ],
+          [
+            14,
+            24,
+            72,
+            32,
+            32
+          ],
+          [
+            15,
+            24,
+            96,
+            32,
+            32
+          ],
+          [
+            16,
+            24,
+            120,
+            32,
+            32
+          ],
+          [
+            17,
+            24,
+            144,
+            32,
+            32
+          ],
+          [
+            18,
+            24,
+            168,
+            32,
+            32
+          ],
+          [
+            19,
+            24,
+            192,
+            32,
+            32
+          ],
+          [
+            20,
+            24,
+            216,
+            32,
+            32
+          ],
+          [
+            21,
+            24,
+            224,
+            32,
+            32
+          ],
+          [
+            22,
+            48,
+            0,
+            32,
+            32
+          ],
+          [
+            23,
+            48,
+            24,
+            32,
+            32
+          ],
+          [
+            24,
+            48,
+            48,
+            32,
+            32
+          ],
+          [
+            25,
+            48,
+            72,
+            32,
+            32
+          ],
+          [
+            26,
+            48,
+            96,
+            32,
+            32
+          ],
+          [
+            27,
+            48,
+            120,
+            32,
+            32
+          ],
+          [
+            28,
+            48,
+            144,
+            32,
+            32
+          ],
+          [
+            29,
+            48,
+            168,
+            32,
+            32
+          ],
+          [
+            30,
+            48,
+            192,
+            32,
+            32
+          ],
+          [
+            31,
+            48,
+            216,
+            32,
+            32
+          ],
+          [
+            32,
+            48,
+            224,
+            32,
+            32
+          ],
+          [
+            33,
+            72,
+            0,
+            32,
+            32
+          ],
+          [
+            34,
+            72,
+            24,
+            32,
+            32
+          ],
+          [
+            35,
+            72,
+            48,
+            32,
+            32
+          ],
+          [
+            36,
+            72,
+            72,
+            32,
+            32
+          ],
+          [
+            37,
+            72,
+            96,
+            32,
+            32
+          ],
+          [
+            38,
+            72,
+            120,
+            32,
+            32
+          ],
+          [
+            39,
+            72,
+            144,
+            32,
+            32
+          ],
+          [
+            40,
+            72,
+            168,
+            32,
+            32
+          ],
+          [
+            41,
+            72,
+            192,
+            32,
+            32
+          ],
+          [
+            42,
+            72,
+            216,
+            32,
+            32
+          ],
+          [
+            43,
+            72,
+            224,
+            32,
+            32
+          ],
+          [
+            44,
+            96,
+            0,
+            32,
+            32
+          ],
+          [
+            45,
+            96,
+            24,
+            32,
+            32
+          ],
+          [
+            46,
+            96,
+            48,
+            32,
+            32
+          ],
+          [
+            47,
+            96,
+            72,
+            32,
+            32
+          ],
+          [
+            48,
+            96,
+            96,
+            32,
+            32
+          ],
+          [
+            49,
+            96,
+            120,
+            32,
+            32
+          ],
+          [
+            50,
+            96,
+            144,
+            32,
+            32
+          ],
+          [
+            51,
+            96,
+            168,
+            32,
+            32
+          ],
+          [
+            52,
+            96,
+            192,
+            32,
+            32
+          ],
+          [
+            53,
+            96,
+            216,
+            32,
+            32
+          ],
+          [
+            54,
+            96,
+            224,
+            32,
+            32
+          ]
+        ],
+        "crop_count": 55,
+        "local_forwards": 220,
+        "local_tokens_per_interval": 56320,
+        "local_token_executions_generation": 225280,
+        "global_forwards": 3,
+        "H0_sha256": "98aba634f2bdb0c30e4ebd6acb22636a26c564868fd20812e0c44ef20285e76d",
+        "terminal_only_final": true,
+        "all_nonterminal_invariants": true,
+        "finite_final": true
+      },
+      "performance": {
+        "sampling_wall_seconds": 80.37651899999992,
+        "baseline_allocated_bytes": 2495862272,
+        "baseline_reserved_bytes": 2560622592,
+        "peak_allocated_bytes": 18650104832,
+        "peak_reserved_bytes": 19740491776,
+        "global_cuda_ms_by_interval": [
+          1745.422119140625,
+          1203.44580078125,
+          1211.7159423828125
+        ],
+        "global_cuda_ms_total": 4160.5838623046875,
+        "local_cuda_ms_total": 74636.29278564453
+      },
+      "projection_and_overlap": [
+        {
+          "ordinal": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9991771578788757,
+          "projection_rms": 0.0006241672672331333,
+          "H_star_rms": 0.9992870688438416,
+          "projection_over_H_star": 0.0006246125729969512,
+          "invariant_max_abs": 3.5762786865234375e-07,
+          "overlap_pairwise_rms": 1.0096995676922635,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 1,
+          "sigma": 0.9991771578788757,
+          "sigma_next": 0.9975355267524719,
+          "projection_rms": 0.0012474681716412306,
+          "H_star_rms": 0.9982567429542542,
+          "projection_over_H_star": 0.001249646626928316,
+          "invariant_max_abs": 3.5762786865234375e-07,
+          "overlap_pairwise_rms": 1.0130568504340633,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 2,
+          "sigma": 0.9975355267524719,
+          "sigma_next": 0.9926428198814392,
+          "projection_rms": 0.0037661571986973286,
+          "H_star_rms": 0.9952421188354492,
+          "projection_over_H_star": 0.0037841617908054145,
+          "invariant_max_abs": 3.5762786865234375e-07,
+          "overlap_pairwise_rms": 1.0299205634198678,
+          "overlap_compared_values": 4194304
+        },
+        {
+          "ordinal": 3,
+          "sigma": 0.9926428198814392,
+          "sigma_next": 0.0,
+          "projection_rms": null,
+          "H_star_rms": 0.8457788228988647,
+          "projection_over_H_star": null,
+          "invariant_max_abs": null,
+          "overlap_pairwise_rms": 1.0005376989997614,
+          "overlap_compared_values": 4194304
+        }
+      ],
+      "telemetry": [
+        {
+          "event": "initialize",
+          "right_inverse_max_abs": 7.152557373046875e-07,
+          "H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.999802827835083,
+            "mean": -6.471629603765905e-06,
+            "max_abs": 5.380846977233887,
+            "finite": true
+          },
+          "G": {
+            "shape": [
+              1,
+              128,
+              48,
+              96
+            ],
+            "rms": 0.3743143677711487,
+            "mean": -6.4716314227553084e-06,
+            "max_abs": 1.9539315700531006,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 0,
+          "evaluation_id": "cd8c04346a6443b18a4dbb5884d9fd71:0:sigma=1:next=0.999177158",
+          "sigma": 1.0,
+          "sigma_next": 0.9991771578788757,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 4608,
+          "executed_global_tokens": 4608,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.0006241672672331333,
+          "invariant_max_abs": 3.5762786865234375e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.9992813467979431,
+            "mean": -4.311744123697281e-05,
+            "max_abs": 5.378636360168457,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              48,
+              96
+            ],
+            "rms": 0.37412548065185547,
+            "mean": -4.311740121920593e-05,
+            "max_abs": 1.9533659219741821,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 1,
+          "evaluation_id": "cd8c04346a6443b18a4dbb5884d9fd71:1:sigma=0.999177158:next=0.997535527",
+          "sigma": 0.9991771578788757,
+          "sigma_next": 0.9975355267524719,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 4608,
+          "executed_global_tokens": 4608,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.0012474681716412306,
+          "invariant_max_abs": 3.5762786865234375e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.9982443451881409,
+            "mean": -0.00011676837311824784,
+            "max_abs": 5.374362945556641,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              48,
+              96
+            ],
+            "rms": 0.37374910712242126,
+            "mean": -0.00011676842404995114,
+            "max_abs": 1.9522501230239868,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 2,
+          "evaluation_id": "cd8c04346a6443b18a4dbb5884d9fd71:2:sigma=0.997535527:next=0.99264282",
+          "sigma": 0.9975355267524719,
+          "sigma_next": 0.9926428198814392,
+          "terminal_release": false,
+          "global_forward_performed": true,
+          "terminal_global_unused": false,
+          "global_synchronized": true,
+          "global_state_status": "synchronized",
+          "model_predictions": 56,
+          "global_tokens": 4608,
+          "executed_global_tokens": 4608,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": 0.0037661571986973286,
+          "invariant_max_abs": 3.5762786865234375e-07,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.9951961636543274,
+            "mean": -0.00034175108885392547,
+            "max_abs": 5.362464904785156,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              48,
+              96
+            ],
+            "rms": 0.37263578176498413,
+            "mean": -0.0003417510015424341,
+            "max_abs": 1.9489246606826782,
+            "finite": true
+          }
+        },
+        {
+          "event": "accepted_interval",
+          "ordinal": 3,
+          "evaluation_id": "cd8c04346a6443b18a4dbb5884d9fd71:3:sigma=0.99264282:next=0",
+          "sigma": 0.9926428198814392,
+          "sigma_next": 0.0,
+          "terminal_release": true,
+          "global_forward_performed": false,
+          "terminal_global_unused": true,
+          "global_synchronized": false,
+          "global_state_status": "retained_preterminal_unsynchronized",
+          "model_predictions": 55,
+          "global_tokens": 4608,
+          "executed_global_tokens": 0,
+          "local_tokens": 56320,
+          "coverage_min": 0.9999999403953552,
+          "coverage_max": 1.0000001192092896,
+          "projection_rms": null,
+          "invariant_max_abs": null,
+          "accepted_H": {
+            "shape": [
+              1,
+              128,
+              128,
+              256
+            ],
+            "rms": 0.8457788825035095,
+            "mean": -0.027011454105377197,
+            "max_abs": 6.687942028045654,
+            "finite": true
+          },
+          "accepted_G": {
+            "shape": [
+              1,
+              128,
+              48,
+              96
+            ],
+            "rms": 0.37263578176498413,
+            "mean": -0.0003417510015424341,
+            "max_abs": 1.9489246606826782,
+            "finite": true
+          }
+        }
+      ],
+      "decoded": {
+        "C_BOUNDED_8_TO_3_FINAL_H": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\C_BOUNDED_8_TO_3_FINAL_H.png",
+          "dimensions_wh": [
+            4096,
+            2048
+          ],
+          "sha256_rgb": "4d8306f2ade8ae176cf0e34d3ab6ca352b701b3dc484b08fec3090b27420bc1f"
+        },
+        "C_BOUNDED_8_TO_3_STEP_00_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\C_BOUNDED_8_TO_3_STEP_00_GLOBAL_X0.png",
+          "dimensions_wh": [
+            1536,
+            768
+          ],
+          "sha256_rgb": "b4bb0b8ec5b86542a639ed4779e28529b30b0200345b3fc785a7e9e31d6a5dde"
+        },
+        "C_BOUNDED_8_TO_3_STEP_01_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\C_BOUNDED_8_TO_3_STEP_01_GLOBAL_X0.png",
+          "dimensions_wh": [
+            1536,
+            768
+          ],
+          "sha256_rgb": "770319f709ea4a38e168e230e3ca6fb4a72143ccf1b39526e549991787b5277d"
+        },
+        "C_BOUNDED_8_TO_3_STEP_02_GLOBAL_X0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\C_BOUNDED_8_TO_3_STEP_02_GLOBAL_X0.png",
+          "dimensions_wh": [
+            1536,
+            768
+          ],
+          "sha256_rgb": "b4aa5ef59d280c426c085bd8f43a3f8044d65847ec79c0671d44c1078d030eff"
+        },
+        "C_BOUNDED_8_TO_3_STEP_00_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\C_BOUNDED_8_TO_3_STEP_00_ACCEPTED_G.png",
+          "dimensions_wh": [
+            1536,
+            768
+          ],
+          "sha256_rgb": "89a0377fdcf9951d7778c75b88bd2642f99b5f915fee21bf521b75ff01eafa0d"
+        },
+        "C_BOUNDED_8_TO_3_STEP_01_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\C_BOUNDED_8_TO_3_STEP_01_ACCEPTED_G.png",
+          "dimensions_wh": [
+            1536,
+            768
+          ],
+          "sha256_rgb": "fe441f0849d458ee57f412294a435c87ea59fa3f19878edf7e3de6bb856fa63f"
+        },
+        "C_BOUNDED_8_TO_3_STEP_02_ACCEPTED_G": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_bounded_global_density_results\\C_BOUNDED_8_TO_3_STEP_02_ACCEPTED_G.png",
+          "dimensions_wh": [
+            1536,
+            768
+          ],
+          "sha256_rgb": "d9014602774f86a3f060213685d2347c7134b58c66c5aa6f7f362d0d9d052664"
+        }
+      }
+    }
+  },
+  "interpretation": {
+    "semantic_result": "Neither bounded variant restores a coherent single bridge scene.",
+    "first_repetition": {
+      "A_CURRENT_4_TO_3": "Not present as the final failure in global x0 intervals 0-2; final H is fragmented.",
+      "B_BOUNDED_8_TO_4": "Global x0 interval 0 already has disconnected bridge alternatives.",
+      "C_BOUNDED_8_TO_3": "Global x0 interval 0 is under-specified and loses bridge geometry."
+    },
+    "verdict": "BOUNDING GLOBAL STATE DOES NOT HELP",
+    "next_experiment": "Current-geometry lifecycle localization of assembled H*, coupled accepted H, and terminal released H at the same fixed canvas."
+  }
+}

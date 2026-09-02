@@ -1169,3 +1169,146 @@ Detailed evidence is in
 - Immediate repeated execution at 2048x4096 failed for both methods with
   `Cannot set version_counter for inference tensor`. Fresh successes classify
   this separately as a warm-reuse/backend issue, not OOM or semantic frontier.
+
+## 2026-09-02 — Phase 8b rejects simple bounded DCT density as the large-canvas fix
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_BOUNDED_GLOBAL_DENSITY.md` and
+`experiments/flux2_candidate3_bounded_global_density_results/report.json`.
+
+- At fixed H=128x256, current 4→3 G has 18,432 tokens, bounded 8→4 has
+  8,192, and bounded 8→3 has 4,608. All exact DCT pairs preserve constants and
+  pass `D(U(G))=G` with maximum float32 error at or below 1.19e-6.
+- Natural G0/H0 variance ratios are 0.561945, 0.249471, and 0.140167. Phase 8b
+  intentionally does not separate density/bandwidth from mapped variance.
+- Current-G decoded global x0 remains one continuous bridge through all three
+  nonterminal evaluations. Bounded 8→4 already contains disconnected bridge
+  alternatives in interval-0 global x0; bounded 8→3 loses most bridge geometry
+  there. All final H outputs remain severely fragmented.
+- The current-control final decoded hash exactly matches the Phase-8a
+  fresh-process 2048x4096 Blueprint output, confirming harness continuity.
+- Bounding reduced total global CUDA time from 28.89 s to 8.25 s and 4.16 s,
+  but peak allocated/reserved memory remained 17.37/18.38 GiB because another
+  component set the peak. Identical local work took about 74.5 s in all cases.
+- Projection demand decreased with coarser G and every invariant passed. The
+  failure is semantic information loss, not coupling instability. The current
+  final fragmentation enters downstream of, or despite, a coherent global x0.
+
+## 2026-09-02 — Phase 8c localizes large-canvas failure to terminal local authority
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_TERMINAL_AUTHORITY.md` and
+`experiments/flux2_candidate3_terminal_authority_results/report.json`.
+
+- The terminal schedule interval is 0.99264282→0. Direct Euler produces
+  terminal H_star numerically equal to assembled terminal x0_H (RMS 1.83e-8,
+  max 4.77e-7). Production therefore returns the local assembled denoised
+  estimate at terminal release.
+- Assembled local x0_H is visibly fragmented from interval 0, while current
+  global x0_G remains a coherent bridge through all nonterminal evaluations.
+  Tiny preterminal Euler changes keep accepted H visually near noise; the
+  fragmented local estimate becomes final during the dominant terminal move.
+- From one bit-identical preterminal state and one shared set of terminal local
+  predictions, a fresh terminal global hard projection restores one continuous
+  bridge, deck, train, towers, horizon, and water. The production control
+  exactly reproduces the Phase-8a/8b hash.
+- Projecting toward retained synchronized G3 without a terminal global call
+  produces a noise-like final. High-sigma G3 is not a valid sigma-zero coarse
+  target; fresh terminal global evolution is required in this schedule.
+- Fresh hard projection costs one 9.70 s global CUDA call and has projection
+  RMS 0.8673, 102.5% of H_star RMS. It restores composition but causes visible
+  cable/deck softness and ghosting, so it is causal evidence rather than a
+  qualified production policy.
+
+## 2026-09-02 — Phase 8d terminal current-G context repairs local fragmentation
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_TERMINAL_CONTEXT.md` and
+`experiments/flux2_candidate3_terminal_context_results/report.json`.
+
+- From one shared H3/G3, all 55 terminal crops using fresh current-G generated
+  K/V in all 25 blocks assemble into one coherent bridge scene without an
+  output-space projection. Ordinary terminal crops reproduce the fragmented
+  Phase-8a–8c control exactly.
+- Fragmentation reduction occurs in the context-conditioned crop predictions
+  before assembly. Pairwise overlap RMS falls from 1.000208 to 0.281238; the
+  final has one bridge/deck/train system with controlled towers and coherent
+  water/horizon, retaining fine detail with only minor residual fragments.
+- Diagnostic projection RMS to terminal G_star falls from 0.867312 (102.5% of
+  H_star RMS) to 0.371625 (52.4%). Context does not make H coarse-exact, but it
+  removes the catastrophic semantic failure without applying that projection.
+- Current G contributes 18,432 K/V tokens, yielding 1,536-by-19,968 local
+  attention. Retaining all 25 blocks' K/V on GPU OOMs on the 12 GB device.
+  Experiment-only CPU storage succeeds with a 5.27 GiB cache but transfers
+  290.06 GiB across all crops.
+- Context terminal crops take 98.34 s CUDA versus 19.05 s ordinary terminal
+  crops; fresh capture costs 11.90 s. The mechanism is semantically successful
+  but not an efficiency or production qualification.
+
+## 2026-09-02 — Phase 8e requires context through all tested local depth
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_CONTEXT_DEPTH_LOCALIZATION.md` and
+`experiments/flux2_candidate3_context_depth_localization_results/report.json`.
+
+- One shared 25-block current-G source cache was consumed by fixed local block
+  sets. Only double 0–4 plus single 0–19 reproduces the Phase-8d coherent
+  bridge hash and passes the semantic gate.
+- Single-only is the strongest partial result: overlap RMS 0.5393 and required
+  projection/H* 65.9%, but multiple floating bridge alternatives remain.
+  Full context reaches 0.2812 and 52.4% respectively.
+- Double-only, early double 0–4 plus single 0–4, and late single 10–19 fail
+  materially, with overlap RMS 0.9023, 0.7221, and 0.8247. The early ten-block
+  failure does not justify a narrower prefix test.
+- Full, single-only, and early/late ten transfer 290.06, 232.05, and 116.03
+  GiB respectively. Terminal-local CUDA is 95.89, 80.18, 49.85, and 50.75 s.
+  Contiguous depth omission saves work but loses the qualified semantics.
+- Deep single-stream consumption carries most of the context benefit, but
+  double-stream context still materially improves full-context correctness.
+  Global context must be maintained rather than consumed once as an early plan.
+
+## 2026-09-02 — Phase 8f regular post-interaction K/V decimation fails
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_POSTINTERACTION_KV_DENSITY.md` and
+`experiments/flux2_candidate3_postinteraction_kv_density_results/report.json`.
+
+- One unchanged, fully interacting 96×192 current-G source forward supplied
+  every variant. Selection occurred only after each source block produced
+  RoPE-positioned K/V; retained tokens kept their original full-source
+  coordinates and every local block still consumed context.
+- All 18,432 positions exactly reproduce the qualified Phase-8d/8e bridge.
+  Fixed 2×2 decimation to 4,608 positions is catastrophic: many independent
+  bridge systems return, overlap RMS rises from 0.2812 to 0.8027, and required
+  projection/H-star rises from 52.4% to 94.1%.
+- Fixed 4×4 decimation to 1,152 positions is worse (overlap 0.9727,
+  projection/H-star 101.4%). Dense source interaction alone does not make the
+  final K/V field safely reducible by uniform spatial subsampling.
+- The 2×2 consumer cuts transfer by 75% and terminal-local CUDA from 96.17 s
+  to 43.34 s; 4×4 cuts transfer by 93.75% and CUDA to 27.47 s. These savings
+  are not qualified because semantics fail.
+- The minimum qualified consumer density remains the full 96×192 field. This
+  rejects regular decimation, not every possible information-preserving K/V
+  compression or selection mechanism.
+
+## 2026-09-02 — Phase 8g arithmetic K/V aggregation also fails
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_POSTINTERACTION_KV_AGGREGATION.md` and
+`experiments/flux2_candidate3_postinteraction_kv_aggregation_results/report.json`.
+
+- At every block, all 18,432 fully interacting source positions contribute
+  exactly once to 4,608 nonoverlapping 2×2 arithmetic means. Generated K is
+  pooled before RoPE, V is pooled directly, and K receives RoPE at the exact
+  geometric-center mean of the original four-axis full-source IDs.
+- Full and 2×2-selection controls exactly reproduce their Phase-8f hashes and
+  metrics. The aggregation comparison therefore uses the same accepted state,
+  full source hidden trajectory, crops, and all-25-block local consumption.
+- Mean pooling remains catastrophically fragmented and is numerically worse
+  than selection: overlap RMS 0.9090 versus 0.8027, projection/H-star 100.9%
+  versus 94.1%, and assembled RMS versus full 0.7964 versus 0.7004.
+- Pooling retains the 75% transfer reduction and takes 42.05 s terminal-local
+  CUDA, but those resource reductions are not semantically qualified.
+- Simple independent arithmetic means of K and V do not preserve the spatial/
+  directional information required by local attention at this token budget.
+  This result does not prove that every full-context token is irreducible.
