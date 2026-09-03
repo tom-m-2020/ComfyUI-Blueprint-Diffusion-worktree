@@ -1458,3 +1458,23 @@ Detailed evidence is in
   each magnified local call stays 4,096 tokens as destination H grows. This is
   not an efficiency win at the tested H: 245,760 local token executions and
   61.25 s wall versus 61,440 and 16.84 s for direct 32×32 regions.
+
+## 2026-09-03 — Phase 9c native-local global context is insufficient
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_NATIVE_LOCAL_GLOBAL_CONTEXT.md`.
+
+- From the exact Phase-9b C preterminal state, full accepted-H generated K/V
+  consumed by all 25 local blocks reduces terminal overlap RMS from 0.214053
+  to 0.134323, proving that same-sigma whole-canvas context materially changes
+  and aligns magnified local predictions.
+- The decoded full-H result still contains repeated bridge/train alternatives.
+  Therefore the failure is not explained solely by the fixed 24×48 G being an
+  insufficient context representation.
+- Fixed 24×48 G context is weaker: overlap RMS is 0.200175 and the decoded
+  semantic failure remains close to local-only. It is not qualified for a
+  complete trajectory.
+- Full-H and fixed-G context increase terminal source-plus-local CUDA from
+  14.912 s to 41.820 s and 24.537 s respectively in the CPU-offloaded
+  diagnostic. Context improves compatibility but does not meet the semantic or
+  efficiency gate.
