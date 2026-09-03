@@ -402,3 +402,12 @@ sigma-noise restores useful destination-visible local detail and a coherent
 principal bridge, but duplicate train/bridge elements and ghosting remain.
 The native-working-canvas hypothesis receives partial evidence only; neither
 magnified variant is production-qualified.
+
+Phase 9c is complete with no production or ComfyUI-core changes. The exact
+Phase-9b C preterminal state was evaluated once at terminal sigma with ordinary
+magnified crops, full accepted-H context, and fixed 24×48 G context. Full-H
+context materially lowers overlap disagreement but does not remove repeated
+bridge/train alternatives; fixed-G context is weaker and also fails. No
+context variant is qualified for a four-step trajectory. The next justified
+discriminator is scale transport/positional semantics/x0 restriction, not a G
+density increase.

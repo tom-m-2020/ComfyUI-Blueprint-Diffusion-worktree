@@ -673,3 +673,13 @@ result: it proves that native working resolution can contribute useful detail,
 but its repeated semantic structures, ghosting, and 3.64× measured wall cost
 do not satisfy production quality or efficiency gates. This does not reject
 the broader fixed-working-geometry architecture.
+
+## 2026-09-03 — Do not advance Phase-9c fixed-G context to a trajectory
+
+Do not run or productionize the fixed 24×48 G context variant. At the exact
+Phase-9b C terminal state it neither removes repeated bridge/train semantics
+nor materially approaches the full-H context's overlap agreement. Full-H
+context itself remains semantically fragmented despite a large numerical
+agreement improvement, so increasing G density is not the next justified
+experiment. Local scale transport, positional semantics, or prediction
+restriction must be isolated first.
