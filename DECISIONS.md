@@ -775,3 +775,23 @@ Do not make it persistent, productionize it, or claim efficiency: the tested
 8K source on the current native backend. Next isolate destination-independent
 source geometry and backend execution behavior without reopening density or
 post-interaction compression sweeps.
+
+## 2026-09-03 — Do not advance the natural 4×2 fixed-4K large-canvas source
+
+Phase 14's `H=128×256 -> S=32×128` arithmetic area restriction does not
+preserve the Phase-13 one-bridge semantic result, despite executing a complete
+globally interacting 4K source. Do not productionize it or respond by growing
+the source budget. Its mapped variance ratio (`0.124651`) is materially outside
+the successful Phase-13 regime, so the only authorized next discriminator is
+one principled source-state construction comparison at the same 4,096 spatial
+positions. Also do not treat accepted-G context as a positive normalized-W
+control until that combined consumer geometry is separately qualified.
+
+## 2026-09-03 — Reject scalar correction of the fixed-4K source
+
+Phase 15 shows that neither matching Phase-13's mapped variance with gain `2`
+nor preserving native variance with gain `sqrt(8)` changes the Phase-14
+fragmentation class. Do not add source-gain controls, runtime-statistics
+normalization, or a gain sweep. If fixed-4K research continues, test an
+information-richer source representation at the same 4,096 spatial positions;
+do not increase token density yet.
