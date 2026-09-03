@@ -795,3 +795,13 @@ fragmentation class. Do not add source-gain controls, runtime-statistics
 normalization, or a gain sweep. If fixed-4K research continues, test an
 information-richer source representation at the same 4,096 spatial positions;
 do not increase token density yet.
+
+## 2026-09-04 — Reject simple orthogonal local-mode packing at fixed 4K
+
+Phase 16's four-mode DCT/Hadamard source remains visibly fragmented despite
+retaining directional information absent from the area mean. Do not add another
+hand-designed mode allocation, channel rotation, or packing sweep. A trained
+128-channel source token cannot losslessly carry four modes for all 128 latent
+channels, and the tested fixed projection does not cross the semantic gate.
+The next architectural discriminator must separate insufficient 4K source
+interaction capacity from failure of the normalized-W consumer interface.
