@@ -1363,3 +1363,30 @@ Detailed evidence is in
 - The full-context semantic result is preserved. The historical decoded hash
   is not reproduced because this run fell back to tiled VAE decoding, but the
   55 model predictions are exact and the decoded scene is visually identical.
+
+## 2026-09-03 — Phase 8j production boundary for specialized execution
+
+The production design is documented in
+`PRODUCTION_SPECIALIZED_EXECUTOR_ARCHITECTURE.md`.
+
+- The generic coordinator can retain ownership of planning, assembly, Euler
+  proposals, D/U policy, validation, preview, and atomic `BlueprintState`
+  commit if the adapter exposes one model-neutral bulk-region prediction
+  operation. FLUX block semantics do not need to enter sampling code.
+- The narrow implementation shape is a private `Flux2BlockExecutor` used by
+  `Flux2Adapter`. A generic block/session abstraction is not justified because
+  no other model family has qualified FLUX-shaped block execution.
+- Normal ComfyUI conditioning preparation can be retained with a scoped
+  `DIFFUSION_MODEL` preparation wrapper: ordinary CFG-1/calc-cond/BaseModel
+  preparation reaches the native Flux `_forward` boundary, the wrapper records
+  exactly one call descriptor and returns a discarded sentinel output, and the
+  explicit executor consumes that descriptor. Reading and reconstructing
+  `guider.conds` directly would bypass condition semantics and is rejected.
+- Terminal source hidden state must traverse all 25 blocks, but terminal source
+  `final_layer`, x0_G, G-star, and synchronized final G are unnecessary. The
+  current terminal policy retains preterminal G explicitly as unsynchronized,
+  and no later interval consumes a terminal global prediction.
+- Initial production dispatch should be terminal-only and exact-geometry-only
+  for H=128×256/G=96×192. Other geometries retain ordinary behavior; failure
+  of specialized qualification at that exact geometry must not silently fall
+  back to the known-fragmented terminal path.

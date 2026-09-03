@@ -617,3 +617,26 @@ this as experiment-level feasibility only. Do not modify production, generalize
 the executor, add backend support, or infer support for other models/CFG/
 conditioning without a separately authorized architecture and qualification
 task.
+
+## 2026-09-03 — Select terminal-only adapter-private FLUX executor architecture
+
+For the first production integration, place explicit double/single block
+orchestration in a private `Flux2BlockExecutor` owned per call by
+`Flux2Adapter`. Extend the adapter boundary only with a model-neutral ordered
+bulk-region prediction operation. Keep accepted state, region planning,
+assembly, Euler proposals, D/U coupling, terminal release, validation, preview,
+and atomic commit in `BlueprintCoordinator`/`BlueprintEulerSampler`.
+
+Activate specialized execution only for the qualified terminal H=128×256,
+G=96×192 case. Leave nonterminal intervals and every other geometry on the
+existing ordinary path. At the qualified geometry, unsupported model profile,
+conditioning, wrappers, coordinates, or runtime state must fail closed rather
+than fall back to the semantically failed local-only terminal evaluation.
+
+Use normal ComfyUI CFG-1 conditioning preparation through a scoped
+diffusion-model wrapper and validate exactly one prepared native call per
+source/crop. Do not rebuild conditions from `guider.conds`, introduce a generic
+FLUX-shaped execution session, or transfer whole-interval/state ownership to an
+adapter. The source executes all 25 blocks to provide K/V but does not run an
+unused terminal final projection or claim synchronized final G. This decision
+authorizes architecture selection only; production code remains unchanged.
