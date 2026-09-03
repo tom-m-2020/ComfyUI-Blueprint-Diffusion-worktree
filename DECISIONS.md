@@ -722,3 +722,15 @@ semantic class and does not demonstrate superior detail or consistency. Treat
 persistent W as unnecessary complexity under this synchronization contract.
 Do not productionize it or add inside-transformer context automatically; any
 new persistent-W coupling mechanism requires a separate architectural task.
+
+## 2026-09-03 — Retain normalized reconstructed W; isolate global representation
+
+Phase 11 demonstrates that complete accepted-H context inside every local
+FLUX.2 block can suppress reconstructed-W bridge/train repetitions, while the
+same mechanism sourced from fixed 24×48 G cannot. Do not reject normalized
+native working canvases as a training-free architecture on the basis of the
+earlier local-only failures. Also do not productionize the full-H oracle or
+increase G density automatically: its token, transfer, and runtime costs violate
+the fixed-budget objective. The next authorized research direction, if pursued,
+is a bounded global-representation sufficiency discriminator that preserves a
+fixed global model-token budget and measures against the full-H semantic oracle.
