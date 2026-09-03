@@ -510,3 +510,11 @@ execution. Neither gain changes the fragmented bridge/train semantic class.
 Early K/V telemetry shows transformer normalization largely removes the input
 amplitude difference. Simple scalar-statistics correction is stopped; any next
 probe must address representation/information loss at the same 4,096 positions.
+
+Phase 16 is complete with no production or ComfyUI-core changes. One fixed
+orthogonal representation retained four 4×2 DCT spatial modes and packed them
+into the trained 128-channel source interface through deterministic Hadamard
+subspaces. It changes reconstruction and overlap metrics but remains in the
+same fragmented bridge/train semantic class. Simple deterministic local-mode
+packing is stopped. The unresolved boundary is now 4K independent-source
+capacity versus the normalized-W context-consumer interface.

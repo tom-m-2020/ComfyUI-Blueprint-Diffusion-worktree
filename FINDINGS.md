@@ -1698,3 +1698,27 @@ Detailed evidence is in
   not a sufficient proxy for information retained by the 4×2 restriction.
 - Source CUDA, local CUDA, 48-MiB current-block K/V, and peak memory remain
   materially unchanged across gains, preserving Phase 14's work comparison.
+
+## 2026-09-04 — Phase 16 fixed-4K orthogonal mode packing remains fragmented
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_FIXED4K_REPRESENTATION_RICHNESS.md`.
+
+- A fixed 4×2 orthonormal DCT retaining DC, first vertical, first horizontal,
+  and first diagonal modes, packed through disjoint 32-dimensional subspaces of
+  a normalized 128-channel Hadamard basis, does not recover one bridge system.
+  It remains in the Phase-15 fragmented semantic class.
+- The fixed 128-channel model interface can hold only 128 of the 512 retained-
+  mode/channel coefficients per spatial position. C3 explicitly retains 25%
+  and discards complementary channel components; deterministic packing cannot
+  make this dimensional loss disappear.
+- C3 modestly improves H reconstruction RMS (`0.930890` versus `0.931140`) and
+  edge-gradient RMS (`1.340725` versus `1.374486`) but worsens low-frequency
+  8×8-mean reconstruction (`0.107615` versus near zero) because DC is no longer
+  retained for every latent-channel component.
+- Overlap RMS falls from `0.784053` to `0.742034`, but visual bridge/train
+  fragmentation remains. This again shows overlap compatibility is not a
+  whole-scene semantic proxy.
+- Fixed-4K source/local timing and 48-MiB block K/V remain unchanged. The
+  failure is representational/semantic, not a loss of the measured 4K resource
+  advantage.
