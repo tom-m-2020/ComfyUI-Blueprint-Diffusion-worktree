@@ -464,3 +464,11 @@ does not approach the coherent 8,192-position full-H oracle. Fresh/same-sigma,
 all-block, finite, and no-stale-context checks pass. The fixed 1,152-position
 consumer capacity is insufficient under the tested area-mean representation;
 only a bounded larger post-interaction budget is justified next.
+
+Phase 12b is complete with no production or ComfyUI-core changes. The sole new
+condition aggregates each block's full-H generated K/V through exact
+nonoverlapping 2×2 groups to `32×64 = 2,048` consumer positions. It improves
+the scene relative to the 1,152-position post-interaction control but retains
+clear repeated bridge/train/support alternatives and remains below the full-H
+oracle. All provenance, block-shape, fresh-context, finite-state, and no-stale
+checks pass. Decision 2 authorizes one 4,096-token discriminator only.
