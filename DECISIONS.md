@@ -594,3 +594,26 @@ geometric-center RoPE coordinate does not improve the failed 4,608-token scene;
 it is numerically and semantically at least as fragmented as regular selection.
 This decision does not authorize another pooling function, density/window
 sweep, learned compression, token merging, quantization, or production change.
+
+## 2026-09-02 — Do not implement block-major streaming with suspended native forwards
+
+Reject the experiment's thread/barrier suspension of 55 monolithic FLUX.2
+calls. Although it eliminates the all-block CPU cache and repeated host K/V
+transfer at the first block, retained native call-frame intermediates drive
+peak allocation to 16.30 GiB and OOM before block 0 completes. Any exact
+block-major continuation requires a specialized executor with explicit
+block-to-block hidden ownership and per-crop temporary release. This decision
+does not authorize that executor, CPU hidden offload, production integration,
+or any semantic compression.
+
+## 2026-09-02 — Qualify explicit FLUX block execution experimentally
+
+The Phase-8i specialized executor is the first mechanically qualified way to
+execute the exact all-depth, 18,432-token current-G context contract without
+the Phase-8h suspended-call-frame OOM. It retains only explicit block outputs
+for each crop and one source block K/V, reproducing all 55 crop predictions
+bit-exactly while eliminating the all-block CPU cache and host transfer. Record
+this as experiment-level feasibility only. Do not modify production, generalize
+the executor, add backend support, or infer support for other models/CFG/
+conditioning without a separately authorized architecture and qualification
+task.

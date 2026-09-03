@@ -1312,3 +1312,54 @@ Detailed evidence is in
 - Simple independent arithmetic means of K and V do not preserve the spatial/
   directional information required by local attention at this token budget.
   This result does not prove that every full-context token is irreducible.
+
+## 2026-09-02 — Phase 8h native-call block-major streaming OOMs at block 0
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_BLOCK_MAJOR_CONTEXT_STREAMING.md` and
+`experiments/flux2_candidate3_block_major_context_streaming_results/report.json`.
+
+- Existing attention patches can coordinate a full source call and 55 local
+  calls by block, eliminating the all-block CPU cache and host K/V transfer in
+  principle. The first source block publishes exact 18,432-position K/V with a
+  measured 216 MiB residency.
+- Suspending complete native local forwards is not viable on the 12 GiB device.
+  Only 46 of 55 local attention calls reach double block 0 before OOM; peak
+  allocated memory reaches 16.30 GiB, 15.31 GiB above the streaming baseline.
+- The dominant residency is retained native call-frame state—Q/K/V,
+  modulation, ordinary/augmented attention, residual and MLP intermediates—not
+  the one-block global K/V. No clean all-crop barrier completes, so persistent
+  hidden and temporary memory cannot be isolated independently.
+- Exact semantic equivalence is not established because no assembled output is
+  produced. A true block-major implementation requires a specialized FLUX
+  executor that explicitly owns block-to-block crop hidden states and releases
+  per-crop temporaries between calls.
+
+## 2026-09-02 — Phase 8i explicit block execution qualifies exact streaming
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_SPECIALIZED_EXECUTOR.md` and
+`experiments/flux2_candidate3_specialized_executor_results/report.json`.
+
+- An experiment-local executor reuses the unmodified native FLUX.2 input
+  modules, five double blocks, twenty single blocks, RoPE/attention functions,
+  and final layer, but explicitly owns block-to-block hidden state instead of
+  suspending complete forwards.
+- Ordinary one-crop execution is bit-exact at `img_in`, `txt_in`, every block,
+  final generated tokens, and returned x0. With full current-G context, source
+  K/V, every local block output, and final crop x0 are also bit-exact.
+- All 55 context-conditioned crop predictions are bit-exact against a
+  same-process CPU-offloaded reference. CPU-versus-GPU overlap assembly is the
+  first difference (RMS 2.02e-8, max 4.77e-7); assembled RMS and overlap RMS
+  reproduce Phase 8d at 0.709837 and 0.281238.
+- Persistent 55-crop hidden state is 495 MiB in double blocks and 660 MiB in
+  single blocks. One full source-block K/V is 216 MiB. Maximum observed CUDA
+  allocation/reservation is 3.32/6.34 GiB, versus Phase 8h's 16.30-GiB OOM
+  from suspended call frames.
+- The executor uses no all-block CPU K/V cache and no CPU-to-GPU K/V transfer,
+  eliminating the reference's 5.27-GiB cache and 311.4-GB aggregate transfer.
+  Measured terminal source-plus-local CUDA is 65.72 s versus about 106.39 s
+  for the Phase-8h CPU-offloaded reference.
+- The full-context semantic result is preserved. The historical decoded hash
+  is not reproduced because this run fell back to tiled VAE decoding, but the
+  55 model predictions are exact and the decoded scene is visually identical.
