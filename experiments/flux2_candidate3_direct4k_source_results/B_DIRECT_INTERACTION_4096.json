@@ -1,0 +1,4926 @@
+{
+  "configuration": {
+    "H": [
+      64,
+      128
+    ],
+    "G": [
+      24,
+      48
+    ],
+    "context_source": "H_DIRECT_2X1",
+    "destination_crop": [
+      32,
+      32
+    ],
+    "stride": 24,
+    "working_canvas": [
+      64,
+      64
+    ],
+    "working_coordinates": "native local unit grid 0..63",
+    "sigmas": [
+      1.0,
+      0.9498810172080994,
+      0.8633416295051575,
+      0.6780259013175964,
+      0.0
+    ],
+    "seed": 20260901,
+    "regions": [
+      [
+        0,
+        0,
+        0,
+        32,
+        32
+      ],
+      [
+        1,
+        0,
+        24,
+        32,
+        32
+      ],
+      [
+        2,
+        0,
+        48,
+        32,
+        32
+      ],
+      [
+        3,
+        0,
+        72,
+        32,
+        32
+      ],
+      [
+        4,
+        0,
+        96,
+        32,
+        32
+      ],
+      [
+        5,
+        24,
+        0,
+        32,
+        32
+      ],
+      [
+        6,
+        24,
+        24,
+        32,
+        32
+      ],
+      [
+        7,
+        24,
+        48,
+        32,
+        32
+      ],
+      [
+        8,
+        24,
+        72,
+        32,
+        32
+      ],
+      [
+        9,
+        24,
+        96,
+        32,
+        32
+      ],
+      [
+        10,
+        32,
+        0,
+        32,
+        32
+      ],
+      [
+        11,
+        32,
+        24,
+        32,
+        32
+      ],
+      [
+        12,
+        32,
+        48,
+        32,
+        32
+      ],
+      [
+        13,
+        32,
+        72,
+        32,
+        32
+      ],
+      [
+        14,
+        32,
+        96,
+        32,
+        32
+      ]
+    ]
+  },
+  "trajectory": [
+    {
+      "ordinal": 0,
+      "sigma": 1.0,
+      "sigma_next": 0.9498810172080994,
+      "input_H_hash": "d17efc725910eb43730f33167387cffb98767de330c5f958813f43f94d0800ea",
+      "input_G_hash": "4c92b6646394642f51c10422478715efc112cbe5db8def095291385c00dbaf5a",
+      "accepted_H_hash": "ee37d9c7bba75f1c07f1b9d3ae490585368a4e7b8e29c0d78be2bfd668f10749",
+      "accepted_G_hash": "fea113a3189cc17f70c74d2c45bf2f69d263dd3a23885f2878420a47d757e9c2",
+      "W_hashes": [
+        "3f1d2529c775ba8efc36c135f6860b498612720b65b0732e248a8ab40a3b781a",
+        "98585eae9cd144cee6bb2bd8faa6958b083f7c7bb4238213e984662e51cc9e38",
+        "d74e6b91a56befd972fc36f7729be56af11dff5120c768859fc700d8b401f13f",
+        "4c2ea72a08ef58e9eed83e4b339e6e6fcb58d79a5e9adc6243cb7628da45dcc6",
+        "e84018708c8be081a9979976e903964118b481612df0fd2f1a7c1d01c8db92be",
+        "de261b00e0788a9f7052c4720996b8643e676341d570315ac8ecb0e191eefe7f",
+        "ec1c0d9254a37998f3e83871547334903e65fbf0b81c2c53b61cf829995fab8d",
+        "048fbb48fd762fb72ae8d482f233a51724cd389bfe86057ae2326b24036e5338",
+        "a663e05b589b528a890744da2f3fb5d3cad6536f3b4d4ca2eaa6eaed27f91df7",
+        "5600ef2d48c07c4bdf271af73e485f051040d57bbcce31c05673f95d3bc78704",
+        "16896278418c3e2a4189b7a46a1b303e4d75a3ccb6e29ebc88f7ce6cc9c1d9da",
+        "1bab3eb24d743cd11b45bf9a637f0394ce114ae5937da86a635167770b8678ec",
+        "f0c04c06ab78e4f87886138a8ddb9f524dea9698b10b95c7c31836767ea12920",
+        "8da5841c9a1cd5726b4150b1e53907e1ec614d41fdbd5b385f6d03e7d1b557bd",
+        "836c55316c85f0b43dbb099d4c91e899255afdb1840828d9efc5ae9a2e8896cd"
+      ],
+      "prediction_overlap_rms": 0.8321929402913073,
+      "crop_predictions": [
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8081481456756592,
+          "mean": -0.01824955828487873,
+          "max_abs": 4.621528625488281,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8241933584213257,
+          "mean": -0.02124810218811035,
+          "max_abs": 5.167851448059082,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8064382672309875,
+          "mean": -0.020418936386704445,
+          "max_abs": 4.710515022277832,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.831122875213623,
+          "mean": -0.014747661538422108,
+          "max_abs": 5.135798931121826,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8250035643577576,
+          "mean": -0.019260123372077942,
+          "max_abs": 5.159656524658203,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8270034193992615,
+          "mean": -0.01812516152858734,
+          "max_abs": 6.149300575256348,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.831608772277832,
+          "mean": -0.0200069360435009,
+          "max_abs": 5.953550338745117,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8246767520904541,
+          "mean": -0.020717523992061615,
+          "max_abs": 5.3909783363342285,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8054790496826172,
+          "mean": -0.01864391192793846,
+          "max_abs": 5.173731803894043,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8128090500831604,
+          "mean": -0.020857328549027443,
+          "max_abs": 5.581909656524658,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8233171701431274,
+          "mean": -0.022763023152947426,
+          "max_abs": 5.616551399230957,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8175464272499084,
+          "mean": -0.02864007279276848,
+          "max_abs": 4.8412017822265625,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8181500434875488,
+          "mean": -0.02174275740981102,
+          "max_abs": 5.513830661773682,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8157408237457275,
+          "mean": -0.01996331848204136,
+          "max_abs": 5.262412071228027,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8189767599105835,
+          "mean": -0.017933610826730728,
+          "max_abs": 5.363356113433838,
+          "finite": true
+        }
+      ],
+      "assembled_x0_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.768396258354187,
+        "mean": -0.025580953806638718,
+        "max_abs": 5.159656524658203,
+        "finite": true
+      },
+      "projection_rms": 0.04177200049161911,
+      "invariant_max_abs": 3.5762786865234375e-07,
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "context_probe_python_id": 2983847616128,
+      "context_consumptions": 375,
+      "context_capture_bytes": 1258291200,
+      "context_transfer_bytes": 18874368000
+    },
+    {
+      "ordinal": 1,
+      "sigma": 0.9498810172080994,
+      "sigma_next": 0.8633416295051575,
+      "input_H_hash": "ee37d9c7bba75f1c07f1b9d3ae490585368a4e7b8e29c0d78be2bfd668f10749",
+      "input_G_hash": "fea113a3189cc17f70c74d2c45bf2f69d263dd3a23885f2878420a47d757e9c2",
+      "accepted_H_hash": "0bbd638f97ed1fb4b8fbb31a3b6bc2e69c476aeb06ef225ee58f2fa41821511c",
+      "accepted_G_hash": "28b48b8ab67514c19fb1e1878fc872abce6edef896fd6d24de2f1125f693eada",
+      "W_hashes": [
+        "fe4ba4081055ac95eb581b96043fe86aa7035b6df3aea2711527bc30170d5b13",
+        "b8ea7fb758bce4f04dd7b20f62fd1f65c9305adb1f97ca3126b508baac39b0b9",
+        "991d6818605d5599c0cb0c913bc85c5c3a9b257ab124011b1baaa553e8e329d2",
+        "d5f4349bcb6991060c8dd669ba20fcc9a928461f650a6b0f3c45c15930b56d82",
+        "37311abe4d8c9cae0936717766a03dab12b3f93be4a378d9697c90d6d56e3d39",
+        "a2b559ce2175a8d9b6c6266ae82cfe8407660beed9470d1b6b6e06174f13bc20",
+        "9af0ebaedd8d74b30f0f95f00454b2805916f7716b3beaeff3d60cf081ae6f82",
+        "a0423477fdab85d6352754355d27d520c0fc76015737af20c0007479a4ce893b",
+        "05da68808a1d2dd7987c27e5e8d980c7042b89684bb39110984f71c3c5ab0328",
+        "fb80f0e79f67b338a49a5813cdbd1ad5d4b69010ce873a88db6c3db9ea9e35e8",
+        "f646643a938ea49fd686a3cd54b3a1ebcb734e5e3a8461d998a86851dcc24c23",
+        "e5d342b856d681041ca7c3be2fd564139de18397bb2e0d7a5d33483193825e56",
+        "18774b1653fc71e55557727ab6991935d2c266405f71e2821ca7150cd823ea4c",
+        "4f4b8463a3663abc4bac48653c9d2681c4e6c261402ca02cb5ecbb6acba06970",
+        "f2a4023bb74b813a99dbd699eff443a81c71827338e2f7d67475b43d3cfd4e46"
+      ],
+      "prediction_overlap_rms": 0.6125446418263382,
+      "crop_predictions": [
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7284876108169556,
+          "mean": -0.015053585171699524,
+          "max_abs": 3.8930206298828125,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7302783131599426,
+          "mean": -0.017183680087327957,
+          "max_abs": 3.621615409851074,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7401536107063293,
+          "mean": -0.020799078047275543,
+          "max_abs": 4.0288591384887695,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7299591302871704,
+          "mean": -0.013734127394855022,
+          "max_abs": 4.4537553787231445,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7317777872085571,
+          "mean": -0.018611794337630272,
+          "max_abs": 3.932821035385132,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7747526168823242,
+          "mean": 0.05061975121498108,
+          "max_abs": 3.7011914253234863,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7651748657226562,
+          "mean": 0.0404440313577652,
+          "max_abs": 4.230745315551758,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7682640552520752,
+          "mean": 0.05085630714893341,
+          "max_abs": 3.7116692066192627,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7609665989875793,
+          "mean": 0.0452001579105854,
+          "max_abs": 3.527005672454834,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7768547534942627,
+          "mean": 0.05806877464056015,
+          "max_abs": 3.8650808334350586,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7725966572761536,
+          "mean": 0.04663383588194847,
+          "max_abs": 4.1249098777771,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7214292287826538,
+          "mean": 0.032727666199207306,
+          "max_abs": 5.253574371337891,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7578011751174927,
+          "mean": 0.057072963565588,
+          "max_abs": 3.9273838996887207,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7574677467346191,
+          "mean": 0.04009133204817772,
+          "max_abs": 3.8900511264801025,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.7573110461235046,
+          "mean": 0.05427105352282524,
+          "max_abs": 4.561285495758057,
+          "finite": true
+        }
+      ],
+      "assembled_x0_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.7122401595115662,
+        "mean": 0.016659125685691833,
+        "max_abs": 4.1249098777771,
+        "finite": true
+      },
+      "projection_rms": 0.04487544670701027,
+      "invariant_max_abs": 2.980232238769531e-07,
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "context_probe_python_id": 2983847822992,
+      "context_consumptions": 375,
+      "context_capture_bytes": 1258291200,
+      "context_transfer_bytes": 18874368000
+    },
+    {
+      "ordinal": 2,
+      "sigma": 0.8633416295051575,
+      "sigma_next": 0.6780259013175964,
+      "input_H_hash": "0bbd638f97ed1fb4b8fbb31a3b6bc2e69c476aeb06ef225ee58f2fa41821511c",
+      "input_G_hash": "28b48b8ab67514c19fb1e1878fc872abce6edef896fd6d24de2f1125f693eada",
+      "accepted_H_hash": "6e906ad072af6f5094967736dfc5e036434865d88e8856d535666b0c8e1ffcf6",
+      "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+      "W_hashes": [
+        "534254c80e3a9f9d8e5d6e27c5b291bd2c7859e075c9d867c26bfaab1e07fefd",
+        "147663556e54a980a1993131b02736f4bfd1120aaf158783ab4e5c5bc58ca0a2",
+        "6d19c447185ad7854a358c8eb2dfbb2e861ad5312ddb6b284fa08c7a2457a900",
+        "c8c727f0c69c3eddb61aef82a1e9016235dd8aa8ed8d5fa7f8649dc201c3fe51",
+        "c6b8c65524f149c435a61cf3fe833ce1d7e8b418f9756d5d6ccf20b39b12688a",
+        "f08451519e76d0513c61502d87331c15da22c93dfb73efb7f570f10ecaca1548",
+        "89fcfbccf716849cc10dc1250ac9f006e4857d52e7c556495bc84ac48a2c46d5",
+        "b86e8b0d0b4f782883d7833c19cfa16c9a7a80f975aa19c64b1b4c55d5d4c989",
+        "88da3cc21415b5c66bc55409ce1d6478b07bd17335824fc341869062c6f5879d",
+        "9bc97fe1e7609b9e99e4e538e829bc7f8375af99be6cd1594977af50d4fd1be5",
+        "ad35389824c9bb1e42d2a1e8078db67a579d02101817deeae63b8dcf8912bb9a",
+        "d6ec6be388365e40771d2e3d7e977d77c321da6b397d097d124b4f66d4eb9c96",
+        "aa877a510a81f336d870697ca2174b3d0a92826779f28eedfc7d44a8d2979c5e",
+        "8b5b28bd89aa0cd4a71307025b1acaa690e96e760585b061cb2e51f6a0780712",
+        "a3325b92de1741e4e803dc2507279fe50e40132c123d751d68b97ad624dccb55"
+      ],
+      "prediction_overlap_rms": 0.4653433457126825,
+      "crop_predictions": [
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8350323438644409,
+          "mean": -0.019971158355474472,
+          "max_abs": 4.533458232879639,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8328374028205872,
+          "mean": -0.019962038844823837,
+          "max_abs": 5.0391950607299805,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8391615748405457,
+          "mean": -0.03443373739719391,
+          "max_abs": 4.281081199645996,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.845037043094635,
+          "mean": -0.016887426376342773,
+          "max_abs": 4.21169376373291,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8442094922065735,
+          "mean": -0.03605673089623451,
+          "max_abs": 5.368531703948975,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8700477480888367,
+          "mean": 0.06312418729066849,
+          "max_abs": 4.467864513397217,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8753380179405212,
+          "mean": 0.05695677548646927,
+          "max_abs": 4.933806896209717,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8741764426231384,
+          "mean": 0.06174561008810997,
+          "max_abs": 5.057571887969971,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.879730761051178,
+          "mean": 0.05989178270101547,
+          "max_abs": 4.248843193054199,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8788884282112122,
+          "mean": 0.06741449236869812,
+          "max_abs": 4.728448867797852,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8526029586791992,
+          "mean": 0.07660545408725739,
+          "max_abs": 4.665249824523926,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8400101661682129,
+          "mean": 0.0711553543806076,
+          "max_abs": 4.357858657836914,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8545889258384705,
+          "mean": 0.07630909979343414,
+          "max_abs": 4.6187262535095215,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8663330674171448,
+          "mean": 0.06225540116429329,
+          "max_abs": 4.126462936401367,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8518241047859192,
+          "mean": 0.08809506893157959,
+          "max_abs": 4.3567609786987305,
+          "finite": true
+        }
+      ],
+      "assembled_x0_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.8335179686546326,
+        "mean": 0.024501321837306023,
+        "max_abs": 5.368531703948975,
+        "finite": true
+      },
+      "projection_rms": 0.10332170128822327,
+      "invariant_max_abs": 3.5762786865234375e-07,
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "context_probe_python_id": 2983847837392,
+      "context_consumptions": 375,
+      "context_capture_bytes": 1258291200,
+      "context_transfer_bytes": 18874368000
+    },
+    {
+      "ordinal": 3,
+      "sigma": 0.6780259013175964,
+      "sigma_next": 0.0,
+      "input_H_hash": "6e906ad072af6f5094967736dfc5e036434865d88e8856d535666b0c8e1ffcf6",
+      "input_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+      "accepted_H_hash": "ea1438d0f44f557429b5c0ed3a495ae4a726882aaaad9ef923bb882ea3d4caa2",
+      "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+      "W_hashes": [
+        "079840be189f50edd1733785b5249cf154852205f37195e496cbe30e3bc7ab92",
+        "72ee0acfe987ebffeb8bba0b02dc412c70e2086b29d6fe5940dce81748654647",
+        "bfed647953c0cb44fbf7379fdfb7184f183b90a4ca5b3a340f1a7f3fb8bf6387",
+        "6b6cea20403e53f218a0d29fae05c6a74197f53def629987c964bbbcfca7909a",
+        "1abdb7a76e8a3a3ca3e75a8417525167db22b8ed53be76c6fddb5e1633e9a615",
+        "8be071a553a1e4e53791577ea66409bb2295cb280a1f4298e70aae2ac35996a0",
+        "77dd3904d4057af44972735149a949f147d318a1b568b9273299b8b320b838dc",
+        "14784b5793acdf7fe39c4958e603c1893b520a5d269a51f65829442718d5daa9",
+        "7dd826dbb91130006b55c16c72d31a087a14c270d3a4895772c251b502ecc0f9",
+        "ab7f18514afa57e110f58103166d94ba479a75df4004ebd4881c0eb1b95ab496",
+        "b9db5e45a733c74a4e5895753350e27d9ab437a9b47d1568648864fb8528ad5a",
+        "87f381c45b70ea3558f8d3b6f3e035ec86c99faccc393758c8174397bff14774",
+        "37efcefed1313b05d24048ea3333cb2cce352cbde9fa01bf73da622ff47056bd",
+        "910a2c5bd6c17e1fe2101765cb1cf631046f8122fa5e13d224c73f42341d7fc6",
+        "2ec898ee8b6264813dc4c07775ad2e441823489c0041894c36d7c814edde12c4"
+      ],
+      "prediction_overlap_rms": 0.2512937318220411,
+      "crop_predictions": [
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8853976726531982,
+          "mean": -0.0636778324842453,
+          "max_abs": 4.993919372558594,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8848829865455627,
+          "mean": -0.062384992837905884,
+          "max_abs": 5.21171760559082,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8797712326049805,
+          "mean": -0.06922535598278046,
+          "max_abs": 4.510410308837891,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8835259079933167,
+          "mean": -0.06280683726072311,
+          "max_abs": 4.863489151000977,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.8943236470222473,
+          "mean": -0.06498491764068604,
+          "max_abs": 5.8200602531433105,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9485872983932495,
+          "mean": 0.052189718931913376,
+          "max_abs": 4.88797664642334,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9510402083396912,
+          "mean": 0.04364074766635895,
+          "max_abs": 5.073993682861328,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9442257285118103,
+          "mean": 0.045473579317331314,
+          "max_abs": 6.674707889556885,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9464226961135864,
+          "mean": 0.04405956342816353,
+          "max_abs": 5.042109966278076,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9489356875419617,
+          "mean": 0.04896983504295349,
+          "max_abs": 4.632645606994629,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9200109839439392,
+          "mean": 0.07244172692298889,
+          "max_abs": 4.639013767242432,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9056417346000671,
+          "mean": 0.06795299053192139,
+          "max_abs": 4.631363868713379,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9170065522193909,
+          "mean": 0.07113431394100189,
+          "max_abs": 5.599400997161865,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9199577569961548,
+          "mean": 0.06489648669958115,
+          "max_abs": 4.510581016540527,
+          "finite": true
+        },
+        {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "rms": 0.9134453535079956,
+          "mean": 0.07401461899280548,
+          "max_abs": 4.603704452514648,
+          "finite": true
+        }
+      ],
+      "assembled_x0_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.9011818766593933,
+        "mean": 0.0025014784187078476,
+        "max_abs": 6.588683605194092,
+        "finite": true
+      },
+      "projection_rms": null,
+      "invariant_max_abs": null,
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "context_probe_python_id": 2983847665152,
+      "context_consumptions": 375,
+      "context_capture_bytes": 1258291200,
+      "context_transfer_bytes": 18874368000
+    }
+  ],
+  "context_generations": [
+    {
+      "ordinal": 0,
+      "sigma": 1.0,
+      "source": "H_DIRECT_2X1",
+      "source_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "source_tokens": 4096,
+      "source_hash": "cccd706a4b2ad70b797dffe916b93fe31befe4620c79e441c14376b8a7eae2e5",
+      "accepted_H_hash": "d17efc725910eb43730f33167387cffb98767de330c5f958813f43f94d0800ea",
+      "accepted_G_hash": "4c92b6646394642f51c10422478715efc112cbe5db8def095291385c00dbaf5a",
+      "rope": {
+        "scale_y": 2.0,
+        "shift_y": 0.5
+      },
+      "cuda_ms": 6077.95654296875,
+      "wall_seconds": 6.085255300000426,
+      "probe_python_id": 2983847616128,
+      "diagnostic_reference": {
+        "source": "same accepted H post-interaction 2x1 reference",
+        "accepted_H_hash": "d17efc725910eb43730f33167387cffb98767de330c5f958813f43f94d0800ea",
+        "sigma": 1.0,
+        "cuda_ms": 3250.6142578125,
+        "wall_seconds": 3.2615083000127925,
+        "blocks": 25,
+        "consumer_tokens": 4096
+      },
+      "state_restriction": {
+        "accepted_H_shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "direct_source_shape": [
+          1,
+          128,
+          32,
+          128
+        ],
+        "accepted_H_hash": "d17efc725910eb43730f33167387cffb98767de330c5f958813f43f94d0800ea",
+        "direct_source_hash": "cccd706a4b2ad70b797dffe916b93fe31befe4620c79e441c14376b8a7eae2e5",
+        "accepted_H_variance": 0.9999865293502808,
+        "direct_source_variance": 0.501307487487793,
+        "variance_ratio": 0.5013142405163262,
+        "restriction": "nonoverlapping vertical 2x1 arithmetic mean",
+        "normalization": "none"
+      },
+      "per_block_direct_vs_postinteraction": [
+        {
+          "block_type": "double",
+          "block_index": 0,
+          "K": {
+            "rms_difference": 0.1116991862654686,
+            "max_abs_difference": 3.87109375,
+            "direct_rms": 1.1873865127563477,
+            "postinteraction_rms": 1.1500065326690674,
+            "direct_over_postinteraction_norm_ratio": 1.0325042009353638,
+            "cosine_similarity": 0.9980394244194031,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.5827680826187134,
+            "max_abs_difference": 13.75,
+            "direct_rms": 6.176838397979736,
+            "postinteraction_rms": 4.889149188995361,
+            "direct_over_postinteraction_norm_ratio": 1.2633769512176514,
+            "cosine_similarity": 0.986565887928009,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 1,
+          "K": {
+            "rms_difference": 0.35834673047065735,
+            "max_abs_difference": 4.3046875,
+            "direct_rms": 1.202506184577942,
+            "postinteraction_rms": 1.1609660387039185,
+            "direct_over_postinteraction_norm_ratio": 1.035780668258667,
+            "cosine_similarity": 0.9551675915718079,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.3795888423919678,
+            "max_abs_difference": 16.3125,
+            "direct_rms": 3.3969309329986572,
+            "postinteraction_rms": 3.027186632156372,
+            "direct_over_postinteraction_norm_ratio": 1.1221412420272827,
+            "cosine_similarity": 0.9145388603210449,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 2,
+          "K": {
+            "rms_difference": 0.26598024368286133,
+            "max_abs_difference": 2.9375,
+            "direct_rms": 1.3921875953674316,
+            "postinteraction_rms": 1.3439195156097412,
+            "direct_over_postinteraction_norm_ratio": 1.0359158515930176,
+            "cosine_similarity": 0.9832656979560852,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.9027729034423828,
+            "max_abs_difference": 9.8125,
+            "direct_rms": 2.63385009765625,
+            "postinteraction_rms": 2.480388641357422,
+            "direct_over_postinteraction_norm_ratio": 1.0618699789047241,
+            "cosine_similarity": 0.9402084350585938,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 3,
+          "K": {
+            "rms_difference": 0.23168769478797913,
+            "max_abs_difference": 3.3125,
+            "direct_rms": 1.3843207359313965,
+            "postinteraction_rms": 1.3364934921264648,
+            "direct_over_postinteraction_norm_ratio": 1.0357856750488281,
+            "cosine_similarity": 0.9875572919845581,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.2279677391052246,
+            "max_abs_difference": 11.9375,
+            "direct_rms": 3.5316789150238037,
+            "postinteraction_rms": 3.2677559852600098,
+            "direct_over_postinteraction_norm_ratio": 1.0807658433914185,
+            "cosine_similarity": 0.9381215572357178,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 4,
+          "K": {
+            "rms_difference": 0.3032849431037903,
+            "max_abs_difference": 3.390625,
+            "direct_rms": 1.4058912992477417,
+            "postinteraction_rms": 1.3617550134658813,
+            "direct_over_postinteraction_norm_ratio": 1.0324113368988037,
+            "cosine_similarity": 0.9774504899978638,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.9491009712219238,
+            "max_abs_difference": 17.3125,
+            "direct_rms": 5.4708051681518555,
+            "postinteraction_rms": 4.980472564697266,
+            "direct_over_postinteraction_norm_ratio": 1.098451018333435,
+            "cosine_similarity": 0.9353834986686707,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 0,
+          "K": {
+            "rms_difference": 0.3323117196559906,
+            "max_abs_difference": 3.958984375,
+            "direct_rms": 1.5159660577774048,
+            "postinteraction_rms": 1.4703822135925293,
+            "direct_over_postinteraction_norm_ratio": 1.031001329421997,
+            "cosine_similarity": 0.9764577150344849,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1452283263206482,
+            "max_abs_difference": 1.4248046875,
+            "direct_rms": 0.39337411522865295,
+            "postinteraction_rms": 0.357394278049469,
+            "direct_over_postinteraction_norm_ratio": 1.100672721862793,
+            "cosine_similarity": 0.9300956726074219,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 1,
+          "K": {
+            "rms_difference": 0.39558207988739014,
+            "max_abs_difference": 5.5390625,
+            "direct_rms": 1.4648610353469849,
+            "postinteraction_rms": 1.4135152101516724,
+            "direct_over_postinteraction_norm_ratio": 1.0363249778747559,
+            "cosine_similarity": 0.9634843468666077,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.18487684428691864,
+            "max_abs_difference": 2.5859375,
+            "direct_rms": 0.4614746570587158,
+            "postinteraction_rms": 0.42349904775619507,
+            "direct_over_postinteraction_norm_ratio": 1.089671015739441,
+            "cosine_similarity": 0.9167593717575073,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 2,
+          "K": {
+            "rms_difference": 0.41258320212364197,
+            "max_abs_difference": 7.25,
+            "direct_rms": 1.4706319570541382,
+            "postinteraction_rms": 1.4193822145462036,
+            "direct_over_postinteraction_norm_ratio": 1.036107063293457,
+            "cosine_similarity": 0.960575520992279,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.20597362518310547,
+            "max_abs_difference": 2.6484375,
+            "direct_rms": 0.5101781487464905,
+            "postinteraction_rms": 0.47635525465011597,
+            "direct_over_postinteraction_norm_ratio": 1.0710035562515259,
+            "cosine_similarity": 0.9155438542366028,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 3,
+          "K": {
+            "rms_difference": 0.4134594202041626,
+            "max_abs_difference": 6.8125,
+            "direct_rms": 1.470027208328247,
+            "postinteraction_rms": 1.4236042499542236,
+            "direct_over_postinteraction_norm_ratio": 1.032609462738037,
+            "cosine_similarity": 0.9603309631347656,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.21865734457969666,
+            "max_abs_difference": 3.3828125,
+            "direct_rms": 0.5459533333778381,
+            "postinteraction_rms": 0.5132926106452942,
+            "direct_over_postinteraction_norm_ratio": 1.0636298656463623,
+            "cosine_similarity": 0.916922926902771,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 4,
+          "K": {
+            "rms_difference": 0.41912537813186646,
+            "max_abs_difference": 6.359375,
+            "direct_rms": 1.4549379348754883,
+            "postinteraction_rms": 1.4048796892166138,
+            "direct_over_postinteraction_norm_ratio": 1.0356316566467285,
+            "cosine_similarity": 0.9583355784416199,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.18145275115966797,
+            "max_abs_difference": 2.78125,
+            "direct_rms": 0.49263784289360046,
+            "postinteraction_rms": 0.463387668132782,
+            "direct_over_postinteraction_norm_ratio": 1.0631225109100342,
+            "cosine_similarity": 0.9302878975868225,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 5,
+          "K": {
+            "rms_difference": 0.4131617844104767,
+            "max_abs_difference": 5.84375,
+            "direct_rms": 1.3685925006866455,
+            "postinteraction_rms": 1.3168858289718628,
+            "direct_over_postinteraction_norm_ratio": 1.0392643213272095,
+            "cosine_similarity": 0.9540945291519165,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1313018649816513,
+            "max_abs_difference": 2.0390625,
+            "direct_rms": 0.3846961557865143,
+            "postinteraction_rms": 0.36822617053985596,
+            "direct_over_postinteraction_norm_ratio": 1.0447279214859009,
+            "cosine_similarity": 0.9407137036323547,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 6,
+          "K": {
+            "rms_difference": 0.35930052399635315,
+            "max_abs_difference": 5.140625,
+            "direct_rms": 1.580747127532959,
+            "postinteraction_rms": 1.533433198928833,
+            "direct_over_postinteraction_norm_ratio": 1.0308549404144287,
+            "cosine_similarity": 0.9746093153953552,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.15347571671009064,
+            "max_abs_difference": 2.609375,
+            "direct_rms": 0.4027368128299713,
+            "postinteraction_rms": 0.36955922842025757,
+            "direct_over_postinteraction_norm_ratio": 1.0897760391235352,
+            "cosine_similarity": 0.9251150488853455,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 7,
+          "K": {
+            "rms_difference": 0.382824182510376,
+            "max_abs_difference": 6.91796875,
+            "direct_rms": 1.6322108507156372,
+            "postinteraction_rms": 1.58870530128479,
+            "direct_over_postinteraction_norm_ratio": 1.0273842811584473,
+            "cosine_similarity": 0.9728025794029236,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.153823584318161,
+            "max_abs_difference": 2.078125,
+            "direct_rms": 0.39424723386764526,
+            "postinteraction_rms": 0.36062368750572205,
+            "direct_over_postinteraction_norm_ratio": 1.0932371616363525,
+            "cosine_similarity": 0.9211690425872803,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 8,
+          "K": {
+            "rms_difference": 0.384662002325058,
+            "max_abs_difference": 5.3828125,
+            "direct_rms": 1.5152511596679688,
+            "postinteraction_rms": 1.46414315700531,
+            "direct_over_postinteraction_norm_ratio": 1.0349063873291016,
+            "cosine_similarity": 0.9679586887359619,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1426158845424652,
+            "max_abs_difference": 1.755859375,
+            "direct_rms": 0.33984309434890747,
+            "postinteraction_rms": 0.3069661259651184,
+            "direct_over_postinteraction_norm_ratio": 1.107102870941162,
+            "cosine_similarity": 0.9081905484199524,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 9,
+          "K": {
+            "rms_difference": 0.40271660685539246,
+            "max_abs_difference": 6.453125,
+            "direct_rms": 1.5587784051895142,
+            "postinteraction_rms": 1.5027531385421753,
+            "direct_over_postinteraction_norm_ratio": 1.0372817516326904,
+            "cosine_similarity": 0.9668636322021484,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1475544422864914,
+            "max_abs_difference": 1.90234375,
+            "direct_rms": 0.33203426003456116,
+            "postinteraction_rms": 0.2983921468257904,
+            "direct_over_postinteraction_norm_ratio": 1.112744688987732,
+            "cosine_similarity": 0.8964021801948547,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 10,
+          "K": {
+            "rms_difference": 0.3902381658554077,
+            "max_abs_difference": 6.6875,
+            "direct_rms": 1.5210744142532349,
+            "postinteraction_rms": 1.4731526374816895,
+            "direct_over_postinteraction_norm_ratio": 1.0325300693511963,
+            "cosine_similarity": 0.9672847986221313,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.14513161778450012,
+            "max_abs_difference": 2.2802734375,
+            "direct_rms": 0.32687562704086304,
+            "postinteraction_rms": 0.29722484946250916,
+            "direct_over_postinteraction_norm_ratio": 1.0997587442398071,
+            "cosine_similarity": 0.8966646194458008,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 11,
+          "K": {
+            "rms_difference": 0.3995792865753174,
+            "max_abs_difference": 7.09375,
+            "direct_rms": 1.58718740940094,
+            "postinteraction_rms": 1.5355160236358643,
+            "direct_over_postinteraction_norm_ratio": 1.0336508750915527,
+            "cosine_similarity": 0.9685027003288269,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.17328914999961853,
+            "max_abs_difference": 2.8203125,
+            "direct_rms": 0.39390313625335693,
+            "postinteraction_rms": 0.36357468366622925,
+            "direct_over_postinteraction_norm_ratio": 1.0834174156188965,
+            "cosine_similarity": 0.8988151550292969,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 12,
+          "K": {
+            "rms_difference": 0.37360402941703796,
+            "max_abs_difference": 6.140625,
+            "direct_rms": 1.483110785484314,
+            "postinteraction_rms": 1.4349868297576904,
+            "direct_over_postinteraction_norm_ratio": 1.0335361957550049,
+            "cosine_similarity": 0.9686117172241211,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.22052636742591858,
+            "max_abs_difference": 3.822265625,
+            "direct_rms": 0.5212257504463196,
+            "postinteraction_rms": 0.4883403480052948,
+            "direct_over_postinteraction_norm_ratio": 1.0673412084579468,
+            "cosine_similarity": 0.9071246981620789,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 13,
+          "K": {
+            "rms_difference": 0.4292275905609131,
+            "max_abs_difference": 5.734375,
+            "direct_rms": 1.514975905418396,
+            "postinteraction_rms": 1.473888635635376,
+            "direct_over_postinteraction_norm_ratio": 1.0278767347335815,
+            "cosine_similarity": 0.9598293304443359,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.24561642110347748,
+            "max_abs_difference": 3.015625,
+            "direct_rms": 0.528094470500946,
+            "postinteraction_rms": 0.49663323163986206,
+            "direct_over_postinteraction_norm_ratio": 1.0633490085601807,
+            "cosine_similarity": 0.8872419595718384,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 14,
+          "K": {
+            "rms_difference": 0.4579381048679352,
+            "max_abs_difference": 7.6484375,
+            "direct_rms": 1.6313531398773193,
+            "postinteraction_rms": 1.5881648063659668,
+            "direct_over_postinteraction_norm_ratio": 1.0271939039230347,
+            "cosine_similarity": 0.9606577157974243,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2734476327896118,
+            "max_abs_difference": 4.890625,
+            "direct_rms": 0.5352515578269958,
+            "postinteraction_rms": 0.5026121139526367,
+            "direct_over_postinteraction_norm_ratio": 1.0649396181106567,
+            "cosine_similarity": 0.8635140657424927,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 15,
+          "K": {
+            "rms_difference": 0.5282191038131714,
+            "max_abs_difference": 5.7265625,
+            "direct_rms": 1.5821821689605713,
+            "postinteraction_rms": 1.5335980653762817,
+            "direct_over_postinteraction_norm_ratio": 1.0316798686981201,
+            "cosine_similarity": 0.9437263011932373,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.29476797580718994,
+            "max_abs_difference": 3.9296875,
+            "direct_rms": 0.574551522731781,
+            "postinteraction_rms": 0.5542704463005066,
+            "direct_over_postinteraction_norm_ratio": 1.036590576171875,
+            "cosine_similarity": 0.8645341396331787,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 16,
+          "K": {
+            "rms_difference": 0.5418411493301392,
+            "max_abs_difference": 7.0625,
+            "direct_rms": 1.64597749710083,
+            "postinteraction_rms": 1.6001372337341309,
+            "direct_over_postinteraction_norm_ratio": 1.0286476612091064,
+            "cosine_similarity": 0.9454063773155212,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.3824574649333954,
+            "max_abs_difference": 5.078125,
+            "direct_rms": 0.7226090431213379,
+            "postinteraction_rms": 0.7024309039115906,
+            "direct_over_postinteraction_norm_ratio": 1.0287261009216309,
+            "cosine_similarity": 0.856928825378418,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 17,
+          "K": {
+            "rms_difference": 0.47482407093048096,
+            "max_abs_difference": 7.8125,
+            "direct_rms": 1.5305230617523193,
+            "postinteraction_rms": 1.4891235828399658,
+            "direct_over_postinteraction_norm_ratio": 1.027801275253296,
+            "cosine_similarity": 0.9517581462860107,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.44043800234794617,
+            "max_abs_difference": 5.671875,
+            "direct_rms": 0.9022939205169678,
+            "postinteraction_rms": 0.8675293922424316,
+            "direct_over_postinteraction_norm_ratio": 1.040073037147522,
+            "cosine_similarity": 0.8773587346076965,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 18,
+          "K": {
+            "rms_difference": 0.49426066875457764,
+            "max_abs_difference": 6.640625,
+            "direct_rms": 1.5979598760604858,
+            "postinteraction_rms": 1.5544401407241821,
+            "direct_over_postinteraction_norm_ratio": 1.0279970169067383,
+            "cosine_similarity": 0.9522402286529541,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.5596270561218262,
+            "max_abs_difference": 9.71875,
+            "direct_rms": 1.0621811151504517,
+            "postinteraction_rms": 1.024264931678772,
+            "direct_over_postinteraction_norm_ratio": 1.0370179414749146,
+            "cosine_similarity": 0.8572706580162048,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 19,
+          "K": {
+            "rms_difference": 0.48103347420692444,
+            "max_abs_difference": 6.796875,
+            "direct_rms": 1.4819670915603638,
+            "postinteraction_rms": 1.4339005947113037,
+            "direct_over_postinteraction_norm_ratio": 1.0335215330123901,
+            "cosine_similarity": 0.9470869302749634,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.5193282961845398,
+            "max_abs_difference": 6.5390625,
+            "direct_rms": 0.895484209060669,
+            "postinteraction_rms": 0.8589591979980469,
+            "direct_over_postinteraction_norm_ratio": 1.0425224304199219,
+            "cosine_similarity": 0.8259470462799072,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        }
+      ],
+      "capture_blocks": 25,
+      "context_consumptions": 375,
+      "captured_kv_bytes": 1258291200,
+      "cpu_to_gpu_transfer_bytes": 18874368000,
+      "consumer_tokens": 4096,
+      "compression_records": []
+    },
+    {
+      "ordinal": 1,
+      "sigma": 0.9498810172080994,
+      "source": "H_DIRECT_2X1",
+      "source_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "source_tokens": 4096,
+      "source_hash": "83bef802d4995652a70691074550b7ea4690a27c0fa581fa783a4a204f3483b0",
+      "accepted_H_hash": "ee37d9c7bba75f1c07f1b9d3ae490585368a4e7b8e29c0d78be2bfd668f10749",
+      "accepted_G_hash": "fea113a3189cc17f70c74d2c45bf2f69d263dd3a23885f2878420a47d757e9c2",
+      "rope": {
+        "scale_y": 2.0,
+        "shift_y": 0.5
+      },
+      "cuda_ms": 5919.59716796875,
+      "wall_seconds": 5.925117599996156,
+      "probe_python_id": 2983847822992,
+      "diagnostic_reference": {
+        "source": "same accepted H post-interaction 2x1 reference",
+        "accepted_H_hash": "ee37d9c7bba75f1c07f1b9d3ae490585368a4e7b8e29c0d78be2bfd668f10749",
+        "sigma": 0.9498810172080994,
+        "cuda_ms": 3333.273681640625,
+        "wall_seconds": 3.3440831000043545,
+        "blocks": 25,
+        "consumer_tokens": 4096
+      },
+      "state_restriction": {
+        "accepted_H_shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "direct_source_shape": [
+          1,
+          128,
+          32,
+          128
+        ],
+        "accepted_H_hash": "ee37d9c7bba75f1c07f1b9d3ae490585368a4e7b8e29c0d78be2bfd668f10749",
+        "direct_source_hash": "83bef802d4995652a70691074550b7ea4690a27c0fa581fa783a4a204f3483b0",
+        "accepted_H_variance": 0.9314936399459839,
+        "direct_source_variance": 0.4673812687397003,
+        "variance_ratio": 0.5017546537052074,
+        "restriction": "nonoverlapping vertical 2x1 arithmetic mean",
+        "normalization": "none"
+      },
+      "per_block_direct_vs_postinteraction": [
+        {
+          "block_type": "double",
+          "block_index": 0,
+          "K": {
+            "rms_difference": 0.11815899610519409,
+            "max_abs_difference": 3.95703125,
+            "direct_rms": 1.1894607543945312,
+            "postinteraction_rms": 1.150644063949585,
+            "direct_over_postinteraction_norm_ratio": 1.0337347984313965,
+            "cosine_similarity": 0.9975525736808777,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.5673831701278687,
+            "max_abs_difference": 13.75,
+            "direct_rms": 6.035319805145264,
+            "postinteraction_rms": 4.805861949920654,
+            "direct_over_postinteraction_norm_ratio": 1.2558246850967407,
+            "cosine_similarity": 0.9842674732208252,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 1,
+          "K": {
+            "rms_difference": 0.3765927851200104,
+            "max_abs_difference": 3.9609375,
+            "direct_rms": 1.2007851600646973,
+            "postinteraction_rms": 1.1568500995635986,
+            "direct_over_postinteraction_norm_ratio": 1.037978172302246,
+            "cosine_similarity": 0.950137197971344,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 2.059800148010254,
+            "max_abs_difference": 17.3125,
+            "direct_rms": 4.995306491851807,
+            "postinteraction_rms": 4.457713603973389,
+            "direct_over_postinteraction_norm_ratio": 1.120598316192627,
+            "cosine_similarity": 0.9116005301475525,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 2,
+          "K": {
+            "rms_difference": 0.30820029973983765,
+            "max_abs_difference": 3.53125,
+            "direct_rms": 1.3983893394470215,
+            "postinteraction_rms": 1.3464035987854004,
+            "direct_over_postinteraction_norm_ratio": 1.038610816001892,
+            "cosine_similarity": 0.9768895506858826,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.547590970993042,
+            "max_abs_difference": 13.703125,
+            "direct_rms": 3.86749005317688,
+            "postinteraction_rms": 3.6757681369781494,
+            "direct_over_postinteraction_norm_ratio": 1.0521583557128906,
+            "cosine_similarity": 0.9178568720817566,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 3,
+          "K": {
+            "rms_difference": 0.29529881477355957,
+            "max_abs_difference": 3.88671875,
+            "direct_rms": 1.3885767459869385,
+            "postinteraction_rms": 1.3281434774398804,
+            "direct_over_postinteraction_norm_ratio": 1.0455020666122437,
+            "cosine_similarity": 0.9786637425422668,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.9381946325302124,
+            "max_abs_difference": 18.53125,
+            "direct_rms": 4.593807697296143,
+            "postinteraction_rms": 4.169999122619629,
+            "direct_over_postinteraction_norm_ratio": 1.1016327142715454,
+            "cosine_similarity": 0.9069292545318604,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 4,
+          "K": {
+            "rms_difference": 0.3563857972621918,
+            "max_abs_difference": 3.859375,
+            "direct_rms": 1.4061747789382935,
+            "postinteraction_rms": 1.355987787246704,
+            "direct_over_postinteraction_norm_ratio": 1.0370113849639893,
+            "cosine_similarity": 0.9682215452194214,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 2.721144914627075,
+            "max_abs_difference": 28.671875,
+            "direct_rms": 6.643220901489258,
+            "postinteraction_rms": 6.137822151184082,
+            "direct_over_postinteraction_norm_ratio": 1.0823416709899902,
+            "cosine_similarity": 0.9129220247268677,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 0,
+          "K": {
+            "rms_difference": 0.3668053448200226,
+            "max_abs_difference": 4.734375,
+            "direct_rms": 1.517838716506958,
+            "postinteraction_rms": 1.4709548950195312,
+            "direct_over_postinteraction_norm_ratio": 1.031873106956482,
+            "cosine_similarity": 0.9710528254508972,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1678398847579956,
+            "max_abs_difference": 1.81640625,
+            "direct_rms": 0.42419591546058655,
+            "postinteraction_rms": 0.39302659034729004,
+            "direct_over_postinteraction_norm_ratio": 1.07930588722229,
+            "cosine_similarity": 0.9188879728317261,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 1,
+          "K": {
+            "rms_difference": 0.4451490044593811,
+            "max_abs_difference": 6.51171875,
+            "direct_rms": 1.4616025686264038,
+            "postinteraction_rms": 1.4106873273849487,
+            "direct_over_postinteraction_norm_ratio": 1.0360925197601318,
+            "cosine_similarity": 0.9531903266906738,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.19391541182994843,
+            "max_abs_difference": 3.232421875,
+            "direct_rms": 0.43954768776893616,
+            "postinteraction_rms": 0.40937700867652893,
+            "direct_over_postinteraction_norm_ratio": 1.0736989974975586,
+            "cosine_similarity": 0.8985286355018616,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 2,
+          "K": {
+            "rms_difference": 0.4633684456348419,
+            "max_abs_difference": 8.078125,
+            "direct_rms": 1.4700499773025513,
+            "postinteraction_rms": 1.4152941703796387,
+            "direct_over_postinteraction_norm_ratio": 1.0386886596679688,
+            "cosine_similarity": 0.9498388767242432,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.21240955591201782,
+            "max_abs_difference": 2.626953125,
+            "direct_rms": 0.4840524196624756,
+            "postinteraction_rms": 0.4559997022151947,
+            "direct_over_postinteraction_norm_ratio": 1.0615191459655762,
+            "cosine_similarity": 0.9000644683837891,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 3,
+          "K": {
+            "rms_difference": 0.42865756154060364,
+            "max_abs_difference": 9.75,
+            "direct_rms": 1.4755003452301025,
+            "postinteraction_rms": 1.4306765794754028,
+            "direct_over_postinteraction_norm_ratio": 1.0313304662704468,
+            "cosine_similarity": 0.9576097726821899,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.21654337644577026,
+            "max_abs_difference": 3.83203125,
+            "direct_rms": 0.5066471099853516,
+            "postinteraction_rms": 0.4843159317970276,
+            "direct_over_postinteraction_norm_ratio": 1.0461087226867676,
+            "cosine_similarity": 0.90586918592453,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 4,
+          "K": {
+            "rms_difference": 0.425289511680603,
+            "max_abs_difference": 7.171875,
+            "direct_rms": 1.4583309888839722,
+            "postinteraction_rms": 1.412297010421753,
+            "direct_over_postinteraction_norm_ratio": 1.032595157623291,
+            "cosine_similarity": 0.9572833180427551,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1907673478126526,
+            "max_abs_difference": 2.5673828125,
+            "direct_rms": 0.48840364813804626,
+            "postinteraction_rms": 0.4693158268928528,
+            "direct_over_postinteraction_norm_ratio": 1.0406715869903564,
+            "cosine_similarity": 0.9219926595687866,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 5,
+          "K": {
+            "rms_difference": 0.40675216913223267,
+            "max_abs_difference": 6.3125,
+            "direct_rms": 1.3688229322433472,
+            "postinteraction_rms": 1.3249315023422241,
+            "direct_over_postinteraction_norm_ratio": 1.0331273078918457,
+            "cosine_similarity": 0.9556755423545837,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.15047608315944672,
+            "max_abs_difference": 2.544921875,
+            "direct_rms": 0.40411660075187683,
+            "postinteraction_rms": 0.3938063383102417,
+            "direct_over_postinteraction_norm_ratio": 1.0261811017990112,
+            "cosine_similarity": 0.9297099113464355,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 6,
+          "K": {
+            "rms_difference": 0.35014545917510986,
+            "max_abs_difference": 5.37890625,
+            "direct_rms": 1.5884777307510376,
+            "postinteraction_rms": 1.5441242456436157,
+            "direct_over_postinteraction_norm_ratio": 1.0287240743637085,
+            "cosine_similarity": 0.9762653112411499,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1638386845588684,
+            "max_abs_difference": 2.5,
+            "direct_rms": 0.3941285312175751,
+            "postinteraction_rms": 0.3776748776435852,
+            "direct_over_postinteraction_norm_ratio": 1.0435656309127808,
+            "cosine_similarity": 0.9112852215766907,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 7,
+          "K": {
+            "rms_difference": 0.36437442898750305,
+            "max_abs_difference": 5.5625,
+            "direct_rms": 1.6340385675430298,
+            "postinteraction_rms": 1.5933220386505127,
+            "direct_over_postinteraction_norm_ratio": 1.0255545377731323,
+            "cosine_similarity": 0.9755533933639526,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.16637887060642242,
+            "max_abs_difference": 2.140625,
+            "direct_rms": 0.4037468433380127,
+            "postinteraction_rms": 0.3814801573753357,
+            "direct_over_postinteraction_norm_ratio": 1.0583691596984863,
+            "cosine_similarity": 0.9121606349945068,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 8,
+          "K": {
+            "rms_difference": 0.37863823771476746,
+            "max_abs_difference": 5.375,
+            "direct_rms": 1.5231518745422363,
+            "postinteraction_rms": 1.4735589027404785,
+            "direct_over_postinteraction_norm_ratio": 1.0336552858352661,
+            "cosine_similarity": 0.9693989753723145,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.15387240052223206,
+            "max_abs_difference": 1.84375,
+            "direct_rms": 0.34127840399742126,
+            "postinteraction_rms": 0.3235413730144501,
+            "direct_over_postinteraction_norm_ratio": 1.054821491241455,
+            "cosine_similarity": 0.8947492241859436,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 9,
+          "K": {
+            "rms_difference": 0.4043591022491455,
+            "max_abs_difference": 6.955078125,
+            "direct_rms": 1.5619655847549438,
+            "postinteraction_rms": 1.5054575204849243,
+            "direct_over_postinteraction_norm_ratio": 1.0375354290008545,
+            "cosine_similarity": 0.9667947292327881,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.162347212433815,
+            "max_abs_difference": 2.654296875,
+            "direct_rms": 0.3447068929672241,
+            "postinteraction_rms": 0.32190072536468506,
+            "direct_over_postinteraction_norm_ratio": 1.0708484649658203,
+            "cosine_similarity": 0.8842365741729736,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 10,
+          "K": {
+            "rms_difference": 0.3813628852367401,
+            "max_abs_difference": 6.390625,
+            "direct_rms": 1.5239335298538208,
+            "postinteraction_rms": 1.474569320678711,
+            "direct_over_postinteraction_norm_ratio": 1.0334770679473877,
+            "cosine_similarity": 0.9690080881118774,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.15726158022880554,
+            "max_abs_difference": 2.328125,
+            "direct_rms": 0.3334962725639343,
+            "postinteraction_rms": 0.31681323051452637,
+            "direct_over_postinteraction_norm_ratio": 1.0526589155197144,
+            "cosine_similarity": 0.8849035501480103,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 11,
+          "K": {
+            "rms_difference": 0.3903478682041168,
+            "max_abs_difference": 6.7890625,
+            "direct_rms": 1.5925028324127197,
+            "postinteraction_rms": 1.5356459617614746,
+            "direct_over_postinteraction_norm_ratio": 1.037024736404419,
+            "cosine_similarity": 0.9703248739242554,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.18180549144744873,
+            "max_abs_difference": 2.67578125,
+            "direct_rms": 0.3867582380771637,
+            "postinteraction_rms": 0.3703879714012146,
+            "direct_over_postinteraction_norm_ratio": 1.044197678565979,
+            "cosine_similarity": 0.8860783576965332,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 12,
+          "K": {
+            "rms_difference": 0.37091317772865295,
+            "max_abs_difference": 6.21875,
+            "direct_rms": 1.4915508031845093,
+            "postinteraction_rms": 1.4350844621658325,
+            "direct_over_postinteraction_norm_ratio": 1.0393470525741577,
+            "cosine_similarity": 0.9695221185684204,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2259189635515213,
+            "max_abs_difference": 4.55078125,
+            "direct_rms": 0.49183595180511475,
+            "postinteraction_rms": 0.4677048623561859,
+            "direct_over_postinteraction_norm_ratio": 1.0515947341918945,
+            "cosine_similarity": 0.8909644484519958,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 13,
+          "K": {
+            "rms_difference": 0.4468059837818146,
+            "max_abs_difference": 6.328125,
+            "direct_rms": 1.5165237188339233,
+            "postinteraction_rms": 1.4602088928222656,
+            "direct_over_postinteraction_norm_ratio": 1.0385662317276,
+            "cosine_similarity": 0.9563711285591125,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2642366886138916,
+            "max_abs_difference": 3.125,
+            "direct_rms": 0.48742803931236267,
+            "postinteraction_rms": 0.4637310206890106,
+            "direct_over_postinteraction_norm_ratio": 1.051100730895996,
+            "cosine_similarity": 0.8472292423248291,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 14,
+          "K": {
+            "rms_difference": 0.47890305519104004,
+            "max_abs_difference": 6.92578125,
+            "direct_rms": 1.6304599046707153,
+            "postinteraction_rms": 1.573681116104126,
+            "direct_over_postinteraction_norm_ratio": 1.036080241203308,
+            "cosine_similarity": 0.9567936062812805,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2888714373111725,
+            "max_abs_difference": 7.09375,
+            "direct_rms": 0.5050148963928223,
+            "postinteraction_rms": 0.480724573135376,
+            "direct_over_postinteraction_norm_ratio": 1.0505285263061523,
+            "cosine_similarity": 0.8298737406730652,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 15,
+          "K": {
+            "rms_difference": 0.5183292627334595,
+            "max_abs_difference": 7.3046875,
+            "direct_rms": 1.5844306945800781,
+            "postinteraction_rms": 1.5194768905639648,
+            "direct_over_postinteraction_norm_ratio": 1.0427474975585938,
+            "cosine_similarity": 0.9458940625190735,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.31546860933303833,
+            "max_abs_difference": 5.421875,
+            "direct_rms": 0.5698475241661072,
+            "postinteraction_rms": 0.5452925562858582,
+            "direct_over_postinteraction_norm_ratio": 1.0450308322906494,
+            "cosine_similarity": 0.84114670753479,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 16,
+          "K": {
+            "rms_difference": 0.5524434447288513,
+            "max_abs_difference": 8.71875,
+            "direct_rms": 1.6462109088897705,
+            "postinteraction_rms": 1.5805578231811523,
+            "direct_over_postinteraction_norm_ratio": 1.041537880897522,
+            "cosine_similarity": 0.9429869651794434,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.41321489214897156,
+            "max_abs_difference": 7.203125,
+            "direct_rms": 0.7499192357063293,
+            "postinteraction_rms": 0.7085390686988831,
+            "direct_over_postinteraction_norm_ratio": 1.0584020614624023,
+            "cosine_similarity": 0.8415508270263672,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 17,
+          "K": {
+            "rms_difference": 0.46009233593940735,
+            "max_abs_difference": 7.375,
+            "direct_rms": 1.5354870557785034,
+            "postinteraction_rms": 1.4777579307556152,
+            "direct_over_postinteraction_norm_ratio": 1.0390653610229492,
+            "cosine_similarity": 0.9550707340240479,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.4598883092403412,
+            "max_abs_difference": 6.328125,
+            "direct_rms": 0.9061400294303894,
+            "postinteraction_rms": 0.8202918171882629,
+            "direct_over_postinteraction_norm_ratio": 1.1046557426452637,
+            "cosine_similarity": 0.8631552457809448,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 18,
+          "K": {
+            "rms_difference": 0.4857150614261627,
+            "max_abs_difference": 7.0,
+            "direct_rms": 1.6069406270980835,
+            "postinteraction_rms": 1.5436854362487793,
+            "direct_over_postinteraction_norm_ratio": 1.0409767627716064,
+            "cosine_similarity": 0.9543444514274597,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.5706418752670288,
+            "max_abs_difference": 9.21484375,
+            "direct_rms": 1.0081021785736084,
+            "postinteraction_rms": 0.9297555088996887,
+            "direct_over_postinteraction_norm_ratio": 1.0842658281326294,
+            "cosine_similarity": 0.8301067352294922,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 19,
+          "K": {
+            "rms_difference": 0.47999176383018494,
+            "max_abs_difference": 5.875,
+            "direct_rms": 1.4904541969299316,
+            "postinteraction_rms": 1.4229146242141724,
+            "direct_over_postinteraction_norm_ratio": 1.0474656820297241,
+            "cosine_similarity": 0.9478278160095215,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.4386177659034729,
+            "max_abs_difference": 7.984375,
+            "direct_rms": 0.7830556035041809,
+            "postinteraction_rms": 0.7318875193595886,
+            "direct_over_postinteraction_norm_ratio": 1.0699125528335571,
+            "cosine_similarity": 0.8348764777183533,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        }
+      ],
+      "capture_blocks": 25,
+      "context_consumptions": 375,
+      "captured_kv_bytes": 1258291200,
+      "cpu_to_gpu_transfer_bytes": 18874368000,
+      "consumer_tokens": 4096,
+      "compression_records": []
+    },
+    {
+      "ordinal": 2,
+      "sigma": 0.8633416295051575,
+      "source": "H_DIRECT_2X1",
+      "source_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "source_tokens": 4096,
+      "source_hash": "44f32bcbd3d74faa0394504a597ffc1d5e473d5ec6430e84afbc25c522808cef",
+      "accepted_H_hash": "0bbd638f97ed1fb4b8fbb31a3b6bc2e69c476aeb06ef225ee58f2fa41821511c",
+      "accepted_G_hash": "28b48b8ab67514c19fb1e1878fc872abce6edef896fd6d24de2f1125f693eada",
+      "rope": {
+        "scale_y": 2.0,
+        "shift_y": 0.5
+      },
+      "cuda_ms": 5931.25439453125,
+      "wall_seconds": 5.936651899988647,
+      "probe_python_id": 2983847837392,
+      "diagnostic_reference": {
+        "source": "same accepted H post-interaction 2x1 reference",
+        "accepted_H_hash": "0bbd638f97ed1fb4b8fbb31a3b6bc2e69c476aeb06ef225ee58f2fa41821511c",
+        "sigma": 0.8633416295051575,
+        "cuda_ms": 3329.380126953125,
+        "wall_seconds": 3.340028999999049,
+        "blocks": 25,
+        "consumer_tokens": 4096
+      },
+      "state_restriction": {
+        "accepted_H_shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "direct_source_shape": [
+          1,
+          128,
+          32,
+          128
+        ],
+        "accepted_H_hash": "0bbd638f97ed1fb4b8fbb31a3b6bc2e69c476aeb06ef225ee58f2fa41821511c",
+        "direct_source_hash": "44f32bcbd3d74faa0394504a597ffc1d5e473d5ec6430e84afbc25c522808cef",
+        "accepted_H_variance": 0.8304335474967957,
+        "direct_source_variance": 0.4197036325931549,
+        "variance_ratio": 0.5054030317757296,
+        "restriction": "nonoverlapping vertical 2x1 arithmetic mean",
+        "normalization": "none"
+      },
+      "per_block_direct_vs_postinteraction": [
+        {
+          "block_type": "double",
+          "block_index": 0,
+          "K": {
+            "rms_difference": 0.12971480190753937,
+            "max_abs_difference": 3.15625,
+            "direct_rms": 1.2016416788101196,
+            "postinteraction_rms": 1.1582560539245605,
+            "direct_over_postinteraction_norm_ratio": 1.0374577045440674,
+            "cosine_similarity": 0.9967819452285767,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.6906951665878296,
+            "max_abs_difference": 5.8125,
+            "direct_rms": 2.4795219898223877,
+            "postinteraction_rms": 1.889389991760254,
+            "direct_over_postinteraction_norm_ratio": 1.3123400211334229,
+            "cosine_similarity": 0.9867680668830872,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 1,
+          "K": {
+            "rms_difference": 0.4504384696483612,
+            "max_abs_difference": 4.3984375,
+            "direct_rms": 1.2014358043670654,
+            "postinteraction_rms": 1.1483513116836548,
+            "direct_over_postinteraction_norm_ratio": 1.0462267398834229,
+            "cosine_similarity": 0.9279399514198303,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.4742176532745361,
+            "max_abs_difference": 15.23046875,
+            "direct_rms": 2.993234157562256,
+            "postinteraction_rms": 2.4707729816436768,
+            "direct_over_postinteraction_norm_ratio": 1.211456537246704,
+            "cosine_similarity": 0.8719784617424011,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 2,
+          "K": {
+            "rms_difference": 0.3476227819919586,
+            "max_abs_difference": 3.75,
+            "direct_rms": 1.4030442237854004,
+            "postinteraction_rms": 1.3480311632156372,
+            "direct_over_postinteraction_norm_ratio": 1.040809988975525,
+            "cosine_similarity": 0.9702994227409363,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.095618486404419,
+            "max_abs_difference": 10.0234375,
+            "direct_rms": 2.3786141872406006,
+            "postinteraction_rms": 2.241364002227783,
+            "direct_over_postinteraction_norm_ratio": 1.0612350702285767,
+            "cosine_similarity": 0.8896713256835938,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 3,
+          "K": {
+            "rms_difference": 0.341601699590683,
+            "max_abs_difference": 4.8125,
+            "direct_rms": 1.3994431495666504,
+            "postinteraction_rms": 1.3276022672653198,
+            "direct_over_postinteraction_norm_ratio": 1.0541132688522339,
+            "cosine_similarity": 0.971332311630249,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.3784644603729248,
+            "max_abs_difference": 11.46875,
+            "direct_rms": 2.8757476806640625,
+            "postinteraction_rms": 2.617525577545166,
+            "direct_over_postinteraction_norm_ratio": 1.0986511707305908,
+            "cosine_similarity": 0.8786708116531372,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 4,
+          "K": {
+            "rms_difference": 0.4012199342250824,
+            "max_abs_difference": 5.28125,
+            "direct_rms": 1.4068260192871094,
+            "postinteraction_rms": 1.3530082702636719,
+            "direct_over_postinteraction_norm_ratio": 1.03977632522583,
+            "cosine_similarity": 0.9593386650085449,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 2.184643030166626,
+            "max_abs_difference": 23.203125,
+            "direct_rms": 4.4624342918396,
+            "postinteraction_rms": 4.1490020751953125,
+            "direct_over_postinteraction_norm_ratio": 1.075543999671936,
+            "cosine_similarity": 0.8742852210998535,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 0,
+          "K": {
+            "rms_difference": 0.4247919023036957,
+            "max_abs_difference": 5.6328125,
+            "direct_rms": 1.518818974494934,
+            "postinteraction_rms": 1.4665076732635498,
+            "direct_over_postinteraction_norm_ratio": 1.0356706380844116,
+            "cosine_similarity": 0.960800290107727,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1688738316297531,
+            "max_abs_difference": 1.65625,
+            "direct_rms": 0.34840163588523865,
+            "postinteraction_rms": 0.32771772146224976,
+            "direct_over_postinteraction_norm_ratio": 1.0631150007247925,
+            "cosine_similarity": 0.877524197101593,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 1,
+          "K": {
+            "rms_difference": 0.5025275945663452,
+            "max_abs_difference": 6.09375,
+            "direct_rms": 1.463168740272522,
+            "postinteraction_rms": 1.4073957204818726,
+            "direct_over_postinteraction_norm_ratio": 1.039628505706787,
+            "cosine_similarity": 0.9400650262832642,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.19349640607833862,
+            "max_abs_difference": 2.1708984375,
+            "direct_rms": 0.36559608578681946,
+            "postinteraction_rms": 0.35337549448013306,
+            "direct_over_postinteraction_norm_ratio": 1.034582495689392,
+            "cosine_similarity": 0.856201708316803,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 2,
+          "K": {
+            "rms_difference": 0.5200198292732239,
+            "max_abs_difference": 8.7265625,
+            "direct_rms": 1.4714751243591309,
+            "postinteraction_rms": 1.4139184951782227,
+            "direct_over_postinteraction_norm_ratio": 1.0407072305679321,
+            "cosine_similarity": 0.9365235567092896,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.21439801156520844,
+            "max_abs_difference": 2.71875,
+            "direct_rms": 0.41024014353752136,
+            "postinteraction_rms": 0.3923158347606659,
+            "direct_over_postinteraction_norm_ratio": 1.045688509941101,
+            "cosine_similarity": 0.8585985898971558,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 3,
+          "K": {
+            "rms_difference": 0.48056918382644653,
+            "max_abs_difference": 8.171875,
+            "direct_rms": 1.476245641708374,
+            "postinteraction_rms": 1.4265998601913452,
+            "direct_over_postinteraction_norm_ratio": 1.0348000526428223,
+            "cosine_similarity": 0.9464104175567627,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.21871750056743622,
+            "max_abs_difference": 7.1875,
+            "direct_rms": 0.4358343183994293,
+            "postinteraction_rms": 0.42342495918273926,
+            "direct_over_postinteraction_norm_ratio": 1.0293071269989014,
+            "cosine_similarity": 0.8711453676223755,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 4,
+          "K": {
+            "rms_difference": 0.4714036285877228,
+            "max_abs_difference": 6.26953125,
+            "direct_rms": 1.4624578952789307,
+            "postinteraction_rms": 1.4122306108474731,
+            "direct_over_postinteraction_norm_ratio": 1.035565972328186,
+            "cosine_similarity": 0.9474948644638062,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.19359725713729858,
+            "max_abs_difference": 2.578125,
+            "direct_rms": 0.42388877272605896,
+            "postinteraction_rms": 0.41045838594436646,
+            "direct_over_postinteraction_norm_ratio": 1.0327204465866089,
+            "cosine_similarity": 0.8932627439498901,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 5,
+          "K": {
+            "rms_difference": 0.4466452896595001,
+            "max_abs_difference": 6.0,
+            "direct_rms": 1.3673468828201294,
+            "postinteraction_rms": 1.319631576538086,
+            "direct_over_postinteraction_norm_ratio": 1.0361580848693848,
+            "cosine_similarity": 0.9461064338684082,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1553628295660019,
+            "max_abs_difference": 3.16796875,
+            "direct_rms": 0.3527025580406189,
+            "postinteraction_rms": 0.3476128578186035,
+            "direct_over_postinteraction_norm_ratio": 1.0146418809890747,
+            "cosine_similarity": 0.9023126363754272,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 6,
+          "K": {
+            "rms_difference": 0.38844233751296997,
+            "max_abs_difference": 6.08984375,
+            "direct_rms": 1.5912110805511475,
+            "postinteraction_rms": 1.5436302423477173,
+            "direct_over_postinteraction_norm_ratio": 1.0308239459991455,
+            "cosine_similarity": 0.9706526398658752,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.1591852754354477,
+            "max_abs_difference": 2.3587646484375,
+            "direct_rms": 0.3227551281452179,
+            "postinteraction_rms": 0.32003021240234375,
+            "direct_over_postinteraction_norm_ratio": 1.0085145235061646,
+            "cosine_similarity": 0.8777998685836792,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 7,
+          "K": {
+            "rms_difference": 0.4064871072769165,
+            "max_abs_difference": 5.5703125,
+            "direct_rms": 1.634703516960144,
+            "postinteraction_rms": 1.5894616842269897,
+            "direct_over_postinteraction_norm_ratio": 1.02846360206604,
+            "cosine_similarity": 0.9693248271942139,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.16757862269878387,
+            "max_abs_difference": 1.9765625,
+            "direct_rms": 0.34748196601867676,
+            "postinteraction_rms": 0.33812156319618225,
+            "direct_over_postinteraction_norm_ratio": 1.0276834964752197,
+            "cosine_similarity": 0.8813222646713257,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 8,
+          "K": {
+            "rms_difference": 0.42069241404533386,
+            "max_abs_difference": 6.046875,
+            "direct_rms": 1.526497483253479,
+            "postinteraction_rms": 1.4712514877319336,
+            "direct_over_postinteraction_norm_ratio": 1.0375503301620483,
+            "cosine_similarity": 0.9621005058288574,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.15301361680030823,
+            "max_abs_difference": 2.173828125,
+            "direct_rms": 0.29611751437187195,
+            "postinteraction_rms": 0.2893204391002655,
+            "direct_over_postinteraction_norm_ratio": 1.0234932899475098,
+            "cosine_similarity": 0.8639578819274902,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 9,
+          "K": {
+            "rms_difference": 0.4604257345199585,
+            "max_abs_difference": 6.859375,
+            "direct_rms": 1.5625473260879517,
+            "postinteraction_rms": 1.4993377923965454,
+            "direct_over_postinteraction_norm_ratio": 1.0421582460403442,
+            "cosine_similarity": 0.9564988613128662,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.16241437196731567,
+            "max_abs_difference": 2.17578125,
+            "direct_rms": 0.30321183800697327,
+            "postinteraction_rms": 0.2910782992839813,
+            "direct_over_postinteraction_norm_ratio": 1.0416847467422485,
+            "cosine_similarity": 0.8518096208572388,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 10,
+          "K": {
+            "rms_difference": 0.4282541275024414,
+            "max_abs_difference": 6.859375,
+            "direct_rms": 1.525248408317566,
+            "postinteraction_rms": 1.4685624837875366,
+            "direct_over_postinteraction_norm_ratio": 1.0385996103286743,
+            "cosine_similarity": 0.9606348276138306,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.15692178905010223,
+            "max_abs_difference": 2.171875,
+            "direct_rms": 0.29285168647766113,
+            "postinteraction_rms": 0.2863849401473999,
+            "direct_over_postinteraction_norm_ratio": 1.022580623626709,
+            "cosine_similarity": 0.8538219928741455,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 11,
+          "K": {
+            "rms_difference": 0.43914538621902466,
+            "max_abs_difference": 6.2578125,
+            "direct_rms": 1.594823956489563,
+            "postinteraction_rms": 1.5311264991760254,
+            "direct_over_postinteraction_norm_ratio": 1.0416016578674316,
+            "cosine_similarity": 0.9621952176094055,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.17734231054782867,
+            "max_abs_difference": 1.97265625,
+            "direct_rms": 0.330178439617157,
+            "postinteraction_rms": 0.3254198431968689,
+            "direct_over_postinteraction_norm_ratio": 1.0146229267120361,
+            "cosine_similarity": 0.8542875051498413,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 12,
+          "K": {
+            "rms_difference": 0.42458975315093994,
+            "max_abs_difference": 6.09375,
+            "direct_rms": 1.4951512813568115,
+            "postinteraction_rms": 1.4323248863220215,
+            "direct_over_postinteraction_norm_ratio": 1.0438631772994995,
+            "cosine_similarity": 0.9598054885864258,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.21646161377429962,
+            "max_abs_difference": 3.103515625,
+            "direct_rms": 0.41758304834365845,
+            "postinteraction_rms": 0.4005621075630188,
+            "direct_over_postinteraction_norm_ratio": 1.0424926280975342,
+            "cosine_similarity": 0.8612960577011108,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 13,
+          "K": {
+            "rms_difference": 0.5132483243942261,
+            "max_abs_difference": 6.71875,
+            "direct_rms": 1.5179423093795776,
+            "postinteraction_rms": 1.4497275352478027,
+            "direct_over_postinteraction_norm_ratio": 1.0470534563064575,
+            "cosine_similarity": 0.9419522881507874,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2576950192451477,
+            "max_abs_difference": 2.6171875,
+            "direct_rms": 0.42099982500076294,
+            "postinteraction_rms": 0.40495213866233826,
+            "direct_over_postinteraction_norm_ratio": 1.0396286249160767,
+            "cosine_similarity": 0.8063532710075378,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 14,
+          "K": {
+            "rms_difference": 0.5454654693603516,
+            "max_abs_difference": 7.271484375,
+            "direct_rms": 1.6306312084197998,
+            "postinteraction_rms": 1.5616015195846558,
+            "direct_over_postinteraction_norm_ratio": 1.0442044734954834,
+            "cosine_similarity": 0.9434350728988647,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.27162712812423706,
+            "max_abs_difference": 3.75,
+            "direct_rms": 0.43848299980163574,
+            "postinteraction_rms": 0.42165857553482056,
+            "direct_over_postinteraction_norm_ratio": 1.039900541305542,
+            "cosine_similarity": 0.8017205595970154,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 15,
+          "K": {
+            "rms_difference": 0.589631974697113,
+            "max_abs_difference": 6.9375,
+            "direct_rms": 1.5876761674880981,
+            "postinteraction_rms": 1.5071133375167847,
+            "direct_over_postinteraction_norm_ratio": 1.053455114364624,
+            "cosine_similarity": 0.9295328259468079,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2896246612071991,
+            "max_abs_difference": 4.03125,
+            "direct_rms": 0.488604336977005,
+            "postinteraction_rms": 0.4730689525604248,
+            "direct_over_postinteraction_norm_ratio": 1.0328395366668701,
+            "cosine_similarity": 0.8195359706878662,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 16,
+          "K": {
+            "rms_difference": 0.5836876630783081,
+            "max_abs_difference": 8.2578125,
+            "direct_rms": 1.6455121040344238,
+            "postinteraction_rms": 1.5693312883377075,
+            "direct_over_postinteraction_norm_ratio": 1.0485434532165527,
+            "cosine_similarity": 0.936005711555481,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.37687352299690247,
+            "max_abs_difference": 4.822265625,
+            "direct_rms": 0.6464940309524536,
+            "postinteraction_rms": 0.6101647615432739,
+            "direct_over_postinteraction_norm_ratio": 1.0595401525497437,
+            "cosine_similarity": 0.8222437500953674,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 17,
+          "K": {
+            "rms_difference": 0.45379629731178284,
+            "max_abs_difference": 5.9765625,
+            "direct_rms": 1.5349135398864746,
+            "postinteraction_rms": 1.4720406532287598,
+            "direct_over_postinteraction_norm_ratio": 1.0427113771438599,
+            "cosine_similarity": 0.9563695192337036,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.42706161737442017,
+            "max_abs_difference": 5.203125,
+            "direct_rms": 0.819149374961853,
+            "postinteraction_rms": 0.7312503457069397,
+            "direct_over_postinteraction_norm_ratio": 1.1202037334442139,
+            "cosine_similarity": 0.8547073006629944,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 18,
+          "K": {
+            "rms_difference": 0.5104921460151672,
+            "max_abs_difference": 6.53125,
+            "direct_rms": 1.6056188344955444,
+            "postinteraction_rms": 1.5357868671417236,
+            "direct_over_postinteraction_norm_ratio": 1.045469880104065,
+            "cosine_similarity": 0.9492700099945068,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.5410000681877136,
+            "max_abs_difference": 7.5703125,
+            "direct_rms": 0.9101258516311646,
+            "postinteraction_rms": 0.8242034316062927,
+            "direct_over_postinteraction_norm_ratio": 1.1042490005493164,
+            "cosine_similarity": 0.8104195594787598,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 19,
+          "K": {
+            "rms_difference": 0.46804413199424744,
+            "max_abs_difference": 4.75,
+            "direct_rms": 1.493940830230713,
+            "postinteraction_rms": 1.424581527709961,
+            "direct_over_postinteraction_norm_ratio": 1.04868745803833,
+            "cosine_similarity": 0.950799822807312,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.37621819972991943,
+            "max_abs_difference": 5.515625,
+            "direct_rms": 0.6405757665634155,
+            "postinteraction_rms": 0.6165862679481506,
+            "direct_over_postinteraction_norm_ratio": 1.0389069318771362,
+            "cosine_similarity": 0.8219780921936035,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        }
+      ],
+      "capture_blocks": 25,
+      "context_consumptions": 375,
+      "captured_kv_bytes": 1258291200,
+      "cpu_to_gpu_transfer_bytes": 18874368000,
+      "consumer_tokens": 4096,
+      "compression_records": []
+    },
+    {
+      "ordinal": 3,
+      "sigma": 0.6780259013175964,
+      "source": "H_DIRECT_2X1",
+      "source_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "source_tokens": 4096,
+      "source_hash": "a7f7dbd4401810544829962525c69bbd8e18eafe6f97c4b075f0aaba8d26256c",
+      "accepted_H_hash": "6e906ad072af6f5094967736dfc5e036434865d88e8856d535666b0c8e1ffcf6",
+      "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+      "rope": {
+        "scale_y": 2.0,
+        "shift_y": 0.5
+      },
+      "cuda_ms": 5896.71435546875,
+      "wall_seconds": 5.903510199990706,
+      "probe_python_id": 2983847665152,
+      "diagnostic_reference": {
+        "source": "same accepted H post-interaction 2x1 reference",
+        "accepted_H_hash": "6e906ad072af6f5094967736dfc5e036434865d88e8856d535666b0c8e1ffcf6",
+        "sigma": 0.6780259013175964,
+        "cuda_ms": 3320.97119140625,
+        "wall_seconds": 3.3301901999948313,
+        "blocks": 25,
+        "consumer_tokens": 4096
+      },
+      "state_restriction": {
+        "accepted_H_shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "direct_source_shape": [
+          1,
+          128,
+          32,
+          128
+        ],
+        "accepted_H_hash": "6e906ad072af6f5094967736dfc5e036434865d88e8856d535666b0c8e1ffcf6",
+        "direct_source_hash": "a7f7dbd4401810544829962525c69bbd8e18eafe6f97c4b075f0aaba8d26256c",
+        "accepted_H_variance": 0.6866073608398438,
+        "direct_source_variance": 0.36503005027770996,
+        "variance_ratio": 0.5316430773931885,
+        "restriction": "nonoverlapping vertical 2x1 arithmetic mean",
+        "normalization": "none"
+      },
+      "per_block_direct_vs_postinteraction": [
+        {
+          "block_type": "double",
+          "block_index": 0,
+          "K": {
+            "rms_difference": 0.1450459212064743,
+            "max_abs_difference": 2.4765625,
+            "direct_rms": 1.202149748802185,
+            "postinteraction_rms": 1.1551685333251953,
+            "direct_over_postinteraction_norm_ratio": 1.040670394897461,
+            "cosine_similarity": 0.9953122735023499,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.3846714496612549,
+            "max_abs_difference": 3.40625,
+            "direct_rms": 1.4864470958709717,
+            "postinteraction_rms": 1.1465595960617065,
+            "direct_over_postinteraction_norm_ratio": 1.2964411973953247,
+            "cosine_similarity": 0.9908667802810669,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 1,
+          "K": {
+            "rms_difference": 0.47736549377441406,
+            "max_abs_difference": 5.8896484375,
+            "direct_rms": 1.2046010494232178,
+            "postinteraction_rms": 1.1380481719970703,
+            "direct_over_postinteraction_norm_ratio": 1.0584797859191895,
+            "cosine_similarity": 0.9189690351486206,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.0547611713409424,
+            "max_abs_difference": 11.90625,
+            "direct_rms": 2.0495705604553223,
+            "postinteraction_rms": 1.7057414054870605,
+            "direct_over_postinteraction_norm_ratio": 1.2015717029571533,
+            "cosine_similarity": 0.8582600355148315,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 2,
+          "K": {
+            "rms_difference": 0.3887423872947693,
+            "max_abs_difference": 4.4375,
+            "direct_rms": 1.4089421033859253,
+            "postinteraction_rms": 1.3459632396697998,
+            "direct_over_postinteraction_norm_ratio": 1.0467909574508667,
+            "cosine_similarity": 0.9627119302749634,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.9272642135620117,
+            "max_abs_difference": 8.703125,
+            "direct_rms": 1.909642219543457,
+            "postinteraction_rms": 1.7463804483413696,
+            "direct_over_postinteraction_norm_ratio": 1.0934858322143555,
+            "cosine_similarity": 0.875817596912384,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 3,
+          "K": {
+            "rms_difference": 0.4141814410686493,
+            "max_abs_difference": 5.90625,
+            "direct_rms": 1.409766435623169,
+            "postinteraction_rms": 1.325019121170044,
+            "direct_over_postinteraction_norm_ratio": 1.0639593601226807,
+            "cosine_similarity": 0.9574407935142517,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 1.3088879585266113,
+            "max_abs_difference": 10.59375,
+            "direct_rms": 2.3177247047424316,
+            "postinteraction_rms": 2.1091227531433105,
+            "direct_over_postinteraction_norm_ratio": 1.0989046096801758,
+            "cosine_similarity": 0.8294967412948608,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "double",
+          "block_index": 4,
+          "K": {
+            "rms_difference": 0.516740620136261,
+            "max_abs_difference": 5.3125,
+            "direct_rms": 1.4089481830596924,
+            "postinteraction_rms": 1.3346596956253052,
+            "direct_over_postinteraction_norm_ratio": 1.0556609630584717,
+            "cosine_similarity": 0.9313483238220215,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 2.3006343841552734,
+            "max_abs_difference": 23.625,
+            "direct_rms": 3.76827073097229,
+            "postinteraction_rms": 3.523838996887207,
+            "direct_over_postinteraction_norm_ratio": 1.06936514377594,
+            "cosine_similarity": 0.8035756349563599,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 0,
+          "K": {
+            "rms_difference": 0.5859836935997009,
+            "max_abs_difference": 6.75,
+            "direct_rms": 1.520291805267334,
+            "postinteraction_rms": 1.4387843608856201,
+            "direct_over_postinteraction_norm_ratio": 1.056650161743164,
+            "cosine_similarity": 0.9237083196640015,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.21203219890594482,
+            "max_abs_difference": 2.1328125,
+            "direct_rms": 0.33097830414772034,
+            "postinteraction_rms": 0.31407591700553894,
+            "direct_over_postinteraction_norm_ratio": 1.0538161993026733,
+            "cosine_similarity": 0.7856028079986572,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 1,
+          "K": {
+            "rms_difference": 0.6799278855323792,
+            "max_abs_difference": 6.875,
+            "direct_rms": 1.463279128074646,
+            "postinteraction_rms": 1.3757530450820923,
+            "direct_over_postinteraction_norm_ratio": 1.0636204481124878,
+            "cosine_similarity": 0.8876760005950928,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.24286380410194397,
+            "max_abs_difference": 2.37109375,
+            "direct_rms": 0.3429315686225891,
+            "postinteraction_rms": 0.3284686803817749,
+            "direct_over_postinteraction_norm_ratio": 1.0440312623977661,
+            "cosine_similarity": 0.7395927906036377,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 2,
+          "K": {
+            "rms_difference": 0.6892367005348206,
+            "max_abs_difference": 9.4375,
+            "direct_rms": 1.4729645252227783,
+            "postinteraction_rms": 1.386309266090393,
+            "direct_over_postinteraction_norm_ratio": 1.0625078678131104,
+            "cosine_similarity": 0.8862110376358032,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2628456950187683,
+            "max_abs_difference": 2.65234375,
+            "direct_rms": 0.372224360704422,
+            "postinteraction_rms": 0.350909560918808,
+            "direct_over_postinteraction_norm_ratio": 1.0607415437698364,
+            "cosine_similarity": 0.7376891374588013,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 3,
+          "K": {
+            "rms_difference": 0.6623303890228271,
+            "max_abs_difference": 9.765625,
+            "direct_rms": 1.4779678583145142,
+            "postinteraction_rms": 1.4005306959152222,
+            "direct_over_postinteraction_norm_ratio": 1.0552912950515747,
+            "cosine_similarity": 0.8961107730865479,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2713870406150818,
+            "max_abs_difference": 3.921875,
+            "direct_rms": 0.38942208886146545,
+            "postinteraction_rms": 0.36077162623405457,
+            "direct_over_postinteraction_norm_ratio": 1.0794143676757812,
+            "cosine_similarity": 0.7411481142044067,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 4,
+          "K": {
+            "rms_difference": 0.6601686477661133,
+            "max_abs_difference": 7.53125,
+            "direct_rms": 1.4658197164535522,
+            "postinteraction_rms": 1.3883622884750366,
+            "direct_over_postinteraction_norm_ratio": 1.0557905435562134,
+            "cosine_similarity": 0.8950526118278503,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.24709074199199677,
+            "max_abs_difference": 3.015625,
+            "direct_rms": 0.37713566422462463,
+            "postinteraction_rms": 0.3381342589855194,
+            "direct_over_postinteraction_norm_ratio": 1.1153429746627808,
+            "cosine_similarity": 0.767060399055481,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 5,
+          "K": {
+            "rms_difference": 0.6233640313148499,
+            "max_abs_difference": 8.203125,
+            "direct_rms": 1.3581488132476807,
+            "postinteraction_rms": 1.280540108680725,
+            "direct_over_postinteraction_norm_ratio": 1.0606062412261963,
+            "cosine_similarity": 0.8907220363616943,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.18880023062229156,
+            "max_abs_difference": 2.798828125,
+            "direct_rms": 0.30028435587882996,
+            "postinteraction_rms": 0.26162979006767273,
+            "direct_over_postinteraction_norm_ratio": 1.1477452516555786,
+            "cosine_similarity": 0.7831466794013977,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 6,
+          "K": {
+            "rms_difference": 0.5597761869430542,
+            "max_abs_difference": 6.0078125,
+            "direct_rms": 1.6031157970428467,
+            "postinteraction_rms": 1.5410102605819702,
+            "direct_over_postinteraction_norm_ratio": 1.04030179977417,
+            "cosine_similarity": 0.9383296966552734,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.20170322060585022,
+            "max_abs_difference": 2.03515625,
+            "direct_rms": 0.28641191124916077,
+            "postinteraction_rms": 0.275412917137146,
+            "direct_over_postinteraction_norm_ratio": 1.0399364233016968,
+            "cosine_similarity": 0.7431701421737671,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 7,
+          "K": {
+            "rms_difference": 0.6128994226455688,
+            "max_abs_difference": 8.421875,
+            "direct_rms": 1.6346112489700317,
+            "postinteraction_rms": 1.5661426782608032,
+            "direct_over_postinteraction_norm_ratio": 1.0437179803848267,
+            "cosine_similarity": 0.9282490611076355,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2264806479215622,
+            "max_abs_difference": 1.787109375,
+            "direct_rms": 0.3401198983192444,
+            "postinteraction_rms": 0.3239333927631378,
+            "direct_over_postinteraction_norm_ratio": 1.0499686002731323,
+            "cosine_similarity": 0.768767774105072,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 8,
+          "K": {
+            "rms_difference": 0.6171997785568237,
+            "max_abs_difference": 6.267578125,
+            "direct_rms": 1.5312288999557495,
+            "postinteraction_rms": 1.4549611806869507,
+            "direct_over_postinteraction_norm_ratio": 1.0524190664291382,
+            "cosine_similarity": 0.9166625738143921,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.20159810781478882,
+            "max_abs_difference": 1.7421875,
+            "direct_rms": 0.29069557785987854,
+            "postinteraction_rms": 0.27863356471061707,
+            "direct_over_postinteraction_norm_ratio": 1.0432898998260498,
+            "cosine_similarity": 0.7502754926681519,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 9,
+          "K": {
+            "rms_difference": 0.6794846653938293,
+            "max_abs_difference": 6.8330078125,
+            "direct_rms": 1.563173770904541,
+            "postinteraction_rms": 1.473537564277649,
+            "direct_over_postinteraction_norm_ratio": 1.0608305931091309,
+            "cosine_similarity": 0.9023712873458862,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.2136835902929306,
+            "max_abs_difference": 2.0078125,
+            "direct_rms": 0.303592711687088,
+            "postinteraction_rms": 0.2833777070045471,
+            "direct_over_postinteraction_norm_ratio": 1.0713359117507935,
+            "cosine_similarity": 0.7373479604721069,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 10,
+          "K": {
+            "rms_difference": 0.635503351688385,
+            "max_abs_difference": 8.158203125,
+            "direct_rms": 1.5274455547332764,
+            "postinteraction_rms": 1.4422872066497803,
+            "direct_over_postinteraction_norm_ratio": 1.0590440034866333,
+            "cosine_similarity": 0.9108335375785828,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.20660269260406494,
+            "max_abs_difference": 1.98046875,
+            "direct_rms": 0.29089751839637756,
+            "postinteraction_rms": 0.27598756551742554,
+            "direct_over_postinteraction_norm_ratio": 1.0540239810943604,
+            "cosine_similarity": 0.7358781099319458,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 11,
+          "K": {
+            "rms_difference": 0.6372305750846863,
+            "max_abs_difference": 7.234375,
+            "direct_rms": 1.5960959196090698,
+            "postinteraction_rms": 1.5052452087402344,
+            "direct_over_postinteraction_norm_ratio": 1.0603561401367188,
+            "cosine_similarity": 0.9180854558944702,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.22955816984176636,
+            "max_abs_difference": 1.9765625,
+            "direct_rms": 0.324552446603775,
+            "postinteraction_rms": 0.30760279297828674,
+            "direct_over_postinteraction_norm_ratio": 1.0551023483276367,
+            "cosine_similarity": 0.7379525899887085,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 12,
+          "K": {
+            "rms_difference": 0.627722978591919,
+            "max_abs_difference": 6.859375,
+            "direct_rms": 1.4993499517440796,
+            "postinteraction_rms": 1.4102964401245117,
+            "direct_over_postinteraction_norm_ratio": 1.0631452798843384,
+            "cosine_similarity": 0.9096459150314331,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.27311503887176514,
+            "max_abs_difference": 2.4296875,
+            "direct_rms": 0.40587809681892395,
+            "postinteraction_rms": 0.3728698492050171,
+            "direct_over_postinteraction_norm_ratio": 1.0885248184204102,
+            "cosine_similarity": 0.7576038837432861,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 13,
+          "K": {
+            "rms_difference": 0.7264730334281921,
+            "max_abs_difference": 7.03125,
+            "direct_rms": 1.518591284751892,
+            "postinteraction_rms": 1.4169856309890747,
+            "direct_over_postinteraction_norm_ratio": 1.0717054605484009,
+            "cosine_similarity": 0.8804818391799927,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.3312823176383972,
+            "max_abs_difference": 2.58203125,
+            "direct_rms": 0.4177320897579193,
+            "postinteraction_rms": 0.395004540681839,
+            "direct_over_postinteraction_norm_ratio": 1.0575374364852905,
+            "cosine_similarity": 0.6693010330200195,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 14,
+          "K": {
+            "rms_difference": 0.7734074592590332,
+            "max_abs_difference": 8.109375,
+            "direct_rms": 1.6297091245651245,
+            "postinteraction_rms": 1.5252478122711182,
+            "direct_over_postinteraction_norm_ratio": 1.0684881210327148,
+            "cosine_similarity": 0.8828003406524658,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.3536970317363739,
+            "max_abs_difference": 3.734375,
+            "direct_rms": 0.4366723895072937,
+            "postinteraction_rms": 0.4112302362918854,
+            "direct_over_postinteraction_norm_ratio": 1.06186842918396,
+            "cosine_similarity": 0.6538724303245544,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 15,
+          "K": {
+            "rms_difference": 0.8380391597747803,
+            "max_abs_difference": 7.6875,
+            "direct_rms": 1.5898683071136475,
+            "postinteraction_rms": 1.4594566822052002,
+            "direct_over_postinteraction_norm_ratio": 1.0893563032150269,
+            "cosine_similarity": 0.853113055229187,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.3729182779788971,
+            "max_abs_difference": 4.03564453125,
+            "direct_rms": 0.47049033641815186,
+            "postinteraction_rms": 0.4458944797515869,
+            "direct_over_postinteraction_norm_ratio": 1.0551607608795166,
+            "cosine_similarity": 0.670411229133606,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 16,
+          "K": {
+            "rms_difference": 0.791248619556427,
+            "max_abs_difference": 8.9375,
+            "direct_rms": 1.6450542211532593,
+            "postinteraction_rms": 1.5317178964614868,
+            "direct_over_postinteraction_norm_ratio": 1.0739929676055908,
+            "cosine_similarity": 0.8791483640670776,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.4626862704753876,
+            "max_abs_difference": 4.3515625,
+            "direct_rms": 0.6008008122444153,
+            "postinteraction_rms": 0.5536689162254333,
+            "direct_over_postinteraction_norm_ratio": 1.085126519203186,
+            "cosine_similarity": 0.6819142699241638,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 17,
+          "K": {
+            "rms_difference": 0.5893763899803162,
+            "max_abs_difference": 5.734375,
+            "direct_rms": 1.5364696979522705,
+            "postinteraction_rms": 1.446898341178894,
+            "direct_over_postinteraction_norm_ratio": 1.0619057416915894,
+            "cosine_similarity": 0.9247507452964783,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.509360671043396,
+            "max_abs_difference": 4.197265625,
+            "direct_rms": 0.7648016214370728,
+            "postinteraction_rms": 0.6535797715187073,
+            "direct_over_postinteraction_norm_ratio": 1.1701732873916626,
+            "cosine_similarity": 0.753314733505249,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 18,
+          "K": {
+            "rms_difference": 0.658859133720398,
+            "max_abs_difference": 6.609375,
+            "direct_rms": 1.605434536933899,
+            "postinteraction_rms": 1.5029665231704712,
+            "direct_over_postinteraction_norm_ratio": 1.0681772232055664,
+            "cosine_similarity": 0.9133678674697876,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.6361061334609985,
+            "max_abs_difference": 5.732421875,
+            "direct_rms": 0.867598295211792,
+            "postinteraction_rms": 0.795676052570343,
+            "direct_over_postinteraction_norm_ratio": 1.0903913974761963,
+            "cosine_similarity": 0.7111467719078064,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "block_type": "single",
+          "block_index": 19,
+          "K": {
+            "rms_difference": 0.5748956203460693,
+            "max_abs_difference": 4.8125,
+            "direct_rms": 1.5040818452835083,
+            "postinteraction_rms": 1.4124741554260254,
+            "direct_over_postinteraction_norm_ratio": 1.0648561716079712,
+            "cosine_similarity": 0.9253696203231812,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "V": {
+            "rms_difference": 0.44130048155784607,
+            "max_abs_difference": 4.986328125,
+            "direct_rms": 0.5777205228805542,
+            "postinteraction_rms": 0.5713170766830444,
+            "direct_over_postinteraction_norm_ratio": 1.011208176612854,
+            "cosine_similarity": 0.7053018808364868,
+            "shape": [
+              1,
+              24,
+              4096,
+              128
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        }
+      ],
+      "capture_blocks": 25,
+      "context_consumptions": 375,
+      "captured_kv_bytes": 1258291200,
+      "cpu_to_gpu_transfer_bytes": 18874368000,
+      "consumer_tokens": 4096,
+      "compression_records": []
+    }
+  ],
+  "work": {
+    "candidate3_global_forwards": 3,
+    "context_source_forwards": 4,
+    "local_forwards": 60,
+    "local_token_executions": 245760,
+    "candidate3_global_cuda_ms": 1055.8241577148438,
+    "local_cuda_ms": 121329.62487792969,
+    "context_source_cuda_ms": 23825.5224609375,
+    "context_kv_tokens_per_block": 4096,
+    "context_blocks_per_local": 25,
+    "context_cache_bytes_per_interval": [
+      1258291200,
+      1258291200,
+      1258291200,
+      1258291200
+    ],
+    "context_transfer_bytes_total": 75497472000
+  },
+  "final_H": {
+    "shape": [
+      1,
+      128,
+      64,
+      128
+    ],
+    "rms": 0.9011818766593933,
+    "mean": 0.002501479350030422,
+    "max_abs": 6.588683605194092,
+    "finite": true
+  },
+  "final_H_hash": "ea1438d0f44f557429b5c0ed3a495ae4a726882aaaad9ef923bb882ea3d4caa2",
+  "integrity": {
+    "fresh_context_probe_ids": [
+      2983847616128,
+      2983847822992,
+      2983847837392,
+      2983847665152
+    ],
+    "fresh_context_every_interval": true,
+    "same_sigma_provenance": true,
+    "all_context_consumed_25x15": true,
+    "finite": true
+  },
+  "runtime": {
+    "sampling_wall_seconds": 161.08181230000628,
+    "baseline_allocated_bytes": 2495862272,
+    "baseline_reserved_bytes": 2560622592,
+    "peak_allocated_bytes": 3935437824,
+    "peak_reserved_bytes": 4695523328
+  },
+  "images": {
+    "accepted_H_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_accepted_H_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "8ea48caf91260f3fc3149e63d3de98d8ba932b1547a77198290001e0b0ecf2f7"
+    },
+    "accepted_H_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_accepted_H_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "e23b8ba5b2c336cfc4b29f94f9d6dd2d03e378cb321b4f06171a02578224b0a2"
+    },
+    "accepted_H_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_accepted_H_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "a753235d412c669c787d55d3efd9da0643fd80aa0190b593acf673d2127312f8"
+    },
+    "accepted_H_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_accepted_H_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "6b2ee7e5edf99576bdb488d158b86da9da53804da2452d55202a15b20685537e"
+    },
+    "accepted_H_4": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_accepted_H_4.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "e04c136dcd76db942b0a00af2f29de2ece6950251832882b80e307734ec01bd2"
+    },
+    "assembled_x0_H_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_assembled_x0_H_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "dc9cc34c46415a1a08ff09487a887afed9fc72adf1e6a7df37aca1158ea0fdae"
+    },
+    "assembled_x0_H_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_assembled_x0_H_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "8ba48f3afd60d580abcec4d31ad676a95950cf7979016359172252b6778f6f10"
+    },
+    "assembled_x0_H_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_assembled_x0_H_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "f2f0d75748fa92015493499fa1a549549800fe1c3934e2cbb0829def8e01e3f3"
+    },
+    "assembled_x0_H_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_assembled_x0_H_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "ef76c59cce5e4e679a1f2c8f44c4df1623eb958e8de5e8c9099590fa85b83a2c"
+    },
+    "region7_step0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "5e079b2de4167d01680ac9a118cdc8fd0ce2784203677c92cd318cdc5b4d6b4d"
+    },
+    "region7_step0_x0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step0_x0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "6d761c188e2f6c754314ab0ab729f09dca470e71341a4171c6f9cfc56c474467"
+    },
+    "region7_step0_restricted_x0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step0_restricted_x0.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "566d7453c4f0c02a2474498f74afc120dbd2e359da6322075e4a9a96ae0e7fed"
+    },
+    "region7_step1_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step1_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "df0b4dd7e6fbf7aace1d6f31fe442b241855767192fbcd2c37d614f5b4cd57f0"
+    },
+    "region7_step1_x0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step1_x0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "ae1c255bdc05a710dee6d01e7002297443c45bb91c3253916886a44bee0a9e7d"
+    },
+    "region7_step1_restricted_x0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step1_restricted_x0.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "1e1c3ca739aa6f76e6a497d67f8297aaa5dbfb73372b200fe0f9a14b36ab771d"
+    },
+    "region7_step2_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step2_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "e723b047b66ccdce21ac09eae592a8239b1d4cc06af269b1d44518ba4213b0cc"
+    },
+    "region7_step2_x0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step2_x0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "047aa14c8cf8bf8dafe8c46b815261f59171006a8717fe3611c74fc03d4fb906"
+    },
+    "region7_step2_restricted_x0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step2_restricted_x0.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "e9dba58ec1b2eca88d378c4f3b7e787ef62afe823a57b136c5787a8817f64214"
+    },
+    "region7_step3_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step3_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "9139cb54e9103e9f1ab9519459db4b6b4600175ca2baa6718b82201b4dfdd23f"
+    },
+    "region7_step3_x0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step3_x0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "2b6037af0bbdcbdcfc334c8098c69cf161ebe74a2b5f7b9b26e3da6ceae4ada9"
+    },
+    "region7_step3_restricted_x0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_direct4k_source_results\\B_DIRECT_INTERACTION_4096_region7_step3_restricted_x0.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "36a9ec5241f96627583f6c8cc2aa1150a41aebd644acb61783bb3f0ad3215e77"
+    }
+  }
+}

@@ -482,3 +482,13 @@ The decoded result is in the oracle's one-dominant-bridge semantic class and
 materially closes the numerical gap from 2,048. Information sufficiency is
 established for this scene; cheap construction, generalization, compute, and
 production suitability remain unqualified.
+
+Phase 13 is complete with no production or ComfyUI-core changes. A fresh
+ephemeral `32×128` source is reconstructed from each accepted H using exact
+vertical-pair means and full-canvas center coordinates, then globally interacts
+through all 25 FLUX blocks. Its local consumers produce an oracle-class coherent
+bridge scene without first executing the 8,192-token source. Complete source
+mapping, same-state/sigma, per-block K/V divergence, immutability, finite-state,
+and lifecycle checks pass. The direct source is semantically viable but slower
+than the full-H source on the current backend, so destination-independent
+geometry and real execution efficiency remain research work.

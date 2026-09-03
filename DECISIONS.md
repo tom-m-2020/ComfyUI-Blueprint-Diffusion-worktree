@@ -764,3 +764,14 @@ generalization, or test 5K/6K spatial densities. Any next research must ask how
 to construct approximately equivalent ~4K globally informed context materially
 more cheaply than the dense full-H source trajectory; the brute-force source is
 only an oracle mechanism.
+
+## 2026-09-03 — Advance direct globally interacting ~4K source architecture
+
+Phase 13 shows that useful 4K context does not require 8K full-H interaction
+before compression. Retain an ephemeral, same-sigma, whole-canvas, directly
+interacting ~4K source as the next normalized-working-canvas architecture.
+Do not make it persistent, productionize it, or claim efficiency: the tested
+`32×128` geometry is tied to this destination/aspect and runs slower than the
+8K source on the current native backend. Next isolate destination-independent
+source geometry and backend execution behavior without reopening density or
+post-interaction compression sweeps.
