@@ -446,3 +446,12 @@ control's principal-bridge/repeated-support semantic class without a clear
 detail benefit. C's terminal overlap RMS is 0.3565 versus A's 0.2594 and B's
 0.8031. This is decision gate 2: persistent W is unnecessary complexity under
 the tested coarse synchronization contract.
+
+Phase 11 is complete with no production or ComfyUI-core changes. Three full
+four-step reconstructed-W trajectories compared local-only execution, fresh
+fixed-24×48-G context, and a fresh full-accepted-H context oracle. Full-H
+context yields one dominant coherent bridge scene; fixed G retains repeated
+bridge/train alternatives. All state/sigma provenance, all-25-block context
+consumption, and no-stale-context checks pass. Normalized reconstructed W is
+therefore still viable, but fixed-budget global representation sufficiency is
+the unresolved research boundary; no production change is qualified.

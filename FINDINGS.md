@@ -1548,3 +1548,27 @@ Detailed evidence is in
 - The terminal W_star and synchronized-W diagnostics yield the same returned H
   by construction; both were decoded, and synchronization magnitude reaches
   17.2% mean / 19.8% maximum of W_star RMS at terminal acceptance.
+
+## 2026-09-03 — Phase 11 full-H context validates shared-context normalized W
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_NORMALIZED_W_SHARED_CONTEXT.md`.
+
+- Fresh same-sigma context from the complete accepted H, consumed by all 25
+  local FLUX.2 blocks, produces one dominant continuous bridge system instead
+  of repeated regional bridge/train alternatives. The improvement is visible
+  from interval 0 and persists through terminal release.
+- The identical mechanism fed by fixed 24×48 G only modestly lowers terminal
+  overlap RMS (`0.259399` to `0.250149`) and retains semantic repetitions.
+  Full-H context has terminal overlap RMS `0.266542`, showing that overlap RMS
+  is not a sufficient proxy for whole-scene semantic coherence.
+- B and C use fresh accepted-state/same-sigma sources at every interval with
+  independent correct RoPE frames; no stale context is reused. All 25 blocks
+  consume context for all 15 crops.
+- The oracle is expensive: full-H source plus context local CUDA is about
+  `166.33 s`, versus `59.32 s` local-only, with about `140.63 GiB` aggregate
+  diagnostic CPU-to-GPU K/V traffic. It is a semantic upper bound, not an
+  efficient implementation.
+- The remaining Phase-11 bottleneck is fixed-budget global representation
+  sufficiency, not the basic normalized-W scale transformation or absence of a
+  workable inside-transformer sharing mechanism.
