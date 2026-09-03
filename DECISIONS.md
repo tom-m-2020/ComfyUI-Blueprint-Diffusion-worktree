@@ -640,3 +640,18 @@ FLUX-shaped execution session, or transfer whole-interval/state ownership to an
 adapter. The source executes all 25 blocks to provide K/V but does not run an
 unused terminal final projection or claim synchronized final G. This decision
 authorizes architecture selection only; production code remains unchanged.
+
+## 2026-09-03 — Integrate only the qualified terminal specialized path
+
+Production now dispatches the private native FLUX block executor only for the
+exact terminal H=128×256/G=96×192, 32/24, 55-crop Klein-4B case. Keep every
+nonterminal evaluation and every other geometry on the previous ordinary
+prediction path. Unsupported profiles or wrapper/conditioning behavior at the
+qualified geometry fail closed; do not silently fall back to the known
+fragmented local-only terminal result.
+
+The adapter returns only ordered region predictions and compact telemetry.
+Assembly, Euler arithmetic, terminal release, preview, and atomic state commit
+remain coordinator-owned. This decision does not qualify other FLUX variants,
+models, CFG modes, conditioning schemes, geometries, or context execution on
+nonterminal intervals.

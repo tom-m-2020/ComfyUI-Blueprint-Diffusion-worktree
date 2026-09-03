@@ -375,3 +375,14 @@ preparation, exact Klein-4B qualification, structural block-barrier memory
 ownership, transactional cleanup, and mandatory live/cancellation/OOM gates.
 Production remains unchanged pending a separately authorized implementation
 task.
+
+Phase 8j implementation is complete. The terminal-only native Klein-4B
+specialized executor is production-integrated only for exact H=128×256,
+G=96×192, 55-crop execution. All nonterminal intervals and other geometries
+retain the ordinary adapter path. The focused suite passes 22/22 tests; two
+fresh native 2048×4096 runs are deterministic, emit four previews, preserve
+all nonterminal invariants, decode/save through ComfyUI's tiled VAE fallback,
+and reproduce the qualified Phase-8i final latent statistics. The specialized
+path uses no host K/V cache or transfer and measures 64.43 s CUDA, with
+4.80/6.68 GiB whole-run peak allocated/reserved memory. No broader model,
+conditioning, geometry, or interval support is qualified.

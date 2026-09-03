@@ -221,6 +221,17 @@ class TestStateAndPolicy(unittest.TestCase):
             def predict_region(self, *, h_view, **kwargs):
                 return torch.zeros_like(h_view)
 
+            def predict_regions(self, *, g, h, sigma, sigma_next, canvas,
+                                regions, guider, model_options, seed):
+                from blueprint_diffusion.adapters.base import RegionPredictionSet
+                predictions = []
+                if float(sigma_next) != 0.0:
+                    self.predict_global(g=g)
+                for region in regions:
+                    view = h[:, :, region.y:region.y2, region.x:region.x2]
+                    predictions.append(self.predict_region(h_view=view))
+                return RegionPredictionSet(tuple(predictions), {})
+
         coordinator = BlueprintCoordinator()
         coordinator.adapter = MutatingAdapter()
         h = torch.randn(1, 2, 32, 64, generator=torch.Generator().manual_seed(9))
@@ -251,6 +262,15 @@ class TestStateAndPolicy(unittest.TestCase):
             def predict_region(self, *, h_view, **kwargs):
                 self.local_calls += 1
                 return torch.zeros_like(h_view)
+
+            def predict_regions(self, *, h, regions, **kwargs):
+                from blueprint_diffusion.adapters.base import RegionPredictionSet
+                return RegionPredictionSet(tuple(
+                    self.predict_region(
+                        h_view=h[:, :, region.y:region.y2, region.x:region.x2]
+                    )
+                    for region in regions
+                ), {})
 
             def describe_work(self, *, global_shape, crops):
                 from blueprint_diffusion.adapters.base import WorkEstimate

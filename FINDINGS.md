@@ -1390,3 +1390,28 @@ The production design is documented in
   for H=128×256/G=96×192. Other geometries retain ordinary behavior; failure
   of specialized qualification at that exact geometry must not silently fall
   back to the known-fragmented terminal path.
+
+## 2026-09-03 — Phase 8j terminal specialized executor is production-qualified
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_TERMINAL_SPECIALIZED_PRODUCTION_QUALIFICATION.md`
+and its machine-readable report.
+
+- Production now exposes a model-neutral ordered `RegionPredictionSet` while
+  keeping FLUX block semantics private to `Flux2Adapter` and
+  `Flux2BlockExecutor`. Ordinary evaluations remain an ordered loop over the
+  prior `predict_region()` call.
+- The exact terminal H=128×256/G=96×192 case prepares one source and 55 crop
+  invocations through scoped normal ComfyUI CFG-1 conditioning, then advances
+  native hidden states block-major through all 25 blocks. Source final
+  projection is omitted and retained terminal G remains unsynchronized.
+- Two fresh-process runs produced identical latent and decoded hashes, four
+  previews, exactly three nonterminal global predictions, and finite output.
+  Final latent RMS/mean/max exactly match Phase 8i's qualified result.
+- Specialized CUDA time is 64.43 s and whole four-step sampling is 152.45 s.
+  Whole-run peak allocation/reservation is 4.80/6.68 GiB. Current source K/V
+  is 216 MiB; all-layer CPU cache and CPU-to-GPU K/V transfer are zero.
+- The live VAE selected tiled fallback after ordinary decode OOM, so decoded
+  hash differs from historical untiled decoding. Repeated tiled decoding is
+  deterministic; transformer/crop/assembled-latent evidence remains the
+  authoritative gate.
