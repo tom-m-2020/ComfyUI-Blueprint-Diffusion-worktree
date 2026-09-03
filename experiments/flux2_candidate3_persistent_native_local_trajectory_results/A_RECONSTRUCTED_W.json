@@ -1,0 +1,1029 @@
+{
+  "variant": "reconstructed",
+  "configuration": {
+    "H": [
+      64,
+      128
+    ],
+    "G": [
+      24,
+      48
+    ],
+    "destination_crop": [
+      32,
+      32
+    ],
+    "stride": 24,
+    "working_canvas": [
+      64,
+      64
+    ],
+    "working_coordinates": "native local unit grid 0..63",
+    "sigmas": [
+      1.0,
+      0.9498810172080994,
+      0.8633416295051575,
+      0.6780259013175964,
+      0.0
+    ],
+    "seed": 20260901,
+    "regions": [
+      [
+        0,
+        0,
+        0,
+        32,
+        32
+      ],
+      [
+        1,
+        0,
+        24,
+        32,
+        32
+      ],
+      [
+        2,
+        0,
+        48,
+        32,
+        32
+      ],
+      [
+        3,
+        0,
+        72,
+        32,
+        32
+      ],
+      [
+        4,
+        0,
+        96,
+        32,
+        32
+      ],
+      [
+        5,
+        24,
+        0,
+        32,
+        32
+      ],
+      [
+        6,
+        24,
+        24,
+        32,
+        32
+      ],
+      [
+        7,
+        24,
+        48,
+        32,
+        32
+      ],
+      [
+        8,
+        24,
+        72,
+        32,
+        32
+      ],
+      [
+        9,
+        24,
+        96,
+        32,
+        32
+      ],
+      [
+        10,
+        32,
+        0,
+        32,
+        32
+      ],
+      [
+        11,
+        32,
+        24,
+        32,
+        32
+      ],
+      [
+        12,
+        32,
+        48,
+        32,
+        32
+      ],
+      [
+        13,
+        32,
+        72,
+        32,
+        32
+      ],
+      [
+        14,
+        32,
+        96,
+        32,
+        32
+      ]
+    ]
+  },
+  "initialization": {
+    "W_constructed_once_count": 15,
+    "evaluation_reconstruction_count": 60,
+    "post_first_evaluation_reconstruction_count": 45,
+    "initial_W_H_drift": [
+      {
+        "region": 0,
+        "rms": 4.52266952777336e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 1,
+        "rms": 4.5123424996518224e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 2,
+        "rms": 4.528304842210673e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 3,
+        "rms": 4.5251255187395145e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 4,
+        "rms": 4.533941577733458e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 5,
+        "rms": 4.5316980390452954e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 6,
+        "rms": 4.498100381056247e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 7,
+        "rms": 4.533016451091498e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 8,
+        "rms": 4.526782859670675e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 9,
+        "rms": 4.526534169713159e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 10,
+        "rms": 4.520776286653927e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 11,
+        "rms": 4.4878390781377675e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 12,
+        "rms": 4.5291475458952846e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 13,
+        "rms": 4.535813857842186e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 14,
+        "rms": 4.5191718811565806e-08,
+        "max_abs": 4.76837158203125e-07
+      }
+    ]
+  },
+  "integrity": {
+    "W_euler_updates_per_region": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "all_W_updates_equal_interval_count": true,
+    "accepted_H_hash": "8f6d2e6a10625f8029a01f2d3759dc9ad19bbe844d6def7348b23fe041942470",
+    "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+    "finite_final_H": true,
+    "complete_coverage": true
+  },
+  "work": {
+    "global_forwards": 3,
+    "local_forwards": 60,
+    "global_token_executions": 3456,
+    "local_token_executions": 245760,
+    "tokens_per_local_forward": 4096,
+    "global_cuda_ms": 1067.0798645019531,
+    "local_cuda_ms": 60438.04577636719
+  },
+  "trajectory": [
+    {
+      "ordinal": 0,
+      "sigma": 1.0,
+      "sigma_next": 0.9498810172080994,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.9661180973052979,
+        "mean": 0.0011267196387052536,
+        "max_abs": 4.994710445404053,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.36292240023612976,
+        "mean": 0.0011267197551205754,
+        "max_abs": 1.6720685958862305,
+        "finite": true
+      },
+      "accepted_H_hash": "55bba2705757a98011c2ea151f47a08191b80731dd3dec13e1622d28f027eace",
+      "accepted_G_hash": "fea113a3189cc17f70c74d2c45bf2f69d263dd3a23885f2878420a47d757e9c2",
+      "W_lineage": [],
+      "W_input_ids": null,
+      "W_input_hashes": null,
+      "W_H_drift": [],
+      "W_overlap_rms": null,
+      "prediction_overlap_rms": 0.9138695382766507,
+      "coverage_min": 0.9999999403953552,
+      "coverage_max": 1.0000001192092896,
+      "projection_rms": 0.04230095073580742,
+      "invariant_max_abs": 3.5762786865234375e-07,
+      "terminal_release": false
+    },
+    {
+      "ordinal": 1,
+      "sigma": 0.9498810172080994,
+      "sigma_next": 0.8633416295051575,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.9155833721160889,
+        "mean": -0.0008003348484635353,
+        "max_abs": 4.7655534744262695,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.35000666975975037,
+        "mean": -0.0008003352559171617,
+        "max_abs": 1.6955105066299438,
+        "finite": true
+      },
+      "accepted_H_hash": "9e41a3a118411b7fab89daf658a7844c6b614229042956c59da65ba910495954",
+      "accepted_G_hash": "28b48b8ab67514c19fb1e1878fc872abce6edef896fd6d24de2f1125f693eada",
+      "W_lineage": [],
+      "W_input_ids": null,
+      "W_input_hashes": null,
+      "W_H_drift": [],
+      "W_overlap_rms": null,
+      "prediction_overlap_rms": 0.6534081908854027,
+      "coverage_min": 0.9999999403953552,
+      "coverage_max": 1.0000001192092896,
+      "projection_rms": 0.052739597856998444,
+      "invariant_max_abs": 2.980232238769531e-07,
+      "terminal_release": false
+    },
+    {
+      "ordinal": 2,
+      "sigma": 0.8633416295051575,
+      "sigma_next": 0.6780259013175964,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.8425750136375427,
+        "mean": -0.005407834425568581,
+        "max_abs": 4.785353183746338,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.3605320453643799,
+        "mean": -0.005407834891229868,
+        "max_abs": 1.803315281867981,
+        "finite": true
+      },
+      "accepted_H_hash": "8cd89b853cc2f9826a026574258ae3c3aa17a547881e95113c3d883e500d31ac",
+      "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+      "W_lineage": [],
+      "W_input_ids": null,
+      "W_input_hashes": null,
+      "W_H_drift": [],
+      "W_overlap_rms": null,
+      "prediction_overlap_rms": 0.491291714467227,
+      "coverage_min": 0.9999999403953552,
+      "coverage_max": 1.0000001192092896,
+      "projection_rms": 0.11515465378761292,
+      "invariant_max_abs": 4.76837158203125e-07,
+      "terminal_release": false
+    },
+    {
+      "ordinal": 3,
+      "sigma": 0.6780259013175964,
+      "sigma_next": 0.0,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.957621157169342,
+        "mean": 0.00884294230490923,
+        "max_abs": 5.710960865020752,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.3605320453643799,
+        "mean": -0.005407834891229868,
+        "max_abs": 1.803315281867981,
+        "finite": true
+      },
+      "accepted_H_hash": "8f6d2e6a10625f8029a01f2d3759dc9ad19bbe844d6def7348b23fe041942470",
+      "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+      "W_lineage": [],
+      "W_input_ids": null,
+      "W_input_hashes": null,
+      "W_H_drift": [],
+      "W_overlap_rms": null,
+      "prediction_overlap_rms": 0.2593994291417735,
+      "coverage_min": 0.9999999403953552,
+      "coverage_max": 1.0000001192092896,
+      "projection_rms": null,
+      "invariant_max_abs": null,
+      "terminal_release": true
+    }
+  ],
+  "final_H": {
+    "shape": [
+      1,
+      128,
+      64,
+      128
+    ],
+    "rms": 0.957621157169342,
+    "mean": 0.00884294230490923,
+    "max_abs": 5.710960865020752,
+    "finite": true
+  },
+  "runtime": {
+    "sampling_wall_seconds": 62.971588699991116,
+    "baseline_allocated_bytes": 2495862272,
+    "baseline_reserved_bytes": 2560622592,
+    "peak_allocated_bytes": 3116858368,
+    "peak_reserved_bytes": 3533701120
+  },
+  "images": {
+    "accepted_H_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_accepted_H_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "8ea48caf91260f3fc3149e63d3de98d8ba932b1547a77198290001e0b0ecf2f7"
+    },
+    "accepted_H_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_accepted_H_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "3b881424116cf2e5637e98af74a92d4e3e5b0843775fadff88db449563498256"
+    },
+    "accepted_H_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_accepted_H_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "7c580d14c3b31b68ab99cfc66adbf2722dd365e4b340ef1a25ec6a9ff94802ce"
+    },
+    "accepted_H_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_accepted_H_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "ac14230f9483bae95ceb5672b99e41ffa7fbd0121ec9ef64edb0969fa62fedb1"
+    },
+    "accepted_H_4": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_accepted_H_4.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "036e722df33149c84fe4a56aa28c1b5e42bb756441fdccc3ca6441592c82a0d9"
+    },
+    "assembled_x0_H_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_assembled_x0_H_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "d9f90b5011e79f4718e020516c3290e13d14673d72c5982b20416bb1080f2937"
+    },
+    "assembled_x0_H_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_assembled_x0_H_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "6bf4d2b57bd04526525427e9eaa3d8ed28afbb36cd8b093928d37404702ea2da"
+    },
+    "assembled_x0_H_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_assembled_x0_H_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "7a4c434b06433ced2e98edb9c5538b498c7612c8be854aec471dd435c051fc68"
+    },
+    "assembled_x0_H_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_assembled_x0_H_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "2d7c13b8b38cc77fa1e197dd401685b7492562993fe2d6a3ed6031f4f588542a"
+    },
+    "representative_W_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_representative_W_0.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "5e079b2de4167d01680ac9a118cdc8fd0ce2784203677c92cd318cdc5b4d6b4d"
+    },
+    "representative_W_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_representative_W_1.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "727a2127b87c5a53116ddb53770fd2236ce18783dc26b394e12ba42c06d9ffdb"
+    },
+    "representative_W_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_representative_W_2.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "4ec0f7d6d8086a5d20e3106ad26fef68f5a9c031005853b32b3cb80dee89dcc3"
+    },
+    "representative_W_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_representative_W_3.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "ce0ecc6b6af65f29110635b3cc695394a8ea5929cd9961f372e4c93d4b9df7b4"
+    },
+    "restricted_W_0_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "e9de3fb83fbb83a1a705f196886251f45f8e261cff541bab9b0de2e28b39d288"
+    },
+    "restricted_W_0_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "e93e075e78e69e26d1f9e55ea3edeaa7bc21ef544e6e43b2ba8e5022a8445f8d"
+    },
+    "restricted_W_0_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "9442fb9215d82bfac41aed041e4d32af73d02487e39d2c0cb93aae90317af259"
+    },
+    "restricted_W_0_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "6a0d9a09dd3e91d816058f6f645f1717fdbdaa27527546b9d15b208b95d69a43"
+    },
+    "restricted_W_0_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "5cb3dd3f532088380144592b9f1baae0be2a18af88978f308b628ad0afa719b3"
+    },
+    "restricted_W_0_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "bed93d27057b00c22fe7cd4cf4fb9925496c983421fb157b9bc2c2800d9d3238"
+    },
+    "restricted_W_0_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "569f3b2f7c682bedaa2ace69b0d01537a3d6565985eb11dbb6c570be5aab225b"
+    },
+    "restricted_W_0_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4c329b4695738f42fbd509303cf3cb3cbaf97273946b481ab7aa9b53b172556f"
+    },
+    "restricted_W_0_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "b06eb161851d3a84a80fb9936b4abb310b8d7e62845f85a3eef67bb445c651d9"
+    },
+    "restricted_W_0_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "7d459487d809b6391ed5b81167281b7933e3eb1822c2eddbe1aa3853dace9d7a"
+    },
+    "restricted_W_0_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "9fb3f8ee9c2b97f374388b3d39747c77957cc64b748c9226b4ff555e4e1ff485"
+    },
+    "restricted_W_0_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "e970d7bbb7c11722ea367cccd9d780e2c50d61bf5a09f55c55290f5021a71c4d"
+    },
+    "restricted_W_0_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3075e39a25f6a78ae68430764ba5178bac3ab9cc33c745c02ffef34063e6f95f"
+    },
+    "restricted_W_0_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "37af3984a7329d921391391dd441a9545ab16799e7c4e68b86a6d437b0ad11ff"
+    },
+    "restricted_W_0_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_0_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "ebff69ec7bd35ceb280adc41052966d9e6d4e415fa921698f80e5129b3b86830"
+    },
+    "restricted_W_1_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "12f5a637ebbd1936984978f19a57a3514552c035c62002add6971c741eaf740f"
+    },
+    "restricted_W_1_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "74605166f5f714648aa585c5b182c5750b14f648f1bc77c184e3cf3b766b7343"
+    },
+    "restricted_W_1_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "a417d8de96aebc50f74eaefe20486f4135f9339fc5aa8e1476e9ed156b0e10c1"
+    },
+    "restricted_W_1_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "7544949728a3c2868247c628b61761c0c6c91cc5201cbc62f4aee410ee7f9df2"
+    },
+    "restricted_W_1_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3ff13284398e117bc41ef875305de91a68a84d802b9cb9fc2a1a7556f8eb0f53"
+    },
+    "restricted_W_1_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "6bad590556248c2ce8df6811827c39c80640f5c10566df5accaa10323e92d91f"
+    },
+    "restricted_W_1_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "fca0b3efb2934fb332491a8d183a86f7c747654bc395bddcb444f21046f25279"
+    },
+    "restricted_W_1_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "d0d1b4d7f19ee7edcaaef83e1020f6726865d270492c2b39a8f88c52ecfd9cf7"
+    },
+    "restricted_W_1_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "005ebc71e311e4f1eae0a67d578f889cf8ff2a48e7a09a6f88481961f5d89993"
+    },
+    "restricted_W_1_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "b11d260761f5446b089828bcf159bf8fcc862c091f251942e7480fb3739ab704"
+    },
+    "restricted_W_1_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "551991c7aa3ddcfe0c64ca61bd63a448a4f9023465028dd3d16589b8e6284ec7"
+    },
+    "restricted_W_1_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "8cb1520e02854e0c2c218336107ef3fff0c5e4849c32e2d109a6c9c052aa3f65"
+    },
+    "restricted_W_1_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "05c52dfb28cdba9c61fa64b1851fa608af902fed02d8806d6f372baed92ac35b"
+    },
+    "restricted_W_1_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3b625532e1c601dec5c29723aa723685b7cebce5a0d3d4242f8e2b940e0e58c6"
+    },
+    "restricted_W_1_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_1_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "9a04112d3c233c9647aad0eef06b36849309a95a1c785995e197c96d9505d0a9"
+    },
+    "restricted_W_2_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "6c6b6871d0f1913531e7236d8da7e1c61164a97334344cdf21d7ad618b2570ad"
+    },
+    "restricted_W_2_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "979d295de8b55dbc848768b21d5aa1db9323f316a895f809044a033e0ece3e76"
+    },
+    "restricted_W_2_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3d92b1bb98ce5734584d4b66619169da5c46378464e5b473c79e67cf9e3306d9"
+    },
+    "restricted_W_2_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "72ec7be6740d42346201fb5df090791c1e0deff1d0fea0332105b2397a5c659a"
+    },
+    "restricted_W_2_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4a9b0f9a6f79782fd9b2d94e31741477ccc7ce2adfb5f0eaa1f496924f6da66c"
+    },
+    "restricted_W_2_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "35374bb1a5805fe188b963c7bbe176dc78e757b81e23892c3f50d58dee354c0a"
+    },
+    "restricted_W_2_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "cf4d04fadf617fc6ec6ed3849f0224a3c758ee7ce4432844168f142db7121384"
+    },
+    "restricted_W_2_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "73f78c174a9e7436348a6c98434ce048f8bf21bcad139d855a2d0255d09f1861"
+    },
+    "restricted_W_2_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "670e77d51861f17e30c1ead92bce5039a8389193eb032362a6c9976f85225f20"
+    },
+    "restricted_W_2_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3daf0186134dfa2ca061fdcbf1d99f5f257a8c040fad543c2d3952548f549578"
+    },
+    "restricted_W_2_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "d72e423637170305a7a98c8d10f55507cbd7d1771bbc6c085ff33113fda30976"
+    },
+    "restricted_W_2_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "5f9304ca4daf744ea4b88b5c31d31d7265e5a18a6a8d6efd63f479cfb136f3dc"
+    },
+    "restricted_W_2_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "dc9ae4013efe898db8f10507da8cc4bef9b38fe5016f4b0f7bf7612be8a166d6"
+    },
+    "restricted_W_2_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "39df10b9723247fcefb10376fa2ab8250acb9901fe5d012628316a0a1d53cb49"
+    },
+    "restricted_W_2_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_2_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "5c0034696875be5a9411f20182677d074bed508a5e5016059d255d2f8d8743ab"
+    },
+    "restricted_W_3_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "5438f90be24f8798e057ec1222ed55631199ceb51756abb3134196d4db409575"
+    },
+    "restricted_W_3_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "84cfb11f65ea34290dc8cd06e691520682c37c204ae11cea7ce1fd06833e4055"
+    },
+    "restricted_W_3_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "c4ee9d7752a4d7bee2841d1ddf75f01ee4af3407eb3f5962d541bd8fb13925d2"
+    },
+    "restricted_W_3_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "611324b3c6ee9ab24e97e4a99b4b31b5b152831689626b815a5b8253b98e94fb"
+    },
+    "restricted_W_3_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "278aebacdc879f818cfe8b71a928c4de3fdc8598337052e18e77486ab5cf3206"
+    },
+    "restricted_W_3_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3e6c14501d477f05dc258b3413bc177da1645e24e3cdcc3e8833f5143d194a9e"
+    },
+    "restricted_W_3_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "0208aa175a3f8928d3d08518fe673d2927db3ab44bf80f608f2defb70a87a6dd"
+    },
+    "restricted_W_3_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "cabbe5a9e024ebc50a41d89949b36a66d941efba64e34fe68f7ca52c12ab1f00"
+    },
+    "restricted_W_3_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "9698b058bd586a65ec71905d86737739c4f8eaa724b9e2dd999d50425ae7dd17"
+    },
+    "restricted_W_3_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "2ea7f08e60956a3c35a9b608d52a1cf732037c8f1257f882e2958311f24c62d7"
+    },
+    "restricted_W_3_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4dc735ab814855ec479024ca56b775607fa9cffb836c67bad27b128ee05016b7"
+    },
+    "restricted_W_3_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "1ac4d848e9bba390a55eb76ffb5a1a522a3841bcfde71445e4fa7b9d98527612"
+    },
+    "restricted_W_3_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "a364e18b826fe967140b73f7ebf0c6bfb7a5ad39ce9c03b9438af5caf74a153f"
+    },
+    "restricted_W_3_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "2b58ea261e3c27e5578686e2151a65250a560a1aaba74fc33fdf2da32ee364bc"
+    },
+    "restricted_W_3_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\A_RECONSTRUCTED_W_restricted_W_3_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4545ce8b94e1a76a89fe7ef879a9537fe6b7949716ce81ede5da1d6bf06a044c"
+    }
+  },
+  "final_H_hash": "8f6d2e6a10625f8029a01f2d3759dc9ad19bbe844d6def7348b23fe041942470"
+}

@@ -1,0 +1,2073 @@
+{
+  "variant": "persistent",
+  "configuration": {
+    "H": [
+      64,
+      128
+    ],
+    "G": [
+      24,
+      48
+    ],
+    "destination_crop": [
+      32,
+      32
+    ],
+    "stride": 24,
+    "working_canvas": [
+      64,
+      64
+    ],
+    "working_coordinates": "native local unit grid 0..63",
+    "sigmas": [
+      1.0,
+      0.9498810172080994,
+      0.8633416295051575,
+      0.6780259013175964,
+      0.0
+    ],
+    "seed": 20260901,
+    "regions": [
+      [
+        0,
+        0,
+        0,
+        32,
+        32
+      ],
+      [
+        1,
+        0,
+        24,
+        32,
+        32
+      ],
+      [
+        2,
+        0,
+        48,
+        32,
+        32
+      ],
+      [
+        3,
+        0,
+        72,
+        32,
+        32
+      ],
+      [
+        4,
+        0,
+        96,
+        32,
+        32
+      ],
+      [
+        5,
+        24,
+        0,
+        32,
+        32
+      ],
+      [
+        6,
+        24,
+        24,
+        32,
+        32
+      ],
+      [
+        7,
+        24,
+        48,
+        32,
+        32
+      ],
+      [
+        8,
+        24,
+        72,
+        32,
+        32
+      ],
+      [
+        9,
+        24,
+        96,
+        32,
+        32
+      ],
+      [
+        10,
+        32,
+        0,
+        32,
+        32
+      ],
+      [
+        11,
+        32,
+        24,
+        32,
+        32
+      ],
+      [
+        12,
+        32,
+        48,
+        32,
+        32
+      ],
+      [
+        13,
+        32,
+        72,
+        32,
+        32
+      ],
+      [
+        14,
+        32,
+        96,
+        32,
+        32
+      ]
+    ]
+  },
+  "initialization": {
+    "W_constructed_once_count": 15,
+    "evaluation_reconstruction_count": 0,
+    "post_first_evaluation_reconstruction_count": 0,
+    "initial_W_H_drift": [
+      {
+        "region": 0,
+        "rms": 4.52266952777336e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 1,
+        "rms": 4.5123424996518224e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 2,
+        "rms": 4.528304842210673e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 3,
+        "rms": 4.5251255187395145e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 4,
+        "rms": 4.533941577733458e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 5,
+        "rms": 4.5316980390452954e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 6,
+        "rms": 4.498100381056247e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 7,
+        "rms": 4.533016451091498e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 8,
+        "rms": 4.526782859670675e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 9,
+        "rms": 4.526534169713159e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 10,
+        "rms": 4.520776286653927e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 11,
+        "rms": 4.4878390781377675e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 12,
+        "rms": 4.5291475458952846e-08,
+        "max_abs": 4.76837158203125e-07
+      },
+      {
+        "region": 13,
+        "rms": 4.535813857842186e-08,
+        "max_abs": 2.384185791015625e-07
+      },
+      {
+        "region": 14,
+        "rms": 4.5191718811565806e-08,
+        "max_abs": 4.76837158203125e-07
+      }
+    ]
+  },
+  "integrity": {
+    "W_euler_updates_per_region": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "all_W_updates_equal_interval_count": true,
+    "accepted_H_hash": "6eccbfe5e6aa3dcf8c6c3b59ba7d885a14291694dd3cab015e223c99137405a4",
+    "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+    "finite_final_H": true,
+    "complete_coverage": true
+  },
+  "work": {
+    "global_forwards": 3,
+    "local_forwards": 60,
+    "global_token_executions": 3456,
+    "local_token_executions": 245760,
+    "tokens_per_local_forward": 4096,
+    "global_cuda_ms": 1147.1625366210938,
+    "local_cuda_ms": 60373.46826171875
+  },
+  "trajectory": [
+    {
+      "ordinal": 0,
+      "sigma": 1.0,
+      "sigma_next": 0.9498810172080994,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.9661180973052979,
+        "mean": 0.0011267196387052536,
+        "max_abs": 4.994710445404053,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.36292240023612976,
+        "mean": 0.0011267197551205754,
+        "max_abs": 1.6720685958862305,
+        "finite": true
+      },
+      "accepted_H_hash": "55bba2705757a98011c2ea151f47a08191b80731dd3dec13e1622d28f027eace",
+      "accepted_G_hash": "fea113a3189cc17f70c74d2c45bf2f69d263dd3a23885f2878420a47d757e9c2",
+      "W_lineage": [
+        {
+          "region": 0,
+          "parent_python_id": 2180676824240,
+          "parent_hash": "3f1d2529c775ba8efc36c135f6860b498612720b65b0732e248a8ab40a3b781a",
+          "proposal_python_id": 2181545292368,
+          "proposal_hash": "01ac958c40092e221df8527794bb9e1a0996458ad27f8f39a405f709fb575033",
+          "x0_hash": "3b0b5dc5086427a6e08c990e3f7d10ca3460914aeab6509ef73d380b70d5735b"
+        },
+        {
+          "region": 1,
+          "parent_python_id": 2180676816400,
+          "parent_hash": "98585eae9cd144cee6bb2bd8faa6958b083f7c7bb4238213e984662e51cc9e38",
+          "proposal_python_id": 2181545284528,
+          "proposal_hash": "f718649069ebd23884934fd225eaca18e33447bfe798452acc54c1acbcc68328",
+          "x0_hash": "69d69e9ab3e7a01074810827baeb128df0aca1cbead63ab61caf442c7aba0784"
+        },
+        {
+          "region": 2,
+          "parent_python_id": 2180676828960,
+          "parent_hash": "d74e6b91a56befd972fc36f7729be56af11dff5120c768859fc700d8b401f13f",
+          "proposal_python_id": 2181545293728,
+          "proposal_hash": "58332d1370a7f7e981ecfb4aee1f5498639d420adc7ac4ab5e82c58e2c7f510c",
+          "x0_hash": "acee9feb527c4eafad523249e5fd391822a5d941bfc77188cae3a3ce05d33a0e"
+        },
+        {
+          "region": 3,
+          "parent_python_id": 2180676825920,
+          "parent_hash": "4c2ea72a08ef58e9eed83e4b339e6e6fcb58d79a5e9adc6243cb7628da45dcc6",
+          "proposal_python_id": 2181545292208,
+          "proposal_hash": "50a0a2b1b1b0b2c9654773502dd972585dc6c2b5995d4186c60e090459db9024",
+          "x0_hash": "321dcb0d9d3d21975cb2b7b69bec47ae3c082d03f3bcbd31d4a147df047a73ba"
+        },
+        {
+          "region": 4,
+          "parent_python_id": 2180676828000,
+          "parent_hash": "e84018708c8be081a9979976e903964118b481612df0fd2f1a7c1d01c8db92be",
+          "proposal_python_id": 2181545284368,
+          "proposal_hash": "f6bf9a95037981eaa748990cf38fa68ea00409e86091bc03c3e5d82ad7a28fa4",
+          "x0_hash": "8eed98bd68c8d18e1a25b475040bb2c96a16cb614f715ed3683aec067b6b0e3d"
+        },
+        {
+          "region": 5,
+          "parent_python_id": 2180676819840,
+          "parent_hash": "de261b00e0788a9f7052c4720996b8643e676341d570315ac8ecb0e191eefe7f",
+          "proposal_python_id": 2181545290288,
+          "proposal_hash": "06390e3592d7c0e2f07f7f08b468242dcb244c1fc4d615e60cc902aec7dd8a3f",
+          "x0_hash": "800d68365efffbbd8b1e8db259d8ff72655ef5ae53abcaccad95364fadb88ef7"
+        },
+        {
+          "region": 6,
+          "parent_python_id": 2180676813920,
+          "parent_hash": "ec1c0d9254a37998f3e83871547334903e65fbf0b81c2c53b61cf829995fab8d",
+          "proposal_python_id": 2181545295568,
+          "proposal_hash": "7971100273d84cab889c4dce986f4542078373b8dd55523aa514cfed19822c4f",
+          "x0_hash": "7e051202736cd5a19afe539b3431325121d282e5b5f3f4506eeeba09957c07f4"
+        },
+        {
+          "region": 7,
+          "parent_python_id": 2180676813360,
+          "parent_hash": "048fbb48fd762fb72ae8d482f233a51724cd389bfe86057ae2326b24036e5338",
+          "proposal_python_id": 2180676823920,
+          "proposal_hash": "8e7723402449c707473a38f3a0bddf54a6e09da240302a03ff7af2b4d844ed52",
+          "x0_hash": "c328f46a3bc3f55f24a617b7493d4d33d43febf56db92bd1538f261bd15513a3"
+        },
+        {
+          "region": 8,
+          "parent_python_id": 2180676826400,
+          "parent_hash": "a663e05b589b528a890744da2f3fb5d3cad6536f3b4d4ca2eaa6eaed27f91df7",
+          "proposal_python_id": 2181544861424,
+          "proposal_hash": "2829648f87b11761db5bd3fb0928eea7fbbaeb584cf785b0ebbe94705f8d4305",
+          "x0_hash": "90aa07b8fb3ff570dcd2d732e3f9ee742ef64cba734f858624f60d01edd6e43f"
+        },
+        {
+          "region": 9,
+          "parent_python_id": 2180676817840,
+          "parent_hash": "5600ef2d48c07c4bdf271af73e485f051040d57bbcce31c05673f95d3bc78704",
+          "proposal_python_id": 2181545284608,
+          "proposal_hash": "f9399cda25655ac7ead9a51b528e5913ed265ee5f9a8a2ca84b201426ae0d4ff",
+          "x0_hash": "444acf495a2790df36ad38d81f45194bba90e8dbf4701a19071a891183e2106c"
+        },
+        {
+          "region": 10,
+          "parent_python_id": 2180676818320,
+          "parent_hash": "16896278418c3e2a4189b7a46a1b303e4d75a3ccb6e29ebc88f7ce6cc9c1d9da",
+          "proposal_python_id": 2180677921248,
+          "proposal_hash": "aba8aca18a9cb42f3fac4b7d9349d9bb92fa594ead8138e3c602e3bea2d1bc29",
+          "x0_hash": "9e91dbca22ef78096e617da695aa0d0bcf1ae2e09f0f4b378c9f81024264e82e"
+        },
+        {
+          "region": 11,
+          "parent_python_id": 2180676817360,
+          "parent_hash": "1bab3eb24d743cd11b45bf9a637f0394ce114ae5937da86a635167770b8678ec",
+          "proposal_python_id": 2180677922528,
+          "proposal_hash": "5549ab240e247a741fa8ec29d2c46e37fc82c8239a81753eb2e2181256ae94cc",
+          "x0_hash": "f26f5b9dd651f3c1c7f8c3a169e69b2d7edc3b70e9a01b1cf4bd9d5a4202765e"
+        },
+        {
+          "region": 12,
+          "parent_python_id": 2181545317216,
+          "parent_hash": "f0c04c06ab78e4f87886138a8ddb9f524dea9698b10b95c7c31836767ea12920",
+          "proposal_python_id": 2180676822640,
+          "proposal_hash": "0421877ca64280f5e6e13e2899051d32a03ec4220ae555948729d94b2d56e128",
+          "x0_hash": "ea2bc3eee6a6e37fc7e70d52c85ffbf2df2860530d91424fa72c50f395c6ed1a"
+        },
+        {
+          "region": 13,
+          "parent_python_id": 2181545320736,
+          "parent_hash": "8da5841c9a1cd5726b4150b1e53907e1ec614d41fdbd5b385f6d03e7d1b557bd",
+          "proposal_python_id": 2181545319696,
+          "proposal_hash": "857f24b0cfab129602b1ff8fc4752c03f91f29b81ed6249c570abb7db560167b",
+          "x0_hash": "14f8d762af89e41136dfb1f3308ea89cf1feae081746b7303054c9f1e67aa102"
+        },
+        {
+          "region": 14,
+          "parent_python_id": 2181545321776,
+          "parent_hash": "836c55316c85f0b43dbb099d4c91e899255afdb1840828d9efc5ae9a2e8896cd",
+          "proposal_python_id": 2181545312736,
+          "proposal_hash": "0cf3c7fd78f9c235485ca8f7e5efc8e6112a55f744f63535bb7c3fd869ce406e",
+          "x0_hash": "953e9b12e8224d98392c092fad69eb4e889f5b35448ccc4a639ffbf558ec33b0"
+        }
+      ],
+      "W_input_ids": [
+        2180676824240,
+        2180676816400,
+        2180676828960,
+        2180676825920,
+        2180676828000,
+        2180676819840,
+        2180676813920,
+        2180676813360,
+        2180676826400,
+        2180676817840,
+        2180676818320,
+        2180676817360,
+        2181545317216,
+        2181545320736,
+        2181545321776
+      ],
+      "W_input_hashes": [
+        "3f1d2529c775ba8efc36c135f6860b498612720b65b0732e248a8ab40a3b781a",
+        "98585eae9cd144cee6bb2bd8faa6958b083f7c7bb4238213e984662e51cc9e38",
+        "d74e6b91a56befd972fc36f7729be56af11dff5120c768859fc700d8b401f13f",
+        "4c2ea72a08ef58e9eed83e4b339e6e6fcb58d79a5e9adc6243cb7628da45dcc6",
+        "e84018708c8be081a9979976e903964118b481612df0fd2f1a7c1d01c8db92be",
+        "de261b00e0788a9f7052c4720996b8643e676341d570315ac8ecb0e191eefe7f",
+        "ec1c0d9254a37998f3e83871547334903e65fbf0b81c2c53b61cf829995fab8d",
+        "048fbb48fd762fb72ae8d482f233a51724cd389bfe86057ae2326b24036e5338",
+        "a663e05b589b528a890744da2f3fb5d3cad6536f3b4d4ca2eaa6eaed27f91df7",
+        "5600ef2d48c07c4bdf271af73e485f051040d57bbcce31c05673f95d3bc78704",
+        "16896278418c3e2a4189b7a46a1b303e4d75a3ccb6e29ebc88f7ce6cc9c1d9da",
+        "1bab3eb24d743cd11b45bf9a637f0394ce114ae5937da86a635167770b8678ec",
+        "f0c04c06ab78e4f87886138a8ddb9f524dea9698b10b95c7c31836767ea12920",
+        "8da5841c9a1cd5726b4150b1e53907e1ec614d41fdbd5b385f6d03e7d1b557bd",
+        "836c55316c85f0b43dbb099d4c91e899255afdb1840828d9efc5ae9a2e8896cd"
+      ],
+      "W_H_drift": [
+        {
+          "region": 0,
+          "rms": 0.05194329097867012,
+          "max_abs": 0.33467376232147217
+        },
+        {
+          "region": 1,
+          "rms": 0.04955906793475151,
+          "max_abs": 0.3408423662185669
+        },
+        {
+          "region": 2,
+          "rms": 0.04916674271225929,
+          "max_abs": 0.27230334281921387
+        },
+        {
+          "region": 3,
+          "rms": 0.04973078891634941,
+          "max_abs": 0.31053346395492554
+        },
+        {
+          "region": 4,
+          "rms": 0.04879804700613022,
+          "max_abs": 0.35109370946884155
+        },
+        {
+          "region": 5,
+          "rms": 0.05191519111394882,
+          "max_abs": 0.2925412058830261
+        },
+        {
+          "region": 6,
+          "rms": 0.05259644612669945,
+          "max_abs": 0.26762738823890686
+        },
+        {
+          "region": 7,
+          "rms": 0.04686487466096878,
+          "max_abs": 0.23844558000564575
+        },
+        {
+          "region": 8,
+          "rms": 0.04985707998275757,
+          "max_abs": 0.2862148880958557
+        },
+        {
+          "region": 9,
+          "rms": 0.051246900111436844,
+          "max_abs": 0.36576807498931885
+        },
+        {
+          "region": 10,
+          "rms": 0.04392183572053909,
+          "max_abs": 0.25554364919662476
+        },
+        {
+          "region": 11,
+          "rms": 0.04494473710656166,
+          "max_abs": 0.2553478479385376
+        },
+        {
+          "region": 12,
+          "rms": 0.0426306314766407,
+          "max_abs": 0.22267813980579376
+        },
+        {
+          "region": 13,
+          "rms": 0.04380802810192108,
+          "max_abs": 0.28504514694213867
+        },
+        {
+          "region": 14,
+          "rms": 0.04222733899950981,
+          "max_abs": 0.2831343412399292
+        }
+      ],
+      "W_overlap_rms": 0.04580221184080334,
+      "prediction_overlap_rms": 0.9138695382766507,
+      "coverage_min": 0.9999999403953552,
+      "coverage_max": 1.0000001192092896,
+      "projection_rms": 0.04230095073580742,
+      "invariant_max_abs": 3.5762786865234375e-07,
+      "terminal_release": false
+    },
+    {
+      "ordinal": 1,
+      "sigma": 0.9498810172080994,
+      "sigma_next": 0.8633416295051575,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.91554856300354,
+        "mean": -0.0008003346156328917,
+        "max_abs": 4.794441223144531,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.35000666975975037,
+        "mean": -0.0008003352559171617,
+        "max_abs": 1.6955105066299438,
+        "finite": true
+      },
+      "accepted_H_hash": "f50e8917f1a09c86b1ba0fb882445ad5972e991cd77b0c7190cfb41a0579e80f",
+      "accepted_G_hash": "28b48b8ab67514c19fb1e1878fc872abce6edef896fd6d24de2f1125f693eada",
+      "W_lineage": [
+        {
+          "region": 0,
+          "parent_python_id": 2181545292368,
+          "parent_hash": "01ac958c40092e221df8527794bb9e1a0996458ad27f8f39a405f709fb575033",
+          "proposal_python_id": 2180042112160,
+          "proposal_hash": "e81dd8fc636e1e1bcf8d5b47764525648588fba5759002814d290effed445c39",
+          "x0_hash": "3a3b007e6718e0731e8dfa71ad510b3d53b43023a816899a9907795e2f8f62eb"
+        },
+        {
+          "region": 1,
+          "parent_python_id": 2181545284528,
+          "parent_hash": "f718649069ebd23884934fd225eaca18e33447bfe798452acc54c1acbcc68328",
+          "proposal_python_id": 2181544820976,
+          "proposal_hash": "02e1d63363c0ecde7e19ad2d9c692271215c986d93411d399150f8b3b0519a0f",
+          "x0_hash": "cd8a9aa8538e3536e9e8e395b5f354bf1bab35d91f65080ce159c52e99e47eed"
+        },
+        {
+          "region": 2,
+          "parent_python_id": 2181545293728,
+          "parent_hash": "58332d1370a7f7e981ecfb4aee1f5498639d420adc7ac4ab5e82c58e2c7f510c",
+          "proposal_python_id": 2181545371488,
+          "proposal_hash": "f99417a677daa123fee3df3b879ea64c323874835b0fc7ea7cb0d0a9eb2e97e8",
+          "x0_hash": "0bd791da787a469149c0a8bc8782ffc8cc122b6321f04a3248595a443c1413b3"
+        },
+        {
+          "region": 3,
+          "parent_python_id": 2181545292208,
+          "parent_hash": "50a0a2b1b1b0b2c9654773502dd972585dc6c2b5995d4186c60e090459db9024",
+          "proposal_python_id": 2181545361568,
+          "proposal_hash": "b9736ac83d569ebd129439b66dd609bd35ae4da338fabcc220ae80aa7ff19822",
+          "x0_hash": "b1eae50f8616388fbf50637ca863ec49832cb29a05a68d798b84f92a88ba0635"
+        },
+        {
+          "region": 4,
+          "parent_python_id": 2181545284368,
+          "parent_hash": "f6bf9a95037981eaa748990cf38fa68ea00409e86091bc03c3e5d82ad7a28fa4",
+          "proposal_python_id": 2181545372208,
+          "proposal_hash": "a0b058fcbdeaf5a640462d3ee65aa885e02586499bfc48e811a78539b848f648",
+          "x0_hash": "e7dd9304ccb49b6357f2262ce35f9aa91aedf4816b8597e7d26812b1fba5ecaf"
+        },
+        {
+          "region": 5,
+          "parent_python_id": 2181545290288,
+          "parent_hash": "06390e3592d7c0e2f07f7f08b468242dcb244c1fc4d615e60cc902aec7dd8a3f",
+          "proposal_python_id": 2181545375088,
+          "proposal_hash": "49e435603897c100be19ed4a66bf8dbab37ddcb06881629d3f4a83a222c2ab55",
+          "x0_hash": "8986bfad5eb267189f530bcd3f4082e2c10c29ef047f896d178f8b6b88c74172"
+        },
+        {
+          "region": 6,
+          "parent_python_id": 2181545295568,
+          "parent_hash": "7971100273d84cab889c4dce986f4542078373b8dd55523aa514cfed19822c4f",
+          "proposal_python_id": 2181545369088,
+          "proposal_hash": "421f5308448c0da757954336f6b11d851259077cb9c1fba83b46cde0a3c243ca",
+          "x0_hash": "a156271986ae5e533e141b0ed6b7d7ef20d618a0a9bb042bf2621b0052a1f3b8"
+        },
+        {
+          "region": 7,
+          "parent_python_id": 2180676823920,
+          "parent_hash": "8e7723402449c707473a38f3a0bddf54a6e09da240302a03ff7af2b4d844ed52",
+          "proposal_python_id": 2181545373488,
+          "proposal_hash": "2549934819501bb7eb0f5678de17f5519ced1dc1caadbd6d8a09b72bfe8507c7",
+          "x0_hash": "8ba98fc529c403514d6f3c698ea5784974238a003d823e6754d0b370bb6ab10d"
+        },
+        {
+          "region": 8,
+          "parent_python_id": 2181544861424,
+          "parent_hash": "2829648f87b11761db5bd3fb0928eea7fbbaeb584cf785b0ebbe94705f8d4305",
+          "proposal_python_id": 2181544823856,
+          "proposal_hash": "ba567b1f5441214299308ff824774f9b67d424b5395fb550c183f10b71743cdb",
+          "x0_hash": "38fa386c9df11c40964925cd31d017000db0d672b964e4270d0e048da3aa9f36"
+        },
+        {
+          "region": 9,
+          "parent_python_id": 2181545284608,
+          "parent_hash": "f9399cda25655ac7ead9a51b528e5913ed265ee5f9a8a2ca84b201426ae0d4ff",
+          "proposal_python_id": 2181544819872,
+          "proposal_hash": "8a96de203962c2e2dd4bb5e6d1ba9b5693ae49086953f3cb0d3077c474abb69f",
+          "x0_hash": "4f937ec7085052e7a95aa6d407a00c8286c0c4f05063096fcde7004d1c69089b"
+        },
+        {
+          "region": 10,
+          "parent_python_id": 2180677921248,
+          "parent_hash": "aba8aca18a9cb42f3fac4b7d9349d9bb92fa594ead8138e3c602e3bea2d1bc29",
+          "proposal_python_id": 2181545372048,
+          "proposal_hash": "318b32a93c9035e57bce32fff29e9821d11d902418b80207577bfdab1d9aca7c",
+          "x0_hash": "f2282e181a85964760092c77a707a5a2a6f2a65130825137ab30148fffc75f29"
+        },
+        {
+          "region": 11,
+          "parent_python_id": 2180677922528,
+          "parent_hash": "5549ab240e247a741fa8ec29d2c46e37fc82c8239a81753eb2e2181256ae94cc",
+          "proposal_python_id": 2181843002352,
+          "proposal_hash": "78272fbc054a5877522a00ae8a635e0857a9908f29bf569a025e7968da035ae7",
+          "x0_hash": "1226ea531338a3c1cfbd1b5c87db9e9a95cad8e142c53c11e0ca5e035a8a8b9a"
+        },
+        {
+          "region": 12,
+          "parent_python_id": 2180676822640,
+          "parent_hash": "0421877ca64280f5e6e13e2899051d32a03ec4220ae555948729d94b2d56e128",
+          "proposal_python_id": 2181843007232,
+          "proposal_hash": "2a24bd2d3cbfd898f388dfcc882edf129f2a7e951e3be3ff72539862766038ff",
+          "x0_hash": "5da296bb44dd610dd89d4ee82f6255c8ce7b5c771faec4e303eed9d42b4bb67b"
+        },
+        {
+          "region": 13,
+          "parent_python_id": 2181545319696,
+          "parent_hash": "857f24b0cfab129602b1ff8fc4752c03f91f29b81ed6249c570abb7db560167b",
+          "proposal_python_id": 2181544806832,
+          "proposal_hash": "423104c9d3e8bc16c292e1185fee06781a9e505e63db03d491b45ae84b60df39",
+          "x0_hash": "0927c9bfad03242193ce7a5b0ee0caea49b6ca25b51b3d4de82e6a833319a8a3"
+        },
+        {
+          "region": 14,
+          "parent_python_id": 2181545312736,
+          "parent_hash": "0cf3c7fd78f9c235485ca8f7e5efc8e6112a55f744f63535bb7c3fd869ce406e",
+          "proposal_python_id": 2181519138304,
+          "proposal_hash": "4b939ce216a1529ec2392b6cc59aeb7c7a827e7a0d1e5e8d0ba16a1720cba9ad",
+          "x0_hash": "b10c950d6949df924f7df9319878ae8e9c35564f464a66b478f1cb7d7d050bd1"
+        }
+      ],
+      "W_input_ids": [
+        2181545292368,
+        2181545284528,
+        2181545293728,
+        2181545292208,
+        2181545284368,
+        2181545290288,
+        2181545295568,
+        2180676823920,
+        2181544861424,
+        2181545284608,
+        2180677921248,
+        2180677922528,
+        2180676822640,
+        2181545319696,
+        2181545312736
+      ],
+      "W_input_hashes": [
+        "01ac958c40092e221df8527794bb9e1a0996458ad27f8f39a405f709fb575033",
+        "f718649069ebd23884934fd225eaca18e33447bfe798452acc54c1acbcc68328",
+        "58332d1370a7f7e981ecfb4aee1f5498639d420adc7ac4ab5e82c58e2c7f510c",
+        "50a0a2b1b1b0b2c9654773502dd972585dc6c2b5995d4186c60e090459db9024",
+        "f6bf9a95037981eaa748990cf38fa68ea00409e86091bc03c3e5d82ad7a28fa4",
+        "06390e3592d7c0e2f07f7f08b468242dcb244c1fc4d615e60cc902aec7dd8a3f",
+        "7971100273d84cab889c4dce986f4542078373b8dd55523aa514cfed19822c4f",
+        "8e7723402449c707473a38f3a0bddf54a6e09da240302a03ff7af2b4d844ed52",
+        "2829648f87b11761db5bd3fb0928eea7fbbaeb584cf785b0ebbe94705f8d4305",
+        "f9399cda25655ac7ead9a51b528e5913ed265ee5f9a8a2ca84b201426ae0d4ff",
+        "aba8aca18a9cb42f3fac4b7d9349d9bb92fa594ead8138e3c602e3bea2d1bc29",
+        "5549ab240e247a741fa8ec29d2c46e37fc82c8239a81753eb2e2181256ae94cc",
+        "0421877ca64280f5e6e13e2899051d32a03ec4220ae555948729d94b2d56e128",
+        "857f24b0cfab129602b1ff8fc4752c03f91f29b81ed6249c570abb7db560167b",
+        "0cf3c7fd78f9c235485ca8f7e5efc8e6112a55f744f63535bb7c3fd869ce406e"
+      ],
+      "W_H_drift": [
+        {
+          "region": 0,
+          "rms": 0.11678893119096756,
+          "max_abs": 0.8414877653121948
+        },
+        {
+          "region": 1,
+          "rms": 0.11352046579122543,
+          "max_abs": 0.7712788581848145
+        },
+        {
+          "region": 2,
+          "rms": 0.1166178286075592,
+          "max_abs": 0.5916359424591064
+        },
+        {
+          "region": 3,
+          "rms": 0.11565059423446655,
+          "max_abs": 0.5603389143943787
+        },
+        {
+          "region": 4,
+          "rms": 0.10833290964365005,
+          "max_abs": 0.7901593446731567
+        },
+        {
+          "region": 5,
+          "rms": 0.11489800363779068,
+          "max_abs": 0.7947452664375305
+        },
+        {
+          "region": 6,
+          "rms": 0.11864413321018219,
+          "max_abs": 0.8009905815124512
+        },
+        {
+          "region": 7,
+          "rms": 0.10725777596235275,
+          "max_abs": 0.5719339847564697
+        },
+        {
+          "region": 8,
+          "rms": 0.11393552273511887,
+          "max_abs": 0.5556315183639526
+        },
+        {
+          "region": 9,
+          "rms": 0.11239687353372574,
+          "max_abs": 0.8601870536804199
+        },
+        {
+          "region": 10,
+          "rms": 0.1013963520526886,
+          "max_abs": 0.5021212100982666
+        },
+        {
+          "region": 11,
+          "rms": 0.10763464868068695,
+          "max_abs": 0.5671383142471313
+        },
+        {
+          "region": 12,
+          "rms": 0.10370969772338867,
+          "max_abs": 0.5832993984222412
+        },
+        {
+          "region": 13,
+          "rms": 0.1048121303319931,
+          "max_abs": 0.53691166639328
+        },
+        {
+          "region": 14,
+          "rms": 0.09956113994121552,
+          "max_abs": 0.5939450263977051
+        }
+      ],
+      "W_overlap_rms": 0.10271075999083101,
+      "prediction_overlap_rms": 0.8173403148928977,
+      "coverage_min": 0.9999999403953552,
+      "coverage_max": 1.0000001192092896,
+      "projection_rms": 0.06610766053199768,
+      "invariant_max_abs": 4.76837158203125e-07,
+      "terminal_release": false
+    },
+    {
+      "ordinal": 2,
+      "sigma": 0.8633416295051575,
+      "sigma_next": 0.6780259013175964,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.8408340215682983,
+        "mean": -0.005407834425568581,
+        "max_abs": 5.044278621673584,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.3605320453643799,
+        "mean": -0.005407834891229868,
+        "max_abs": 1.803315281867981,
+        "finite": true
+      },
+      "accepted_H_hash": "2ea114936635edba0f50e16c13ccf41dac15be5c6a9e8cd7201fe21d87608c75",
+      "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+      "W_lineage": [
+        {
+          "region": 0,
+          "parent_python_id": 2180042112160,
+          "parent_hash": "e81dd8fc636e1e1bcf8d5b47764525648588fba5759002814d290effed445c39",
+          "proposal_python_id": 2181519327872,
+          "proposal_hash": "128d42045b464d6fdd4151399454d1547fe901597c1e9af453fb649a905e160f",
+          "x0_hash": "a6b2a9aab95ef439529c8f7f8db0d6c1dbfda5e87739ffc49a622832a387950c"
+        },
+        {
+          "region": 1,
+          "parent_python_id": 2181544820976,
+          "parent_hash": "02e1d63363c0ecde7e19ad2d9c692271215c986d93411d399150f8b3b0519a0f",
+          "proposal_python_id": 2181519329872,
+          "proposal_hash": "aeab22456990a474e903e17512e85d548f419e55a210fea07f0237f75c9f4194",
+          "x0_hash": "4414d9c049823bc361dca7f7e72f0a1a5994de8b54a9f12616b5a28b035632db"
+        },
+        {
+          "region": 2,
+          "parent_python_id": 2181545371488,
+          "parent_hash": "f99417a677daa123fee3df3b879ea64c323874835b0fc7ea7cb0d0a9eb2e97e8",
+          "proposal_python_id": 2181519343072,
+          "proposal_hash": "2befa5c8c4e5158353bde1786cd6c4279e368006bc61a6a4c2733595719a49b6",
+          "x0_hash": "e8f5ededd69ceb124c37a717d8e306dd108501bb314286d0a1817148987419aa"
+        },
+        {
+          "region": 3,
+          "parent_python_id": 2181545361568,
+          "parent_hash": "b9736ac83d569ebd129439b66dd609bd35ae4da338fabcc220ae80aa7ff19822",
+          "proposal_python_id": 2181519340352,
+          "proposal_hash": "2d4a00162b601c38ee57c7e41d897c7379c9f6bc6d89ad6cb2092edfdad838fd",
+          "x0_hash": "f732a4e3889cac507e299aa8cbea3b5e673729d5a9d1d903b28eae381bf0a6a1"
+        },
+        {
+          "region": 4,
+          "parent_python_id": 2181545372208,
+          "parent_hash": "a0b058fcbdeaf5a640462d3ee65aa885e02586499bfc48e811a78539b848f648",
+          "proposal_python_id": 2181519339792,
+          "proposal_hash": "d7463385e5b22ee75d32f21cb02586939b625e33e70b98283fafa7df1c1d2a29",
+          "x0_hash": "90a2c5e980d8d2c48e78437851d59f559649ce1c35df8c80f26f60727a70c42a"
+        },
+        {
+          "region": 5,
+          "parent_python_id": 2181545375088,
+          "parent_hash": "49e435603897c100be19ed4a66bf8dbab37ddcb06881629d3f4a83a222c2ab55",
+          "proposal_python_id": 2181519334912,
+          "proposal_hash": "4ff4fbba4b13a3ab591a15adf26ddda91daea348ef7609a0b8c97ddc969d7b1a",
+          "x0_hash": "5165320ff62a0c91d8f50619bc9f426fbd666f320ff4cd1a7d034ae399e8cff8"
+        },
+        {
+          "region": 6,
+          "parent_python_id": 2181545369088,
+          "parent_hash": "421f5308448c0da757954336f6b11d851259077cb9c1fba83b46cde0a3c243ca",
+          "proposal_python_id": 2181519147408,
+          "proposal_hash": "a43df2bbadd19781f263ebcd32ed22b485a125035a1fdce0606734278a8d19f6",
+          "x0_hash": "3003b6cd3d46ad8e93a0a4c5a339dbd5577e035dcd680a00f5698ce430b986f1"
+        },
+        {
+          "region": 7,
+          "parent_python_id": 2181545373488,
+          "parent_hash": "2549934819501bb7eb0f5678de17f5519ced1dc1caadbd6d8a09b72bfe8507c7",
+          "proposal_python_id": 2181519148128,
+          "proposal_hash": "896e3e3595fc2d981050243224a8819f9e58d1fed91e168af42b546e316263e7",
+          "x0_hash": "5391dc5caf90bd7114ac630316b51dda33e8dda54cf6719b15ee3f8c8b30e0ee"
+        },
+        {
+          "region": 8,
+          "parent_python_id": 2181544823856,
+          "parent_hash": "ba567b1f5441214299308ff824774f9b67d424b5395fb550c183f10b71743cdb",
+          "proposal_python_id": 2181519154128,
+          "proposal_hash": "d6c4d1edc0f613ea7d17bd7825e6e164bb949eade97d65c5a2c6dae3e7f8e876",
+          "x0_hash": "551ea4481c8a4fa0cba77355d0f0ac46820ab2b83e0de75bb4b821f318a7f38e"
+        },
+        {
+          "region": 9,
+          "parent_python_id": 2181544819872,
+          "parent_hash": "8a96de203962c2e2dd4bb5e6d1ba9b5693ae49086953f3cb0d3077c474abb69f",
+          "proposal_python_id": 2181519149808,
+          "proposal_hash": "f3df10cc75efe7d438ccb8ebaebe99f0e164965f7adc4e0f488129111643fcda",
+          "x0_hash": "e47b2d06a44cf0f99ee8dca33cc81267e060fedbcdccc428413d6145d7a71ef6"
+        },
+        {
+          "region": 10,
+          "parent_python_id": 2181545372048,
+          "parent_hash": "318b32a93c9035e57bce32fff29e9821d11d902418b80207577bfdab1d9aca7c",
+          "proposal_python_id": 2181519160288,
+          "proposal_hash": "b9037e478245b0cae87c0185d68b38119b5e6819e7f1f41017b3df64b0245e67",
+          "x0_hash": "398265fe9034b1f18d5b029690ced0340a704321c17b7c0ece336a394f10ecdc"
+        },
+        {
+          "region": 11,
+          "parent_python_id": 2181843002352,
+          "parent_hash": "78272fbc054a5877522a00ae8a635e0857a9908f29bf569a025e7968da035ae7",
+          "proposal_python_id": 2181519160688,
+          "proposal_hash": "2875ed9461ee0635c2cf3e0717eba20072d799f7fe148a752721a90baf3249a8",
+          "x0_hash": "3fb30f2bfcff40e937f6e38e3a7186e1e2969b7b8134f28c13fbb4d93a68a6a7"
+        },
+        {
+          "region": 12,
+          "parent_python_id": 2181843007232,
+          "parent_hash": "2a24bd2d3cbfd898f388dfcc882edf129f2a7e951e3be3ff72539862766038ff",
+          "proposal_python_id": 2181519148448,
+          "proposal_hash": "d6b50c72e7151f2ee6ac693dc68795d0c8faab27dbb8f76d39949af463910df8",
+          "x0_hash": "2e4e87c5fbdc754f26337b756e230854357fa13e475a7e808c744222ac26aa2f"
+        },
+        {
+          "region": 13,
+          "parent_python_id": 2181544806832,
+          "parent_hash": "423104c9d3e8bc16c292e1185fee06781a9e505e63db03d491b45ae84b60df39",
+          "proposal_python_id": 2181519159568,
+          "proposal_hash": "7cb41a0281ce272a5247d2784c9c7e0883ebad3f62434264c71468b94723af18",
+          "x0_hash": "587912d699a8fccc0d74fb983bc67fc24c569ce8305b82b81913d08999f57c5d"
+        },
+        {
+          "region": 14,
+          "parent_python_id": 2181519138304,
+          "parent_hash": "4b939ce216a1529ec2392b6cc59aeb7c7a827e7a0d1e5e8d0ba16a1720cba9ad",
+          "proposal_python_id": 2181519157648,
+          "proposal_hash": "64729150b63f003bca38ac81e43e6f7b9adad1626667c89ec91a5a965577b648",
+          "x0_hash": "81f258109f4c00378a7ce94f569e15d4825d7574e9e1359c56d76d70b9e1cd39"
+        }
+      ],
+      "W_input_ids": [
+        2180042112160,
+        2181544820976,
+        2181545371488,
+        2181545361568,
+        2181545372208,
+        2181545375088,
+        2181545369088,
+        2181545373488,
+        2181544823856,
+        2181544819872,
+        2181545372048,
+        2181843002352,
+        2181843007232,
+        2181544806832,
+        2181519138304
+      ],
+      "W_input_hashes": [
+        "e81dd8fc636e1e1bcf8d5b47764525648588fba5759002814d290effed445c39",
+        "02e1d63363c0ecde7e19ad2d9c692271215c986d93411d399150f8b3b0519a0f",
+        "f99417a677daa123fee3df3b879ea64c323874835b0fc7ea7cb0d0a9eb2e97e8",
+        "b9736ac83d569ebd129439b66dd609bd35ae4da338fabcc220ae80aa7ff19822",
+        "a0b058fcbdeaf5a640462d3ee65aa885e02586499bfc48e811a78539b848f648",
+        "49e435603897c100be19ed4a66bf8dbab37ddcb06881629d3f4a83a222c2ab55",
+        "421f5308448c0da757954336f6b11d851259077cb9c1fba83b46cde0a3c243ca",
+        "2549934819501bb7eb0f5678de17f5519ced1dc1caadbd6d8a09b72bfe8507c7",
+        "ba567b1f5441214299308ff824774f9b67d424b5395fb550c183f10b71743cdb",
+        "8a96de203962c2e2dd4bb5e6d1ba9b5693ae49086953f3cb0d3077c474abb69f",
+        "318b32a93c9035e57bce32fff29e9821d11d902418b80207577bfdab1d9aca7c",
+        "78272fbc054a5877522a00ae8a635e0857a9908f29bf569a025e7968da035ae7",
+        "2a24bd2d3cbfd898f388dfcc882edf129f2a7e951e3be3ff72539862766038ff",
+        "423104c9d3e8bc16c292e1185fee06781a9e505e63db03d491b45ae84b60df39",
+        "4b939ce216a1529ec2392b6cc59aeb7c7a827e7a0d1e5e8d0ba16a1720cba9ad"
+      ],
+      "W_H_drift": [
+        {
+          "region": 0,
+          "rms": 0.2737923562526703,
+          "max_abs": 1.8635904788970947
+        },
+        {
+          "region": 1,
+          "rms": 0.2733488976955414,
+          "max_abs": 1.7387592792510986
+        },
+        {
+          "region": 2,
+          "rms": 0.28189051151275635,
+          "max_abs": 1.3654580116271973
+        },
+        {
+          "region": 3,
+          "rms": 0.2752321660518646,
+          "max_abs": 1.2377179861068726
+        },
+        {
+          "region": 4,
+          "rms": 0.2582865357398987,
+          "max_abs": 1.6487292051315308
+        },
+        {
+          "region": 5,
+          "rms": 0.27833595871925354,
+          "max_abs": 1.8679962158203125
+        },
+        {
+          "region": 6,
+          "rms": 0.2874352037906647,
+          "max_abs": 1.9774203300476074
+        },
+        {
+          "region": 7,
+          "rms": 0.27154308557510376,
+          "max_abs": 1.232216715812683
+        },
+        {
+          "region": 8,
+          "rms": 0.2785715162754059,
+          "max_abs": 1.2083165645599365
+        },
+        {
+          "region": 9,
+          "rms": 0.27086469531059265,
+          "max_abs": 1.528641939163208
+        },
+        {
+          "region": 10,
+          "rms": 0.2556740939617157,
+          "max_abs": 1.3303663730621338
+        },
+        {
+          "region": 11,
+          "rms": 0.2761843204498291,
+          "max_abs": 1.390580654144287
+        },
+        {
+          "region": 12,
+          "rms": 0.27150291204452515,
+          "max_abs": 1.4854527711868286
+        },
+        {
+          "region": 13,
+          "rms": 0.2630574703216553,
+          "max_abs": 1.2482430934906006
+        },
+        {
+          "region": 14,
+          "rms": 0.2513204514980316,
+          "max_abs": 1.4074828624725342
+        }
+      ],
+      "W_overlap_rms": 0.2466932928595089,
+      "prediction_overlap_rms": 0.842900671255993,
+      "coverage_min": 0.9999999403953552,
+      "coverage_max": 1.0000001192092896,
+      "projection_rms": 0.17139160633087158,
+      "invariant_max_abs": 3.5762786865234375e-07,
+      "terminal_release": false
+    },
+    {
+      "ordinal": 3,
+      "sigma": 0.6780259013175964,
+      "sigma_next": 0.0,
+      "accepted_H": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.9193113446235657,
+        "mean": 0.05438500642776489,
+        "max_abs": 5.595727920532227,
+        "finite": true
+      },
+      "accepted_G": {
+        "shape": [
+          1,
+          128,
+          24,
+          48
+        ],
+        "rms": 0.3605320453643799,
+        "mean": -0.005407834891229868,
+        "max_abs": 1.803315281867981,
+        "finite": true
+      },
+      "accepted_H_hash": "6eccbfe5e6aa3dcf8c6c3b59ba7d885a14291694dd3cab015e223c99137405a4",
+      "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+      "W_lineage": [
+        {
+          "region": 0,
+          "parent_python_id": 2181519327872,
+          "parent_hash": "128d42045b464d6fdd4151399454d1547fe901597c1e9af453fb649a905e160f",
+          "proposal_python_id": 2180676855568,
+          "proposal_hash": "ef09a492d6896fc9e96105fd3b9110a184fc6618ec9fbf4d81bfca87dea2d917",
+          "x0_hash": "6c27cf63d0bc80aa3eb9b839b91947be1b664af32eb8cedbdd7f822983953bdd"
+        },
+        {
+          "region": 1,
+          "parent_python_id": 2181519329872,
+          "parent_hash": "aeab22456990a474e903e17512e85d548f419e55a210fea07f0237f75c9f4194",
+          "proposal_python_id": 2180676859728,
+          "proposal_hash": "93c5d2d14b4c840a0c24411f48b7ce919eeb8319863fac9e5bdadb1e42528cb5",
+          "x0_hash": "42560062fec7a7b2df9129dff631ef9b1a36bdfd3acd1f528103418b8595f47f"
+        },
+        {
+          "region": 2,
+          "parent_python_id": 2181519343072,
+          "parent_hash": "2befa5c8c4e5158353bde1786cd6c4279e368006bc61a6a4c2733595719a49b6",
+          "proposal_python_id": 2180676860368,
+          "proposal_hash": "3a38152997be74383965cec1b6164869905438460253958032f7e98674f8d7ec",
+          "x0_hash": "02ee75eecc3d87ba7a3af39b2b85aa2affb903beb6e64ea6a5719d1a23c71fe2"
+        },
+        {
+          "region": 3,
+          "parent_python_id": 2181519340352,
+          "parent_hash": "2d4a00162b601c38ee57c7e41d897c7379c9f6bc6d89ad6cb2092edfdad838fd",
+          "proposal_python_id": 2180676955952,
+          "proposal_hash": "8bae03fcaa256f0cbde1ef13466c4189b1a08c2c8811d825f4792384efdac7a7",
+          "x0_hash": "99a5cf7553d2161a7eb70229fc356b147dac9f5ca7660e9137c6f29a2cb645d4"
+        },
+        {
+          "region": 4,
+          "parent_python_id": 2181519339792,
+          "parent_hash": "d7463385e5b22ee75d32f21cb02586939b625e33e70b98283fafa7df1c1d2a29",
+          "proposal_python_id": 2180676854768,
+          "proposal_hash": "7c180074a7f831b99607c023f9d292a98f7593b3c34e27ec2034d2c14a56a846",
+          "x0_hash": "316ee37fcf8db6c57ec99bc9b3c331ab5de0cca3e8ea26020c8dce5309cbceb3"
+        },
+        {
+          "region": 5,
+          "parent_python_id": 2181519334912,
+          "parent_hash": "4ff4fbba4b13a3ab591a15adf26ddda91daea348ef7609a0b8c97ddc969d7b1a",
+          "proposal_python_id": 2181545290928,
+          "proposal_hash": "eec551cafe4bbebd0085f35fa24e30abfb6335c084170d9b43b817be9264e5e9",
+          "x0_hash": "94370a878e9ff1550be08f300a197b1ecf49fb9e266b3faf9e1e005ae21f4d33"
+        },
+        {
+          "region": 6,
+          "parent_python_id": 2181519147408,
+          "parent_hash": "a43df2bbadd19781f263ebcd32ed22b485a125035a1fdce0606734278a8d19f6",
+          "proposal_python_id": 2181842908048,
+          "proposal_hash": "e762d0b48231dc90e8006c650657028fca1097e769c3a11ec639770d1eab9e1c",
+          "x0_hash": "8cdcf668b5329258382463f2a1291d3713c6756b4ac1dd669725e9bcbc1638ac"
+        },
+        {
+          "region": 7,
+          "parent_python_id": 2181519148128,
+          "parent_hash": "896e3e3595fc2d981050243224a8819f9e58d1fed91e168af42b546e316263e7",
+          "proposal_python_id": 2180676956512,
+          "proposal_hash": "f3f09f372e85132f44cbb729f496b0d7b37519768d487d53940dd6f096f194c6",
+          "x0_hash": "09629d4856c0bd8c4e3dd220112787c08433accb1d9d237122a907ac87cfdc1b"
+        },
+        {
+          "region": 8,
+          "parent_python_id": 2181519154128,
+          "parent_hash": "d6c4d1edc0f613ea7d17bd7825e6e164bb949eade97d65c5a2c6dae3e7f8e876",
+          "proposal_python_id": 2181544869424,
+          "proposal_hash": "a7971db6291bd1d2faecd985f24b53bef908da0c4bc6c3b46a0ca875f1315071",
+          "x0_hash": "6b08dcbaa6ea9cbaf55a4f8dfd79528bd3aae1e82f7e8caacca0216efa86d35f"
+        },
+        {
+          "region": 9,
+          "parent_python_id": 2181519149808,
+          "parent_hash": "f3df10cc75efe7d438ccb8ebaebe99f0e164965f7adc4e0f488129111643fcda",
+          "proposal_python_id": 2182368308320,
+          "proposal_hash": "9582d8c23dc6f25efc393a8f3be21ad315e75e2e9439fe660e2aa072a5cdd430",
+          "x0_hash": "70a035085fc7f463d6f1dca201361c846c677cdef9f7786527eaa17b11fe8c4f"
+        },
+        {
+          "region": 10,
+          "parent_python_id": 2181519160288,
+          "parent_hash": "b9037e478245b0cae87c0185d68b38119b5e6819e7f1f41017b3df64b0245e67",
+          "proposal_python_id": 2181545295808,
+          "proposal_hash": "98536f404eb067c6bc12927a29e75dbc62c9fc9dcf2759f2f647be8dbc615b5b",
+          "x0_hash": "2b4bfd68bb7d0560c2f40c89a5b324237ac91130b282d738dee104f358fed4d1"
+        },
+        {
+          "region": 11,
+          "parent_python_id": 2181519160688,
+          "parent_hash": "2875ed9461ee0635c2cf3e0717eba20072d799f7fe148a752721a90baf3249a8",
+          "proposal_python_id": 2181519139904,
+          "proposal_hash": "d36c2e096bfcadce31e093a940e3733888cc2444155cefaab569ef252ea64234",
+          "x0_hash": "11e7a68f862be4efda0c103805cc82d9a641c9fa6c23ac0fcae4e456bc2e9482"
+        },
+        {
+          "region": 12,
+          "parent_python_id": 2181519148448,
+          "parent_hash": "d6b50c72e7151f2ee6ac693dc68795d0c8faab27dbb8f76d39949af463910df8",
+          "proposal_python_id": 2181544859184,
+          "proposal_hash": "417a4e00ceab83252035884e8fa38cb381c9ac560a1986221369c73f178d6a50",
+          "x0_hash": "f44cb67775da287c2fb9fbe22cc48886ccfaf6f53ecd429e2871bb95704353a2"
+        },
+        {
+          "region": 13,
+          "parent_python_id": 2181519159568,
+          "parent_hash": "7cb41a0281ce272a5247d2784c9c7e0883ebad3f62434264c71468b94723af18",
+          "proposal_python_id": 2181519336192,
+          "proposal_hash": "929c77f5e499bcdae96284ab2c466d38943d82c787b5bc28db6efb522d30137d",
+          "x0_hash": "27e86e6252b331480f0aa5c36364b7be2580cb2b9d8dda0784ff00bfce037bed"
+        },
+        {
+          "region": 14,
+          "parent_python_id": 2181519157648,
+          "parent_hash": "64729150b63f003bca38ac81e43e6f7b9adad1626667c89ec91a5a965577b648",
+          "proposal_python_id": 2181519334672,
+          "proposal_hash": "32344ae1daa751be51d5a3bd8aa8a0dc01bb7de97bf8e6331c66e8bba6d7a9d9",
+          "x0_hash": "93971ab06b1c47ccc5396725f01aedb6e327bc027cb8037fb8be3124ff1e5773"
+        }
+      ],
+      "W_input_ids": [
+        2181519327872,
+        2181519329872,
+        2181519343072,
+        2181519340352,
+        2181519339792,
+        2181519334912,
+        2181519147408,
+        2181519148128,
+        2181519154128,
+        2181519149808,
+        2181519160288,
+        2181519160688,
+        2181519148448,
+        2181519159568,
+        2181519157648
+      ],
+      "W_input_hashes": [
+        "128d42045b464d6fdd4151399454d1547fe901597c1e9af453fb649a905e160f",
+        "aeab22456990a474e903e17512e85d548f419e55a210fea07f0237f75c9f4194",
+        "2befa5c8c4e5158353bde1786cd6c4279e368006bc61a6a4c2733595719a49b6",
+        "2d4a00162b601c38ee57c7e41d897c7379c9f6bc6d89ad6cb2092edfdad838fd",
+        "d7463385e5b22ee75d32f21cb02586939b625e33e70b98283fafa7df1c1d2a29",
+        "4ff4fbba4b13a3ab591a15adf26ddda91daea348ef7609a0b8c97ddc969d7b1a",
+        "a43df2bbadd19781f263ebcd32ed22b485a125035a1fdce0606734278a8d19f6",
+        "896e3e3595fc2d981050243224a8819f9e58d1fed91e168af42b546e316263e7",
+        "d6c4d1edc0f613ea7d17bd7825e6e164bb949eade97d65c5a2c6dae3e7f8e876",
+        "f3df10cc75efe7d438ccb8ebaebe99f0e164965f7adc4e0f488129111643fcda",
+        "b9037e478245b0cae87c0185d68b38119b5e6819e7f1f41017b3df64b0245e67",
+        "2875ed9461ee0635c2cf3e0717eba20072d799f7fe148a752721a90baf3249a8",
+        "d6b50c72e7151f2ee6ac693dc68795d0c8faab27dbb8f76d39949af463910df8",
+        "7cb41a0281ce272a5247d2784c9c7e0883ebad3f62434264c71468b94723af18",
+        "64729150b63f003bca38ac81e43e6f7b9adad1626667c89ec91a5a965577b648"
+      ],
+      "W_H_drift": [
+        {
+          "region": 0,
+          "rms": 0.2948964238166809,
+          "max_abs": 2.8295717239379883
+        },
+        {
+          "region": 1,
+          "rms": 0.37052643299102783,
+          "max_abs": 3.2176952362060547
+        },
+        {
+          "region": 2,
+          "rms": 0.364654004573822,
+          "max_abs": 3.6206247806549072
+        },
+        {
+          "region": 3,
+          "rms": 0.38337573409080505,
+          "max_abs": 3.2879445552825928
+        },
+        {
+          "region": 4,
+          "rms": 0.32218077778816223,
+          "max_abs": 3.1710879802703857
+        },
+        {
+          "region": 5,
+          "rms": 0.4694071412086487,
+          "max_abs": 3.5272774696350098
+        },
+        {
+          "region": 6,
+          "rms": 0.5042061805725098,
+          "max_abs": 3.0095434188842773
+        },
+        {
+          "region": 7,
+          "rms": 0.4872279763221741,
+          "max_abs": 3.1158430576324463
+        },
+        {
+          "region": 8,
+          "rms": 0.5233976244926453,
+          "max_abs": 3.4580705165863037
+        },
+        {
+          "region": 9,
+          "rms": 0.4920102655887604,
+          "max_abs": 3.614194869995117
+        },
+        {
+          "region": 10,
+          "rms": 0.4171620309352875,
+          "max_abs": 3.8595471382141113
+        },
+        {
+          "region": 11,
+          "rms": 0.4751286208629608,
+          "max_abs": 4.142489910125732
+        },
+        {
+          "region": 12,
+          "rms": 0.4539473354816437,
+          "max_abs": 4.07234525680542
+        },
+        {
+          "region": 13,
+          "rms": 0.43757593631744385,
+          "max_abs": 2.9065756797790527
+        },
+        {
+          "region": 14,
+          "rms": 0.4265495836734772,
+          "max_abs": 3.567570209503174
+        }
+      ],
+      "W_overlap_rms": 0.8030523243632102,
+      "prediction_overlap_rms": 0.8030523252909928,
+      "coverage_min": 0.9999999403953552,
+      "coverage_max": 1.0000001192092896,
+      "projection_rms": null,
+      "invariant_max_abs": null,
+      "terminal_release": true
+    }
+  ],
+  "final_H": {
+    "shape": [
+      1,
+      128,
+      64,
+      128
+    ],
+    "rms": 0.9193113446235657,
+    "mean": 0.05438500642776489,
+    "max_abs": 5.595727920532227,
+    "finite": true
+  },
+  "runtime": {
+    "sampling_wall_seconds": 64.35929219999525,
+    "baseline_allocated_bytes": 2495862272,
+    "baseline_reserved_bytes": 2560622592,
+    "peak_allocated_bytes": 3156179968,
+    "peak_reserved_bytes": 3542089728
+  },
+  "images": {
+    "accepted_H_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_accepted_H_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "8ea48caf91260f3fc3149e63d3de98d8ba932b1547a77198290001e0b0ecf2f7"
+    },
+    "accepted_H_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_accepted_H_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "3b881424116cf2e5637e98af74a92d4e3e5b0843775fadff88db449563498256"
+    },
+    "accepted_H_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_accepted_H_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "9d8f0b9abd93ef53a545f7417a38de1da0c1b7419ccb47c5c2c219ddc6f7076a"
+    },
+    "accepted_H_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_accepted_H_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "f0aca013738d1a45bbe38e8b26094e5328a9dda6d5ed42667e28feca03294112"
+    },
+    "accepted_H_4": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_accepted_H_4.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "0e8bfe32772162eebd788b3a32b25dcfc027e9cb64dde513cf00f7442cbb8fe5"
+    },
+    "assembled_x0_H_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_assembled_x0_H_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "d9f90b5011e79f4718e020516c3290e13d14673d72c5982b20416bb1080f2937"
+    },
+    "assembled_x0_H_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_assembled_x0_H_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "39ce2ba3ec6589d8f97735d05c7bdf077cb77429677b618adc5997014ef0eacf"
+    },
+    "assembled_x0_H_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_assembled_x0_H_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "02e2ad5ace2faef486cf324ceb83d3647c655402923916a38fc6af09edabb374"
+    },
+    "assembled_x0_H_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_assembled_x0_H_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "a0f6b41b10bc8013df73273afd7fd76dcc46b130ac4bdca789856bf55b2e8249"
+    },
+    "representative_W_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_representative_W_0.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "5e079b2de4167d01680ac9a118cdc8fd0ce2784203677c92cd318cdc5b4d6b4d"
+    },
+    "representative_W_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_representative_W_1.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "2d5a52c32beb210f42bb61634fa9a9edb4a2b5945d95ca0c652a8ac278bd54fb"
+    },
+    "representative_W_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_representative_W_2.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "49e927e565777e555d058b3191c05b253f3e415f7810a2d7cfed7e3700c7eed5"
+    },
+    "representative_W_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_representative_W_3.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "1116919da44cd0f1451c3c104b01059814823f1680cd696f3a4f83291c543bcf"
+    },
+    "representative_W_4": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_representative_W_4.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "d2833caa303a3dde3cd27f7391371c18821a4e348a5f0d038bd8c68b1ab3521d"
+    },
+    "restricted_W_0_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "e9de3fb83fbb83a1a705f196886251f45f8e261cff541bab9b0de2e28b39d288"
+    },
+    "restricted_W_0_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "e93e075e78e69e26d1f9e55ea3edeaa7bc21ef544e6e43b2ba8e5022a8445f8d"
+    },
+    "restricted_W_0_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "9442fb9215d82bfac41aed041e4d32af73d02487e39d2c0cb93aae90317af259"
+    },
+    "restricted_W_0_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "6a0d9a09dd3e91d816058f6f645f1717fdbdaa27527546b9d15b208b95d69a43"
+    },
+    "restricted_W_0_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "5cb3dd3f532088380144592b9f1baae0be2a18af88978f308b628ad0afa719b3"
+    },
+    "restricted_W_0_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "bed93d27057b00c22fe7cd4cf4fb9925496c983421fb157b9bc2c2800d9d3238"
+    },
+    "restricted_W_0_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "569f3b2f7c682bedaa2ace69b0d01537a3d6565985eb11dbb6c570be5aab225b"
+    },
+    "restricted_W_0_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4c329b4695738f42fbd509303cf3cb3cbaf97273946b481ab7aa9b53b172556f"
+    },
+    "restricted_W_0_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "b06eb161851d3a84a80fb9936b4abb310b8d7e62845f85a3eef67bb445c651d9"
+    },
+    "restricted_W_0_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "7d459487d809b6391ed5b81167281b7933e3eb1822c2eddbe1aa3853dace9d7a"
+    },
+    "restricted_W_0_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "9fb3f8ee9c2b97f374388b3d39747c77957cc64b748c9226b4ff555e4e1ff485"
+    },
+    "restricted_W_0_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "e970d7bbb7c11722ea367cccd9d780e2c50d61bf5a09f55c55290f5021a71c4d"
+    },
+    "restricted_W_0_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3075e39a25f6a78ae68430764ba5178bac3ab9cc33c745c02ffef34063e6f95f"
+    },
+    "restricted_W_0_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "37af3984a7329d921391391dd441a9545ab16799e7c4e68b86a6d437b0ad11ff"
+    },
+    "restricted_W_0_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_0_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "ebff69ec7bd35ceb280adc41052966d9e6d4e415fa921698f80e5129b3b86830"
+    },
+    "restricted_W_1_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "2cf81039feec5a5986d085a06a963e1f324bd358feda548abf22370aead43d7a"
+    },
+    "restricted_W_1_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "448340b8d4877bcd76d2cdd421b16d54b0e365a6ba2fd463cdefd5888e481fdf"
+    },
+    "restricted_W_1_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "809caa9e907517897080f40981c1a05d8337104be9a266dbd38066e0235d9d85"
+    },
+    "restricted_W_1_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "ec32f924a203aa44f25aaf208c03e506d4df33dcda2911e8b5ee5d7a2417ca85"
+    },
+    "restricted_W_1_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "b455031d37114b8b29d93901b500b7cf2aa8dd883d1cedcb2a6cb70bd8976904"
+    },
+    "restricted_W_1_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "6f53eba7375a452c65491a713ebba5cad7a3a0718e879baeb4a6003fd8f908c1"
+    },
+    "restricted_W_1_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "bb56e17d62cb065b430d79a58218a856cef018f560f06228888a260d1906f658"
+    },
+    "restricted_W_1_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "cdc45d1423fb6686e8fdf316b91394b6331ff58e9544aeef2b1908aa0757956e"
+    },
+    "restricted_W_1_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "e8acc912a63e9eed156f0df8b820165bb753dd88dcd5d9cbf0b0c72ac7965be3"
+    },
+    "restricted_W_1_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "b956269769e3c43c6ff56141bf3a6a425e0ae6b986fab9fd3c4cbe23a0cc4fb3"
+    },
+    "restricted_W_1_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4a55cfa3c02b6c43bc9882466aaf2dd7472b9ea1c823ae6dc2115908ec5d9212"
+    },
+    "restricted_W_1_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "61c79f0a8b710c3304b9817ca5d9d0d414c6e98cb54818e32f5cc16d1d593234"
+    },
+    "restricted_W_1_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "bf62651a626f46aedb438fddf379911ca8f48cc17693ae680adbdb6a6240a6aa"
+    },
+    "restricted_W_1_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "24de3173b66b86c5da9a7c2ab4c26207d17d0b80dede33e061024938a94577a4"
+    },
+    "restricted_W_1_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_1_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "bfdec56ab1280406afb9b116daf301c39d10da940e025cff0bc94789cfc78baf"
+    },
+    "restricted_W_2_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "935bc2d89582f3cfe4bc3f92995fd59d1d99c248adf182fa134b1aaf71890647"
+    },
+    "restricted_W_2_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "c06e150235b0236aa1d3fb5ea93bda4762068ca149632c9266999810c3e422de"
+    },
+    "restricted_W_2_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "7545cd521731a070a86523e848ace02bbcebfa71316c4576dec5a859dd655499"
+    },
+    "restricted_W_2_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "a3c05e078adb29ef1524748368618e35cfa19e1f4de7ef533eb2b23489d1e1f2"
+    },
+    "restricted_W_2_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "7a22f72c462eeeb5514fd8ebbc3220b06c5932eb907e89bb077ab697d0676ca9"
+    },
+    "restricted_W_2_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4c596de92b5c9988d7931f474c8212848db9b6263aa099e5397501bf32acc2bf"
+    },
+    "restricted_W_2_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "f417032f72982d84857b002e9e851068b550b1ce56e32a3e56a5a3630e40f7d1"
+    },
+    "restricted_W_2_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "f0a976a005b0a748a68a62022a4aeeec7f1c5cda2c4f9098470aa39eb2e63676"
+    },
+    "restricted_W_2_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "8c365db7c7a3c9f95c63ccbbadc38258fdcde0165f7a80aa4d33bb5125a156a9"
+    },
+    "restricted_W_2_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "f82b89af41f0f2ec41b5fab41478245b5544c1e01d8e0a0df7657028cd1cc107"
+    },
+    "restricted_W_2_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "97b3139f458dec02e35d0a1d1e43890f9ff5316cd4af427791cb5a34417e75ee"
+    },
+    "restricted_W_2_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3f4ce857c2b3ab5b78878d0035a466967eca2b87517155565f95ea4b55c0afe5"
+    },
+    "restricted_W_2_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "1518e345649bdc14b7b99210ef5059135079bbc551ac63504bdc6438c6f3bd9a"
+    },
+    "restricted_W_2_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "76874860e912fa6de70d6d4f9702e3b191c9a71031e3e70b75487fe2f919a318"
+    },
+    "restricted_W_2_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_2_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "0a11c11d5d4b5de6c108b368a208a339e5cedce34114b224b4ce51587328e50f"
+    },
+    "restricted_W_3_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "5c4964bdbc37b6b72a16bc99a177f00c4d6c89c291f959aeae1eabb247003f5f"
+    },
+    "restricted_W_3_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "ffc6d0ebccfd4860faabacbfcfcccd28e5671675509a267f7dc109780d43fee2"
+    },
+    "restricted_W_3_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "f447139c02655f47771b7995778778ee44db5c7131018db43c0f2eab427287d4"
+    },
+    "restricted_W_3_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "351e5f534d0b3678e356e4e2c72c5e46c9d3b32d47bfb2456437800533755bd1"
+    },
+    "restricted_W_3_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "6b4e1f4c43909c97d1e6afcbb093d1ae6996b0c473af3f64a19f1856a510cca7"
+    },
+    "restricted_W_3_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "b494cdd50f5cd00b519fb8b0cfb8d7b3998e91de55aec399bbdf792e2cc23d6a"
+    },
+    "restricted_W_3_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "7292a4fcd2728a582782373557636484f24f88ef844a6a1e8b283d4054aba46a"
+    },
+    "restricted_W_3_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "c0ba3985ea5611a4f5208d4c8dbfe8737c51106ee48f1a429e1bf61dd71d7849"
+    },
+    "restricted_W_3_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "b84434de2dab1e29a9143cd42e695ea5eb4b05dff14935b6a05866b941a44d1f"
+    },
+    "restricted_W_3_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "a5e34c1d90920ae11eec3996e7b6dcd43d65f73ef1c712a42e0a6a9ab5a68ba7"
+    },
+    "restricted_W_3_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "3a85597544f9780f2959d75207f7e62df3a6572fed44a852b8366225f4063081"
+    },
+    "restricted_W_3_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "73173822fb392fd422fcf743a68ea80b05190781de7c87b92d0d81c762818c45"
+    },
+    "restricted_W_3_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "1db07378ea0e6dda38968600a71b6c9d5fb1dc9eaf48c78ba560738759d15f6a"
+    },
+    "restricted_W_3_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "d62a9aa5fdb8cc721d384cbf583e0b998ef70f17805ba3d02c334e98798b26b3"
+    },
+    "restricted_W_3_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_3_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "1f2087e05e66acb028f6d488e81af8890785dfe96fecbab874ee0a991f1b651c"
+    },
+    "restricted_W_4_region_00": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_00.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "9ac4302f8fe68ba146045a4cb8a411edd90db3c3bf048b0047d6f591269539bc"
+    },
+    "restricted_W_4_region_01": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_01.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "b11b62693d9747b17f36c01f595c7503102b3d21e565aa3b0d0f44903e51b2cf"
+    },
+    "restricted_W_4_region_02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "bfa2ef67b2d3a7151b7b1e8db327dadb40589cea2235bf122457d247bfd83aaf"
+    },
+    "restricted_W_4_region_03": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_03.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "6e90d9cd6d1f416a5a5a44e9830351bac089eeed4755e25be43642213de4914a"
+    },
+    "restricted_W_4_region_04": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_04.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "9fee95bcc4f107234c9f67753a16c75b95ddf0cc113b58a8de1f3cc077fc8c89"
+    },
+    "restricted_W_4_region_05": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_05.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "dae977478ca8a40037c2a1642196b1c5110514cbd30235549db0717c7cfba322"
+    },
+    "restricted_W_4_region_06": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_06.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "1a42501ec2986b698e29b1a409c7dd57094e1784a0d3fe52c0a36a78e0fd394e"
+    },
+    "restricted_W_4_region_07": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_07.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "7915f28d5b6d4971abb3697ae033683599f2830e828c1c2b9b76753dddad2d46"
+    },
+    "restricted_W_4_region_08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "229f185f8d1d7f0fa1b5dcad5cc5b1fb90e42d2ca40ea6e68d57626a526e2b19"
+    },
+    "restricted_W_4_region_09": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_09.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "d8c92b4f8abf1efa60ee737807601de314c1096e2672b9d688fbde0e05a16263"
+    },
+    "restricted_W_4_region_10": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_10.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "0840661d52570a11c8a4a662732153859874002ee673fad22ea6782f155d43e1"
+    },
+    "restricted_W_4_region_11": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_11.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "83ecb4be1ce2764089e5406f8695e96f785b2cef1d61cdd9c776088e148a3100"
+    },
+    "restricted_W_4_region_12": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_12.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "c1b14d7388e5d5501e6c8f9ea9a46119a7be3e1b5f0b4eab23f125f6bff50a74"
+    },
+    "restricted_W_4_region_13": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_13.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4c0119b6d3d81997b03c2a84e02f52d6eb211023e1b7d191adeff97f6d6e39ea"
+    },
+    "restricted_W_4_region_14": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_persistent_native_local_trajectory_results\\B_PERSISTENT_W_restricted_W_4_region_14.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "36600a78d7a37353418ae1ce3a4e706638afa26724039cdf0ecbef572e194f48"
+    }
+  },
+  "final_H_hash": "6eccbfe5e6aa3dcf8c6c3b59ba7d885a14291694dd3cab015e223c99137405a4"
+}

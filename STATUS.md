@@ -420,3 +420,29 @@ agreement and retain repetition; remapped full-H context partially restores
 agreement but still fails bridge/train uniqueness. No terminal variant passes,
 so no full trajectory is authorized. Prediction restriction/transport is the
 next unresolved boundary.
+
+Phase 9e is complete with no production or ComfyUI-core changes. Under the
+actual CONST-flow equations, x0 mean, velocity mean, exact delta transport, and
+same-sigma re-noise/restriction are the same linear operation because
+`D(W)=H_crop`. Runtime differences are below `7.15e-7` max absolute and decoded
+semantics are unchanged. No terminal mapping variant qualifies, so one-shot
+magnification is stopped. A future architecture probe should maintain
+persistent native-scale per-region working states across the trajectory.
+
+Phase 10 is complete with no production or ComfyUI-core changes. The
+reconstructed-W control and fifteen independently persistent native W
+trajectories share initialization and interval-0 predictions. Persistent W
+then diverges sharply: overlap disagreement remains above 0.80 and W/H drift
+grows to 0.5234 maximum regional RMS, producing multiple incompatible bridge
+scenes. Variant C was not run because B cleanly falsifies independent
+persistence rather than yielding an ambiguous useful result. Training-free
+fixed-working geometry remains unqualified without a new explicit
+global/cross-region W coupling design.
+
+Phase 10b is complete with no production or ComfyUI-core changes. Exact
+accepted-H coarse synchronization preserves persistent W null-space detail and
+prevents Phase-10 B's multi-scene divergence, but returns to the reconstructed
+control's principal-bridge/repeated-support semantic class without a clear
+detail benefit. C's terminal overlap RMS is 0.3565 versus A's 0.2594 and B's
+0.8031. This is decision gate 2: persistent W is unnecessary complexity under
+the tested coarse synchronization contract.

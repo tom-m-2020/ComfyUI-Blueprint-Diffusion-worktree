@@ -1495,3 +1495,56 @@ Detailed evidence is in
   semantic gate, compressed positional geometry is weakened as the primary
   explanation. The next justified discriminator is prediction
   restriction/transport, not increased G density or more context.
+
+## 2026-09-03 — Phase 9e transport variants collapse under CONST-flow algebra
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_MAGNIFIED_PREDICTION_TRANSPORT.md`.
+
+- With linear 2×2 mean D and the Phase-9b invariant `D(W)=H_crop`, restricting
+  x0, restricting FLUX velocity, restricting the exact denoising delta, and
+  same-sigma re-noise/restriction all reduce algebraically to `D(x0_W)`.
+- Runtime confirms the identity: assembled pairwise RMS is only
+  `3.65e-8`–`5.20e-8`, max absolute is at most `7.15e-7`, and all assembled
+  norms and overlap disagreement are effectively identical.
+- No transport changes repeated bridge/train semantics. A distinct cross-scale
+  result requires changing the state/evolution contract, not rearranging the
+  terminal CONST-flow equation.
+
+## 2026-09-03 — Phase 10 independent persistent W trajectories fragment
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_PERSISTENT_NATIVE_LOCAL_TRAJECTORY.md`.
+
+- Fifteen native `64×64` W states initialized once from the same H0 and then
+  independently Euler-updated do not improve Phase-9 semantics. They produce
+  multiple bridge scenes, repeated towers, incompatible horizons, and severe
+  regional ghosting.
+- Persistent prediction overlap RMS is identical to the reconstructed control
+  at interval 0, then remains `0.8173, 0.8429, 0.8031`; reconstructed W improves
+  to `0.6534, 0.4913, 0.2594`.
+- Maximum regional `D(W)-crop(H)` RMS grows monotonically from `0.0526` after
+  the first update to `0.5234` at terminal acceptance. Existing H/G invariants
+  continue to pass, localizing the divergence to independent W ownership.
+- Each W has exact hash/id lineage, four Euler updates, and zero regeneration
+  after initialization. Persistence alone is therefore rejected as the missing
+  mechanism; any future persistent-W design requires explicit global or
+  cross-region coupling.
+
+## 2026-09-03 — Phase 10b coarse synchronization collapses persistent W toward A
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_PERSISTENT_COARSE_SYNC.md`.
+
+- Post-step `W_next=W_star+U(crop(H_next)-D(W_star))` holds W/H coarse error to
+  `4.77e-7` while preserving the W null-space component within `5.87e-8` RMS.
+- Synchronization prevents Phase-10 B's catastrophic divergence: terminal
+  prediction overlap RMS improves from 0.803052 to 0.356545. The reconstructed
+  control remains better at 0.259399.
+- C returns to A's principal-bridge semantic class but retains repeated
+  train/support alternatives and shows no clear detail advantage over A.
+  Persistence therefore contributes no qualified benefit once coarse state is
+  synchronized.
+- The terminal W_star and synchronized-W diagnostics yield the same returned H
+  by construction; both were decoded, and synchronization magnitude reaches
+  17.2% mean / 19.8% maximum of W_star RMS at terminal acceptance.
