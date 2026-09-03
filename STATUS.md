@@ -344,3 +344,22 @@ vectors, then positioned at exact four-axis geometric cell centers, remains
 catastrophically fragmented and is numerically worse than selection. Simple
 fixed spatial aggregation is not qualified, and no pooling/density sweep is
 pending from this evidence.
+
+Phase 8h is complete with no production changes. An experiment-local native
+forward barrier removes the CPU K/V cache/transfer at the first source block,
+but suspending all 55 full crop calls OOMs before double block 0 completes.
+Only 46 local attention calls reach the barrier; measured peak allocation is
+16.30 GiB versus a 1.00 GiB streaming baseline, while the block K/V itself is
+216 MiB. No output or semantic-equivalence claim is available. Exact
+block-major streaming now requires a separately authorized specialized FLUX
+executor; crop-hidden CPU offload was not tested.
+
+Phase 8i is complete with no production or ComfyUI-core changes. The
+experiment-local specialized FLUX.2 executor passes ordinary and full-context
+one-crop native-equivalence gates bit-exactly, then produces all 55 crop
+predictions bit-exactly against a same-process CPU-offloaded reference. It
+completes the exact block-major terminal case at 3.32 GiB peak allocated and
+6.34 GiB peak reserved, with no CPU K/V cache or host transfer. Terminal
+source-plus-local CUDA falls to 65.72 s from roughly 106.39 s. The mechanism is
+qualified as an experiment; no production integration or broader adapter
+contract is authorized.
