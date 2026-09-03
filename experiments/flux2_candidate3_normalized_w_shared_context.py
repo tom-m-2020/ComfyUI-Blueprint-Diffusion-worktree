@@ -115,6 +115,19 @@ class SharedContextSampler(phase2.comfy.samplers.Sampler):
         self.results = None
         self.outputs = None
 
+    def make_context_probe(self):
+        return phase8d.CPUOffloadedContextProbe()
+
+    def context_source_tensor_and_rope(self, state):
+        if self.context_source == "G":
+            return state.g, {
+                "scale_y": (H_HW[0] - 1.0) / (state.g.shape[-2] - 1.0),
+                "scale_x": (H_HW[1] - 1.0) / (state.g.shape[-1] - 1.0),
+            }
+        if self.context_source == "H":
+            return state.h, {}
+        raise ValueError(f"Unsupported Phase 11 context source: {self.context_source}")
+
     def sample(self, model, sigmas, extra_args, callback, noise, latent_image=None,
                denoise_mask=None, disable_pbar=False):
         if denoise_mask is not None or latent_image is None or bool(torch.count_nonzero(latent_image)):
@@ -148,16 +161,8 @@ class SharedContextSampler(phase2.comfy.samplers.Sampler):
                 context_probe = None
                 source_record = None
                 if self.context_source is not None:
-                    context_probe = phase8d.CPUOffloadedContextProbe()
-                    if self.context_source == "G":
-                        source = state.g
-                        rope = {
-                            "scale_y": (H_HW[0] - 1.0) / (state.g.shape[-2] - 1.0),
-                            "scale_x": (H_HW[1] - 1.0) / (state.g.shape[-1] - 1.0),
-                        }
-                    else:
-                        source = state.h
-                        rope = {}
+                    context_probe = self.make_context_probe()
+                    source, rope = self.context_source_tensor_and_rope(state)
                     source_hash = tensor_hash(source)
                     start = torch.cuda.Event(enable_timing=True)
                     end = torch.cuda.Event(enable_timing=True)
@@ -221,6 +226,13 @@ class SharedContextSampler(phase2.comfy.samplers.Sampler):
                         "context_consumptions": context_record_count,
                         "captured_kv_bytes": capture_bytes,
                         "cpu_to_gpu_transfer_bytes": transfer_bytes,
+                        "consumer_tokens": int(getattr(
+                            context_probe, "consumer_tokens",
+                            source_record["source_tokens"],
+                        )),
+                        "compression_records": getattr(
+                            context_probe, "compression_records", []
+                        ),
                     })
                     context_generations.append(source_record)
                     context_probe.global_kv.clear()
@@ -281,8 +293,11 @@ class SharedContextSampler(phase2.comfy.samplers.Sampler):
                 "local_cuda_ms": sum(x["cuda_ms"] for x in self.outer_probe.calls if x["kind"] == "local"),
                 "context_source_cuda_ms": sum(x["cuda_ms"] for x in context_generations),
                 "context_kv_tokens_per_block": (
-                    0 if self.context_source is None else
-                    math.prod(state.g.shape[-2:]) if self.context_source == "G" else math.prod(H_HW)
+                    0 if self.context_source is None else int(
+                        context_generations[0].get(
+                            "consumer_tokens", context_generations[0]["source_tokens"]
+                        )
+                    )
                 ),
                 "context_blocks_per_local": 0 if self.context_source is None else 25,
                 "context_cache_bytes_per_interval": [x["captured_kv_bytes"] for x in context_generations],
@@ -308,6 +323,9 @@ class SharedContextSampler(phase2.comfy.samplers.Sampler):
         }
         self.outputs = {"trajectory": images, "representative": runtime.representative}
         return state.h
+
+
+SAMPLER_CLASS = SharedContextSampler
 
 
 def decode_outputs(name, outputs):
@@ -351,7 +369,7 @@ def run_variant(name, source):
     sigmas = phase2.get_schedule(STEPS, math.prod(H_HW)).float().clone()
     sigmas[0], sigmas[-1] = 1.0, 0.0
     outer_probe = phase9b.Probe(sigmas)
-    sampler = SharedContextSampler(source, outer_probe)
+    sampler = SAMPLER_CLASS(source, outer_probe)
     perf.prepare_model_state(model)
     gc.collect()
     torch.cuda.synchronize()

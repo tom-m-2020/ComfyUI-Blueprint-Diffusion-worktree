@@ -1572,3 +1572,23 @@ Detailed evidence is in
 - The remaining Phase-11 bottleneck is fixed-budget global representation
   sufficiency, not the basic normalized-W scale transformation or absence of a
   workable inside-transformer sharing mechanism.
+
+## 2026-09-03 — Phase 12 post-interaction compression remains insufficient at 1,152 positions
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_POSTINTERACTION_COMPRESSED_ORACLE.md`.
+
+- Full accepted-H source execution followed by per-block adaptive-area pooling
+  of already-positioned generated K and generated V from 8,192 to 1,152
+  consumer positions does not reproduce the full-H oracle's coherent bridge.
+  Repeated bridge/train/support alternatives remain.
+- The compressed oracle and fixed-G variants expose the same 1,152 K/V count,
+  cache size, and transfer volume. The former nevertheless pays for ordinary
+  full-H source interaction, isolating consumer representation capacity from
+  pre-interaction source construction.
+- D's terminal overlap RMS is `0.259909`, versus `0.250149` for fixed G and
+  `0.266542` for the semantically coherent full oracle. This reinforces that
+  overlap RMS is secondary and cannot substitute for scene-level inspection.
+- Under this fixed linear aggregation, pre-interaction compression is not the
+  sole bottleneck. A 1,152-position context interface is below the observed
+  semantic threshold; this does not rule out learned/nonlinear compression.

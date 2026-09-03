@@ -734,3 +734,13 @@ increase G density automatically: its token, transfer, and runtime costs violate
 the fixed-budget objective. The next authorized research direction, if pursued,
 is a bounded global-representation sufficiency discriminator that preserves a
 fixed global model-token budget and measures against the full-H semantic oracle.
+
+## 2026-09-03 — Treat 1,152-position context capacity as insufficient
+
+Phase 12 shows that moving compression after ordinary full-H global interaction
+does not recover the Phase-11 oracle at a 24×48/1,152-position consumer budget.
+Do not attribute the failure solely to pre-interaction G construction, and do
+not productionize the post-interaction pooling path. If research continues,
+test exactly one larger, clean post-interaction capacity (`32×64 = 2,048` via
+nonoverlapping 2×2 aggregation) before considering any production mechanism or
+broader capacity sweep.
