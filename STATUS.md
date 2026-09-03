@@ -411,3 +411,12 @@ bridge/train alternatives; fixed-G context is weaker and also fails. No
 context variant is qualified for a four-step trajectory. The next justified
 discriminator is scale transport/positional semantics/x0 restriction, not a G
 density increase.
+
+Phase 9d is complete with no production or ComfyUI-core changes. Identical
+sigma-consistent W tensors were evaluated with compressed destination
+coordinates, native unit-spaced local coordinates, and native coordinates plus
+per-crop frame-mapped full-H context. Native coordinates alone worsen overlap
+agreement and retain repetition; remapped full-H context partially restores
+agreement but still fails bridge/train uniqueness. No terminal variant passes,
+so no full trajectory is authorized. Prediction restriction/transport is the
+next unresolved boundary.

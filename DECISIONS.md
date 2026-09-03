@@ -683,3 +683,13 @@ context itself remains semantically fragmented despite a large numerical
 agreement improvement, so increasing G density is not the next justified
 experiment. Local scale transport, positional semantics, or prediction
 restriction must be isolated first.
+
+## 2026-09-03 — Do not advance Phase-9d native working coordinates
+
+Do not run a full trajectory or productionize the native-unit-coordinate
+construction. With W, accepted state, x0 restriction, and assembly held fixed,
+native coordinates do not remove repeated bridge/train alternatives, and even
+per-crop full-H context expressed in the same magnified frame remains
+semantically insufficient. This result directs the next discriminator to
+prediction restriction/transport; it does not authorize a coordinate-scale
+sweep, denser G, or additional context mechanisms.
