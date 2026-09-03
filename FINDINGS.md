@@ -1632,3 +1632,24 @@ Detailed evidence is in
 - This is information-sufficiency evidence only. D still requires dense full-H
   source interaction, `1.172 GiB` context storage per interval, `70.312 GiB`
   aggregate diagnostic transfer, and `133.62 s` sampling wall time.
+
+## 2026-09-03 — Phase 13 direct 4K interaction preserves oracle-class semantics
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_DIRECT4K_SOURCE.md`.
+
+- A transient `32×128` source formed by exact vertical-pair means of accepted
+  `64×128` H, with rows positioned at full-H centers `2r+0.5`, performs ordinary
+  all-25-block global interaction and supplies context in the same
+  one-dominant-bridge semantic class as post-interaction 4K and full-H 8K.
+- Direct 4K assembled x0 is closer to the full-H oracle than post-interaction
+  4K at intervals 1–3 (`0.327505/0.406851/0.332610` versus
+  `0.491778/0.500892/0.407488`) and comparable at interval 0.
+- Direct K/V is not a numerical surrogate for pooled full-H K/V. Mean K cosine
+  falls from `0.9649` to `0.9131` and mean V cosine from `0.9061` to `0.7595`
+  over the trajectory, yet semantic organization survives.
+- Pair averaging yields direct/H variance ratios near 0.50 (`0.5013` initially,
+  `0.5316` terminal). No variance control was needed to pass this semantic gate.
+- Lower token count did not accelerate the native source: direct `32×128` took
+  `23.826 s` total versus `12.785 s` for full-H source execution. Information
+  sufficiency is established; compute and production suitability are not.

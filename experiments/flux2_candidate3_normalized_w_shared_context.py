@@ -128,6 +128,15 @@ class SharedContextSampler(phase2.comfy.samplers.Sampler):
             return state.h, {}
         raise ValueError(f"Unsupported Phase 11 context source: {self.context_source}")
 
+    def prepare_context_reference(
+        self, model, state, sigma, model_options, ordinal, context_probe
+    ):
+        return None
+
+    def augment_context_source_record(self, source_record, context_probe, reference_record):
+        if reference_record is not None:
+            source_record["diagnostic_reference"] = reference_record
+
     def sample(self, model, sigmas, extra_args, callback, noise, latent_image=None,
                denoise_mask=None, disable_pbar=False):
         if denoise_mask is not None or latent_image is None or bool(torch.count_nonzero(latent_image)):
@@ -162,6 +171,10 @@ class SharedContextSampler(phase2.comfy.samplers.Sampler):
                 source_record = None
                 if self.context_source is not None:
                     context_probe = self.make_context_probe()
+                    reference_record = self.prepare_context_reference(
+                        model, state, sigma, extra_args["model_options"], ordinal,
+                        context_probe,
+                    )
                     source, rope = self.context_source_tensor_and_rope(state)
                     source_hash = tensor_hash(source)
                     start = torch.cuda.Event(enable_timing=True)
@@ -195,6 +208,9 @@ class SharedContextSampler(phase2.comfy.samplers.Sampler):
                         "wall_seconds": time.perf_counter() - wall_started,
                         "probe_python_id": id(context_probe),
                     }
+                    self.augment_context_source_record(
+                        source_record, context_probe, reference_record
+                    )
 
                 runtime.start(ordinal, context_probe)
                 candidate_state, x0_h = coordinator.evaluate(
