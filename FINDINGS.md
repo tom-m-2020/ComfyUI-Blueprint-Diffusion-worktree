@@ -1722,3 +1722,25 @@ Detailed evidence is in
 - Fixed-4K source/local timing and 48-MiB block K/V remain unchanged. The
   failure is representational/semantic, not a loss of the measured 4K resource
   advantage.
+
+## 2026-09-04 — Phase 17 stronger joint consumption helps but does not unify the scene
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_FIXED4K_CONSUMER_INTERFACE.md`.
+
+- The same `4×2` area-mean 4K source and normalized W were placed in one native
+  bidirectional FLUX stream (`512` text + `4096` source + `4096` W) for all 25
+  blocks. Only W was final-projected. This materially promotes larger, more
+  continuous bridge structures compared with frozen external source K/V, but
+  several independent bridge/train systems remain.
+- Source and W K/V are identical to their external-control inputs at double
+  block 0; hidden state diverges immediately after joint attention. By single
+  block 19, representative source/W hidden RMS differences reach
+  `41.64/42.97`. The consumer-interface intervention is causally active rather
+  than a coordinate or preparation change.
+- Terminal overlap RMS improves from `0.784053` to `0.766685`, but the required
+  one-dominant-scene semantic gate still fails. Both fixed-source information
+  and interface behavior likely contribute.
+- The oracle costs `142.178 s` terminal wall and about `4.93/9.82 GiB` peak
+  allocated/reserved because it evolves 55 W-specific joint source states.
+  This is semantic evidence, not an efficiency architecture.

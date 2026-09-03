@@ -518,3 +518,11 @@ subspaces. It changes reconstruction and overlap metrics but remains in the
 same fragmented bridge/train semantic class. Simple deterministic local-mode
 packing is stopped. The unresolved boundary is now 4K independent-source
 capacity versus the normalized-W context-consumer interface.
+
+Phase 17 is complete with no production or ComfyUI-core changes. A full native
+bidirectional source/W oracle at the same 4,096 source positions materially
+increases the scale and continuity of bridge systems relative to external K/V,
+but still yields several independent whole-scene alternatives. This is the
+partial decision gate: both source capacity/representation and consumer
+interface likely contribute. Do not resume density or packing sweeps; the next
+justified discriminator is where agreement emerges or fails across joint depth.
