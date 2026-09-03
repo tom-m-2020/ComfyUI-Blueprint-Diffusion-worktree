@@ -363,3 +363,15 @@ completes the exact block-major terminal case at 3.32 GiB peak allocated and
 source-plus-local CUDA falls to 65.72 s from roughly 106.39 s. The mechanism is
 qualified as an experiment; no production integration or broader adapter
 contract is authorized.
+
+Phase 8j is complete as a documentation-only architecture task. The selected
+production boundary is an adapter-private `Flux2BlockExecutor` reached through
+a model-neutral bulk-region prediction call. `BlueprintCoordinator` remains
+the sole owner of assembly, Euler proposals, coupling/terminal policy,
+validation, preview, and atomic state commit. The first eligible integration
+is terminal-only at exact H=128×256/G=96×192; all nonterminal and other-geometry
+execution remains ordinary. The design includes scoped native conditioning
+preparation, exact Klein-4B qualification, structural block-barrier memory
+ownership, transactional cleanup, and mandatory live/cancellation/OOM gates.
+Production remains unchanged pending a separately authorized implementation
+task.
