@@ -455,3 +455,12 @@ bridge/train alternatives. All state/sigma provenance, all-25-block context
 consumption, and no-stale-context checks pass. Normalized reconstructed W is
 therefore still viable, but fixed-budget global representation sufficiency is
 the unresolved research boundary; no production change is qualified.
+
+Phase 12 is complete with no production or ComfyUI-core changes. A fourth
+trajectory evolved full accepted H through ordinary global FLUX.2 interaction,
+then compressed each block's already-positioned generated K/V to the same
+24×48/1,152-position budget as fixed G. It remains semantically fragmented and
+does not approach the coherent 8,192-position full-H oracle. Fresh/same-sigma,
+all-block, finite, and no-stale-context checks pass. The fixed 1,152-position
+consumer capacity is insufficient under the tested area-mean representation;
+only a bounded larger post-interaction budget is justified next.
