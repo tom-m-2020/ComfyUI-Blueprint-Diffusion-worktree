@@ -1,0 +1,239 @@
+{
+  "variant": "A_DESTINATION_SCALE",
+  "configuration": {
+    "H": [
+      64,
+      128
+    ],
+    "H_tokens": 8192,
+    "G": [
+      24,
+      48
+    ],
+    "G_tokens": 1152,
+    "destination_crop": [
+      32,
+      32
+    ],
+    "working_canvas": [
+      32,
+      32
+    ],
+    "crop_count": 15,
+    "regions": [
+      [
+        0,
+        0,
+        0,
+        32,
+        32
+      ],
+      [
+        1,
+        0,
+        24,
+        32,
+        32
+      ],
+      [
+        2,
+        0,
+        48,
+        32,
+        32
+      ],
+      [
+        3,
+        0,
+        72,
+        32,
+        32
+      ],
+      [
+        4,
+        0,
+        96,
+        32,
+        32
+      ],
+      [
+        5,
+        24,
+        0,
+        32,
+        32
+      ],
+      [
+        6,
+        24,
+        24,
+        32,
+        32
+      ],
+      [
+        7,
+        24,
+        48,
+        32,
+        32
+      ],
+      [
+        8,
+        24,
+        72,
+        32,
+        32
+      ],
+      [
+        9,
+        24,
+        96,
+        32,
+        32
+      ],
+      [
+        10,
+        32,
+        0,
+        32,
+        32
+      ],
+      [
+        11,
+        32,
+        24,
+        32,
+        32
+      ],
+      [
+        12,
+        32,
+        48,
+        32,
+        32
+      ],
+      [
+        13,
+        32,
+        72,
+        32,
+        32
+      ],
+      [
+        14,
+        32,
+        96,
+        32,
+        32
+      ]
+    ],
+    "coordinate_scale": [
+      1.0,
+      1.0
+    ],
+    "sigmas": [
+      1.0,
+      0.9498810172080994,
+      0.8633416295051575,
+      0.6780259013175964,
+      0.0
+    ],
+    "seed": 20260901
+  },
+  "algebra": {
+    "global_D_U_max_abs": 9.5367431640625e-07
+  },
+  "runtime": {
+    "sampling_wall_seconds": 16.843258299995796,
+    "baseline_allocated_bytes": 2495862272,
+    "baseline_reserved_bytes": 2560622592,
+    "peak_allocated_bytes": 2716470272,
+    "peak_reserved_bytes": 2904555520,
+    "global_cuda_ms": 1084.7557983398438,
+    "local_cuda_ms": 15512.13249206543
+  },
+  "work": {
+    "global_forwards": 3,
+    "local_forwards": 60,
+    "global_token_executions": 3456,
+    "local_token_executions": 61440,
+    "tokens_per_local_forward": 1024,
+    "destination_overlap_redundancy": 1.875
+  },
+  "trajectory": {
+    "overlap_rms": [
+      1.0499140582221935,
+      0.7275540244080931,
+      0.4770037006038068,
+      0.2589390131333341
+    ],
+    "projection_rms": [
+      0.03429890424013138,
+      0.03738250583410263,
+      0.07587787508964539,
+      null
+    ],
+    "invariant_max_abs": [
+      3.5762786865234375e-07,
+      3.2782554626464844e-07,
+      3.5762786865234375e-07,
+      null
+    ],
+    "final": {
+      "shape": [
+        1,
+        128,
+        64,
+        128
+      ],
+      "rms": 0.8669045567512512,
+      "mean": -0.015162469819188118,
+      "variance": 0.7512935996055603,
+      "max_abs": 6.827576637268066,
+      "finite": true
+    },
+    "local_state_records": []
+  },
+  "images": {
+    "assembled_x0_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_local_magnification_results\\A_DESTINATION_SCALE_assembled_x0_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "cb3be5d34b609004b638b37ea95e415777863892c63659f53f9b2bb45b892b5f"
+    },
+    "assembled_x0_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_local_magnification_results\\A_DESTINATION_SCALE_assembled_x0_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "6f68814e6ee14bda2d887f2125e2b48e3ec979269baecc8ab845b872b1849774"
+    },
+    "assembled_x0_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_local_magnification_results\\A_DESTINATION_SCALE_assembled_x0_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "588d3170a77e2451210f215cb8ec770267ccb1c5d2bfc1e4b41c9a395bb60c44"
+    },
+    "assembled_x0_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_local_magnification_results\\A_DESTINATION_SCALE_assembled_x0_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "97df9045dd2fb10f5e081fb5a1ccaedf48d06b1d2cad22e8d37bf1cb07da6758"
+    },
+    "final": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_local_magnification_results\\A_DESTINATION_SCALE_final.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "563a30556e9dffcd4b9be211a776b25d9816207e7143cbf1485a2d79ec4b6158"
+    }
+  }
+}

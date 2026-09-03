@@ -655,3 +655,21 @@ Assembly, Euler arithmetic, terminal release, preview, and atomic state commit
 remain coordinator-owned. This decision does not qualify other FLUX variants,
 models, CFG modes, conditioning schemes, geometries, or context execution on
 nonterminal intervals.
+
+## 2026-09-03 — Reject naive bilinear normalized local-state transport
+
+Do not productionize the Phase-9 rule that bilinearly restricts a 64×64
+destination latent region to a 32×32 local working canvas and bilinearly
+prolongs its denoised estimate before assembly. Although it establishes fixed
+global/per-local token budgets and materially reduces runtime, it discards the
+local fidelity Blueprint is intended to recover. This rejects that transport
+rule, not the broader objective of destination-independent working geometry.
+
+## 2026-09-03 — Do not productionize Phase-9b local magnification
+
+Reject naïve bilinear 32→64 working-state magnification. Retain
+sigma-consistent, exactly coarse-preserving magnification only as a research
+result: it proves that native working resolution can contribute useful detail,
+but its repeated semantic structures, ghosting, and 3.64× measured wall cost
+do not satisfy production quality or efficiency gates. This does not reject
+the broader fixed-working-geometry architecture.

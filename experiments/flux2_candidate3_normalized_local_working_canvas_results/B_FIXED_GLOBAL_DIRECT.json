@@ -1,0 +1,258 @@
+{
+  "variant": "B_FIXED_GLOBAL_DIRECT",
+  "configuration": {
+    "H": [
+      64,
+      128
+    ],
+    "H_tokens": 8192,
+    "G": [
+      24,
+      48
+    ],
+    "G_tokens": 1152,
+    "destination_regions": [
+      [
+        0,
+        0,
+        0,
+        64,
+        64
+      ],
+      [
+        1,
+        0,
+        48,
+        64,
+        64
+      ],
+      [
+        2,
+        0,
+        64,
+        64,
+        64
+      ]
+    ],
+    "destination_crop_tokens": 4096,
+    "working_canvas": [
+      64,
+      64
+    ],
+    "per_local_forward_tokens": 4096,
+    "crop_count": 3,
+    "seed": 20260901,
+    "sigmas": [
+      1.0,
+      0.9498810172080994,
+      0.8633416295051575,
+      0.6780259013175964,
+      0.0
+    ],
+    "global_coordinate_scale": [
+      2.739130434782609,
+      2.702127659574468
+    ],
+    "local_coordinate_scale": [
+      1.0,
+      1.0
+    ]
+  },
+  "algebra": {
+    "D_U_max_abs": 7.152557373046875e-07,
+    "G_shape": [
+      24,
+      48
+    ]
+  },
+  "runtime": {
+    "sampling_wall_seconds": 13.020439300002181,
+    "baseline_allocated_bytes": 2495862272,
+    "baseline_reserved_bytes": 2560622592,
+    "peak_allocated_bytes": 3043458048,
+    "peak_reserved_bytes": 3483369472,
+    "global_cuda_ms": 1003.5862426757812,
+    "local_cuda_ms": 11844.67333984375,
+    "calls": [
+      {
+        "kind": "global",
+        "tokens": 1152,
+        "cuda_ms": 418.1514587402344,
+        "wall_seconds": 0.41821129999880213
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 982.8280029296875,
+        "wall_seconds": 0.9828753999900073
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 982.8659057617188,
+        "wall_seconds": 0.982910599996103
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 979.9854125976562,
+        "wall_seconds": 0.9800302000076044
+      },
+      {
+        "kind": "global",
+        "tokens": 1152,
+        "cuda_ms": 291.70892333984375,
+        "wall_seconds": 0.29175730000133626
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 981.4573364257812,
+        "wall_seconds": 0.9815031999896746
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 994.914306640625,
+        "wall_seconds": 0.9949603999993997
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 984.5223388671875,
+        "wall_seconds": 0.9845805000077235
+      },
+      {
+        "kind": "global",
+        "tokens": 1152,
+        "cuda_ms": 293.7258605957031,
+        "wall_seconds": 0.29377089999616146
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 993.9103393554688,
+        "wall_seconds": 0.9939545000088401
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 985.7576904296875,
+        "wall_seconds": 0.9858019999956014
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 997.9717407226562,
+        "wall_seconds": 0.9980155999946874
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 987.7195434570312,
+        "wall_seconds": 0.9877660999918589
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 985.5197143554688,
+        "wall_seconds": 0.9855676000006497
+      },
+      {
+        "kind": "local",
+        "tokens": 4096,
+        "cuda_ms": 987.2210083007812,
+        "wall_seconds": 0.9872672999917995
+      }
+    ]
+  },
+  "work": {
+    "global_forwards": 3,
+    "local_forwards": 12,
+    "global_token_executions": 3456,
+    "local_token_executions": 49152,
+    "destination_coverage_tokens_per_interval": 12288,
+    "destination_overlap_redundancy": 1.5
+  },
+  "trajectory": {
+    "overlap_rms": [
+      0.654162276358562,
+      0.4228572536728642,
+      0.27205782640536724,
+      0.14701126073221374
+    ],
+    "projection_rms": [
+      0.029797768220305443,
+      0.03472183644771576,
+      0.0738563984632492,
+      null
+    ],
+    "projection_over_H_rms": [
+      0.030870548759085972,
+      0.03806275598082748,
+      0.09038919801067202,
+      null
+    ],
+    "invariant_max_abs": [
+      2.980232238769531e-07,
+      3.5762786865234375e-07,
+      4.76837158203125e-07,
+      null
+    ],
+    "final": {
+      "shape": [
+        1,
+        128,
+        64,
+        128
+      ],
+      "rms": 0.8966467976570129,
+      "mean": -0.014391155913472176,
+      "max_abs": 6.138889312744141,
+      "finite": true
+    },
+    "finite": true
+  },
+  "images": {
+    "x0_step_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\B_FIXED_GLOBAL_DIRECT_x0_step_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "6a9474228b3ba5906b65d50d6c701ee29548bdb6bfaa08ddcae1da4248ef90aa"
+    },
+    "x0_step_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\B_FIXED_GLOBAL_DIRECT_x0_step_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "6d4a51399a4e985830104f28b5a0c68a9ad84e6956edf3957e431a31f587fcde"
+    },
+    "x0_step_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\B_FIXED_GLOBAL_DIRECT_x0_step_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "c4106f83bf2b8aed4da1ac2a823e92651b5f7ea2c26f9c73f3dd953064a546a8"
+    },
+    "x0_step_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\B_FIXED_GLOBAL_DIRECT_x0_step_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "f5d17e7bcddde60f5bb069fc944e7d28a236acad2651b222779448d663f99081"
+    },
+    "final": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\B_FIXED_GLOBAL_DIRECT_final.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "4b9970a6901798084fa15a9520b567dafe53a1b885bab52aa86d90c3c293a0a1"
+    }
+  }
+}
