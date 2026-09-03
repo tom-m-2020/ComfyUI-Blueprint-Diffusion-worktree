@@ -1612,3 +1612,23 @@ Detailed evidence is in
 - The 2,048-token context costs `117.57 s` wall, `0.586 GiB` cache per interval,
   and `35.156 GiB` aggregate diagnostic transfer, versus `110.44 s`, `0.330 GiB`,
   and `19.775 GiB` for the 1,152 post-interaction control.
+
+## 2026-09-03 — Phase 12c finds a semantic threshold by 4,096 positions
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_POSTINTERACTION_2X1_CAPACITY.md`.
+
+- An anisotropic `32×128 = 4,096` post-interaction context, formed by exact
+  nonoverlapping vertical 2×1 averaging of full-H positioned K and matching V,
+  resolves the bridge/train scene into the same one-dominant-system semantic
+  class as the 8,192-token oracle. The 2,048-token condition remains visibly
+  below that threshold.
+- D reduces assembled terminal-x0 RMS versus the oracle from `0.495723` at
+  2,048 tokens to `0.407488`, and reduces interval-0 RMS from `0.461038` to
+  `0.349765`. Semantic inspection, not these metrics alone, determines the pass.
+- All 8,192 source positions contribute exactly once to 4,096 entries, with no
+  omissions/duplicates and stable complete coordinate provenance across four
+  fresh same-sigma interval probes. All 25 blocks and 15 crops consume context.
+- This is information-sufficiency evidence only. D still requires dense full-H
+  source interaction, `1.172 GiB` context storage per interval, `70.312 GiB`
+  aggregate diagnostic transfer, and `133.62 s` sampling wall time.

@@ -753,3 +753,14 @@ Do not advance 2,048 tokens to production or cheap-context construction yet.
 Authorize exactly one 4,096-token post-interaction capacity test using one fixed
 spatial aggregation rule. If that also remains below the oracle, stop simple
 spatial K/V-density scaling rather than extending a capacity sweep.
+
+## 2026-09-03 — Stop density sweeps; pursue cheap ~4K global-information construction
+
+Phase 12c finds that one anisotropic 4,096-token post-interaction representation
+is semantically oracle-like for the bridge/train discriminator, while 2,048 is
+not. Record a useful scene-specific information threshold between those budgets.
+Do not production-qualify the representation, infer orientation-independent
+generalization, or test 5K/6K spatial densities. Any next research must ask how
+to construct approximately equivalent ~4K globally informed context materially
+more cheaply than the dense full-H source trajectory; the brute-force source is
+only an oracle mechanism.

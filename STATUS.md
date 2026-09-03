@@ -472,3 +472,13 @@ the scene relative to the 1,152-position post-interaction control but retains
 clear repeated bridge/train/support alternatives and remains below the full-H
 oracle. All provenance, block-shape, fresh-context, finite-state, and no-stale
 checks pass. Decision 2 authorizes one 4,096-token discriminator only.
+
+Phase 12c is complete with no production or ComfyUI-core changes. The final
+brute-force capacity arm uses deterministic anisotropic vertical 2×1
+post-interaction aggregation from full `64×128` H to `32×128 = 4,096` context
+entries. It preserves every source position exactly once and passes all fresh
+same-sigma, block-consumption, immutability, finite-state, and lifecycle checks.
+The decoded result is in the oracle's one-dominant-bridge semantic class and
+materially closes the numerical gap from 2,048. Information sufficiency is
+established for this scene; cheap construction, generalization, compute, and
+production suitability remain unqualified.
