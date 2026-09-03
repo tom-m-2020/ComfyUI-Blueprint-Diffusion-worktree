@@ -693,3 +693,32 @@ per-crop full-H context expressed in the same magnified frame remains
 semantically insufficient. This result directs the next discriminator to
 prediction restriction/transport; it does not authorize a coordinate-scale
 sweep, denser G, or additional context mechanisms.
+
+## 2026-09-03 — Stop terminal one-shot magnification transport variants
+
+Do not advance velocity, delta, or same-sigma re-noise transport to a full
+trajectory or production. Under linear 2×2 mean restriction and exact
+`D(W)=H_crop`, they are algebraically identical to averaging x0 and reproduce
+the same semantic failure. Further terminal mapping variants are not justified.
+The next architecture, if pursued, should test persistent per-region
+native-scale working states rather than reconstructing W from H only at an
+evaluation boundary.
+
+## 2026-09-03 — Reject independent persistent native-scale W trajectories
+
+Do not advance or productionize Phase-10 variant B. Persistent W states retain
+detail but diverge into multiple incompatible regional scenes, with terminal
+prediction overlap RMS 0.8031 and maximum W/H coarse drift 0.5234. Variant C's
+conditional gate was not met because B is not semantically useful or merely
+ambiguous. Any later persistent-W architecture requires a separately designed
+and authorized global/cross-region coupling contract; do not return to
+terminal resize/transport variants.
+
+## 2026-09-03 — Do not advance coarse-synchronized persistent W
+
+Phase-10b C preserves the W null-space component and exact destination-scale
+agreement, but it only returns the output to the reconstructed control's
+semantic class and does not demonstrate superior detail or consistency. Treat
+persistent W as unnecessary complexity under this synchronization contract.
+Do not productionize it or add inside-transformer context automatically; any
+new persistent-W coupling mechanism requires a separate architectural task.
