@@ -1,0 +1,258 @@
+{
+  "variant": "C_FIXED_GLOBAL_NORMALIZED",
+  "configuration": {
+    "H": [
+      64,
+      128
+    ],
+    "H_tokens": 8192,
+    "G": [
+      24,
+      48
+    ],
+    "G_tokens": 1152,
+    "destination_regions": [
+      [
+        0,
+        0,
+        0,
+        64,
+        64
+      ],
+      [
+        1,
+        0,
+        48,
+        64,
+        64
+      ],
+      [
+        2,
+        0,
+        64,
+        64,
+        64
+      ]
+    ],
+    "destination_crop_tokens": 4096,
+    "working_canvas": [
+      32,
+      32
+    ],
+    "per_local_forward_tokens": 1024,
+    "crop_count": 3,
+    "seed": 20260901,
+    "sigmas": [
+      1.0,
+      0.9498810172080994,
+      0.8633416295051575,
+      0.6780259013175964,
+      0.0
+    ],
+    "global_coordinate_scale": [
+      2.739130434782609,
+      2.702127659574468
+    ],
+    "local_coordinate_scale": [
+      2.032258064516129,
+      2.032258064516129
+    ]
+  },
+  "algebra": {
+    "D_U_max_abs": 7.152557373046875e-07,
+    "G_shape": [
+      24,
+      48
+    ]
+  },
+  "runtime": {
+    "sampling_wall_seconds": 4.302726200010511,
+    "baseline_allocated_bytes": 2495862272,
+    "baseline_reserved_bytes": 2560622592,
+    "peak_allocated_bytes": 2716470272,
+    "peak_reserved_bytes": 2898264064,
+    "global_cuda_ms": 1024.6509399414062,
+    "local_cuda_ms": 3098.5852661132812,
+    "calls": [
+      {
+        "kind": "global",
+        "tokens": 1152,
+        "cuda_ms": 447.6805114746094,
+        "wall_seconds": 0.44773900001018774
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 258.0112609863281,
+        "wall_seconds": 0.2580565999960527
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 259.4804992675781,
+        "wall_seconds": 0.2595242999959737
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 259.3064880371094,
+        "wall_seconds": 0.2593586000002688
+      },
+      {
+        "kind": "global",
+        "tokens": 1152,
+        "cuda_ms": 288.8775634765625,
+        "wall_seconds": 0.2889216000039596
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 258.2528076171875,
+        "wall_seconds": 0.25829690000682604
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 258.8374938964844,
+        "wall_seconds": 0.2588834000052884
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 258.49652099609375,
+        "wall_seconds": 0.25854040001286194
+      },
+      {
+        "kind": "global",
+        "tokens": 1152,
+        "cuda_ms": 288.0928649902344,
+        "wall_seconds": 0.2881369000097038
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 257.85516357421875,
+        "wall_seconds": 0.25789930000610184
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 258.4337158203125,
+        "wall_seconds": 0.2584781000041403
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 258.4197082519531,
+        "wall_seconds": 0.25846569999703206
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 256.6944885253906,
+        "wall_seconds": 0.25673660000029486
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 258.154052734375,
+        "wall_seconds": 0.258201899996493
+      },
+      {
+        "kind": "local",
+        "tokens": 1024,
+        "cuda_ms": 256.64306640625,
+        "wall_seconds": 0.2566854000033345
+      }
+    ]
+  },
+  "work": {
+    "global_forwards": 3,
+    "local_forwards": 12,
+    "global_token_executions": 3456,
+    "local_token_executions": 12288,
+    "destination_coverage_tokens_per_interval": 12288,
+    "destination_overlap_redundancy": 1.5
+  },
+  "trajectory": {
+    "overlap_rms": [
+      0.6363153057083368,
+      0.35380254872459616,
+      0.21023557133867596,
+      0.12835117604706406
+    ],
+    "projection_rms": [
+      0.02583947405219078,
+      0.03205906227231026,
+      0.05157860368490219,
+      null
+    ],
+    "projection_over_H_rms": [
+      0.027106292802365317,
+      0.03659027442545313,
+      0.07064729588855605,
+      null
+    ],
+    "invariant_max_abs": [
+      3.5762786865234375e-07,
+      2.980232238769531e-07,
+      3.5762786865234375e-07,
+      null
+    ],
+    "final": {
+      "shape": [
+        1,
+        128,
+        64,
+        128
+      ],
+      "rms": 0.7248718738555908,
+      "mean": -0.02882308140397072,
+      "max_abs": 4.380470275878906,
+      "finite": true
+    },
+    "finite": true
+  },
+  "images": {
+    "x0_step_0": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\C_FIXED_GLOBAL_NORMALIZED_x0_step_0.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "4d489d8bd2ec72d4af6e5c53bc21a0818764a291dd1149d378a93751d10aef6d"
+    },
+    "x0_step_1": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\C_FIXED_GLOBAL_NORMALIZED_x0_step_1.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "05da6de75edab9909ef3ce129cfd28df3a97b0c825611e555ccdc348a50318a6"
+    },
+    "x0_step_2": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\C_FIXED_GLOBAL_NORMALIZED_x0_step_2.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "2c3bcc20ef96cb90ae18fb1a01ffc344e4bccf782cb0e8b9020dbc810f93ba2a"
+    },
+    "x0_step_3": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\C_FIXED_GLOBAL_NORMALIZED_x0_step_3.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "57c4507de4a35c5cd26564a9958de636ca3907dc5775df9e4015b7464e170aba"
+    },
+    "final": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_normalized_local_working_canvas_results\\C_FIXED_GLOBAL_NORMALIZED_final.png",
+      "dimensions_wh": [
+        2048,
+        1024
+      ],
+      "sha256_rgb": "84f177669f7938e92cc6967539aa7d7d5fde2acd9157978727b84d855781e44b"
+    }
+  }
+}

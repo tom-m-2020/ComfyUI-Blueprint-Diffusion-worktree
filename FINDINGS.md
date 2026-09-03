@@ -1415,3 +1415,46 @@ and its machine-readable report.
   hash differs from historical untiled decoding. Repeated tiled decoding is
   deterministic; transformer/crop/assembled-latent evidence remains the
   authoritative gate.
+
+## 2026-09-03 — Phase 9 normalized local working-canvas falsifier
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_NORMALIZED_LOCAL_WORKING_CANVAS.md`.
+
+- At H=64×128, an experimental 8→3 block-DCT fixes the complete-canvas G
+  model geometry at 24×48 (1,152 tokens). Three unchanged 64×64 destination
+  regions can each be restricted to a fixed 32×32 working canvas while
+  preserving endpoint-mapped absolute coordinates.
+- This satisfies the desired execution-budget form: G tokens are fixed at
+  1,152 and each local forward at 1,024. Relative to fixed-G direct 64×64
+  calls, local token executions fall 75%, measured local CUDA falls 73.8%,
+  sampling wall time falls 67.0%, and peak allocation falls 2.834→2.530 GiB.
+- Simple bilinear state/prediction transport is not semantically adequate.
+  Normalized assembled local x0 is visibly smeared from interval 0; the final
+  retains a coarse single bridge/horizon but loses useful local structure and
+  sharpness while showing train/structure ghosting.
+- Lower terminal overlap RMS (0.12835 versus 0.14701 fixed-G direct) is a
+  low-pass side effect, not a quality improvement. D(H)=G invariants pass, so
+  the failure is local-fidelity transport rather than lifecycle instability.
+
+## 2026-09-03 — Phase 9b native local magnification is partially supported
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_NATIVE_LOCAL_MAGNIFICATION.md`.
+
+- With H=64×128, fixed G=24×48 and 15 destination 32×32 regions, a 64×64
+  local working state can preserve the destination crop exactly under 2×2 mean
+  restriction while adding sigma-scaled zero-cell-mean degrees of freedom.
+  Across all calls, coarse-state max error is 4.77e-7.
+- Naïve bilinear magnification is not coarse-consistent under that restriction
+  (max error 2.448) and produces strong blur/ghosting. State construction is a
+  demonstrated cause of failure, not merely x0 restriction or coordinate scale.
+- Sigma-consistent magnification uses the same coordinate mapping and x0
+  restriction but recovers materially sharper truss, cable, support and water
+  detail while retaining one principal whole-canvas bridge/horizon. It still
+  produces repeated train/bridge elements and residual ghosting, so it is not
+  semantically qualified.
+- The invariant is achieved structurally: global work stays 1,152 tokens and
+  each magnified local call stays 4,096 tokens as destination H grows. This is
+  not an efficiency win at the tested H: 245,760 local token executions and
+  61.25 s wall versus 61,440 and 16.84 s for direct 32×32 regions.

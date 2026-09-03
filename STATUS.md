@@ -386,3 +386,19 @@ and reproduce the qualified Phase-8i final latent statistics. The specialized
 path uses no host K/V cache or transfer and measures 64.43 s CUDA, with
 4.80/6.68 GiB whole-run peak allocated/reserved memory. No broader model,
 conditioning, geometry, or interval support is qualified.
+
+Phase 9 is complete with no production changes. At 1024×2048 output, the
+experiment fixed global model work at G=24×48 and local work at 32×32 per
+destination region. The resource invariant and large measured CUDA/wall
+reductions are real, but bilinear 64→32 noisy-state restriction plus 32→64 x0
+prolongation produces immediate blur and final train/structure ghosting. It
+preserves only a coarse bridge scene and fails the local-fidelity gate. This
+exact normalized-working-canvas rule is stopped; production remains unchanged.
+
+Phase 9b is complete with no production changes. The inverse 32→64 local
+magnification regime separates naïve interpolation from sigma-consistent
+working-state construction. Naïve magnification fails. Exact coarse-consistent
+sigma-noise restores useful destination-visible local detail and a coherent
+principal bridge, but duplicate train/bridge elements and ghosting remain.
+The native-working-canvas hypothesis receives partial evidence only; neither
+magnified variant is production-qualified.
