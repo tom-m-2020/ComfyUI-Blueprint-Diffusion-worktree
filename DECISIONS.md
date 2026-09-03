@@ -805,3 +805,13 @@ hand-designed mode allocation, channel rotation, or packing sweep. A trained
 channels, and the tested fixed projection does not cross the semantic gate.
 The next architectural discriminator must separate insufficient 4K source
 interaction capacity from failure of the normalized-W consumer interface.
+
+## 2026-09-04 — Treat fixed-source capacity and consumer interface as joint bottlenecks
+
+Phase 17's bidirectional native source/W interaction materially improves scene
+organization using the unchanged 4K source, so the frozen external-K/V
+interface is not sufficient and cannot be exonerated. It still fails to produce
+one dominant bridge system, so stronger consumption alone is also insufficient.
+Do not productionize the joint oracle, repeat source representation searches,
+or resume token-density sweeps. If research continues, localize semantic
+agreement through joint transformer depth before selecting a new architecture.
