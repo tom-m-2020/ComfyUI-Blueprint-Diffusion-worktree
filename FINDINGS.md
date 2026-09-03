@@ -1653,3 +1653,48 @@ Detailed evidence is in
 - Lower token count did not accelerate the native source: direct `32×128` took
   `23.826 s` total versus `12.785 s` for full-H source execution. Information
   sufficiency is established; compute and production suitability are not.
+
+## 2026-09-03 — Phase 14 natural fixed-4K restriction does not scale semantically
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_FIXED4K_LARGE_DESTINATION.md`.
+
+- At `H=128×256`, a destination-independent `32×128 = 4,096` source formed by
+  exact nonoverlapping `4×2` area means and full-H center coordinates remains
+  severely fragmented after ordinary all-25-block global interaction. The
+  Phase-13 direct-4K semantic result does not survive this stronger `8:1`
+  restriction.
+- Natural area averaging produces a fixed-source/H variance ratio of
+  `0.124651` and RMS ratio `0.353060`, versus Phase 13's successful pair-mean
+  variance ratios near `0.50–0.53`. This identifies source construction and
+  mapped-state statistics as the next causal boundary; it does not prove a
+  universal 4K capacity failure.
+- The `18,432`-token accepted-G context also fails to reproduce its historical
+  single-bridge result after consumers change from direct `32×32` crops to
+  reconstructed native `64×64` W. Destination-scaled context qualification
+  therefore cannot be transferred across local consumer geometry without a
+  new control.
+- Under the same block-major executor, fixed 4K is measurably cheaper than
+  18,432 tokens: source CUDA `1.083` versus `9.677 s`, terminal wall `105.234`
+  versus `187.844 s`, current-block K/V `48` versus `216 MiB`, and peak allocated
+  about `3.58` versus `5.23 GiB`. Semantic failure and backend efficiency are
+  separate conclusions.
+
+## 2026-09-03 — Phase 15 scalar variance restoration does not recover coherence
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_FIXED4K_SOURCE_STATISTICS.md`.
+
+- Fixed a-priori gains `1`, `2`, and `sqrt(8)` produce accepted-H variance
+  ratios `0.124651`, `0.498606`, and `0.997211` without changing the 4K source
+  mapping, coordinates, executor, or consumers. All three remain in the same
+  severely fragmented bridge/train semantic class.
+- The input and `img_in` RMS scale directly with gain, but double-block-0 K RMS
+  is effectively identical (`1.184487/1.184486/1.184487`) and V RMS differs by
+  less than 0.01%. Native normalization/modulation largely erases simple source
+  amplitude before useful transformer context is exposed.
+- Terminal overlap RMS improves slightly from `0.784053` to `0.767068`, but
+  this does not correspond to whole-scene improvement. Scalar statistics are
+  not a sufficient proxy for information retained by the 4×2 restriction.
+- Source CUDA, local CUDA, 48-MiB current-block K/V, and peak memory remain
+  materially unchanged across gains, preserving Phase 14's work comparison.

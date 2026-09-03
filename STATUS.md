@@ -492,3 +492,21 @@ mapping, same-state/sigma, per-block K/V divergence, immutability, finite-state,
 and lifecycle checks pass. The direct source is semantically viable but slower
 than the full-H source on the current backend, so destination-independent
 geometry and real execution efficiency remain research work.
+
+Phase 14 is complete with no production or ComfyUI-core changes. At the fixed
+`2048×4096` bridge terminal state, a natural `4×2` accepted-H area restriction
+to a destination-independent `32×128 = 4,096` source is faster and lower-memory
+than the `18,432`-token source under the same block-major executor, but its
+decoded normalized-W result remains severely fragmented. The 18,432-token
+control also fails after changing to normalized-W consumers, so its historical
+direct-crop semantic qualification does not transfer. The next justified probe
+is source-input restriction/statistics at the same 4K budget, not a token-count
+increase or production change.
+
+Phase 15 is complete with no production or ComfyUI-core changes. A fixed-gain
+discriminator restored the 4K source to Phase-13-like variance (`gain=2`) and
+near-native variance (`gain=sqrt(8)`) while preserving all Phase-14 geometry and
+execution. Neither gain changes the fragmented bridge/train semantic class.
+Early K/V telemetry shows transformer normalization largely removes the input
+amplitude difference. Simple scalar-statistics correction is stopped; any next
+probe must address representation/information loss at the same 4,096 positions.
