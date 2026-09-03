@@ -1592,3 +1592,23 @@ Detailed evidence is in
 - Under this fixed linear aggregation, pre-interaction compression is not the
   sole bottleneck. A 1,152-position context interface is below the observed
   semantic threshold; this does not rule out learned/nonlinear compression.
+
+## 2026-09-03 — Phase 12b 2,048-token context partially improves coherence
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_POSTINTERACTION_2X2_CAPACITY.md`.
+
+- Nonoverlapping 2×2 aggregation of full-H, post-interaction generated K/V to
+  `32×64 = 2,048` consumer positions visibly reduces fragmentation relative to
+  the 1,152-position post-interaction control, but repeated train/truss/support
+  alternatives remain and the result is clearly below the 8,192-token oracle.
+- E improves overlap RMS over D at every interval and reduces assembled-x0 RMS
+  versus the oracle from `0.517928` to `0.495723` at terminal evaluation. These
+  numerical gains are consistent with, but do not substitute for, the partial
+  semantic improvement.
+- All 8,192 source positions contribute exactly once. The complete 2,048-entry
+  coordinate-quad provenance is recorded and stable across four fresh same-sigma
+  probes; all 25 blocks consume context for all 15 crops.
+- The 2,048-token context costs `117.57 s` wall, `0.586 GiB` cache per interval,
+  and `35.156 GiB` aggregate diagnostic transfer, versus `110.44 s`, `0.330 GiB`,
+  and `19.775 GiB` for the 1,152 post-interaction control.

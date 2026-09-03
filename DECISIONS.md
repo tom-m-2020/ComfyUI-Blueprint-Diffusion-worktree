@@ -744,3 +744,12 @@ not productionize the post-interaction pooling path. If research continues,
 test exactly one larger, clean post-interaction capacity (`32×64 = 2,048` via
 nonoverlapping 2×2 aggregation) before considering any production mechanism or
 broader capacity sweep.
+
+## 2026-09-03 — Authorize one 4,096-token post-interaction discriminator
+
+Phase 12b's 2,048-position context moves semantic coherence toward the full-H
+oracle but does not suppress all competing bridge/train/support structures.
+Do not advance 2,048 tokens to production or cheap-context construction yet.
+Authorize exactly one 4,096-token post-interaction capacity test using one fixed
+spatial aggregation rule. If that also remains below the oracle, stop simple
+spatial K/V-density scaling rather than extending a capacity sweep.
