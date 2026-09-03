@@ -1478,3 +1478,20 @@ Detailed evidence is in
   14.912 s to 41.820 s and 24.537 s respectively in the CPU-offloaded
   diagnostic. Context improves compatibility but does not meet the semantic or
   efficiency gate.
+
+## 2026-09-03 — Phase 9d native working coordinates do not resolve repetition
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_NATIVE_WORKING_COORDINATE.md`.
+
+- Holding the accepted Phase-9b C state and W tensors fixed, changing local
+  RoPE from compressed destination spacing to an ordinary unit-spaced 64×64
+  local frame materially changes predictions (assembled RMS 0.316471) but does
+  not remove repeated bridge/train alternatives.
+- Native local coordinates worsen overlap RMS from 0.214053 to 0.234165.
+  Whole-H context remapped per crop as `2*(H_coordinate-crop_origin)` recovers
+  some agreement (0.191253) but still does not yield one bridge system.
+- Because even the correctly frame-mapped full-H context upper bound fails the
+  semantic gate, compressed positional geometry is weakened as the primary
+  explanation. The next justified discriminator is prediction
+  restriction/transport, not increased G density or more context.

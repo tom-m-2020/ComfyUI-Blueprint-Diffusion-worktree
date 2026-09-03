@@ -1,0 +1,3440 @@
+{
+  "configuration": {
+    "H": [
+      64,
+      128
+    ],
+    "G": [
+      24,
+      48
+    ],
+    "terminal_sigma": 0.6780259013175964,
+    "seed": 20260901,
+    "regions": [
+      [
+        0,
+        0,
+        0,
+        32,
+        32
+      ],
+      [
+        1,
+        0,
+        24,
+        32,
+        32
+      ],
+      [
+        2,
+        0,
+        48,
+        32,
+        32
+      ],
+      [
+        3,
+        0,
+        72,
+        32,
+        32
+      ],
+      [
+        4,
+        0,
+        96,
+        32,
+        32
+      ],
+      [
+        5,
+        24,
+        0,
+        32,
+        32
+      ],
+      [
+        6,
+        24,
+        24,
+        32,
+        32
+      ],
+      [
+        7,
+        24,
+        48,
+        32,
+        32
+      ],
+      [
+        8,
+        24,
+        72,
+        32,
+        32
+      ],
+      [
+        9,
+        24,
+        96,
+        32,
+        32
+      ],
+      [
+        10,
+        32,
+        0,
+        32,
+        32
+      ],
+      [
+        11,
+        32,
+        24,
+        32,
+        32
+      ],
+      [
+        12,
+        32,
+        48,
+        32,
+        32
+      ],
+      [
+        13,
+        32,
+        72,
+        32,
+        32
+      ],
+      [
+        14,
+        32,
+        96,
+        32,
+        32
+      ]
+    ],
+    "working_canvas": [
+      64,
+      64
+    ],
+    "accepted_H_hash": "3f3647ba6f82ab6565d423c142be16fabaa402d43b247f933639668615df8c0f",
+    "accepted_G_hash": "a073c886801fe4a08f6c8d379613586a7143a6b0585d829d2ab4e38beec98946",
+    "working_hashes": [
+      "f641bb431d24fd0cf1b10eb4f84749ea90e7f9766f764433d2bf6dbf32e28148",
+      "84726027c88ae621d84fb9a2db89f4bf15b95ba728eda50b0035caa9a390c437",
+      "f2c59d77f5057f3d1630611b1af0953a72536003c0dc1c2caf8e8a90843a2a11",
+      "ff0a005778156a93bf59cc293d1b0c155671bc547adf8a807d102869eb74a76b",
+      "9d61974281f1ed16e9d66bcd55c950345aab37d4f2176c4a98251634d8068f05",
+      "5dba0d0726b34b8b09270230e078a385eda11a666360b6f44f24199e9fec6e06",
+      "6e93b6f7c72013db273373d15c22640cd92f4859acf2d035aacf490a18ec9839",
+      "0a9ce57b4ddfb596151e0f183325d2c05df27b32065301793094fb106ec09aab",
+      "bac7e5cb6b96812595ddf46526acef1d9dc1c14684ce350bd094a631b1b6d44d",
+      "acc8dddc486d7c63e169620bfdd74afc4cd696d810e1020203308fcdb277fa62",
+      "692699e00f62475cd2ef098e2258ca4fdbb0ff023183cf01ccef7f87463b1ac9",
+      "71112825ff3ce29c27bf145397df1d2635839f3736be7dc8fb1fcf6b9bac42e3",
+      "4c0ca8b8f50a78395fb3818c385ec8651fcf22f5405e4d228fec5a72c8098df5",
+      "3fbf24dfd45aa51ff815f0245a7a06acf7ba30c78a6d65c96189ecaf0d94340d",
+      "a0845bccfc557fc5d759b3c88b70647c8d8214f5948c14f76fe946c05f8cbc71"
+    ],
+    "working_coarse_max_error": 2.384185791015625e-07,
+    "zero_state_updates": true
+  },
+  "variants": {
+    "A_COMPRESSED_DESTINATION_COORDS": {
+      "source": null,
+      "source_tokens_per_call": 0,
+      "source_calls": 0,
+      "context_blocks": 0,
+      "local_generated_tokens": 4096,
+      "local_calls": 15,
+      "source_cuda_ms": 0.0,
+      "local_cuda_ms": 15123.893371582031,
+      "source_wall_seconds": 0.0,
+      "local_wall_seconds": 15.12554020000971,
+      "total_wall_seconds": 15.27142950000416,
+      "peak_allocated_bytes": 3103095808,
+      "peak_reserved_bytes": 3600809984,
+      "baseline_allocated_bytes": 2551371776,
+      "baseline_reserved_bytes": 2613051392,
+      "cpu_kv_cache_bytes_aggregate": 0,
+      "cpu_to_gpu_transfer_bytes": 0,
+      "overlap": {
+        "aggregate_rms": 0.21405322255353412,
+        "compared_values": 1310720,
+        "pairs": [
+          {
+            "left": 0,
+            "right": 1,
+            "rms": 0.2513588394877362,
+            "values": 32768
+          },
+          {
+            "left": 0,
+            "right": 5,
+            "rms": 0.2730433893595205,
+            "values": 32768
+          },
+          {
+            "left": 0,
+            "right": 6,
+            "rms": 0.36762329375368175,
+            "values": 8192
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "rms": 0.2567017933776559,
+            "values": 32768
+          },
+          {
+            "left": 1,
+            "right": 5,
+            "rms": 0.3680096208750457,
+            "values": 8192
+          },
+          {
+            "left": 1,
+            "right": 6,
+            "rms": 0.24910469973226015,
+            "values": 32768
+          },
+          {
+            "left": 1,
+            "right": 7,
+            "rms": 0.36474946414968284,
+            "values": 8192
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "rms": 0.27571725075720654,
+            "values": 32768
+          },
+          {
+            "left": 2,
+            "right": 6,
+            "rms": 0.3885748468946666,
+            "values": 8192
+          },
+          {
+            "left": 2,
+            "right": 7,
+            "rms": 0.2666627862518824,
+            "values": 32768
+          },
+          {
+            "left": 2,
+            "right": 8,
+            "rms": 0.34317414861109236,
+            "values": 8192
+          },
+          {
+            "left": 3,
+            "right": 4,
+            "rms": 0.29093015298878105,
+            "values": 32768
+          },
+          {
+            "left": 3,
+            "right": 7,
+            "rms": 0.36199769537545134,
+            "values": 8192
+          },
+          {
+            "left": 3,
+            "right": 8,
+            "rms": 0.2521902934585014,
+            "values": 32768
+          },
+          {
+            "left": 3,
+            "right": 9,
+            "rms": 0.35876159562833293,
+            "values": 8192
+          },
+          {
+            "left": 4,
+            "right": 8,
+            "rms": 0.3548029228652906,
+            "values": 8192
+          },
+          {
+            "left": 4,
+            "right": 9,
+            "rms": 0.2697243206309433,
+            "values": 32768
+          },
+          {
+            "left": 5,
+            "right": 6,
+            "rms": 0.22872740558393706,
+            "values": 32768
+          },
+          {
+            "left": 5,
+            "right": 10,
+            "rms": 0.15345047530080655,
+            "values": 98304
+          },
+          {
+            "left": 5,
+            "right": 11,
+            "rms": 0.19084903158630587,
+            "values": 24576
+          },
+          {
+            "left": 6,
+            "right": 7,
+            "rms": 0.2194514013992041,
+            "values": 32768
+          },
+          {
+            "left": 6,
+            "right": 10,
+            "rms": 0.20895015876148135,
+            "values": 24576
+          },
+          {
+            "left": 6,
+            "right": 11,
+            "rms": 0.14921543324031508,
+            "values": 98304
+          },
+          {
+            "left": 6,
+            "right": 12,
+            "rms": 0.1934890504900722,
+            "values": 24576
+          },
+          {
+            "left": 7,
+            "right": 8,
+            "rms": 0.2250311333256448,
+            "values": 32768
+          },
+          {
+            "left": 7,
+            "right": 11,
+            "rms": 0.18985361850661764,
+            "values": 24576
+          },
+          {
+            "left": 7,
+            "right": 12,
+            "rms": 0.14980554095526222,
+            "values": 98304
+          },
+          {
+            "left": 7,
+            "right": 13,
+            "rms": 0.23130517249881602,
+            "values": 24576
+          },
+          {
+            "left": 8,
+            "right": 9,
+            "rms": 0.228618484561699,
+            "values": 32768
+          },
+          {
+            "left": 8,
+            "right": 12,
+            "rms": 0.20665586976591707,
+            "values": 24576
+          },
+          {
+            "left": 8,
+            "right": 13,
+            "rms": 0.15172616374127404,
+            "values": 98304
+          },
+          {
+            "left": 8,
+            "right": 14,
+            "rms": 0.21129314440997402,
+            "values": 24576
+          },
+          {
+            "left": 9,
+            "right": 13,
+            "rms": 0.20608050288616597,
+            "values": 24576
+          },
+          {
+            "left": 9,
+            "right": 14,
+            "rms": 0.14370616610791465,
+            "values": 98304
+          },
+          {
+            "left": 10,
+            "right": 11,
+            "rms": 0.18190191815291862,
+            "values": 32768
+          },
+          {
+            "left": 11,
+            "right": 12,
+            "rms": 0.1806936703726533,
+            "values": 32768
+          },
+          {
+            "left": 12,
+            "right": 13,
+            "rms": 0.2023925413124778,
+            "values": 32768
+          },
+          {
+            "left": 13,
+            "right": 14,
+            "rms": 0.189516686071004,
+            "values": 32768
+          }
+        ]
+      },
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "assembled": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.8568115234375,
+        "mean": -0.01548474095761776,
+        "max_abs": 5.099793434143066,
+        "finite": true
+      },
+      "representative_x0_W": {
+        "shape": [
+          1,
+          128,
+          64,
+          64
+        ],
+        "rms": 0.9609851241111755,
+        "mean": 0.0390053391456604,
+        "max_abs": 5.683802604675293,
+        "finite": true
+      },
+      "coordinate_records": [
+        {
+          "region": 0,
+          "destination_origin": [
+            0,
+            0
+          ],
+          "local_rope": {
+            "shift_y": 0.0,
+            "shift_x": 0.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 1,
+          "destination_origin": [
+            0,
+            24
+          ],
+          "local_rope": {
+            "shift_y": 0.0,
+            "shift_x": 24.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 2,
+          "destination_origin": [
+            0,
+            48
+          ],
+          "local_rope": {
+            "shift_y": 0.0,
+            "shift_x": 48.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 3,
+          "destination_origin": [
+            0,
+            72
+          ],
+          "local_rope": {
+            "shift_y": 0.0,
+            "shift_x": 72.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 4,
+          "destination_origin": [
+            0,
+            96
+          ],
+          "local_rope": {
+            "shift_y": 0.0,
+            "shift_x": 96.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 5,
+          "destination_origin": [
+            24,
+            0
+          ],
+          "local_rope": {
+            "shift_y": 24.0,
+            "shift_x": 0.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 6,
+          "destination_origin": [
+            24,
+            24
+          ],
+          "local_rope": {
+            "shift_y": 24.0,
+            "shift_x": 24.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 7,
+          "destination_origin": [
+            24,
+            48
+          ],
+          "local_rope": {
+            "shift_y": 24.0,
+            "shift_x": 48.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 8,
+          "destination_origin": [
+            24,
+            72
+          ],
+          "local_rope": {
+            "shift_y": 24.0,
+            "shift_x": 72.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 9,
+          "destination_origin": [
+            24,
+            96
+          ],
+          "local_rope": {
+            "shift_y": 24.0,
+            "shift_x": 96.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 10,
+          "destination_origin": [
+            32,
+            0
+          ],
+          "local_rope": {
+            "shift_y": 32.0,
+            "shift_x": 0.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 11,
+          "destination_origin": [
+            32,
+            24
+          ],
+          "local_rope": {
+            "shift_y": 32.0,
+            "shift_x": 24.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 12,
+          "destination_origin": [
+            32,
+            48
+          ],
+          "local_rope": {
+            "shift_y": 32.0,
+            "shift_x": 48.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 13,
+          "destination_origin": [
+            32,
+            72
+          ],
+          "local_rope": {
+            "shift_y": 32.0,
+            "shift_x": 72.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        },
+        {
+          "region": 14,
+          "destination_origin": [
+            32,
+            96
+          ],
+          "local_rope": {
+            "shift_y": 32.0,
+            "shift_x": 96.0,
+            "scale_y": 0.49206349206349204,
+            "scale_x": 0.49206349206349204
+          }
+        }
+      ]
+    },
+    "B_NATIVE_LOCAL_COORDS": {
+      "source": null,
+      "source_tokens_per_call": 0,
+      "source_calls": 0,
+      "context_blocks": 0,
+      "local_generated_tokens": 4096,
+      "local_calls": 15,
+      "source_cuda_ms": 0.0,
+      "local_cuda_ms": 15187.763305664062,
+      "source_wall_seconds": 0.0,
+      "local_wall_seconds": 15.189380700016045,
+      "total_wall_seconds": 15.306592100008857,
+      "peak_allocated_bytes": 3103128576,
+      "peak_reserved_bytes": 3600809984,
+      "baseline_allocated_bytes": 2553501696,
+      "baseline_reserved_bytes": 2634022912,
+      "cpu_kv_cache_bytes_aggregate": 0,
+      "cpu_to_gpu_transfer_bytes": 0,
+      "overlap": {
+        "aggregate_rms": 0.23416490953600422,
+        "compared_values": 1310720,
+        "pairs": [
+          {
+            "left": 0,
+            "right": 1,
+            "rms": 0.26934141578109877,
+            "values": 32768
+          },
+          {
+            "left": 0,
+            "right": 5,
+            "rms": 0.27931788172117766,
+            "values": 32768
+          },
+          {
+            "left": 0,
+            "right": 6,
+            "rms": 0.31606140889588014,
+            "values": 8192
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "rms": 0.2773277922861561,
+            "values": 32768
+          },
+          {
+            "left": 1,
+            "right": 5,
+            "rms": 0.31921221001452016,
+            "values": 8192
+          },
+          {
+            "left": 1,
+            "right": 6,
+            "rms": 0.26436592873325737,
+            "values": 32768
+          },
+          {
+            "left": 1,
+            "right": 7,
+            "rms": 0.3286487735892842,
+            "values": 8192
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "rms": 0.2847943687845633,
+            "values": 32768
+          },
+          {
+            "left": 2,
+            "right": 6,
+            "rms": 0.3217901942186372,
+            "values": 8192
+          },
+          {
+            "left": 2,
+            "right": 7,
+            "rms": 0.26078261729911073,
+            "values": 32768
+          },
+          {
+            "left": 2,
+            "right": 8,
+            "rms": 0.32217345798206587,
+            "values": 8192
+          },
+          {
+            "left": 3,
+            "right": 4,
+            "rms": 0.2858858311981923,
+            "values": 32768
+          },
+          {
+            "left": 3,
+            "right": 7,
+            "rms": 0.31847257883253693,
+            "values": 8192
+          },
+          {
+            "left": 3,
+            "right": 8,
+            "rms": 0.2626236885306773,
+            "values": 32768
+          },
+          {
+            "left": 3,
+            "right": 9,
+            "rms": 0.3169574175537635,
+            "values": 8192
+          },
+          {
+            "left": 4,
+            "right": 8,
+            "rms": 0.3302633228704537,
+            "values": 8192
+          },
+          {
+            "left": 4,
+            "right": 9,
+            "rms": 0.26956202842676463,
+            "values": 32768
+          },
+          {
+            "left": 5,
+            "right": 6,
+            "rms": 0.23260801539046475,
+            "values": 32768
+          },
+          {
+            "left": 5,
+            "right": 10,
+            "rms": 0.2016220610984412,
+            "values": 98304
+          },
+          {
+            "left": 5,
+            "right": 11,
+            "rms": 0.23392604637932535,
+            "values": 24576
+          },
+          {
+            "left": 6,
+            "right": 7,
+            "rms": 0.23197872325122276,
+            "values": 32768
+          },
+          {
+            "left": 6,
+            "right": 10,
+            "rms": 0.23990238065366568,
+            "values": 24576
+          },
+          {
+            "left": 6,
+            "right": 11,
+            "rms": 0.19526768488129562,
+            "values": 98304
+          },
+          {
+            "left": 6,
+            "right": 12,
+            "rms": 0.2185852588479556,
+            "values": 24576
+          },
+          {
+            "left": 7,
+            "right": 8,
+            "rms": 0.23458105407311095,
+            "values": 32768
+          },
+          {
+            "left": 7,
+            "right": 11,
+            "rms": 0.23868100970363193,
+            "values": 24576
+          },
+          {
+            "left": 7,
+            "right": 12,
+            "rms": 0.19780920691860215,
+            "values": 98304
+          },
+          {
+            "left": 7,
+            "right": 13,
+            "rms": 0.23913132834016265,
+            "values": 24576
+          },
+          {
+            "left": 8,
+            "right": 9,
+            "rms": 0.23774659254839298,
+            "values": 32768
+          },
+          {
+            "left": 8,
+            "right": 12,
+            "rms": 0.23768392852713316,
+            "values": 24576
+          },
+          {
+            "left": 8,
+            "right": 13,
+            "rms": 0.19407442602961897,
+            "values": 98304
+          },
+          {
+            "left": 8,
+            "right": 14,
+            "rms": 0.2387886169752269,
+            "values": 24576
+          },
+          {
+            "left": 9,
+            "right": 13,
+            "rms": 0.21889419571486116,
+            "values": 24576
+          },
+          {
+            "left": 9,
+            "right": 14,
+            "rms": 0.1890908937177035,
+            "values": 98304
+          },
+          {
+            "left": 10,
+            "right": 11,
+            "rms": 0.23001530053464575,
+            "values": 32768
+          },
+          {
+            "left": 11,
+            "right": 12,
+            "rms": 0.22024004806784422,
+            "values": 32768
+          },
+          {
+            "left": 12,
+            "right": 13,
+            "rms": 0.22034639882308127,
+            "values": 32768
+          },
+          {
+            "left": 13,
+            "right": 14,
+            "rms": 0.21518496380634572,
+            "values": 32768
+          }
+        ]
+      },
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "assembled": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.8902780413627625,
+        "mean": -0.005846387706696987,
+        "max_abs": 5.058382034301758,
+        "finite": true
+      },
+      "representative_x0_W": {
+        "shape": [
+          1,
+          128,
+          64,
+          64
+        ],
+        "rms": 1.0219110250473022,
+        "mean": 0.04637111723423004,
+        "max_abs": 5.521723747253418,
+        "finite": true
+      },
+      "coordinate_records": [
+        {
+          "region": 0,
+          "destination_origin": [
+            0,
+            0
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 1,
+          "destination_origin": [
+            0,
+            24
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 2,
+          "destination_origin": [
+            0,
+            48
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 3,
+          "destination_origin": [
+            0,
+            72
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 4,
+          "destination_origin": [
+            0,
+            96
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 5,
+          "destination_origin": [
+            24,
+            0
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 6,
+          "destination_origin": [
+            24,
+            24
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 7,
+          "destination_origin": [
+            24,
+            48
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 8,
+          "destination_origin": [
+            24,
+            72
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 9,
+          "destination_origin": [
+            24,
+            96
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 10,
+          "destination_origin": [
+            32,
+            0
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 11,
+          "destination_origin": [
+            32,
+            24
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 12,
+          "destination_origin": [
+            32,
+            48
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 13,
+          "destination_origin": [
+            32,
+            72
+          ],
+          "local_rope": {}
+        },
+        {
+          "region": 14,
+          "destination_origin": [
+            32,
+            96
+          ],
+          "local_rope": {}
+        }
+      ]
+    },
+    "C_NATIVE_LOCAL_COORDS_CONTEXT": {
+      "source": "accepted_H",
+      "source_tokens_per_call": 8192,
+      "source_calls": 15,
+      "context_blocks": 25,
+      "local_generated_tokens": 4096,
+      "local_calls": 15,
+      "source_cuda_ms": 50171.9736328125,
+      "local_cuda_ms": 38146.321044921875,
+      "source_wall_seconds": 50.17501239999547,
+      "local_wall_seconds": 38.148435400027665,
+      "total_wall_seconds": 88.91051349999907,
+      "peak_allocated_bytes": 3959981056,
+      "peak_reserved_bytes": 4716494848,
+      "baseline_allocated_bytes": 2553501696,
+      "baseline_reserved_bytes": 2634022912,
+      "cpu_kv_cache_bytes_aggregate": 37748736000,
+      "cpu_to_gpu_transfer_bytes": 37748736000,
+      "overlap": {
+        "aggregate_rms": 0.19125299869055246,
+        "compared_values": 1310720,
+        "pairs": [
+          {
+            "left": 0,
+            "right": 1,
+            "rms": 0.2097050549169844,
+            "values": 32768
+          },
+          {
+            "left": 0,
+            "right": 5,
+            "rms": 0.216421816710118,
+            "values": 32768
+          },
+          {
+            "left": 0,
+            "right": 6,
+            "rms": 0.23837411352931934,
+            "values": 8192
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "rms": 0.2185577416227895,
+            "values": 32768
+          },
+          {
+            "left": 1,
+            "right": 5,
+            "rms": 0.242880391493977,
+            "values": 8192
+          },
+          {
+            "left": 1,
+            "right": 6,
+            "rms": 0.2072258969942529,
+            "values": 32768
+          },
+          {
+            "left": 1,
+            "right": 7,
+            "rms": 0.25310579450768694,
+            "values": 8192
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "rms": 0.2274756527411611,
+            "values": 32768
+          },
+          {
+            "left": 2,
+            "right": 6,
+            "rms": 0.2509709962457665,
+            "values": 8192
+          },
+          {
+            "left": 2,
+            "right": 7,
+            "rms": 0.21388333403370516,
+            "values": 32768
+          },
+          {
+            "left": 2,
+            "right": 8,
+            "rms": 0.2534338885472155,
+            "values": 8192
+          },
+          {
+            "left": 3,
+            "right": 4,
+            "rms": 0.22797501022706132,
+            "values": 32768
+          },
+          {
+            "left": 3,
+            "right": 7,
+            "rms": 0.253571568504387,
+            "values": 8192
+          },
+          {
+            "left": 3,
+            "right": 8,
+            "rms": 0.21395112049799372,
+            "values": 32768
+          },
+          {
+            "left": 3,
+            "right": 9,
+            "rms": 0.2580647679314952,
+            "values": 8192
+          },
+          {
+            "left": 4,
+            "right": 8,
+            "rms": 0.267668103313589,
+            "values": 8192
+          },
+          {
+            "left": 4,
+            "right": 9,
+            "rms": 0.21349260980124102,
+            "values": 32768
+          },
+          {
+            "left": 5,
+            "right": 6,
+            "rms": 0.19378839927518327,
+            "values": 32768
+          },
+          {
+            "left": 5,
+            "right": 10,
+            "rms": 0.1662263617286283,
+            "values": 98304
+          },
+          {
+            "left": 5,
+            "right": 11,
+            "rms": 0.18990360200873074,
+            "values": 24576
+          },
+          {
+            "left": 6,
+            "right": 7,
+            "rms": 0.19214796845994792,
+            "values": 32768
+          },
+          {
+            "left": 6,
+            "right": 10,
+            "rms": 0.1935753242585044,
+            "values": 24576
+          },
+          {
+            "left": 6,
+            "right": 11,
+            "rms": 0.1636858810465151,
+            "values": 98304
+          },
+          {
+            "left": 6,
+            "right": 12,
+            "rms": 0.18155620349552207,
+            "values": 24576
+          },
+          {
+            "left": 7,
+            "right": 8,
+            "rms": 0.19653934445470686,
+            "values": 32768
+          },
+          {
+            "left": 7,
+            "right": 11,
+            "rms": 0.18425898727528794,
+            "values": 24576
+          },
+          {
+            "left": 7,
+            "right": 12,
+            "rms": 0.16816608163387184,
+            "values": 98304
+          },
+          {
+            "left": 7,
+            "right": 13,
+            "rms": 0.1934944220682763,
+            "values": 24576
+          },
+          {
+            "left": 8,
+            "right": 9,
+            "rms": 0.19884880160758828,
+            "values": 32768
+          },
+          {
+            "left": 8,
+            "right": 12,
+            "rms": 0.1931489640915745,
+            "values": 24576
+          },
+          {
+            "left": 8,
+            "right": 13,
+            "rms": 0.16613513160687648,
+            "values": 98304
+          },
+          {
+            "left": 8,
+            "right": 14,
+            "rms": 0.19680406690305374,
+            "values": 24576
+          },
+          {
+            "left": 9,
+            "right": 13,
+            "rms": 0.1800620142859427,
+            "values": 24576
+          },
+          {
+            "left": 9,
+            "right": 14,
+            "rms": 0.16164676888738377,
+            "values": 98304
+          },
+          {
+            "left": 10,
+            "right": 11,
+            "rms": 0.18966564567902316,
+            "values": 32768
+          },
+          {
+            "left": 11,
+            "right": 12,
+            "rms": 0.18091521461891896,
+            "values": 32768
+          },
+          {
+            "left": 12,
+            "right": 13,
+            "rms": 0.18711860928615062,
+            "values": 32768
+          },
+          {
+            "left": 13,
+            "right": 14,
+            "rms": 0.18146941617222967,
+            "values": 32768
+          }
+        ]
+      },
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "assembled": {
+        "shape": [
+          1,
+          128,
+          64,
+          128
+        ],
+        "rms": 0.8767731189727783,
+        "mean": -0.002260681241750717,
+        "max_abs": 5.093771457672119,
+        "finite": true
+      },
+      "representative_x0_W": {
+        "shape": [
+          1,
+          128,
+          64,
+          64
+        ],
+        "rms": 1.013580560684204,
+        "mean": 0.045613739639520645,
+        "max_abs": 5.288652420043945,
+        "finite": true
+      },
+      "coordinate_records": [
+        {
+          "region": 0,
+          "destination_origin": [
+            0,
+            0
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -0.0,
+            "shift_x": -0.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              126.0,
+              254.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              126.0,
+              254.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 1,
+          "destination_origin": [
+            0,
+            24
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -0.0,
+            "shift_x": -48.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              -48.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              126.0,
+              206.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              -48.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              126.0,
+              206.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 2,
+          "destination_origin": [
+            0,
+            48
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -0.0,
+            "shift_x": -96.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              -96.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              126.0,
+              158.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              -96.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              126.0,
+              158.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 3,
+          "destination_origin": [
+            0,
+            72
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -0.0,
+            "shift_x": -144.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              -144.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              126.0,
+              110.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              -144.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              126.0,
+              110.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 4,
+          "destination_origin": [
+            0,
+            96
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -0.0,
+            "shift_x": -192.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              -192.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              126.0,
+              62.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              -192.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              126.0,
+              62.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 5,
+          "destination_origin": [
+            24,
+            0
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -48.0,
+            "shift_x": -0.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -48.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              78.0,
+              254.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -48.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              78.0,
+              254.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 6,
+          "destination_origin": [
+            24,
+            24
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -48.0,
+            "shift_x": -48.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -48.0,
+              -48.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              78.0,
+              206.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -48.0,
+              -48.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              78.0,
+              206.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 7,
+          "destination_origin": [
+            24,
+            48
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -48.0,
+            "shift_x": -96.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -48.0,
+              -96.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              78.0,
+              158.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -48.0,
+              -96.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              78.0,
+              158.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 8,
+          "destination_origin": [
+            24,
+            72
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -48.0,
+            "shift_x": -144.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -48.0,
+              -144.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              78.0,
+              110.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -48.0,
+              -144.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              78.0,
+              110.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 9,
+          "destination_origin": [
+            24,
+            96
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -48.0,
+            "shift_x": -192.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -48.0,
+              -192.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              78.0,
+              62.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -48.0,
+              -192.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              78.0,
+              62.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 10,
+          "destination_origin": [
+            32,
+            0
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -64.0,
+            "shift_x": -0.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -64.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              62.0,
+              254.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -64.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              62.0,
+              254.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 11,
+          "destination_origin": [
+            32,
+            24
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -64.0,
+            "shift_x": -48.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -64.0,
+              -48.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              62.0,
+              206.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -64.0,
+              -48.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              62.0,
+              206.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 12,
+          "destination_origin": [
+            32,
+            48
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -64.0,
+            "shift_x": -96.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -64.0,
+              -96.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              62.0,
+              158.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -64.0,
+              -96.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              62.0,
+              158.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 13,
+          "destination_origin": [
+            32,
+            72
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -64.0,
+            "shift_x": -144.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -64.0,
+              -144.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              62.0,
+              110.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -64.0,
+              -144.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              62.0,
+              110.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        },
+        {
+          "region": 14,
+          "destination_origin": [
+            32,
+            96
+          ],
+          "local_rope": {},
+          "source_rope": {
+            "scale_y": 2.0,
+            "scale_x": 2.0,
+            "shift_y": -64.0,
+            "shift_x": -192.0
+          },
+          "local_ids": {
+            "generated_ids_shape": [
+              1,
+              4096,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              63.0,
+              63.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          },
+          "source_ids": {
+            "generated_ids_shape": [
+              1,
+              8192,
+              4
+            ],
+            "generated_ids_first": [
+              0.0,
+              -64.0,
+              -192.0,
+              0.0
+            ],
+            "generated_ids_last": [
+              0.0,
+              62.0,
+              62.0,
+              0.0
+            ],
+            "generated_ids_axis_min": [
+              0.0,
+              -64.0,
+              -192.0,
+              0.0
+            ],
+            "generated_ids_axis_max": [
+              0.0,
+              62.0,
+              62.0,
+              0.0
+            ],
+            "text_ids_shape": [
+              1,
+              512,
+              4
+            ],
+            "text_ids_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "text_ids_last": [
+              0.0,
+              0.0,
+              0.0,
+              511.0
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "pairwise": {
+    "A_COMPRESSED_DESTINATION_COORDS_vs_B_NATIVE_LOCAL_COORDS": {
+      "assembled": {
+        "rms": 0.3164713978767395,
+        "max_abs": 2.3307137489318848,
+        "bit_exact": false
+      },
+      "representative_x0_W": {
+        "rms": 0.4399620592594147,
+        "max_abs": 2.8127479553222656,
+        "bit_exact": false
+      }
+    },
+    "A_COMPRESSED_DESTINATION_COORDS_vs_C_NATIVE_LOCAL_COORDS_CONTEXT": {
+      "assembled": {
+        "rms": 0.29476261138916016,
+        "max_abs": 2.694888114929199,
+        "bit_exact": false
+      },
+      "representative_x0_W": {
+        "rms": 0.41515475511550903,
+        "max_abs": 2.6856181621551514,
+        "bit_exact": false
+      }
+    },
+    "B_NATIVE_LOCAL_COORDS_vs_C_NATIVE_LOCAL_COORDS_CONTEXT": {
+      "assembled": {
+        "rms": 0.1340983361005783,
+        "max_abs": 1.1057648658752441,
+        "bit_exact": false
+      },
+      "representative_x0_W": {
+        "rms": 0.20788218080997467,
+        "max_abs": 1.7506840229034424,
+        "bit_exact": false
+      }
+    }
+  },
+  "images": {
+    "A_COMPRESSED_DESTINATION_COORDS": {
+      "representative_x0_W": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_representative_x0_W.png",
+        "dimensions_wh": [
+          1024,
+          1024
+        ],
+        "sha256_rgb": "03c7d0339f1e9297431830de3791b55d4be30e2aacd90bc678e7a439e6b7a153"
+      },
+      "assembled_terminal_x0_H": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_assembled_terminal_x0_H.png",
+        "dimensions_wh": [
+          2048,
+          1024
+        ],
+        "sha256_rgb": "b504dc2b7f3fb7dccf7f9bb5afa93b2d48920a7c937fb0289859af1e7f5b1371"
+      },
+      "final_terminal": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_final_terminal.png",
+        "dimensions_wh": [
+          2048,
+          1024
+        ],
+        "sha256_rgb": "b504dc2b7f3fb7dccf7f9bb5afa93b2d48920a7c937fb0289859af1e7f5b1371"
+      },
+      "restricted_crop_00": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_00.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "4711b70ff8594ed69daf7299dec94f039c25be96115a3912e89db55fac2599ad"
+      },
+      "restricted_crop_01": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_01.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "3867c6de7b308ac98b26b6c50efbc90c1b41c4837b2d0e5c770ec2291ba9f4a7"
+      },
+      "restricted_crop_02": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_02.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "081ee547899abc3308a0924c0a4c94d7f809065732a3974a1e55e95af5de7508"
+      },
+      "restricted_crop_03": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_03.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "56b812059fd7c23c1d731efbdb844af0e99dc8532e2e9c749b2d610e3a88cb4f"
+      },
+      "restricted_crop_04": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_04.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "d14a832facd6e23f1e74057e56e5a85e29d7c7bf76c772c1cf9ed0c4f3693e6b"
+      },
+      "restricted_crop_05": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_05.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "55aba817470bb118261ae916fea76922dbd2f71a2ab2c4a90af013108d8fce00"
+      },
+      "restricted_crop_06": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_06.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "3c21278eb7467ca5e24d7e6b056c00a6281e97c9df6c39fb642232b5e011ae6d"
+      },
+      "restricted_crop_07": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_07.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "2526d8e17fe8476a2ccfbf2ed0fd08100f674f198c0cabeea5ec564f714cda32"
+      },
+      "restricted_crop_08": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_08.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "87950c0aa93f30b30489ae2d560a2e625ab11f55fa2ff5432a63576c579f06dd"
+      },
+      "restricted_crop_09": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_09.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "0847991bbfbd1e8d99d4467a6d3ebec67b2a9b457e261b1aecb3d09ee8d34293"
+      },
+      "restricted_crop_10": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_10.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "9377c71d7544e9f4284bac171533dffeb7f3d13e704631cb87cc76fe955afb9e"
+      },
+      "restricted_crop_11": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_11.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "825c4672dd015ffbd9511d843089cd38457f2825771070a7b2478c6067b6b10b"
+      },
+      "restricted_crop_12": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_12.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "952edfe1f051390b4f0349e3f2bfd125c883c97abbed626259c6639140f92c80"
+      },
+      "restricted_crop_13": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_13.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "3c94a120ddfa313dc15f0d6c237145a805439966bea0143bd5e9cf31e684b81f"
+      },
+      "restricted_crop_14": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\A_COMPRESSED_DESTINATION_COORDS_restricted_crop_14.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "58229eefbb8be23c34ce198e6cab6b915f81c5dc9d95983467abf755512cc779"
+      }
+    },
+    "B_NATIVE_LOCAL_COORDS": {
+      "representative_x0_W": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_representative_x0_W.png",
+        "dimensions_wh": [
+          1024,
+          1024
+        ],
+        "sha256_rgb": "9717a332485c91b10769ec9c693ebb32f90b848beb555147cd9464d6af8c46b3"
+      },
+      "assembled_terminal_x0_H": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_assembled_terminal_x0_H.png",
+        "dimensions_wh": [
+          2048,
+          1024
+        ],
+        "sha256_rgb": "d0b32f48162f806206c8373efb3bf76d66c6855e3b3c912f4435cfa8f8e1c31a"
+      },
+      "final_terminal": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_final_terminal.png",
+        "dimensions_wh": [
+          2048,
+          1024
+        ],
+        "sha256_rgb": "d0b32f48162f806206c8373efb3bf76d66c6855e3b3c912f4435cfa8f8e1c31a"
+      },
+      "restricted_crop_00": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_00.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "b3f4eacc717d4a88a806ddb39bfee0b47551d811d98b837c889cea99cccafea8"
+      },
+      "restricted_crop_01": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_01.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "9368d9a580127c7d4527302bff65b8ebea86b9a7a4555d9e910ded7003453e35"
+      },
+      "restricted_crop_02": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_02.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "67ceff4d1416a05519e1ed604e4df7ee1cdc35e113c1cffacdc4e6c9c8f1244c"
+      },
+      "restricted_crop_03": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_03.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "b07112c73efc85e4f1b4f31af406e8428c672e34757b2c85a68e6f7ac2e45cf9"
+      },
+      "restricted_crop_04": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_04.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "6db61f793d38c5e488f08788216179ae7e8db0ccf8ef688ebc602c4b5d2147ca"
+      },
+      "restricted_crop_05": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_05.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "4af29a51cc6e54b066194e92cad9a76fd218baedd61f769d5b06f538341a1b90"
+      },
+      "restricted_crop_06": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_06.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "e640d199297dfe895c590fd2ab0a09515dab4fca6ad2958e94d7e4b7f2f0ed61"
+      },
+      "restricted_crop_07": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_07.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "b3d6be7eb3b74603b2ada3abae122d2e9e59b37be2bf4c8adf8dfdb11f3e30d0"
+      },
+      "restricted_crop_08": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_08.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "57d136e45d1bcb82c106e3c9e68d835efcad34456f7870c402a4c733950bf017"
+      },
+      "restricted_crop_09": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_09.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "6f5e9a0d777672bfc47875c4b527f5274f249de2c6db75c11ce4a251791dbbe8"
+      },
+      "restricted_crop_10": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_10.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "3a5306e0f7f2fdd4148a3be84e6ebc5831f21418258614e2c0d86a3ff0fefbe8"
+      },
+      "restricted_crop_11": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_11.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "b8b2806b7bd86ad45ead82549745326b18dd48d77c341b8a027121a03eeb05b7"
+      },
+      "restricted_crop_12": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_12.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "69bd4d81ac493ebc2940efc74a3f510afcd1b0ea92ad22a6aef2dcde9e75e478"
+      },
+      "restricted_crop_13": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_13.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "3046d5ba9a24dd4e4bccd489daf706d5320efa74f8987d4d5e8f89d4b90b4f7e"
+      },
+      "restricted_crop_14": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\B_NATIVE_LOCAL_COORDS_restricted_crop_14.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "138163bf0f1a17808785fe3d509d5e210ab3e849c7aeefa77346915adb1bb744"
+      }
+    },
+    "C_NATIVE_LOCAL_COORDS_CONTEXT": {
+      "representative_x0_W": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_representative_x0_W.png",
+        "dimensions_wh": [
+          1024,
+          1024
+        ],
+        "sha256_rgb": "202abd2b3887f608755b12797b9d45f0c3fd3d4e42b75993fcb19e23f5724957"
+      },
+      "assembled_terminal_x0_H": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_assembled_terminal_x0_H.png",
+        "dimensions_wh": [
+          2048,
+          1024
+        ],
+        "sha256_rgb": "dc172fd8aa22b86444b6803978315d8692edc49c524adf822c78295a05242fd4"
+      },
+      "final_terminal": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_final_terminal.png",
+        "dimensions_wh": [
+          2048,
+          1024
+        ],
+        "sha256_rgb": "dc172fd8aa22b86444b6803978315d8692edc49c524adf822c78295a05242fd4"
+      },
+      "restricted_crop_00": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_00.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "ad157149cfb841586953e59b28d08947ee23b30eeb107ab56dc079cb7837125d"
+      },
+      "restricted_crop_01": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_01.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "d101278cb54df85957bcecfa2d15d9ca78ec06aebd4b4fb3699a413caed6f4d6"
+      },
+      "restricted_crop_02": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_02.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "581f212e6834d66aa50b0550046cecf54feef5ac369cac1823944a5e73e5037a"
+      },
+      "restricted_crop_03": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_03.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "585d99bf9d426702afe6cd576fda1f2c5512856027b30ba3b4bd1082dcb09acc"
+      },
+      "restricted_crop_04": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_04.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "217c78148c16dbe22a68d010fceeb5f815ad80a800e7cd5e0cec1cc34a8e936b"
+      },
+      "restricted_crop_05": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_05.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "120396951022ff55fa730a7c014fdd6dd24c6f0f017204d75719271993095078"
+      },
+      "restricted_crop_06": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_06.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "38bab3ca1eb2c7f4a19ae1139faa4cbe47954eac7ca0d8e772d081a033374562"
+      },
+      "restricted_crop_07": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_07.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "fd4fb487441c71325cd99178094643f23f9f7fdc79cd1b7e93b8f73f6b9a21a6"
+      },
+      "restricted_crop_08": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_08.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "bbed57fcf57e9b52872df48ceb9e790650636cb191570899d97b05d24a038c30"
+      },
+      "restricted_crop_09": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_09.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "aa81426136f1015041f1cd731b38fdd3593418445259c091b6196f1b6811e52b"
+      },
+      "restricted_crop_10": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_10.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "debbe126355f05681ee2ed0c17f9be448ba233fd4740bd97fe92c6f6a4c145ee"
+      },
+      "restricted_crop_11": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_11.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "bb35920d517430f01e56c8bfd5063978c10f208dec427fc61d25d50ee19d1806"
+      },
+      "restricted_crop_12": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_12.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "8e4ec1a5937680dd34577baf9feb4061a350d59f4e80501f9c3ca575095558d8"
+      },
+      "restricted_crop_13": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_13.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "943b950a100c632ea812a1648d9219813af0cbd020ac7d52d4c04c6853b44286"
+      },
+      "restricted_crop_14": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_native_working_coordinate_results\\C_NATIVE_LOCAL_COORDS_CONTEXT_restricted_crop_14.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "d17ac675ccd653a841830f3592410802180449ad893306462d20b7bbfd5d201c"
+      }
+    }
+  }
+}
