@@ -886,3 +886,12 @@ whole scene and regenerates modest detail; the matched independent-local anchor
 returns S0. Retain this as the supported transfer mechanism for the next narrow
 trajectory discriminator. Do not tune sigma, add output-space residuals, or
 productionize from this single-state result.
+
+## 2026-09-05 — Accept temporal viability of Blueprint-initialized resampling
+
+Phase 23 keeps all four Blueprint and refined estimates in the S3 scene basin
+while producing a stable measurable detail increase. Treat Blueprint
+initialization as established for these bounded evaluations; do not revisit it
+with sigma or guidance sweeps. The next architectural discriminator should
+compare local-refinement cadence—terminal-only, periodic, or fully interleaved—
+without production changes until one lifecycle is qualified.

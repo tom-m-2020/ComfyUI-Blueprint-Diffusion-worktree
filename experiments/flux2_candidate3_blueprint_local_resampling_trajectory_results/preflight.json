@@ -1,0 +1,35 @@
+{
+  "configuration": {
+    "phase": 23,
+    "source_trajectory_hash": "98cf3802be1fd818a75b78d2825091855859c1f1091ba81d74d482abe8ceb082",
+    "source_intervals": 4,
+    "H": [
+      128,
+      256
+    ],
+    "blueprint": [
+      32,
+      64
+    ],
+    "regions": 55,
+    "destination_crop": [
+      32,
+      32
+    ],
+    "working": [
+      64,
+      64
+    ],
+    "resampling_sigma": 0.25,
+    "working_contract": "W_0.25=0.75*nearest2(mapped_blueprint_x0_crop)+0.25*epsilon_region",
+    "noise_base_seed": 42260904,
+    "noise_reuse": "same deterministic region noise at every Blueprint evaluation",
+    "coordinates": "ordinary native 64x64 local W coordinates",
+    "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+    "seed": 20260901
+  },
+  "configuration_hash": "71e07897d5410caf78c0994b819c515b39fa369ae213d8c3eea4f33be58ad035",
+  "construction_valid": true,
+  "reason": "local resampling is an independent fixed-sigma refinement of each denoised Blueprint estimate, not a reconstruction of accepted G at sigma_i",
+  "expected_new_work": "4*55=220 local forwards; four exact Blueprint forwards reused from persisted Phase20c artifacts"
+}

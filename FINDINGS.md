@@ -1874,3 +1874,20 @@ Detailed evidence is in
   low-frequency RMS). No distinct alternative bridge/tower system appears.
 - This supports model-mediated regeneration from a coherent Blueprint state;
   it does not yet qualify a trajectory, optimal sigma, or production design.
+
+## 2026-09-05 — Phase 23 Blueprint-initialized refinement is temporally stable
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_BLUEPRINT_LOCAL_RESAMPLING_TRAJECTORY.md`.
+
+- Applying the unchanged Phase-22 fixed-`0.25` resampling construction to all
+  four persisted Phase-20c Blueprint predictions yields S3 assemblies at every
+  evaluation; all four Blueprint references are also S3.
+- Refined gradient RMS remains `0.176–0.188` versus Blueprint `0.123–0.134`,
+  while refined-vs-Blueprint RMS slightly falls from `0.1230` to `0.1198` and
+  low-frequency discrepancy falls from `0.0742` to `0.0654`.
+- The same 55 deterministic noise tensors are reused at every evaluation. No
+  bridge/tower/train alternatives emerge, so detail regeneration is stable
+  rather than a progressive loss of Blueprint geometry.
+- This establishes temporal viability at four bounded evaluation points, not a
+  cadence choice or an interleaved accepted-state architecture.
