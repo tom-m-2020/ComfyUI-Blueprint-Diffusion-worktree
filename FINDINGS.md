@@ -1744,3 +1744,23 @@ Detailed evidence is in
 - The oracle costs `142.178 s` terminal wall and about `4.93/9.82 GiB` peak
   allocated/reserved because it evolves 55 W-specific joint source states.
   This is semantic evidence, not an efficiency architecture.
+
+## 2026-09-04 — Phase 18b finds no transient coherent state across joint depth
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_JOINT_DEPTH_LOCALIZATION.md`.
+
+- Prefix-joint/external-tail checkpoints at S0, S9, and S19 all remain in the
+  same S1 class as the Phase-17 full-joint endpoint. RMS versus full joint
+  decreases from `0.223708` to `0.101851` to zero, but no S2/S3 semantic state
+  appears.
+- External-prefix/joint-tail checkpoints at D4 and S0 recover at most that same
+  weak S1 class; switches after S9 or S14 remain S0. Late joint depth therefore
+  cannot repair already-established fragmentation.
+- Overlap RMS stays in the narrow `0.766685–0.780861` range and does not track
+  the categorical semantic result.
+- Early prefix tails are causally expensive because joint interaction has
+  already produced 55 W-specific source states. The prior D0/D4 costs
+  (`1491.96/1157.48 s`) were legitimate; Phase 18b intentionally excludes them.
+- Arm artifacts are persisted transactionally and resumed only after exact
+  accepted-state/source/W/schedule fingerprint validation.
