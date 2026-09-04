@@ -6,8 +6,10 @@ import gc
 import hashlib
 import json
 import math
+import os
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import torch
@@ -33,10 +35,76 @@ from blueprint_diffusion.sampling.euler import BlueprintCoordinator, validate_sc
 
 OUTPUT = ROOT / "experiments" / "flux2_candidate3_joint_depth_localization_results"
 REPORT = OUTPUT / "report.json"
+ARTIFACTS = OUTPUT / "arms"
 CHECKPOINTS = (
     ("D0", 0), ("D4", 4), ("S0", 5), ("S4", 9),
     ("S9", 14), ("S14", 19), ("S19", 24),
 )
+PREFIX_CHECKPOINTS = (("S0", 5), ("S9", 14), ("S19", 24))
+TAIL_CHECKPOINTS = (("D4", 4), ("S0", 5), ("S9", 14), ("S14", 19))
+BOUNDED_ARMS = tuple(
+    [("prefix", name, ordinal) for name, ordinal in PREFIX_CHECKPOINTS]
+    + [("tail", name, ordinal) for name, ordinal in TAIL_CHECKPOINTS]
+)
+
+
+def utc_now():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def stable_hash(value):
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+
+
+def atomic_json(path, value):
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w", encoding="utf-8") as handle:
+        json.dump(value, handle, indent=2)
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(temporary, path)
+
+
+def atomic_torch(path, value):
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("wb") as handle:
+        torch.save(value, handle)
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(temporary, path)
+
+
+def artifact_paths(name):
+    return ARTIFACTS / f"{name}.json", ARTIFACTS / f"{name}.pt"
+
+
+def load_artifact(name, configuration_hash):
+    metadata_path, tensor_path = artifact_paths(name)
+    if not metadata_path.is_file() or not tensor_path.is_file():
+        return None
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    if metadata.get("configuration_hash") != configuration_hash:
+        raise RuntimeError(f"Phase 18b artifact configuration mismatch: {name}")
+    if not metadata.get("complete"):
+        return None
+    tensors = torch.load(tensor_path, map_location="cpu", weights_only=True)
+    if tensors.get("configuration_hash") != configuration_hash:
+        raise RuntimeError(f"Phase 18b tensor artifact mismatch: {name}")
+    return metadata, tensors
+
+
+def persist_artifact(name, configuration_hash, record, tensors):
+    ARTIFACTS.mkdir(parents=True, exist_ok=True)
+    metadata_path, tensor_path = artifact_paths(name)
+    atomic_torch(tensor_path, {"configuration_hash": configuration_hash, **tensors})
+    atomic_json(metadata_path, {
+        "complete": True,
+        "configuration_hash": configuration_hash,
+        "tensor_artifact": str(tensor_path),
+        "record": record,
+    })
 
 
 def clean_options(options):
@@ -382,31 +450,76 @@ class Phase18Sampler(phase17.Phase17Sampler):
         source = phase14.restrict_4x2(state.h)
         base, diffusion = extra_args["model_options"], model.inner_model.diffusion_model
 
-        reference = self._full_joint_reference(
-            model, source, working, sigma, base, regions, diffusion
-        )
+        configuration = {
+            "phase": "18b", "H": list(phase14.H_HW), "source": [32, 128],
+            "source_tokens": 4096, "W": [64, 64], "regions": 55,
+            "seed": phase14.SEED, "terminal_sigma": float(sigma),
+            "sigmas": [float(value) for value in sigmas], "H_hash": h_hash,
+            "G_hash": g_hash, "source_hash": phase14.tensor_hash(source),
+            "working_hashes": working_hashes,
+            "prefix_checkpoints": list(PREFIX_CHECKPOINTS),
+            "tail_checkpoints": list(TAIL_CHECKPOINTS),
+        }
+        configuration_hash = stable_hash(configuration)
+        reference_loaded = load_artifact("REFERENCE_FULL_JOINT", configuration_hash)
+        if reference_loaded is None:
+            started_at, started = utc_now(), time.perf_counter()
+            print("phase18b REFERENCE_FULL_JOINT start 1/8 " + started_at, flush=True)
+            reference = self._full_joint_reference(
+                model, source, working, sigma, base, regions, diffusion
+            )
+            reference_record = {
+                "name": "REFERENCE_FULL_JOINT", "started_at": started_at,
+                "completed_at": utc_now(), "elapsed_seconds": time.perf_counter() - started,
+                "overlap": reference["overlap"], "coverage": reference["coverage"],
+                "assembled": phase14.summary(reference["assembled"]),
+                "representative_boundaries": reference["representative_boundaries"],
+            }
+            persist_artifact("REFERENCE_FULL_JOINT", configuration_hash, reference_record, {
+                "assembled": reference["assembled"], "predictions": reference["predictions"],
+                "checkpoints": reference["checkpoints"],
+            })
+            print(
+                f"phase18b REFERENCE_FULL_JOINT complete 1/8 "
+                f"{reference_record['completed_at']} {reference_record['elapsed_seconds']:.2f}s",
+                flush=True,
+            )
+        else:
+            reference_record, tensors = reference_loaded[0]["record"], reference_loaded[1]
+            reference = {
+                "assembled": tensors["assembled"], "predictions": tensors["predictions"],
+                "checkpoints": tensors["checkpoints"], "overlap": reference_record["overlap"],
+                "coverage": reference_record["coverage"],
+                "representative_boundaries": reference_record["representative_boundaries"],
+            }
+            print("phase18b REFERENCE_FULL_JOINT resume-skip 1/8", flush=True)
         variants = {}
         outputs = {}
-        for family in ("prefix", "tail"):
-            for name, checkpoint in CHECKPOINTS:
+        for progress, (family, name, checkpoint) in enumerate(BOUNDED_ARMS, start=2):
+            variant_name = (
+                f"A_PREFIX_JOINT_{name}_EXTERNAL_TAIL" if family == "prefix"
+                else f"B_EXTERNAL_PREFIX_{name}_JOINT_TAIL"
+            )
+            loaded = load_artifact(variant_name, configuration_hash)
+            if loaded is not None:
+                record, tensors = loaded[0]["record"], loaded[1]
+                assembled, predictions = tensors["assembled"], tensors["predictions"]
+                print(f"phase18b {variant_name} resume-skip {progress}/8", flush=True)
+            else:
+                started_at = utc_now()
+                arm_started = time.perf_counter()
+                print(f"phase18b {variant_name} start {progress}/8 {started_at}", flush=True)
                 gc.collect(); phase2.comfy.model_management.soft_empty_cache()
                 if family == "prefix":
                     assembled, predictions, record = self._run_prefix_joint(
                         model, source, working, sigma, base, regions, diffusion,
                         checkpoint, reference,
                     )
-                    variant_name = f"A_PREFIX_JOINT_{name}_EXTERNAL_TAIL"
                 else:
                     assembled, predictions, record = self._run_external_prefix(
                         model, source, working, sigma, base, regions, diffusion,
                         checkpoint, reference,
                     )
-                    variant_name = f"B_EXTERNAL_PREFIX_{name}_JOINT_TAIL"
-                print(
-                    f"phase18 completed {record['family']} "
-                    f"{record['checkpoint']} in {record['wall_seconds']:.2f}s",
-                    flush=True,
-                )
                 per_region = [
                     phase17.tensor_difference(value, target)
                     for value, target in zip(predictions, reference["predictions"])
@@ -423,9 +536,21 @@ class Phase18Sampler(phase17.Phase17Sampler):
                         "external_consumer": [4608, 8704],
                         "external_source": [4608, 4608],
                     },
+                    "name": variant_name, "started_at": started_at,
+                    "completed_at": utc_now(),
+                    "elapsed_seconds": time.perf_counter() - arm_started,
                 })
-                variants[variant_name] = record
-                outputs[variant_name] = assembled
+                persist_artifact(variant_name, configuration_hash, record, {
+                    "assembled": assembled, "predictions": predictions,
+                    "representative_prediction": predictions[phase17.REPRESENTATIVE_REGION],
+                })
+                print(
+                    f"phase18b {variant_name} complete {progress}/8 "
+                    f"{record['completed_at']} {record['wall_seconds']:.2f}s",
+                    flush=True,
+                )
+            variants[variant_name] = record
+            outputs[variant_name] = assembled
         if phase14.tensor_hash(state.h) != h_hash or phase14.tensor_hash(state.g) != g_hash:
             raise RuntimeError("Phase 18 mutated accepted H/G.")
         if [phase14.tensor_hash(value) for value in working] != working_hashes:
@@ -433,12 +558,8 @@ class Phase18Sampler(phase17.Phase17Sampler):
         self.outputs = outputs
         self.checkpoint_x0 = reference["checkpoints"]
         self.result = {
-            "configuration": {
-                "H": list(phase14.H_HW), "source": [32, 128], "source_tokens": 4096,
-                "W": [64, 64], "regions": 55, "seed": phase14.SEED,
-                "terminal_sigma": float(sigma), "checkpoints": list(CHECKPOINTS),
-                "text_join_policy": "external-prefix joint tail retains W/local text state",
-            },
+            "configuration": configuration,
+            "configuration_hash": configuration_hash,
             "sigmas": [float(value) for value in sigmas],
             "accepted_state": {"H_hash": h_hash, "G_hash": g_hash},
             "working_hashes": working_hashes,
@@ -452,6 +573,7 @@ class Phase18Sampler(phase17.Phase17Sampler):
             "provenance": phase14.provenance_summary(),
             "integrity": {
                 "source_tokens": 4096, "regions": 55, "variants": len(variants),
+                "bounded_arms": 7, "reference_runs": 1,
                 "all_finite": all(item["assembled"]["finite"] for item in variants.values()),
                 "complete_coverage": all(item["coverage"][0] > 0 for item in variants.values()),
                 "accepted_state_immutable": True, "working_states_immutable": True,
@@ -500,6 +622,9 @@ def main():
             torch.zeros_like(noise), callback=lambda *args: None,
             disable_pbar=True, seed=phase14.SEED,
         )
+    del model
+    phase2.comfy.model_management.unload_all_models()
+    phase2.comfy.model_management.soft_empty_cache()
     vae = phase2.comfy.sd.VAE(
         sd=phase2.comfy.utils.load_torch_file(str(phase2.VAE_PATH), safe_load=True)
     )

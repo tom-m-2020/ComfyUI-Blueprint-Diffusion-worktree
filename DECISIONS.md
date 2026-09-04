@@ -815,3 +815,14 @@ one dominant bridge system, so stronger consumption alone is also insufficient.
 Do not productionize the joint oracle, repeat source representation searches,
 or resume token-density sweeps. If research continues, localize semantic
 agreement through joint transformer depth before selecting a new architecture.
+
+## 2026-09-04 — Close joint-interface depth scheduling after Phase 18b
+
+The bounded prefix/tail discriminator finds no S2/S3 state at any tested
+transition. Prefix S0 and S9 retain only the full-joint endpoint's weak S1
+organization; external-prefix D4/S0 can recover that same weak class, and later
+joint starts cannot repair fragmentation. Do not run another joint
+block-count/schedule sweep or optimize around D4/S0. The missing mechanism is
+not a transient coherent solution being overwritten by later depth. Reassess
+the information represented by the fixed global source/state before selecting
+another architecture.

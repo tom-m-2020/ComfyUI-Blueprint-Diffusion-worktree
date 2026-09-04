@@ -526,3 +526,12 @@ but still yields several independent whole-scene alternatives. This is the
 partial decision gate: both source capacity/representation and consumer
 interface likely contribute. Do not resume density or packing sweeps; the next
 justified discriminator is where agreement emerges or fails across joint depth.
+
+Phase 18b is complete with no production or ComfyUI-core changes. The bounded
+matrix evaluated one full-joint reference, prefix checkpoints S0/S9/S19, and
+external-prefix checkpoints D4/S0/S9/S14. No arm reaches S2/S3 or exposes a
+coherent scene later destroyed by depth. D4/S0 late-start tails reproduce only
+Phase 17's weak S1 class, while later starts regress to S0. Joint-interface
+depth scheduling is closed; resumable per-arm artifacts and decoded sheets are
+complete. Next research should return to representation/global-state
+architecture rather than another block schedule sweep.
