@@ -552,3 +552,10 @@ prediction remains fragmented (S0). Gate 2 applies: bounded global planning is
 viable in this discriminator and Blueprint-to-local state transfer/refinement
 is the active bottleneck. No trajectory is authorized. One narrow terminal
 prediction-anchor discriminator is the next justified experiment.
+
+Phase 20b is complete with no production or ComfyUI-core changes. The single
+exact post-forward anchor restores an S3 whole-scene bridge result from the S0
+ordinary local assembly while preserving accepted-state and model-input
+immutability. Detail is visibly overconstrained and the correction is scene-
+scale (`1.119x` local-x0 RMS). A minimal trajectory using the same exact coarse
+prediction contract is authorized; production remains unchanged.

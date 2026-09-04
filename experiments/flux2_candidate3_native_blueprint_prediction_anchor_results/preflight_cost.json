@@ -1,0 +1,6 @@
+{
+  "estimated_minutes": 6,
+  "stop_threshold_minutes": 30,
+  "proceed": true,
+  "reason": "one required 55-forward B reproduction plus three decodes"
+}

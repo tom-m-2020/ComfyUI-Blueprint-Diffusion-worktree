@@ -847,3 +847,13 @@ transfer contract: all 55 local refinements remain S0 despite exact algebra and
 complete coverage. Before any trajectory, test exactly one prediction-space
 coarse anchor using the coherent Blueprint x0; do not add a strength sweep or
 production path.
+
+## 2026-09-04 — Advance exact Blueprint prediction authority to one trajectory
+
+Phase 20b reaches S3 by imposing the coherent bounded Blueprint prediction on
+the coarse component of each ordinary local x0. This establishes viability of
+bounded planning plus prediction-space transfer, but not acceptable detail:
+the correction exceeds local-x0 RMS on average and visibly blurs structure.
+Authorize one minimal trajectory experiment with the identical exact coarse
+contract. Do not tune anchor strength or filters, and do not productionize
+before trajectory stability and local-detail retention are established.
