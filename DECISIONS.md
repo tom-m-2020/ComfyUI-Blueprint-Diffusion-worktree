@@ -877,3 +877,12 @@ coarse scale, filter, or anchor weight: the requested single-pair discriminator
 failed its perceptual gate. Preserve the bounded Blueprint planning result and
 move next to model-mediated refinement/resampling rather than another external
 frequency decomposition.
+
+## 2026-09-04 — Advance Blueprint-initialized model-mediated refinement
+
+Phase 22 shows that one ordinary native FLUX denoise at fixed late sigma 0.25,
+initialized from the coherent mapped Blueprint prediction, preserves an S3
+whole scene and regenerates modest detail; the matched independent-local anchor
+returns S0. Retain this as the supported transfer mechanism for the next narrow
+trajectory discriminator. Do not tune sigma, add output-space residuals, or
+productionize from this single-state result.

@@ -577,3 +577,11 @@ more edge energy than Phase 20c. It did not pass the semantic gate: the terminal
 S2 result retains faint repeated towers, ghost cables, and incompatible bridge
 geometry. Do not sweep spatial filters/scales. The next justified discriminator
 is model-mediated refinement/resampling that preserves Blueprint authority.
+
+Phase 22 is complete with no production or ComfyUI-core changes. At the one
+predeclared late sigma `0.25`, 55 ordinary native local refinements initialized
+from the coherent Blueprint assemble to S3, retain one bridge/train scene, and
+increase gradient RMS by about 40% over the mapped Blueprint. The matched
+ordinary-local-anchor control remains S0. The semantic gate passes; stop before
+sigma tuning. A minimal persistent/multiresolution trajectory is the next
+authorized research question.
