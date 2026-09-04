@@ -1764,3 +1764,23 @@ Detailed evidence is in
   (`1491.96/1157.48 s`) were legitimate; Phase 18b intentionally excludes them.
 - Arm artifacts are persisted transactionally and resumed only after exact
   accepted-state/source/W/schedule fingerprint validation.
+
+## 2026-09-04 — Phase 19 bounded single-scale and hierarchical states remain S0
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_BOUNDED_GLOBAL_STATE.md`.
+
+- At the fixed Phase-14 terminal state, an exact `64x64` single-scale source
+  and a `16x32 + 32x112` explicit whole-canvas hierarchy both use exactly 4,096
+  shared source tokens and all 25 globally interacting source blocks. Neither
+  produces a dominant bridge/train scene; both remain S0 with the established
+  `32x128` control.
+- The hierarchy reserves 512 tokens for an `8x8`-cell coarse canvas and 3,584
+  for a complete-canvas medium level. Joint source interaction over both scales
+  changes fragment placement but does not consolidate bridge, tower, train,
+  horizon, or water identity.
+- Overlap RMS (`0.784053`, `0.788349`, `0.780410`) again fails to predict
+  semantic class. The small hierarchical improvement is not a pass.
+- Runtime is controlled across arms: about `102.5–104.0 s` terminal wall,
+  `1.06–1.08 s` source CUDA, `101.1–102.6 s` local CUDA, and 48 MiB current-
+  block K/V. This isolates representation rather than work budget.
