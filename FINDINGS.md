@@ -1857,3 +1857,20 @@ Detailed evidence is in
 - Mathematical high-frequency/null preservation is therefore not equivalent to
   semantic local-detail preservation. In this case the destination 2x2 null
   space carries incompatible scene identity and geometry.
+
+## 2026-09-04 — Phase 22 Blueprint-initialized local resampling preserves coherence
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_BLUEPRINT_INITIALIZED_LOCAL_RESAMPLING.md`.
+
+- At one predetermined late sigma (`0.25`), ordinary FLUX local denoising from
+  `W_sigma=0.75*nearest2(Blueprint crop)+0.25*epsilon` remains S3 across the
+  assembled 55-region canvas. The matched ordinary-local-anchor control is S0.
+- The same deterministic per-region noise, conditioning, coordinates, ordering,
+  and assembly were used in both arms. Only local state initialization differs;
+  no accepted state was updated.
+- Blueprint-resampled output raises gradient RMS from `0.134299` to `0.188490`
+  while remaining close to the mapped Blueprint (`0.120775` RMS; `0.065888`
+  low-frequency RMS). No distinct alternative bridge/tower system appears.
+- This supports model-mediated regeneration from a coherent Blueprint state;
+  it does not yet qualify a trajectory, optimal sigma, or production design.
