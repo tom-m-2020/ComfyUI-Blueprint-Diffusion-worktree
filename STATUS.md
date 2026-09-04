@@ -544,3 +544,11 @@ consumers and remains exactly 4,096 tokens. All outputs remain S0 despite
 complete coverage and valid invariants. Gate 1 applies: no trajectory or
 production follow-up is authorized. Reassess the global representation/state
 architecture rather than another grid allocation or depth/interface sweep.
+
+Phase 20 is complete with no production or ComfyUI-core changes. A fixed
+native-coordinate `32x64` Blueprint prediction is semantically coherent (S3),
+but exact same-sigma initialization of 55 normalized local W states from that
+prediction remains fragmented (S0). Gate 2 applies: bounded global planning is
+viable in this discriminator and Blueprint-to-local state transfer/refinement
+is the active bottleneck. No trajectory is authorized. One narrow terminal
+prediction-anchor discriminator is the next justified experiment.

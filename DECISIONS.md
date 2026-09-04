@@ -836,3 +836,14 @@ and do not promote the hierarchy based on its slightly lower overlap RMS. Also
 do not respond with another fixed-grid allocation, deterministic packing,
 density sweep, or joint-depth schedule. The next architecture decision must
 reconsider how a bounded state represents scene-level relational identity.
+
+## 2026-09-04 — Preserve native-coordinate Blueprint planning; reject the tested state transfer
+
+Phase 20 shows that a bounded 2,048-token native-coordinate Blueprint model
+call can form an S3 whole-scene bridge plan, so fixed-budget global planning is
+not rejected. Do not return to external-K/V density, hierarchy, packing, or
+depth sweeps. Reject the tested same-sigma local-state initialization as the
+transfer contract: all 55 local refinements remain S0 despite exact algebra and
+complete coverage. Before any trajectory, test exactly one prediction-space
+coarse anchor using the coherent Blueprint x0; do not add a strength sweep or
+production path.

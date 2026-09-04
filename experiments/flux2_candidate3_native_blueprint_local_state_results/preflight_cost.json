@@ -1,0 +1,8 @@
+{
+  "model_setup_minutes": 2,
+  "blueprint_and_local_model_minutes": 2,
+  "tiled_decode_minutes": 4,
+  "estimated_total_minutes": 8,
+  "stop_threshold_minutes": 30,
+  "proceed": true
+}
