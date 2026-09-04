@@ -1,0 +1,135 @@
+{
+  "complete": true,
+  "configuration_hash": "98cf3802be1fd818a75b78d2825091855859c1f1091ba81d74d482abe8ceb082",
+  "record": {
+    "ordinal": 0,
+    "sigma": 1.0,
+    "sigma_next": 0.9991771578788757,
+    "accepted_input_H_hash": "98aba634f2bdb0c30e4ebd6acb22636a26c564868fd20812e0c44ef20285e76d",
+    "accepted_input_blueprint_hash": "ed428a672ed17fde77908a28f9d2374509c87a378a58465331b1e2f90c210e7a",
+    "accepted_output_H_hash": "a788a323fd6ca61a2b5499c45429d2b1f5567cb3026255b65825f5da5dce7ec7",
+    "accepted_output_blueprint_hash": "7496e8a1ccd71bbe0b9d68db1405a497064f2d6d2727646b60f3f8fa7c0e2a8f",
+    "blueprint_x0": {
+      "rms": 0.9101020693778992,
+      "mean": -0.06051915884017944,
+      "std": 0.9080876708030701,
+      "min": -4.825885772705078,
+      "max": 6.949746608734131,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        32,
+        64
+      ],
+      "sha256": "190e5f723f556659f519b34d7d7a799ed351afa83b434fa427b7f247049010ea"
+    },
+    "ordinary_x0_H": {
+      "rms": 0.8255382776260376,
+      "mean": -0.05060229450464249,
+      "std": 0.8239859938621521,
+      "min": -4.262453079223633,
+      "max": 5.716523170471191,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        128,
+        256
+      ],
+      "sha256": "53beb81fe35c9707f3b8fc4d33b4bf3ebc206858e8040597c332daae0fe9d36e"
+    },
+    "anchored_x0_H": {
+      "rms": 0.8490095734596252,
+      "mean": -0.06051915884017944,
+      "std": 0.8468498587608337,
+      "min": -4.606116771697998,
+      "max": 6.788877964019775,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        128,
+        256
+      ],
+      "sha256": "0629abc09f41599be1d4ebf14d0bba64b0bc1bbe0b9a0bf5af1cd3a26029754d"
+    },
+    "accepted_H": {
+      "rms": 0.9989884495735168,
+      "mean": -5.62640925636515e-05,
+      "std": 0.9989884495735168,
+      "min": -5.045185089111328,
+      "max": 5.3765387535095215,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        128,
+        256
+      ],
+      "sha256": "a788a323fd6ca61a2b5499c45429d2b1f5567cb3026255b65825f5da5dce7ec7"
+    },
+    "accepted_blueprint": {
+      "rms": 1.0010509490966797,
+      "mean": -0.003364133881404996,
+      "std": 1.0010452270507812,
+      "min": -4.784493923187256,
+      "max": 4.433012008666992,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        32,
+        64
+      ],
+      "sha256": "7496e8a1ccd71bbe0b9d68db1405a497064f2d6d2727646b60f3f8fa7c0e2a8f"
+    },
+    "ordinary_vs_anchored": {
+      "rms": 1.0784916877746582,
+      "max_abs": 7.4647216796875,
+      "left_rms": 0.8255382776260376,
+      "right_rms": 0.8490095734596252
+    },
+    "anchor": {
+      "correction_rms": 1.0784916877746582,
+      "correction_over_ordinary_local_x0_rms_mean": 1.1686617411693836,
+      "correction_over_ordinary_local_x0_rms_max": 1.7753432657932404,
+      "coarse_discrepancy_before_rms_mean": 1.1158771753311156,
+      "coarse_error_after_max_abs": 9.5367431640625e-07
+    },
+    "overlap": {
+      "ordinary_rms": 0.9563720973064517,
+      "anchored_rms": 7.275515453878147e-08
+    },
+    "coverage": {
+      "ordinary": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "anchored": [
+        0.9999999403953552,
+        1.0000001192092896
+      ]
+    },
+    "model_calls": {
+      "blueprint": 1,
+      "local": 55,
+      "total": 56
+    },
+    "timing": {
+      "blueprint_cuda_ms": 1162.354248046875,
+      "local_cuda_ms": 60635.20703125,
+      "wall_seconds": 62.99315269998624
+    },
+    "memory": {
+      "peak_allocated_bytes": 1722679296,
+      "peak_reserved_bytes": 2189426688
+    },
+    "integrity": {
+      "accepted_inputs_immutable": true,
+      "W_inputs_immutable": true,
+      "finite": true,
+      "atomic_commit": true
+    }
+  }
+}

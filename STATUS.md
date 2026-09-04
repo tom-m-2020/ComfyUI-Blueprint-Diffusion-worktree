@@ -559,3 +559,21 @@ ordinary local assembly while preserving accepted-state and model-input
 immutability. Detail is visibly overconstrained and the correction is scene-
 scale (`1.119x` local-x0 RMS). A minimal trajectory using the same exact coarse
 prediction contract is authorized; production remains unchanged.
+
+Phase 20c is complete with no production or ComfyUI-core changes. Four
+resumable intervals advance a persistent bounded Blueprint and destination H
+with ordinary Euler updates and atomic pair commits. Blueprint, anchored
+assembly, and terminal H remain S3; ordinary local assemblies remain S0.
+Detail loss is classified REGENERATING rather than accumulating: fresh local
+forwards recreate detail before every exact anchor, but that detail cannot enter
+accepted H. The semantic gate passes. Stop before anchor optimization; the next
+phase should isolate local-detail/null-space release under retained Blueprint
+authority.
+
+Phase 21 is complete with no production or ComfyUI-core changes. The one fixed
+destination `2x2` mean/nearest coarse decomposition passed exact coarse and
+null-space invariants through all four persistent intervals and retained far
+more edge energy than Phase 20c. It did not pass the semantic gate: the terminal
+S2 result retains faint repeated towers, ghost cables, and incompatible bridge
+geometry. Do not sweep spatial filters/scales. The next justified discriminator
+is model-mediated refinement/resampling that preserves Blueprint authority.

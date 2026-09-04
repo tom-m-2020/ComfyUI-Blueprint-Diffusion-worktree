@@ -857,3 +857,23 @@ the correction exceeds local-x0 RMS on average and visibly blurs structure.
 Authorize one minimal trajectory experiment with the identical exact coarse
 contract. Do not tune anchor strength or filters, and do not productionize
 before trajectory stability and local-detail retention are established.
+
+## 2026-09-04 — Accept the persistent Blueprint/anchor semantic contract
+
+Phase 20c confirms that the exact Phase-20b anchor preserves an S3 scene across
+the complete four-interval persistent Blueprint/H Euler trajectory. Treat
+trajectory-level semantic authority as established for this case. Do not
+introduce strength, filter, frequency, or context sweeps and do not productionize
+the current blurred result. The next discriminator must address how regenerated
+local detail or null-space information can reach accepted H without weakening
+the demonstrated Blueprint composition.
+
+## 2026-09-04 — Reject fixed spatial coarse/null release as sufficient
+
+Phase 21 proves that a destination `2x2` mean/nearest decomposition can preserve
+its null component numerically while retaining exact Blueprint coarse authority,
+but the preserved component includes competing scene geometry. Do not tune the
+coarse scale, filter, or anchor weight: the requested single-pair discriminator
+failed its perceptual gate. Preserve the bounded Blueprint planning result and
+move next to model-mediated refinement/resampling rather than another external
+frequency decomposition.

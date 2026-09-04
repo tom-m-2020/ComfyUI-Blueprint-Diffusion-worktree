@@ -1,0 +1,6 @@
+{
+  "estimated_minutes": 20,
+  "stop_threshold_minutes": 30,
+  "proceed": true,
+  "work": "4 Blueprint + 220 unchanged local forwards + 16 requested decodes"
+}
