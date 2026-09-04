@@ -1784,3 +1784,23 @@ Detailed evidence is in
 - Runtime is controlled across arms: about `102.5–104.0 s` terminal wall,
   `1.06–1.08 s` source CUDA, `101.1–102.6 s` local CUDA, and 48 MiB current-
   block K/V. This isolates representation rather than work budget.
+
+## 2026-09-04 — Phase 20 separates bounded planning from local-state transfer
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_NATIVE_BLUEPRINT_LOCAL_STATE.md`.
+
+- One ordinary native-coordinate `32x64` / 2,048-token Blueprint call produces
+  an S3 bridge/train plan from the complete accepted `H=128x256`: one bridge,
+  one train, controlled towers, and coherent horizon/water.
+- Mapping that `x0_B` to destination space and using the exact same-sigma rule
+  `W=(1-sigma)U(b)+sigma*N` leaves the 55 independently refined W outputs in
+  S0. The failure is therefore at Blueprint-to-local transfer/refinement, not
+  bounded native-coordinate global planning.
+- At terminal sigma `0.99264282`, the coherent denoised Blueprint term has
+  coefficient only `0.00735718`. The construction is algebraically valid
+  (`D(W)` error `4.77e-7`) but provides little input-state authority before the
+  ordinary local prediction.
+- B changes the latent materially versus control (`0.855303` RMS) while overlap
+  worsens from `0.856211` to `0.885702`; neither numerical fact predicts the S0
+  semantic result.
