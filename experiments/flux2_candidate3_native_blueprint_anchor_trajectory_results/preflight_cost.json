@@ -1,6 +1,6 @@
 {
-  "estimated_minutes": 18,
+  "estimated_minutes": 12,
   "stop_threshold_minutes": 30,
   "proceed": true,
-  "work": "4 Blueprint + 440 W forwards; 12 diagnostic decodes"
+  "work": "4 Blueprint + 3 Candidate-3 global + 220 local forwards, then selected tiled decodes"
 }

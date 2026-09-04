@@ -1,7 +1,8 @@
-"""Phase 20c: minimal bounded-Blueprint prediction-anchor trajectory."""
+"""Phase 20c: four-step trajectory with the exact Phase-20b prediction anchor."""
 
 from __future__ import annotations
 
+import gc
 import hashlib
 import json
 import math
@@ -11,6 +12,7 @@ import time
 from pathlib import Path
 
 import torch
+import torch.nn.functional as F
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,19 +25,20 @@ import flux2_candidate3_fixed4k_consumer_interface as phase17
 import flux2_candidate3_fixed4k_large_destination as phase14
 import flux2_candidate3_native_blueprint_local_state as phase20
 import flux2_candidate3_native_blueprint_prediction_anchor as phase20b
-import flux2_candidate3_native_local_global_context as phase9c
 import flux2_candidate3_native_local_magnification as phase9b
 import flux2_candidate3_performance_characterization as perf
 import flux2_candidate3_terminal_context as phase8d
 
 from blueprint_diffusion.sampling.euler import BlueprintCoordinator, validate_schedule
+from blueprint_diffusion.state import BlueprintState
 
 OUTPUT = ROOT / "experiments" / "flux2_candidate3_native_blueprint_anchor_trajectory_results"
 REPORT = OUTPUT / "report.json"
-TENSORS = OUTPUT / "trajectory.pt"
+INTERVALS = OUTPUT / "intervals"
 
 
 def atomic_json(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
     with temporary.open("w", encoding="utf-8") as handle:
         json.dump(value, handle, indent=2)
@@ -45,6 +48,7 @@ def atomic_json(path, value):
 
 
 def atomic_torch(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
     with temporary.open("wb") as handle:
         torch.save(value, handle)
@@ -53,14 +57,37 @@ def atomic_torch(path, value):
     os.replace(temporary, path)
 
 
-def euler(value, x0, sigma, sigma_next):
-    return value + (sigma_next - sigma) * (value - x0) / sigma
+def stable_hash(value):
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
-def stats(value):
-    x = value.detach().float()
-    return {"rms": float(x.square().mean().sqrt()), "finite": bool(torch.isfinite(x).all()),
-            "shape": list(x.shape), "hash": phase14.tensor_hash(x)}
+def interval_paths(ordinal):
+    return INTERVALS / f"interval_{ordinal}.json", INTERVALS / f"interval_{ordinal}.pt"
+
+
+def load_interval(ordinal, config_hash):
+    metadata_path, tensor_path = interval_paths(ordinal)
+    if not metadata_path.is_file() or not tensor_path.is_file():
+        return None
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    tensors = torch.load(tensor_path, map_location="cpu", weights_only=True)
+    if not metadata.get("complete") or metadata.get("configuration_hash") != config_hash:
+        raise RuntimeError(f"Phase 20c interval {ordinal} metadata mismatch.")
+    if tensors.get("configuration_hash") != config_hash:
+        raise RuntimeError(f"Phase 20c interval {ordinal} tensor mismatch.")
+    return metadata["record"], tensors
+
+
+def save_interval(ordinal, config_hash, record, tensors):
+    metadata_path, tensor_path = interval_paths(ordinal)
+    atomic_torch(tensor_path, {"configuration_hash": config_hash, **tensors})
+    atomic_json(metadata_path, {"complete": True, "configuration_hash": config_hash, "record": record})
+
+
+def tensor_detail_rms(value):
+    coarse = phase9b.restrict2(value)
+    detail = value - phase9b.prolong2(coarse)
+    return float(detail.float().square().mean().sqrt())
 
 
 class Phase20cSampler(phase14.Phase14Sampler):
@@ -71,192 +98,228 @@ class Phase20cSampler(phase14.Phase14Sampler):
         validate_schedule(sigmas)
         sampling = model.inner_model.model_sampling
         h0 = sampling.noise_scaling(sigmas[0], noise, latent_image, self.max_denoise(model, sigmas))
-        blueprint0, blueprint_coarse, blueprint_noise = phase20.make_blueprint_state(h0, sigmas[0])
+        coordinator = BlueprintCoordinator()
+        state = coordinator.initialize(h0, sigmas[0])
         regions = phase9b.DestinationPlanner().plan(phase14.H_HW)
-        if len(regions) != 55:
-            raise AssertionError("Phase 20c requires the qualified 55-region plan.")
-        accepted_h = {"B_UNANCHORED": h0.clone(), "C_ANCHORED": h0.clone()}
-        accepted_blueprint = blueprint0.clone()
-        initial_hashes = {"H": phase14.tensor_hash(h0), "B": phase14.tensor_hash(blueprint0)}
-        base_options = extra_args["model_options"]
-        steps = []
-        saved = {"blueprint_x0": [], "assembled_B": [], "assembled_C": [],
-                 "accepted_B": [], "accepted_C": [], "accepted_blueprint": []}
-        torch.cuda.synchronize()
-        torch.cuda.reset_peak_memory_stats()
-        total_started = time.perf_counter()
-
-        for ordinal in range(len(sigmas) - 1):
-            sigma, sigma_next = sigmas[ordinal], sigmas[ordinal + 1]
-            print(f"phase20c interval {ordinal + 1}/{len(sigmas) - 1} start", flush=True)
-            bp_before_hash = phase14.tensor_hash(accepted_blueprint)
-            h_before_hashes = {name: phase14.tensor_hash(value) for name, value in accepted_h.items()}
-
-            torch.cuda.synchronize()
-            source_start, source_end = torch.cuda.Event(True), torch.cuda.Event(True)
-            source_wall_started = time.perf_counter()
-            source_start.record()
-            x0_blueprint = model(
-                accepted_blueprint, sigma.expand(1),
-                model_options=phase20.phase8i_options(base_options), seed=phase14.SEED,
-            )
-            source_end.record()
-            torch.cuda.synchronize()
-            source_cuda_ms = float(source_start.elapsed_time(source_end))
-            source_wall = time.perf_counter() - source_wall_started
-            mapped_blueprint = torch.nn.functional.interpolate(
-                x0_blueprint.float(), size=phase14.H_HW, mode="bilinear", align_corners=False
-            ).to(x0_blueprint.dtype)
-            blueprint_star = euler(accepted_blueprint, x0_blueprint, sigma, sigma_next)
-
-            proposals = {}
-            step_variants = {}
-            for name in ("B_UNANCHORED", "C_ANCHORED"):
-                h_current = accepted_h[name]
-                working = []
-                for region in regions:
-                    view = h_current[:, :, region.y:region.y2, region.x:region.x2]
-                    value = phase9c.make_working(view, sigma, ordinal, region)
-                    error = float((phase9b.restrict2(value).float() - view.float()).abs().max())
-                    if error > 1.0e-6:
-                        raise RuntimeError(f"Phase 20c W coarse invariant failed: {error}")
-                    working.append(value)
-                working_hashes = [phase14.tensor_hash(x) for x in working]
-                torch.cuda.synchronize()
-                local_start, local_end = torch.cuda.Event(True), torch.cuda.Event(True)
-                local_wall_started = time.perf_counter()
-                local_start.record()
-                x0_w = [
-                    model(value, sigma.expand(1), model_options=phase20.phase8i_options(base_options), seed=phase14.SEED)
-                    for value in working
-                ]
-                local_end.record()
-                torch.cuda.synchronize()
-                local_cuda_ms = float(local_start.elapsed_time(local_end))
-                local_wall = time.perf_counter() - local_wall_started
-                before = [phase9b.restrict2(x) for x in x0_w]
-                before_overlap = phase8d.overlap_metrics([x.detach().float().cpu() for x in before], regions)
-                coarse_before = []
-                coarse_after = []
-                ratios = []
-                corrected_w = []
-                if name == "C_ANCHORED":
-                    for value, region in zip(x0_w, regions):
-                        bp_crop = mapped_blueprint[:, :, region.y:region.y2, region.x:region.x2]
-                        corrected, correction = phase20b.correct_prediction(value, bp_crop)
-                        coarse_before.append(float((phase20b.d_blueprint(value).float() - bp_crop.float()).square().mean().sqrt()))
-                        coarse_after.append(float((phase20b.d_blueprint(corrected).float() - bp_crop.float()).abs().max()))
-                        ratios.append(float(correction.float().square().mean().sqrt() / value.float().square().mean().sqrt()))
-                        corrected_w.append(corrected)
-                    predictions = [phase9b.restrict2(x) for x in corrected_w]
-                else:
-                    predictions = before
-                after_overlap = phase8d.overlap_metrics([x.detach().float().cpu() for x in predictions], regions)
-                assembled, coverage = BlueprintCoordinator().assembler.assemble(predictions, regions, phase14.H_HW)
-                h_star = euler(h_current, assembled, sigma, sigma_next)
-                proposals[name] = h_star
-                if [phase14.tensor_hash(x) for x in working] != working_hashes:
-                    raise RuntimeError("Phase 20c local W input mutated.")
-                step_variants[name] = {
-                    "assembled": stats(assembled),
-                    "local_cuda_ms": local_cuda_ms,
-                    "local_wall_seconds": local_wall,
-                    "overlap_before": before_overlap["aggregate_rms"],
-                    "overlap_after": after_overlap["aggregate_rms"],
-                    "coarse_before_rms_mean": sum(coarse_before) / len(coarse_before) if coarse_before else None,
-                    "coarse_after_max_abs": max(coarse_after) if coarse_after else None,
-                    "correction_local_x0_ratio_mean": sum(ratios) / len(ratios) if ratios else 0.0,
-                    "correction_local_x0_ratio_max": max(ratios) if ratios else 0.0,
-                    "coverage": [float(coverage.min()), float(coverage.max())],
-                }
-                saved["assembled_B" if name == "B_UNANCHORED" else "assembled_C"].append(assembled.detach().float().cpu())
-
-            if phase14.tensor_hash(accepted_blueprint) != bp_before_hash:
-                raise RuntimeError("Phase 20c mutated accepted Blueprint during evaluation.")
-            if any(phase14.tensor_hash(accepted_h[name]) != value for name, value in h_before_hashes.items()):
-                raise RuntimeError("Phase 20c mutated accepted H during evaluation.")
-            if not torch.isfinite(blueprint_star).all() or any(not torch.isfinite(x).all() for x in proposals.values()):
-                raise RuntimeError("Phase 20c nonfinite proposal.")
-            if step_variants["C_ANCHORED"]["coarse_after_max_abs"] > 1.0e-5:
-                raise RuntimeError("Phase 20c anchor invariant exceeded tolerance.")
-
-            # One atomic publication boundary after source and both local arms validate.
-            accepted_blueprint = blueprint_star
-            accepted_h = proposals
-            saved["blueprint_x0"].append(x0_blueprint.detach().float().cpu())
-            saved["accepted_blueprint"].append(accepted_blueprint.detach().float().cpu())
-            saved["accepted_B"].append(accepted_h["B_UNANCHORED"].detach().float().cpu())
-            saved["accepted_C"].append(accepted_h["C_ANCHORED"].detach().float().cpu())
-            steps.append({
-                "ordinal": ordinal, "sigma": float(sigma), "sigma_next": float(sigma_next),
-                "source_cuda_ms": source_cuda_ms, "source_wall_seconds": source_wall,
-                "blueprint_x0": stats(x0_blueprint), "accepted_blueprint": stats(accepted_blueprint),
-                "variants": step_variants, "atomic_acceptance": True,
-                "same_sigma_source_and_locals": True,
-            })
-            print(f"phase20c interval {ordinal + 1} complete source={source_wall:.2f}s "
-                  f"B={step_variants['B_UNANCHORED']['local_wall_seconds']:.2f}s "
-                  f"C={step_variants['C_ANCHORED']['local_wall_seconds']:.2f}s", flush=True)
-
-        torch.cuda.synchronize()
-        self.report = {
-            "configuration": {
-                "phase": "20c", "H": list(phase14.H_HW), "blueprint": list(phase20.BLUEPRINT_HW),
-                "blueprint_tokens": phase20.BLUEPRINT_TOKENS, "blueprint_coordinates": "ordinary native 0..31 x 0..63",
-                "regions": 55, "destination_region": [32, 32], "W": [64, 64], "stride": 24,
-                "seed": phase14.SEED, "sigmas": [float(x) for x in sigmas],
-                "anchor": "x0 + U_B(mapped_blueprint_crop - D_B(x0)); D_B=mean2, U_B=nearest2",
-                "anchor_applied_intervals": list(range(len(sigmas) - 1)),
-            },
-            "initial": {"H": stats(h0), "blueprint": stats(blueprint0),
-                        "blueprint_coarse": stats(blueprint_coarse), "blueprint_noise": stats(blueprint_noise)},
-            "steps": steps,
-            "final": {"B": stats(accepted_h["B_UNANCHORED"]), "C": stats(accepted_h["C_ANCHORED"]),
-                      "C_vs_B": phase17.tensor_difference(accepted_h["C_ANCHORED"], accepted_h["B_UNANCHORED"])},
-            "timing": {"sampling_wall_seconds": time.perf_counter() - total_started,
-                       "source_cuda_ms_total": sum(x["source_cuda_ms"] for x in steps),
-                       "B_local_cuda_ms_total": sum(x["variants"]["B_UNANCHORED"]["local_cuda_ms"] for x in steps),
-                       "C_local_cuda_ms_total": sum(x["variants"]["C_ANCHORED"]["local_cuda_ms"] for x in steps)},
-            "memory": {"peak_allocated_bytes": int(torch.cuda.max_memory_allocated()),
-                       "peak_reserved_bytes": int(torch.cuda.max_memory_reserved())},
-            "integrity": {"initial_H_hash": initial_hashes["H"], "initial_blueprint_hash": initial_hashes["B"],
-                          "accepted_updates": len(sigmas) - 1, "all_atomic": True,
-                          "same_sigma": True, "finite": True, "production_changes": False},
+        if len(regions) != 55 or len(sigmas) != 5:
+            raise AssertionError("Phase 20c setup mismatch.")
+        configuration = {
+            "phase": "20c",
+            "algorithm": "Phase-20 normalized W plus exact Phase-20b prediction anchor",
+            "H": list(phase14.H_HW), "initial_G": list(state.g.shape[-2:]),
+            "blueprint": list(phase20.BLUEPRINT_HW), "regions": len(regions),
+            "seed": phase14.SEED, "sigmas": [float(x) for x in sigmas],
+            "H0_hash": phase14.tensor_hash(state.h), "G0_hash": phase14.tensor_hash(state.g),
+            "D_B": "2x2 mean", "U_B": "2x nearest", "anchor_strength": 1.0,
+            "blueprint_coordinates": {"y": [0, 31], "x": [0, 63], "frame": "native"},
         }
-        self.saved = saved
-        return sampling.inverse_noise_scaling(sigmas[-1], accepted_h["C_ANCHORED"])
+        config_hash = stable_hash(configuration)
+        base = extra_args["model_options"]
+        records = []
+        outputs = []
+
+        for ordinal in range(4):
+            loaded = load_interval(ordinal, config_hash)
+            if loaded is not None:
+                record, tensors = loaded
+                if phase14.tensor_hash(state.h) != record["accepted_input_H_hash"] or phase14.tensor_hash(state.g) != record["accepted_input_G_hash"]:
+                    raise RuntimeError(f"Phase 20c resume lineage mismatch at interval {ordinal}.")
+                state = BlueprintState(
+                    tensors["accepted_G"].to(state.g.device, state.g.dtype),
+                    tensors["accepted_H"].to(state.h.device, state.h.dtype),
+                    float(sigmas[ordinal + 1]), ordinal + 1, f"phase20c:{ordinal}",
+                )
+                records.append(record)
+                outputs.append({key: tensors[key] for key in ("blueprint_x0", "assembled_x0_H", "accepted_H")})
+                print(f"phase20c interval {ordinal} resume-skip {ordinal + 1}/4", flush=True)
+                continue
+
+            print(f"phase20c interval {ordinal} start {ordinal + 1}/4", flush=True)
+            accepted_h_hash = phase14.tensor_hash(state.h)
+            accepted_g_hash = phase14.tensor_hash(state.g)
+            sigma = sigmas[ordinal]
+            sigma_next = sigmas[ordinal + 1]
+            terminal = float(sigma_next) == 0.0
+            gc.collect()
+            phase2.comfy.model_management.soft_empty_cache()
+            torch.cuda.synchronize()
+            torch.cuda.reset_peak_memory_stats()
+            arm_wall = time.perf_counter()
+
+            x0_g = None
+            global_cuda_ms = 0.0
+            if not terminal:
+                start, end = torch.cuda.Event(True), torch.cuda.Event(True)
+                start.record()
+                x0_g = coordinator.adapter.predict_global(
+                    guider=model, g=state.g, sigma=sigma, canvas=phase14.H_HW,
+                    model_options=base, seed=phase14.SEED,
+                )
+                end.record()
+                torch.cuda.synchronize()
+                global_cuda_ms = float(start.elapsed_time(end))
+
+            blueprint_state, _, _ = phase20.make_blueprint_state(state.h, sigma)
+            start, end = torch.cuda.Event(True), torch.cuda.Event(True)
+            start.record()
+            blueprint_x0 = model(
+                blueprint_state, sigma.expand(1),
+                model_options=phase20.phase8i_options(base), seed=phase14.SEED,
+            )
+            end.record()
+            torch.cuda.synchronize()
+            blueprint_cuda_ms = float(start.elapsed_time(end))
+            mapped = F.interpolate(
+                blueprint_x0.float(), size=phase14.H_HW, mode="bilinear", align_corners=False
+            ).to(blueprint_x0.dtype)
+
+            working = []
+            blueprint_crops = []
+            for region in regions:
+                crop = mapped[:, :, region.y:region.y2, region.x:region.x2]
+                value, _, _ = phase20.make_blueprint_working(crop, sigma, region, crop.device, crop.dtype)
+                working.append(value)
+                blueprint_crops.append(crop)
+            working_hashes = [phase14.tensor_hash(value) for value in working]
+            start, end = torch.cuda.Event(True), torch.cuda.Event(True)
+            start.record()
+            x0_w = [
+                model(value, sigma.expand(1), model_options=phase20.phase8i_options(base), seed=phase14.SEED)
+                for value in working
+            ]
+            end.record()
+            torch.cuda.synchronize()
+            local_cuda_ms = float(start.elapsed_time(end))
+
+            corrected = []
+            corrections = []
+            before_errors = []
+            after_errors = []
+            detail_before = []
+            detail_after = []
+            correction_ratios = []
+            for prediction, crop in zip(x0_w, blueprint_crops):
+                anchored, correction = phase20b.correct_prediction(prediction, crop)
+                before_errors.append(float((phase20b.d_blueprint(prediction).float() - crop.float()).square().mean().sqrt()))
+                after_errors.append(float((phase20b.d_blueprint(anchored).float() - crop.float()).abs().max()))
+                detail_before.append(tensor_detail_rms(prediction))
+                detail_after.append(tensor_detail_rms(anchored))
+                correction_ratios.append(float(correction.float().square().mean().sqrt() / prediction.float().square().mean().sqrt()))
+                corrected.append(phase20b.d_blueprint(anchored))
+                corrections.append(phase20b.d_blueprint(correction))
+            if max(after_errors) > 1.0e-5:
+                raise RuntimeError(f"Phase 20c anchor invariant failed at {ordinal}: {max(after_errors)}")
+            x0_h, coverage = coordinator.assembler.assemble(corrected, regions, phase14.H_HW)
+            correction_canvas, _ = coordinator.assembler.assemble(corrections, regions, phase14.H_HW)
+            overlap = phase8d.overlap_metrics([x.detach().float().cpu() for x in corrected], regions)
+            dt = sigma_next - sigma
+            h_star = state.h + (state.h - x0_h) / sigma * dt
+            if terminal:
+                acceptance = coordinator.policy.accept_terminal(
+                    retained_g=state.g, h_star=h_star, sigma_next=float(sigma_next)
+                )
+                invariant = None
+                g_star = None
+            else:
+                g_star = state.g + (state.g - x0_g) / sigma * dt
+                acceptance = coordinator.policy.accept(
+                    g_star=g_star, h_star=h_star, sigma_next=float(sigma_next), geometry=coordinator.geometry
+                )
+                invariant = float((coordinator.geometry.restrict(acceptance.h).float() - acceptance.g.float()).abs().max())
+                if invariant > coordinator.geometry.TOLERANCE:
+                    raise RuntimeError(f"Phase 20c D(H)=G failed at {ordinal}: {invariant}")
+            if phase14.tensor_hash(state.h) != accepted_h_hash or phase14.tensor_hash(state.g) != accepted_g_hash:
+                raise RuntimeError(f"Phase 20c mutated accepted input at interval {ordinal}.")
+            if [phase14.tensor_hash(value) for value in working] != working_hashes:
+                raise RuntimeError(f"Phase 20c mutated W inputs at interval {ordinal}.")
+            if not torch.isfinite(acceptance.h).all() or not torch.isfinite(acceptance.g).all():
+                raise RuntimeError(f"Phase 20c produced nonfinite state at interval {ordinal}.")
+
+            record = {
+                "ordinal": ordinal, "sigma": float(sigma), "sigma_next": float(sigma_next),
+                "terminal": terminal, "accepted_input_H_hash": accepted_h_hash,
+                "accepted_input_G_hash": accepted_g_hash,
+                "blueprint_x0": phase14.summary(blueprint_x0),
+                "assembled_x0_H": phase14.summary(x0_h), "H_star": phase14.summary(h_star),
+                "accepted_H": phase14.summary(acceptance.h), "accepted_G": phase14.summary(acceptance.g),
+                "global_forward_performed": not terminal, "blueprint_forward_performed": True,
+                "local_forward_count": 55, "terminal_release": terminal,
+                "anchor": {
+                    "coarse_before_rms_mean": sum(before_errors) / len(before_errors),
+                    "coarse_after_max_abs": max(after_errors),
+                    "correction_rms": float(correction_canvas.float().square().mean().sqrt()),
+                    "correction_over_local_x0_rms_mean": sum(correction_ratios) / len(correction_ratios),
+                    "detail_rms_before_mean": sum(detail_before) / len(detail_before),
+                    "detail_rms_after_mean": sum(detail_after) / len(detail_after),
+                },
+                "overlap_rms": overlap["aggregate_rms"], "invariant_max_abs": invariant,
+                "coverage": [float(coverage.min()), float(coverage.max())],
+                "global_cuda_ms": global_cuda_ms, "blueprint_cuda_ms": blueprint_cuda_ms,
+                "local_cuda_ms": local_cuda_ms, "wall_seconds": time.perf_counter() - arm_wall,
+                "peak_allocated_bytes": int(torch.cuda.max_memory_allocated()),
+                "peak_reserved_bytes": int(torch.cuda.max_memory_reserved()),
+                "working_hashes": working_hashes,
+            }
+            tensors = {
+                "blueprint_x0": blueprint_x0.detach().float().cpu(),
+                "assembled_x0_H": x0_h.detach().float().cpu(),
+                "accepted_H": acceptance.h.detach().float().cpu(),
+                "accepted_G": acceptance.g.detach().float().cpu(),
+                "correction_canvas": correction_canvas.detach().float().cpu(),
+            }
+            save_interval(ordinal, config_hash, record, tensors)
+            state = BlueprintState(acceptance.g, acceptance.h, float(sigma_next), ordinal + 1, f"phase20c:{ordinal}")
+            records.append(record)
+            outputs.append({key: tensors[key] for key in ("blueprint_x0", "assembled_x0_H", "accepted_H")})
+            print(f"phase20c interval {ordinal} complete {ordinal + 1}/4 wall={record['wall_seconds']:.2f}s", flush=True)
+
+        self.result = {
+            "configuration": configuration, "configuration_hash": config_hash,
+            "intervals": records,
+            "integrity": {
+                "accepted_intervals": 4, "atomic_acceptances": 4,
+                "terminal_release_only_last": [x["terminal_release"] for x in records] == [False, False, False, True],
+                "global_forward_count": sum(x["global_forward_performed"] for x in records),
+                "blueprint_forward_count": sum(x["blueprint_forward_performed"] for x in records),
+                "local_forward_count": sum(x["local_forward_count"] for x in records),
+                "finite": all(x["accepted_H"]["finite"] and x["accepted_G"]["finite"] for x in records),
+                "production_changes": False,
+            },
+            "final_H": phase14.summary(state.h),
+        }
+        self.outputs = outputs
+        return sampling.inverse_noise_scaling(sigmas[-1], state.h)
 
 
-def save_image(vae, latent, path):
+def save_decode(vae, latent, path):
     pixels = vae.decode(latent).cpu()
     phase2.save_pixels(pixels, path)
     with Image.open(path) as image:
         rgb = image.convert("RGB")
-        return {"path": str(path), "dimensions": list(rgb.size),
+        return {"path": str(path), "dimensions_wh": list(rgb.size),
                 "sha256_rgb": hashlib.sha256(rgb.tobytes()).hexdigest()}
 
 
 def make_sheet(paths, destination):
-    rows = []
+    panels = []
     for label, path in paths:
         image = Image.open(path).convert("RGB")
         image.thumbnail((2048, 512))
-        row = Image.new("RGB", (2048, image.height + 34), "white")
-        ImageDraw.Draw(row).text((8, 8), label, fill="black")
-        row.paste(image, ((2048 - image.width) // 2, 34))
-        rows.append(row)
-    sheet = Image.new("RGB", (2048, sum(x.height for x in rows)), "white")
+        panel = Image.new("RGB", (2048, image.height + 38), "white")
+        panel.paste(image, ((2048 - image.width) // 2, 38))
+        ImageDraw.Draw(panel).text((10, 10), label, fill="black")
+        panels.append(panel)
+    sheet = Image.new("RGB", (2048, sum(x.height for x in panels)), "white")
     y = 0
-    for row in rows:
-        sheet.paste(row, (0, y))
-        y += row.height
+    for panel in panels:
+        sheet.paste(panel, (0, y)); y += panel.height
     sheet.save(destination)
 
 
 def main():
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    preflight = {"estimated_minutes": 18, "stop_threshold_minutes": 30, "proceed": True,
-                 "work": "4 Blueprint + 440 W forwards; 12 diagnostic decodes"}
+    preflight = {"estimated_minutes": 12, "stop_threshold_minutes": 30, "proceed": True,
+                 "work": "4 Blueprint + 3 Candidate-3 global + 220 local forwards, then selected tiled decodes"}
     atomic_json(OUTPUT / "preflight_cost.json", preflight)
     print(json.dumps({"preflight": preflight}), flush=True)
     model = phase2.comfy.sd.load_diffusion_model(str(phase2.MODEL_PATH), model_options={})
@@ -264,39 +327,35 @@ def main():
     positive = clip.encode_from_tokens_scheduled(clip.tokenize(phase14.PROMPT))
     negative = clip.encode_from_tokens_scheduled(clip.tokenize(""))
     del clip
-    phase2.comfy.model_management.unload_all_models()
-    phase2.comfy.model_management.soft_empty_cache()
+    phase2.comfy.model_management.unload_all_models(); phase2.comfy.model_management.soft_empty_cache()
     noise = torch.randn((1, 128, *phase14.H_HW), generator=torch.Generator().manual_seed(phase14.SEED))
-    sigmas = phase2.get_schedule(phase14.STEPS, math.prod(phase14.H_HW)).float().clone()
-    sigmas[0], sigmas[-1] = 1.0, 0.0
-    sampler = Phase20cSampler()
-    perf.prepare_model_state(model)
+    sigmas = phase2.get_schedule(phase14.STEPS, math.prod(phase14.H_HW)).float().clone(); sigmas[0] = 1.0
+    sampler = Phase20cSampler(); perf.prepare_model_state(model)
     with torch.inference_mode():
         phase2.comfy.sample.sample_custom(
             model, noise, 1.0, sampler, sigmas, positive, negative, torch.zeros_like(noise),
             callback=lambda *args: None, disable_pbar=True, seed=phase14.SEED,
         )
     del model
-    phase2.comfy.model_management.unload_all_models()
-    phase2.comfy.model_management.soft_empty_cache()
-    atomic_torch(TENSORS, sampler.saved)
-
+    phase2.comfy.model_management.unload_all_models(); phase2.comfy.model_management.soft_empty_cache()
     vae = phase2.comfy.sd.VAE(sd=phase2.comfy.utils.load_torch_file(str(phase2.VAE_PATH), safe_load=True))
     decoded = {}
     sheet_items = []
-    for ordinal in range(4):
-        for key, label in (("blueprint_x0", "Blueprint x0"), ("assembled_B", "B unanchored x0"),
-                           ("assembled_C", "C anchored x0")):
-            path = OUTPUT / f"step_{ordinal}_{key}.png"
-            decoded[f"step_{ordinal}_{key}"] = save_image(vae, sampler.saved[key][ordinal], path)
-            sheet_items.append((f"step {ordinal} {label}", path))
-    sheet = OUTPUT / "TRAJECTORY_COMPARISON.png"
-    make_sheet(sheet_items, sheet)
-    sampler.report["decoded"] = decoded
-    sampler.report["comparison_sheet"] = str(sheet)
-    sampler.report["preflight"] = preflight
-    atomic_json(REPORT, sampler.report)
-    print(json.dumps({"report": str(REPORT), "sheet": str(sheet)}, indent=2), flush=True)
+    for ordinal, output in enumerate(sampler.outputs):
+        if ordinal in (0, 2, 3):
+            bp_path = OUTPUT / f"interval_{ordinal}_BLUEPRINT_X0.png"
+            h_path = OUTPUT / f"interval_{ordinal}_ACCEPTED_H.png"
+            decoded[f"interval_{ordinal}_blueprint"] = save_decode(vae, output["blueprint_x0"], bp_path)
+            decoded[f"interval_{ordinal}_accepted_H"] = save_decode(vae, output["accepted_H"], h_path)
+            sheet_items.extend(((f"interval {ordinal} Blueprint x0", bp_path),
+                                (f"interval {ordinal} accepted H", h_path)))
+    sheet_path = OUTPUT / "TRAJECTORY_COMPARISON.png"
+    make_sheet(sheet_items, sheet_path)
+    sampler.result["decoded"] = decoded
+    sampler.result["comparison_sheet"] = str(sheet_path)
+    sampler.result["preflight"] = preflight
+    atomic_json(REPORT, sampler.result)
+    print(json.dumps({"report": str(REPORT), "sheet": str(sheet_path)}, indent=2), flush=True)
 
 
 if __name__ == "__main__":
