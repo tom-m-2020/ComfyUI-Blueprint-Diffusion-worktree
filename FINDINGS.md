@@ -1804,3 +1804,21 @@ Detailed evidence is in
 - B changes the latent materially versus control (`0.855303` RMS) while overlap
   worsens from `0.856211` to `0.885702`; neither numerical fact predicts the S0
   semantic result.
+
+## 2026-09-04 — Phase 20b exact prediction anchoring restores global composition
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_NATIVE_BLUEPRINT_PREDICTION_ANCHOR.md`.
+
+- Applying `x0 + U_B(blueprint_crop - D_B(x0))` after each ordinary W forward
+  moves the result from S0 to S3 and enforces the mapped Blueprint crop to
+  `5.36e-7` max absolute error.
+- The intervention is large: correction RMS is `0.888769`, or `1.119x` the
+  original local-x0 RMS on average. It restores one scene but visibly blurs and
+  overconstrains local detail.
+- Ordinary Phase-20 B is reproduced bit-exactly. Accepted H/G, W inputs,
+  transformer execution, conditioning, and lifecycle are unchanged; only
+  post-forward terminal x0 changes.
+- The almost-zero anchored overlap RMS (`6.59e-8`) follows algebraically from
+  all crops sharing the mapped Blueprint field and is not an independent image-
+  quality result.
