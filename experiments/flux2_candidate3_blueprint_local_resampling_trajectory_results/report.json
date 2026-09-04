@@ -1,0 +1,846 @@
+{
+  "phase": 23,
+  "configuration": {
+    "phase": 23,
+    "source_trajectory_hash": "98cf3802be1fd818a75b78d2825091855859c1f1091ba81d74d482abe8ceb082",
+    "source_intervals": 4,
+    "H": [
+      128,
+      256
+    ],
+    "blueprint": [
+      32,
+      64
+    ],
+    "regions": 55,
+    "destination_crop": [
+      32,
+      32
+    ],
+    "working": [
+      64,
+      64
+    ],
+    "resampling_sigma": 0.25,
+    "working_contract": "W_0.25=0.75*nearest2(mapped_blueprint_x0_crop)+0.25*epsilon_region",
+    "noise_base_seed": 42260904,
+    "noise_reuse": "same deterministic region noise at every Blueprint evaluation",
+    "coordinates": "ordinary native 64x64 local W coordinates",
+    "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+    "seed": 20260901
+  },
+  "configuration_hash": "71e07897d5410caf78c0994b819c515b39fa369ae213d8c3eea4f33be58ad035",
+  "intervals": [
+    {
+      "ordinal": 0,
+      "configuration_hash": "71e07897d5410caf78c0994b819c515b39fa369ae213d8c3eea4f33be58ad035",
+      "blueprint_sigma": 1.0,
+      "blueprint_sigma_next": 0.9991771578788757,
+      "local_resampling_sigma": 0.25,
+      "accepted_blueprint_input_hash": "ed428a672ed17fde77908a28f9d2374509c87a378a58465331b1e2f90c210e7a",
+      "source_blueprint_x0_hash": "190e5f723f556659f519b34d7d7a799ed351afa83b434fa427b7f247049010ea",
+      "blueprint_x0": {
+        "rms": 0.9101020693778992,
+        "mean": -0.06051915884017944,
+        "std": 0.9080876708030701,
+        "min": -4.825885772705078,
+        "max": 6.949746608734131,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "sha256": "190e5f723f556659f519b34d7d7a799ed351afa83b434fa427b7f247049010ea"
+      },
+      "mapped_blueprint": {
+        "rms": 0.8490095734596252,
+        "mean": -0.06051915884017944,
+        "std": 0.8468498587608337,
+        "min": -4.606116771697998,
+        "max": 6.788877487182617,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          128,
+          256
+        ],
+        "sha256": "7bffd9a8e70c3f23807392357dad632fee7555b90c6e9f1e6b47743c6a906329"
+      },
+      "refined_assembled": {
+        "rms": 0.8259259462356567,
+        "mean": -0.06658263504505157,
+        "std": 0.8232377767562866,
+        "min": -4.464649677276611,
+        "max": 6.5765252113342285,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          128,
+          256
+        ],
+        "sha256": "bb92712b6652e690013543b04d42f8ea2b82113fdacfb1978d742fa14b63c0b7"
+      },
+      "blueprint_to_refined": {
+        "rms": 0.12302309274673462,
+        "max_abs": 0.9970709085464478,
+        "left_rms": 0.8259259462356567,
+        "right_rms": 0.8490095734596252
+      },
+      "low_frequency_rms": 0.07419023662805557,
+      "gradient_rms": {
+        "blueprint": 0.12329525326537398,
+        "refined": 0.1757519618112416
+      },
+      "overlap_rms": 0.1611951851667425,
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "noise_provenance": {
+        "base_seed": 42260904,
+        "formula": "base_seed+1009*region.index",
+        "hashes": [
+          "69653d9c6b7883a4a9ce1f86dcc1873d98e598e618eb5b7b3cc7118c383814ac",
+          "b6b548cd340ceb3116e474d128738a058e30a9815d50c10b1dce182986d09e0e",
+          "8c453cb148db08b94538195d852985a546a199681c6cd3d68ba92ee82009fdc1",
+          "c34baf99dc530f808addfb52a5b37c057c20191c5d8cb0285c8d5e1119489eb5",
+          "b634c70042a97740308591d1fa120d4a73ae33cbed0b107e17443b2cc577316d",
+          "4ab32829560b6ac1eb8125993ef85cea85cfb7026a4f552baae69766b4efbb24",
+          "435a73e36a10be5ac0720d008bf730ecb8852c704a7f18cbb91045cf7122280c",
+          "397c9482d535ef6f694ad76040480b0dbd7e21b9b70ecefc9c76b4c9f85b80bb",
+          "e83d89b5ff25b1c70eff9bdc782428317448b51be1d73232642e896281de8f14",
+          "ca35d4b9ee4f94b8f13c03ec60789307d93c289eef899fa73783f8ec906d3ead",
+          "6eef341c2eef0db27264198b2c7a9a6f91f606c41250b42caf0205d27a51b9b3",
+          "d5bf94ccab2c2a9e3bce2f3f081231d93e0a042eb635619874787cb4bf773b04",
+          "d860f25a2a42c7369fb915ef86c3e9a993fa6540edf96ddb4816b8e89c860988",
+          "b8f40e621395d2ddf0e8c8163edad9773c00948d14becb64c0e17eee34af3d40",
+          "d270887d2f69680806120b58f9595236db346b0708c736bcc721013f0c216602",
+          "a1f651bbf31f3988227ad1e588004081872d6179c8d9af4df6b33ecd2fa6a299",
+          "f4f352032f26a066bbfc533f984888528a47ff3dc79c9f6446cb61a5257cdecf",
+          "b79971f7aaf1323b1816448dc78ae72a19220a9fc647b5a4a9899ce25dec7037",
+          "1e28ebce7299cee24fdf97e2ff30ef6e8d77ac1509fa814e98f4f31b28a3bcc8",
+          "3c39f6f1783af076b29edbcc41f3d29770b409037bb0d4bfc19b1a48a084370f",
+          "1393c21c8bf7e2b0066eadf6cd005cb65bb1c6491c29c8c3f113fb45c3755c2f",
+          "4116a034af29799db40830f2bdc4c8a216bedae81dac6918f85c7fca5a1708ff",
+          "37993fc1fb99213a127603f6b03919fbb804914dbcbeb0d1c87bd3b4d0bdf551",
+          "b462aad6c4c1f353b6b9c59d7275bcae2fb75306d9e13665694594832ee3c2fd",
+          "47d9d9b0143c052fc90aa9c61f4a3c4ce1445456bbf8b20185393d4bbd7a9e7c",
+          "be62ff1453d26bdd23a59fd8bc98311aac2f7fc7946445da5ff08184fb51dc49",
+          "a5d701c1cf193bea9321e457d435567ed85172a2225a9b8981d3c5ec96138410",
+          "1946189039b683324bafc33a2402e93c3b669787c0dcd19990cb892f6180dd2d",
+          "88d3d41eb48e271ef2d6ccc7209cc64b3b48b47bc6bf85cbe0310249e82e4faa",
+          "4ac4fa9deaa1f3040f32499e7053cd3c346032b7ac9cb47bbc8c08fbd1d4de62",
+          "9dcc5c9b26a491a1e162f2ca872d5e93e8fdd36157256e575aaa05a7224bc276",
+          "cc4fa1da6f1ecea90e3cd6efae990447a4ec588e9a3758ef4f05157ce4bd0213",
+          "a165b24637c9d4cc114805e54e3a7991427ed6dc55030d8da7a339d5e2f75cd6",
+          "d228133437c5c4700198d4c22209c47090aaddddbee3d60dbde0747a0d1638f3",
+          "5767d80fcd19c395a60bf1bfa4026f84f1003222f0284be565f2e5e77afd4eff",
+          "a1657293820858324fd63b3c199c81498cdc63e0d96291128effa5e679bf71c7",
+          "c64d92a3504abcaeb8bb230d30c9669a161febf2ef0844348b93f82298ca9307",
+          "ae4fde79fd8a542e78abbc825900df2c018493be6e82f4e23e95e4312d72ef7c",
+          "13ed6eb295650114730194d30e1bfc0ed7e17a0d00b623d76e8831567f570420",
+          "36e1981ada5ea530607bf19b40b6543cd39827c82cd26349bbab88c971616b7c",
+          "52f2772b1042d6331bf1e79020ca153390ae7a1dbfe9830705343dd6753b2762",
+          "1ef4b02c5bacb415d6cbcb1d9d165f1ce96466f3f773713657f2522cd22c4e24",
+          "783a7ec5d0b3b481dbc66a0742a1b460bfd80f5444194be52cfe2017ae116689",
+          "f6da16af3dcab87e423e04453dd145b2d983ca2d5c2621257b4cd977069d8972",
+          "83ce0c265c8fd993f15cb0b9eaa2d5d89d7d8badd30ab2b1e6e62188569a66c3",
+          "ac8b7d4066d6970db293ff3fbf52a1a3551319b2321f33b63f1a05d592236834",
+          "f7cb04a649fd7b288e8705a721360f473a7a8b06fbd88612ec6455a3f3ad092a",
+          "308d1f230bb64408669f6608dd88f04737e208e6644bc34d7c7de2b3ed648a6c",
+          "36cb1210f5bf12f04d91cc2318e426d73203ba6679ff1baa7af8efc31d0709cd",
+          "89a3beac3a217210d8dde509524a3f67a3e72ae2b86b49662fa8857bb54fd400",
+          "b616f87ed0cedd9baae3f2b4ca219ca8e4f8fc8cb666dfcf58e351512a8dc297",
+          "6c23b60fd2487ce11f8b93f8ce7e4816d577b0a3b6826afffeb85370e3ab4c8f",
+          "b9f78b82897d05a99d6448a873f061b2051bdcd6e661f8481d41d051113d4f32",
+          "4e3631f452331500b3422f714668f14edfea3b769af1e1152327534258917461",
+          "3bd2f63ec1aa13b655acb6d312fccd4d03fc67b06498761b5b6f4ef6ea2a27fe"
+        ]
+      },
+      "geometry": {
+        "map": "bilinear align_corners=False 32x64->128x256",
+        "crop": [
+          32,
+          32
+        ],
+        "upscale": "2x nearest",
+        "working": [
+          64,
+          64
+        ],
+        "downscale": "nonoverlapping 2x2 mean"
+      },
+      "model_calls": {
+        "blueprint_reused": 1,
+        "blueprint_executed_now": 0,
+        "local_executed_now": 55
+      },
+      "timing": {
+        "local_cuda_ms": 55048.37890625,
+        "wall_seconds": 56.41464069997892
+      },
+      "memory": {
+        "peak_allocated_bytes": 3262413824,
+        "peak_reserved_bytes": 3688890368
+      },
+      "integrity": {
+        "source_artifact_immutable": true,
+        "working_inputs_immutable": true,
+        "finite": true,
+        "complete_positive_coverage": true,
+        "accepted_state_updates": 0
+      }
+    },
+    {
+      "ordinal": 1,
+      "configuration_hash": "71e07897d5410caf78c0994b819c515b39fa369ae213d8c3eea4f33be58ad035",
+      "blueprint_sigma": 0.9991771578788757,
+      "blueprint_sigma_next": 0.9975355267524719,
+      "local_resampling_sigma": 0.25,
+      "accepted_blueprint_input_hash": "7496e8a1ccd71bbe0b9d68db1405a497064f2d6d2727646b60f3f8fa7c0e2a8f",
+      "source_blueprint_x0_hash": "871498dc350b5d9c02d4a4ad60b695d326eb27e1a34ed50e51fb2d1e8d83d462",
+      "blueprint_x0": {
+        "rms": 0.901874840259552,
+        "mean": -0.05885947495698929,
+        "std": 0.8999521136283875,
+        "min": -4.9321136474609375,
+        "max": 6.762401103973389,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "sha256": "871498dc350b5d9c02d4a4ad60b695d326eb27e1a34ed50e51fb2d1e8d83d462"
+      },
+      "mapped_blueprint": {
+        "rms": 0.8379586935043335,
+        "mean": -0.05885947495698929,
+        "std": 0.8358889222145081,
+        "min": -4.635956287384033,
+        "max": 6.562501430511475,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          128,
+          256
+        ],
+        "sha256": "af1a67c6261a4a2db13984bf6ffd1285fc3e87a3b0cbf51393dbdbf3acb60906"
+      },
+      "refined_assembled": {
+        "rms": 0.8174209594726562,
+        "mean": -0.06516008824110031,
+        "std": 0.8148197531700134,
+        "min": -4.596999168395996,
+        "max": 6.395805358886719,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          128,
+          256
+        ],
+        "sha256": "6c0d10aa7dea609ef1ea281aeb660f181d000bbc9c84458631ed26c0bdbdb7a0"
+      },
+      "blueprint_to_refined": {
+        "rms": 0.12234623730182648,
+        "max_abs": 0.9200199246406555,
+        "left_rms": 0.8174209594726562,
+        "right_rms": 0.8379586935043335
+      },
+      "low_frequency_rms": 0.07273264974355698,
+      "gradient_rms": {
+        "blueprint": 0.12552769669061298,
+        "refined": 0.17774433328167383
+      },
+      "overlap_rms": 0.16162274446159466,
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "noise_provenance": {
+        "base_seed": 42260904,
+        "formula": "base_seed+1009*region.index",
+        "hashes": [
+          "69653d9c6b7883a4a9ce1f86dcc1873d98e598e618eb5b7b3cc7118c383814ac",
+          "b6b548cd340ceb3116e474d128738a058e30a9815d50c10b1dce182986d09e0e",
+          "8c453cb148db08b94538195d852985a546a199681c6cd3d68ba92ee82009fdc1",
+          "c34baf99dc530f808addfb52a5b37c057c20191c5d8cb0285c8d5e1119489eb5",
+          "b634c70042a97740308591d1fa120d4a73ae33cbed0b107e17443b2cc577316d",
+          "4ab32829560b6ac1eb8125993ef85cea85cfb7026a4f552baae69766b4efbb24",
+          "435a73e36a10be5ac0720d008bf730ecb8852c704a7f18cbb91045cf7122280c",
+          "397c9482d535ef6f694ad76040480b0dbd7e21b9b70ecefc9c76b4c9f85b80bb",
+          "e83d89b5ff25b1c70eff9bdc782428317448b51be1d73232642e896281de8f14",
+          "ca35d4b9ee4f94b8f13c03ec60789307d93c289eef899fa73783f8ec906d3ead",
+          "6eef341c2eef0db27264198b2c7a9a6f91f606c41250b42caf0205d27a51b9b3",
+          "d5bf94ccab2c2a9e3bce2f3f081231d93e0a042eb635619874787cb4bf773b04",
+          "d860f25a2a42c7369fb915ef86c3e9a993fa6540edf96ddb4816b8e89c860988",
+          "b8f40e621395d2ddf0e8c8163edad9773c00948d14becb64c0e17eee34af3d40",
+          "d270887d2f69680806120b58f9595236db346b0708c736bcc721013f0c216602",
+          "a1f651bbf31f3988227ad1e588004081872d6179c8d9af4df6b33ecd2fa6a299",
+          "f4f352032f26a066bbfc533f984888528a47ff3dc79c9f6446cb61a5257cdecf",
+          "b79971f7aaf1323b1816448dc78ae72a19220a9fc647b5a4a9899ce25dec7037",
+          "1e28ebce7299cee24fdf97e2ff30ef6e8d77ac1509fa814e98f4f31b28a3bcc8",
+          "3c39f6f1783af076b29edbcc41f3d29770b409037bb0d4bfc19b1a48a084370f",
+          "1393c21c8bf7e2b0066eadf6cd005cb65bb1c6491c29c8c3f113fb45c3755c2f",
+          "4116a034af29799db40830f2bdc4c8a216bedae81dac6918f85c7fca5a1708ff",
+          "37993fc1fb99213a127603f6b03919fbb804914dbcbeb0d1c87bd3b4d0bdf551",
+          "b462aad6c4c1f353b6b9c59d7275bcae2fb75306d9e13665694594832ee3c2fd",
+          "47d9d9b0143c052fc90aa9c61f4a3c4ce1445456bbf8b20185393d4bbd7a9e7c",
+          "be62ff1453d26bdd23a59fd8bc98311aac2f7fc7946445da5ff08184fb51dc49",
+          "a5d701c1cf193bea9321e457d435567ed85172a2225a9b8981d3c5ec96138410",
+          "1946189039b683324bafc33a2402e93c3b669787c0dcd19990cb892f6180dd2d",
+          "88d3d41eb48e271ef2d6ccc7209cc64b3b48b47bc6bf85cbe0310249e82e4faa",
+          "4ac4fa9deaa1f3040f32499e7053cd3c346032b7ac9cb47bbc8c08fbd1d4de62",
+          "9dcc5c9b26a491a1e162f2ca872d5e93e8fdd36157256e575aaa05a7224bc276",
+          "cc4fa1da6f1ecea90e3cd6efae990447a4ec588e9a3758ef4f05157ce4bd0213",
+          "a165b24637c9d4cc114805e54e3a7991427ed6dc55030d8da7a339d5e2f75cd6",
+          "d228133437c5c4700198d4c22209c47090aaddddbee3d60dbde0747a0d1638f3",
+          "5767d80fcd19c395a60bf1bfa4026f84f1003222f0284be565f2e5e77afd4eff",
+          "a1657293820858324fd63b3c199c81498cdc63e0d96291128effa5e679bf71c7",
+          "c64d92a3504abcaeb8bb230d30c9669a161febf2ef0844348b93f82298ca9307",
+          "ae4fde79fd8a542e78abbc825900df2c018493be6e82f4e23e95e4312d72ef7c",
+          "13ed6eb295650114730194d30e1bfc0ed7e17a0d00b623d76e8831567f570420",
+          "36e1981ada5ea530607bf19b40b6543cd39827c82cd26349bbab88c971616b7c",
+          "52f2772b1042d6331bf1e79020ca153390ae7a1dbfe9830705343dd6753b2762",
+          "1ef4b02c5bacb415d6cbcb1d9d165f1ce96466f3f773713657f2522cd22c4e24",
+          "783a7ec5d0b3b481dbc66a0742a1b460bfd80f5444194be52cfe2017ae116689",
+          "f6da16af3dcab87e423e04453dd145b2d983ca2d5c2621257b4cd977069d8972",
+          "83ce0c265c8fd993f15cb0b9eaa2d5d89d7d8badd30ab2b1e6e62188569a66c3",
+          "ac8b7d4066d6970db293ff3fbf52a1a3551319b2321f33b63f1a05d592236834",
+          "f7cb04a649fd7b288e8705a721360f473a7a8b06fbd88612ec6455a3f3ad092a",
+          "308d1f230bb64408669f6608dd88f04737e208e6644bc34d7c7de2b3ed648a6c",
+          "36cb1210f5bf12f04d91cc2318e426d73203ba6679ff1baa7af8efc31d0709cd",
+          "89a3beac3a217210d8dde509524a3f67a3e72ae2b86b49662fa8857bb54fd400",
+          "b616f87ed0cedd9baae3f2b4ca219ca8e4f8fc8cb666dfcf58e351512a8dc297",
+          "6c23b60fd2487ce11f8b93f8ce7e4816d577b0a3b6826afffeb85370e3ab4c8f",
+          "b9f78b82897d05a99d6448a873f061b2051bdcd6e661f8481d41d051113d4f32",
+          "4e3631f452331500b3422f714668f14edfea3b769af1e1152327534258917461",
+          "3bd2f63ec1aa13b655acb6d312fccd4d03fc67b06498761b5b6f4ef6ea2a27fe"
+        ]
+      },
+      "geometry": {
+        "map": "bilinear align_corners=False 32x64->128x256",
+        "crop": [
+          32,
+          32
+        ],
+        "upscale": "2x nearest",
+        "working": [
+          64,
+          64
+        ],
+        "downscale": "nonoverlapping 2x2 mean"
+      },
+      "model_calls": {
+        "blueprint_reused": 1,
+        "blueprint_executed_now": 0,
+        "local_executed_now": 55
+      },
+      "timing": {
+        "local_cuda_ms": 54449.51171875,
+        "wall_seconds": 55.58064820000436
+      },
+      "memory": {
+        "peak_allocated_bytes": 3423501312,
+        "peak_reserved_bytes": 3862953984
+      },
+      "integrity": {
+        "source_artifact_immutable": true,
+        "working_inputs_immutable": true,
+        "finite": true,
+        "complete_positive_coverage": true,
+        "accepted_state_updates": 0
+      }
+    },
+    {
+      "ordinal": 2,
+      "configuration_hash": "71e07897d5410caf78c0994b819c515b39fa369ae213d8c3eea4f33be58ad035",
+      "blueprint_sigma": 0.9975355267524719,
+      "blueprint_sigma_next": 0.9926428198814392,
+      "local_resampling_sigma": 0.25,
+      "accepted_blueprint_input_hash": "6a9199bbe440fbbd515791d0b0196e95e27f3acf57308e666ccbff0fa962b09d",
+      "source_blueprint_x0_hash": "8d5e0a8724b078f8c09313f2ec87eb3a0095d7dad653bf85f209d2dc54b9e365",
+      "blueprint_x0": {
+        "rms": 0.8819683194160461,
+        "mean": -0.05641908943653107,
+        "std": 0.8801618814468384,
+        "min": -4.823884010314941,
+        "max": 6.4657416343688965,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "sha256": "8d5e0a8724b078f8c09313f2ec87eb3a0095d7dad653bf85f209d2dc54b9e365"
+      },
+      "mapped_blueprint": {
+        "rms": 0.8105332255363464,
+        "mean": -0.056419093161821365,
+        "std": 0.808567225933075,
+        "min": -4.486663818359375,
+        "max": 6.286328315734863,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          128,
+          256
+        ],
+        "sha256": "0644a5b4dda85a8e004e184025d622e2ea63a9c118ee2b1c02edf61ac10d6d13"
+      },
+      "refined_assembled": {
+        "rms": 0.796798825263977,
+        "mean": -0.06320808827877045,
+        "std": 0.7942878007888794,
+        "min": -4.373613357543945,
+        "max": 5.971017837524414,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          128,
+          256
+        ],
+        "sha256": "eabcf54ada657338eec6e99d5e00c436c8d63d98eadc4f1ea55ee3bea87edc5d"
+      },
+      "blueprint_to_refined": {
+        "rms": 0.12136903405189514,
+        "max_abs": 0.8697092533111572,
+        "left_rms": 0.796798825263977,
+        "right_rms": 0.8105332255363464
+      },
+      "low_frequency_rms": 0.0696152001619339,
+      "gradient_rms": {
+        "blueprint": 0.13056397724674051,
+        "refined": 0.18275400890882748
+      },
+      "overlap_rms": 0.16300775330151093,
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "noise_provenance": {
+        "base_seed": 42260904,
+        "formula": "base_seed+1009*region.index",
+        "hashes": [
+          "69653d9c6b7883a4a9ce1f86dcc1873d98e598e618eb5b7b3cc7118c383814ac",
+          "b6b548cd340ceb3116e474d128738a058e30a9815d50c10b1dce182986d09e0e",
+          "8c453cb148db08b94538195d852985a546a199681c6cd3d68ba92ee82009fdc1",
+          "c34baf99dc530f808addfb52a5b37c057c20191c5d8cb0285c8d5e1119489eb5",
+          "b634c70042a97740308591d1fa120d4a73ae33cbed0b107e17443b2cc577316d",
+          "4ab32829560b6ac1eb8125993ef85cea85cfb7026a4f552baae69766b4efbb24",
+          "435a73e36a10be5ac0720d008bf730ecb8852c704a7f18cbb91045cf7122280c",
+          "397c9482d535ef6f694ad76040480b0dbd7e21b9b70ecefc9c76b4c9f85b80bb",
+          "e83d89b5ff25b1c70eff9bdc782428317448b51be1d73232642e896281de8f14",
+          "ca35d4b9ee4f94b8f13c03ec60789307d93c289eef899fa73783f8ec906d3ead",
+          "6eef341c2eef0db27264198b2c7a9a6f91f606c41250b42caf0205d27a51b9b3",
+          "d5bf94ccab2c2a9e3bce2f3f081231d93e0a042eb635619874787cb4bf773b04",
+          "d860f25a2a42c7369fb915ef86c3e9a993fa6540edf96ddb4816b8e89c860988",
+          "b8f40e621395d2ddf0e8c8163edad9773c00948d14becb64c0e17eee34af3d40",
+          "d270887d2f69680806120b58f9595236db346b0708c736bcc721013f0c216602",
+          "a1f651bbf31f3988227ad1e588004081872d6179c8d9af4df6b33ecd2fa6a299",
+          "f4f352032f26a066bbfc533f984888528a47ff3dc79c9f6446cb61a5257cdecf",
+          "b79971f7aaf1323b1816448dc78ae72a19220a9fc647b5a4a9899ce25dec7037",
+          "1e28ebce7299cee24fdf97e2ff30ef6e8d77ac1509fa814e98f4f31b28a3bcc8",
+          "3c39f6f1783af076b29edbcc41f3d29770b409037bb0d4bfc19b1a48a084370f",
+          "1393c21c8bf7e2b0066eadf6cd005cb65bb1c6491c29c8c3f113fb45c3755c2f",
+          "4116a034af29799db40830f2bdc4c8a216bedae81dac6918f85c7fca5a1708ff",
+          "37993fc1fb99213a127603f6b03919fbb804914dbcbeb0d1c87bd3b4d0bdf551",
+          "b462aad6c4c1f353b6b9c59d7275bcae2fb75306d9e13665694594832ee3c2fd",
+          "47d9d9b0143c052fc90aa9c61f4a3c4ce1445456bbf8b20185393d4bbd7a9e7c",
+          "be62ff1453d26bdd23a59fd8bc98311aac2f7fc7946445da5ff08184fb51dc49",
+          "a5d701c1cf193bea9321e457d435567ed85172a2225a9b8981d3c5ec96138410",
+          "1946189039b683324bafc33a2402e93c3b669787c0dcd19990cb892f6180dd2d",
+          "88d3d41eb48e271ef2d6ccc7209cc64b3b48b47bc6bf85cbe0310249e82e4faa",
+          "4ac4fa9deaa1f3040f32499e7053cd3c346032b7ac9cb47bbc8c08fbd1d4de62",
+          "9dcc5c9b26a491a1e162f2ca872d5e93e8fdd36157256e575aaa05a7224bc276",
+          "cc4fa1da6f1ecea90e3cd6efae990447a4ec588e9a3758ef4f05157ce4bd0213",
+          "a165b24637c9d4cc114805e54e3a7991427ed6dc55030d8da7a339d5e2f75cd6",
+          "d228133437c5c4700198d4c22209c47090aaddddbee3d60dbde0747a0d1638f3",
+          "5767d80fcd19c395a60bf1bfa4026f84f1003222f0284be565f2e5e77afd4eff",
+          "a1657293820858324fd63b3c199c81498cdc63e0d96291128effa5e679bf71c7",
+          "c64d92a3504abcaeb8bb230d30c9669a161febf2ef0844348b93f82298ca9307",
+          "ae4fde79fd8a542e78abbc825900df2c018493be6e82f4e23e95e4312d72ef7c",
+          "13ed6eb295650114730194d30e1bfc0ed7e17a0d00b623d76e8831567f570420",
+          "36e1981ada5ea530607bf19b40b6543cd39827c82cd26349bbab88c971616b7c",
+          "52f2772b1042d6331bf1e79020ca153390ae7a1dbfe9830705343dd6753b2762",
+          "1ef4b02c5bacb415d6cbcb1d9d165f1ce96466f3f773713657f2522cd22c4e24",
+          "783a7ec5d0b3b481dbc66a0742a1b460bfd80f5444194be52cfe2017ae116689",
+          "f6da16af3dcab87e423e04453dd145b2d983ca2d5c2621257b4cd977069d8972",
+          "83ce0c265c8fd993f15cb0b9eaa2d5d89d7d8badd30ab2b1e6e62188569a66c3",
+          "ac8b7d4066d6970db293ff3fbf52a1a3551319b2321f33b63f1a05d592236834",
+          "f7cb04a649fd7b288e8705a721360f473a7a8b06fbd88612ec6455a3f3ad092a",
+          "308d1f230bb64408669f6608dd88f04737e208e6644bc34d7c7de2b3ed648a6c",
+          "36cb1210f5bf12f04d91cc2318e426d73203ba6679ff1baa7af8efc31d0709cd",
+          "89a3beac3a217210d8dde509524a3f67a3e72ae2b86b49662fa8857bb54fd400",
+          "b616f87ed0cedd9baae3f2b4ca219ca8e4f8fc8cb666dfcf58e351512a8dc297",
+          "6c23b60fd2487ce11f8b93f8ce7e4816d577b0a3b6826afffeb85370e3ab4c8f",
+          "b9f78b82897d05a99d6448a873f061b2051bdcd6e661f8481d41d051113d4f32",
+          "4e3631f452331500b3422f714668f14edfea3b769af1e1152327534258917461",
+          "3bd2f63ec1aa13b655acb6d312fccd4d03fc67b06498761b5b6f4ef6ea2a27fe"
+        ]
+      },
+      "geometry": {
+        "map": "bilinear align_corners=False 32x64->128x256",
+        "crop": [
+          32,
+          32
+        ],
+        "upscale": "2x nearest",
+        "working": [
+          64,
+          64
+        ],
+        "downscale": "nonoverlapping 2x2 mean"
+      },
+      "model_calls": {
+        "blueprint_reused": 1,
+        "blueprint_executed_now": 0,
+        "local_executed_now": 55
+      },
+      "timing": {
+        "local_cuda_ms": 54811.5234375,
+        "wall_seconds": 55.952303599973675
+      },
+      "memory": {
+        "peak_allocated_bytes": 3423501312,
+        "peak_reserved_bytes": 3850371072
+      },
+      "integrity": {
+        "source_artifact_immutable": true,
+        "working_inputs_immutable": true,
+        "finite": true,
+        "complete_positive_coverage": true,
+        "accepted_state_updates": 0
+      }
+    },
+    {
+      "ordinal": 3,
+      "configuration_hash": "71e07897d5410caf78c0994b819c515b39fa369ae213d8c3eea4f33be58ad035",
+      "blueprint_sigma": 0.9926428198814392,
+      "blueprint_sigma_next": 0.0,
+      "local_resampling_sigma": 0.25,
+      "accepted_blueprint_input_hash": "df7fa6c9b9518a8632eb8df8d45366d98fa968a895f175a70f2aa7600e5f2ad7",
+      "source_blueprint_x0_hash": "887ccad3427e4a89f189cd6ae035e95164ce6769cd96133d3a0a71437710b21a",
+      "blueprint_x0": {
+        "rms": 0.8303940296173096,
+        "mean": -0.05110616981983185,
+        "std": 0.8288199305534363,
+        "min": -5.156167030334473,
+        "max": 5.62131404876709,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          32,
+          64
+        ],
+        "sha256": "887ccad3427e4a89f189cd6ae035e95164ce6769cd96133d3a0a71437710b21a"
+      },
+      "mapped_blueprint": {
+        "rms": 0.7482835650444031,
+        "mean": -0.05110616981983185,
+        "std": 0.7465362548828125,
+        "min": -4.876272678375244,
+        "max": 5.111120700836182,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          128,
+          256
+        ],
+        "sha256": "4e61b35de50932bd231344a4ab6e2967668fcaff871cac6c1208a9fe136d4971"
+      },
+      "refined_assembled": {
+        "rms": 0.7482099533081055,
+        "mean": -0.058837827295064926,
+        "std": 0.7458929419517517,
+        "min": -4.610889911651611,
+        "max": 4.999297142028809,
+        "finite": true,
+        "shape": [
+          1,
+          128,
+          128,
+          256
+        ],
+        "sha256": "910965506ffbc3d83416c2fabc3a4c6bf55bb1611e2e377462817c402fd521d2"
+      },
+      "blueprint_to_refined": {
+        "rms": 0.11977749317884445,
+        "max_abs": 0.9936037063598633,
+        "left_rms": 0.7482099533081055,
+        "right_rms": 0.7482835650444031
+      },
+      "low_frequency_rms": 0.065425343811512,
+      "gradient_rms": {
+        "blueprint": 0.13421172532760192,
+        "refined": 0.18755072165925968
+      },
+      "overlap_rms": 0.1643906603967047,
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "noise_provenance": {
+        "base_seed": 42260904,
+        "formula": "base_seed+1009*region.index",
+        "hashes": [
+          "69653d9c6b7883a4a9ce1f86dcc1873d98e598e618eb5b7b3cc7118c383814ac",
+          "b6b548cd340ceb3116e474d128738a058e30a9815d50c10b1dce182986d09e0e",
+          "8c453cb148db08b94538195d852985a546a199681c6cd3d68ba92ee82009fdc1",
+          "c34baf99dc530f808addfb52a5b37c057c20191c5d8cb0285c8d5e1119489eb5",
+          "b634c70042a97740308591d1fa120d4a73ae33cbed0b107e17443b2cc577316d",
+          "4ab32829560b6ac1eb8125993ef85cea85cfb7026a4f552baae69766b4efbb24",
+          "435a73e36a10be5ac0720d008bf730ecb8852c704a7f18cbb91045cf7122280c",
+          "397c9482d535ef6f694ad76040480b0dbd7e21b9b70ecefc9c76b4c9f85b80bb",
+          "e83d89b5ff25b1c70eff9bdc782428317448b51be1d73232642e896281de8f14",
+          "ca35d4b9ee4f94b8f13c03ec60789307d93c289eef899fa73783f8ec906d3ead",
+          "6eef341c2eef0db27264198b2c7a9a6f91f606c41250b42caf0205d27a51b9b3",
+          "d5bf94ccab2c2a9e3bce2f3f081231d93e0a042eb635619874787cb4bf773b04",
+          "d860f25a2a42c7369fb915ef86c3e9a993fa6540edf96ddb4816b8e89c860988",
+          "b8f40e621395d2ddf0e8c8163edad9773c00948d14becb64c0e17eee34af3d40",
+          "d270887d2f69680806120b58f9595236db346b0708c736bcc721013f0c216602",
+          "a1f651bbf31f3988227ad1e588004081872d6179c8d9af4df6b33ecd2fa6a299",
+          "f4f352032f26a066bbfc533f984888528a47ff3dc79c9f6446cb61a5257cdecf",
+          "b79971f7aaf1323b1816448dc78ae72a19220a9fc647b5a4a9899ce25dec7037",
+          "1e28ebce7299cee24fdf97e2ff30ef6e8d77ac1509fa814e98f4f31b28a3bcc8",
+          "3c39f6f1783af076b29edbcc41f3d29770b409037bb0d4bfc19b1a48a084370f",
+          "1393c21c8bf7e2b0066eadf6cd005cb65bb1c6491c29c8c3f113fb45c3755c2f",
+          "4116a034af29799db40830f2bdc4c8a216bedae81dac6918f85c7fca5a1708ff",
+          "37993fc1fb99213a127603f6b03919fbb804914dbcbeb0d1c87bd3b4d0bdf551",
+          "b462aad6c4c1f353b6b9c59d7275bcae2fb75306d9e13665694594832ee3c2fd",
+          "47d9d9b0143c052fc90aa9c61f4a3c4ce1445456bbf8b20185393d4bbd7a9e7c",
+          "be62ff1453d26bdd23a59fd8bc98311aac2f7fc7946445da5ff08184fb51dc49",
+          "a5d701c1cf193bea9321e457d435567ed85172a2225a9b8981d3c5ec96138410",
+          "1946189039b683324bafc33a2402e93c3b669787c0dcd19990cb892f6180dd2d",
+          "88d3d41eb48e271ef2d6ccc7209cc64b3b48b47bc6bf85cbe0310249e82e4faa",
+          "4ac4fa9deaa1f3040f32499e7053cd3c346032b7ac9cb47bbc8c08fbd1d4de62",
+          "9dcc5c9b26a491a1e162f2ca872d5e93e8fdd36157256e575aaa05a7224bc276",
+          "cc4fa1da6f1ecea90e3cd6efae990447a4ec588e9a3758ef4f05157ce4bd0213",
+          "a165b24637c9d4cc114805e54e3a7991427ed6dc55030d8da7a339d5e2f75cd6",
+          "d228133437c5c4700198d4c22209c47090aaddddbee3d60dbde0747a0d1638f3",
+          "5767d80fcd19c395a60bf1bfa4026f84f1003222f0284be565f2e5e77afd4eff",
+          "a1657293820858324fd63b3c199c81498cdc63e0d96291128effa5e679bf71c7",
+          "c64d92a3504abcaeb8bb230d30c9669a161febf2ef0844348b93f82298ca9307",
+          "ae4fde79fd8a542e78abbc825900df2c018493be6e82f4e23e95e4312d72ef7c",
+          "13ed6eb295650114730194d30e1bfc0ed7e17a0d00b623d76e8831567f570420",
+          "36e1981ada5ea530607bf19b40b6543cd39827c82cd26349bbab88c971616b7c",
+          "52f2772b1042d6331bf1e79020ca153390ae7a1dbfe9830705343dd6753b2762",
+          "1ef4b02c5bacb415d6cbcb1d9d165f1ce96466f3f773713657f2522cd22c4e24",
+          "783a7ec5d0b3b481dbc66a0742a1b460bfd80f5444194be52cfe2017ae116689",
+          "f6da16af3dcab87e423e04453dd145b2d983ca2d5c2621257b4cd977069d8972",
+          "83ce0c265c8fd993f15cb0b9eaa2d5d89d7d8badd30ab2b1e6e62188569a66c3",
+          "ac8b7d4066d6970db293ff3fbf52a1a3551319b2321f33b63f1a05d592236834",
+          "f7cb04a649fd7b288e8705a721360f473a7a8b06fbd88612ec6455a3f3ad092a",
+          "308d1f230bb64408669f6608dd88f04737e208e6644bc34d7c7de2b3ed648a6c",
+          "36cb1210f5bf12f04d91cc2318e426d73203ba6679ff1baa7af8efc31d0709cd",
+          "89a3beac3a217210d8dde509524a3f67a3e72ae2b86b49662fa8857bb54fd400",
+          "b616f87ed0cedd9baae3f2b4ca219ca8e4f8fc8cb666dfcf58e351512a8dc297",
+          "6c23b60fd2487ce11f8b93f8ce7e4816d577b0a3b6826afffeb85370e3ab4c8f",
+          "b9f78b82897d05a99d6448a873f061b2051bdcd6e661f8481d41d051113d4f32",
+          "4e3631f452331500b3422f714668f14edfea3b769af1e1152327534258917461",
+          "3bd2f63ec1aa13b655acb6d312fccd4d03fc67b06498761b5b6f4ef6ea2a27fe"
+        ]
+      },
+      "geometry": {
+        "map": "bilinear align_corners=False 32x64->128x256",
+        "crop": [
+          32,
+          32
+        ],
+        "upscale": "2x nearest",
+        "working": [
+          64,
+          64
+        ],
+        "downscale": "nonoverlapping 2x2 mean"
+      },
+      "model_calls": {
+        "blueprint_reused": 1,
+        "blueprint_executed_now": 0,
+        "local_executed_now": 55
+      },
+      "timing": {
+        "local_cuda_ms": 54868.6953125,
+        "wall_seconds": 56.02563869999722
+      },
+      "memory": {
+        "peak_allocated_bytes": 3423501312,
+        "peak_reserved_bytes": 3858759680
+      },
+      "integrity": {
+        "source_artifact_immutable": true,
+        "working_inputs_immutable": true,
+        "finite": true,
+        "complete_positive_coverage": true,
+        "accepted_state_updates": 0
+      }
+    }
+  ],
+  "decoded": {
+    "interval_0_mapped_blueprint": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_0_MAPPED_BLUEPRINT.png",
+      "dimensions_wh": [
+        4096,
+        2048
+      ],
+      "sha256_rgb": "641d50e89105a83b83bf1ad2bd4b254f95571f119920bbb50d2ca13d8c27298b"
+    },
+    "interval_0_refined_assembled": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_0_REFINED_ASSEMBLED.png",
+      "dimensions_wh": [
+        4096,
+        2048
+      ],
+      "sha256_rgb": "86e6e66906db0b5bc7a0eeb1259b2d004861f38953178b94ca7eb39ea680e089"
+    },
+    "interval_0_representative_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_0_REPRESENTATIVE_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "11e1a1d0099cc4327020b33e6a25ef31a1813b76406b67bdc3a2f56cdb4db3cd"
+    },
+    "interval_0_representative_x0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_0_REPRESENTATIVE_X0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "47cf4534a326bb295a2c166bb38fda87ea8e691735c1ade36b3219d7989d83d5"
+    },
+    "interval_1_mapped_blueprint": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_1_MAPPED_BLUEPRINT.png",
+      "dimensions_wh": [
+        4096,
+        2048
+      ],
+      "sha256_rgb": "dc4d6c91fe3a3f9fd8a07e88379dca9648a1ff3d84fdbfd8b642f835e8f07148"
+    },
+    "interval_1_refined_assembled": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_1_REFINED_ASSEMBLED.png",
+      "dimensions_wh": [
+        4096,
+        2048
+      ],
+      "sha256_rgb": "b16e4718de35c18e390e13acec90f5326252f6b94ed80e22a180a80070da3dff"
+    },
+    "interval_1_representative_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_1_REPRESENTATIVE_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "3e2491e14e968a566f3e359af3cf606aa40ba4ac4759b824174cf2917777b987"
+    },
+    "interval_1_representative_x0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_1_REPRESENTATIVE_X0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "1406704b1153ec1daa76e6e14a6f4128e52b63141b386c147420a8ed6769cdba"
+    },
+    "interval_2_mapped_blueprint": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_2_MAPPED_BLUEPRINT.png",
+      "dimensions_wh": [
+        4096,
+        2048
+      ],
+      "sha256_rgb": "a84150f62aa8951372370859572207767e3e3e5a6cc581ba41c07ec362bf0ed4"
+    },
+    "interval_2_refined_assembled": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_2_REFINED_ASSEMBLED.png",
+      "dimensions_wh": [
+        4096,
+        2048
+      ],
+      "sha256_rgb": "c72f55160fd4ca2c2e411ec58e99ff5489f774837235cdb90f3dc947617b1b1a"
+    },
+    "interval_2_representative_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_2_REPRESENTATIVE_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "b089df87f944135d8971a3457a15205f720f7e4c993a6b6c5bd0eab676e5bfdc"
+    },
+    "interval_2_representative_x0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_2_REPRESENTATIVE_X0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "66ac6d10ebc9ed71ca58639793a99d5eb431fc138cce12fe3f1d86edfd18ea08"
+    },
+    "interval_3_mapped_blueprint": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_3_MAPPED_BLUEPRINT.png",
+      "dimensions_wh": [
+        4096,
+        2048
+      ],
+      "sha256_rgb": "4b680745cc4fe18e50f4e555151b9b1f46b919798ba2d5383b9ec30c559df508"
+    },
+    "interval_3_refined_assembled": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_3_REFINED_ASSEMBLED.png",
+      "dimensions_wh": [
+        4096,
+        2048
+      ],
+      "sha256_rgb": "f2a98a51d0afcd099fe61769ed83013b4558b38d968bab59ab1abe5613b91cb0"
+    },
+    "interval_3_representative_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_3_REPRESENTATIVE_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "9024c7a8b2ab100c557b3dc7c9489269692a646c1bd0bb01656357a07b7015e9"
+    },
+    "interval_3_representative_x0_W": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\interval_3_REPRESENTATIVE_X0_W.png",
+      "dimensions_wh": [
+        1024,
+        1024
+      ],
+      "sha256_rgb": "cdbecf1652a45960537f7bf6d87c52d34cda9213bcbbe9afbd8e5cf16899e212"
+    }
+  },
+  "comparison_sheet": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\flux2_candidate3_blueprint_local_resampling_trajectory_results\\BLUEPRINT_RESAMPLING_TRAJECTORY.png",
+  "integrity": {
+    "completed_intervals": 4,
+    "new_local_model_calls": 220,
+    "reused_blueprint_predictions": 4,
+    "accepted_state_updates": 0,
+    "all_finite": true,
+    "all_coverage_complete": true,
+    "all_inputs_immutable": true,
+    "production_changes": false
+  },
+  "semantic_review": {
+    "blueprint_classes": ["S3", "S3", "S3", "S3"],
+    "refined_classes": ["S3", "S3", "S3", "S3"],
+    "pass": true,
+    "observations": [
+      "one dominant continuous bridge and one centered train at every evaluation",
+      "controlled endpoint tower and stone structure",
+      "continuous horizon and water",
+      "no independent bridge, tower, train, or lighthouse alternatives",
+      "repeatable modest edge/detail increase without progressive Blueprint geometry loss"
+    ],
+    "detail_behavior": "STABLE_REGENERATION"
+  },
+  "decision": "PASS: fixed-late-sigma Blueprint-initialized local resampling remains S3 at all four persistent Blueprint evaluations; stop before cadence architecture comparison."
+}
