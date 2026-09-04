@@ -1,0 +1,137 @@
+{
+  "complete": true,
+  "configuration_hash": "d811472ce618b3d4be0478d088545bf1d4ce15651da901091febb6e225f856fa",
+  "record": {
+    "ordinal": 2,
+    "sigma": 0.9975355267524719,
+    "sigma_next": 0.9926428198814392,
+    "accepted_input_H_hash": "754eccce653b8a0084043e1bfb45b58b93c97110eb5cfd547f95b053cab1a8ab",
+    "accepted_input_blueprint_hash": "6a9199bbe440fbbd515791d0b0196e95e27f3acf57308e666ccbff0fa962b09d",
+    "accepted_output_H_hash": "cc9e5f4f8657d8827edcc91247a846c384803e6f24ece538e84269f84168482f",
+    "accepted_output_blueprint_hash": "df7fa6c9b9518a8632eb8df8d45366d98fa968a895f175a70f2aa7600e5f2ad7",
+    "blueprint_x0": {
+      "rms": 0.8819683194160461,
+      "mean": -0.05641908943653107,
+      "std": 0.8801618814468384,
+      "min": -4.823884010314941,
+      "max": 6.4657416343688965,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        32,
+        64
+      ],
+      "sha256": "8d5e0a8724b078f8c09313f2ec87eb3a0095d7dad653bf85f209d2dc54b9e365"
+    },
+    "ordinary_x0_H": {
+      "rms": 0.7930498719215393,
+      "mean": -0.038322631269693375,
+      "std": 0.7921233773231506,
+      "min": -4.166450500488281,
+      "max": 5.85236930847168,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        128,
+        256
+      ],
+      "sha256": "67c9e90ac9a4e079e79aaf013f0ac16195ae73eeb3aac2cd8644cd2dce3d96c9"
+    },
+    "corrected_x0_H": {
+      "rms": 0.9140464663505554,
+      "mean": -0.05641908943653107,
+      "std": 0.912303626537323,
+      "min": -6.0435261726379395,
+      "max": 6.41674280166626,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        128,
+        256
+      ],
+      "sha256": "061eba570d01d32a5126c1a6a14a809a229076282a25434da1a26790ddfcf398"
+    },
+    "accepted_H": {
+      "rms": 0.994346559047699,
+      "mean": -0.0004288509371690452,
+      "std": 0.9943464398384094,
+      "min": -5.020510673522949,
+      "max": 5.347789764404297,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        128,
+        256
+      ],
+      "sha256": "cc9e5f4f8657d8827edcc91247a846c384803e6f24ece538e84269f84168482f"
+    },
+    "accepted_blueprint": {
+      "rms": 0.9962092638015747,
+      "mean": -0.0037150883581489325,
+      "std": 0.9962024688720703,
+      "min": -4.763793468475342,
+      "max": 4.407665252685547,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        32,
+        64
+      ],
+      "sha256": "df7fa6c9b9518a8632eb8df8d45366d98fa968a895f175a70f2aa7600e5f2ad7"
+    },
+    "decomposition": {
+      "coarse_error_max_abs": 4.76837158203125e-07,
+      "null_error_max_abs": 7.152557373046875e-07,
+      "null_rms_before": 0.4340341091156006,
+      "null_rms_after": 0.4340341091156006,
+      "corrected_vs_ordinary": {
+        "rms": 0.9398030638694763,
+        "max_abs": 6.273107051849365,
+        "left_rms": 0.9140464663505554,
+        "right_rms": 0.7930498719215393
+      },
+      "corrected_vs_phase20c_hard_anchor": {
+        "rms": 0.4447025954723358,
+        "max_abs": 4.6751532554626465,
+        "left_rms": 0.9140464663505554,
+        "right_rms": 0.8105332255363464
+      },
+      "gradient_rms": {
+        "ordinary": 0.6793703676713307,
+        "corrected": 0.6431428694397299,
+        "phase20c_hard": 0.1305639808132777,
+        "blueprint_mapped": 0.13056397724674051
+      }
+    },
+    "ordinary_overlap_rms": 0.9247819519823324,
+    "coverage": [
+      0.9999999403953552,
+      1.0000001192092896
+    ],
+    "model_calls": {
+      "blueprint": 1,
+      "local": 55,
+      "total": 56
+    },
+    "timing": {
+      "blueprint_cuda_ms": 544.135986328125,
+      "local_cuda_ms": 59794.29296875,
+      "wall_seconds": 61.62524619998294
+    },
+    "memory": {
+      "peak_allocated_bytes": 1951924736,
+      "peak_reserved_bytes": 2376073216
+    },
+    "integrity": {
+      "accepted_inputs_immutable": true,
+      "W_inputs_immutable": true,
+      "atomic_commit": true,
+      "finite": true
+    }
+  }
+}

@@ -1822,3 +1822,38 @@ Detailed evidence is in
 - The almost-zero anchored overlap RMS (`6.59e-8`) follows algebraically from
   all crops sharing the mapped Blueprint field and is not an independent image-
   quality result.
+
+## 2026-09-04 — Phase 20c exact Blueprint authority is trajectory-stable
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_NATIVE_BLUEPRINT_ANCHOR_TRAJECTORY.md`.
+
+- A persistent native-coordinate `32x64` Blueprint and destination H advance by
+  ordinary same-sigma Euler updates and commit atomically. Blueprint x0 and the
+  exactly anchored assembly remain S3 in all four intervals; terminal H is S3.
+- Ordinary normalized-W assemblies remain S0 at every interval. Exact coarse
+  errors stay below `9.54e-7`, while ordinary overlap falls only from `0.956372`
+  to `0.854390`; anchored overlap is approximately `7e-8` by construction.
+- Detail behavior is REGENERATING: every fresh W forward recreates sharp but
+  incompatible local structures before the anchor removes their destination-
+  visible component. The correction remains `1.115–1.169x` ordinary local-x0
+  RMS on average.
+- The semantic mechanism is qualified across this trajectory; the unresolved
+  interface is allowing useful local/null-space information into accepted H
+  without surrendering Blueprint authority.
+
+## 2026-09-04 — Phase 21 spatial coarse/null separation is semantically entangled
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_COARSE_BLUEPRINT_DESTINATION_DETAIL.md`.
+
+- A fixed destination `2x2` mean restriction and nearest right inverse enforce
+  exact `64x128` Blueprint authority while preserving the ordinary local null
+  component: coarse error is at most `7.15e-7`, null error at most `8.34e-7`,
+  and null RMS remains `0.431–0.434` across all four intervals.
+- The corrected trajectory is materially sharper than Phase 20c (terminal
+  gradient RMS `0.6403` versus `0.1342`) and retains one dominant bridge, but
+  faint repeated towers, ghost cables, and alternative bridge geometry remain.
+- Mathematical high-frequency/null preservation is therefore not equivalent to
+  semantic local-detail preservation. In this case the destination 2x2 null
+  space carries incompatible scene identity and geometry.
