@@ -535,3 +535,12 @@ Phase 17's weak S1 class, while later starts regress to S0. Joint-interface
 depth scheduling is closed; resumable per-arm artifacts and decoded sheets are
 complete. Next research should return to representation/global-state
 architecture rather than another block schedule sweep.
+
+Phase 19 is complete with no production or ComfyUI-core changes. Three
+resumable terminal arms compared the existing 32x128 fixed-4K control, a fixed
+64x64 single-scale whole-canvas source, and an equal-budget explicit
+16x32-plus-32x112 hierarchy. Every source is shared across all 55 normalized-W
+consumers and remains exactly 4,096 tokens. All outputs remain S0 despite
+complete coverage and valid invariants. Gate 1 applies: no trajectory or
+production follow-up is authorized. Reassess the global representation/state
+architecture rather than another grid allocation or depth/interface sweep.

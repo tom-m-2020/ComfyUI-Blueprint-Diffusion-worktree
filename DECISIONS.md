@@ -826,3 +826,13 @@ block-count/schedule sweep or optimize around D4/S0. The missing mechanism is
 not a transient coherent solution being overwritten by later depth. Reassess
 the information represented by the fixed global source/state before selecting
 another architecture.
+
+## 2026-09-04 — Reject the tested bounded 4K whole-canvas states
+
+Phase 19's fixed 64x64 single-scale source and explicit 512-token coarse plus
+3,584-token medium hierarchy both remain in the fragmented S0 class at the
+2048x4096 terminal state. Do not advance either to a trajectory or production,
+and do not promote the hierarchy based on its slightly lower overlap RMS. Also
+do not respond with another fixed-grid allocation, deterministic packing,
+density sweep, or joint-depth schedule. The next architecture decision must
+reconsider how a bounded state represents scene-level relational identity.

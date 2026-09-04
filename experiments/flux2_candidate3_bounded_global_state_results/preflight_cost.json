@@ -1,0 +1,8 @@
+{
+  "reference_phase14_fixed4k_wall_seconds": 105.234,
+  "planned_new_model_arms": 3,
+  "estimated_model_seconds": 330,
+  "estimated_total_minutes_with_setup_decode": 12,
+  "cost_stop_threshold_minutes": 30,
+  "proceed": true
+}
