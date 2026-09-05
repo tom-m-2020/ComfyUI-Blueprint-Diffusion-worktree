@@ -1,0 +1,34 @@
+{
+  "complete": true,
+  "configuration_hash": "4aa622f14cc60feaa480063bac00705f19251870653b3e82b80c6b739db9464c",
+  "record": {
+    "stage": "B_PERIODIC_MIDPOINT",
+    "reused_phase23_ordinal": 1,
+    "model_calls_executed_now": 0,
+    "model_calls_provenance": 55,
+    "blueprint_hash": "af1a67c6261a4a2db13984bf6ffd1285fc3e87a3b0cbf51393dbdbf3acb60906",
+    "H_mid_hash": "6c0d10aa7dea609ef1ea281aeb660f181d000bbc9c84458631ed26c0bdbdb7a0",
+    "residual": {
+      "rms": 0.12234623730182648,
+      "mean": -0.006300612818449736,
+      "std": 0.1221838966012001,
+      "min": -0.9200199246406555,
+      "max": 0.849845290184021,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        128,
+        256
+      ],
+      "sha256": "5f77bd933f108f2ba8ca3f37cbba4ee7213623d83fcf286ff1095c8bbb5faef3"
+    },
+    "gradient_rms": 0.1777443359015114,
+    "overlap_rms": 0.16162274446159466,
+    "integrity": {
+      "exact_phase23_reuse": true,
+      "finite": true,
+      "accepted_state_updates": 0
+    }
+  }
+}

@@ -593,3 +593,19 @@ S3 at every point, detail gain is repeatable, and no independent bridge/train
 alternatives emerge. The temporal semantic gate passes. Stop before cadence or
 sigma optimization; the next research decision is terminal-only versus periodic
 versus fully interleaved multiresolution sampling.
+
+Phase 24 is complete with no production or ComfyUI-core changes. Terminal-only
+and the fixed ordinal-1-plus-terminal persistent-residual arm both remain S3,
+but periodic persistence gives no clear perceptual detail advantage and worsens
+Blueprint distance, low-frequency discrepancy, and overlap. Terminal-only is
+selected. Do not run a fully interleaved arm; the next architecture work should
+use a completed bounded Blueprint trajectory followed by one terminal native-
+local resampling pass.
+
+Phase 25 is complete with no production or ComfyUI-core changes. The exact
+terminal-only architecture is S3 for the reused bridge case and for fixed new
+multi-object and astronaut cases; both new ordinary-local controls are S0.
+All fixed provenance, coverage, finiteness, resumability, and immutability
+checks pass. Semantic generalization is qualified for these three scene classes
+at the existing geometry. A Phase-26 production-architecture design task is
+authorized; production implementation and geometry generalization are not.

@@ -1,0 +1,19 @@
+{
+  "case_order": [
+    "B_MULTI_OBJECT",
+    "C_ASTRONAUT"
+  ],
+  "case_definitions": {
+    "B_MULTI_OBJECT": {
+      "seed": 20260911,
+      "prompt": "A cinematic photograph of one red vintage car on the far left, one tall green tree in the center, and one small white house on the far right, all standing on the same grassy field under one continuous horizon, coherent perspective, exactly one car, one tree, and one house, no duplicate objects."
+    },
+    "C_ASTRONAUT": {
+      "seed": 20260912,
+      "prompt": "A full-body astronaut standing alone in the center of a wide desert, facing the camera, both arms visible, both legs visible, one continuous body, distant low mountains across one horizon, exactly one astronaut, no duplicate people or body parts."
+    }
+  },
+  "seeds_declared_before_inference": true,
+  "algorithm_frozen": true,
+  "bridge_control": "exact Phase24 reuse"
+}

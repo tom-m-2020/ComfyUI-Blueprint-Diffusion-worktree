@@ -1891,3 +1891,38 @@ Detailed evidence is in
   rather than a progressive loss of Blueprint geometry.
 - This establishes temporal viability at four bounded evaluation points, not a
   cadence choice or an interleaved accepted-state architecture.
+
+## 2026-09-05 — Phase 24 terminal-only resampling is sufficient
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_BLUEPRINT_RESAMPLING_CADENCE.md`.
+
+- Terminal-only and midpoint-plus-terminal persistent-residual cadence both
+  yield S3, with one bridge/train scene and coherent horizon/water.
+- Periodic persistence raises gradient RMS (`0.282925` versus `0.187551`) but
+  offers no clear visual detail gain and worsens RMS versus the terminal
+  Blueprint (`0.215070` versus `0.119778`), low-frequency discrepancy
+  (`0.113498` versus `0.065425`), and overlap (`0.172020` versus `0.164391`).
+- The midpoint residual is compatible with the fixed Phase-22 resampling state,
+  but its extra 55-forward event is not justified by quality. The evidence
+  favors completing the Blueprint trajectory and refining locally once.
+
+## 2026-09-05 — Phase 25 terminal-only resampling generalizes semantically
+
+Detailed evidence is in
+`experiments/FLUX2_CANDIDATE3_TERMINAL_RESAMPLING_GENERALIZATION.md`.
+
+- The exact Phase-24 staged mechanism remains S3 for both fixed new prompts:
+  one left/center/right car-tree-house composition and one centered full-body
+  astronaut. Their matched ordinary local controls are S0 with repeated
+  crop-local objects or people.
+- Selected outputs remain close to their terminal Blueprints (`0.122425` and
+  `0.121437` RMS; low-frequency RMS `0.069409` and `0.082846`) while retaining
+  coherent ground/horizon and object/anatomy structure.
+- Each selected arm uses 55 terminal local calls at fixed sigma `0.25`; the
+  ordinary diagnostics use 220 calls for independent four-interval local
+  trajectories. Noise provenance, geometry, conditioning, and assembly are
+  controlled, and coverage/finite/immutability checks pass.
+- This establishes semantic generalization across the three tested scene
+  classes at `H=128x256`; it does not establish geometry generalization or
+  production readiness.
