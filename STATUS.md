@@ -720,3 +720,14 @@ Outcome is `B — CANONICAL FULL/PARTIAL SCHEDULE EXISTS, BUT LOCAL STEP COUNT
 REMAINS FREE`. Phase 38 remains blocked unless one fixed empirical local
 schedule policy is explicitly authorized. Production and ComfyUI core remain
 unchanged.
+
+Phase 38 is complete with one square-scene, four-interval empirical terminal
+local schedule and no production/Core changes. The Phase-29 control is
+bit-exact; all 25 candidate regions match its initial noise/W fingerprints,
+execute four persistent-W Euler intervals, and assemble only once. The 100-call
+candidate and independent repeat are bit-exact and remain S3, with no object
+duplication or local recomposition. It adds texture/gradient energy but no
+credible structural detail, worsens overlap disagreement, and costs about 4x
+the local model time at unchanged peak VRAM. Outcome: `B — CHANGES OUTPUT BUT
+DOES NOT SOLVE SOFTNESS`. No portrait/landscape generalization or schedule/depth
+sweep is authorized.
