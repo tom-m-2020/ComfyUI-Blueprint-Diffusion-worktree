@@ -1,0 +1,23 @@
+{
+  "seed": 20260922,
+  "geometry": [
+    64,
+    32
+  ],
+  "initial_hash": "dbf240678305eb219f06de1dfb2bd2d618ea2554e55e0db852d3f1d063a5c10a",
+  "x0_hashes": [
+    "b0f506248d01eea76da49fd6be94d2ee85d6e20251d45cd94610a849171ed3ae",
+    "a1d2aa27f3a75cb65e18bd370de84068731deb67e0bc7fb4e21a59014a9625ee",
+    "65f3b9220a03194c01485d9c7aa732ed379d01cd6afb1e0e1c2f582fd8644dc5",
+    "c465a5f7194b77ded29c268abb786fb82dd31ddc0b1f001c7a5fe26ab9abddca"
+  ],
+  "accepted_hashes": [
+    "8ee14162fe82a4af9890dfc77701bad70607bc22594af23104eb99cfea2318ea",
+    "200b803f7d41bd2addcdc0b0d1a3253328bd5d8c6fd8d852aa5ce47ac33af66e",
+    "37202eb54ff4be72a34613a918980b77145d6950a3d6615ce75714b223168fa3",
+    "10d428ad43a17f2e9ae374111b360b97d2a28880ed9952be50d693c721583832"
+  ],
+  "terminal_hash": "c465a5f7194b77ded29c268abb786fb82dd31ddc0b1f001c7a5fe26ab9abddca",
+  "mapped_hash": "0bda94e1dbda1182bebf44d3ccd3930bc88320f9299af6d29dd58da97841bf39",
+  "model_calls": 4
+}
