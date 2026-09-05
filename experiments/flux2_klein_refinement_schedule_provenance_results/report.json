@@ -1,0 +1,257 @@
+{
+  "phase": 37,
+  "status": "audit_complete_no_model_inference",
+  "verdict": "B \u2014 CANONICAL FULL/PARTIAL SCHEDULE EXISTS, BUT LOCAL STEP COUNT REMAINS FREE",
+  "final_classification": "SHORT LOCAL TRAJECTORY REQUIRES AN EXPLICIT EMPIRICAL SCHEDULE POLICY",
+  "conclusion": {
+    "canonical_short_schedule_found": false,
+    "official_full_schedule": "BFL image-sequence-length and step-count shifted linear flow schedule",
+    "official_solver": "first-order Euler",
+    "official_partial_policy": "Diffusers Klein inpaint truncates an already discretized schedule by strength/index",
+    "scheduler_family_prescribed": "BFL code fixes its shifted flow curve and Euler; Diffusers model package names FlowMatchEulerDiscreteScheduler",
+    "local_step_count_prescribed": false,
+    "sigma_0_25_is_valid_flow_coordinate": true,
+    "sigma_0_25_is_official_refinement_start": false,
+    "intermediate_points_uniquely_determined_from_sigma_0_25": false,
+    "phase38_schedule": null
+  },
+  "authoritative_sources": [
+    {
+      "authority": "Black Forest Labs official inference repository",
+      "url": "https://github.com/black-forest-labs/flux2",
+      "facts": [
+        "Klein 4B is step-distilled",
+        "distilled default/fixed num_steps is 4"
+      ]
+    },
+    {
+      "authority": "Black Forest Labs official sampling implementation",
+      "url": "https://github.com/black-forest-labs/flux2/blob/main/src/flux2/sampling.py",
+      "facts": [
+        "shifted-linear full schedule",
+        "mu depends on image sequence length and step count",
+        "Euler update"
+      ]
+    },
+    {
+      "authority": "BFL Klein 4B Diffusers scheduler configuration",
+      "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B/blob/main/scheduler/scheduler_config.json",
+      "facts": [
+        "FlowMatchEulerDiscreteScheduler",
+        "dynamic shifting",
+        "1000 training timesteps"
+      ]
+    },
+    {
+      "authority": "Hugging Face Diffusers Klein inpaint pipeline",
+      "url": "https://github.com/huggingface/diffusers/blob/main/src/diffusers/pipelines/flux2/pipeline_flux2_klein_inpaint.py",
+      "facts": [
+        "strength truncates a precomputed schedule by index",
+        "num_inference_steps remains caller supplied"
+      ]
+    }
+  ],
+  "bfl_formula_audit": {
+    "formula": "linspace(1,0,num_steps+1), then exp(mu)/(exp(mu)+(1/t-1)); mu depends on image_seq_len and num_steps",
+    "computed_examples": {
+      "2048": {
+        "4": {
+          "mu": 2.1175197700051536,
+          "sigmas": [
+            1.0,
+            0.9614368622983299,
+            0.8925943821566426,
+            0.7347597354514689,
+            0.0
+          ]
+        },
+        "8": {
+          "mu": 2.0906996036785177,
+          "sigmas": [
+            1.0,
+            0.9826491348332331,
+            0.9604300777907597,
+            0.9309596762164988,
+            0.8899959377445745,
+            0.8291866697197603,
+            0.7295000089457673,
+            0.5361342591920214,
+            0.0
+          ]
+        },
+        "50": {
+          "mu": 1.809087857248842,
+          "sigmas": [
+            1.0,
+            0.9966682097551238,
+            0.9932211217920074,
+            0.9896526458587659,
+            0.9859562550837236,
+            0.982124946133886,
+            0.9781511949296651,
+            0.9740269073266725,
+            0.9697433640843753,
+            0.9652911593342917,
+            0.9606601316339056,
+            0.9558392865426583,
+            0.950816709478337,
+            0.9455794673999082,
+            0.9401134976088388,
+            0.9344034816559309,
+            0.9284327019729698,
+            0.9221828784034504,
+            0.9156339812657583,
+            0.9087640169219731,
+            0.9015487810159392,
+            0.8939615735469217,
+            0.8859728687103431,
+            0.8775499309002428,
+            0.868656366344819,
+            0.8592515974256604,
+            0.8492902436658322,
+            0.838721389465283,
+            0.8274877136494635,
+            0.8155244494195211,
+            0.8027581348582339,
+            0.7891051030754715,
+            0.7744696464219472,
+            0.7587417696225526,
+            0.7417944202722915,
+            0.7234800491438006,
+            0.7036263031471299,
+            0.6820305845872117,
+            0.6584531125952474,
+            0.6326079825259716,
+            0.6041515153363053,
+            0.5726668876036684,
+            0.5376435790667052,
+            0.49844947762286534,
+            0.4542923876362532,
+            0.40416592776380644,
+            0.34677189681484566,
+            0.28040623312454205,
+            0.2027869604056466,
+            0.11078649976007512,
+            0.0
+          ]
+        }
+      },
+      "4096": {
+        "4": {
+          "mu": 2.291179894115571,
+          "sigmas": [
+            1.0,
+            0.9673839882381499,
+            0.9081439225213331,
+            0.7671999638747197,
+            0.0
+          ]
+        },
+        "8": {
+          "mu": 2.2678904387254573,
+          "sigmas": [
+            1.0,
+            0.9854255069874454,
+            0.9666411016780388,
+            0.9415147848956728,
+            0.9061825955461307,
+            0.852841667759902,
+            0.7630145131730705,
+            0.579806787959538,
+            0.0
+          ]
+        },
+        "50": {
+          "mu": 2.0233511571292637,
+          "sigmas": [
+            1.0,
+            0.9973090635379106,
+            0.994521361668701,
+            0.9916315793383341,
+            0.9886340049781586,
+            0.9855224928261102,
+            0.9822904208681642,
+            0.978930643794355,
+            0.975435440266026,
+            0.9717964536752379,
+            0.9680046254396586,
+            0.9640501197120779,
+            0.9599222381871326,
+            0.9556093234516092,
+            0.9510986490397357,
+            0.9463762940097517,
+            0.9414269994382655,
+            0.936234003716146,
+            0.9307788529004165,
+            0.9250411816007071,
+            0.9189984589172678,
+            0.9126256927496457,
+            0.9058950842945659,
+            0.8987756226608454,
+            0.891232607132307,
+            0.8832270815514328,
+            0.8747151613677558,
+            0.8656472288113942,
+            0.855966965023781,
+            0.8456101792647431,
+            0.8345033837628372,
+            0.8225620473175592,
+            0.8096884398729625,
+            0.79576895175629,
+            0.7806707318789396,
+            0.7642374341243121,
+            0.7462837831461536,
+            0.7265885587513167,
+            0.7048854345862894,
+            0.6808508643767103,
+            0.6540878426333592,
+            0.6241038019986276,
+            0.5902800192267506,
+            0.5518284635346504,
+            0.5077296322561209,
+            0.45664082603782347,
+            0.3967570526028384,
+            0.3255933283176292,
+            0.2396311691567868,
+            0.13371895506718853,
+            0.0
+          ]
+        }
+      }
+    },
+    "four_step_4096_contains_0_25": false
+  },
+  "comfyui_audit": {
+    "const_denoised_relation": "x0 = x_t - sigma * model_output",
+    "const_noise_relation": "x_t = sigma * noise_scale * noise + (1-sigma) * latent",
+    "flux2_shift": 2.02,
+    "scheduler_selection": "caller-selected through calculate_sigmas/SCHEDULER_HANDLERS",
+    "denoise_policy": "compute a longer caller-selected schedule and retain its final steps",
+    "source_files": [
+      {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy\\model_sampling.py",
+        "sha256": "9315dbd4841c2ffc3b1ba0be8ba7dfbd01b70ebee730f0fd7abb00f436edd27e"
+      },
+      {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy\\samplers.py",
+        "sha256": "c7e20ad10e9c2ce1f8cbe414eab88c5ac427acc11d2dd033ec460dc78d4d11b6"
+      },
+      {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy_extras\\nodes_custom_sampler.py",
+        "sha256": "913d776b5e696c70b77b8184f2af504533fbff2fad62a05cef4ecba87975f0bf"
+      },
+      {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy\\supported_models.py",
+        "sha256": "048e0ffae49b23be78d099812bfaeba7c49831f0cafe62a8e72dca1e892e7c59"
+      }
+    ]
+  },
+  "integrity": {
+    "diffusion_model_forwards": 0,
+    "local_forwards": 0,
+    "destination_sized_forwards": 0,
+    "decoded_images": 0,
+    "production_changed": false,
+    "comfyui_core_changed": false
+  }
+}

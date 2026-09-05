@@ -701,3 +701,22 @@ immutability, reconstruction, flat region-barrier memory, and repeat hashes
 all pass. The decode remains one coherent scene but its untouched local detail
 bands produce strong lattice/ghost artifacts rather than useful structural
 detail. The result is partial/ambiguous and no tuning is authorized.
+
+Phase 36 is complete at a fail-closed schedule boundary. The persisted square
+sigma-0.25 S3 control and Blueprint hashes validate, but the selected
+terminal-resampling contract defines no unique multi-step local schedule. Its
+Blueprint vector has no late points near `0.25`, while the live sampling API
+offers nine divergent scheduler families. No transformer forward, local call,
+decode, accepted-state mutation, production edit, or ComfyUI-core edit was
+performed. A separate schedule-provenance/design audit is required before any
+short local trajectory inference.
+
+Phase 37 is complete as a source/config audit with zero diffusion forwards.
+Official BFL and Diffusers provenance establishes a shifted flow schedule,
+Euler integration, and a partial-denoise index-truncation policy, but not a
+unique short trajectory beginning at exact `sigma=0.25`: the full-schedule
+step count remains caller-selected and changes the shifted points themselves.
+Outcome is `B — CANONICAL FULL/PARTIAL SCHEDULE EXISTS, BUT LOCAL STEP COUNT
+REMAINS FREE`. Phase 38 remains blocked unless one fixed empirical local
+schedule policy is explicitly authorized. Production and ComfyUI core remain
+unchanged.

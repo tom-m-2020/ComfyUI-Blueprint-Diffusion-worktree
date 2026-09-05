@@ -2065,3 +2065,37 @@ The fixed model-mediated split is therefore partial/ambiguous: coarse authority
 works, while independently predicted local detail is not a compatible global
 detail field. See
 `experiments/FLUX2_ORTHOGONAL_COARSE_DETAIL_DISCRIMINATOR.md`.
+
+## 2026-09-06 — Phase 36 has no schedule implied by the qualified terminal contract
+
+The qualified local Stage-2 path defines only `[0.25,0]`; it names no scheduler
+family or multi-step construction. The fixed Blueprint schedule has no
+positive point at or below `0.25` (its last positive sigma is `0.99264282`), so
+it provides no reusable late local tail. The live Klein/ComfyUI sampling object
+offers nine scheduler families with materially different paths, and choosing a
+family, start, interval count, or splice point would be a new empirical policy.
+Phase 36 therefore stopped before transformer inference with outcome D. The
+persisted square control and Phase-28 bit-exact fingerprint remain valid. See
+`experiments/FLUX2_TERMINAL_RESAMPLING_SHORT_LOCAL_TRAJECTORY.md`.
+
+## 2026-09-06 — Phase 37 finds a schedule family, not a unique short refinement schedule
+
+The official BFL FLUX.2 implementation constructs a full flow schedule by
+applying an image-sequence-length- and step-count-dependent time shift to
+`linspace(1,0,num_steps+1)`, then advances it with first-order Euler. Distilled
+Klein 4B fixes four full-generation steps in BFL's CLI, but the official
+four-step 4096-token curve is approximately
+`[1,0.967384,0.908144,0.767200,0]` and contains no `0.25` point. BFL's own
+editing path uses reference tokens and does not expose a generated-latent
+img2img strength path.
+
+The official Diffusers Klein package selects `FlowMatchEulerDiscreteScheduler`
+with dynamic shifting. Its Klein inpaint pipeline supports partial denoising by
+truncating an already discretized schedule according to `strength`, but
+`num_inference_steps` remains a separate caller input. Thus strength is an
+index fraction, not a sigma value, and neither it nor exact `sigma=0.25`
+uniquely determines intermediate points. ComfyUI's CONST law gives `0.25` a
+valid continuous flow/state-interpolation meaning, but its use as the Blueprint
+terminal-resampling start is project-qualified rather than official Klein
+img2img provenance. No model forward was executed. See
+`experiments/FLUX2_KLEIN_REFINEMENT_SCHEDULE_PROVENANCE.md`.
