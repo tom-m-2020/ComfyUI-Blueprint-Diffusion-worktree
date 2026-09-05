@@ -2118,3 +2118,22 @@ peak allocation (`~3.03 GB`) and perfectly flat region-barrier allocation.
 Thus additional coherent evaluations on the same W trajectory do not solve
 softness under initialization-only Blueprint authority. See
 `experiments/FLUX2_TERMINAL_RESAMPLING_FOUR_INTERVAL_LOCAL_TRAJECTORY.md`.
+
+## 2026-09-06 — Phase 39 finds no fixed native same-canvas Blueprint guide contract
+
+Native Klein 4B accepts an independent generated state, timestep, text, and
+optional reference-image tokens. The trained reference route preserves y/x
+coordinates but assigns references a distinct image-index RoPE coordinate, so
+it represents another canvas rather than authoritative same-canvas Blueprint
+structure. Generic ComfyUI `post_input`, attention, block-replacement, control,
+and sampler prediction hooks are mechanically usable but do not provide
+trained Blueprint-role semantics, a fixed feature mapping, or a mathematically
+implied coupling amplitude.
+
+Prediction/state guidance either needs an arbitrary metric/strength or
+degenerates into the resampling/projection family already tested. Same-canvas
+feature/KV intervention requires untrained model/backend policy, while the base
+checkpoint has no qualified same-canvas ControlNet/adapter. Phase 39 therefore
+stopped before inference with `E — ARCHITECTURAL BOUNDARY`; the persisted S3
+square control remains bit-exact and no model work occurred. See
+`experiments/FLUX2_BLUEPRINT_AS_GUIDE_LOCAL_REFINEMENT.md`.

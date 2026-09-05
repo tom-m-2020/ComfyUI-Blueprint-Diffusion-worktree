@@ -731,3 +731,13 @@ credible structural detail, worsens overlap disagreement, and costs about 4x
 the local model time at unchanged peak VRAM. Outcome: `B — CHANGES OUTPUT BUT
 DOES NOT SOLVE SOFTNESS`. No portrait/landscape generalization or schedule/depth
 sweep is authorized.
+
+Phase 39 is complete as a fail-closed mechanism audit. The qualified square
+Blueprint/control fingerprints validate, but no executable B arm passed the
+fixed-contract gate. Native `reference_latents` is trained separate-canvas
+image context, not same-canvas Blueprint authority; prediction/state guidance
+needs a free policy or collapses to prior resampling/projection; hidden,
+attention, KV, and control hooks are untrained engineering boundaries without
+a fixed mapping or strength. Outcome: `E — ARCHITECTURAL BOUNDARY`. Diffusion,
+local, destination-sized, and decode call counts are all zero; production and
+ComfyUI core remain unchanged.
