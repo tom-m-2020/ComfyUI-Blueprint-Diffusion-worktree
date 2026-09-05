@@ -683,3 +683,21 @@ structural detail improvement; it chiefly raises texture/alias energy while
 roughly doubling Blueprint deviation and increasing low-frequency/overlap
 error. A third pass is not authorized. The next research task must use a
 principled model-mediated or explicit multi-state coarse/detail contract.
+
+Phase 34 is complete as a CPU-only mathematical/design qualification. The
+orthonormal Haar transform, full-rank Gaussian-coordinate law,
+`C=2*Blueprint` amplitude mapping, and W/Haar Euler equivalence are validated.
+The contract is coherent only with a four-band accepted/output state; the
+existing single coarse destination would discard the detail again. One fixed
+terminal Phase-35 discriminator is specified using exact Blueprint ownership
+of the coarse prediction and unchanged predicted detail bands. No model,
+decoded image, production code, or ComfyUI-core path was executed or changed.
+
+Phase 35 is complete with no production or ComfyUI-core changes. One square
+terminal case executed 25 native local calls plus a deterministic repeat and
+persisted all four Haar bands until a doubled-resolution latent was
+reconstructed. Exact Blueprint coarse ownership, band coverage, detail
+immutability, reconstruction, flat region-barrier memory, and repeat hashes
+all pass. The decode remains one coherent scene but its untouched local detail
+bands produce strong lattice/ghost artifacts rather than useful structural
+detail. The result is partial/ambiguous and no tuning is authorized.

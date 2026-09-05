@@ -1,0 +1,90 @@
+{
+  "phase": "34",
+  "model_loaded": false,
+  "cpu_only": true,
+  "seed": 20260905,
+  "transform_normalization": "orthonormal 2x2 Haar, coefficients divided by 2",
+  "validation": {
+    "float32": {
+      "spatial_round_trip_max_abs": 2.384185791015625e-07,
+      "coefficient_round_trip_max_abs": 2.384185791015625e-07,
+      "avgpool_equals_ll_over_2_max_abs": 0.0,
+      "blueprint_ll_scaling_max_abs": 0.0,
+      "euler_equivalence_max_abs": 3.5762786865234375e-07,
+      "qualified_state_coordinate_equivalence_max_abs": 4.76837158203125e-07
+    },
+    "float64": {
+      "spatial_round_trip_max_abs": 6.661338147750939e-16,
+      "coefficient_round_trip_max_abs": 8.881784197001252e-16,
+      "avgpool_equals_ll_over_2_max_abs": 0.0,
+      "blueprint_ll_scaling_max_abs": 0.0,
+      "euler_equivalence_max_abs": 8.881784197001252e-16,
+      "qualified_state_coordinate_equivalence_max_abs": 8.881784197001252e-16
+    },
+    "gaussian_sanity": {
+      "sample_count": 250000,
+      "means": [
+        0.0019507890385526822,
+        -0.006894779619838792,
+        0.001567864211314659,
+        0.00042373677608985327
+      ],
+      "variances": [
+        0.9996923540952581,
+        0.9988176238477833,
+        0.998926315226648,
+        0.997871351695878
+      ],
+      "covariance": [
+        [
+          0.9996923540952494,
+          0.0002504588333501643,
+          0.0037682551760588987,
+          -0.0032433093952109054
+        ],
+        [
+          0.0002504588333501643,
+          0.9988176238477856,
+          -0.0003393288868877795,
+          -9.624288207556958e-06
+        ],
+        [
+          0.0037682551760588987,
+          -0.0003393288868877795,
+          0.9989263152266642,
+          -0.00276071053615765
+        ],
+        [
+          -0.0032433093952109054,
+          -9.624288207556958e-06,
+          -0.00276071053615765,
+          0.9978713516958689
+        ]
+      ],
+      "max_abs_covariance_error_from_identity": 0.0037682551760588987
+    }
+  },
+  "deterministic_repeat_exact": true,
+  "declared_tolerances": {
+    "float32_max_abs": 1e-05,
+    "float64_max_abs": 1e-12
+  },
+  "passed": true,
+  "memory_bytes_one_region": {
+    "shape": [
+      1,
+      128,
+      64,
+      64
+    ],
+    "coarse_only_fp16": 262144,
+    "coarse_plus_three_details_fp16": 1048576,
+    "reconstructed_w_fp16": 1048576,
+    "bands_plus_reconstructed_w_fp16": 2097152,
+    "coarse_only_fp32": 524288,
+    "coarse_plus_three_details_fp32": 2097152,
+    "reconstructed_w_fp32": 2097152,
+    "bands_plus_reconstructed_w_fp32": 4194304
+  },
+  "verdict": "A \u2014 COARSE/DETAIL CONTRACT IS MATHEMATICALLY COHERENT; PROCEED TO ONE FIXED MODEL-MEDIATED DISCRIMINATOR"
+}
