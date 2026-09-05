@@ -1,0 +1,41 @@
+{
+  "configuration": {
+    "phase": 24,
+    "phase23_configuration_hash": "71e07897d5410caf78c0994b819c515b39fa369ae213d8c3eea4f33be58ad035",
+    "midpoint_ordinal": 1,
+    "terminal_ordinal": 3,
+    "arms": {
+      "A": "terminal only",
+      "B": "midpoint plus terminal persistent residual"
+    },
+    "H": [
+      128,
+      256
+    ],
+    "blueprint": [
+      32,
+      64
+    ],
+    "regions": 55,
+    "destination_crop": [
+      32,
+      32
+    ],
+    "working": [
+      64,
+      64
+    ],
+    "resampling_sigma": 0.25,
+    "noise_base_seed": 42260904,
+    "terminal_seed": "B_final + (H_refined_mid - B_mid)",
+    "working_rule": "0.75*nearest2(clean_anchor_crop)+0.25*epsilon_region",
+    "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+    "seed": 20260901
+  },
+  "configuration_hash": "4aa622f14cc60feaa480063bac00705f19251870653b3e82b80c6b739db9464c",
+  "intermediate_selected_before_inference": true,
+  "algebra": "H_seed=B_final+R_mid; R_mid=H_refined_mid-B_mid; W=.75*nearest2(H_seed_crop)+.25*epsilon",
+  "dimensionally_valid": true,
+  "const_flow_sigma_consistent": true,
+  "new_model_work": "one periodic-terminal batch of 55 local 64x64 forwards"
+}

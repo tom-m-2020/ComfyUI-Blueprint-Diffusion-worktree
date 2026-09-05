@@ -1,0 +1,47 @@
+{
+  "complete": true,
+  "configuration_hash": "408cd6d4bba3ac4e2da717a4a0f7ea38ba39e2f59a6be79d065d09e79511fbba",
+  "record": {
+    "stage": "BLUEPRINT",
+    "initial_hash": "b73bccbd1a4b8b4eda50db93aa07ade6a33a9ff8d9e32195f8ef3b8f0afbb094",
+    "terminal_x0": {
+      "rms": 0.8428683876991272,
+      "mean": -0.0033789481967687607,
+      "std": 0.8428615927696228,
+      "min": -4.820706367492676,
+      "max": 6.158809185028076,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        32,
+        64
+      ],
+      "sha256": "678429746fc11205210aadddf3a582724ae10ace6e3aa6c897fd78d128b7536d"
+    },
+    "mapped_terminal": {
+      "rms": 0.7514021396636963,
+      "mean": -0.003378951922059059,
+      "std": 0.751394510269165,
+      "min": -4.634184837341309,
+      "max": 5.91426420211792,
+      "finite": true,
+      "shape": [
+        1,
+        128,
+        128,
+        256
+      ],
+      "sha256": "da9e9d53efb68d82ef23efa3c7a6b59b322ce0adb3ef81ead0da82371c389ff1"
+    },
+    "model_calls": 4,
+    "timing": {
+      "cuda_ms": 2126.245574951172,
+      "wall_seconds": 2.205807599995751
+    },
+    "integrity": {
+      "finite": true,
+      "no_H_feedback": true
+    }
+  }
+}

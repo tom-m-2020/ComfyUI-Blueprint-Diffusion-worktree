@@ -895,3 +895,21 @@ initialization as established for these bounded evaluations; do not revisit it
 with sigma or guidance sweeps. The next architectural discriminator should
 compare local-refinement cadence—terminal-only, periodic, or fully interleaved—
 without production changes until one lifecycle is qualified.
+
+## 2026-09-05 — Select terminal-only Blueprint-local resampling
+
+Phase 24 finds no clear quality benefit from persisting the ordinal-1 local
+residual into a second terminal refinement. Both arms are S3, but periodic
+persistence costs an additional 55 local forwards and increases semantic/coarse
+distance diagnostics. Select the simpler staged lifecycle: finish the bounded
+Blueprint trajectory, then run one terminal fixed-`0.25` native-local resampling
+pass. Do not authorize fully interleaved sampling from this evidence.
+
+## 2026-09-05 — Advance terminal-only resampling to production architecture design
+
+Phase 25 preserves S3 semantics for the bridge, ordered car/tree/house, and
+single-astronaut cases under the exact frozen Phase-24 mechanism, while both
+new ordinary-local controls fragment to S0. Treat terminal-only Blueprint
+resampling as semantically generalized for these tested scene classes and
+authorize a separate Phase-26 production-architecture design task. Do not
+implement production automatically or infer untested geometry generalization.

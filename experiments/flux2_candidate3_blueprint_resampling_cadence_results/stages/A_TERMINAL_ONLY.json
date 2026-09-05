@@ -1,0 +1,30 @@
+{
+  "complete": true,
+  "configuration_hash": "4aa622f14cc60feaa480063bac00705f19251870653b3e82b80c6b739db9464c",
+  "record": {
+    "stage": "A_TERMINAL_ONLY",
+    "reused_phase23_ordinal": 3,
+    "model_calls_executed_now": 0,
+    "model_calls_provenance": 55,
+    "blueprint_hash": "4e61b35de50932bd231344a4ab6e2967668fcaff871cac6c1208a9fe136d4971",
+    "final_H_hash": "910965506ffbc3d83416c2fabc3a4c6bf55bb1611e2e377462817c402fd521d2",
+    "gradient_rms": 0.18755071172783855,
+    "overlap_rms": 0.1643906603967047,
+    "rms_vs_terminal_blueprint": {
+      "rms": 0.11977750062942505,
+      "max_abs": 0.9936037063598633,
+      "left_rms": 0.7482099533081055,
+      "right_rms": 0.7482835054397583
+    },
+    "low_frequency_rms": 0.0654253363609314,
+    "timing": {
+      "reused_local_cuda_ms": 54868.6953125,
+      "executed_now_ms": 0
+    },
+    "integrity": {
+      "exact_phase23_reuse": true,
+      "finite": true,
+      "accepted_state_updates": 0
+    }
+  }
+}
