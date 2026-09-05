@@ -1978,3 +1978,33 @@ unchanged. The remaining softness is therefore more likely structural to the
 mapped Blueprint anchor/lift/one-call refinement than a scalar sigma-selection
 problem. Detailed evidence is in
 `experiments/FLUX2_TERMINAL_RESAMPLING_REFINEMENT_STRENGTH.md`.
+
+## 2026-09-05 — Phase 30 has no parameter-free native prediction attractor
+
+Source inspection and algebra close the requested fixed-guidance experiment
+before inference. Native Klein T2I exposes no trained same-canvas Blueprint
+attractor in denoised-prediction space. Any model-external soft correction has
+the form `x0_free + lambda*g(x0_free,x0_bp)` and requires an unqualified loss
+metric and guidance/likelihood scale; CONST flow does not determine them.
+Native `reference_latents` instead append image tokens to transformer attention,
+changing conditioning and introducing the image-context/K/V mechanism excluded
+by Phase 30. Scalar blend, hard/coarse projection, and transformer surgery are
+also explicitly outside the discriminator. The exact Phase-29 `0.25` controls
+were fingerprint-validated and reused; no guided model call was run. Detailed
+evidence is in
+`experiments/FLUX2_TERMINAL_RESAMPLING_BLUEPRINT_GUIDED_REFINEMENT.md`.
+
+## 2026-09-05 — Phase 31 bilinear lift does not recover local detail
+
+Changing only the terminal `32x32 -> 64x64` lift from nearest to bilinear
+(`align_corners=False`) preserves S3 across square multi-object, portrait
+astronaut, and landscape bridge cases, but produces no credible detail gain.
+The outputs differ from nearest by `0.02889`, `0.01581`, and `0.02037` RMS,
+respectively, while gradient RMS decreases in every case and visual boundaries
+become slightly smoother. Overlap improves marginally, but Blueprint and
+low-frequency discrepancy increase. Unlike nearest, bilinear followed by the
+fixed `2x2` mean restriction is not an exact right inverse of the Blueprint
+crop. Independent repeats are bit-exact and region-barrier allocation remains
+flat. Nearest interpolation is therefore not the primary softness mechanism;
+do not continue interpolation-kernel sweeps. Detailed evidence is in
+`experiments/FLUX2_TERMINAL_RESAMPLING_LIFT_DISCRIMINATOR.md`.
