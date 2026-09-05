@@ -665,3 +665,21 @@ does not visibly improve the car/tree/house, astronaut, or bridge structures.
 Simple interpolation is closed as the missing detail mechanism. The next
 research task should test one richer Blueprint-derived working-state
 construction, not another lift kernel.
+
+Phase 32 is complete at a fail-closed pre-inference boundary. All Phase-29
+controls, Blueprint fingerprints, region order, and 120 deterministic noise
+hashes validate. The proposed restriction-null noise is numerically in the
+`avgpool2` nullspace, but its rank-deficient correlated covariance cannot
+preserve the qualified i.i.d. sigma-0.25 noise law. No model calls or production
+changes were made. The next research task must define a model-mediated or
+explicit multi-state coarse/detail stochastic contract rather than another
+handcrafted transform or strength sweep.
+
+Phase 33 is complete with no production or ComfyUI-core changes. Exact
+one-pass controls were reused, and one additional same-noise sigma-0.25 pass
+plus an independent repeat completed for all three cases with per-region atomic
+persistence. H2 remains S3 and deterministic, but does not show credible local
+structural detail improvement; it chiefly raises texture/alias energy while
+roughly doubling Blueprint deviation and increasing low-frequency/overlap
+error. A third pass is not authorized. The next research task must use a
+principled model-mediated or explicit multi-state coarse/detail contract.

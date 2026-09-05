@@ -2008,3 +2008,29 @@ crop. Independent repeats are bit-exact and region-barrier allocation remains
 flat. Nearest interpolation is therefore not the primary softness mechanism;
 do not continue interpolation-kernel sweeps. Detailed evidence is in
 `experiments/FLUX2_TERMINAL_RESAMPLING_LIFT_DISCRIMINATOR.md`.
+
+## 2026-09-05 — Phase 32 nullspace noise cannot preserve the qualified noise law
+
+For `D=avgpool2`, `U=nearest2`, and i.i.d. Gaussian `epsilon`, the proposed
+detail residual `(I-UD)epsilon` satisfies `D(n)=0` to at most `2.98e-7` across
+all 120 qualified regions. However, within each `2x2` block its covariance is
+`I-(1/4)11^T`: rank 3, marginal variance `3/4`, and off-diagonal covariance
+`-1/4`. No scalar can restore i.i.d. `N(0,I)`; `2/sqrt(3)` fixes only marginal
+variance and leaves singular correlated noise. Retaining the original noise is
+the existing control, while adding/replacing components needs a new strength or
+multi-state stochastic contract. Phase 32 therefore stopped before inference.
+Detailed evidence is in
+`experiments/FLUX2_TERMINAL_RESAMPLING_RESTRICTION_NULLSPACE.md`.
+
+## 2026-09-05 — Phase 33 a second local pass adds texture, not structure
+
+Using the completed S3 one-pass destination as the anchor for exactly one more
+identical sigma-0.25 local resampling pass preserves S3 in the square,
+portrait, and landscape cases. It does not credibly improve wheels/windows,
+astronaut anatomy/suit structure, or bridge cables/deck/supports. Gradient RMS
+rises by about 42–50%, while Blueprint RMS nearly doubles, low-frequency error
+rises, and overlap worsens slightly; the added energy is primarily texture or
+aliasing rather than recovered structure. All primary/repeat outputs and
+restricted region hashes are bit-exact, and region-barrier allocation is flat.
+Do not continue pass-count or fresh-noise sweeps. Detailed evidence is in
+`experiments/FLUX2_TERMINAL_RESAMPLING_TWO_PASS.md`.
