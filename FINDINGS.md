@@ -1938,3 +1938,17 @@ sampling, `noise_scaling(0.25, epsilon, x0)` is exactly
 identity. Terminal W construction is therefore an exact flow-state operation,
 not an approximate blend. The detailed design is in
 `PRODUCTION_TERMINAL_RESAMPLING_ARCHITECTURE.md`.
+
+## 2026-09-05 — Phase 27 exact production slice reproduces Phase 25
+
+The dedicated production node preserves normal ComfyUI preparation by entering
+through `guider.sample()` while its private procedure owns only the bounded
+Blueprint trajectory and transient terminal work. The persisted Phase-25
+multi-object case is bit-exact at every available tensor boundary and decoded
+RGB; the astronaut case is also bit-exact. Two live executions have identical
+latent and decoded hashes with exactly four Blueprint and 55 local predictions.
+Peak live allocation is 1.488 GiB, and allocation at every post-region barrier
+is the same 1,071,588,352 bytes, confirming streamed W lifetime. The bridge
+rerun remains S3 but differs from its reused Phase-24 latent by 0.024750 RMS;
+that older artifact predates the frozen Phase-25 initialization provenance.
+Detailed evidence is in `TERMINAL_RESAMPLING_PRODUCTION_SLICE.md`.

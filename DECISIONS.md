@@ -925,3 +925,12 @@ accepted state and stream one batch-one W prediction at a time into the
 existing normalized overlap arithmetic. Keep the legacy Candidate-3 node
 unchanged during first-slice implementation; the new path must not invoke DCT
 coupling, persistent H/W, global K/V, or `Flux2BlockExecutor`.
+
+## 2026-09-05 — Qualify the exact terminal-resampling first slice
+
+Accept the dedicated `Blueprint Terminal Resampling` node for the exact
+Phase-25 contract only. Keep its geometry, four-value interval schedule,
+BasicGuider CFG-1 profile, native Klein 4B validation, and terminal sigma fixed
+and fail closed. Preserve the legacy Candidate-3 node independently. Do not
+generalize geometry, cadence, model family, conditioning, sigma, batching, or
+sampler behavior until separately qualified.
