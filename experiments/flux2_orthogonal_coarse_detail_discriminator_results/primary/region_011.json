@@ -1,0 +1,131 @@
+{
+  "index": 11,
+  "region": [
+    48,
+    24,
+    32,
+    32
+  ],
+  "mapped_hash": "8a1ae79beeb93baa0f555cff7a65bd38774b254502649d898fc6a512c4143d05",
+  "blueprint_crop_hash": "af67fad9654d1548e0a145814c4cc283f0146286a55de9c6fec23ca87a39a9cc",
+  "noise_hash": "8d78d19db7ffff35a0086a1d573c063edf5407521e855289c8dd7052e4667349",
+  "working_hash": "e45d86e38de72b20446ee346f474bc92c340760dab5855bcb024f02f1b6dab37",
+  "prediction_hash": "b3cedac6e9d41b52ece6ab07a91e31cefaf70155f91ec38ca98ce6d2a67dc854",
+  "prediction_shape": [
+    1,
+    128,
+    64,
+    64
+  ],
+  "band_shapes": [
+    [
+      1,
+      128,
+      32,
+      32
+    ],
+    [
+      1,
+      128,
+      32,
+      32
+    ],
+    [
+      1,
+      128,
+      32,
+      32
+    ],
+    [
+      1,
+      128,
+      32,
+      32
+    ]
+  ],
+  "haar_round_trip": {
+    "rms": 4.294649968983322e-08,
+    "max_abs": 4.76837158203125e-07
+  },
+  "detail_hashes_unchanged": true,
+  "detail_max_abs_change": 0.0,
+  "model_c_vs_forced_c": {
+    "rms": 0.2520062029361725,
+    "max_abs": 1.340996265411377
+  },
+  "model_c_hash": "629f8a73f4ce20734ba89ce1f21ef13daf240a5c4186bd361949f99ea923a698",
+  "model_c_stats": {
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "finite": true,
+    "mean": -0.20438340306282043,
+    "rms": 1.38856840133667,
+    "norm": 502.7149658203125,
+    "min": -5.852353096008301,
+    "max": 8.437719345092773
+  },
+  "forced_c_hash": "584c5d665b9e9411f80368b71eefd153d7e60b52e3e377215ed214629ba0e74a",
+  "forced_c_stats": {
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "finite": true,
+    "mean": -0.1951066553592682,
+    "rms": 1.3760915994644165,
+    "norm": 498.1981506347656,
+    "min": -5.927102565765381,
+    "max": 8.76354694366455
+  },
+  "f1_hash": "baded22c3ff9ed3befd6599aeefcc20b6541243d51bc86fb598c5d709dd11783",
+  "f1_stats": {
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "finite": true,
+    "mean": -0.00046233966713771224,
+    "rms": 0.19213475286960602,
+    "norm": 69.56018829345703,
+    "min": -1.0776724815368652,
+    "max": 0.9756872057914734
+  },
+  "f2_hash": "aff4095e0a9aea7cec42f7f9ac2c7ff34f18f0471dd815a10fb4025f27878e9f",
+  "f2_stats": {
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "finite": true,
+    "mean": 0.0006579698529094458,
+    "rms": 0.1935078352689743,
+    "norm": 70.05726623535156,
+    "min": -1.0936387777328491,
+    "max": 1.0825599431991577
+  },
+  "f3_hash": "ed13e9637387554ce57186ee94e0a710162e4e92a9ed0d0b59b94b50bd329fb9",
+  "f3_stats": {
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "finite": true,
+    "mean": -0.0005993556114844978,
+    "rms": 0.18125316500663757,
+    "norm": 65.62063598632812,
+    "min": -0.91171795129776,
+    "max": 0.9024653434753418
+  }
+}

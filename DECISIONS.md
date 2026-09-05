@@ -997,3 +997,29 @@ low-frequency, and overlap error. Keep the single-pass production baseline.
 Do not test a third pass, another sigma, or fresh second-pass noise. Any further
 detail work must define a principled model-mediated or multi-state
 coarse/detail construction.
+
+## 2026-09-05 — Qualify the Haar coarse/detail contract for one terminal discriminator
+
+Classify Phase 34 as `A — COARSE/DETAIL CONTRACT IS MATHEMATICALLY COHERENT;
+PROCEED TO ONE FIXED MODEL-MEDIATED DISCRIMINATOR`. Use normalized `2x2` Haar
+coordinates with Blueprint LL amplitude `C=2b`. Retain independent noisy LL
+and three independent Gaussian detail coordinates; never describe a
+fixed-coarse/detail-only reconstruction as ordinary i.i.d. noise.
+
+Any continuation must assemble and retain four global band fields and
+reconstruct a `2x` spatial latent. The current single coarse contribution
+cannot preserve the additional degrees of freedom. Phase 35 is limited to one
+terminal square-scene test with exact coarse prediction replacement and
+unchanged model-predicted Haar detail; no basis, sigma, strength, schedule, or
+coupling sweep is authorized.
+
+## 2026-09-05 — Do not promote untouched local Haar detail
+
+Classify Phase 35 as `B — partial/ambiguous`: exact Blueprint ownership of the
+Haar coarse coordinate preserves the intended single scene, but untouched
+FLUX-predicted local detail bands disagree across overlaps and decode as
+crosshatch/ghost energy rather than credible higher-resolution structure. Do
+not tune detail scaling, coarse blending, wavelets, sigma, or overlap to force
+a pass. Retain Phase 34's mathematical result while rejecting this fixed
+independent-local-detail assembly as an image mechanism. Any continuation must
+address shared/persistent detail compatibility explicitly.

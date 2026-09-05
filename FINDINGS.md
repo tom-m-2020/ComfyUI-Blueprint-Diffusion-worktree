@@ -2034,3 +2034,34 @@ aliasing rather than recovered structure. All primary/repeat outputs and
 restricted region hashes are bit-exact, and region-barrier allocation is flat.
 Do not continue pass-count or fresh-noise sweeps. Detailed evidence is in
 `experiments/FLUX2_TERMINAL_RESAMPLING_TWO_PASS.md`.
+
+## 2026-09-05 — Phase 34 Haar coordinates define a valid coarse/detail stochastic state
+
+The orthonormal `2x2` Haar transform maps i.i.d. pixel-space Gaussian noise to
+four independent standard-normal coefficient fields. Unlike Phase 32's
+rank-three `(I-P)epsilon`, it remains full rank when the independent LL field
+and all three detail fields are retained. For the arithmetic Blueprint coarse
+latent `b`, the exact LL amplitude is `C=2b`; inverse Haar of
+`(2b,0,0,0)` is `nearest2(b)`, and `avgpool2(W)=C/2`.
+
+First-order CONST-flow Euler commutes with this fixed linear transform. CPU
+validation measured round-trip/state/Euler errors below `4.8e-7` in float32
+and deterministic repeats were exact. The architectural constraint is output
+capacity: one coarse destination tensor cannot retain three extra bands. A
+genuine coarse/detail state must persist four fields and reconstruct a `2x`
+spatial latent output. See
+`experiments/FLUX2_ORTHOGONAL_COARSE_DETAIL_CONTRACT.md`.
+
+## 2026-09-05 — Phase 35 exact coarse Haar ownership does not make independent local detail compatible
+
+In the fixed square case, replacing every local prediction's Haar LL field
+with exact `2*Blueprint` preserves the single car/tree/house composition and
+gives `avgpool2(reconstructed)` agreement within `4.77e-7`. All three detail
+bands remain hash-identical across replacement and the doubled latent is
+bit-exact on repeat. Nevertheless their overlap RMS is `0.302–0.316`, and the
+decoded result adds dense crosshatch/ghost texture and broadened contours
+rather than credible wheels, foliage, building structure, or ground detail.
+The fixed model-mediated split is therefore partial/ambiguous: coarse authority
+works, while independently predicted local detail is not a compatible global
+detail field. See
+`experiments/FLUX2_ORTHOGONAL_COARSE_DETAIL_DISCRIMINATOR.md`.
