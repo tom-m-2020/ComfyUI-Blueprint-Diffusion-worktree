@@ -1,0 +1,112 @@
+{
+  "phase": 39,
+  "status": "stopped_before_inference",
+  "verdict": "E \u2014 ARCHITECTURAL BOUNDARY",
+  "primary_answer": "No fixed native same-canvas contract lets an independent Klein local state consume the Blueprint as an authoritative guide under the allowed interface.",
+  "control": {
+    "case": "SQUARE_MULTI_OBJECT",
+    "mapped_blueprint_hash": "8a1ae79beeb93baa0f555cff7a65bd38774b254502649d898fc6a512c4143d05",
+    "qualified_control_hash": "1b61a401451c5838cd0370897c9d9d4e838a23f497c76490f4549e68aecd1de3",
+    "phase28_regression_bit_exact": true,
+    "semantic_grade": "S3 (persisted qualified evidence)",
+    "model_work_reused": true
+  },
+  "mechanisms": [
+    {
+      "name": "prediction_or_denoised_space_guidance",
+      "model_mediated": false,
+      "same_canvas": true,
+      "fixed_contract": false,
+      "requires_backend_change": false,
+      "classification": "reject: needs a loss/likelihood definition and free guidance scale; Phase 30 boundary"
+    },
+    {
+      "name": "latent_or_state_constraint",
+      "model_mediated": false,
+      "same_canvas": true,
+      "fixed_contract": false,
+      "requires_backend_change": false,
+      "classification": "reject: hard replacement/project is already tested; soft constraint needs a free strength and collapses toward resampling/projection"
+    },
+    {
+      "name": "transformer_feature_or_residual_guidance",
+      "model_mediated": true,
+      "same_canvas": "mechanically possible",
+      "fixed_contract": false,
+      "requires_backend_change": true,
+      "classification": "reject: hooks are engineering sinks, not trained Klein Blueprint conditioning; mapping and amplitude are undefined"
+    },
+    {
+      "name": "same_canvas_attention_or_kv_guidance",
+      "model_mediated": true,
+      "same_canvas": "possible only through custom token/KV execution",
+      "fixed_contract": false,
+      "requires_backend_change": true,
+      "classification": "reject: no native Blueprint role/mask; token identity, routing, normalization and coordinate contract are untrained or underdetermined; prior external-KV family already failed normalized-W coherence"
+    },
+    {
+      "name": "native_reference_latents",
+      "model_mediated": true,
+      "same_canvas": false,
+      "fixed_contract": true,
+      "requires_backend_change": false,
+      "classification": "reject: trained reference-image context uses a distinct image index/canvas, not same-canvas Blueprint authority"
+    },
+    {
+      "name": "controlnet_or_adapter",
+      "model_mediated": true,
+      "same_canvas": true,
+      "fixed_contract": false,
+      "requires_backend_change": true,
+      "classification": "reject: base Klein 4B has residual sinks but no qualified trained same-canvas ControlNet/adapter"
+    }
+  ],
+  "selection": {
+    "executable_mechanism": null,
+    "reason": "Every same-canvas candidate needs an empirical strength/metric or untrained model/backend intervention; the sole trained native image condition is separate-canvas reference context."
+  },
+  "source_audit": [
+    {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy\\model_base.py",
+      "sha256": "e791669a9f6b97997a0be965fb11e8bacbc81d000319dadb9a52ccf115042672",
+      "markers": [
+        "reference_latents",
+        "CONDList(latents)"
+      ]
+    },
+    {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy\\ldm\\flux\\model.py",
+      "sha256": "5fc574e119694e8732ee36b8192507492368a3464310634943606ff6aea200f7",
+      "markers": [
+        "ref_latents_method",
+        "reference_image_num_tokens",
+        "patches_replace.get(\"dit\", {})"
+      ]
+    },
+    {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy\\ldm\\flux\\layers.py",
+      "sha256": "a1b4ad338135cade52b1dec2c174121ce37ffda309cfdc6ba81ad8a98bad0300",
+      "markers": [
+        "\"attn1_patch\"",
+        "\"attn1_output_patch\""
+      ]
+    },
+    {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\apps\\ComfyUI-dev\\comfy\\samplers.py",
+      "sha256": "c7e20ad10e9c2ce1f8cbe414eab88c5ac427acc11d2dd033ec460dc78d4d11b6",
+      "markers": [
+        "sampler_post_cfg_function",
+        "model_function_wrapper"
+      ]
+    }
+  ],
+  "integrity": {
+    "diffusion_model_forwards": 0,
+    "local_forwards": 0,
+    "destination_sized_forwards": 0,
+    "decoded_images": 0,
+    "production_changed": false,
+    "comfyui_core_changed": false
+  },
+  "next_discriminator": "One explicitly authorized learned/qualified same-canvas Klein control-adapter feasibility audit: determine whether any released adapter supplies spatial Blueprint residuals before or through the native blocks; do not run inference unless a checkpoint-trained interface exists."
+}

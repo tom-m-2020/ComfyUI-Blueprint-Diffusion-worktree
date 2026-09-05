@@ -1057,3 +1057,15 @@ structure, at fourfold local model work. Do not sweep interval count, start
 sigma, or schedule spacing, and do not generalize this arm to portrait or
 landscape. Any continuation must change the Blueprint-to-working authority or
 representation contract rather than adding more terminal-local depth.
+
+## 2026-09-06 — Do not treat generic Klein hooks or references as same-canvas Blueprint guidance
+
+Classify Phase 39 as `E — ARCHITECTURAL BOUNDARY`. Do not use
+`reference_latents` as the candidate: its trained semantics identify a separate
+reference canvas. Do not infer a same-canvas guide from `post_input`, attention,
+block, control, or sampler hooks; these expose tensor intervention points but
+do not define a trained Blueprint role, structural metric, or fixed coupling.
+Do not repeat prediction-space guidance or state projection. The only next
+discriminator authorized by this result is a source/checkpoint audit for a
+trained architecture-matched Klein 4B same-canvas control adapter; run no model
+unless its input normalization and canonical coupling are established.
