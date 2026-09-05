@@ -137,8 +137,9 @@ not the accepted zero-sigma state by implication.
 
 ### Stage 2 — terminal local resampling
 
-Map `x0_B_terminal` from `32x64` to `128x256` using the exact Phase-25
-bilinear mapping (`align_corners=False`). For each ordered destination region:
+Detach `x0_B_terminal` to CPU and map it from `32x64` to `128x256` using the
+exact Phase-25 CPU bilinear mapping (`align_corners=False`), then transfer the
+mapped anchor to the model device. For each ordered destination region:
 
 ```text
 b_r = mapped_B[:, :, y:y+32, x:x+32]
@@ -312,7 +313,7 @@ Similarly, a working canvas is not assigned destination absolute coordinates.
 Every local prediction sees ordinary native `64x64` coordinates, matching
 Phases 20–25. Changing this would be a new algorithm.
 
-Mapping is `32x64 -> 128x256` bilinear with `align_corners=False`, followed by
+Mapping is CPU `32x64 -> 128x256` bilinear with `align_corners=False`, followed by
 an exact destination crop and nearest-neighbor `2x` lift. Prediction restriction
 is nonoverlapping arithmetic `2x2` mean. No DCT or endpoint-scaled RoPE is used.
 
@@ -372,9 +373,10 @@ planner order and accumulate immediately. Release region tensors after their
 ordered weighted addition. Compact telemetry may retain only CPU scalars,
 hashes, shapes, and timing.
 
-For the first slice, keep mapped Blueprint, accumulator, and coverage on GPU.
-They are modest relative to model execution and this preserves the exact
-existing assembly arithmetic without 55 host transfers. Return the final
+For the first slice, construct the mapped Blueprint on CPU exactly as Phase 25,
+then keep it, the accumulator, and coverage on GPU. They are modest relative
+to model execution and this preserves the exact existing assembly arithmetic
+without 55 host transfers. Return the final
 latent through ComfyUI's normal `intermediate_device()` handling at the node
 boundary. CPU-backed accumulation is mechanically possible but unqualified;
 make it a later measured memory policy, not a hidden configuration.

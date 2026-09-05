@@ -618,3 +618,12 @@ resampling pass. It explicitly excludes Candidate-3 DCT/coupling/H state and
 the specialized K/V executor. The exact Phase-25 geometry, schedule, model,
 conditioning, sigma, and batch profile remain the only supported contract.
 The architecture is ready for a separately authorized implementation task.
+
+Phase 27 is complete. `Blueprint Terminal Resampling` is registered as a
+separate dedicated node and the legacy Candidate-3 sampler remains unchanged.
+Focused tests pass 14/14 and the full custom-node suite passes 36/36. The
+persisted Phase-25 multi-object regression and astronaut regression are
+bit-exact; the freshly decoded bridge, multi-object, and astronaut outputs are
+all S3. Two real BasicGuider executions are deterministic in latent and decoded
+RGB, use 4 Blueprint plus 55 local calls and zero destination-sized calls, and
+show flat post-region CUDA allocation. No ComfyUI-core file was modified.
