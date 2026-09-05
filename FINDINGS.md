@@ -1963,3 +1963,18 @@ local controls are S0. Region counts are 25, 55, and 40. The original
 `128x256` Phase-27 trajectory remains bit-exact. This supports finite geometry
 generalization, not an open-ended destination-proportional rule. Detailed evidence is in
 `experiments/FLUX2_TERMINAL_RESAMPLING_GEOMETRY_GENERALIZATION.md`.
+
+## 2026-09-05 — Phase 29 softness is not primarily a scalar-sigma effect
+
+The exact Phase-28 terminal-resampling trajectories were reused while only the
+terminal local sigma varied over `0.10`, `0.15`, `0.25`, `0.35`, and `0.50`.
+The `0.25` controls are bit-exact to Phase 28. All 15 outputs remain S3, and no
+duplicate/recomposed scene appears through `0.50`, but no sigma materially and
+consistently improves visible local fidelity across the square multi-object,
+portrait astronaut, and landscape bridge cases. Higher sigma monotonically
+raises gradient energy, Blueprint deviation, and overlap disagreement without
+a reliable perceptual detail gain; compute and peak memory remain effectively
+unchanged. The remaining softness is therefore more likely structural to the
+mapped Blueprint anchor/lift/one-call refinement than a scalar sigma-selection
+problem. Detailed evidence is in
+`experiments/FLUX2_TERMINAL_RESAMPLING_REFINEMENT_STRENGTH.md`.
