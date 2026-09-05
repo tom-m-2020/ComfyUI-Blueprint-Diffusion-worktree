@@ -1,0 +1,12 @@
+{
+  "index": 9,
+  "h1_hash": "c4e07a2dc0b121c7c05b09205f4d88f6f4844ddd92d42672a009b0d01feff34c",
+  "h1_crop_hash": "a588ffcdf64450d108054963578b2482c3741ea16123bd78e6aa826cd7026674",
+  "noise_hash": "f8cc6c6554dc72f0c54bf062d4dc258c670f472592b827f849c582e80e453220",
+  "working_hash": "317f01dec9e94c8db8e0f2c91d175ac5516991d784277c85565a0dbc41eb7e1a",
+  "prediction_hash": "a92d8f25a4b1b01ff6a07fbcf62198b3c2647ebf99566b3a163053e6f3f5c247",
+  "restricted_hash": "4b58e2dd273e4c714fa8d9918ac37113644964cd81808f10bd9b733b5edf09e9",
+  "construction_max_abs": 0.0,
+  "cuda_ms": 978.98779296875,
+  "barrier_allocated_bytes": 2508445696
+}

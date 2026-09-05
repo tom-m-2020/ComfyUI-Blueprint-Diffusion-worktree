@@ -977,3 +977,23 @@ consistency. Keep the qualified nearest lift in production. If local detail is
 pursued further, test one richer Blueprint-derived working-state construction
 at fixed sigma/geometry with explicit provenance; do not try bicubic, area, or
 an interpolation-strength sweep.
+
+## 2026-09-05 — Reject nullspace-only noise as sigma-equivalent
+
+Classify Phase 32 as `D — NO PARAMETER-FREE SIGMA-CONSISTENT CONSTRUCTION
+EXISTS` and stop before inference. Although `(I-UD)epsilon` has exact coarse
+restriction zero, it is rank-deficient correlated Gaussian noise, not the
+qualified i.i.d. noise consumed by CONST `noise_scaling`. Do not introduce the
+variance-only `2/sqrt(3)` scale, double-count the existing null component, or
+tune a detail coefficient. Any continuation must explicitly introduce and
+qualify a model-mediated or multi-state coarse/detail contract.
+
+## 2026-09-05 — Stop repeated ordinary terminal resampling
+
+Classify Phase 33 as `B — SECOND PASS RETAINS S3 BUT DOES NOT IMPROVE DETAIL`.
+The second pass is semantically stable but adds mostly texture/alias energy,
+not meaningful object/anatomy/structure detail, while increasing Blueprint,
+low-frequency, and overlap error. Keep the single-pass production baseline.
+Do not test a third pass, another sigma, or fresh second-pass noise. Any further
+detail work must define a principled model-mediated or multi-state
+coarse/detail construction.
