@@ -609,3 +609,12 @@ All fixed provenance, coverage, finiteness, resumability, and immutability
 checks pass. Semantic generalization is qualified for these three scene classes
 at the existing geometry. A Phase-26 production-architecture design task is
 authorized; production implementation and geometry generalization are not.
+
+Phase 26 architecture design is complete with no production or ComfyUI-core
+changes. The selected first slice uses a dedicated staged node backed
+internally by normal `guider.sample()` preparation, an immutable Blueprint-only
+run state, four bounded Euler intervals, and one streamed 55-region terminal
+resampling pass. It explicitly excludes Candidate-3 DCT/coupling/H state and
+the specialized K/V executor. The exact Phase-25 geometry, schedule, model,
+conditioning, sigma, and batch profile remain the only supported contract.
+The architecture is ready for a separately authorized implementation task.
