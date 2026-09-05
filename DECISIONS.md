@@ -1023,3 +1023,26 @@ not tune detail scaling, coarse blending, wavelets, sigma, or overlap to force
 a pass. Retain Phase 34's mathematical result while rejecting this fixed
 independent-local-detail assembly as an image mechanism. Any continuation must
 address shared/persistent detail compatibility explicitly.
+
+## 2026-09-06 — Stop Phase 36 before inference: no unique local schedule
+
+Classify Phase 36 as `D — NO UNIQUE SHORT LOCAL SCHEDULE`. Do not infer a
+multi-step local path from the qualified `[0.25,0]` terminal evaluation or
+splice `0.25` into the near-one Blueprint schedule. ComfyUI exposes multiple
+materially different scheduler families, and neither family nor interval count
+is selected by existing evidence. Any future short-trajectory discriminator
+must first establish schedule provenance or openly authorize one predeclared
+empirical schedule. Keep this decision separate from the untested interleaved
+global/local architecture.
+
+## 2026-09-06 — Require an explicit empirical policy for any Phase-38 short trajectory
+
+Classify Phase 37 as `B — CANONICAL FULL/PARTIAL SCHEDULE EXISTS, BUT LOCAL
+STEP COUNT REMAINS FREE`. Adopt the official shifted flow/Euler family as
+relevant provenance, while rejecting the claim that it uniquely extends the
+qualified `[0.25,0]` Stage-2 path. Diffusers' Klein partial-denoise rule only
+truncates a full schedule after the caller chooses `num_inference_steps`, and
+numeric strength is not numeric sigma. Do not publish a Phase-38 schedule from
+this audit. A later experiment must explicitly authorize one fixed empirical
+interval count and exact discretization, and must label that choice as a new
+research contract rather than model-native Klein policy.
