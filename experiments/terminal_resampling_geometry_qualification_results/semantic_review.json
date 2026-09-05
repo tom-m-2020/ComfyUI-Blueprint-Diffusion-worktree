@@ -1,0 +1,21 @@
+{
+  "phase": 28,
+  "rubric": "S3 is one coherent scene; S0 is independent repeated tile-local scenes",
+  "results": {
+    "SQUARE_MULTI_OBJECT": {
+      "selected": "S3",
+      "ordinary_tiled": "S0",
+      "observations": "Selected output has exactly one car, one central tree, one house, and one ground/horizon. The control repeats the complete object set across rows and columns."
+    },
+    "PORTRAIT_ASTRONAUT": {
+      "selected": "S3",
+      "ordinary_tiled": "S0",
+      "observations": "Selected output has one centered continuous astronaut and one desert/horizon. The control contains a field of independent astronauts and repeated horizons."
+    },
+    "LANDSCAPE_BRIDGE": {
+      "selected": "S3",
+      "ordinary_tiled": "S0",
+      "observations": "Selected output has one dominant continuous bridge system over one water/horizon scene. The control contains multiple independent bridge systems in repeated rows."
+    }
+  }
+}

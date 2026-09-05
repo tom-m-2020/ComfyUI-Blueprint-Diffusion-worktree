@@ -77,6 +77,34 @@ class TestTerminalResamplingPureFunctions(unittest.TestCase):
         self.assertEqual((regions[0].index, regions[0].y, regions[0].x), (0, 0, 0))
         self.assertEqual((regions[-1].index, regions[-1].y, regions[-1].x), (54, 96, 224))
 
+    def test_finite_geometry_profiles_are_bounded_and_complete(self):
+        expected = {
+            (128, 256): ((32, 64), 55),
+            (128, 192): ((36, 54), 40),
+            (128, 128): ((45, 45), 25),
+            (256, 128): ((64, 32), 55),
+        }
+        for destination, (blueprint, count) in expected.items():
+            with self.subTest(destination=destination):
+                geometry = TerminalResamplingGeometry.for_destination(destination)
+                self.assertEqual(geometry.blueprint_hw, blueprint)
+                self.assertLessEqual(blueprint[0] * blueprint[1], 2048)
+                regions = geometry.regions()
+                self.assertEqual(len(regions), count)
+                coverage = torch.zeros(destination)
+                for region in regions:
+                    coverage[region.y:region.y2, region.x:region.x2] += 1
+                self.assertGreater(float(coverage.min()), 0.0)
+
+    def test_generalized_initialization_is_deterministic_and_unit_variance(self):
+        for destination in TerminalResamplingGeometry.QUALIFIED_PROFILES:
+            geometry = TerminalResamplingGeometry.for_destination(destination)
+            first = initialize_blueprint(101, geometry=geometry)
+            second = initialize_blueprint(101, geometry=geometry)
+            self.assertTrue(torch.equal(first, second))
+            self.assertEqual(tuple(first.shape), (1, 128, *geometry.blueprint_hw))
+            self.assertAlmostEqual(float(first.var()), 1.0, delta=0.02)
+
     def test_unqualified_geometry_rejected(self):
         with self.assertRaises(ValueError):
             TerminalResamplingGeometry(destination_hw=(64, 128)).validate()

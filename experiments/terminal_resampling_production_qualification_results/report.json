@@ -40,283 +40,6 @@
       "rms": 0.0,
       "max_abs": 0.0
     },
-    "restricted": [
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      },
-      {
-        "bit_exact": true,
-        "rms": 0.0,
-        "max_abs": 0.0
-      }
-    ],
     "final_H": {
       "bit_exact": true,
       "rms": 0.0,
@@ -364,6 +87,19 @@
     "blueprint_predictions": 4,
     "local_predictions": 55,
     "destination_model_predictions": 0,
+    "blueprint_hw": [
+      32,
+      64
+    ],
+    "destination_hw": [
+      128,
+      256
+    ],
+    "working_hw": [
+      64,
+      64
+    ],
+    "blueprint_tokens": 2048,
     "regions": [
       {
         "index": 0,
@@ -1194,9 +930,9 @@
     "coverage_min": 0.9999999403953552,
     "coverage_max": 1.0000001192092896,
     "final_H_hash": "df024679dccf2accd06d935a835fa13ee0c58f5e5d3ca084d27eb3b7335b62b0",
-    "blueprint_cuda_ms": 2677.189910888672,
-    "local_cuda_ms": 55851.927734375,
-    "wall_seconds": 59.929584800003795,
+    "blueprint_cuda_ms": 2625.878662109375,
+    "local_cuda_ms": 54881.809509277344,
+    "wall_seconds": 58.8007991000195,
     "peak_allocated_bytes": 3090578944,
     "peak_reserved_bytes": 3609198592,
     "region_peak_allocated_bytes": [
@@ -1321,7 +1057,7 @@
     "periodic_resampling_calls": 0,
     "post_anchor_calls": 0
   },
-  "runtime_seconds": 60.069587900012266,
+  "runtime_seconds": 58.937484800000675,
   "all_available_boundaries_bit_exact": true,
   "earliest_mismatch": null
 }
