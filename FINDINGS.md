@@ -2099,3 +2099,22 @@ valid continuous flow/state-interpolation meaning, but its use as the Blueprint
 terminal-resampling start is project-qualified rather than official Klein
 img2img provenance. No model forward was executed. See
 `experiments/FLUX2_KLEIN_REFINEMENT_SCHEDULE_PROVENANCE.md`.
+
+## 2026-09-06 — Phase 38 four-step local depth preserves S3 but adds no credible structure
+
+One explicitly authorized empirical schedule was derived from exact
+`sigma_start=0.25`, BFL's shifted coordinate, `mu=2.291179894115571`, and four
+uniform unshifted-coordinate intervals. The executed vector was
+`[0.25,0.1986604058,0.1408223197,0.0751685214,0]`. Every region reused the
+qualified Phase-29 noise and initial W hashes, then persisted the same native
+W through four Euler intervals before one restriction/assembly.
+
+The square result remains S3 and repeats bit-exactly, but it does not credibly
+resolve car, foliage, house, or ground structure. Gradient RMS rises from
+`0.238817` to `0.253632`, while overlap RMS worsens from `0.173451` to
+`0.190880`; the visible change is predominantly denser line/texture energy.
+Local CUDA time rises from `24.59 s` to `98.77 s`, with essentially unchanged
+peak allocation (`~3.03 GB`) and perfectly flat region-barrier allocation.
+Thus additional coherent evaluations on the same W trajectory do not solve
+softness under initialization-only Blueprint authority. See
+`experiments/FLUX2_TERMINAL_RESAMPLING_FOUR_INTERVAL_LOCAL_TRAJECTORY.md`.

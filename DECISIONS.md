@@ -1046,3 +1046,14 @@ numeric strength is not numeric sigma. Do not publish a Phase-38 schedule from
 this audit. A later experiment must explicitly authorize one fixed empirical
 interval count and exact discretization, and must label that choice as a new
 research contract rather than model-native Klein policy.
+
+## 2026-09-06 — Stop terminal-local depth experiments after Phase 38
+
+Accept Phase 38's single schedule as an explicitly empirical discriminator,
+not official Klein partial denoising. Classify it as `B — CHANGES OUTPUT BUT
+DOES NOT SOLVE SOFTNESS`: four persistent-W Euler intervals retain S3 and exact
+determinism but add mainly line/texture energy, not credible car/tree/house
+structure, at fourfold local model work. Do not sweep interval count, start
+sigma, or schedule spacing, and do not generalize this arm to portrait or
+landscape. Any continuation must change the Blueprint-to-working authority or
+representation contract rather than adding more terminal-local depth.
