@@ -634,3 +634,13 @@ Their aspect-preserving Blueprint shapes are capped at 2,048 tokens and every
 local call remains `64x64`. The three new semantic cases are S3 versus S0
 tiled-local controls, repeat hashes are exact, coverage is complete, and the
 Phase-27 reference remains bit-exact. Arbitrary geometry remains fail-closed.
+
+Phase 29 is complete with no production or ComfyUI-core changes. The persisted
+Phase-28 Blueprint trajectories were reused and 15 terminal-only sigma branches
+were completed at `0.10/0.15/0.25/0.35/0.50`. Every `0.25` branch is bit-exact
+to Phase 28 and every result remains S3, but no tested sigma produces a
+material cross-case fidelity improvement. Runtime and VRAM are sigma-invariant;
+higher sigma increases Blueprint deviation and overlap disagreement. Scalar
+terminal-sigma tuning is closed. The next authorized research question is one
+fixed Blueprint-guided local-refinement mechanism at the qualified `0.25`
+initialization, not another scalar sweep.

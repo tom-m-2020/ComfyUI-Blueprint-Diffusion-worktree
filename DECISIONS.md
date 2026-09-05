@@ -945,3 +945,14 @@ initialization where divisible; use deterministic adaptive area restriction and
 analytic per-cell variance preservation for the two noninteger mappings.
 Reject destination-proportional, fixed-long-axis expansion, or aspect-distorting
 policies. All other destination geometries continue to fail closed.
+
+## 2026-09-05 — Stop scalar terminal-sigma tuning
+
+Keep the production terminal sigma at its qualified `0.25` value. Phase 29 is
+a research result only and does not authorize a production parameter or default
+change. Although every tested `0.10`–`0.50` branch remains S3, no value
+materially improves fidelity across all three geometry/scene controls. Treat
+the remaining softness as a mechanism-level limitation of mapped-Blueprint
+initialization plus one local denoising call. The next discriminator may test
+one fixed Blueprint-guided local-refinement mechanism at `0.25`; do not run
+more sigma points or a strength/filter sweep.
