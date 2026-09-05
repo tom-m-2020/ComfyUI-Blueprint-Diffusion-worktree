@@ -913,3 +913,15 @@ new ordinary-local controls fragment to S0. Treat terminal-only Blueprint
 resampling as semantically generalized for these tested scene classes and
 authorize a separate Phase-26 production-architecture design task. Do not
 implement production automatically or infer untested geometry generalization.
+
+## 2026-09-05 — Select a dedicated staged node for terminal resampling
+
+Do not force the selected mechanism into the Candidate-3 public `SAMPLER` or
+its persistent `(G,H)` coordinator. The production design uses a dedicated
+node that truthfully owns the bounded Blueprint trajectory and separate fixed-
+sigma terminal refinement, while internally entering through `guider.sample()`
+to preserve native ComfyUI conditioning/model lifecycle. Use a Blueprint-only
+accepted state and stream one batch-one W prediction at a time into the
+existing normalized overlap arithmetic. Keep the legacy Candidate-3 node
+unchanged during first-slice implementation; the new path must not invoke DCT
+coupling, persistent H/W, global K/V, or `Flux2BlockExecutor`.

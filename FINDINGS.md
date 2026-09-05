@@ -1926,3 +1926,15 @@ Detailed evidence is in
 - This establishes semantic generalization across the three tested scene
   classes at `H=128x256`; it does not establish geometry generalization or
   production readiness.
+
+## 2026-09-05 — Phase 26 production boundary and flow contract
+
+The selected mechanism is not truthfully represented by Candidate-3's public
+`SAMPLER` and persistent `(G,H)` state. Current ComfyUI source confirms that a
+dedicated node can still preserve native preparation and cleanup by invoking
+`guider.sample()` with a private procedure sampler. Under live `CONST` model
+sampling, `noise_scaling(0.25, epsilon, x0)` is exactly
+`0.25*epsilon + 0.75*x0` when `noise_scale=1`, and `calculate_input` is the
+identity. Terminal W construction is therefore an exact flow-state operation,
+not an approximate blend. The detailed design is in
+`PRODUCTION_TERMINAL_RESAMPLING_ARCHITECTURE.md`.
