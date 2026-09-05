@@ -1952,3 +1952,14 @@ is the same 1,071,588,352 bytes, confirming streamed W lifetime. The bridge
 rerun remains S3 but differs from its reused Phase-24 latent by 0.024750 RMS;
 that older artifact predates the frozen Phase-25 initialization provenance.
 Detailed evidence is in `TERMINAL_RESAMPLING_PRODUCTION_SLICE.md`.
+
+## 2026-09-05 — Phase 28 finite geometry profiles preserve coherence
+
+An explicit four-profile policy keeps the native-coordinate Blueprint between
+1,944 and 2,048 tokens while every local call stays `64x64`. New `128x128`, `256x128`,
+and `128x192` destination-latent profiles produce deterministic S3 results for
+multi-object, astronaut, and bridge scenes respectively; matched direct tiled-
+local controls are S0. Region counts are 25, 55, and 40. The original
+`128x256` Phase-27 trajectory remains bit-exact. This supports finite geometry
+generalization, not an open-ended destination-proportional rule. Detailed evidence is in
+`experiments/FLUX2_TERMINAL_RESAMPLING_GEOMETRY_GENERALIZATION.md`.

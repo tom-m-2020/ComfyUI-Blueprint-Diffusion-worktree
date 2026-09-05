@@ -627,3 +627,10 @@ bit-exact; the freshly decoded bridge, multi-object, and astronaut outputs are
 all S3. Two real BasicGuider executions are deterministic in latent and decoded
 RGB, use 4 Blueprint plus 55 local calls and zero destination-sized calls, and
 show flat post-region CUDA allocation. No ComfyUI-core file was modified.
+
+Phase 28 is complete. The production node now accepts exactly four enumerated
+destination latent profiles: `128x256`, `128x192`, `128x128`, and `256x128`.
+Their aspect-preserving Blueprint shapes are capped at 2,048 tokens and every
+local call remains `64x64`. The three new semantic cases are S3 versus S0
+tiled-local controls, repeat hashes are exact, coverage is complete, and the
+Phase-27 reference remains bit-exact. Arbitrary geometry remains fail-closed.

@@ -934,3 +934,14 @@ BasicGuider CFG-1 profile, native Klein 4B validation, and terminal sigma fixed
 and fail closed. Preserve the legacy Candidate-3 node independently. Do not
 generalize geometry, cadence, model family, conditioning, sigma, batching, or
 sampler behavior until separately qualified.
+
+## 2026-09-05 — Qualify a finite bounded geometry profile set
+
+Extend terminal resampling only to the explicit aspect-preserving profiles
+`B/H = 32x64/128x256`, `36x54/128x192`, `45x45/128x128`, and
+`64x32/256x128`. This keeps Blueprint work approximately fixed at 1,944–2,048
+tokens instead of scaling with destination area. Preserve Phase-27 integer-area
+initialization where divisible; use deterministic adaptive area restriction and
+analytic per-cell variance preservation for the two noninteger mappings.
+Reject destination-proportional, fixed-long-axis expansion, or aspect-distorting
+policies. All other destination geometries continue to fail closed.
