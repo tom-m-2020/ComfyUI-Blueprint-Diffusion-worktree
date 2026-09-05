@@ -644,3 +644,24 @@ higher sigma increases Blueprint deviation and overlap disagreement. Scalar
 terminal-sigma tuning is closed. The next authorized research question is one
 fixed Blueprint-guided local-refinement mechanism at the qualified `0.25`
 initialization, not another scalar sweep.
+
+Phase 30 is complete at a fail-closed architectural boundary with no model
+inference and no production or ComfyUI-core changes. All three persisted
+Phase-29 `sigma=0.25` controls validate against their Blueprint fingerprints
+and Phase-28 bit-exact regression records. The proposed soft prediction-space
+Blueprint attractor cannot be uniquely defined without an arbitrary guidance
+scale/metric; the native reference-latent route would instead change
+conditioning and add excluded image-context attention. Outcome E is recorded.
+The next research task should isolate the Blueprint-to-working-canvas
+lift/initialization representation, unless a separate native-reference
+conditioning experiment is explicitly authorized.
+
+Phase 31 is complete with no production or ComfyUI-core changes. The persisted
+Phase-29 nearest controls remain bit-exact to Phase 28. New fixed bilinear-lift
+branches and independent repeats completed for all three cases; all outputs
+remain S3 and deterministic, with flat region-barrier allocation. Bilinear
+changes the result materially but slightly lowers gradient/detail energy and
+does not visibly improve the car/tree/house, astronaut, or bridge structures.
+Simple interpolation is closed as the missing detail mechanism. The next
+research task should test one richer Blueprint-derived working-state
+construction, not another lift kernel.

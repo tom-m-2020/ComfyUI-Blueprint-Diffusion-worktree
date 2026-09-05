@@ -956,3 +956,24 @@ the remaining softness as a mechanism-level limitation of mapped-Blueprint
 initialization plus one local denoising call. The next discriminator may test
 one fixed Blueprint-guided local-refinement mechanism at `0.25`; do not run
 more sigma points or a strength/filter sweep.
+
+## 2026-09-05 — Do not invent a parameter-free Blueprint attractor
+
+Classify Phase 30 as `E — ARCHITECTURAL BOUNDARY` and stop before model
+inference. A soft denoised-prediction correction requires a structural metric
+and scalar guidance/likelihood scale that the qualified CONST-flow contract
+does not supply. Do not disguise `lambda=1` as parameter-free, reuse hard
+projection, or introduce transformer hooks. Native FLUX reference latents are
+a distinct conditioning/image-context architecture and require separate
+authorization. Return next to one fixed Blueprint-to-working-canvas
+lift/initialization representation discriminator.
+
+## 2026-09-05 — Retain nearest lift; stop interpolation sweeps
+
+Classify Phase 31 as `B — LIFT CHANGES OUTPUT BUT DOES NOT SOLVE SOFTNESS`.
+Do not productionize bilinear lifting: it preserves S3 but is slightly smoother
+in all three controls and naturally breaks exact `avgpool2(lift(b))=b`
+consistency. Keep the qualified nearest lift in production. If local detail is
+pursued further, test one richer Blueprint-derived working-state construction
+at fixed sigma/geometry with explicit provenance; do not try bicubic, area, or
+an interpolation-strength sweep.
