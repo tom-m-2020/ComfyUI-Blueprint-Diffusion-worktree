@@ -2154,3 +2154,27 @@ candidate combines trained weights, Klein 4B compatibility, same-canvas
 alignment, exact preprocessing, known injection, direct Blueprint semantics,
 and canonical coupling. Phase 40 performed zero model inference. See
 `experiments/FLUX2_KLEIN_SAME_CANVAS_ADAPTER_AUDIT.md`.
+
+## 2026-09-06 — MrFlow-like denoised handoff and bounded spatial transfer
+
+- Official MrFlow completes low-resolution sampling, decodes to pixels, applies
+  learned Real-ESRGAN super-resolution, re-encodes, injects low-strength
+  scheduler noise, and runs a short direct-sigma high-resolution refinement.
+  Its released helper uses a linear direct-sigma schedule; the staged principle
+  transfers, but Blueprint's plain latent interpolation is not literal MrFlow.
+- Current ComfyUI CONST constructs a denoised handoff as
+  `sigma*noise_scale*epsilon + (1-sigma)*x0`.  For qualified Klein
+  `noise_scale=1`; this must be invoked through the live model-sampling object.
+- RES4LYF distinguishes noisy output, denoised estimate, and SDE noise, and its
+  unsample/resample modes own schedule/state initialization rather than using
+  ordinary ComfyUI noise addition.  This does not qualify resizing a noisy G
+  state as a W trajectory, so noisy handoff remains unimplemented.
+- A halo-aware crop-before-upscale implementation exactly reproduces
+  full-bilinear-map/crop/upscale within `6.8e-14` for five tested geometries,
+  including non-divisible `G=37x61 -> H=131x227` and larger
+  `G=48x80 -> H=257x513`.  Coverage is complete and deterministic.  The
+  bounded interpolation source ranged only with the footprint/support, while
+  the avoided complete mapped anchor ranged with destination area.
+- This geometry result does not overturn Phase 29/38: denoised terminal
+  resampling preserves S3 composition, but neither five tested start sigmas nor
+  a four-interval W trajectory established credible structural-detail gain.

@@ -1,0 +1,322 @@
+{
+  "experiment": "blueprint_staged_refinement_geometry",
+  "device": "cpu",
+  "model_calls": 0,
+  "destination_sized_model_calls": 0,
+  "passed": true,
+  "cases": [
+    {
+      "geometry": {
+        "g_hw": [
+          45,
+          45
+        ],
+        "h_hw": [
+          128,
+          128
+        ],
+        "footprint_hw": [
+          32,
+          32
+        ],
+        "stride_hw": [
+          24,
+          24
+        ],
+        "w_hw": [
+          64,
+          64
+        ]
+      },
+      "region_count": 25,
+      "first_rect": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "last_rect": [
+        96,
+        96,
+        32,
+        32
+      ],
+      "max_transfer_abs_error": 3.1086244689504383e-15,
+      "coverage_min": 1.0,
+      "coverage_max": 256.0,
+      "finite_assembly": true,
+      "max_bounded_source_elements": 1352,
+      "full_mapped_anchor_elements": 131072,
+      "unique_bounded_source_hw": [
+        [
+          12,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    {
+      "geometry": {
+        "g_hw": [
+          64,
+          32
+        ],
+        "h_hw": [
+          256,
+          128
+        ],
+        "footprint_hw": [
+          48,
+          40
+        ],
+        "stride_hw": [
+          32,
+          28
+        ],
+        "w_hw": [
+          64,
+          64
+        ]
+      },
+      "region_count": 40,
+      "first_rect": [
+        0,
+        0,
+        48,
+        40
+      ],
+      "last_rect": [
+        208,
+        88,
+        48,
+        40
+      ],
+      "max_transfer_abs_error": 4.107825191113079e-15,
+      "coverage_min": 1.0,
+      "coverage_max": 1221.0,
+      "finite_assembly": true,
+      "max_bounded_source_elements": 1344,
+      "full_mapped_anchor_elements": 262144,
+      "unique_bounded_source_hw": [
+        [
+          13,
+          11
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          14,
+          12
+        ]
+      ]
+    },
+    {
+      "geometry": {
+        "g_hw": [
+          36,
+          54
+        ],
+        "h_hw": [
+          128,
+          192
+        ],
+        "footprint_hw": [
+          40,
+          48
+        ],
+        "stride_hw": [
+          28,
+          32
+        ],
+        "w_hw": [
+          64,
+          64
+        ]
+      },
+      "region_count": 30,
+      "first_rect": [
+        0,
+        0,
+        40,
+        48
+      ],
+      "last_rect": [
+        88,
+        144,
+        40,
+        48
+      ],
+      "max_transfer_abs_error": 4.3298697960381105e-15,
+      "coverage_min": 1.0,
+      "coverage_max": 1221.0,
+      "finite_assembly": true,
+      "max_bounded_source_elements": 1560,
+      "full_mapped_anchor_elements": 196608,
+      "unique_bounded_source_hw": [
+        [
+          12,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          13,
+          15
+        ]
+      ]
+    },
+    {
+      "geometry": {
+        "g_hw": [
+          37,
+          61
+        ],
+        "h_hw": [
+          131,
+          227
+        ],
+        "footprint_hw": [
+          41,
+          53
+        ],
+        "stride_hw": [
+          29,
+          37
+        ],
+        "w_hw": [
+          64,
+          64
+        ]
+      },
+      "region_count": 30,
+      "first_rect": [
+        0,
+        0,
+        41,
+        53
+      ],
+      "last_rect": [
+        90,
+        174,
+        41,
+        53
+      ],
+      "max_transfer_abs_error": 4.3298697960381105e-14,
+      "coverage_min": 1.0,
+      "coverage_max": 1092.0,
+      "finite_assembly": true,
+      "max_bounded_source_elements": 1792,
+      "full_mapped_anchor_elements": 237896,
+      "unique_bounded_source_hw": [
+        [
+          12,
+          15
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          14,
+          16
+        ]
+      ]
+    },
+    {
+      "geometry": {
+        "g_hw": [
+          48,
+          80
+        ],
+        "h_hw": [
+          257,
+          513
+        ],
+        "footprint_hw": [
+          48,
+          64
+        ],
+        "stride_hw": [
+          32,
+          40
+        ],
+        "w_hw": [
+          64,
+          64
+        ]
+      },
+      "region_count": 104,
+      "first_rect": [
+        0,
+        0,
+        48,
+        64
+      ],
+      "last_rect": [
+        209,
+        449,
+        48,
+        64
+      ],
+      "max_transfer_abs_error": 6.783462680459706e-14,
+      "coverage_min": 1.0,
+      "coverage_max": 1792.0,
+      "finite_assembly": true,
+      "max_bounded_source_elements": 1056,
+      "full_mapped_anchor_elements": 1054728,
+      "unique_bounded_source_hw": [
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          11,
+          12
+        ]
+      ]
+    }
+  ]
+}
