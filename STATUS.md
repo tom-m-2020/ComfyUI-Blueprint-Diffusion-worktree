@@ -741,3 +741,12 @@ attention, KV, and control hooks are untrained engineering boundaries without
 a fixed mapping or strength. Outcome: `E — ARCHITECTURAL BOUNDARY`. Diffusion,
 local, destination-sized, and decode call counts are all zero; production and
 ComfyUI core remain unchanged.
+
+Phase 40 is complete as a bounded released-resource availability/contract
+audit. Persisted Phase-39/29 control fingerprints validate, but no trained
+same-canvas FLUX.2 Klein 4B adapter clears every gate. Architecture-matched 4B
+RefControl LoRAs use separate edit/reference canvases and variable LoRA
+coupling; genuine same-canvas ControlNets found target FLUX.2-dev/FLUX.1, while
+Klein ControlNet research code targets 9B without a qualifying 4B release.
+Verdict: `C — ONLY INCOMPATIBLE / SEPARATE-CANVAS ADAPTERS FOUND`. Model and
+decode call counts are zero; production and ComfyUI core remain unchanged.
