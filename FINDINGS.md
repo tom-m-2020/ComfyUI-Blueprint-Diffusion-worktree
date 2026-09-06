@@ -2137,3 +2137,20 @@ checkpoint has no qualified same-canvas ControlNet/adapter. Phase 39 therefore
 stopped before inference with `E — ARCHITECTURAL BOUNDARY`; the persisted S3
 square control remains bit-exact and no model work occurred. See
 `experiments/FLUX2_BLUEPRINT_AS_GUIDE_LOCAL_REFINEMENT.md`.
+
+## 2026-09-06 — Phase 40 finds only incompatible or separate-canvas trained controls
+
+The closest released FLUX.2 Klein 4B controls are trained RefControl LoRAs,
+but their learned input contract is two separately indexed Klein edit images:
+a rendered control such as depth/pose and an identity/reference image. They do
+not expose a same-canvas latent/feature authority field, cannot consume the
+128-channel Blueprint without a new semantic projection, and document a LoRA
+weight range rather than an inherent fixed coupling.
+
+Released true same-canvas spatial ControlNets found by the bounded audit target
+FLUX.2-dev or FLUX.1. The available Klein ControlNet research code targets 9B
+and did not provide a qualified released 4B checkpoint. Thus no released
+candidate combines trained weights, Klein 4B compatibility, same-canvas
+alignment, exact preprocessing, known injection, direct Blueprint semantics,
+and canonical coupling. Phase 40 performed zero model inference. See
+`experiments/FLUX2_KLEIN_SAME_CANVAS_ADAPTER_AUDIT.md`.

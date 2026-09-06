@@ -1069,3 +1069,13 @@ Do not repeat prediction-space guidance or state projection. The only next
 discriminator authorized by this result is a source/checkpoint audit for a
 trained architecture-matched Klein 4B same-canvas control adapter; run no model
 unless its input normalization and canonical coupling are established.
+
+## 2026-09-06 — Close the released-adapter Blueprint-as-guide branch
+
+Accept Phase 40's verdict `C — ONLY INCOMPATIBLE / SEPARATE-CANVAS ADAPTERS
+FOUND`. Do not reinterpret Klein RefControl/reference inputs as an aligned
+Blueprint plane, transplant FLUX.2-dev/FLUX.1 ControlNets into Klein 4B, or
+treat untrained Klein ControlNet code as checkpoint evidence. No Phase-41
+inference is authorized. The next major phase is a bounded architecture design
+discriminator for separate interleaved global↔local resampling, beginning with
+explicit state ownership and feedback equations rather than model execution.
