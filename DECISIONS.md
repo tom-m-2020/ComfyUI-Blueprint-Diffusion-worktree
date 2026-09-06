@@ -1122,3 +1122,19 @@ change H when no G-to-H/W path is present, so its identical H result is a causal
 contract consequence rather than evidence that feedback was skipped. Do not
 sweep cadence or policy for this discriminator. This does not reject recurrent
 architectures with a separately justified evolving-G influence on W/H.
+
+## 2026-09-06 — Accept a narrow configurable Terminal-Resampling sibling
+
+Add `Blueprint Configurable Prototype` as a sibling and retain
+`BlueprintTerminalResampling` unchanged as the frozen oracle. Generalize G/H/F/W
+geometry, destination stride, bounded working geometry, deterministic seed, and
+late refinement sigma only inside the empirically validated envelope. Reuse the
+halo-aware bounded transfer and streaming normalized assembly; never issue an
+H-sized model forward. Preserve the exact frozen path by direct oracle delegation
+when all Phase-25 values match.
+
+Do not yet expose alternate interpolation/restriction, multistep local schedules,
+noisy handoff, non-integer footprint/working scaling, masks, other sampling
+contracts, or other model families. The next sibling feature, in a separate task,
+should be the smallest independently qualified local-schedule extension; it must
+not reopen stopped recurrent, persistent-H, or guidance sweeps.
