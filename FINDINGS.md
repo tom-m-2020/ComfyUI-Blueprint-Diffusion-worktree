@@ -2178,3 +2178,66 @@ and canonical coupling. Phase 40 performed zero model inference. See
 - This geometry result does not overturn Phase 29/38: denoised terminal
   resampling preserves S3 composition, but neither five tested start sigmas nor
   a four-interval W trajectory established credible structural-detail gain.
+
+## 2026-09-06 — Persistent coarse guidance locks structure but not detail
+
+- RES4LYF plain epsilon guidance for its linear/flow RK path constructs
+  `(W-guide)/sigma` and mixes the sampler epsilon/velocity toward it. Under
+  Klein/CONST this is exactly a post-model denoised-prediction mix
+  `m'=(1-lambda)m+lambda*guide`, not initialization or conditioning guidance.
+- Constant `[0.25]*4` and release `[0.5,1/3,1/6,0]` policies share exact
+  Phase-29 W/noise provenance and Phase-38 sigmas. Their first pre-guide model
+  predictions match each other and the unguided control for all 25 regions;
+  the declared mix is the first divergence.
+- Both outputs independently reproduce bit-exactly and remain S3 with complete
+  coverage, 100 bounded local calls, no destination-sized calls, and flat
+  post-region allocation.
+- Constant/release reduce overlap RMS from unguided `0.190880` to
+  `0.108701/0.138210`, and Blueprint RMS from `0.136947` to
+  `0.078189/0.099498`, proving coarse authority. Gradient RMS falls from
+  `0.253632` to `0.212995/0.225417`, and neither arm visibly resolves credible
+  object or ground structure. The guide shifts the frontier toward locking,
+  not useful detail.
+## 2026-09-06 — Fresh-W recurrent exchange deterministically fragments S3
+
+- An experiment-only same-sigma recurrent discriminator used the qualified
+  four-interval Blueprint schedule, `45x45` G, twenty-five overlapping `32x32`
+  footprints, `64x64` W, native CONST noise scaling, and the halo-aware bounded
+  transfer primitive.  G and W accepted the same Euler interval; no
+  destination-sized model forward occurred.
+- Both G-authoritative and bidirectional arms are bit-exact across independent
+  repeats, have complete normalized coverage, constant inter-interval CUDA
+  allocation barriers, four bounded G calls, and 100 bounded W calls.
+- Both arms fail S3: the single car/tree/house scene becomes a repeated lattice
+  of local cars, trees, and houses across stacked scene bands.  Final overlap
+  RMS rises to `0.943350`/`0.942238`, versus `0.173451` for frozen Terminal and
+  `0.190880` for the unguided four-interval W control.
+- G-authoritative failure proves H-to-G feedback is not required for the local
+  duplication.  Bidirectional feedback closely controls G in the middle
+  intervals but does not repair it.  The failure localizes to independently
+  noise-scaled W refinement at the near-one global sigmas: each W has enough
+  freedom to instantiate the prompt as a local scene, while overlap assembly
+  provides no global object-count authority.
+
+This finding is limited to fresh same-sigma W reconstruction from clean G
+predictions through regional noise scaling at high/near-one sigma.  It does not
+falsify recurrent/interleaved multiresolution sampling generally.
+
+## 2026-09-06 — Persistent shared-provenance H still fragments without G-to-H authority
+
+- A distinct experiment initialized H once, deterministically derived G0 from
+  the same stochastic canvas, and retained exactly one assembled H trajectory
+  across all four qualified intervals.  W inputs were lifts of storage-sharing
+  accepted-H crops; interval-0 restriction error and overlap disagreement were
+  both exactly zero.  No regional RNG or noise scaling occurred.
+- G-authoritative and H-to-G-feedback arms both reproduce bit-exactly. Each used
+  four `45x45` G calls and 100 `64x64` W calls, complete normalized coverage,
+  constant accepted-interval allocation barriers, and zero destination-sized
+  model calls.
+- Both fail S3 with repeated cars, trees, houses, and five stacked local scene
+  bands. Final overlap RMS is `0.850843`, worse than frozen Terminal
+  (`0.173451`) and unguided four-interval W (`0.190880`).
+- Final H is bit-identical across arms while final G differs. This is expected:
+  the permitted H-to-G feedback changes G, but neither arm includes a G-to-H/W
+  path. Shared noise continuity alone does not provide global semantic or
+  coordinate authority to bounded local model calls.

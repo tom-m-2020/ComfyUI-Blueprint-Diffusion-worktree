@@ -764,3 +764,29 @@ coverage.  Existing Phase-29/38 evidence already covers the requested small
 sigma/depth controls: composition remains S3 but credible structural-detail
 gain is not established.  The branch is therefore not production-qualified;
 Candidate-3 and Terminal Resampling remain unchanged.
+
+## 2026-09-06 — Persistent coarse-guidance discriminator closed
+
+The experiment-only persistent-guide branch reproduced RES4LYF's plain linear
+epsilon-guide operation as an explicit post-model denoised-prediction/sampler-
+velocity mix. One constant and one decreasing/release policy reused the exact
+Phase-29 initial W/noise and Phase-38 schedule. Both are deterministic, retain
+S3, complete coverage, 100 bounded local calls, zero destination-sized calls,
+and flat region barriers. Neither improves credible local structure; both pull
+toward the soft Blueprint and reduce local development. Stop guide
+strength/schedule tuning. Production nodes and ComfyUI core are unchanged.
+The fresh-W recurrent/interleaved discriminator is complete and narrowly rejected. Two
+experiment-only arms ran the four qualified Blueprint intervals with shared
+sigma G/W Euler updates: G-authoritative discarded H-to-G feedback, while
+bidirectional replaced each next G with the downscaled accepted H.  Both are
+bit-exact, bounded (four `45x45` G plus 100 `64x64` W calls), and completely
+covered, but both deterministically replace the S3 single-object composition
+with a repeated local-scene lattice. This falsifies fresh regional noise scaling
+from clean G predictions at near-one sigma, not recurrent sampling generally.
+
+The follow-up persistent-H discriminator is also complete. H0/G0 share one
+stochastic canvas; W inputs are exact storage-derived accepted-H crops; H is
+assembled and retained once per interval; and no regional RNG/noise scaling is
+used. Both G-authoritative and H-to-G arms remain deterministic and bounded but
+produce repeated objects in five local scene bands. Stop this discriminator.
+Production nodes, persistent-guidance artifacts, and ComfyUI core are unchanged.

@@ -1093,3 +1093,32 @@ noisy handoff until its sigma, covariance, and trajectory meaning are proven.
 Do not implement interleaving, learned upscaling, guide, ControlNet, or backend
 optimization in this branch.  Require credible semantic local-detail gain, not
 texture energy alone, before proposing the smallest sibling-node architecture.
+
+## 2026-09-06 — Stop fixed persistent coarse-guide tuning
+
+Reject the tested fixed-guide branch for production. Both declared policies
+retain S3 and measurably reduce cross-region disagreement, but neither improves
+credible detail; the fixed terminal Blueprint acts as a soft locking target.
+Do not sweep strength, release shape, or sigma, and do not modify Terminal
+Resampling. If continued, the next genuinely different discriminator is
+recurrent/interleaved G/W latent refresh with explicit accepted-state ownership,
+not another post-prediction guide variant.
+## 2026-09-06 — Reject fresh-W recurrent reconstruction, not recurrence generally
+
+Do not advance either fresh-W policy or sweep its cadence, interleaving stop, or
+coupling strength. G-authoritative and bidirectional exchange both lose S3 by
+freshly constructing near-one-sigma W regions from clean G predictions and
+regional noise. This decision does not reject persistent-H or other recurrent
+multiresolution sampling.
+Keep Candidate-3, Terminal Resampling, and persistent-guidance artifacts frozen,
+and make no production change from this experiment.
+
+## 2026-09-06 — Stop persistent-H shared-provenance refinement without G-to-H authority
+
+Reject both tested persistent-H arms. Exact shared stochastic provenance and one
+retained normalized H trajectory do not prevent bounded local calls from
+creating repeated prompt-complete scenes. H-to-G feedback changes G but cannot
+change H when no G-to-H/W path is present, so its identical H result is a causal
+contract consequence rather than evidence that feedback was skipped. Do not
+sweep cadence or policy for this discriminator. This does not reject recurrent
+architectures with a separately justified evolving-G influence on W/H.

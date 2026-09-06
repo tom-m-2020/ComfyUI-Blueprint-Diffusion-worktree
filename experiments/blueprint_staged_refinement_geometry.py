@@ -45,8 +45,10 @@ def full_transfer(g: torch.Tensor, geometry: Geometry, rect: tuple[int, int, int
     return F.interpolate(footprint, size=geometry.w_hw, mode="bilinear", align_corners=False)
 
 
-def _axis_coordinates(start: int, count: int, source: int, destination: int) -> torch.Tensor:
-    output = torch.arange(start, start + count, dtype=torch.float64)
+def _axis_coordinates(
+    start: int, count: int, source: int, destination: int, *, device: torch.device
+) -> torch.Tensor:
+    output = torch.arange(start, start + count, dtype=torch.float64, device=device)
     return ((output + 0.5) * source / destination - 0.5).clamp(0, source - 1)
 
 
@@ -54,8 +56,8 @@ def bounded_transfer(
     g: torch.Tensor, geometry: Geometry, rect: tuple[int, int, int, int]
 ) -> tuple[torch.Tensor, tuple[int, int]]:
     y, x, height, width = rect
-    gy = _axis_coordinates(y, height, geometry.g_hw[0], geometry.h_hw[0])
-    gx = _axis_coordinates(x, width, geometry.g_hw[1], geometry.h_hw[1])
+    gy = _axis_coordinates(y, height, geometry.g_hw[0], geometry.h_hw[0], device=g.device)
+    gx = _axis_coordinates(x, width, geometry.g_hw[1], geometry.h_hw[1], device=g.device)
     y0, y1 = int(torch.floor(gy.min())), int(torch.ceil(gy.max()))
     x0, x1 = int(torch.floor(gx.min())), int(torch.ceil(gx.max()))
     source = g[:, :, y0:y1 + 1, x0:x1 + 1]
