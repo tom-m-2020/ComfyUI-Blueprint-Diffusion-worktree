@@ -1079,3 +1079,17 @@ treat untrained Klein ControlNet code as checkpoint evidence. No Phase-41
 inference is authorized. The next major phase is a bounded architecture design
 discriminator for separate interleaved global↔local resampling, beginning with
 explicit state ownership and feedback equations rather than model execution.
+
+## 2026-09-06 — Begin staged refinement as a separate research branch
+
+Keep Candidate-3 and `Blueprint Terminal Resampling` frozen and coexisting.
+Treat the new MrFlow-like work as a separate experimental lineage, but do not
+create a sibling production node merely by renaming Terminal Resampling: the
+first denoised-handoff algorithm overlaps its established contract.  Select
+halo-aware crop-before-upscale as the spatial-transfer policy because it is
+numerically equivalent to complete-map-then-crop under the declared bilinear
+contract and avoids a second destination-sized mapped anchor.  Do not expose
+noisy handoff until its sigma, covariance, and trajectory meaning are proven.
+Do not implement interleaving, learned upscaling, guide, ControlNet, or backend
+optimization in this branch.  Require credible semantic local-detail gain, not
+texture energy alone, before proposing the smallest sibling-node architecture.

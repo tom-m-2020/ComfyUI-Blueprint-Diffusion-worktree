@@ -750,3 +750,17 @@ coupling; genuine same-canvas ControlNets found target FLUX.2-dev/FLUX.1, while
 Klein ControlNet research code targets 9B without a qualifying 4B release.
 Verdict: `C — ONLY INCOMPATIBLE / SEPARATE-CANVAS ADAPTERS FOUND`. Model and
 decode call counts are zero; production and ComfyUI core remain unchanged.
+
+## 2026-09-06 — Staged-refinement branch semantic/geometry gate
+
+The new MrFlow-like research branch has begun without production or ComfyUI-core
+changes.  Official MrFlow, current ComfyUI CONST, RES4LYF, and frozen Terminal
+Resampling semantics are documented in
+`experiments/BLUEPRINT_STAGED_REFINEMENT_SEMANTICS.md`.  The first new CPU-only
+discriminator proves that a halo-aware crop-before-upscale transfer can match
+complete-map-then-crop to at most `6.8e-14` across five geometries while keeping
+the transfer source bounded and preserving deterministic complete overlap
+coverage.  Existing Phase-29/38 evidence already covers the requested small
+sigma/depth controls: composition remains S3 but credible structural-detail
+gain is not established.  The branch is therefore not production-qualified;
+Candidate-3 and Terminal Resampling remain unchanged.
