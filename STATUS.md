@@ -790,3 +790,15 @@ assembled and retained once per interval; and no regional RNG/noise scaling is
 used. Both G-authoritative and H-to-G arms remain deterministic and bounded but
 produce repeated objects in five local scene bands. Stop this discriminator.
 Production nodes, persistent-guidance artifacts, and ComfyUI core are unchanged.
+
+The minimal configurable Terminal-Resampling sibling is now production-qualified
+as `Blueprint Configurable Prototype`. The frozen Terminal node remains the
+regression oracle and is untouched. The sibling exactly reproduces its Phase-27
+output at the qualified configuration, passes new `128x128`/overlap-16 and
+`256x256`/overlap-8 S3 cases, and scales from 49 to 121 local calls with fixed
+`64x64` model geometry, zero destination-sized forwards, unchanged CUDA reserve,
+complete coverage, and deterministic hashes. The implementation deliberately
+keeps one local step, fixed interpolation/restriction semantics, frozen G
+schedule, Klein/CONST, and a validated sigma range; unsupported extensions fail
+closed. Full regression status: 58/58 standard-library tests pass (51 existing
+regressions plus 7 focused configurable-prototype tests).

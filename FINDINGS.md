@@ -2241,3 +2241,37 @@ falsify recurrent/interleaved multiresolution sampling generally.
   the permitted H-to-G feedback changes G, but neither arm includes a G-to-H/W
   path. Shared noise continuity alone does not provide global semantic or
   coordinate authority to bounded local model calls.
+
+## 2026-09-06 — Minimal configurable Terminal-Resampling sibling qualifies
+
+- The frozen Terminal constants are qualification choices rather than inherent
+  algorithm requirements. The safe reusable mechanism is: terminal denoised
+  `x0_G`, halo-aware bounded `G -> F -> W` transfer, active-model
+  `noise_scaling()`, one late local denoise, `W -> F` restriction, and
+  deterministic normalized streaming assembly into H.
+- `Blueprint Configurable Prototype` reproduces the frozen Phase-27 node result
+  bit-exactly at `G=32x64`, `H=128x256`, `F=32x32`, stride `24x24`,
+  `W=64x64`, sigma `0.25`: hash
+  `f0fc754078f56372043e29af20fc85449fb7025e00ce764bf123344d71aca3bd`,
+  RMS/max error both zero.
+- A new square case (`G=45x45`, `H=128x128`, `F=32x32`, stride `16x16`,
+  `W=64x64`) used 49 bounded W calls. A larger case (`G=48x48`,
+  `H=256x256`, `F=32x32`, stride `24x24`, `W=64x64`) used 121 bounded W
+  calls. Both used four bounded G calls, zero H-sized model calls, complete
+  normalized coverage, row-major deterministic planning, and bit-exact repeats.
+- Scaling from 49 to 121 regions left the model working canvas at `64x64` and
+  CUDA reserved memory unchanged at 3,755,999,232 bytes. Peak allocated memory
+  rose only from 3,273,531,904 to 3,350,625,792 bytes while sampling time rose
+  from 51.8 s to 124.0 s, establishing region-count scaling rather than
+  destination-sized diffusion.
+- Both new cases retain S3: one car, one central tree, one house, a continuous
+  horizon, and no tiled miniature-scene repetition. Relative to plain resized
+  Blueprint controls, refinement adds credible car/tree/ground/house structure;
+  gradient RMS increases from `0.194260` to `0.221675` and from `0.109416` to
+  `0.167996` respectively.
+- The qualified envelope remains intentionally narrow: bilinear G-to-F,
+  nearest integer F-to-W lift, mean W-to-F restriction, one local step, the
+  frozen four-interval G schedule, deterministic per-region noise, Klein/CONST,
+  and refinement sigma `0.10..0.50`. Other interpolation, local schedules,
+  noisy handoff, masks, non-integer W/F scaling, and other model contracts fail
+  closed or remain unimplemented.
