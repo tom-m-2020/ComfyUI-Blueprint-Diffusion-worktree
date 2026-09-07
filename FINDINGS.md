@@ -2275,3 +2275,28 @@ falsify recurrent/interleaved multiresolution sampling generally.
   and refinement sigma `0.10..0.50`. Other interpolation, local schedules,
   noisy handoff, masks, non-integer W/F scaling, and other model contracts fail
   closed or remain unimplemented.
+
+## 2026-09-07 — Two and three local intervals add edge energy, not credible structure
+
+- A schedule-depth-only experiment held the qualified configurable square case
+  fixed at `G=45x45`, `H=128x128`, `F=32x32`, stride `16x16`, `W=64x64`,
+  seed `20260921`, and start sigma `0.25`. The two deeper schedules were
+  scheduler-derived pre-shift subdivisions: `[0.25, 0.1408223, 0]` and
+  `[0.25, 0.1801616, 0.0980172, 0]`.
+- Across all 49 regions, regional noise, initial W, first W state, and first
+  sigma-0.25 model prediction hashes are identical in every arm. W is initialized
+  once and follows one accepted trajectory; no interval re-noises or reconstructs
+  it. The one-step arm reproduces the qualified configurable result bit-exactly.
+- W model calls increase exactly from 49 to 98 and 147. Wall time increases from
+  50.13 s to 97.74 s and 148.58 s. Every arm uses four shared bounded G calls,
+  zero destination-sized calls, complete normalized coverage, fixed `64x64` W,
+  and a zero-byte completed-region allocation range.
+- CUDA reserved memory is unchanged at 3,512,729,600 bytes. Peak allocated is
+  3,025,436,160 bytes for one interval and 3,028,057,600 bytes for both deeper
+  arms, so schedule depth increases compute rather than the retained working set.
+- Both deeper arms retain S3, object count, and horizon continuity without local
+  miniature scenes. Gradient/Laplacian RMS rise from `0.221675/0.477588` to
+  `0.229360/0.505645` and `0.232334/0.517234`, but overlap RMS worsens from
+  `0.173297` to `0.184967/0.189986`. Visual review finds denser repeated fine
+  edging rather than credible improvement to car contour/wheels, foliage
+  organization, house geometry, or ground structure.

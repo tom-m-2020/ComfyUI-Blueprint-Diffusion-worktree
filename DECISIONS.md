@@ -1138,3 +1138,14 @@ noisy handoff, non-integer footprint/working scaling, masks, other sampling
 contracts, or other model families. The next sibling feature, in a separate task,
 should be the smallest independently qualified local-schedule extension; it must
 not reopen stopped recurrent, persistent-H, or guidance sweeps.
+
+## 2026-09-07 — Do not promote configurable local schedule depth
+
+Reject the tested two- and three-interval local W schedules. They preserve S3
+and bounded residency but do not improve credible local structure over the
+bit-exact one-step control; their additional gradient energy accompanies worse
+overlap disagreement and approximately proportional model work. Keep
+`Blueprint Configurable Prototype` at one local interval. Apply the requested
+stop rule: do not follow this result with further local sigma/depth sweeps or
+resume high-sigma, interleaved, persistent-H, guide, ControlNet, or noisy-handoff
+work in this branch.
