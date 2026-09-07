@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import sys
 import unittest
+from unittest import mock
 from pathlib import Path
 
 import torch
@@ -22,10 +23,12 @@ if "blueprint_diffusion" not in sys.modules:
     spec.loader.exec_module(module)
 
 from blueprint_diffusion.configurable_resampling import (
+    AUTO_GEOMETRY_PROFILES,
     ConfigurableResamplingGeometry,
     ConfigurableResamplingProcedure,
     bounded_blueprint_transfer,
     configurable_region_noise,
+    geometry_from_pixels,
     restrict_configurable_working,
     validate_refinement_sigma,
 )
@@ -56,14 +59,17 @@ class FakeGuider:
 
 
 class FakeAdapter:
-    def __init__(self):
+    def __init__(self, fail_call=None):
         self.calls = []
+        self.fail_call = fail_call
 
     def validate_prepared(self, **kwargs):
         pass
 
     def predict_native(self, *, value, expected_hw, **kwargs):
         self.calls.append(expected_hw)
+        if len(self.calls) == self.fail_call:
+            raise RuntimeError("injected configurable failure")
         return value * 0.5
 
 
@@ -74,6 +80,94 @@ class TestConfigurableGeometry(unittest.TestCase):
         self.assertIn("BlueprintConfigurablePrototype", NODE_CLASS_MAPPINGS)
         self.assertEqual(NODE_DISPLAY_NAME_MAPPINGS["BlueprintConfigurablePrototype"],
                          "Blueprint Configurable Prototype")
+        self.assertIn("BlueprintDiffusion", NODE_CLASS_MAPPINGS)
+        self.assertEqual(NODE_DISPLAY_NAME_MAPPINGS["BlueprintDiffusion"],
+                         "Blueprint Diffusion (Terminal Refine)")
+        self.assertEqual(tuple(NODE_CLASS_MAPPINGS["BlueprintConfigurablePrototype"].INPUT_TYPES()["required"]), (
+            "guider", "sigmas", "noise_seed", "destination", "blueprint_width",
+            "blueprint_height", "footprint_width", "footprint_height", "stride_x",
+            "stride_y", "working_width", "working_height", "refinement_sigma",
+        ))
+        public = NODE_CLASS_MAPPINGS["BlueprintDiffusion"].INPUT_TYPES()["required"]
+        self.assertEqual(public["geometry_mode"][0], ["auto", "manual"])
+        self.assertIn("tooltip", public["tile_width"][1])
+        self.assertIn("tooltip", public["working_width"][1])
+
+    def test_auto_profiles_are_exact_and_completely_covered(self):
+        expected = {
+            (128, 256): ((32, 64), 55),
+            (128, 128): ((45, 45), 49),
+            (256, 256): ((48, 48), 121),
+            (192, 128): ((48, 32), 40),
+            (128, 192): ((32, 48), 40),
+        }
+        self.assertEqual(set(AUTO_GEOMETRY_PROFILES), set(expected))
+        for destination_hw, (blueprint_hw, region_count) in expected.items():
+            geometry = geometry_from_pixels(
+                destination_hw, "auto", blueprint_width=720, blueprint_height=720,
+                tile_width=512, tile_height=512, tile_overlap_x=256,
+                tile_overlap_y=256, working_width=1024, working_height=1024,
+            )
+            with self.subTest(destination_hw=destination_hw):
+                self.assertEqual(geometry.blueprint_hw, blueprint_hw)
+                self.assertEqual(len(geometry.regions()), region_count)
+
+    def test_manual_pixels_convert_without_rounding(self):
+        geometry = geometry_from_pixels(
+            (128, 128), "manual", blueprint_width=720, blueprint_height=720,
+            tile_width=512, tile_height=512, tile_overlap_x=256,
+            tile_overlap_y=256, working_width=1024, working_height=1024,
+        )
+        self.assertEqual(geometry, ConfigurableResamplingGeometry(
+            (45, 45), (128, 128), (32, 32), (16, 16), (64, 64)
+        ))
+
+    def test_public_wrapper_resolves_auto_pixels_and_preserves_legacy_path(self):
+        legacy = NODE_CLASS_MAPPINGS["BlueprintConfigurablePrototype"]
+        public = NODE_CLASS_MAPPINGS["BlueprintDiffusion"]()
+        output = {"blueprint_configurable_telemetry": {}}
+        with mock.patch.object(legacy, "sample", return_value=(output, output.copy())) as delegated:
+            result, _ = public.sample(
+                None, None, 7, {"samples": torch.zeros((1, 128, 128, 128))}, "auto",
+                720, 720, 512, 512, 256, 256, 1024, 1024, 0.25,
+            )
+        self.assertEqual(delegated.call_args.args[4:13],
+                         (45, 45, 32, 32, 16, 16, 64, 64, 0.25))
+        telemetry = result["blueprint_configurable_telemetry"]
+        self.assertEqual(telemetry["user_geometry_mode"], "auto")
+        self.assertEqual(telemetry["pixel_scale"], 16)
+        self.assertEqual(telemetry["resolved_pixels"]["destination"],
+                         {"width": 2048, "height": 2048})
+        self.assertEqual(telemetry["resolved_pixels"]["overlap"], {"x": 256, "y": 256})
+
+    def test_pixel_contract_errors_explain_failed_relation(self):
+        common = dict(
+            blueprint_width=720, blueprint_height=720, tile_width=512,
+            tile_height=512, tile_overlap_x=256, tile_overlap_y=256,
+            working_width=1024, working_height=1024,
+        )
+        with self.assertRaisesRegex(ValueError, "divisible by 16"):
+            geometry_from_pixels((128, 128), "manual", **{**common, "tile_width": 513})
+        with self.assertRaisesRegex(ValueError, "overlap.*smaller"):
+            geometry_from_pixels((128, 128), "manual", **{**common, "tile_overlap_x": 512})
+        with self.assertRaisesRegex(ValueError, "must fit inside destination"):
+            geometry_from_pixels((16, 16), "manual", **common)
+        with self.assertRaisesRegex(ValueError, "integer enlargement"):
+            geometry_from_pixels((128, 128), "manual", **{**common, "tile_width": 768})
+        with self.assertRaisesRegex(ValueError, "outside the qualified 16..64"):
+            geometry_from_pixels((128, 128), "manual", **{**common, "blueprint_width": 1280})
+        with self.assertRaisesRegex(ValueError, "no qualified profile"):
+            geometry_from_pixels((96, 96), "auto", **common)
+        with self.assertRaisesRegex(ValueError, "Geometry mode"):
+            geometry_from_pixels((128, 128), "automatic", **common)
+
+    def test_planner_coverage_invariant_fails_closed(self):
+        geometry = ConfigurableResamplingGeometry((32, 32), (128, 128),
+                                                   (32, 32), (24, 24), (64, 64))
+        with mock.patch.object(ConfigurableResamplingGeometry, "_starts",
+                               side_effect=((0, 40, 96), (0, 40, 96))):
+            with self.assertRaisesRegex(ValueError, "cannot be completely covered"):
+                geometry.regions()
 
     def test_multiple_geometries_and_overlap(self):
         cases = (
@@ -161,6 +255,37 @@ class TestConfigurableProcedure(unittest.TestCase):
         self.assertFalse(procedure.telemetry["exact_terminal_oracle"])
         self.assertEqual(adapter.calls.count((32, 32)), 4)
         self.assertEqual(adapter.calls.count((64, 64)), 20)
+
+    def test_cancellation_then_retry_is_clean_and_deterministic(self):
+        geometry = ConfigurableResamplingGeometry((32, 32), (96, 128),
+                                                   (32, 32), (24, 24), (64, 64))
+        destination = torch.zeros((1, 128, 96, 128))
+        args = (FakeGuider(), torch.tensor(QUALIFIED_SIGMAS), {"model_options": {}}, None,
+                torch.zeros_like(destination), destination, None)
+        cancelled = ConfigurableResamplingProcedure(
+            seed=15, geometry=geometry, refinement_sigma=0.25, adapter=FakeAdapter()
+        )
+        interrupts = 0
+
+        def cancel():
+            nonlocal interrupts
+            interrupts += 1
+            if interrupts == 6:
+                raise RuntimeError("injected cancellation")
+
+        with mock.patch("comfy.model_management.throw_exception_if_processing_interrupted",
+                        side_effect=cancel), self.assertRaisesRegex(RuntimeError, "injected cancellation"):
+            cancelled.sample(*args)
+        self.assertEqual(cancelled.telemetry, {})
+
+        first = ConfigurableResamplingProcedure(
+            seed=15, geometry=geometry, refinement_sigma=0.25, adapter=FakeAdapter()
+        )
+        second = ConfigurableResamplingProcedure(
+            seed=15, geometry=geometry, refinement_sigma=0.25, adapter=FakeAdapter()
+        )
+        self.assertTrue(torch.equal(first.sample(*args), second.sample(*args)))
+        self.assertEqual(first.telemetry["final_H_hash"], second.telemetry["final_H_hash"])
 
 
 if __name__ == "__main__":

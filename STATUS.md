@@ -812,3 +812,15 @@ destination-sized forward occurs. The one-step experiment control is bit-exact
 with the production prototype. Production nodes and specialized execution are
 unchanged; no local-step control is promoted. Full regression status: 61/61
 standard-library tests pass, including three focused schedule/update tests.
+
+`Blueprint Diffusion (Terminal Refine)` is now implemented and live-qualified as
+the user-facing pixel-geometry wrapper around the unchanged configurable
+one-step procedure. The legacy prototype registration remains intact. Auto mode
+supports five explicitly qualified destination profiles; manual mode exposes
+pixel G/F/overlap/W inputs with strict 16-pixel conversion and fail-closed
+relations. Frozen Terminal is bit-exact, portrait and wide repeat bit-exactly
+with S3, and all live cases retain bounded G/W calls, complete coverage, zero
+H-sized forwards, and flat region barriers. Full regression status: 67/67
+standard-library tests pass, including pixel conversion, five auto profiles,
+public-wrapper resolution/telemetry, relation-specific failures, coverage
+invariant, and cancellation/retry.
