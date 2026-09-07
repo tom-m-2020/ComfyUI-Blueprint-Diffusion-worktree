@@ -1,0 +1,37 @@
+{
+  "index": 19,
+  "schedule": [
+    0.25,
+    0.14082231971176423,
+    0.0
+  ],
+  "source_hw": [
+    13,
+    13
+  ],
+  "noise_hash": "bceddd2fbdfa93d913b740150fabc1e986177808df96f8be9f4fc07a14c25189",
+  "initial_w_hash": "8ece597735623c5cf9193d513e84403531ee87b50474d700051b2047aa3f36bf",
+  "steps": [
+    {
+      "ordinal": 0,
+      "sigma": 0.25,
+      "sigma_next": 0.14082231971176423,
+      "state_hash": "8ece597735623c5cf9193d513e84403531ee87b50474d700051b2047aa3f36bf",
+      "prediction_hash": "a9288a42a32804235228e9076ac18dad9f7790a3e2957004b962cb27295298dc",
+      "accepted_hash": "c92e1f07c14e7c85edfdf076d3cdff8ebced86070bd96969bc6ba98ea392665d",
+      "cuda_ms": 961.71484375
+    },
+    {
+      "ordinal": 1,
+      "sigma": 0.14082231971176423,
+      "sigma_next": 0.0,
+      "state_hash": "c92e1f07c14e7c85edfdf076d3cdff8ebced86070bd96969bc6ba98ea392665d",
+      "prediction_hash": "65ffd312ea116d38923891cfe6ae116473fa1bb4299654a37f4d6173d503fcb5",
+      "accepted_hash": "65ffd312ea116d38923891cfe6ae116473fa1bb4299654a37f4d6173d503fcb5",
+      "cuda_ms": 959.48876953125
+    }
+  ],
+  "restricted_hash": "583d7f04fdb6a68008b688c28f5f455e1abc4629d1f5112a4212a525c1a8106b",
+  "cuda_ms": 1921.20361328125,
+  "barrier_allocated_bytes": 2504251904
+}

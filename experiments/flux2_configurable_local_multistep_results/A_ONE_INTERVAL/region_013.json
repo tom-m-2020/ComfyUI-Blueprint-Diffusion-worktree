@@ -1,0 +1,27 @@
+{
+  "index": 13,
+  "schedule": [
+    0.25,
+    0.0
+  ],
+  "source_hw": [
+    13,
+    12
+  ],
+  "noise_hash": "64c6dc01c5b843d5d3b7b69daca90cf9658ab61b7d89146701a68f52c51f1383",
+  "initial_w_hash": "f72e598163c2c871c6537604f3f665146779666e67e48d4b9e379bbddc746b88",
+  "steps": [
+    {
+      "ordinal": 0,
+      "sigma": 0.25,
+      "sigma_next": 0.0,
+      "state_hash": "f72e598163c2c871c6537604f3f665146779666e67e48d4b9e379bbddc746b88",
+      "prediction_hash": "735f95e78511d7fe6a782a59532e53625747e58d23fc8f6290f22b490086de1a",
+      "accepted_hash": "735f95e78511d7fe6a782a59532e53625747e58d23fc8f6290f22b490086de1a",
+      "cuda_ms": 982.161865234375
+    }
+  ],
+  "restricted_hash": "76dc59cef4eb76a39fda98263a29435ea022c80b4c9fe5e27050d738bcab49db",
+  "cuda_ms": 982.161865234375,
+  "barrier_allocated_bytes": 2504251904
+}

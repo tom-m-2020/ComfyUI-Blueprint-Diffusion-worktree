@@ -802,3 +802,13 @@ keeps one local step, fixed interpolation/restriction semantics, frozen G
 schedule, Klein/CONST, and a validated sigma range; unsupported extensions fail
 closed. Full regression status: 58/58 standard-library tests pass (51 existing
 regressions plus 7 focused configurable-prototype tests).
+
+The configurable local multi-step discriminator is complete and rejected. On
+the qualified 49-region square case, scheduler-derived two- and three-interval W
+trajectories preserve S3 but merely increase line/texture energy and overlap
+disagreement. Calls and wall time scale almost exactly 2x/3x while W remains
+`64x64`, CUDA reserve is unchanged, completed-region residency is flat, and no
+destination-sized forward occurs. The one-step experiment control is bit-exact
+with the production prototype. Production nodes and specialized execution are
+unchanged; no local-step control is promoted. Full regression status: 61/61
+standard-library tests pass, including three focused schedule/update tests.
