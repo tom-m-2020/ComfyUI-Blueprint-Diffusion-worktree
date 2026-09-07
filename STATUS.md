@@ -884,3 +884,12 @@ normalized coverage, and has flat region-barrier residency. S3 remains intact,
 but no credible structural/detail improvement is visible; the worst projection
 increment is also dominant relative to both raw derivative and W state. The
 Clown Guide branch stops without tuning or production changes.
+
+The literal alternating-resolution prototype is complete and rejected. It ran
+the previously untested direct accepted-state chain with ownership `G,W,G,W`,
+using only bilinear transfer, W-to-F area restriction, normalized assembly, and
+bilinear H-to-G replacement. Both runs are bit-exact; each uses two bounded G
+and 50 bounded W calls with no destination-sized forward and complete coverage.
+The output fails S3 with repeated prompt-complete scenes and no continuous
+horizon; final overlap RMS is `0.6462023`. This is explicitly not a rejection
+of every interleaved architecture. No production code changed.

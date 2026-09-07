@@ -1260,3 +1260,14 @@ projection does not advance the qualified composition/detail frontier.
 Apply the Phase-46 stop rule. Do not test another weight, projection mode,
 channelwise toggle, cutoff, sigma schedule, sampler, or geometry as a
 continuation. Keep all production nodes and registrations unchanged.
+
+## 2026-09-08 — Reject only the literal interpolation-only alternating prototype
+
+Reject the exact direct-state-resize `G,W,G,W` experiment because it loses S3,
+duplicates complete prompt interpretations, destroys horizon continuity, and
+raises terminal overlap disagreement to `0.6462023`. No stabilization or
+corrective state construction is authorized as part of this result.
+
+Scope the rejection narrowly. It applies to the tested literal interpolation-
+only trajectory, not to all recurrent/interleaved architectures. Production
+nodes and registrations remain unchanged.

@@ -2614,3 +2614,22 @@ non-dominant: its mean/max increment is `0.774627/1.417001` times raw-
 derivative RMS and `0.935686/1.612677` times W-state RMS. Channel adaptation
 turns base weight 0.25 into effective weights `0.185661..0.335525`. Evidence:
 `experiments/PHASE46_EPSILON_PROJECTION_CW_REPORT.md`.
+
+## 2026-09-08 — Literal interpolation-only G/W alternation fails S3
+
+The previously untested literal chain was executed without clean-prediction
+transfer, re-noising, regional RNG, persistent H, delta coupling, or guidance.
+One accepted trajectory alternated `G,W,G,W` over the qualified Klein schedule.
+Accepted G was mapped directly into all W views at unchanged sigma; accepted W
+proposals were assembled, bilinearly downscaled, and replaced G outright.
+
+Two runs are bit-exact. Each uses two bounded `45x45` G calls and 50 bounded
+`64x64` W calls, zero H-sized calls, complete normalized coverage, and flat
+completed-region residency within each W interval. Final overlap RMS is
+`0.6462023` versus Frozen Terminal's `0.1734514`.
+
+The result loses S3: many locally complete car/tree/house scenes replace the
+exact object count, and the single horizon becomes incompatible scene patches.
+This establishes only that the literal interpolation-only prototype fails under
+the fixed setup, not that every interleaved architecture fails. Evidence:
+`experiments/LITERAL_ALTERNATING_RESOLUTION_REPORT.md`.

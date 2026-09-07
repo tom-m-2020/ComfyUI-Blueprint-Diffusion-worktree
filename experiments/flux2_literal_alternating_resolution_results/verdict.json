@@ -1,0 +1,32 @@
+{
+  "experiment": "literal_interpolation_only_alternating_resolution",
+  "verdict": "fail_s3",
+  "scope": "literal prototype only; not all interleaved architectures",
+  "semantic": {
+    "exact_object_count": false,
+    "scene_repetition": true,
+    "continuous_horizon": false,
+    "credible_detail_improvement": false
+  },
+  "determinism": {
+    "bit_exact_repeat": true,
+    "final_h_hash": "a398ad02d7cf4ac5a0078a88afce09e61b57ac8ddcf755a71417da9f043dd647"
+  },
+  "execution": {
+    "ownership": ["G", "W", "G", "W"],
+    "global_model_calls": 2,
+    "local_model_calls": 50,
+    "global_shape": [1, 128, 45, 45],
+    "local_shape": [1, 128, 64, 64],
+    "destination_sized_model_calls": 0,
+    "noise_scaling_calls": 0,
+    "regional_rng_calls": 0,
+    "final_overlap_rms": 0.6462022597638177,
+    "coverage_min": 1.0,
+    "coverage_max": 1.0000001192092896,
+    "peak_allocated_bytes": 3031506944,
+    "peak_reserved_bytes": 3481272320,
+    "completed_region_residency_flat_within_each_w_interval": true,
+    "primary_wall_seconds": 51.740934500005096
+  }
+}
