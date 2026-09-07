@@ -2327,3 +2327,253 @@ falsify recurrent/interleaved multiresolution sampling generally.
   restriction, assembly, and the single local interval remain derived/fixed.
   Validation now names the failed relation for divisibility, bounds, F-in-H,
   overlap/stride, integer F-to-W enlargement, and planner coverage.
+
+## 2026-09-07 — Phase 41 persistent-H interleaving design audit (zero inference)
+
+Phase 41 performed source/artifact review only. No model was loaded and no
+diffusion inference or production change occurred. The frozen public terminal-
+refinement node remains the release architecture.
+
+### Constraints established by completed experiments
+
+- Fresh same-sigma W construction from clean G predictions fails because each
+  high/near-one-sigma region can instantiate a complete prompt-local scene.
+- A single persistent shared-noise H removes regional stochastic independence
+  but still fragments when G never changes H/W. The prior G-authoritative and
+  H-feedback arms produced identical H for exactly that causal reason.
+- Fixed terminal Blueprint prediction mixing supplies coarse authority but
+  shifts toward locking/softness rather than credible detail.
+- Candidate-3's `H <- H* + U(G* - D(H*))` hard correction can impose coarse
+  equality, but repeating it here would not test a new architecture.
+- Therefore the missing discriminator is not provenance, overlap, or another
+  scalar guide. It is whether a newly accepted bounded-global **state increment**
+  can enter persistent H before local evaluation, while accepted local H change
+  returns to the next bounded G without reconstructing either trajectory.
+
+### Coupling equations considered
+
+Let `R` be deterministic H-to-G area restriction, `T_r` the existing halo-aware
+G-to-footprint mapping plus F-to-W lift, `A` the normalized assembly of all
+mapped G footprint increments into H, and `L_r`/`Q_r` the H-crop-to-W lift and
+W-to-F restriction. All are plain latent interpolation/restriction operations.
+
+1. **Hard coarse consistency:** after local proposal `H^L`, accept
+   `H_next = H^L + U(G* - D(H^L))`. This is rejected for Phase 41 because it is
+   Candidate-3's hard D/U state projection under different names.
+2. **Prediction/velocity blend:** use
+   `v_W'=(1-lambda)v_W + lambda*T_r(v_G)`. This is rejected because `lambda`
+   is an unqualified coupling strength and the operation is the fixed sampler-
+   prediction guidance family already falsified, not state exchange.
+3. **Sequential delta exchange:** split every existing macro interval at one
+   scheduler-derived midpoint. The bounded G model owns the first subinterval;
+   its accepted state delta advances persistent H. Bounded W models own the
+   second subinterval; their assembled accepted H delta advances the next G.
+   This is selected because it has no blend strength, no hard consistency
+   correction, no fresh noise, and one unambiguous first-divergence point.
+
+### Selected state and sigma contract
+
+For macro interval `[sigma_i, sigma_next]`, derive `sigma_mid` by bisecting that
+interval in the scheduler's unshifted coordinate and applying the active CONST
+shift. Arithmetic sigma midpoint is not assumed correct.
+
+Initialization is single-source:
+
+```text
+epsilon_H = deterministic full-destination noise generated once
+H_0       = model_sampling.noise_scaling(sigma_0, epsilon_H, zero, max_denoise)
+G_0       = variance-normalized area restriction of epsilon_H, constructed at sigma_0
+```
+
+`H_i` and `G_i` are immutable accepted states at exactly `sigma_i`. H persists
+across every interval. G stays within the selected bounded grid independently
+of H size. The macro update is:
+
+```text
+x0_G_i  = model(G_i, sigma_i)
+G_mid   = Euler(G_i, x0_G_i, sigma_i -> sigma_mid)
+delta_G = G_mid - G_i
+
+H_mid   = H_i + A(delta_G)                       # explicit G -> H state transfer
+
+for each row-major region r:
+    W_mid_r  = L_r(crop(H_mid, F_r))             # view of one accepted H_mid
+    x0_W_r   = model(W_mid_r, sigma_mid)
+    W_next_r = Euler(W_mid_r, x0_W_r, sigma_mid -> sigma_next)
+    F_next_r = Q_r(W_next_r)
+
+H_next       = normalized_overlap_assemble(F_next_r)
+delta_H_local = H_next - H_mid
+G_next       = G_mid + R(delta_H_local)           # explicit H -> G delta transfer
+accept atomically (G_next, H_next, sigma_next)
+```
+
+The final interval uses a positive scheduler-derived `sigma_mid`; W reaches
+zero normally. Terminal output is accepted `H_next` at sigma zero. There is no
+terminal projection, extra model call, re-noising, or decode-dependent state.
+
+`A(delta_G)` is formed by mapping only bounded G source regions through the
+qualified halo-aware transfer and normalized footprint assembly. It need not
+materialize a separately upscaled G-sized destination anchor. The persistent H
+state itself is necessarily destination-sized, but no model evaluates H.
+
+### Where genuinely new information enters H
+
+The nonzero accepted global model displacement `delta_G` is mapped into
+`H_mid` **before** any W prediction. Consequently every local model consumes a
+crop of a persistent stochastic H trajectory already displaced by the current
+whole-scene model update. This differs from texture-only post-processing: the
+global vector field changes the actual local model input and therefore its
+subsequent nonlinear prediction. The assembled local displacement then changes
+`G_next`, so the next global model call observes accepted local evolution rather
+than an independent or freshly reconstructed coarse state.
+
+### Atomic lifecycle and boundedness
+
+- Publish neither half-step on cancellation/failure. Validate all mapped global
+  proposals before atomically accepting `(G_mid,H_mid,sigma_mid)`; retain that
+  checkpoint while accumulating local proposals. Accept
+  `(G_next,H_next,sigma_next)` only after every region is finite and coverage is
+  complete. Retry begins from the last accepted tuple with deterministic hashes.
+- A W crop is transient: obtain it from the single accepted H midpoint, lift,
+  evaluate once, update once, restrict, stream into the interval assembler, and
+  release. No W state survives the region barrier.
+- With `R_regions` footprints and four macro intervals, work is four bounded G
+  calls plus `4*R_regions` bounded W calls. For the qualified 49-region square
+  discriminator this is 4 G + 196 W calls—the same call count as the prior
+  persistent-H falsification and four times Terminal's 49 local calls.
+- Klein patch size 1 gives 2,025 G image tokens per call and 4,096 W tokens per
+  call: 8,100 global plus 802,816 local token presentations across four
+  intervals. Attention remains isolated per bounded call; no 16,384-token H
+  forward occurs for the 128-square destination.
+- Model/G/W GPU residency is bounded independently of tile count. Persistent H,
+  the atomic next-H accumulator, and overlap weights require O(H area) storage.
+  To keep peak GPU residency bounded, those accepted/assembly tensors should be
+  CPU-resident (preferably pinned) with only the active F/W transfer on device.
+  At `H=1x128x128x128` float32, one H is 8 MiB; two atomic H buffers plus
+  assembly/weights are roughly 16–32 MiB before allocator overhead. Host storage
+  grows with destination area; model working geometry does not.
+
+### Pre-authorized falsification gates
+
+No inference is authorized until a CPU/fake-adapter harness proves the equations,
+midpoint construction, exact sigma ownership, overlap normalization, rollback,
+and deterministic retry. A later single live discriminator, if separately
+authorized, must use the existing square S3 seed/prompt and fixed
+`G=45x45, H=128x128, F=32x32, stride=16x16, W=64x64` geometry. It must compare
+frozen Terminal, the rejected uncoupled persistent-H result, and only the
+selected delta-exchange arm.
+
+Pass requires all of the following:
+
+- bit-exact independent repeats for every accepted G/H hash;
+- interval-0 H crops and overlaps derive from one accepted H/noise allocation;
+- exact telemetry identity `H_mid-H_i == A(G_mid-G_i)` within declared dtype
+  tolerance, and `G_next-G_mid == R(H_next-H_mid)`; for float32 require
+  RMS error at most `1e-7` and maximum absolute error at most `1e-6`;
+- first divergence from the uncoupled persistent-H control occurs at `H_mid`
+  after the G delta transfer, not at initialization/noise/geometry;
+- four G and 196 W calls, zero H-sized calls, complete coverage, fixed `64x64`
+  W, and constant post-region GPU allocation;
+- S3 with exactly one car/tree/house, one continuous horizon, no repeated local
+  scene bands, and no cross-footprint structural disagreement;
+- visibly credible improvement over Terminal in object/ground structure, not
+  merely higher gradient energy, while overlap RMS is no greater than 110% of
+  the matching 49-region Terminal control (`0.190627` from control
+  `0.173297`);
+- every accepted G/H tensor is finite, each transfer-delta RMS is no larger than
+  the RMS of the state it advances, and accepted-state RMS is no more than 2x
+  the matching uncoupled persistent-H control at the same sigma.
+
+Fail and stop on any provenance/sigma mismatch, partial-state publication,
+nonfinite or explosively growing accepted state, duplicated prompt-complete
+regions, loss of S3, or absence of credible structural gain. A failure does not
+authorize midpoint, cadence, strength, transfer, or schedule sweeps.
+
+## 2026-09-07 — Phase 42 accepted-delta exchange is deterministic but fails the semantic/overlap gate
+
+The exact Phase-41 scheduler-midpoint sequential-delta design was implemented
+only in `experiments/flux2_phase42_accepted_delta_exchange.py` and run once plus
+one independent repeat. Production nodes and registrations were not touched.
+The fixed square run used shared seed `20260921`, `G=45x45`, persistent
+`H=128x128`, `F=32x32`, stride `16x16`, `W=64x64`, 49 regions, and the
+qualified four-interval CONST schedule. The fresh-W and uncoupled persistent-H
+controls were rerun at this 49-region geometry because their historical saved
+results used 25 regions.
+
+The causal contract passed. H/G initialization hashes match the uncoupled arm;
+there are zero regional noise streams; interval-0 divergence begins only at
+`A(delta_G)`; all W crops derive from one immutable H midpoint; one pair is
+committed per macro interval; and the independent final latent is bit-exact.
+Both transfer identities meet RMS `1e-7` / max `1e-6`. A-to-H increment ratios
+are `0.000447, 0.000873, 0.002446, 0.089227`; R-to-G ratios are
+`0.000252, 0.000481, 0.001300, 0.413649`. H state RMS remains at most `1.355382`
+times the matching uncoupled state, so failure is not hidden numerical transfer
+dominance.
+
+Execution remained bounded: four `45x45` G calls, 196 `64x64` W calls, zero
+H-sized calls, complete coverage, one live W, and exactly flat interval-barrier
+allocation. Peak CUDA allocated/reserved was 3.029/3.515 GB. The observed
+3.11 MB range among individual post-region allocation samples fails the literal
+zero-range gate, although it does not grow with completed region count.
+
+The primary semantic gate fails. The result retains one car/tree/house and the
+coarse S3 layout, but introduces pervasive patch/lattice-like structure across
+sky and ground rather than a credible clean detail improvement. Terminal
+overlap RMS is `0.5229029794`, above the fixed `0.190627` ceiling and Terminal's
+`0.1732971654`. This falsifies the selected parameter-free midpoint accepted-
+delta exchange under the declared configuration. Full evidence is in
+`experiments/PHASE42_ACCEPTED_DELTA_EXCHANGE_REPORT.md` and the machine-readable
+results directory.
+
+## 2026-09-07 — Z-Image-Turbo Terminal Refine portability is mechanically viable but unqualified
+
+A zero-inference audit of current native ComfyUI and the local Z-Image-Turbo
+checkpoint finds that the existing Terminal Refine algorithm can be expressed
+without a new coupling mechanism. Standard Z-Image uses 16-channel Flux-format
+latents at VAE downscale 8 and native `Lumina2/NextDiT`: patch 2, width 3840,
+30 layers/heads, two context/noise refiners, RoPE axes `[32,48,48]`, theta 256,
+time scale 1000, and sequence padding to a multiple of 32. Pixel axes therefore
+must be divisible by 16 and latent axes by 2.
+
+Z-Image-Turbo remains CONST flow, so terminal-x0 re-noising still uses
+`sigma*noise + (1-sigma)*anchor`, but it uses fixed-shift
+`ModelSamplingDiscreteFlow` with multiplier 1 and shift 3, not Klein's
+`ModelSamplingFlux` schedule. The current official ComfyUI Turbo recipe is eight
+steps, `res_multistep`, simple scheduler, CFG 1. Its last nonzero simple sigma is
+`0.3000000119`; Klein's schedule and 0.25 qualification do not transfer.
+
+Ordinary native-origin local W calls are mechanically supported: NextDiT
+regenerates zero-origin Y/X RoPE for each canvas. Their semantic validity as
+mapped local refiners is not established. Destination-shifted/scaled
+`rope_options` would be a new positional intervention and is excluded from the
+baseline. Reference latents/contexts, SigLIP/Omni inputs, controls, masks,
+spatial conditioning, hooks, patches, wrappers, and CFG branches must likewise
+remain excluded.
+
+Planner order, halo-aware mapping equations, nearest lift, area restriction,
+normalized streaming assembly, deterministic seed policy, and state ownership
+are reusable as mathematics. Current code is not reusable unchanged because it
+hard-codes 128 channels, Klein geometry/profile limits, and Klein schedule/model
+validation. The smallest adapter retains only `validate_prepared` and
+`predict_native`, specialized to native latent-space Z-Image-Turbo. Full audit,
+fail-closed gates, and one fixed 1024-G/W to 2048-H discriminator are in
+`experiments/ZIMAGE_TERMINAL_REFINE_PORT_AUDIT.md`.
+
+## 2026-09-07 — Phase 44 direct Z-Image Terminal Refine preserves S3 but adds no credible detail
+
+The exact fixed native Z-Image-Turbo discriminator completed twice. Each run
+used eight native `128x128` G calls and 25 native `128x128` W calls (all
+`64x64` image-token grids), zero H-sized forwards, absent `rope_options`, the
+audited shift-3 simple schedule, and exactly `0.3000000119 -> 0` locally.
+Coverage is complete (`0.99999988..1.00000012`), pre-blend overlap RMS is
+`0.13594482`, the repeat is bit-exact, and all 25 region-barrier allocations
+are identical. Peak CUDA allocated/reserved is 6.735/7.202 GB.
+
+The decoded C arm retains exactly one car/tree/house, left/center/right layout,
+one horizon, and coherent perspective, without regional scene repetition or
+cross-footprint breaks. It does not improve credible car, tree, house, or ground
+structure over plain mapped B. Gradient RMS falls from `0.07187832` to
+`0.06470858` (ratio `0.90025174`), so the local call is slightly smoothing,
+not advancing the detail frontier. Full evidence is in
+`experiments/ZIMAGE_TERMINAL_REFINE_PHASE44_REPORT.md`.

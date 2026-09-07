@@ -824,3 +824,45 @@ H-sized forwards, and flat region barriers. Full regression status: 67/67
 standard-library tests pass, including pixel conversion, five auto profiles,
 public-wrapper resolution/telemetry, relation-specific failures, coverage
 invariant, and cancellation/retry.
+
+Phase 41 architecture design is complete with zero diffusion inference and no
+production changes. Completed experiments rule out fresh-W reconstruction,
+uncoupled persistent H, fixed prediction guidance, and repeating Candidate-3
+hard projection as the next discriminator. One minimal design is selected but
+not authorized to run: persistent-H scheduler-midpoint operator splitting with
+accepted G-delta transfer into H before local prediction and accepted local
+H-delta transfer into the next G. State/sigma ownership, bounded crop lifecycle,
+atomic rollback, terminal behavior, token/call cost, residency, and exact
+pass/fail gates are recorded in `FINDINGS.md`. Current release status remains
+`Blueprint Diffusion (Terminal Refine)`; Phase 41 has no implementation or live
+validation status.
+
+Phase 42 is complete and rejected. The exact Phase-41 accepted-delta exchange
+ran in an experiment-only harness with the fixed 49-region S3 configuration and
+a bit-exact independent repeat. Provenance, A/R identities, atomic commits,
+bounded `45x45` G / `64x64` W execution, complete coverage, four G plus 196 W
+calls, and zero H-sized calls passed. The semantic gate did not: terminal
+overlap RMS is `0.522903` versus the `0.190627` ceiling, and the decoded image
+contains pervasive patch/lattice-like disagreement rather than credible clean
+detail improvement. The branch stops without tuning or production changes.
+
+The Z-Image Terminal Refine portability audit is complete with zero diffusion
+inference and zero production changes. Native Z-Image-Turbo's 16-channel,
+8x-VAE, patch-2 NextDiT and fixed shift-3 CONST contract can express the same
+terminal-denoised one-local-refinement algorithm. The existing planner and
+transfer/assembly policies are reusable, but current implementations hard-code
+Klein's 128 channels, profiles, schedule, and validation and therefore cannot be
+used unchanged. Native-origin isolated W calls are mechanically valid but not
+semantically qualified. One fixed experiment-first 1024px G/W to 2048px H
+discriminator and strict fail-closed gates are documented; no Z-Image adapter or
+node has been implemented. Klein Terminal Refine remains frozen.
+
+Phase 44 is complete and rejected. The experiment-only native Z-Image-Turbo
+implementation ran the fixed 1024px G/W to 2048px H discriminator twice. All
+33 model calls per run stayed at `128x128` latent / `64x64` tokens, coverage
+and overlap assembly passed, completed-region residency was exactly flat, and
+the independent repeat was bit-exact. C retained the complete S3 composition
+but supplied no credible structural/detail improvement over B and reduced
+decoded gradient RMS by about 10%. The direct port stops without tuning. No
+production node, public registration, geometry table, Candidate-3, frozen
+Terminal Resampling, or specialized executor was changed.

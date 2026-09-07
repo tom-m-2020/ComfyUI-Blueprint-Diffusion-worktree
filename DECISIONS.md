@@ -1166,3 +1166,72 @@ table; do not infer arbitrary aspect-ratio geometry. Keep interpolation,
 restriction, handoff, G schedule, local step count, region order, and assembly
 fixed. The node is ready for ordinary user testing only inside this documented
 Klein 4B contract.
+
+## 2026-09-07 — Phase 41 selects sequential accepted-delta exchange for design only
+
+Keep `Blueprint Diffusion (Terminal Refine)`, Terminal Resampling, Candidate-3,
+and specialized execution frozen. Make no production change. Do not resume
+fresh-W reconstruction, fixed prediction guidance, or Candidate-3 hard D/U
+projection.
+
+Select exactly one possible future discriminator: scheduler-midpoint operator
+splitting with persistent H. The bounded G model owns `sigma_i -> sigma_mid`;
+its accepted delta is mapped additively into H before any local call. Bounded W
+models then own `sigma_mid -> sigma_next`; their normalized assembled accepted H
+delta is restricted additively into the next G. Accept G/H/sigma tuples only at
+the two explicit atomic barriers. This is the minimum design in which current
+global model information changes the local model input and accepted local change
+alters the next global model input without re-noising or a scalar coupling
+strength.
+
+Phase 41 authorizes documentation only. Do not run diffusion inference until a
+later task explicitly authorizes the one fixed square discriminator and its
+predeclared gates. If that run fails S3 or credible-detail improvement, stop the
+branch rather than tuning midpoints, cadence, transfer strength, or schedules.
+
+## 2026-09-07 — Reject and stop Phase-41 accepted-delta exchange
+
+Reject the fixed scheduler-midpoint sequential accepted-delta mechanism. Its
+implementation satisfies shared provenance, deterministic retry, transfer
+identity, bounded model geometry, atomic pair acceptance, and non-dominant
+increment requirements, but its `0.522903` terminal overlap RMS exceeds the
+`0.190627` gate and the decoded result contains pervasive patch/lattice-like
+cross-region structure. It does not improve the credible composition/detail
+frontier over Terminal Refine.
+
+Apply the requested stop rule. Do not test another midpoint, cadence,
+interleaving start/stop, transfer scaling, A/R operator, sigma, or local-step
+schedule as a continuation of this architecture. Keep `Blueprint Diffusion
+(Terminal Refine)`, frozen Terminal Resampling, Candidate-3, and specialized
+execution unchanged. Any further architecture requires a separate design task.
+
+## 2026-09-07 — Permit only an experiment-first native Z-Image-Turbo Terminal Refine port
+
+Do not generalize or modify the frozen Klein `Blueprint Diffusion (Terminal
+Refine)` node. A Z-Image port must be a later sibling/model adapter and must
+preserve the same terminal-denoised, one-late-refinement algorithm.
+
+Narrow the first target to native latent-space Z-Image-Turbo with shift 3,
+8-step simple schedule, CFG 1, no reference/control/edit inputs, and ordinary
+native-origin RoPE for every bounded call. Do not reuse Klein sigmas or silently
+add destination-registered RoPE. Reuse geometry/transfer/assembly semantics but
+do not prematurely refactor production's hard-coded 128-channel utilities.
+
+Authorize no inference in this audit. A later task may implement exactly the
+single fixed experiment described in
+`experiments/ZIMAGE_TERMINAL_REFINE_PORT_AUDIT.md`. Failure of that discriminator
+closes the direct port; it does not authorize a RoPE, sigma, CFG, geometry, or
+sampler sweep.
+
+## 2026-09-07 — Reject and stop the direct native-coordinate Z-Image Terminal Refine port
+
+Reject the exact Phase-44 port. It satisfies fixed sampling, halo transfer,
+coverage, determinism, normalized assembly, zero-origin positional, bounded
+model-call, flat region-residency, and S3 composition requirements, but fails
+the mandatory credible-detail improvement over plain Blueprint mapping. Keep
+the Klein `Blueprint Diffusion (Terminal Refine)` frozen and make no production
+or registration change.
+
+Apply the declared stop rule: do not tune sigma, overlap, footprint, W size,
+CFG, sampler, positional coordinates, guide strength, or local-step count as a
+continuation. Those interventions require a separate architecture design task.
