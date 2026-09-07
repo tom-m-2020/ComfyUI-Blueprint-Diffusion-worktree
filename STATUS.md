@@ -866,3 +866,21 @@ but supplied no credible structural/detail improvement over B and reduced
 decoded gradient RMS by about 10%. The direct port stops without tuning. No
 production node, public registration, geometry table, Candidate-3, frozen
 Terminal Resampling, or specialized executor was changed.
+
+Phase 45 audit is complete with zero diffusion inference and no production
+changes. Plain RES4LYF Clown `epsilon` guidance is rejected as algebraically
+identical to the prior persistent coarse-guidance mechanism for CONST/flow
+models. The default projection/channelwise variant is genuinely different at
+the sampler derivative boundary and is classified narrowly as C. One fixed
+Klein discriminator is designed but not implemented or authorized to run.
+Z-Image end-to-end RES4LYF support remains unqualified; the proposed experiment
+would reproduce only the audited model-neutral tensor operator.
+
+Phase 46 is complete and rejected. The experiment-only
+`epsilon_projection_cw` arm ran twice on G45/H128/F32/stride16/W64. It is bit-
+exact, matches the qualified 49-region control through the first raw model
+prediction, performs 196 bounded W calls with zero H-sized calls, completes
+normalized coverage, and has flat region-barrier residency. S3 remains intact,
+but no credible structural/detail improvement is visible; the worst projection
+increment is also dominant relative to both raw derivative and W state. The
+Clown Guide branch stops without tuning or production changes.

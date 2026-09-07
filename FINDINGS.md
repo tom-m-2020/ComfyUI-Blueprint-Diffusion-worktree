@@ -2577,3 +2577,40 @@ structure over plain mapped B. Gradient RMS falls from `0.07187832` to
 `0.06470858` (ratio `0.90025174`), so the local call is slightly smoothing,
 not advancing the detail frontier. Full evidence is in
 `experiments/ZIMAGE_TERMINAL_REFINE_PHASE44_REPORT.md`.
+
+## 2026-09-08 — Clown Guide splits into an equivalent mode and one distinct projection mode
+
+RES4LYF commit `0d753fada0cd5ae1dd69372caee9c3e7012a5dcb` applies standard
+Clown Guide after each model evaluation, to the sampler derivative before RK
+acceptance. The model does not see the guide. For decreasing-sigma linear/flow
+sampling, plain `epsilon` guidance is algebraically identical to the rejected
+Blueprint x0 interpolation: its guide derivative is `(x-y)/sigma`. This fact
+holds for both Klein CONST and Z-Image-Turbo CONST.
+
+The current Clown Guide UI defaults to `epsilon_projection_cw`, which also
+uses guide/data-relative per-channel weights and a nonlinear collinear/
+orthogonal derivative projection. That operation is not reducible to one scalar
+x0 mix and can preserve derivative components suppressed by direct x0 pulling.
+It remains sampler-only and untrained: it supplies no global context to the
+local model and offers no guarantee that preserved components are structure.
+Classify only this narrow mode as C, worth one Klein discriminator; classify
+plain epsilon as A and do not rerun it. Exact trace and discriminator design:
+`docs/notes/PHASE45_CLOWN_GUIDE_AUDIT.md`.
+
+## 2026-09-08 — Phase 46 projection guidance preserves S3 but does not improve detail
+
+The fixed `epsilon_projection_cw` discriminator completed two bit-exact runs on
+the requested 49-region Klein geometry. Regional noise, initial W, and first
+raw model predictions match the exact 49-region qualified control; the first
+divergence is strictly the post-model derivative projection. Each run performs
+196 bounded `64x64` W calls and zero destination-sized calls. Coverage is
+`1.0..1.0000001192`, overlap RMS is `0.07051743`, CUDA allocated/reserved peaks
+at 3.039/3.561 GB, and the region-barrier allocation range is zero.
+
+The result retains the one-car/one-tree/one-house S3 composition without
+regional miniature scenes, but supplies no credible structural gain over
+Terminal Refine or scalar persistent guidance. The projection is not safely
+non-dominant: its mean/max increment is `0.774627/1.417001` times raw-
+derivative RMS and `0.935686/1.612677` times W-state RMS. Channel adaptation
+turns base weight 0.25 into effective weights `0.185661..0.335525`. Evidence:
+`experiments/PHASE46_EPSILON_PROJECTION_CW_REPORT.md`.

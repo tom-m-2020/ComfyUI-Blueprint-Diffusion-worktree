@@ -1235,3 +1235,28 @@ or registration change.
 Apply the declared stop rule: do not tune sigma, overlap, footprint, W size,
 CFG, sampler, positional coordinates, guide strength, or local-step count as a
 continuation. Those interventions require a separate architecture design task.
+
+## 2026-09-08 — Permit one projection/channelwise Clown Guide discriminator, not plain guidance
+
+Do not reopen ordinary Clown `epsilon` guidance: under Klein/Z-Image CONST it
+is mechanically equivalent to the already-rejected persistent coarse x0 mix.
+Treat `epsilon_projection_cw` as a narrowly distinct sampler-level hypothesis
+because its channel-adaptive derivative projection is not a scalar x0 pull.
+
+Authorize design only, not implementation or inference. A later task may run
+exactly one Klein Phase-29/38 arm using the existing initial W, four-interval
+schedule, mapped guide, full mask, and constant base weight 0.25, changing only
+the post-model operator. Do not import RES4LYF, add model conditioning, or sweep
+weights/schedules. Failure closes this Clown Guide branch.
+
+## 2026-09-08 — Reject `epsilon_projection_cw` and close Clown Guide branch
+
+Reject the only authorized projection/channelwise discriminator. It preserves
+coarse S3 composition and satisfies causal isolation, determinism, bounded
+execution, coverage, and residency checks, but fails the mandatory credible-
+detail gate and exceeds the non-dominant increment criterion. The nonlinear
+projection does not advance the qualified composition/detail frontier.
+
+Apply the Phase-46 stop rule. Do not test another weight, projection mode,
+channelwise toggle, cutoff, sigma schedule, sampler, or geometry as a
+continuation. Keep all production nodes and registrations unchanged.
