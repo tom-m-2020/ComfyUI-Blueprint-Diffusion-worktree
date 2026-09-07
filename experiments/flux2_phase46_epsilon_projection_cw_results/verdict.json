@@ -1,0 +1,44 @@
+{
+  "phase": 46,
+  "arm": "epsilon_projection_cw",
+  "verdict": "reject_stop_branch",
+  "semantic": {
+    "s3_composition": true,
+    "miniature_scene_repetition": false,
+    "credible_detail_over_terminal": false,
+    "credible_improvement_over_scalar_guidance": false,
+    "obvious_projection_artifact": false
+  },
+  "causal_identity": {
+    "initial_w_noise_first_raw_prediction_vs_exact_49_region_control": true,
+    "first_divergence": "post_model_derivative_projection"
+  },
+  "numerics": {
+    "finite": true,
+    "non_dominant": false,
+    "mean_increment_over_raw_derivative_rms": 0.7746269788609506,
+    "max_increment_over_raw_derivative_rms": 1.417001488662706,
+    "mean_increment_over_w_state_rms": 0.935685851227375,
+    "max_increment_over_w_state_rms": 1.6126765593921872,
+    "effective_weight_min": 0.185660719871521,
+    "effective_weight_max": 0.33552512526512146
+  },
+  "execution": {
+    "regions": 49,
+    "local_model_calls": 196,
+    "model_call_shape": [1, 128, 64, 64],
+    "destination_sized_model_calls": 0,
+    "coverage_min": 1.0,
+    "coverage_max": 1.0000001192092896,
+    "overlap_rms": 0.07051743461157309,
+    "barrier_allocation_range_bytes": 0,
+    "peak_allocated_bytes": 3039133184,
+    "peak_reserved_bytes": 3560964096,
+    "primary_wall_seconds": 225.9777563000098
+  },
+  "determinism": {
+    "bit_exact_repeat": true,
+    "final_hash": "deae07b17ff2b88433dda0b6d684f56a2dbd4d2718b894df8c486cc3558f1bb0"
+  },
+  "control_limitation": "Four-interval unguided and scalar-guide persisted visual controls are historical 25-region artifacts; exact 49-region versions were unavailable and not rerun."
+}
