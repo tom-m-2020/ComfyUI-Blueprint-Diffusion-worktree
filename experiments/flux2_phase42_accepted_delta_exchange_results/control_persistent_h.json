@@ -1,0 +1,80 @@
+{
+  "kind": "persistent_h",
+  "initial_h_hash": "adfaa8f757996fda60156f1fc50cf2e96639b02e8e6e481f00188a84202d6f3f",
+  "initial_g_hash": "a8f0e509565df726c8989cb62ee543c4f0695681b8c8bcc796c3c514ea797423",
+  "final_h_hash": "ca4908dc8821c8fa3026f08ed4f28b6a282ed10405aedb905628462467321812",
+  "intervals": [
+    {
+      "ordinal": 0,
+      "input_h_hash": "adfaa8f757996fda60156f1fc50cf2e96639b02e8e6e481f00188a84202d6f3f",
+      "input_g_hash": "a8f0e509565df726c8989cb62ee543c4f0695681b8c8bcc796c3c514ea797423",
+      "h_hash": "42495bda791514124e1f6807b1aa8bda40f8899a42bdb18767fed7560a88b165",
+      "h_rms": 0.9991647601127625,
+      "g_hash": "d75ce2d5b9b9d31ba352cb6c3e6d2b2cfe5344cdde9be40c61e5598aff686f17",
+      "g_rms": 0.9978785514831543,
+      "coverage": [
+        0.9999998807907104,
+        1.0000001192092896
+      ],
+      "overlap_rms": 0.0009466077689817657
+    },
+    {
+      "ordinal": 1,
+      "input_h_hash": "42495bda791514124e1f6807b1aa8bda40f8899a42bdb18767fed7560a88b165",
+      "input_g_hash": "d75ce2d5b9b9d31ba352cb6c3e6d2b2cfe5344cdde9be40c61e5598aff686f17",
+      "h_hash": "e778451d4463969d38f5148b543cad33ce3237691efc82e7d6716249c50a0301",
+      "h_rms": 0.99810791015625,
+      "g_hash": "4b73961e29ed8c565c514ce7d095b74da34d3c03fd330256c3bbb790bb1511b6",
+      "g_rms": 0.9967374205589294,
+      "coverage": [
+        0.9999998807907104,
+        1.0000001192092896
+      ],
+      "overlap_rms": 0.0018464253175759912
+    },
+    {
+      "ordinal": 2,
+      "input_h_hash": "e778451d4463969d38f5148b543cad33ce3237691efc82e7d6716249c50a0301",
+      "input_g_hash": "4b73961e29ed8c565c514ce7d095b74da34d3c03fd330256c3bbb790bb1511b6",
+      "h_hash": "18870b5113afb372b860b204007aff513e730df15337686367c8a46c1067514a",
+      "h_rms": 0.9949995875358582,
+      "g_hash": "96a3e3fbd5eff7e003dcd7ce98a2181598bdccc77f62c3468075af8be5845990",
+      "g_rms": 0.9934343099594116,
+      "coverage": [
+        0.9999998807907104,
+        1.0000001192092896
+      ],
+      "overlap_rms": 0.005164182412018305
+    },
+    {
+      "ordinal": 3,
+      "input_h_hash": "18870b5113afb372b860b204007aff513e730df15337686367c8a46c1067514a",
+      "input_g_hash": "96a3e3fbd5eff7e003dcd7ce98a2181598bdccc77f62c3468075af8be5845990",
+      "h_hash": "ca4908dc8821c8fa3026f08ed4f28b6a282ed10405aedb905628462467321812",
+      "h_rms": 0.6979023814201355,
+      "g_hash": "86b3fbda157885a144514799c7cc53d309e9419c14df17e44836ec6055603ae4",
+      "g_rms": 0.8999655842781067,
+      "coverage": [
+        0.9999998807907104,
+        1.0000001192092896
+      ],
+      "overlap_rms": 0.9300033373445957
+    }
+  ],
+  "global_model_calls": 4,
+  "local_model_calls": 196,
+  "destination_model_calls": 0,
+  "overlap_rms": 0.9300033373445957,
+  "gradient_rms": 0.6736323196528781,
+  "coverage_complete": true,
+  "peak_allocated_bytes": 3024417280,
+  "peak_reserved_bytes": 3512729600,
+  "barrier_allocated_bytes": [
+    2506324992,
+    2506324992,
+    2506324992,
+    2506324992
+  ],
+  "barrier_range_bytes": 0,
+  "wall_seconds": 198.7416847999848
+}
