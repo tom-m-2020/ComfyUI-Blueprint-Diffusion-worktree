@@ -1,0 +1,419 @@
+{
+  "experiment": "blueprint_diffusion_user_integration",
+  "public_node_key": "BlueprintDiffusion",
+  "public_display_name": "Blueprint Diffusion (Terminal Refine)",
+  "prototype_key_preserved": "BlueprintConfigurablePrototype",
+  "pixel_scale": 16,
+  "cases": [
+    {
+      "name": "FROZEN_ORACLE_AUTO",
+      "seed": 20260911,
+      "destination_pixels": [
+        2048,
+        4096
+      ],
+      "geometry": {
+        "G": [
+          32,
+          64
+        ],
+        "H": [
+          128,
+          256
+        ],
+        "F": [
+          32,
+          32
+        ],
+        "stride": [
+          24,
+          24
+        ],
+        "overlap": [
+          8,
+          8
+        ],
+        "W": [
+          64,
+          64
+        ],
+        "region_count": 55
+      },
+      "latent_hash": "f0fc754078f56372043e29af20fc85449fb7025e00ce764bf123344d71aca3bd",
+      "decoded_rgb_hash": "1397671637dba1552aac32c871efa03c4100cadeb5d869069e8876cbee0b4db8",
+      "repeat": null,
+      "oracle": {
+        "bit_exact": true,
+        "rms": 0.0,
+        "max_abs": 0.0
+      },
+      "coverage": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "overlap_rms": null,
+      "model_calls": {
+        "G": 4,
+        "W": 55,
+        "H": 0
+      },
+      "memory": {
+        "peak_allocated_bytes": 1503199744,
+        "peak_reserved_bytes": 3430940672,
+        "region_barrier_range_bytes": 0,
+        "region_barrier_allocated_bytes": [
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104,
+          975855104
+        ]
+      },
+      "wall_seconds": 62.840644699987024
+    },
+    {
+      "name": "PORTRAIT_AUTO",
+      "seed": 20260931,
+      "destination_pixels": [
+        3072,
+        2048
+      ],
+      "geometry": {
+        "G": [
+          48,
+          32
+        ],
+        "H": [
+          192,
+          128
+        ],
+        "F": [
+          32,
+          32
+        ],
+        "stride": [
+          24,
+          24
+        ],
+        "overlap": [
+          8,
+          8
+        ],
+        "W": [
+          64,
+          64
+        ],
+        "region_count": 40
+      },
+      "latent_hash": "50b0018732836797bea8f660af231d1f56d2ab8cba0c987fdb1d3fef4c5c400c",
+      "decoded_rgb_hash": "4c8d4a15bd0890a00554a9cd5a1f2c039b38e61153987e1499ce622925675e0d",
+      "repeat": {
+        "bit_exact": true,
+        "rms": 0.0,
+        "max_abs": 0.0
+      },
+      "oracle": null,
+      "coverage": [
+        1.0,
+        1.0000001192092896
+      ],
+      "overlap_rms": 0.18103647439202616,
+      "model_calls": {
+        "G": 4,
+        "W": 40,
+        "H": 0
+      },
+      "memory": {
+        "peak_allocated_bytes": 3286629888,
+        "peak_reserved_bytes": 3741319168,
+        "region_barrier_range_bytes": 0,
+        "region_barrier_allocated_bytes": [
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616
+        ]
+      },
+      "wall_seconds": 43.93242769999779
+    },
+    {
+      "name": "WIDE_AUTO",
+      "seed": 20260932,
+      "destination_pixels": [
+        2048,
+        3072
+      ],
+      "geometry": {
+        "G": [
+          32,
+          48
+        ],
+        "H": [
+          128,
+          192
+        ],
+        "F": [
+          32,
+          32
+        ],
+        "stride": [
+          24,
+          24
+        ],
+        "overlap": [
+          8,
+          8
+        ],
+        "W": [
+          64,
+          64
+        ],
+        "region_count": 40
+      },
+      "latent_hash": "446f12fe16e70329983f1ff5c6d00be0b9ff6ede2e1edcdfc7adb336091c9eb1",
+      "decoded_rgb_hash": "abe71d5e7d088a8acf4c54a68d3e7cff76847d79c7d7214f8959297a1edf795a",
+      "repeat": {
+        "bit_exact": true,
+        "rms": 0.0,
+        "max_abs": 0.0
+      },
+      "oracle": null,
+      "coverage": [
+        1.0,
+        1.0000001192092896
+      ],
+      "overlap_rms": 0.16194013979566263,
+      "model_calls": {
+        "G": 4,
+        "W": 40,
+        "H": 0
+      },
+      "memory": {
+        "peak_allocated_bytes": 3286629888,
+        "peak_reserved_bytes": 3741319168,
+        "region_barrier_range_bytes": 0,
+        "region_barrier_allocated_bytes": [
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616,
+          2761775616
+        ]
+      },
+      "wall_seconds": 42.35228210000787
+    }
+  ],
+  "persisted_controls": {
+    "SQUARE_2048": {
+      "hash": "09ee4f8be0f88bb577a0a142ea9c5a298845019be552b09b380fd57c3acb75b4",
+      "geometry": {
+        "G": [
+          45,
+          45
+        ],
+        "H": [
+          128,
+          128
+        ],
+        "F": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "overlap": [
+          16,
+          16
+        ],
+        "W": [
+          64,
+          64
+        ],
+        "region_count": 49,
+        "region_order": "row_major_end_aligned"
+      },
+      "integrity": "prior live qualification fingerprint revalidated"
+    },
+    "SQUARE_4096": {
+      "hash": "ade54818b68d0092a640e358b66e3738935c6548b39500bd8e29bb9bb58934f4",
+      "geometry": {
+        "G": [
+          48,
+          48
+        ],
+        "H": [
+          256,
+          256
+        ],
+        "F": [
+          32,
+          32
+        ],
+        "stride": [
+          24,
+          24
+        ],
+        "overlap": [
+          8,
+          8
+        ],
+        "W": [
+          64,
+          64
+        ],
+        "region_count": 121,
+        "region_order": "row_major_end_aligned"
+      },
+      "integrity": "prior live qualification fingerprint revalidated"
+    }
+  },
+  "integrity": {
+    "frozen_oracle_bit_exact": true,
+    "portrait_wide_repeat_bit_exact": true,
+    "all_coverage_complete": true,
+    "all_H_calls_zero": true,
+    "all_region_barriers_flat": true,
+    "G_W_bounded": true
+  },
+  "semantic_review": {
+    "PORTRAIT_AUTO": {
+      "grade": "S3",
+      "object_count": "one car, one dominant tree, one house",
+      "horizon": "one continuous shared field/horizon",
+      "cross_footprint_structure": "coherent; no miniature-scene repetition",
+      "qualification": "pass"
+    },
+    "WIDE_AUTO": {
+      "grade": "S3",
+      "object_count": "one car, one dominant tree, one house",
+      "horizon": "one continuous shared field/horizon",
+      "cross_footprint_structure": "coherent; no miniature-scene repetition",
+      "qualification": "pass"
+    }
+  },
+  "decision": "ACCEPT \u2014 USER-FACING TERMINAL-REFINEMENT INTEGRATION QUALIFIED",
+  "ordinary_user_testing": "READY within the documented Klein 4B, one-step, auto-profile/manual-envelope contract"
+}

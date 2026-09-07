@@ -1149,3 +1149,20 @@ overlap disagreement and approximately proportional model work. Keep
 stop rule: do not follow this result with further local sigma/depth sweeps or
 resume high-sigma, interleaved, persistent-H, guide, ControlNet, or noisy-handoff
 work in this branch.
+
+## 2026-09-07 — Publish a compatible pixel-based terminal-refinement wrapper
+
+Use `Blueprint Diffusion (Terminal Refine)` as the recommended public name and
+`BlueprintDiffusion` as its registration key. Keep
+`BlueprintConfigurablePrototype` unchanged because its class key and inputs may
+already be serialized in workflows. The public wrapper converts strict
+16-divisible pixel inputs into the same qualified latent-grid procedure; it does
+not fork sampling behavior.
+
+Derive H from the destination latent and derive stride as `footprint-overlap`.
+Expose auto/manual mode, G pixels, footprint pixels, overlap pixels, W pixels,
+refinement sigma, and seed. Auto must remain an explicit live-qualified profile
+table; do not infer arbitrary aspect-ratio geometry. Keep interpolation,
+restriction, handoff, G schedule, local step count, region order, and assembly
+fixed. The node is ready for ordinary user testing only inside this documented
+Klein 4B contract.

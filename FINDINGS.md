@@ -2300,3 +2300,30 @@ falsify recurrent/interleaved multiresolution sampling generally.
   `0.173297` to `0.184967/0.189986`. Visual review finds denser repeated fine
   edging rather than credible improvement to car contour/wheels, foliage
   organization, house geometry, or ground structure.
+
+## 2026-09-07 — Pixel-based terminal-refinement UI qualifies for ordinary testing
+
+- Current ComfyUI `Flux2` declares a 16-pixel spatial latent scale. The public
+  geometry boundary can therefore use pixels while converting strictly to
+  latent cells; nonmultiples of 16 must fail rather than round.
+- Workflow compatibility is keyed by `NODE_CLASS_MAPPINGS`, so the existing
+  `BlueprintConfigurablePrototype` key, display name, inputs, and behavior remain
+  unchanged. `BlueprintDiffusion` is a new UI wrapper over the same procedure,
+  displayed as `Blueprint Diffusion (Terminal Refine)` to identify the active
+  architecture without claiming future sibling strategies.
+- Auto geometry is a deterministic five-profile allowlist, not a heuristic. It
+  covers the frozen `4096x2048`, qualified `2048x2048` and `4096x4096`, and newly
+  qualified `2048x3072` portrait and `3072x2048` wide destinations. Other auto
+  destinations fail closed and may use the validated manual pixel contract.
+- The public auto wrapper reproduces the frozen Phase-27 oracle bit-exactly.
+  Portrait and wide runs independently repeat bit-exactly, retain S3 with one
+  car/tree/house and a continuous horizon, and show no miniature-scene repetition.
+- Portrait and wide each use four bounded G calls, 40 `64x64` W calls, zero
+  H-sized calls, complete coverage, and zero-byte completed-region allocation
+  range. Both peak at 3,286,629,888 allocated / 3,741,319,168 reserved bytes;
+  destination aspect ratio does not change bounded model residency.
+- Manual inputs expose G size, F size, overlap, and W size in pixels. H comes
+  from the connected latent; stride, region count/order, coverage, transfer,
+  restriction, assembly, and the single local interval remain derived/fixed.
+  Validation now names the failed relation for divisibility, bounds, F-in-H,
+  overlap/stride, integer F-to-W enlargement, and planner coverage.
