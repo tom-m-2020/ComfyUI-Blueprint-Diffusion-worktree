@@ -96,6 +96,10 @@ Never modify:
 
 A junction or symlink into a read-only repository remains read-only.
 
+## Access not allowed
+
+- `C:/Users/Tom-M/Downloads`
+
 ## Previous-project knowledge
 
 `ComfyUI-SpotEdit`, `ComfyUI-Local-Edit`, and `ComfyUI-Nunchaku-Klein`

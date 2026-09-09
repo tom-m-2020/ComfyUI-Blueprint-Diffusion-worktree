@@ -1,0 +1,164 @@
+{
+  "experiment": "Fixed-policy post-decode compositing robustness",
+  "policy": {
+    "source_footprint": [
+      256,
+      767
+    ],
+    "transition_width_pixels_per_boundary": 24,
+    "transition": [
+      [
+        256,
+        279
+      ],
+      [
+        744,
+        767
+      ]
+    ],
+    "exact_source_interior": [
+      280,
+      743
+    ],
+    "falloff": "unchanged raised cosine"
+  },
+  "cases": {
+    "rigid_bridge": {
+      "kind": "rigid geometry crossing both boundaries",
+      "source": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_late_source_restoration_results\\PADDED_RESIZED.png",
+      "generated": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_late_source_restoration_results\\A_frozen_D_reference_FINAL.png",
+      "epsilon_screen": "pass: one bridge, compatible deck/cable scale, no independent bridge",
+      "arms": {
+        "A_GENERATED": {
+          "source_interior_mae": 0.03106295207558598,
+          "transition_strip_mae_vs_source": 0.058942089205473856,
+          "source_interior_exact_pixel_fraction": 1.683728448275862e-05,
+          "source_footprint_exact_pixel_fraction": 1.9073486328125e-05,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.1125532521664348,
+          "left_first_derivative_discontinuity_rms": 0.10814583558534936,
+          "right_seam_gradient_rms": 0.05537308437339567,
+          "right_first_derivative_discontinuity_rms": 0.06516981263626988
+        },
+        "B_HARD": {
+          "source_interior_mae": 0.0,
+          "transition_strip_mae_vs_source": 0.0,
+          "source_interior_exact_pixel_fraction": 1.0,
+          "source_footprint_exact_pixel_fraction": 1.0,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.12336517443336989,
+          "left_first_derivative_discontinuity_rms": 0.1348814022728774,
+          "right_seam_gradient_rms": 0.08616058933723937,
+          "right_first_derivative_discontinuity_rms": 0.10365256642797109
+        },
+        "C_INSET_24PX": {
+          "source_interior_mae": 0.0,
+          "transition_strip_mae_vs_source": 0.035431134259259256,
+          "source_interior_exact_pixel_fraction": 1.0,
+          "source_footprint_exact_pixel_fraction": 0.9192237854003906,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.1125532521664348,
+          "left_first_derivative_discontinuity_rms": 0.10814583558534936,
+          "right_seam_gradient_rms": 0.05537308437339567,
+          "right_first_derivative_discontinuity_rms": 0.06516981263626988
+        }
+      }
+    },
+    "organic_tree": {
+      "kind": "organic tree contour crossing right boundary",
+      "source": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_composite_robustness_results\\organic_contour_SOURCE.png",
+      "generated": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_composite_robustness_results\\organic_contour_A_GENERATED.png",
+      "epsilon_screen": "pass: one continuous tree and one intact woman; no duplicate tree/person",
+      "arms": {
+        "A_GENERATED": {
+          "source_interior_mae": 0.042073782301174784,
+          "transition_strip_mae_vs_source": 0.06204060074550653,
+          "source_interior_exact_pixel_fraction": 0.00016416352370689655,
+          "source_footprint_exact_pixel_fraction": 0.00018310546875,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.035488046327481655,
+          "left_first_derivative_discontinuity_rms": 0.03561801046501748,
+          "right_seam_gradient_rms": 0.1443754363741281,
+          "right_first_derivative_discontinuity_rms": 0.2083090864398382
+        },
+        "B_HARD": {
+          "source_interior_mae": 0.0,
+          "transition_strip_mae_vs_source": 0.0,
+          "source_interior_exact_pixel_fraction": 1.0,
+          "source_footprint_exact_pixel_fraction": 1.0,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.09285000423217908,
+          "left_first_derivative_discontinuity_rms": 0.09832184547353423,
+          "right_seam_gradient_rms": 0.18195636694900102,
+          "right_first_derivative_discontinuity_rms": 0.2654296907876622
+        },
+        "C_INSET_24PX": {
+          "source_interior_mae": 0.0,
+          "transition_strip_mae_vs_source": 0.03518449371936275,
+          "source_interior_exact_pixel_fraction": 1.0,
+          "source_footprint_exact_pixel_fraction": 0.9197006225585938,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.035488046327481655,
+          "left_first_derivative_discontinuity_rms": 0.03561801046501748,
+          "right_seam_gradient_rms": 0.1443754363741281,
+          "right_first_derivative_discontinuity_rms": 0.2083090864398382
+        }
+      }
+    },
+    "photometric_desert": {
+      "kind": "sky, horizon, sand, and shadow texture across both boundaries",
+      "source": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_composite_robustness_results\\photometric_texture_SOURCE.png",
+      "generated": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_composite_robustness_results\\photometric_texture_A_GENERATED.png",
+      "epsilon_screen": "pass: one astronaut; continuous horizon and ground with no structural restart",
+      "arms": {
+        "A_GENERATED": {
+          "source_interior_mae": 0.03494362701078995,
+          "transition_strip_mae_vs_source": 0.04477991174768518,
+          "source_interior_exact_pixel_fraction": 9.681438577586207e-05,
+          "source_footprint_exact_pixel_fraction": 9.1552734375e-05,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.03233297437939135,
+          "left_first_derivative_discontinuity_rms": 0.03172481457871465,
+          "right_seam_gradient_rms": 0.02988370679304926,
+          "right_first_derivative_discontinuity_rms": 0.03619852711606223
+        },
+        "B_HARD": {
+          "source_interior_mae": 0.0,
+          "transition_strip_mae_vs_source": 0.0,
+          "source_interior_exact_pixel_fraction": 1.0,
+          "source_footprint_exact_pixel_fraction": 1.0,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.07562701134470036,
+          "left_first_derivative_discontinuity_rms": 0.07403110437490854,
+          "right_seam_gradient_rms": 0.09113039325201175,
+          "right_first_derivative_discontinuity_rms": 0.09313123475555721
+        },
+        "C_INSET_24PX": {
+          "source_interior_mae": 0.0,
+          "transition_strip_mae_vs_source": 0.02508856081495098,
+          "source_interior_exact_pixel_fraction": 1.0,
+          "source_footprint_exact_pixel_fraction": 0.9210357666015625,
+          "generated_exterior_bit_exact": true,
+          "generated_exterior_max_abs": 0,
+          "left_seam_gradient_rms": 0.03233297437939135,
+          "left_first_derivative_discontinuity_rms": 0.03172481457871465,
+          "right_seam_gradient_rms": 0.02988370679304926,
+          "right_first_derivative_discontinuity_rms": 0.03619852711606223
+        }
+      }
+    }
+  },
+  "diffusion_runs": {
+    "new_eligible": 2,
+    "excluded_pre_composite_generation_attempts": 2,
+    "compositing_stage": 0
+  }
+}

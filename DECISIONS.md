@@ -1298,9 +1298,10 @@ does not weaken or replace the hard source invariant.
 
 The next discriminator may act only on a transition band derived wholly inside
 the editable mask, or test another explicitly editable-side boundary correction.
-Do not feather or move the locked source, and do not reopen plain Clown epsilon,
-pseudoimplicit, projection sweeps, Blueprint coupling, sparse execution, or
-production sampler work as part of this result.
+Do not feather or move the locked source, and do not reopen pseudoimplicit,
+projection sweeps, Blueprint coupling, sparse execution, or production sampler
+work as part of this result. This decision does not reject a separately
+reproduced real-user Clown epsilon/projection workflow.
 
 ## 2026-09-09 — Stop scalar editable-side transition guidance
 
@@ -1310,7 +1311,64 @@ boundary, producing a wide dark barrier without resolving the restarted bridge.
 Do not run the optional falloff arm or tune scalar strength, width, sigma window,
 schedule, seed, or projection mode.
 
-Preserve the exact hard-source contract. The next Local Edit research branch
-must instead audit a model-visible or prediction-refresh boundary mechanism.
+Preserve the exact hard-source contract for experiments that claim immutable
+source authority. At this point the next Local Edit research branch was to
+audit a model-visible or prediction-refresh boundary mechanism; the later
+real-user Clown reproduction below supersedes that sequencing decision.
 The VAE locality finding is diagnostic only and does not authorize changing the
 Local Edit algorithm or source lock.
+
+## 2026-09-09 — Adopt the reproduced Clown epsilon projection as a behavioral reference
+
+The fixed two-column scalar editable-side transition remains falsified. Do not
+generalize that result to epsilon guidance as a family.
+
+The uploaded workflow's serialized `SetLatentNoiseMask` node is bypassed. Its
+actual behavior is full-canvas Klein Euler plus RES4LYF `epsilon_projection`,
+with no latent noise mask. An experiment-only direct-RES4LYF harness reproduces
+the uploaded output within one 8-bit code value per channel. Adopt that arm as
+the current behavioral reference for geometric continuity.
+
+This is not a production algorithm decision and does not relax the exact-source
+contract. The reproduced behavior allows the entire accepted canvas to evolve
+and has measurable source drift. Do not proceed to model-visible injection,
+K/V injection, sparse execution, or productionization until a later discriminator
+addresses how to combine the observed global continuity with authoritative
+source preservation.
+
+## 2026-09-09 — Do not continue the late sampler-state restoration family
+
+Final-only and final-two accepted-state restoration preserve the reproduced
+Clown D bridge geometry and make the source latent exact, but both worsen
+decoded source-region error. Therefore do not run the conditional source-mask
+inset/overlap follow-up or broaden this into a restoration schedule sweep.
+
+This does not reinstate the early hard-lock geometry rejection: late restoration
+does not create an independent bridge. Post-decode compositing remains a
+separate possible contract, but was not activated here because terminal-only
+restoration did not visibly break the bridge join.
+
+## 2026-09-09 — Retain inward post-decode compositing as the source-preservation candidate
+
+Stop sampler-state restoration for source preservation in this sequence. The
+zero-diffusion bridge discriminator shows that a post-decode composite can keep
+an exact original-source interior and frozen D's generated exterior geometry.
+
+Prefer an inward transition derived by shrinking the source footprint, never by
+expanding source outward. The tested 24-pixel raised-cosine strip reduces the
+hard composite's sharp boundary jump without ghosting the bridge, although a
+subtle tonal band remains. Do not productionize or sweep widths on this single
+case; retain it only as the next candidate requiring broader validation.
+
+## 2026-09-09 — Do not qualify fixed 24-pixel compositing as the default
+
+The fixed policy preserves exact interior/exterior ownership and is
+structurally safe on the eligible bridge, tree, and desert cases, but it fails
+photometric robustness: smooth content exposes a full-height tonal band even
+when nominal-boundary gradient metrics improve.
+
+Keep the compositor as an exactness/reference contract, not the default Local
+Edit mechanism. Do not widen or tune it per image. Continue to reject any case
+whose epsilon A is already geometrically inconsistent before evaluating
+compositing. Any next branch must address photometric reconciliation explicitly
+without weakening ownership or concealing structural failure.
