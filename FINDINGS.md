@@ -2823,3 +2823,19 @@ Two candidate organic layouts were rejected before compositing because their A
 epsilon outputs already cut a person or duplicated a car/tree. Those remain
 epsilon-generation failures, not composite failures. Evidence:
 `experiments/LOCAL_EDIT_COMPOSITE_ROBUSTNESS_REPORT.md`.
+
+## 2026-09-09 — Robust luminance affine does not reconcile the fixed transition
+
+A deterministic per-boundary luminance transform estimated by median and MAD
+was applied only to the generated contribution inside the unchanged 24-pixel
+transition. Exact source interior and generated exterior invariants pass in all
+three cases.
+
+For desert, smooth-baseline residual RMS improves from `0.014465/0.019211` to
+`0.011988/0.017437`, but maximum deviation is nearly unchanged and the visible
+full-height band remains. On the organic case, the left estimator selects
+`a=1.4683`, `b=-128.41` in 8-bit luminance and creates a visible halo; residual
+RMS worsens from `0.006106` to `0.022914` and maximum deviation from `0.013100`
+to `0.042972`. Nominal-boundary ownership remains exact and no new geometric
+doubling occurs. Evidence:
+`experiments/LOCAL_EDIT_PHOTOMETRIC_RECONCILIATION_REPORT.md`.
