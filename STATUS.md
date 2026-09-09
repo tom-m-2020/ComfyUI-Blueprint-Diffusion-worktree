@@ -1048,3 +1048,20 @@ vertical flip, fixed 2x4 block permutation, and quarter-canvas toroidal
 translation all reduce or redirect the editable response; projection falls
 from TRUE_LOW's `0.834` to `0.437/0.168/0.266/0.120`. No normalization arms,
 extra transforms, production changes, or optimization were introduced.
+
+The rigid-bridge causal block-localization experiment is complete and classified
+DISTRIBUTED SOURCE-CONTEXT TRANSFER. Archived Ordinary, full-epsilon, TRUE_LOW,
+and TRANSLATED_LOW next-call tensors reproduce bit-exactly. Source-state
+crossover sensitivity decays progressively across double and single stages;
+exact joint-softmax source-K/V substitutions confirm causal attention transfer,
+with the largest individual effects in double blocks 0 and 4. No binary block
+refinement, trajectory, optimization, cache, sparse execution, or production
+change was introduced.
+
+The rigid-bridge directional-coupling discriminator is complete and classified
+BIDIRECTIONAL CO-EVOLUTION. TRUE_LOW reproduced bit-exactly. Removing
+editable-to-source generated attention retains only `0.509` projection onto
+TRUE_LOW; removing source-to-editable retains `0.450`. Both decoded predictions
+substantially reorganize bridge geometry. All edge-mask invariants passed; no
+sampler update, trajectory, cache, sparse execution, backend, or production
+change occurred.
