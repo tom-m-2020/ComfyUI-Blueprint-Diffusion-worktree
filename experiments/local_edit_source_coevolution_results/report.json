@@ -1,0 +1,3103 @@
+{
+  "experiment": "Local Edit source-state co-evolution pulse discriminator",
+  "classification": "SOURCE CO-EVOLUTION LOCALIZED",
+  "configuration": {
+    "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+    "seed": 0,
+    "steps": 8,
+    "sigmas": [
+      1.0,
+      0.9826490879058838,
+      0.9604301452636719,
+      0.9309595823287964,
+      0.8899959325790405,
+      0.8291866183280945,
+      0.7294999957084656,
+      0.5361343026161194,
+      0.0
+    ],
+    "sampler": "RES4LYF linear/euler",
+    "cfg": 1.0,
+    "noise_mask": null,
+    "hard_restoration": false,
+    "pulse_scale": 1.0,
+    "halo_width_latent_columns": 2,
+    "frequency_kernel": 3
+  },
+  "cases": {
+    "rigid_bridge": {
+      "reproduction": {
+        "ordinary": {
+          "accepted_max_abs": 0.0,
+          "raw_x0_max_abs": 0.0
+        },
+        "epsilon": {
+          "accepted_max_abs": 0.0,
+          "raw_x0_max_abs": 0.0
+        }
+      },
+      "pulse_intervals": [
+        {
+          "interval": 0,
+          "next_evaluation": 1,
+          "injection": {
+            "interval": 0,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "22cdf65bd1029464506759b4015c64a739e4ca672666fee4465e35797a00e939"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.6156941056251526,
+              "mean_abs": 0.41336631774902344,
+              "max_abs": 5.381539344787598
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.6156941056251526,
+              "mean_abs": 0.41336631774902344,
+              "max_abs": 5.381539344787598
+            },
+            "direction": {
+              "recovery_ratio": 1.0,
+              "cosine": 1.0000004768371582,
+              "projection": 1.0000004768371582,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.6659455299377441,
+              "mean_abs": 0.44397902488708496,
+              "max_abs": 6.148530006408691
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.6659455299377441,
+              "mean_abs": 0.44397902488708496,
+              "max_abs": 6.148530006408691
+            },
+            "direction": {
+              "recovery_ratio": 1.0,
+              "cosine": 1.0000008344650269,
+              "projection": 1.0000008344650269,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 1,
+              "editable": {
+                "recovery_ratio": 1.0,
+                "cosine": 1.0000004768371582,
+                "projection": 1.0000004768371582,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6156941056251526,
+                "mean_abs": 0.41336631774902344,
+                "max_abs": 5.381539344787598
+              }
+            },
+            {
+              "evaluation": 2,
+              "editable": {
+                "recovery_ratio": 0.8581840395927429,
+                "cosine": 0.547321617603302,
+                "projection": 0.46970266103744507,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8080917000770569,
+                "mean_abs": 0.5718730688095093,
+                "max_abs": 6.593752861022949
+              }
+            },
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.8665775060653687,
+                "cosine": 0.5276568531990051,
+                "projection": 0.4572555422782898,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8414389491081238,
+                "mean_abs": 0.6027764081954956,
+                "max_abs": 6.9233222007751465
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.87374347448349,
+                "cosine": 0.518169105052948,
+                "projection": 0.4527469277381897,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8781152367591858,
+                "mean_abs": 0.6315840482711792,
+                "max_abs": 6.286884307861328
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.8903311491012573,
+                "cosine": 0.5242579579353333,
+                "projection": 0.4667631983757019,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.9106712937355042,
+                "mean_abs": 0.6572946906089783,
+                "max_abs": 7.209723472595215
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.8902535438537598,
+                "cosine": 0.5252176523208618,
+                "projection": 0.46757686138153076,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.9243559837341309,
+                "mean_abs": 0.6706426739692688,
+                "max_abs": 6.808116436004639
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.8918728828430176,
+                "cosine": 0.526384711265564,
+                "projection": 0.46946826577186584,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.9202141165733337,
+                "mean_abs": 0.6687959432601929,
+                "max_abs": 6.798491477966309
+              }
+            }
+          ]
+        },
+        {
+          "interval": 1,
+          "next_evaluation": 2,
+          "injection": {
+            "interval": 1,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "4ac2ff244a57f7e95a48a5be3b190b429e4e3bc581c7717dfeeb69323a402da8"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.8038458824157715,
+              "mean_abs": 0.5531063675880432,
+              "max_abs": 6.377856254577637
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.7148534655570984,
+              "mean_abs": 0.4331526458263397,
+              "max_abs": 6.298287391662598
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.9416303038597107,
+              "mean_abs": 0.6781884431838989,
+              "max_abs": 6.785796642303467
+            },
+            "direction": {
+              "recovery_ratio": 0.853675127029419,
+              "cosine": 0.6749817132949829,
+              "projection": 0.5762150883674622,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.8126821517944336,
+              "mean_abs": 0.5615078210830688,
+              "max_abs": 6.2841691970825195
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.36796998977661133,
+              "mean_abs": 0.1921384632587433,
+              "max_abs": 5.342392921447754
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.8464514017105103,
+              "mean_abs": 0.5925856232643127,
+              "max_abs": 6.111591815948486
+            },
+            "direction": {
+              "recovery_ratio": 0.9601054191589355,
+              "cosine": 0.9024125933647156,
+              "projection": 0.8664112687110901,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 2,
+              "editable": {
+                "recovery_ratio": 0.853675127029419,
+                "cosine": 0.6749817132949829,
+                "projection": 0.5762150883674622,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8038458824157715,
+                "mean_abs": 0.5531063675880432,
+                "max_abs": 6.377856254577637
+              }
+            },
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.8575806617736816,
+                "cosine": 0.6271317005157471,
+                "projection": 0.537816047668457,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8327030539512634,
+                "mean_abs": 0.5767046809196472,
+                "max_abs": 7.452045440673828
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.8466813564300537,
+                "cosine": 0.5978030562400818,
+                "projection": 0.5061486959457397,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8509180545806885,
+                "mean_abs": 0.5936830043792725,
+                "max_abs": 6.214992046356201
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.8515946865081787,
+                "cosine": 0.5866994261741638,
+                "projection": 0.4996301531791687,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8710501790046692,
+                "mean_abs": 0.6112298965454102,
+                "max_abs": 6.523059844970703
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.846568763256073,
+                "cosine": 0.5824917554855347,
+                "projection": 0.4931192994117737,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8789974451065063,
+                "mean_abs": 0.6200380325317383,
+                "max_abs": 6.394933700561523
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.8437755107879639,
+                "cosine": 0.5830968618392944,
+                "projection": 0.49200281500816345,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.8705880045890808,
+                "mean_abs": 0.6148752570152283,
+                "max_abs": 6.501899242401123
+              }
+            }
+          ]
+        },
+        {
+          "interval": 2,
+          "next_evaluation": 3,
+          "injection": {
+            "interval": 2,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "aba1947acb016b06a0d037e95d197d4bf65f08ed0c16c8156dc489ac484e184e"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.6160156726837158,
+              "mean_abs": 0.43187934160232544,
+              "max_abs": 5.614850044250488
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.9251012802124023,
+              "mean_abs": 0.6478755474090576,
+              "max_abs": 6.58030891418457
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.9709910154342651,
+              "mean_abs": 0.7004552483558655,
+              "max_abs": 6.967520713806152
+            },
+            "direction": {
+              "recovery_ratio": 0.6344171166419983,
+              "cosine": 0.38994598388671875,
+              "projection": 0.24738840758800507,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.9149170517921448,
+              "mean_abs": 0.6629207730293274,
+              "max_abs": 6.673194885253906
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.46372848749160767,
+              "mean_abs": 0.30410251021385193,
+              "max_abs": 5.4330220222473145
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.883155882358551,
+              "mean_abs": 0.6339110732078552,
+              "max_abs": 6.74243688583374
+            },
+            "direction": {
+              "recovery_ratio": 1.0359630584716797,
+              "cosine": 0.867556095123291,
+              "projection": 0.8987559676170349,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.6344171166419983,
+                "cosine": 0.38994598388671875,
+                "projection": 0.24738840758800507,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6160156726837158,
+                "mean_abs": 0.43187934160232544,
+                "max_abs": 5.614850044250488
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.6314243674278259,
+                "cosine": 0.4107549786567688,
+                "projection": 0.2593607008457184,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6345840692520142,
+                "mean_abs": 0.44646114110946655,
+                "max_abs": 5.924857139587402
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.6407403349876404,
+                "cosine": 0.39420831203460693,
+                "projection": 0.25258517265319824,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6553782224655151,
+                "mean_abs": 0.46416348218917847,
+                "max_abs": 5.9575395584106445
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.6375278234481812,
+                "cosine": 0.3937150239944458,
+                "projection": 0.25100427865982056,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6619489789009094,
+                "mean_abs": 0.470725953578949,
+                "max_abs": 5.380712032318115
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.6375566124916077,
+                "cosine": 0.399954229593277,
+                "projection": 0.2549934685230255,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6578161716461182,
+                "mean_abs": 0.4702930152416229,
+                "max_abs": 5.234774589538574
+              }
+            }
+          ]
+        },
+        {
+          "interval": 3,
+          "next_evaluation": 4,
+          "injection": {
+            "interval": 3,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "9206f7421e5025b80ec635122f8de571f65cd1836ca837576f0872b2b3ff4fc6"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.4779255986213684,
+              "mean_abs": 0.33370769023895264,
+              "max_abs": 4.867165565490723
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.9595298171043396,
+              "mean_abs": 0.6797444820404053,
+              "max_abs": 6.2360944747924805
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.005003571510315,
+              "mean_abs": 0.7311601638793945,
+              "max_abs": 6.255537986755371
+            },
+            "direction": {
+              "recovery_ratio": 0.4755464196205139,
+              "cosine": 0.33076921105384827,
+              "projection": 0.15729612112045288,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.996887743473053,
+              "mean_abs": 0.7378280162811279,
+              "max_abs": 6.559234619140625
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.312276691198349,
+              "mean_abs": 0.20795045793056488,
+              "max_abs": 4.755916118621826
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.99875408411026,
+              "mean_abs": 0.7428879737854004,
+              "max_abs": 6.548099517822266
+            },
+            "direction": {
+              "recovery_ratio": 0.9981312155723572,
+              "cosine": 0.951031506061554,
+              "projection": 0.9492542147636414,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.4755464196205139,
+                "cosine": 0.33076921105384827,
+                "projection": 0.15729612112045288,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.4779255986213684,
+                "mean_abs": 0.33370769023895264,
+                "max_abs": 4.867165565490723
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.48926034569740295,
+                "cosine": 0.30194729566574097,
+                "projection": 0.14773085713386536,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5004374980926514,
+                "mean_abs": 0.34886372089385986,
+                "max_abs": 5.566629886627197
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.48634570837020874,
+                "cosine": 0.29406479001045227,
+                "projection": 0.14301714301109314,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5049758553504944,
+                "mean_abs": 0.3512938320636749,
+                "max_abs": 5.478151321411133
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.484095960855484,
+                "cosine": 0.2966890335083008,
+                "projection": 0.14362594485282898,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.4994787573814392,
+                "mean_abs": 0.34825921058654785,
+                "max_abs": 5.3673930168151855
+              }
+            }
+          ]
+        },
+        {
+          "interval": 4,
+          "next_evaluation": 5,
+          "injection": {
+            "interval": 4,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "aa545465d31e15d1a40c8e384f6882d00a000be0fc9094926739870531c771f0"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.3164950907230377,
+              "mean_abs": 0.22630245983600616,
+              "max_abs": 3.4592628479003906
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.9990835785865784,
+              "mean_abs": 0.7139840722084045,
+              "max_abs": 6.348546028137207
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.0228447914123535,
+              "mean_abs": 0.7455751299858093,
+              "max_abs": 6.434739112854004
+            },
+            "direction": {
+              "recovery_ratio": 0.30942657589912415,
+              "cosine": 0.22891713678836823,
+              "projection": 0.07083305716514587,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.0604780912399292,
+              "mean_abs": 0.7932648658752441,
+              "max_abs": 7.4164628982543945
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.3095657527446747,
+              "mean_abs": 0.21410898864269257,
+              "max_abs": 3.485175132751465
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.0746746063232422,
+              "mean_abs": 0.81088787317276,
+              "max_abs": 7.23507833480835
+            },
+            "direction": {
+              "recovery_ratio": 0.9867908954620361,
+              "cosine": 0.958046555519104,
+              "projection": 0.9453915953636169,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.30942657589912415,
+                "cosine": 0.22891713678836823,
+                "projection": 0.07083305716514587,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.3164950907230377,
+                "mean_abs": 0.22630245983600616,
+                "max_abs": 3.4592628479003906
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.3058028817176819,
+                "cosine": 0.21738924086093903,
+                "projection": 0.06647825241088867,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.31751683354377747,
+                "mean_abs": 0.2231183797121048,
+                "max_abs": 4.5678911209106445
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.3028967082500458,
+                "cosine": 0.2211148589849472,
+                "projection": 0.06697496026754379,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.31252187490463257,
+                "mean_abs": 0.21939444541931152,
+                "max_abs": 4.516221046447754
+              }
+            }
+          ]
+        },
+        {
+          "interval": 5,
+          "next_evaluation": 6,
+          "injection": {
+            "interval": 5,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "0abe7cd558586c7cdb8447c3b00db7dea37ebcb6e463d4bd86a917825dd7d075"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.22495350241661072,
+              "mean_abs": 0.1583368480205536,
+              "max_abs": 3.0604805946350098
+            },
+            "pulse_vs_epsilon": {
+              "rms": 1.022072196006775,
+              "mean_abs": 0.7389664053916931,
+              "max_abs": 6.240699768066406
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.0383059978485107,
+              "mean_abs": 0.7596858739852905,
+              "max_abs": 6.547993183135986
+            },
+            "direction": {
+              "recovery_ratio": 0.2166539430618286,
+              "cosine": 0.17992933094501495,
+              "projection": 0.03898239880800247,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.0915764570236206,
+              "mean_abs": 0.8222730159759521,
+              "max_abs": 7.148530006408691
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.21922560036182404,
+              "mean_abs": 0.15266793966293335,
+              "max_abs": 2.6843318939208984
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.109593391418457,
+              "mean_abs": 0.8417779207229614,
+              "max_abs": 7.239717483520508
+            },
+            "direction": {
+              "recovery_ratio": 0.9837628602981567,
+              "cosine": 0.9802950024604797,
+              "projection": 0.9643778800964355,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.2166539430618286,
+                "cosine": 0.17992933094501495,
+                "projection": 0.03898239880800247,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.22495350241661072,
+                "mean_abs": 0.1583368480205536,
+                "max_abs": 3.0604805946350098
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.2118278592824936,
+                "cosine": 0.18234366178512573,
+                "projection": 0.03862546756863594,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.21855902671813965,
+                "mean_abs": 0.1533375084400177,
+                "max_abs": 3.141993284225464
+              }
+            }
+          ]
+        },
+        {
+          "interval": 6,
+          "next_evaluation": 7,
+          "injection": {
+            "interval": 6,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "430fa8d5ba30c62034f985e0c4d6fc2e2ebb8ab6638aa2f5af58a3f693aa9085"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.1437905877828598,
+              "mean_abs": 0.09970246255397797,
+              "max_abs": 2.2576279640197754
+            },
+            "pulse_vs_epsilon": {
+              "rms": 1.0179213285446167,
+              "mean_abs": 0.7392964363098145,
+              "max_abs": 6.319126605987549
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.0317769050598145,
+              "mean_abs": 0.7561827898025513,
+              "max_abs": 6.6123247146606445
+            },
+            "direction": {
+              "recovery_ratio": 0.13936185836791992,
+              "cosine": 0.16539375483989716,
+              "projection": 0.023049581795930862,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.162704586982727,
+              "mean_abs": 0.8940617442131042,
+              "max_abs": 7.252863883972168
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.11689753830432892,
+              "mean_abs": 0.07750177383422852,
+              "max_abs": 2.1571028232574463
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.171900749206543,
+              "mean_abs": 0.9039648771286011,
+              "max_abs": 7.1607160568237305
+            },
+            "direction": {
+              "recovery_ratio": 0.9921528697013855,
+              "cosine": 0.995018482208252,
+              "projection": 0.9872104525566101,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.13936185836791992,
+                "cosine": 0.16539375483989716,
+                "projection": 0.023049581795930862,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.1437905877828598,
+                "mean_abs": 0.09970246255397797,
+                "max_abs": 2.2576279640197754
+              }
+            }
+          ]
+        }
+      ],
+      "selected_interval": 0,
+      "causal_prerequisite": true,
+      "spatial": {
+        "boundary_source": {
+          "pulse_vs_ordinary": {
+            "rms": 0.09942761808633804,
+            "mean_abs": 0.058547284454107285,
+            "max_abs": 1.6543819904327393
+          },
+          "pulse_vs_epsilon": {
+            "rms": 0.6017809510231018,
+            "mean_abs": 0.40140652656555176,
+            "max_abs": 5.4122467041015625
+          },
+          "epsilon_vs_ordinary": {
+            "rms": 0.6156941056251526,
+            "mean_abs": 0.41336631774902344,
+            "max_abs": 5.381539344787598
+          },
+          "direction": {
+            "recovery_ratio": 0.16148950159549713,
+            "cosine": 0.21909485757350922,
+            "projection": 0.03538151830434799,
+            "degenerate": null
+          }
+        },
+        "distant_source": {
+          "pulse_vs_ordinary": {
+            "rms": 0.5243967771530151,
+            "mean_abs": 0.35005682706832886,
+            "max_abs": 5.057908058166504
+          },
+          "pulse_vs_epsilon": {
+            "rms": 0.27264562249183655,
+            "mean_abs": 0.1566043198108673,
+            "max_abs": 4.022719860076904
+          },
+          "epsilon_vs_ordinary": {
+            "rms": 0.6156941056251526,
+            "mean_abs": 0.41336631774902344,
+            "max_abs": 5.381539344787598
+          },
+          "direction": {
+            "recovery_ratio": 0.8517173528671265,
+            "cosine": 0.8977898955345154,
+            "projection": 0.7646632194519043,
+            "degenerate": null
+          }
+        },
+        "full_source": {
+          "pulse_vs_ordinary": {
+            "rms": 0.6156941056251526,
+            "mean_abs": 0.41336631774902344,
+            "max_abs": 5.381539344787598
+          },
+          "pulse_vs_epsilon": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "epsilon_vs_ordinary": {
+            "rms": 0.6156941056251526,
+            "mean_abs": 0.41336631774902344,
+            "max_abs": 5.381539344787598
+          },
+          "direction": {
+            "recovery_ratio": 1.0,
+            "cosine": 1.0000004768371582,
+            "projection": 1.0000004768371582,
+            "degenerate": null
+          }
+        }
+      },
+      "frequency": {
+        "operator": "3x3 box average with replicated border, remasked to source; high=full-low",
+        "full": {
+          "pulse_vs_ordinary": {
+            "rms": 0.6156941056251526,
+            "mean_abs": 0.41336631774902344,
+            "max_abs": 5.381539344787598
+          },
+          "pulse_vs_epsilon": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "epsilon_vs_ordinary": {
+            "rms": 0.6156941056251526,
+            "mean_abs": 0.41336631774902344,
+            "max_abs": 5.381539344787598
+          },
+          "direction": {
+            "recovery_ratio": 1.0,
+            "cosine": 1.0000004768371582,
+            "projection": 1.0000004768371582,
+            "degenerate": null
+          }
+        },
+        "low": {
+          "pulse_vs_ordinary": {
+            "rms": 0.5630796551704407,
+            "mean_abs": 0.3742240071296692,
+            "max_abs": 5.803771018981934
+          },
+          "pulse_vs_epsilon": {
+            "rms": 0.2524498403072357,
+            "mean_abs": 0.13330340385437012,
+            "max_abs": 4.160904407501221
+          },
+          "epsilon_vs_ordinary": {
+            "rms": 0.6156941056251526,
+            "mean_abs": 0.41336631774902344,
+            "max_abs": 5.381539344787598
+          },
+          "direction": {
+            "recovery_ratio": 0.9145451188087463,
+            "cosine": 0.9120774865150452,
+            "projection": 0.8341360688209534,
+            "degenerate": null
+          }
+        },
+        "high": {
+          "pulse_vs_ordinary": {
+            "rms": 0.1460445672273636,
+            "mean_abs": 0.08156277239322662,
+            "max_abs": 2.170656442642212
+          },
+          "pulse_vs_epsilon": {
+            "rms": 0.5888842940330505,
+            "mean_abs": 0.39474189281463623,
+            "max_abs": 5.542755126953125
+          },
+          "epsilon_vs_ordinary": {
+            "rms": 0.6156941056251526,
+            "mean_abs": 0.41336631774902344,
+            "max_abs": 5.381539344787598
+          },
+          "direction": {
+            "recovery_ratio": 0.2372031807899475,
+            "cosine": 0.2981775403022766,
+            "projection": 0.07072865962982178,
+            "degenerate": null
+          }
+        }
+      }
+    },
+    "organic_tree": {
+      "reproduction": {
+        "ordinary": {
+          "accepted_max_abs": 0.0,
+          "raw_x0_max_abs": 0.0
+        },
+        "epsilon": {
+          "accepted_max_abs": 0.0,
+          "raw_x0_max_abs": 0.0
+        }
+      },
+      "pulse_intervals": [
+        {
+          "interval": 0,
+          "next_evaluation": 1,
+          "injection": {
+            "interval": 0,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "732352e6c6b9ff14bd54f92f46d89a0955b8812b6c5283325bb15b76d896c78d"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.3948558568954468,
+              "mean_abs": 0.23540420830249786,
+              "max_abs": 5.074460983276367
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.3948558568954468,
+              "mean_abs": 0.23540420830249786,
+              "max_abs": 5.074460983276367
+            },
+            "direction": {
+              "recovery_ratio": 1.0,
+              "cosine": 0.9999971985816956,
+              "projection": 0.9999971985816956,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.730315089225769,
+              "mean_abs": 0.45972296595573425,
+              "max_abs": 6.846514701843262
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.730315089225769,
+              "mean_abs": 0.45972296595573425,
+              "max_abs": 6.846514701843262
+            },
+            "direction": {
+              "recovery_ratio": 1.0,
+              "cosine": 1.0000027418136597,
+              "projection": 1.0000027418136597,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 1,
+              "editable": {
+                "recovery_ratio": 1.0,
+                "cosine": 0.9999971985816956,
+                "projection": 0.9999971985816956,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.3948558568954468,
+                "mean_abs": 0.23540420830249786,
+                "max_abs": 5.074460983276367
+              }
+            },
+            {
+              "evaluation": 2,
+              "editable": {
+                "recovery_ratio": 0.7360997200012207,
+                "cosine": 0.5775243043899536,
+                "projection": 0.4251154661178589,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.46793511509895325,
+                "mean_abs": 0.27310654520988464,
+                "max_abs": 5.521629810333252
+              }
+            },
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.6950176954269409,
+                "cosine": 0.47752273082733154,
+                "projection": 0.33188676834106445,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.49335983395576477,
+                "mean_abs": 0.2934015989303589,
+                "max_abs": 4.9467854499816895
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.6928574442863464,
+                "cosine": 0.43729445338249207,
+                "projection": 0.30298271775245667,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5250611305236816,
+                "mean_abs": 0.3185524344444275,
+                "max_abs": 5.36447286605835
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.6947759389877319,
+                "cosine": 0.42828142642974854,
+                "projection": 0.2975596487522125,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5544753670692444,
+                "mean_abs": 0.3435768783092499,
+                "max_abs": 5.7056779861450195
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.6939297914505005,
+                "cosine": 0.4247910976409912,
+                "projection": 0.29477521777153015,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5706527233123779,
+                "mean_abs": 0.35997274518013,
+                "max_abs": 5.406233787536621
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.6973043084144592,
+                "cosine": 0.4257744550704956,
+                "projection": 0.296894371509552,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5710347890853882,
+                "mean_abs": 0.36339449882507324,
+                "max_abs": 5.354416847229004
+              }
+            }
+          ]
+        },
+        {
+          "interval": 1,
+          "next_evaluation": 2,
+          "injection": {
+            "interval": 1,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "681a63935e3c1eccd39e52856d74775a407238830e606c44e2bb42af1267ccf1"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.59385085105896,
+              "mean_abs": 0.3946745693683624,
+              "max_abs": 5.529976844787598
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.2799660861492157,
+              "mean_abs": 0.12369731068611145,
+              "max_abs": 5.2006754875183105
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.6356947422027588,
+              "mean_abs": 0.42402052879333496,
+              "max_abs": 5.910682678222656
+            },
+            "direction": {
+              "recovery_ratio": 0.9341738820075989,
+              "cosine": 0.8985085487365723,
+              "projection": 0.8393632173538208,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.9178149700164795,
+              "mean_abs": 0.6542966365814209,
+              "max_abs": 6.2474045753479
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.10275034606456757,
+              "mean_abs": 0.05856568366289139,
+              "max_abs": 2.776243209838867
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.923292875289917,
+              "mean_abs": 0.6598934531211853,
+              "max_abs": 6.2264909744262695
+            },
+            "direction": {
+              "recovery_ratio": 0.9940671920776367,
+              "cosine": 0.9937901496887207,
+              "projection": 0.9878941178321838,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 2,
+              "editable": {
+                "recovery_ratio": 0.9341738820075989,
+                "cosine": 0.8985085487365723,
+                "projection": 0.8393632173538208,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.59385085105896,
+                "mean_abs": 0.3946745693683624,
+                "max_abs": 5.529976844787598
+              }
+            },
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.9090735912322998,
+                "cosine": 0.788772463798523,
+                "projection": 0.7170522212982178,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.645307719707489,
+                "mean_abs": 0.4370407462120056,
+                "max_abs": 5.755068302154541
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.9182700514793396,
+                "cosine": 0.721006453037262,
+                "projection": 0.6620785593986511,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6958823204040527,
+                "mean_abs": 0.47778671979904175,
+                "max_abs": 5.45091438293457
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.9165875315666199,
+                "cosine": 0.7185512781143188,
+                "projection": 0.6586151719093323,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.7314954400062561,
+                "mean_abs": 0.509533166885376,
+                "max_abs": 5.313188552856445
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.9086900353431702,
+                "cosine": 0.7211400866508484,
+                "projection": 0.6552928686141968,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.7472603917121887,
+                "mean_abs": 0.5240551829338074,
+                "max_abs": 6.060237407684326
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.9047737121582031,
+                "cosine": 0.7211629152297974,
+                "projection": 0.6524893045425415,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.7409349083900452,
+                "mean_abs": 0.5229759812355042,
+                "max_abs": 6.391757011413574
+              }
+            }
+          ]
+        },
+        {
+          "interval": 2,
+          "next_evaluation": 3,
+          "injection": {
+            "interval": 2,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "18b9d5aabe113d50faffbaab604a2bcc89da2499ff98cf77ffc19765a47c1825"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.6134281158447266,
+              "mean_abs": 0.43461793661117554,
+              "max_abs": 5.236647605895996
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.41071879863739014,
+              "mean_abs": 0.256637305021286,
+              "max_abs": 4.547702789306641
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.7098515033721924,
+              "mean_abs": 0.5077362060546875,
+              "max_abs": 5.48063325881958
+            },
+            "direction": {
+              "recovery_ratio": 0.864159882068634,
+              "cosine": 0.8169807195663452,
+              "projection": 0.7060019969940186,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.9975948333740234,
+              "mean_abs": 0.7413855791091919,
+              "max_abs": 6.368969440460205
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.2361747920513153,
+              "mean_abs": 0.14377310872077942,
+              "max_abs": 4.174771785736084
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.9948135018348694,
+              "mean_abs": 0.7384305000305176,
+              "max_abs": 6.634438514709473
+            },
+            "direction": {
+              "recovery_ratio": 1.002795696258545,
+              "cosine": 0.9719027280807495,
+              "projection": 0.9746198654174805,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.864159882068634,
+                "cosine": 0.8169807195663452,
+                "projection": 0.7060019969940186,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6134281158447266,
+                "mean_abs": 0.43461793661117554,
+                "max_abs": 5.236647605895996
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.8837649822235107,
+                "cosine": 0.8126539587974548,
+                "projection": 0.7181950807571411,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6697343587875366,
+                "mean_abs": 0.47957363724708557,
+                "max_abs": 5.534312725067139
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.8954278826713562,
+                "cosine": 0.7920255064964294,
+                "projection": 0.7092017531394958,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.7146081924438477,
+                "mean_abs": 0.5154662132263184,
+                "max_abs": 5.414145469665527
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.8954980373382568,
+                "cosine": 0.7843921184539795,
+                "projection": 0.7024216055870056,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.7364116311073303,
+                "mean_abs": 0.5348708629608154,
+                "max_abs": 5.559144973754883
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.8921226263046265,
+                "cosine": 0.7789686322212219,
+                "projection": 0.6949355602264404,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.7305746078491211,
+                "mean_abs": 0.5328810811042786,
+                "max_abs": 5.794628620147705
+              }
+            }
+          ]
+        },
+        {
+          "interval": 3,
+          "next_evaluation": 4,
+          "injection": {
+            "interval": 3,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "e7987277fdb70daac9931d6470eb51fa2ea7a0e8827ef7ea64f13fdf7e4956e7"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.4702596962451935,
+              "mean_abs": 0.33777186274528503,
+              "max_abs": 4.908884048461914
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.6420003175735474,
+              "mean_abs": 0.4406050443649292,
+              "max_abs": 5.08737850189209
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.7578189373016357,
+              "mean_abs": 0.5503678321838379,
+              "max_abs": 5.203801155090332
+            },
+            "direction": {
+              "recovery_ratio": 0.6205434203147888,
+              "cosine": 0.5377389788627625,
+              "projection": 0.3336904048919678,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.0517652034759521,
+              "mean_abs": 0.7918484807014465,
+              "max_abs": 6.182431221008301
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.30438894033432007,
+              "mean_abs": 0.20081235468387604,
+              "max_abs": 3.7477173805236816
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.063868761062622,
+              "mean_abs": 0.8018065690994263,
+              "max_abs": 6.181879997253418
+            },
+            "direction": {
+              "recovery_ratio": 0.9886235594749451,
+              "cosine": 0.9586648344993591,
+              "projection": 0.9477586150169373,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.6205434203147888,
+                "cosine": 0.5377389788627625,
+                "projection": 0.3336904048919678,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.4702596962451935,
+                "mean_abs": 0.33777186274528503,
+                "max_abs": 4.908884048461914
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.6393729448318481,
+                "cosine": 0.5169938802719116,
+                "projection": 0.3305519223213196,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5102601647377014,
+                "mean_abs": 0.36785706877708435,
+                "max_abs": 5.125387668609619
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.6468385457992554,
+                "cosine": 0.5092785358428955,
+                "projection": 0.3294209837913513,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5319269299507141,
+                "mean_abs": 0.38609790802001953,
+                "max_abs": 5.0528059005737305
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.6453393697738647,
+                "cosine": 0.5071666836738586,
+                "projection": 0.32729464769363403,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5284795761108398,
+                "mean_abs": 0.3845871090888977,
+                "max_abs": 4.97412109375
+              }
+            }
+          ]
+        },
+        {
+          "interval": 4,
+          "next_evaluation": 5,
+          "injection": {
+            "interval": 4,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "3ed639cfb5eb6aede52c73e4cfb75ca6f2fc9ed2fa2987f87e63beb05bc7ce48"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.35057148337364197,
+              "mean_abs": 0.25459614396095276,
+              "max_abs": 4.677130699157715
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.7353987693786621,
+              "mean_abs": 0.5230073928833008,
+              "max_abs": 5.520421504974365
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.7980635166168213,
+              "mean_abs": 0.5821442604064941,
+              "max_abs": 5.854318618774414
+            },
+            "direction": {
+              "recovery_ratio": 0.43927744030952454,
+              "cosine": 0.39137205481529236,
+              "projection": 0.17192091047763824,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.1096199750900269,
+              "mean_abs": 0.8420494794845581,
+              "max_abs": 6.850488185882568
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.2807542681694031,
+              "mean_abs": 0.19641262292861938,
+              "max_abs": 4.009894847869873
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.1185551881790161,
+              "mean_abs": 0.8511528968811035,
+              "max_abs": 7.05368185043335
+            },
+            "direction": {
+              "recovery_ratio": 0.9920116662979126,
+              "cosine": 0.9682804346084595,
+              "projection": 0.960545539855957,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.43927744030952454,
+                "cosine": 0.39137205481529236,
+                "projection": 0.17192091047763824,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.35057148337364197,
+                "mean_abs": 0.25459614396095276,
+                "max_abs": 4.677130699157715
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.4442797899246216,
+                "cosine": 0.37345072627067566,
+                "projection": 0.16591660678386688,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.3653528094291687,
+                "mean_abs": 0.26563793420791626,
+                "max_abs": 4.499397277832031
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.44138845801353455,
+                "cosine": 0.36516785621643066,
+                "projection": 0.16118088364601135,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.36146053671836853,
+                "mean_abs": 0.2626107335090637,
+                "max_abs": 4.371861457824707
+              }
+            }
+          ]
+        },
+        {
+          "interval": 5,
+          "next_evaluation": 6,
+          "injection": {
+            "interval": 5,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "41026fb10da47bc86609047518e40b68a1918b3833c73c6fb9e13c64239fb580"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.23984253406524658,
+              "mean_abs": 0.17608658969402313,
+              "max_abs": 2.9635937213897705
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.7934374809265137,
+              "mean_abs": 0.5755047798156738,
+              "max_abs": 5.797863006591797
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.8223481774330139,
+              "mean_abs": 0.6022465825080872,
+              "max_abs": 5.638284683227539
+            },
+            "direction": {
+              "recovery_ratio": 0.29165562987327576,
+              "cosine": 0.26424914598464966,
+              "projection": 0.07706975191831589,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.166377067565918,
+              "mean_abs": 0.8887790441513062,
+              "max_abs": 6.608175754547119
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.20739127695560455,
+              "mean_abs": 0.144548237323761,
+              "max_abs": 2.386547803878784
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.1741276979446411,
+              "mean_abs": 0.8977677822113037,
+              "max_abs": 6.4485979080200195
+            },
+            "direction": {
+              "recovery_ratio": 0.9934000372886658,
+              "cosine": 0.9843201041221619,
+              "projection": 0.9778235554695129,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.29165562987327576,
+                "cosine": 0.26424914598464966,
+                "projection": 0.07706975191831589,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.23984253406524658,
+                "mean_abs": 0.17608658969402313,
+                "max_abs": 2.9635937213897705
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.2904123067855835,
+                "cosine": 0.2441694289445877,
+                "projection": 0.07090981304645538,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.23782366514205933,
+                "mean_abs": 0.17385853826999664,
+                "max_abs": 2.952564239501953
+              }
+            }
+          ]
+        },
+        {
+          "interval": 6,
+          "next_evaluation": 7,
+          "injection": {
+            "interval": 6,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "72fbd91067e9033f3156ac887e7348cd4ce67cb7cdb378575b3229ba75f26009"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.13141627609729767,
+              "mean_abs": 0.09517095237970352,
+              "max_abs": 1.8680930137634277
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.8069092631340027,
+              "mean_abs": 0.590143084526062,
+              "max_abs": 5.622982025146484
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.8189172744750977,
+              "mean_abs": 0.6016370058059692,
+              "max_abs": 5.648113250732422
+            },
+            "direction": {
+              "recovery_ratio": 0.16047513484954834,
+              "cosine": 0.17094247043132782,
+              "projection": 0.027432018890976906,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.2344142198562622,
+              "mean_abs": 0.9505707621574402,
+              "max_abs": 6.679643630981445
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.10938835144042969,
+              "mean_abs": 0.07356450706720352,
+              "max_abs": 1.6214920282363892
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.2381600141525269,
+              "mean_abs": 0.9546241164207458,
+              "max_abs": 6.62938117980957
+            },
+            "direction": {
+              "recovery_ratio": 0.9969739317893982,
+              "cosine": 0.996091902256012,
+              "projection": 0.9930776357650757,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.16047513484954834,
+                "cosine": 0.17094247043132782,
+                "projection": 0.027432018890976906,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.13141627609729767,
+                "mean_abs": 0.09517095237970352,
+                "max_abs": 1.8680930137634277
+              }
+            }
+          ]
+        }
+      ],
+      "selected_interval": 0,
+      "causal_prerequisite": true,
+      "spatial": null,
+      "frequency": null
+    },
+    "photometric_desert": {
+      "reproduction": {
+        "ordinary": {
+          "accepted_max_abs": 0.0,
+          "raw_x0_max_abs": 0.0
+        },
+        "epsilon": {
+          "accepted_max_abs": 0.0,
+          "raw_x0_max_abs": 0.0
+        }
+      },
+      "pulse_intervals": [
+        {
+          "interval": 0,
+          "next_evaluation": 1,
+          "injection": {
+            "interval": 0,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "4d3f3d40c7395e0c49fa31c6c837bcc696faa6b3f41f87e11b2305c7f38e851c"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.28767263889312744,
+              "mean_abs": 0.179273784160614,
+              "max_abs": 2.9863319396972656
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.28767263889312744,
+              "mean_abs": 0.179273784160614,
+              "max_abs": 2.9863319396972656
+            },
+            "direction": {
+              "recovery_ratio": 1.0,
+              "cosine": 0.9999995231628418,
+              "projection": 0.9999995231628418,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.7611116766929626,
+              "mean_abs": 0.4395466148853302,
+              "max_abs": 6.796238422393799
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.7611116766929626,
+              "mean_abs": 0.4395466148853302,
+              "max_abs": 6.796238422393799
+            },
+            "direction": {
+              "recovery_ratio": 1.0,
+              "cosine": 1.0000038146972656,
+              "projection": 1.0000038146972656,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 1,
+              "editable": {
+                "recovery_ratio": 1.0,
+                "cosine": 0.9999995231628418,
+                "projection": 0.9999995231628418,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.28767263889312744,
+                "mean_abs": 0.179273784160614,
+                "max_abs": 2.9863319396972656
+              }
+            },
+            {
+              "evaluation": 2,
+              "editable": {
+                "recovery_ratio": 0.7195557951927185,
+                "cosine": 0.4508899748325348,
+                "projection": 0.32444050908088684,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.319320410490036,
+                "mean_abs": 0.2029956877231598,
+                "max_abs": 3.4495911598205566
+              }
+            },
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.7009100317955017,
+                "cosine": 0.44823023676872253,
+                "projection": 0.3141690790653229,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.361294686794281,
+                "mean_abs": 0.2447574883699417,
+                "max_abs": 4.130326271057129
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.6707619428634644,
+                "cosine": 0.40804949402809143,
+                "projection": 0.27370408177375793,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.38993507623672485,
+                "mean_abs": 0.26780301332473755,
+                "max_abs": 4.1916303634643555
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.6692453622817993,
+                "cosine": 0.4121188819408417,
+                "projection": 0.2758086323738098,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.4214687943458557,
+                "mean_abs": 0.2918753921985626,
+                "max_abs": 3.9763834476470947
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.6865196228027344,
+                "cosine": 0.4184929132461548,
+                "projection": 0.2873035967350006,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.4478697180747986,
+                "mean_abs": 0.3127359449863434,
+                "max_abs": 4.160854339599609
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.6943591833114624,
+                "cosine": 0.4281572997570038,
+                "projection": 0.2972949743270874,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.45390594005584717,
+                "mean_abs": 0.3193013072013855,
+                "max_abs": 4.180805206298828
+              }
+            }
+          ]
+        },
+        {
+          "interval": 1,
+          "next_evaluation": 2,
+          "injection": {
+            "interval": 1,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "a4571126611faaf0cd0444ab3dd0c9c20121732d62bddd351b689f23f8c64174"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.42499226331710815,
+              "mean_abs": 0.29372748732566833,
+              "max_abs": 3.729170322418213
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.08862686157226562,
+              "mean_abs": 0.05459043011069298,
+              "max_abs": 1.6349856853485107
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.44377401471138,
+              "mean_abs": 0.3082039952278137,
+              "max_abs": 3.849236488342285
+            },
+            "direction": {
+              "recovery_ratio": 0.9576796889305115,
+              "cosine": 0.9801097512245178,
+              "projection": 0.9386311769485474,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 0.8939220905303955,
+              "mean_abs": 0.6126763820648193,
+              "max_abs": 6.350350379943848
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.07105197012424469,
+              "mean_abs": 0.04801943898200989,
+              "max_abs": 1.9056483507156372
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.8975440263748169,
+              "mean_abs": 0.6176977157592773,
+              "max_abs": 6.380363464355469
+            },
+            "direction": {
+              "recovery_ratio": 0.9959644079208374,
+              "cosine": 0.9968640804290771,
+              "projection": 0.9928411841392517,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 2,
+              "editable": {
+                "recovery_ratio": 0.9576796889305115,
+                "cosine": 0.9801097512245178,
+                "projection": 0.9386311769485474,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.42499226331710815,
+                "mean_abs": 0.29372748732566833,
+                "max_abs": 3.729170322418213
+              }
+            },
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.9243653416633606,
+                "cosine": 0.9064493179321289,
+                "projection": 0.8378903865814209,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.4764787256717682,
+                "mean_abs": 0.3361215591430664,
+                "max_abs": 4.767439365386963
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.937871515750885,
+                "cosine": 0.8851653933525085,
+                "projection": 0.8301713466644287,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5452138185501099,
+                "mean_abs": 0.38352614641189575,
+                "max_abs": 5.469710826873779
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.9157676696777344,
+                "cosine": 0.872381865978241,
+                "projection": 0.7988990545272827,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5767204165458679,
+                "mean_abs": 0.40581509470939636,
+                "max_abs": 5.097415447235107
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.9200757741928101,
+                "cosine": 0.862984299659729,
+                "projection": 0.7940108776092529,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6002366542816162,
+                "mean_abs": 0.4264155924320221,
+                "max_abs": 5.167303562164307
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.9236743450164795,
+                "cosine": 0.8590920567512512,
+                "projection": 0.7935212850570679,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.6038107872009277,
+                "mean_abs": 0.4324367642402649,
+                "max_abs": 4.912071228027344
+              }
+            }
+          ]
+        },
+        {
+          "interval": 2,
+          "next_evaluation": 3,
+          "injection": {
+            "interval": 2,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "19dd33af605074d9c05dc83c462c64fb58aa3a4f2f5c18c231b9343d2a3e0893"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.44491952657699585,
+              "mean_abs": 0.31394055485725403,
+              "max_abs": 4.2547760009765625
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.24727857112884521,
+              "mean_abs": 0.1644296497106552,
+              "max_abs": 3.363024950027466
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.5154649615287781,
+              "mean_abs": 0.37115755677223206,
+              "max_abs": 4.503508567810059
+            },
+            "direction": {
+              "recovery_ratio": 0.8631409406661987,
+              "cosine": 0.8775409460067749,
+              "projection": 0.757441520690918,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.0387262105941772,
+              "mean_abs": 0.7616610527038574,
+              "max_abs": 6.999916076660156
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.10587851703166962,
+              "mean_abs": 0.07581640034914017,
+              "max_abs": 1.5691759586334229
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.042272925376892,
+              "mean_abs": 0.7667096257209778,
+              "max_abs": 7.189017295837402
+            },
+            "direction": {
+              "recovery_ratio": 0.9965970516204834,
+              "cosine": 0.994830310344696,
+              "projection": 0.991445004940033,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 3,
+              "editable": {
+                "recovery_ratio": 0.8631409406661987,
+                "cosine": 0.8775409460067749,
+                "projection": 0.757441520690918,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.44491952657699585,
+                "mean_abs": 0.31394055485725403,
+                "max_abs": 4.2547760009765625
+              }
+            },
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.8483148217201233,
+                "cosine": 0.8006913661956787,
+                "projection": 0.6792383193969727,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.493151992559433,
+                "mean_abs": 0.348365843296051,
+                "max_abs": 5.536444187164307
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.8473745584487915,
+                "cosine": 0.7828452587127686,
+                "projection": 0.6633630990982056,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.533649206161499,
+                "mean_abs": 0.37657833099365234,
+                "max_abs": 5.039045333862305
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.8542509078979492,
+                "cosine": 0.772237241268158,
+                "projection": 0.6596843600273132,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5572936534881592,
+                "mean_abs": 0.3961288332939148,
+                "max_abs": 4.896544456481934
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.8573020100593567,
+                "cosine": 0.7673523426055908,
+                "projection": 0.6578527092933655,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.5604224801063538,
+                "mean_abs": 0.40133601427078247,
+                "max_abs": 4.733371734619141
+              }
+            }
+          ]
+        },
+        {
+          "interval": 3,
+          "next_evaluation": 4,
+          "injection": {
+            "interval": 3,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "631a8dd274ac50ba7a988187eee891322bfc13a8b01e28c703c02d9f4503c33d"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.3848554790019989,
+              "mean_abs": 0.2760023772716522,
+              "max_abs": 4.060606002807617
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.413911908864975,
+              "mean_abs": 0.2746264338493347,
+              "max_abs": 4.376214027404785
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.5813313722610474,
+              "mean_abs": 0.41684862971305847,
+              "max_abs": 5.5840654373168945
+            },
+            "direction": {
+              "recovery_ratio": 0.6620253920555115,
+              "cosine": 0.7033900618553162,
+              "projection": 0.4656620919704437,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.003050446510315,
+              "mean_abs": 0.7270074486732483,
+              "max_abs": 6.93657112121582
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.26322969794273376,
+              "mean_abs": 0.16827630996704102,
+              "max_abs": 3.935451030731201
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.0406293869018555,
+              "mean_abs": 0.7633552551269531,
+              "max_abs": 6.867040634155273
+            },
+            "direction": {
+              "recovery_ratio": 0.9638879895210266,
+              "cosine": 0.9674869179725647,
+              "projection": 0.932548999786377,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 4,
+              "editable": {
+                "recovery_ratio": 0.6620253920555115,
+                "cosine": 0.7033900618553162,
+                "projection": 0.4656620919704437,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.3848554790019989,
+                "mean_abs": 0.2760023772716522,
+                "max_abs": 4.060606002807617
+              }
+            },
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.6786690354347229,
+                "cosine": 0.687943160533905,
+                "projection": 0.4668857157230377,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.4274035096168518,
+                "mean_abs": 0.30401331186294556,
+                "max_abs": 4.224106788635254
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.6996449828147888,
+                "cosine": 0.6710928678512573,
+                "projection": 0.4695267379283905,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.4564321041107178,
+                "mean_abs": 0.3261019289493561,
+                "max_abs": 4.644018650054932
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.7048909068107605,
+                "cosine": 0.6674887537956238,
+                "projection": 0.47050678730010986,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.46079060435295105,
+                "mean_abs": 0.3316574692726135,
+                "max_abs": 4.5536980628967285
+              }
+            }
+          ]
+        },
+        {
+          "interval": 4,
+          "next_evaluation": 5,
+          "injection": {
+            "interval": 4,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "6f9f5c27b14eecfd90ede0f222ed7bcbc2184ce81a0aa4e21506330416ec37de"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.30285757780075073,
+              "mean_abs": 0.21818920969963074,
+              "max_abs": 3.478696823120117
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.5361816883087158,
+              "mean_abs": 0.3715118169784546,
+              "max_abs": 5.013715744018555
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.6297668814659119,
+              "mean_abs": 0.4512800872325897,
+              "max_abs": 5.0274128913879395
+            },
+            "direction": {
+              "recovery_ratio": 0.48090437054634094,
+              "cosine": 0.5264996886253357,
+              "projection": 0.25319597125053406,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.0407873392105103,
+              "mean_abs": 0.7634903192520142,
+              "max_abs": 6.303635597229004
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.2738319933414459,
+              "mean_abs": 0.1719295084476471,
+              "max_abs": 4.10382604598999
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.0696263313293457,
+              "mean_abs": 0.7917703986167908,
+              "max_abs": 6.486173152923584
+            },
+            "direction": {
+              "recovery_ratio": 0.9730367064476013,
+              "cosine": 0.9666971564292908,
+              "projection": 0.9406318068504333,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 5,
+              "editable": {
+                "recovery_ratio": 0.48090437054634094,
+                "cosine": 0.5264996886253357,
+                "projection": 0.25319597125053406,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.30285757780075073,
+                "mean_abs": 0.21818920969963074,
+                "max_abs": 3.478696823120117
+              }
+            },
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.4919288158416748,
+                "cosine": 0.49062731862068176,
+                "projection": 0.24135370552539825,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.32092320919036865,
+                "mean_abs": 0.22905488312244415,
+                "max_abs": 4.720290184020996
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.4999666213989258,
+                "cosine": 0.48233580589294434,
+                "projection": 0.24115179479122162,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.32683032751083374,
+                "mean_abs": 0.23428580164909363,
+                "max_abs": 4.6563310623168945
+              }
+            }
+          ]
+        },
+        {
+          "interval": 5,
+          "next_evaluation": 6,
+          "injection": {
+            "interval": 5,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "7bf1d549e108d6c1c7676343ffeb1b391147b6885fe4a411080ed68c13db7511"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.20428334176540375,
+              "mean_abs": 0.14473018050193787,
+              "max_abs": 2.8838047981262207
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.6012870073318481,
+              "mean_abs": 0.4299841523170471,
+              "max_abs": 4.8182220458984375
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.6523770093917847,
+              "mean_abs": 0.47066694498062134,
+              "max_abs": 4.9851579666137695
+            },
+            "direction": {
+              "recovery_ratio": 0.3131359815597534,
+              "cosine": 0.396870881319046,
+              "projection": 0.12427455186843872,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.0904446840286255,
+              "mean_abs": 0.8147199153900146,
+              "max_abs": 6.913814544677734
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.1760900914669037,
+              "mean_abs": 0.11410760879516602,
+              "max_abs": 2.9066014289855957
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.1083202362060547,
+              "mean_abs": 0.8315457105636597,
+              "max_abs": 6.902415752410889
+            },
+            "direction": {
+              "recovery_ratio": 0.983870804309845,
+              "cosine": 0.9873048663139343,
+              "projection": 0.9713804125785828,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 6,
+              "editable": {
+                "recovery_ratio": 0.3131359815597534,
+                "cosine": 0.396870881319046,
+                "projection": 0.12427455186843872,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.20428334176540375,
+                "mean_abs": 0.14473018050193787,
+                "max_abs": 2.8838047981262207
+              }
+            },
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.3193871080875397,
+                "cosine": 0.3815951645374298,
+                "projection": 0.12187656760215759,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.20878474414348602,
+                "mean_abs": 0.14790044724941254,
+                "max_abs": 2.670501232147217
+              }
+            }
+          ]
+        },
+        {
+          "interval": 6,
+          "next_evaluation": 7,
+          "injection": {
+            "interval": 6,
+            "pre_injection_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "editable_after_vs_ordinary": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "source_after_vs_epsilon": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "active_support_after_vs_expected": {
+              "rms": 0.0,
+              "mean_abs": 0.0,
+              "max_abs": 0.0
+            },
+            "next_call_intended_hybrid_hash": "3d679528f05beb8cd27234bf7b1e34bc504f7a3442e280178099c6cbaca9df96"
+          },
+          "next_input_matches_hybrid": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "editable": {
+            "pulse_vs_ordinary": {
+              "rms": 0.12398336082696915,
+              "mean_abs": 0.08629283308982849,
+              "max_abs": 1.9434869289398193
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.628174901008606,
+              "mean_abs": 0.4540591835975647,
+              "max_abs": 4.780872821807861
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 0.6537047028541565,
+              "mean_abs": 0.4736199378967285,
+              "max_abs": 5.026026725769043
+            },
+            "direction": {
+              "recovery_ratio": 0.18966223299503326,
+              "cosine": 0.296724796295166,
+              "projection": 0.05627748370170593,
+              "degenerate": null
+            }
+          },
+          "source": {
+            "pulse_vs_ordinary": {
+              "rms": 1.1433874368667603,
+              "mean_abs": 0.8670845031738281,
+              "max_abs": 6.200112342834473
+            },
+            "pulse_vs_epsilon": {
+              "rms": 0.11152433604001999,
+              "mean_abs": 0.06963127106428146,
+              "max_abs": 1.8419146537780762
+            },
+            "epsilon_vs_ordinary": {
+              "rms": 1.1547859907150269,
+              "mean_abs": 0.8786444664001465,
+              "max_abs": 6.141472339630127
+            },
+            "direction": {
+              "recovery_ratio": 0.9901299476623535,
+              "cosine": 0.99534010887146,
+              "projection": 0.9855161309242249,
+              "degenerate": null
+            }
+          },
+          "persistence": [
+            {
+              "evaluation": 7,
+              "editable": {
+                "recovery_ratio": 0.18966223299503326,
+                "cosine": 0.296724796295166,
+                "projection": 0.05627748370170593,
+                "degenerate": null
+              },
+              "editable_pulse_vs_ordinary": {
+                "rms": 0.12398336082696915,
+                "mean_abs": 0.08629283308982849,
+                "max_abs": 1.9434869289398193
+              }
+            }
+          ]
+        }
+      ],
+      "selected_interval": 0,
+      "causal_prerequisite": true,
+      "spatial": null,
+      "frequency": null
+    }
+  },
+  "runtime_seconds": 134.91380829998525,
+  "production_changed": false
+}

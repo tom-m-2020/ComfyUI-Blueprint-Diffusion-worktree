@@ -1031,3 +1031,12 @@ ordinary T2I across bridge, tree, and desert, proving the useful action is not a
 direct editable correction. Projection changes globally computed direction and
 magnitude while retaining source-only final support. No second ablation,
 parameter tuning, or production change was made.
+
+The source co-evolution pulse study is complete and classified SOURCE
+CO-EVOLUTION LOCALIZED. Fresh O/E references are bit-exact to the prior archive.
+An isolated interval-0 source pulse exactly reproduces E's next editable raw x0
+for all three cases and persists, but later diverges directionally without
+continued corrections. Bridge support tests attribute most aligned response to
+distant source rather than a two-column boundary halo, and to a fixed 3x3
+low-frequency component rather than its high residual. No production changes or
+parameter sweeps were made.

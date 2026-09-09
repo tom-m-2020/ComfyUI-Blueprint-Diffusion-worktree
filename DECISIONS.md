@@ -1454,3 +1454,16 @@ guide-weight mask gives the correction no editable support. Any future epsilon
 variant intended to retain its geometric benefit must preserve a way for the
 source-attracted trajectory to influence subsequent editable predictions. This
 finding does not authorize tuning or production implementation.
+
+## 2026-09-09 — Classify source co-evolution as localized causal communication
+
+Classify the measured mechanism as SOURCE CO-EVOLUTION LOCALIZED: the first
+accepted source displacement exactly reproduces the next editable epsilon
+prediction, and fixed distant-source/low-frequency components reproduce
+substantial directionally aligned portions. Do not reduce this to boundary-only
+negotiation.
+
+A single pulse is not selected as an algorithm. Its influence persists but
+redirects relative to full epsilon when later corrections are omitted. The
+result authorizes no production implementation, strength/support/frequency
+tuning, or final-quality claim.
