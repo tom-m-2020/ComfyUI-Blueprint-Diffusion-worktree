@@ -2633,3 +2633,89 @@ exact object count, and the single horizon becomes incompatible scene patches.
 This establishes only that the literal interpolation-only prototype fails under
 the fixed setup, not that every interleaved architecture fails. Evidence:
 `experiments/LITERAL_ALTERNATING_RESOLUTION_REPORT.md`.
+
+## 2026-09-08 — Local Edit source authority requires sampler-state ownership
+
+The current local RES4LYF snapshot has no Git metadata and is identified by
+SHA-256 in `docs/notes/LOCAL_EDIT_CLOWN_GUIDE_AUDIT.md`; it is newer than the
+Phase-45 commit-labelled snapshot. `ClownGuide_Beta` inverts its incoming mask,
+the guide machinery bilinearly resizes it, and ordinary epsilon guidance is
+applied after the model prediction to the RK derivative. Under Klein CONST,
+`x0=x_sigma-sigma*d`; plain epsilon is exactly a spatial x0 pull toward the
+clean guide.
+
+RES4LYF pseudoimplicit is different: it creates a lower temporary sub-sigma and
+guide-shifted temporary state before the row model call, so the model sees the
+intervention. In the common one-guide/non-full-mask setup its `SKIP_PSEUDO`
+condition skips step zero. Both Klein and Z-Image admit the same affine CONST
+guide trajectory, so their reported perceptual difference is not explained by
+the audited equations and remains a controlled-runtime question.
+
+Native ComfyUI `KSamplerX0Inpaint` replaces locked model input before each call
+and replaces locked denoised output with the source afterward. RES4LYF then
+performs an additional final noise-mask blend. An epsilon guide toward the same
+source can consequently be redundant in the locked region, while soft masks
+are multiply blended through nonidentical mask/resizing policies.
+
+For explicit editable mask `M` and lock `L=1-M`, the Euclidean projection of a
+CONST derivative onto exact source consistency is
+`M*d_model + L*(x_sigma-y)/sigma`. It is identical to hard denoised replacement
+on `L` and leaves editable coordinates exactly untouched. Exact accepted-state
+authority, stochastic-noise control, and future solver history cannot be
+enforced by a stateless model/guider patch; the narrow truthful boundary is a
+custom sampler plus a small optional policy lifecycle. Full audit and fixed
+discriminator gates: `docs/notes/LOCAL_EDIT_CLOWN_GUIDE_AUDIT.md`.
+
+## 2026-09-09 — Exact hard source authority is insufficient for seamless Klein outpainting
+
+The fixed full-canvas Klein discriminator applied the audited CONST contract at
+both derivative and accepted-state boundaries. Across all four Euler intervals,
+locked input-state and accepted-state RMS/max errors against the prescribed
+source trajectory were exactly zero at the recorded precision; terminal locked
+latent error was zero. Editable derivative change was also exactly zero. The
+fixed locked noise hash was identical at every interval, and an independent
+repeat was bit-exact.
+
+Despite that exact latent invariant, the decoded result fails the boundary
+continuity gate. The right editable region restarts a smaller disconnected
+bridge, with a visible vertical seam and incompatible sky/water appearance.
+The mismatch becomes clearly identifiable in accepted preview step 2. Editable
+change RMS is `0.746809`, so this is not loss of edit freedom.
+
+Decoded locked-region MAE against the source reconstruction is `0.045182`,
+versus a `0.011302` VAE self-reconstruction baseline, and locked boundary-strip
+MAE is `0.098183`. Therefore exact final latent coordinates do not by themselves
+guarantee the strict decoded source-fidelity invariant when the complete canvas
+is decoded; the exact decoder mechanism was not isolated in this task.
+
+Native ComfyUI binary noise masking produces the same decoded pixels and
+metrics as the explicit hard-source sampler. Its terminal latent differs by at
+most `4.768e-7`, consistent with operation-order rounding rather than a distinct
+trajectory contract. Evidence: `experiments/LOCAL_EDIT_HARD_SOURCE_KLEIN_REPORT.md`.
+
+## 2026-09-09 — Two-column scalar transition worsens the Klein boundary
+
+The fixed editable-side transition used linear weights `[1,0]` over the two
+latent columns nearest the immutable lock. All locked trajectory errors remain
+zero, the final locked state is bit-exact to the frozen hard-source baseline,
+and editable-interior derivative change is zero. The independent run repeats
+bit-exactly. First accepted-state divergence is step zero as intended.
+
+The correction is not ineffectual: transition correction RMS decreases from
+`0.920788` to `0.642278` over the four intervals, final transition RMS versus
+the frozen baseline is `0.848558`, and later prediction changes yield editable-
+core RMS `0.121357` versus frozen. Perceptually it regresses S3. A wide near-
+black vertical barrier forms while the smaller right-side bridge still restarts
+independently. Seam-gradient RMS rises from `0.067718` to `0.308739`. Thus the
+simple scalar source pull neither transfers crossing geometry nor reconciles
+scale, even though it strongly changes the boundary trajectory.
+
+A zero-diffusion hybrid-latent diagnostic kept all locked latent values exact
+and changed only editable columns. With no guard, decoded locked MAE is
+`0.065095` at 0-16 pixels inside the boundary and remains `0.035560` at
+256-768 pixels inside. Guards of 2, 4, and 8 latent columns reduce both near and
+distant error; a 16-column guard, which changes no editable latent, returns zero
+error. This establishes broad full-canvas VAE decode coupling in this case,
+not merely a narrow cross-boundary effect. The responsible internal decoder
+operation was not isolated. Evidence:
+`experiments/LOCAL_EDIT_TRANSITION_KLEIN_REPORT.md`.

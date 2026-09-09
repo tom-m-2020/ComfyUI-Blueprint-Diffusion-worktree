@@ -893,3 +893,37 @@ and 50 bounded W calls with no destination-sized forward and complete coverage.
 The output fails S3 with repeated prompt-complete scenes and no continuous
 horizon; final overlap RMS is `0.6462023`. This is explicitly not a rejection
 of every interleaved architecture. No production code changed.
+
+The Local Edit Clown Guide audit is complete with zero diffusion inference and
+no production or registration changes. The local RES4LYF snapshot was traced
+through guide preparation, mask inversion/resizing, epsilon, channelwise
+projection, pseudoimplicit pre-model state construction, RK update, ordinary
+ComfyUI inpaint masking, and final output blending. A source-authoritative
+CONST trajectory under a hard locked mask is selected for one future
+full-canvas deterministic-Euler discriminator. The first prototype should own
+accepted sampler state in a custom `SAMPLER`, derive any transition band from
+one explicit editable mask, and reject an incoming latent `noise_mask`.
+Implementation and inference remain unauthorized.
+
+The first Local Edit hard-source Klein runtime discriminator is complete. The
+experiment-only deterministic-Euler sampler kept every locked accepted state
+exactly on the prescribed CONST source trajectory and ended exactly at the
+clean source latent; the independent repeat was bit-exact. The editable region
+generated freely, but the result failed the strict decoded-source and boundary
+continuity gates: it restarted the bridge at a different scale across a visible
+vertical seam. Native binary ComfyUI noise masking reproduced the same decoded
+result and differed from the explicit sampler by at most `4.77e-7` in latent
+space. The hard-source-only candidate is rejected as a complete policy. The
+next authorized research slice is an editable-side transition/boundary policy
+with the hard lock unchanged. No production source or registration changed.
+
+The fixed two-column editable-side scalar transition discriminator is complete
+and rejected. S1 remains exact, the editable interior remains untouched at the
+policy boundary, and the independent repeat is bit-exact. The transition acts
+strongly but worsens S3: a broad dark vertical barrier replaces the prior seam
+while the smaller bridge still restarts independently. The optional alternate
+falloff was therefore not run, and scalar transition guidance stops without
+tuning. A zero-diffusion guard diagnostic shows editable latent changes affect
+decoded pixels broadly across the locked source side rather than only in a
+narrow boundary strip. The next eligible branch is a model-visible or
+prediction-refresh boundary mechanism. No production source changed.

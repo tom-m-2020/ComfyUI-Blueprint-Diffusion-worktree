@@ -1271,3 +1271,46 @@ corrective state construction is authorized as part of this result.
 Scope the rejection narrowly. It applies to the tested literal interpolation-
 only trajectory, not to all recurrent/interleaved architectures. Production
 nodes and registrations remain unchanged.
+
+## 2026-09-08 — Start Local Edit with a hard CONST source trajectory
+
+For the first independent Local Edit discriminator, select a source-authoritative
+hard spatial derivative/state constraint under native Klein CONST sampling.
+Use one explicit user convention (`M=1` editable), derive a measurement-only
+transition band on the editable side, and keep the locked complement immutable.
+Do not feather the lock.
+
+The future prototype must be an optional Local Edit policy hosted by a minimal
+custom `SAMPLER`, because accepted state—not only denoised prediction—must be
+authoritative. Reject an incoming latent `noise_mask` to prevent ComfyUI's
+inpaint wrapper and Local Edit from owning the same state twice. Do not add
+pseudoimplicit, Clown channelwise projection, a transition correction,
+Blueprint state, sparse execution, K/V reuse, or compute optimization to the
+first discriminator. This decision authorizes design only; implementation and
+diffusion inference require an explicit continuation.
+
+## 2026-09-09 — Reject hard-source-only; retain the lock for boundary research
+
+Reject the exact hard-source sampler as a complete Klein Local Edit policy. It
+passes source-trajectory exactness, edit freedom, and determinism, but fails the
+strict decoded-source and geometric boundary-continuity gates. This rejection
+does not weaken or replace the hard source invariant.
+
+The next discriminator may act only on a transition band derived wholly inside
+the editable mask, or test another explicitly editable-side boundary correction.
+Do not feather or move the locked source, and do not reopen plain Clown epsilon,
+pseudoimplicit, projection sweeps, Blueprint coupling, sparse execution, or
+production sampler work as part of this result.
+
+## 2026-09-09 — Stop scalar editable-side transition guidance
+
+Reject the fixed two-column linear `d_model` to `d_source` interpolation. It
+preserves the immutable lock and edit freedom but materially worsens the
+boundary, producing a wide dark barrier without resolving the restarted bridge.
+Do not run the optional falloff arm or tune scalar strength, width, sigma window,
+schedule, seed, or projection mode.
+
+Preserve the exact hard-source contract. The next Local Edit research branch
+must instead audit a model-visible or prediction-refresh boundary mechanism.
+The VAE locality finding is diagnostic only and does not authorize changing the
+Local Edit algorithm or source lock.
