@@ -1,0 +1,391 @@
+{
+  "experiment": "Local Edit 2-column linear editable-side transition",
+  "configuration": {
+    "reused_frozen_hard_source": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_hard_source_klein_results\\runtime_tensors.pt",
+    "mask_convention": "M=1 editable; L=1-M locked; T subset M",
+    "transition_width_latent_columns": 2,
+    "transition_weights_from_boundary": [
+      1.0,
+      0.0
+    ],
+    "sigmas": [
+      1.0,
+      0.9614368677139282,
+      0.8925943970680237,
+      0.7347596883773804,
+      0.0
+    ],
+    "seed": 20260909,
+    "prompt": "A wide cinematic photograph of exactly one long red suspension bridge crossing calm water continuously from left to right, one yellow passenger train on the bridge, controlled towers and continuous cables, one coherent horizon, sunset light, extend the same bridge landscape naturally to the right"
+  },
+  "intervals": [
+    {
+      "step": 0,
+      "sigma": 1.0,
+      "sigma_next": 0.9614368677139282,
+      "locked_state_rms_error_vs_y_sigma": 0.0,
+      "locked_state_max_error_vs_y_sigma": 0.0,
+      "accepted_locked_rms_error_vs_y_sigma_next": 0.0,
+      "accepted_locked_max_error_vs_y_sigma_next": 0.0,
+      "transition_derivative_rms": 1.2869242429733276,
+      "transition_correction_rms": 0.9207876324653625,
+      "transition_vs_model_derivative_rms": 0.9207876324653625,
+      "interior_editable_derivative_change_max": 0.0,
+      "accepted_transition_state_rms": 0.968907356262207,
+      "locked_derivative_hash": "5f45cd16d0527d5cd78c4f86f236a10e6a19a44a09d5212be91b88c8ce2fcdca",
+      "accepted_locked_hash": "2e72b8faab7a7e316f28e567282baf84174e0e0f4d620c59b295e93c35eb4d7f",
+      "accepted_hash": "d74fede4680e6dcdb8271b9222f4b97925acb38df246ae0fe0db3ef7654b4c12"
+    },
+    {
+      "step": 1,
+      "sigma": 0.9614368677139282,
+      "sigma_next": 0.8925943970680237,
+      "locked_state_rms_error_vs_y_sigma": 0.0,
+      "locked_state_max_error_vs_y_sigma": 0.0,
+      "accepted_locked_rms_error_vs_y_sigma_next": 0.0,
+      "accepted_locked_max_error_vs_y_sigma_next": 0.0,
+      "transition_derivative_rms": 1.209389567375183,
+      "transition_correction_rms": 0.8621696829795837,
+      "transition_vs_model_derivative_rms": 0.8621696829795837,
+      "interior_editable_derivative_change_max": 0.0,
+      "accepted_transition_state_rms": 0.914156436920166,
+      "locked_derivative_hash": "75c16edc6d9ddd3d871d6ef196f85a75cb0940a7988bb33e5f64ba6ffc4582a9",
+      "accepted_locked_hash": "56ce166cc7eec7e1bbfc99b454d74e142cb51ef194512de341f055a3e388527c",
+      "accepted_hash": "640b823749d09c7249d9eed369912a411b9a6f1aaea503603d4345747f9e7d49"
+    },
+    {
+      "step": 2,
+      "sigma": 0.8925943970680237,
+      "sigma_next": 0.7347596883773804,
+      "locked_state_rms_error_vs_y_sigma": 0.0,
+      "locked_state_max_error_vs_y_sigma": 0.0,
+      "accepted_locked_rms_error_vs_y_sigma_next": 0.0,
+      "accepted_locked_max_error_vs_y_sigma_next": 0.0,
+      "transition_derivative_rms": 1.2666583061218262,
+      "transition_correction_rms": 0.7359097599983215,
+      "transition_vs_model_derivative_rms": 0.7359097599983215,
+      "interior_editable_derivative_change_max": 0.0,
+      "accepted_transition_state_rms": 0.8062897324562073,
+      "locked_derivative_hash": "105a80d3ff94d6a1c147f66bdba05bfc888bb29b3c7bfdea67a9dd9da0357221",
+      "accepted_locked_hash": "2f94cab0525cf2fe209a0aacacc1119856c73eeba014cdc9308a5275d56ea5f2",
+      "accepted_hash": "7520f2c3d23c75d0656f8b5cc62637847dc3734bcd5c57dfd02c0b814748110c"
+    },
+    {
+      "step": 3,
+      "sigma": 0.7347596883773804,
+      "sigma_next": 0.0,
+      "locked_state_rms_error_vs_y_sigma": 0.0,
+      "locked_state_max_error_vs_y_sigma": 0.0,
+      "accepted_locked_rms_error_vs_y_sigma_next": 0.0,
+      "accepted_locked_max_error_vs_y_sigma_next": 0.0,
+      "transition_derivative_rms": 1.296072006225586,
+      "transition_correction_rms": 0.6422775983810425,
+      "transition_vs_model_derivative_rms": 0.6422775983810425,
+      "interior_editable_derivative_change_max": 0.0,
+      "accepted_transition_state_rms": 0.9431477785110474,
+      "locked_derivative_hash": "beeabc41c58818d55f2af34e7ffea0cbc88160f7d81e846e406535f39b580db0",
+      "accepted_locked_hash": "53f7a9de017ddf4624251a98ed31bb678c2b5bf9f49051e1ad6218e5b239ebb0",
+      "accepted_hash": "cb339293d5c016654564d7dc40f801ed749431c641e9518ed7610f3e65947530"
+    }
+  ],
+  "comparisons": {
+    "first_accepted_divergence_step_vs_frozen": 0,
+    "final_rms_vs_frozen": 0.1603846251964569,
+    "final_transition_rms_vs_frozen": 0.8485575318336487,
+    "final_editable_core_rms_vs_frozen": 0.1213574931025505,
+    "repeat_latent_bit_exact": true,
+    "repeat_decoded_bit_exact": true
+  },
+  "integrity": {
+    "S1_pass": true,
+    "terminal_locked_max_abs_vs_source": 0.0,
+    "locked_final_bit_exact_vs_frozen": true,
+    "transition_inside_editable": true,
+    "transition_restored_after_accept": false,
+    "production_changes": false
+  },
+  "pixel_metrics": {
+    "frozen": {
+      "locked_vs_source_reconstruction_mae": 0.0473085418343544,
+      "locked_vs_source_reconstruction_max_abs": 0.50390625,
+      "locked_vs_source_reconstruction_psnr": 24.594802079855565,
+      "safe_locked_interior_mae": 0.0449686199426651,
+      "vae_self_reconstruction_locked_mae": 0.0,
+      "locked_boundary_strip_mae": 0.10112684965133667,
+      "editable_boundary_strip_change_rms": 0.7236953973770142,
+      "seam_gradient_rms": 0.0677175223827362,
+      "left_adjacent_gradient_rms": 0.04227825999259949,
+      "right_adjacent_gradient_rms": 0.0629875659942627,
+      "editable_region_change_rms": 0.7500746250152588
+    },
+    "transition": {
+      "locked_vs_source_reconstruction_mae": 0.038548752665519714,
+      "locked_vs_source_reconstruction_max_abs": 0.26220703125,
+      "locked_vs_source_reconstruction_psnr": 26.372282113450986,
+      "safe_locked_interior_mae": 0.037663619965314865,
+      "vae_self_reconstruction_locked_mae": 0.0,
+      "locked_boundary_strip_mae": 0.05890686810016632,
+      "editable_boundary_strip_change_rms": 0.43341875076293945,
+      "seam_gradient_rms": 0.308738648891449,
+      "left_adjacent_gradient_rms": 0.062275759875774384,
+      "right_adjacent_gradient_rms": 0.3986232876777649,
+      "editable_region_change_rms": 0.685876190662384
+    }
+  },
+  "vae_locality": [
+    {
+      "unchanged_editable_guard_latent_columns": 0,
+      "distance_profile": [
+        {
+          "distance_into_locked_px_min": 0,
+          "distance_into_locked_px_max": 16,
+          "mae": 0.0650947242975235,
+          "max_abs": 0.19921875
+        },
+        {
+          "distance_into_locked_px_min": 16,
+          "distance_into_locked_px_max": 32,
+          "mae": 0.05271904170513153,
+          "max_abs": 0.1455078125
+        },
+        {
+          "distance_into_locked_px_min": 32,
+          "distance_into_locked_px_max": 64,
+          "mae": 0.04731444641947746,
+          "max_abs": 0.1412353515625
+        },
+        {
+          "distance_into_locked_px_min": 64,
+          "distance_into_locked_px_max": 128,
+          "mae": 0.043355945497751236,
+          "max_abs": 0.15234375
+        },
+        {
+          "distance_into_locked_px_min": 128,
+          "distance_into_locked_px_max": 256,
+          "mae": 0.04081965982913971,
+          "max_abs": 0.21533203125
+        },
+        {
+          "distance_into_locked_px_min": 256,
+          "distance_into_locked_px_max": 768,
+          "mae": 0.035559896379709244,
+          "max_abs": 0.26220703125
+        }
+      ]
+    },
+    {
+      "unchanged_editable_guard_latent_columns": 1,
+      "distance_profile": [
+        {
+          "distance_into_locked_px_min": 0,
+          "distance_into_locked_px_max": 16,
+          "mae": 0.0650947242975235,
+          "max_abs": 0.19921875
+        },
+        {
+          "distance_into_locked_px_min": 16,
+          "distance_into_locked_px_max": 32,
+          "mae": 0.05271904170513153,
+          "max_abs": 0.1455078125
+        },
+        {
+          "distance_into_locked_px_min": 32,
+          "distance_into_locked_px_max": 64,
+          "mae": 0.04731444641947746,
+          "max_abs": 0.1412353515625
+        },
+        {
+          "distance_into_locked_px_min": 64,
+          "distance_into_locked_px_max": 128,
+          "mae": 0.043355945497751236,
+          "max_abs": 0.15234375
+        },
+        {
+          "distance_into_locked_px_min": 128,
+          "distance_into_locked_px_max": 256,
+          "mae": 0.04081965982913971,
+          "max_abs": 0.21533203125
+        },
+        {
+          "distance_into_locked_px_min": 256,
+          "distance_into_locked_px_max": 768,
+          "mae": 0.035559896379709244,
+          "max_abs": 0.26220703125
+        }
+      ]
+    },
+    {
+      "unchanged_editable_guard_latent_columns": 2,
+      "distance_profile": [
+        {
+          "distance_into_locked_px_min": 0,
+          "distance_into_locked_px_max": 16,
+          "mae": 0.05459807813167572,
+          "max_abs": 0.18701171875
+        },
+        {
+          "distance_into_locked_px_min": 16,
+          "distance_into_locked_px_max": 32,
+          "mae": 0.045702606439590454,
+          "max_abs": 0.1298828125
+        },
+        {
+          "distance_into_locked_px_min": 32,
+          "distance_into_locked_px_max": 64,
+          "mae": 0.04300939664244652,
+          "max_abs": 0.12744140625
+        },
+        {
+          "distance_into_locked_px_min": 64,
+          "distance_into_locked_px_max": 128,
+          "mae": 0.04099813476204872,
+          "max_abs": 0.146484375
+        },
+        {
+          "distance_into_locked_px_min": 128,
+          "distance_into_locked_px_max": 256,
+          "mae": 0.03895317763090134,
+          "max_abs": 0.1953125
+        },
+        {
+          "distance_into_locked_px_min": 256,
+          "distance_into_locked_px_max": 768,
+          "mae": 0.033382099121809006,
+          "max_abs": 0.26336669921875
+        }
+      ]
+    },
+    {
+      "unchanged_editable_guard_latent_columns": 4,
+      "distance_profile": [
+        {
+          "distance_into_locked_px_min": 0,
+          "distance_into_locked_px_max": 16,
+          "mae": 0.043952032923698425,
+          "max_abs": 0.13232421875
+        },
+        {
+          "distance_into_locked_px_min": 16,
+          "distance_into_locked_px_max": 32,
+          "mae": 0.03846171870827675,
+          "max_abs": 0.1103515625
+        },
+        {
+          "distance_into_locked_px_min": 32,
+          "distance_into_locked_px_max": 64,
+          "mae": 0.03691946715116501,
+          "max_abs": 0.1142578125
+        },
+        {
+          "distance_into_locked_px_min": 64,
+          "distance_into_locked_px_max": 128,
+          "mae": 0.03582971915602684,
+          "max_abs": 0.126953125
+        },
+        {
+          "distance_into_locked_px_min": 128,
+          "distance_into_locked_px_max": 256,
+          "mae": 0.03422996774315834,
+          "max_abs": 0.174072265625
+        },
+        {
+          "distance_into_locked_px_min": 256,
+          "distance_into_locked_px_max": 768,
+          "mae": 0.02898145653307438,
+          "max_abs": 0.21484375
+        }
+      ]
+    },
+    {
+      "unchanged_editable_guard_latent_columns": 8,
+      "distance_profile": [
+        {
+          "distance_into_locked_px_min": 0,
+          "distance_into_locked_px_max": 16,
+          "mae": 0.03086760826408863,
+          "max_abs": 0.08984375
+        },
+        {
+          "distance_into_locked_px_min": 16,
+          "distance_into_locked_px_max": 32,
+          "mae": 0.027260176837444305,
+          "max_abs": 0.080078125
+        },
+        {
+          "distance_into_locked_px_min": 32,
+          "distance_into_locked_px_max": 64,
+          "mae": 0.025920992717146873,
+          "max_abs": 0.06689453125
+        },
+        {
+          "distance_into_locked_px_min": 64,
+          "distance_into_locked_px_max": 128,
+          "mae": 0.024938220158219337,
+          "max_abs": 0.0849609375
+        },
+        {
+          "distance_into_locked_px_min": 128,
+          "distance_into_locked_px_max": 256,
+          "mae": 0.024081362411379814,
+          "max_abs": 0.123779296875
+        },
+        {
+          "distance_into_locked_px_min": 256,
+          "distance_into_locked_px_max": 768,
+          "mae": 0.020348481833934784,
+          "max_abs": 0.1474609375
+        }
+      ]
+    },
+    {
+      "unchanged_editable_guard_latent_columns": 16,
+      "distance_profile": [
+        {
+          "distance_into_locked_px_min": 0,
+          "distance_into_locked_px_max": 16,
+          "mae": 0.0,
+          "max_abs": 0.0
+        },
+        {
+          "distance_into_locked_px_min": 16,
+          "distance_into_locked_px_max": 32,
+          "mae": 0.0,
+          "max_abs": 0.0
+        },
+        {
+          "distance_into_locked_px_min": 32,
+          "distance_into_locked_px_max": 64,
+          "mae": 0.0,
+          "max_abs": 0.0
+        },
+        {
+          "distance_into_locked_px_min": 64,
+          "distance_into_locked_px_max": 128,
+          "mae": 0.0,
+          "max_abs": 0.0
+        },
+        {
+          "distance_into_locked_px_min": 128,
+          "distance_into_locked_px_max": 256,
+          "mae": 0.0,
+          "max_abs": 0.0
+        },
+        {
+          "distance_into_locked_px_min": 256,
+          "distance_into_locked_px_max": 768,
+          "mae": 0.0,
+          "max_abs": 0.0
+        }
+      ]
+    }
+  ],
+  "runtime_seconds": 20.20082679996267,
+  "semantic_review": {
+    "S3": "FAIL/REGRESSION: the transition creates a wider near-black vertical barrier and the smaller bridge still restarts independently on the editable side.",
+    "S4": "PASS: editable-region change RMS remains 0.685876, but this does not offset the S3 failure.",
+    "artifact_extent": "FAIL: the decoded barrier is wider than the nominal transition band influence expected for a useful boundary condition.",
+    "vae_locality": "BROAD: editable latent changes affect decoded locked pixels throughout the source side; error decreases with guard width but is not localized to the boundary."
+  },
+  "decision": "STOP scalar transition guidance. Do not run alternate falloff or tune width/strength; next branch must be model-visible or prediction-refresh boundary research."
+}

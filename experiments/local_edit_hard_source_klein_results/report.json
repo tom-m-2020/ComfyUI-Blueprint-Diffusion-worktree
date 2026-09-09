@@ -1,0 +1,211 @@
+{
+  "experiment": "Local Edit hard-source Klein discriminator",
+  "configuration": {
+    "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+    "text_encoder": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\text_encoders\\f2k4_Comfy-Org_vae-text-encorder-for-flux-klein-4b_text_encoders\\qwen_3_4b_fp4_flux2.safetensors",
+    "vae": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\vae\\Comfy-Org_vae-text-encorder-for-flux-klein-9b_vae\\flux2-vae.safetensors",
+    "source_image": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\terminal_resampling_geometry_qualification_results\\LANDSCAPE_BRIDGE\\selected_0.png",
+    "canvas_wh": [
+      1024,
+      512
+    ],
+    "source_wh": [
+      768,
+      512
+    ],
+    "latent_hw": [
+      32,
+      64
+    ],
+    "locked_latent_width": 48,
+    "mask_convention": "1=editable, 0=locked",
+    "transition_band_latent_width": 2,
+    "transition_band_active": false,
+    "prompt": "A wide cinematic photograph of exactly one long red suspension bridge crossing calm water continuously from left to right, one yellow passenger train on the bridge, controlled towers and continuous cables, one coherent horizon, sunset light, extend the same bridge landscape naturally to the right",
+    "seed": 20260909,
+    "steps": 4,
+    "sigmas": [
+      1.0,
+      0.9614368677139282,
+      0.8925943970680237,
+      0.7347596883773804,
+      0.0
+    ],
+    "model_sampling": "ModelSampling",
+    "sampler": "deterministic Euler"
+  },
+  "unit_tests": "run separately before inference; see test_local_edit_hard_source_klein.py",
+  "arms": {
+    "A_ordinary": {
+      "latent_hash": "b6828f4fa4c7c74b55cb4285f18cf2a205a0054e24e012b72706460abbacea7e",
+      "pixel_metrics": {
+        "locked_vs_source_reconstruction_mae": 0.21076059341430664,
+        "locked_vs_source_reconstruction_max_abs": 0.99609375,
+        "locked_vs_source_reconstruction_psnr": 11.241597330609396,
+        "safe_locked_interior_mae": 0.2133561372756958,
+        "vae_self_reconstruction_locked_mae": 0.011301969178020954,
+        "locked_boundary_strip_mae": 0.15106309950351715,
+        "editable_boundary_strip_change_rms": 0.6913870573043823,
+        "seam_gradient_rms": 0.01340099610388279,
+        "left_adjacent_gradient_rms": 0.011731584556400776,
+        "right_adjacent_gradient_rms": 0.011592648923397064,
+        "editable_region_change_rms": 0.7275578379631042
+      }
+    },
+    "B_native_noise_mask": {
+      "latent_hash": "27caf32e6cfb0a0770c6e85f59af66b528fb5008547597c44270601352bff85a",
+      "pixel_metrics": {
+        "locked_vs_source_reconstruction_mae": 0.04518234729766846,
+        "locked_vs_source_reconstruction_max_abs": 0.49831730127334595,
+        "locked_vs_source_reconstruction_psnr": 24.766868502814212,
+        "safe_locked_interior_mae": 0.04287794604897499,
+        "vae_self_reconstruction_locked_mae": 0.011301969178020954,
+        "locked_boundary_strip_mae": 0.09818349033594131,
+        "editable_boundary_strip_change_rms": 0.7202760577201843,
+        "seam_gradient_rms": 0.06580261141061783,
+        "left_adjacent_gradient_rms": 0.041376180946826935,
+        "right_adjacent_gradient_rms": 0.05994509533047676,
+        "editable_region_change_rms": 0.7468090653419495
+      }
+    },
+    "C_hard_source": {
+      "latent_hash": "1dc03934eee3cb4c5366286c0b419a4293a5b28faf7b43ab7bf85ca6288b5ebf",
+      "pixel_metrics": {
+        "locked_vs_source_reconstruction_mae": 0.04518234729766846,
+        "locked_vs_source_reconstruction_max_abs": 0.49831730127334595,
+        "locked_vs_source_reconstruction_psnr": 24.766868502814212,
+        "safe_locked_interior_mae": 0.04287794604897499,
+        "vae_self_reconstruction_locked_mae": 0.011301969178020954,
+        "locked_boundary_strip_mae": 0.09818349033594131,
+        "editable_boundary_strip_change_rms": 0.7202760577201843,
+        "seam_gradient_rms": 0.06580261141061783,
+        "left_adjacent_gradient_rms": 0.041376180946826935,
+        "right_adjacent_gradient_rms": 0.05994509533047676,
+        "editable_region_change_rms": 0.7468090653419495
+      }
+    },
+    "C_hard_source_repeat": {
+      "latent_hash": "1dc03934eee3cb4c5366286c0b419a4293a5b28faf7b43ab7bf85ca6288b5ebf",
+      "pixel_metrics": {
+        "locked_vs_source_reconstruction_mae": 0.04518234729766846,
+        "locked_vs_source_reconstruction_max_abs": 0.49831730127334595,
+        "locked_vs_source_reconstruction_psnr": 24.766868502814212,
+        "safe_locked_interior_mae": 0.04287794604897499,
+        "vae_self_reconstruction_locked_mae": 0.011301969178020954,
+        "locked_boundary_strip_mae": 0.09818349033594131,
+        "editable_boundary_strip_change_rms": 0.7202760577201843,
+        "seam_gradient_rms": 0.06580261141061783,
+        "left_adjacent_gradient_rms": 0.041376180946826935,
+        "right_adjacent_gradient_rms": 0.05994509533047676,
+        "editable_region_change_rms": 0.7468090653419495
+      }
+    }
+  },
+  "hard_source": {
+    "intervals": [
+      {
+        "step": 0,
+        "sigma": 1.0,
+        "sigma_next": 0.9614368677139282,
+        "locked_state_rms_error_vs_y_sigma": 0.0,
+        "locked_state_max_error_vs_y_sigma": 0.0,
+        "accepted_locked_rms_error_vs_y_sigma_next": 0.0,
+        "accepted_locked_max_error_vs_y_sigma_next": 0.0,
+        "editable_derivative_rms": 1.2211450338363647,
+        "locked_raw_model_derivative_rms": 1.2056639194488525,
+        "locked_replacement_derivative_rms": 1.286405086517334,
+        "replacement_increment_rms": 1.1055212020874023,
+        "boundary_band_latent_rms": 0.9733384251594543,
+        "editable_derivative_change_max_abs": 0.0,
+        "accepted_hash": "5ed47f2b0afe52ec4f7bc63b2887ec6ab0ed88053bcf9c004c6d98e53f673c0d"
+      },
+      {
+        "step": 1,
+        "sigma": 0.9614368677139282,
+        "sigma_next": 0.8925943970680237,
+        "locked_state_rms_error_vs_y_sigma": 0.0,
+        "locked_state_max_error_vs_y_sigma": 0.0,
+        "accepted_locked_rms_error_vs_y_sigma_next": 0.0,
+        "accepted_locked_max_error_vs_y_sigma_next": 0.0,
+        "editable_derivative_rms": 1.0305116176605225,
+        "locked_raw_model_derivative_rms": 1.0706558227539062,
+        "locked_replacement_derivative_rms": 1.286405086517334,
+        "replacement_increment_rms": 0.9685943126678467,
+        "boundary_band_latent_rms": 0.9275423288345337,
+        "editable_derivative_change_max_abs": 0.0,
+        "accepted_hash": "b4f283d58334982ffd5ff2ba67a158a4475b46877120be397913e0663899ef81"
+      },
+      {
+        "step": 2,
+        "sigma": 0.8925943970680237,
+        "sigma_next": 0.7347596883773804,
+        "locked_state_rms_error_vs_y_sigma": 0.0,
+        "locked_state_max_error_vs_y_sigma": 0.0,
+        "accepted_locked_rms_error_vs_y_sigma_next": 0.0,
+        "accepted_locked_max_error_vs_y_sigma_next": 0.0,
+        "editable_derivative_rms": 1.1355818510055542,
+        "locked_raw_model_derivative_rms": 1.1279330253601074,
+        "locked_replacement_derivative_rms": 1.286405086517334,
+        "replacement_increment_rms": 0.740817129611969,
+        "boundary_band_latent_rms": 0.8334400057792664,
+        "editable_derivative_change_max_abs": 0.0,
+        "accepted_hash": "9daa7f8da7a108cf58fd5a96f894432e668cf9a08d0462f8573e103e560bb3b6"
+      },
+      {
+        "step": 3,
+        "sigma": 0.7347596883773804,
+        "sigma_next": 0.0,
+        "locked_state_rms_error_vs_y_sigma": 0.0,
+        "locked_state_max_error_vs_y_sigma": 0.0,
+        "accepted_locked_rms_error_vs_y_sigma_next": 0.0,
+        "accepted_locked_max_error_vs_y_sigma_next": 0.0,
+        "editable_derivative_rms": 1.1806756258010864,
+        "locked_raw_model_derivative_rms": 1.1584938764572144,
+        "locked_replacement_derivative_rms": 1.286405086517334,
+        "replacement_increment_rms": 0.6432640552520752,
+        "boundary_band_latent_rms": 0.9476238489151001,
+        "editable_derivative_change_max_abs": 0.0,
+        "accepted_hash": "1dc03934eee3cb4c5366286c0b419a4293a5b28faf7b43ab7bf85ca6288b5ebf"
+      }
+    ],
+    "source_noise_hash": "d18c1f329b6c8fa4024cd4fb5e7a54a3e9e4750427dc23ae6c2e43cdd077cec6",
+    "source_noise_step_hashes": [
+      "d18c1f329b6c8fa4024cd4fb5e7a54a3e9e4750427dc23ae6c2e43cdd077cec6",
+      "d18c1f329b6c8fa4024cd4fb5e7a54a3e9e4750427dc23ae6c2e43cdd077cec6",
+      "d18c1f329b6c8fa4024cd4fb5e7a54a3e9e4750427dc23ae6c2e43cdd077cec6",
+      "d18c1f329b6c8fa4024cd4fb5e7a54a3e9e4750427dc23ae6c2e43cdd077cec6"
+    ],
+    "fixed_source_noise_reused": true,
+    "first_raw_prediction_hash": "aed640048b5fa1e7d7f852681f14a7a19043ef777d5a79c1bdf1acd2dbd7545b",
+    "terminal_locked_max_abs_vs_source": 0.0
+  },
+  "first_divergence": {
+    "ordinary_first_raw_prediction_hash": "aed640048b5fa1e7d7f852681f14a7a19043ef777d5a79c1bdf1acd2dbd7545b",
+    "hard_source_first_raw_prediction_hash": "aed640048b5fa1e7d7f852681f14a7a19043ef777d5a79c1bdf1acd2dbd7545b",
+    "identical": true,
+    "intended_boundary": "hard_source_derivative on locked coordinates"
+  },
+  "comparisons": {
+    "C_repeat_bit_exact": true,
+    "B_vs_C_bit_exact": false,
+    "B_vs_C_max_abs": 4.76837158203125e-07,
+    "A_vs_C_rms": 0.9881905317306519
+  },
+  "integrity": {
+    "S1_pass": true,
+    "transition_inside_editable": true,
+    "transition_active": false,
+    "incoming_noise_mask_local_edit": null,
+    "res4lyf_runtime_dependency": false,
+    "production_changes": false
+  },
+  "runtime_seconds": 598.4894133000053,
+  "semantic_review": {
+    "S2_source_fidelity": "FAIL: locked latent is exact, but decoded locked MAE is 0.045182 versus the 0.011302 VAE self-reconstruction baseline; identity/composition remain recognizable, but the strict color/quality gate is not met.",
+    "S3_boundary_continuity": "FAIL: the editable side restarts a smaller, disconnected bridge and changes sky/water appearance across a hard vertical seam; the mismatch is first clearly identifiable in accepted preview step 2.",
+    "S4_edit_freedom": "PASS: editable-region change RMS is 0.746809 and the region generates nonempty new content.",
+    "S5_determinism": "PASS: the independent C repeat is bit-exact.",
+    "control_B_relation": "Native binary noise-mask control B is visually and metrically identical to C; latent max absolute difference is 4.76837158203125e-07 from floating-point operation ordering."
+  },
+  "decision": "REJECT hard-source-only as a complete local-edit policy: S1, S4, and S5 pass; S2 and S3 fail. Preserve the hard lock and authorize only an editable-side transition/boundary correction as the next discriminator."
+}
