@@ -968,3 +968,13 @@ as the default: smooth desert sky/sand exposes an obvious full-height tonal band
 despite improved nominal-boundary scalar metrics. Two structurally failed
 organic epsilon attempts were excluded before compositing. No production source
 or registration changed.
+
+The zero-diffusion luminance-affine reconciliation discriminator is complete
+and rejected. It preserves exact source interior and bit-exact generated
+exterior in all three cases. Desert strip residual RMS improves modestly, but
+the visible full-height band remains. The same fixed automatic estimator
+regresses the organic case, producing a pronounced left-boundary halo while
+raising low-frequency residual RMS from `0.006106` to `0.022914`. Scalar/affine
+reconciliation stops without coefficient, neighborhood, or channel tuning. The
+next eligible compositor branch is gradient-domain or multiband. No production
+source changed.

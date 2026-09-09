@@ -1372,3 +1372,15 @@ Edit mechanism. Do not widen or tune it per image. Continue to reject any case
 whose epsilon A is already geometrically inconsistent before evaluating
 compositing. Any next branch must address photometric reconciliation explicitly
 without weakening ownership or concealing structural failure.
+
+## 2026-09-09 — Stop scalar and affine photometric reconciliation
+
+Reject the fixed automatic luminance-affine transition correction. It leaves
+the desert band visible and materially degrades the previously safe organic
+case with a brightness halo, despite preserving exact ownership and geometry.
+
+Do not tune affine coefficients, clipping, neighborhoods, per-channel variants,
+or strength. The next eligible compositing mechanism is a fixed gradient-domain
+or multiband discriminator under the same exact source-interior and generated-
+exterior contract. This is an experiment direction, not authorization to
+productionize.
