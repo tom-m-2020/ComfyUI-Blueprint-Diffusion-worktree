@@ -1,0 +1,1048 @@
+{
+  "experiment": "Local Edit step-0 native dense source K/V context",
+  "configuration": {
+    "sigma": 1.0,
+    "seed": 0,
+    "cfg": 1.0,
+    "latent_hw": [
+      32,
+      64
+    ],
+    "text_tokens": 512,
+    "ordinary_generated_tokens": 2048,
+    "editable_query_tokens": 1024,
+    "added_source_kv_tokens": 1024,
+    "attention_q_by_k": [
+      2560,
+      3584
+    ],
+    "blocks_modified": "all 5 double and all 20 single attention blocks",
+    "text_queries": "ordinary attention output restored exactly",
+    "locked_generated_queries": "ordinary attention output restored exactly",
+    "editable_generated_queries": "attend ordinary text+generated K/V plus source-region K/V",
+    "source_coordinates": "native full-canvas RoPE retained before source K capture",
+    "source_state": "live CONST noise_scaling(sigma=1,z,y)=z",
+    "accepted_state_updates": 0
+  },
+  "capture_layout": [
+    {
+      "block_type": "double",
+      "block_index": 0,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "double",
+      "block_index": 1,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "double",
+      "block_index": 2,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "double",
+      "block_index": 3,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "double",
+      "block_index": 4,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 0,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 1,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 2,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 3,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 4,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 5,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 6,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 7,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 8,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 9,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 10,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 11,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 12,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 13,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 14,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 15,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 16,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 17,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 18,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 19,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    }
+  ],
+  "context_layout": [
+    {
+      "block_type": "double",
+      "block_index": 0,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "double",
+      "block_index": 1,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "double",
+      "block_index": 2,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "double",
+      "block_index": 3,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "double",
+      "block_index": 4,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 0,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 1,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 2,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 3,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 4,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 5,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 6,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 7,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 8,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 9,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 10,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 11,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 12,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 13,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 14,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 15,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 16,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 17,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 18,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 19,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    }
+  ],
+  "cases": {
+    "rigid_bridge": {
+      "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+      "editable_raw_x0_D1_vs_D0": {
+        "rms": 0.27822452783584595,
+        "mean_abs": 0.15943121910095215,
+        "max_abs": 3.4375
+      },
+      "locked_raw_x0_D1_vs_D0": {
+        "rms": 0.2565719485282898,
+        "mean_abs": 0.13381251692771912,
+        "max_abs": 3.453125238418579
+      },
+      "decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.19997528195381165,
+          "left_seam_gradient_rms": 0.03548360988497734,
+          "right_lf_source_discrepancy_rms": 0.21227630972862244,
+          "right_seam_gradient_rms": 0.05106285586953163
+        },
+        "D1_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.20068520307540894,
+          "left_seam_gradient_rms": 0.04079028591513634,
+          "right_lf_source_discrepancy_rms": 0.20756879448890686,
+          "right_seam_gradient_rms": 0.059159450232982635
+        }
+      },
+      "calls": {
+        "D0_CONTROL": {
+          "seconds": 0.9317129999981262,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 469.77191162109375,
+            "rms": 0.9175233244895935,
+            "mean": -0.049647510051727295,
+            "std": 0.9161808490753174,
+            "min": -5.034737586975098,
+            "max": 6.2480010986328125,
+            "finite": true
+          }
+        },
+        "SOURCE_CAPTURE": {
+          "seconds": 0.5555498000467196,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 469.77191162109375,
+            "rms": 0.9175233244895935,
+            "mean": -0.049647510051727295,
+            "std": 0.9161808490753174,
+            "min": -5.034737586975098,
+            "max": 6.2480010986328125,
+            "finite": true
+          }
+        },
+        "D1_CONTEXT": {
+          "seconds": 0.6977176999789663,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 473.203857421875,
+            "rms": 0.9242262840270996,
+            "mean": -0.0466495007276535,
+            "std": 0.9230499863624573,
+            "min": -4.937678337097168,
+            "max": 6.6098432540893555,
+            "finite": true
+          }
+        },
+        "state": {
+          "accepted_vs_source_sigma": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "source_sigma_vs_fixed_noise": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "returned_state_vs_accepted": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "sampler_updates": 0
+        }
+      }
+    },
+    "organic_tree": {
+      "prompt": "A wide cinematic photograph continuing one coherent dry desert scene, exactly one full-body woman in a long gray dress left of center, exactly one tall green tree crossing the right region, continuous tree canopy and branches, continuous ground plane and distant hills, warm sunset light, no duplicate people, no duplicate trees, no cropped or repeated tree",
+      "editable_raw_x0_D1_vs_D0": {
+        "rms": 0.20700699090957642,
+        "mean_abs": 0.12981149554252625,
+        "max_abs": 2.09765625
+      },
+      "locked_raw_x0_D1_vs_D0": {
+        "rms": 0.39315906167030334,
+        "mean_abs": 0.20522382855415344,
+        "max_abs": 4.19140625
+      },
+      "decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.24842409789562225,
+          "left_seam_gradient_rms": 0.019206400960683823,
+          "right_lf_source_discrepancy_rms": 0.2883220314979553,
+          "right_seam_gradient_rms": 0.10660888999700546
+        },
+        "D1_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.2507432699203491,
+          "left_seam_gradient_rms": 0.01927625946700573,
+          "right_lf_source_discrepancy_rms": 0.29164454340934753,
+          "right_seam_gradient_rms": 0.11199358105659485
+        }
+      },
+      "calls": {
+        "D0_CONTROL": {
+          "seconds": 0.4559665999840945,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 500.0849304199219,
+            "rms": 0.9767283797264099,
+            "mean": -0.011440597474575043,
+            "std": 0.9766632318496704,
+            "min": -5.593958854675293,
+            "max": 5.719101428985596,
+            "finite": true
+          }
+        },
+        "SOURCE_CAPTURE": {
+          "seconds": 0.4855703000212088,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 500.0849304199219,
+            "rms": 0.9767283797264099,
+            "mean": -0.011440597474575043,
+            "std": 0.9766632318496704,
+            "min": -5.593958854675293,
+            "max": 5.719101428985596,
+            "finite": true
+          }
+        },
+        "D1_CONTEXT": {
+          "seconds": 0.6904038999928162,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 494.7129211425781,
+            "rms": 0.9662361741065979,
+            "mean": -0.010465295985341072,
+            "std": 0.9661813378334045,
+            "min": -4.530494213104248,
+            "max": 4.357941627502441,
+            "finite": true
+          }
+        },
+        "state": {
+          "accepted_vs_source_sigma": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "source_sigma_vs_fixed_noise": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "returned_state_vs_accepted": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "sampler_updates": 0
+        }
+      }
+    },
+    "photometric_desert": {
+      "prompt": "A wide cinematic photograph of exactly one astronaut standing centered in a continuous open desert, pale clear sky, warm sand and a straight distant horizon continuing naturally to both sides, coherent lighting and texture, no duplicate astronauts, no duplicate horizon, no vertical seams",
+      "editable_raw_x0_D1_vs_D0": {
+        "rms": 0.07783594727516174,
+        "mean_abs": 0.057157136499881744,
+        "max_abs": 0.5781248807907104
+      },
+      "locked_raw_x0_D1_vs_D0": {
+        "rms": 0.07762128859758377,
+        "mean_abs": 0.04947858676314354,
+        "max_abs": 1.2109375
+      },
+      "decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.21136188507080078,
+          "left_seam_gradient_rms": 0.009024334140121937,
+          "right_lf_source_discrepancy_rms": 0.23122557997703552,
+          "right_seam_gradient_rms": 0.011363268829882145
+        },
+        "D1_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.21219277381896973,
+          "left_seam_gradient_rms": 0.010164720937609673,
+          "right_lf_source_discrepancy_rms": 0.22854964435100555,
+          "right_seam_gradient_rms": 0.012264026328921318
+        }
+      },
+      "calls": {
+        "D0_CONTROL": {
+          "seconds": 0.46227399999042973,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 486.77276611328125,
+            "rms": 0.9507280588150024,
+            "mean": -0.08460810780525208,
+            "std": 0.9469575881958008,
+            "min": -5.954766273498535,
+            "max": 6.807804107666016,
+            "finite": true
+          }
+        },
+        "SOURCE_CAPTURE": {
+          "seconds": 0.48661150003317744,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 486.77276611328125,
+            "rms": 0.9507280588150024,
+            "mean": -0.08460810780525208,
+            "std": 0.9469575881958008,
+            "min": -5.954766273498535,
+            "max": 6.807804107666016,
+            "finite": true
+          }
+        },
+        "D1_CONTEXT": {
+          "seconds": 0.691167899989523,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 485.8006896972656,
+            "rms": 0.9488294720649719,
+            "mean": -0.08278872817754745,
+            "std": 0.9452125430107117,
+            "min": -5.923516273498535,
+            "max": 6.714054107666016,
+            "finite": true
+          }
+        },
+        "state": {
+          "accepted_vs_source_sigma": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "source_sigma_vs_fixed_noise": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "returned_state_vs_accepted": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "sampler_updates": 0
+        }
+      }
+    }
+  },
+  "diffusion_trajectory_executed": false,
+  "production_changed": false
+}

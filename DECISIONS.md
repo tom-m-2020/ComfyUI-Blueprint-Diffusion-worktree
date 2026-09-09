@@ -1384,3 +1384,73 @@ or strength. The next eligible compositing mechanism is a fixed gradient-domain
 or multiband discriminator under the same exact source-interior and generated-
 exterior contract. This is an experiment direction, not authorization to
 productionize.
+
+## 2026-09-09 — Stop post-decode frequency-domain blending
+
+Reject the fixed multiband policy. Broader 64/128-pixel low-frequency supports
+redistribute the desert mismatch but leave its visible tonal band and worsen
+several strip residuals. Do not tune pyramid depth, Gaussian radii, supports,
+or weights. The next eligible compositor experiment is one fixed gradient-
+domain policy under the same exact-interior and byte-exact-exterior contract.
+
+## 2026-09-09 — Close post-decode compositor research
+
+Reject the final fixed bounded gradient-domain policy. Although exact source
+interior and generated exterior ownership remain correct, the Poisson solve
+creates severe tonal ramps, a colored tree halo, and bridge-boundary damage.
+Do not tune its width, gradient rule, or boundary handling.
+
+The tested direct RGB, affine, multiband, and gradient-domain post-decode
+families have not met the cross-case perceptual gate. Close this compositor
+sequence and return to the diffusion-stage epsilon/projection algorithm. Do
+not productionize any experimental compositor.
+
+## 2026-09-09 — Stop locked-only prediction/state projection
+
+Do not continue tuning hard source derivative or accepted-state projection.
+The exact combined contract makes locked prediction and state authoritative,
+but is identical to state-only restoration in the editable trajectory and
+does not prevent independent bridge, tree/lighting, or desert photometric
+solutions.
+
+Any next Local Edit discriminator must act where source information can alter
+the editable model prediction itself. A narrowly scoped model-level source-
+context/KV mechanism is eligible; pixel compositing, feathering, and new
+sampler-family exploration remain closed. This is not authorization to
+productionize.
+
+## 2026-09-09 — Do not extend step-0 same-sigma source K/V into a trajectory
+
+The all-block dense K/V intervention is active, but fails the rigid-bridge
+expected-direction gate. It changes editable raw x0 strongly while worsening
+both bridge seam gradients and reorganizing independent tower/cable structure.
+Do not run a trajectory or sweep strengths, blocks, or context ranges.
+
+At sigma 1, native CONST source noising exactly removes the clean source latent;
+therefore this test is coordinate-preserving source-region token reweighting,
+not clean-source conditioning. A future source-appearance mechanism would need
+a separately justified contract. This result does not authorize production.
+
+## 2026-09-09 — Stop untrained clean-source K/V injection
+
+Do not extend the fixed sigma-one clean-source feature extractor into a
+trajectory or tune source timestep, strength, block subsets, or context range.
+It is strongly active and improves aggregate low-frequency boundary metrics,
+but fails the primary rigid-bridge direction gate: editable towers and cables
+remain an independently composed bridge system.
+
+This closes the tested untrained clean-source K/V mechanism. It does not reject
+a genuinely trained source-conditioning interface, and it does not authorize
+production changes.
+
+## 2026-09-09 — Preserve source co-evolution as the defining epsilon mechanism
+
+Treat full-canvas source-region co-evolution followed by later dense model
+coupling as the demonstrated causal mechanism behind successful Clown epsilon
+outpainting. Do not describe it as direct editable-region epsilon guidance.
+
+The editable-only exact-correction ablation is ordinary T2I because the Clown
+guide-weight mask gives the correction no editable support. Any future epsilon
+variant intended to retain its geometric benefit must preserve a way for the
+source-attracted trajectory to influence subsequent editable predictions. This
+finding does not authorize tuning or production implementation.

@@ -2839,3 +2839,88 @@ RMS worsens from `0.006106` to `0.022914` and maximum deviation from `0.013100`
 to `0.042972`. Nominal-boundary ownership remains exact and no new geometric
 doubling occurs. Evidence:
 `experiments/LOCAL_EDIT_PHOTOMETRIC_RECONCILIATION_REPORT.md`.
+
+## 2026-09-09 — Fixed multiband blending does not remove the tonal band
+
+A fixed 2/8-pixel Gaussian pyramid with 24/64/128-pixel inward high/mid/low
+supports preserves its declared exact-source interior and generated exterior.
+The desert's full-height tonal band remains: left low-frequency residual RMS
+worsens from `0.012860` to `0.018183`, while right improves from `0.019044` to
+`0.011024`, indicating redistribution rather than perceptual reconciliation.
+Both tree residuals also worsen. Bridge/tree edge p95 remains nearly unchanged
+and no new double contour appears. Evidence:
+`experiments/LOCAL_EDIT_MULTIBAND_COMPOSITOR_REPORT.md`.
+
+## 2026-09-09 — Fixed bounded Poisson reconciliation fails ownership transitions
+
+A deterministic 2D Poisson solve over two 64-pixel inward regions preserves a
+384-pixel-wide exact-source interior and the generated exterior byte-exactly.
+It uses generated/source lateral Dirichlet boundaries and fixed per-channel
+larger-magnitude mixed gradients.
+
+The solve creates broad tonal ramps and discontinuities. Desert-right low-
+frequency RMS rises from `0.019044` to `0.108097`, maximum deviation from
+`0.048982` to `0.271382`, and derivative discontinuity from `0.036199` to
+`0.266339`. The tree gains a colored halo and bridge continuity worsens.
+Evidence: `experiments/LOCAL_EDIT_GRADIENT_COMPOSITOR_REPORT.md`.
+
+## 2026-09-09 — Locked prediction consistency is redundant with locked state restoration
+
+Across the qualified bridge, tree, and desert cases, full-step source-state
+restoration (B) and exact locked CONST derivative plus the same restoration (C)
+produce identical raw model x0 decodes at all 24 case/timestep comparisons and
+identical final images. Both keep locked accepted-state error and terminal
+latent error exactly zero. C additionally makes locked predicted-x0 and
+derivative errors zero at every sigma.
+
+The equivalence is lifecycle-mechanical: B/C enter each model call with the
+same restored state; C modifies only locked proposal coordinates; the following
+restoration overwrites those coordinates identically. Editable predictions
+therefore remain equal. Bridge restart, tree/ground lighting mismatch, and
+desert tonal boundaries form early and persist. Evidence:
+`experiments/LOCAL_EDIT_PREDICTION_STATE_OWNERSHIP_REPORT.md`.
+
+## 2026-09-09 — Step-0 native source K/V is active but not source-compatible
+
+A dense first-evaluation diagnostic appended 1,024 same-coordinate source-
+region K/V tokens to 1,024 editable generated queries in all 5 double and 20
+single Klein attention blocks. It restored ordinary attention output for all
+text and locked generated queries and made no sampler-state update.
+
+Editable raw-x0 RMS changes are material: `0.278225` bridge, `0.207007` tree,
+and `0.077836` desert. They do not move in the required direction. Bridge seam
+gradients worsen on both sides and the decode strengthens independent tower/
+cable organization; tree metrics worsen; desert movement is small and mixed.
+At the tested first sigma, native CONST gives `(1-sigma)y+sigma*z=z`, so source
+capture contains no clean-source contribution. Evidence:
+`experiments/LOCAL_EDIT_STEP0_SOURCE_CONTEXT_REPORT.md`.
+
+## 2026-09-09 — Untrained clean-source K/V is active but fails bridge continuation
+
+A zero-update diagnostic fed clean source latent `y` through native Klein using
+the fixed target sigma-one modulation, retained full-canvas RoPE, and appended
+1,024 source-region K/V tokens only to editable image queries across all 25
+attention blocks. Editable raw-x0 RMS changes are large (`0.643779` bridge,
+`0.483762` tree, `0.293480` desert), so the intervention is not inert.
+
+Although bridge left/right low-frequency mismatch falls from `0.163058/0.183047`
+to `0.142580/0.153094`, the prediction forms independently organized and
+differently scaled suspension systems rather than continuing the locked bridge's
+towers and cables. Tree/desert seam gradients worsen on both sides. Evidence:
+`experiments/LOCAL_EDIT_STEP0_CLEAN_SOURCE_CONTEXT_REPORT.md`.
+
+## 2026-09-09 — Clown epsilon guides editable geometry indirectly through source co-evolution
+
+In the exact no-noise-mask Klein workflow, plain epsilon and non-channelwise
+`epsilon_projection` have zero final correction on editable coordinates at all
+eight intervals. The guide-weight mask confines accepted derivative correction
+to the source, although projection computes its candidate with batch-global
+flattened collinear/orthogonal operations.
+
+The source-only correction survives the Euler proposal completely. Bridge raw
+x0 is identical across arms at interval 0, accepted state immediately diverges
+(`0.014144` plain, `0.020723` projected RMS versus ordinary), and raw x0 diverges
+on interval 1 after the changed source state enters the next dense full-canvas
+model call. Keeping the exact projected correction only on editable coordinates
+produces zero correction and is bit-exact to ordinary T2I in all three cases.
+Evidence: `experiments/LOCAL_EDIT_EPSILON_MECHANISM_REPORT.md`.

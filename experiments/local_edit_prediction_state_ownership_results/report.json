@@ -1,0 +1,1925 @@
+{
+  "experiment": "Prediction consistency versus accepted-state ownership",
+  "ordering": [
+    "accepted x_sigma",
+    "Klein prediction and CFG",
+    "CONST derivative",
+    "RES4LYF epsilon_projection (A/B only on locked mask)",
+    "C locked derivative replacement",
+    "Euler proposal",
+    "B/C accepted source-state restoration"
+  ],
+  "configuration": {
+    "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+    "seed": 0,
+    "steps": 8,
+    "sigmas": [
+      1.0,
+      0.9826490879058838,
+      0.9604301452636719,
+      0.9309595823287964,
+      0.8899959325790405,
+      0.8291866183280945,
+      0.7294999957084656,
+      0.5361343026161194,
+      0.0
+    ],
+    "sampler": "RES4LYF linear/euler, deterministic CONST",
+    "cfg": 1.0,
+    "noise_mask": null,
+    "mask": "M=1 editable side latents; L=1 center source latents",
+    "source_trajectory": "(1-sigma)*y + sigma*z_L; fixed z_L from initial accepted state"
+  },
+  "cases": {
+    "rigid_bridge": {
+      "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+      "arms": {
+        "A_EPSILON_BASELINE": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 0.3866383731365204,
+              "locked_derivative_error_rms": 0.3866383731365204,
+              "boundary_predicted_x0_error_rms": 0.30900728702545166,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.16646762192249298,
+              "left_decoded_boundary_lf_max_abs": 0.43634992837905884,
+              "right_decoded_boundary_lf_rms": 0.18402571976184845,
+              "right_decoded_boundary_lf_max_abs": 0.43955475091934204
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 0.5044733285903931,
+              "locked_derivative_error_rms": 0.5133810043334961,
+              "boundary_predicted_x0_error_rms": 0.3285788297653198,
+              "editable_raw_to_effective_prediction_rms": 1.4911275547646596e-09,
+              "left_decoded_boundary_lf_rms": 0.11137929558753967,
+              "left_decoded_boundary_lf_max_abs": 0.4786386787891388,
+              "right_decoded_boundary_lf_rms": 0.1268870234489441,
+              "right_decoded_boundary_lf_max_abs": 0.3169209957122803
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 0.43484529852867126,
+              "locked_derivative_error_rms": 0.4527609646320343,
+              "boundary_predicted_x0_error_rms": 0.3250117301940918,
+              "editable_raw_to_effective_prediction_rms": 4.310248158390095e-09,
+              "left_decoded_boundary_lf_rms": 0.12089607119560242,
+              "left_decoded_boundary_lf_max_abs": 0.3677874207496643,
+              "right_decoded_boundary_lf_rms": 0.12985758483409882,
+              "right_decoded_boundary_lf_max_abs": 0.31503427028656006
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 0.45282280445098877,
+              "locked_derivative_error_rms": 0.4864043891429901,
+              "boundary_predicted_x0_error_rms": 0.33458274602890015,
+              "editable_raw_to_effective_prediction_rms": 5.776033429327754e-09,
+              "left_decoded_boundary_lf_rms": 0.13548384606838226,
+              "left_decoded_boundary_lf_max_abs": 0.39333367347717285,
+              "right_decoded_boundary_lf_rms": 0.1309584677219391,
+              "right_decoded_boundary_lf_max_abs": 0.34419316053390503
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 0.4416184425354004,
+              "locked_derivative_error_rms": 0.4962027668952942,
+              "boundary_predicted_x0_error_rms": 0.3242942988872528,
+              "editable_raw_to_effective_prediction_rms": 7.521665956744528e-09,
+              "left_decoded_boundary_lf_rms": 0.1526372879743576,
+              "left_decoded_boundary_lf_max_abs": 0.41111984848976135,
+              "right_decoded_boundary_lf_rms": 0.142674058675766,
+              "right_decoded_boundary_lf_max_abs": 0.364173024892807
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 0.40445855259895325,
+              "locked_derivative_error_rms": 0.4877774715423584,
+              "boundary_predicted_x0_error_rms": 0.3152395784854889,
+              "editable_raw_to_effective_prediction_rms": 7.574953109212856e-09,
+              "left_decoded_boundary_lf_rms": 0.1421574503183365,
+              "left_decoded_boundary_lf_max_abs": 0.37018197774887085,
+              "right_decoded_boundary_lf_rms": 0.14481431245803833,
+              "right_decoded_boundary_lf_max_abs": 0.3597939908504486
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 0.3427630066871643,
+              "locked_derivative_error_rms": 0.4698601961135864,
+              "boundary_predicted_x0_error_rms": 0.30570319294929504,
+              "editable_raw_to_effective_prediction_rms": 7.930015755164277e-09,
+              "left_decoded_boundary_lf_rms": 0.13697074353694916,
+              "left_decoded_boundary_lf_max_abs": 0.35785916447639465,
+              "right_decoded_boundary_lf_rms": 0.14260882139205933,
+              "right_decoded_boundary_lf_max_abs": 0.3773403763771057
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 0.24238871037960052,
+              "locked_derivative_error_rms": 0.45210444927215576,
+              "boundary_predicted_x0_error_rms": 0.29795047640800476,
+              "editable_raw_to_effective_prediction_rms": 3.629244460512382e-09,
+              "left_decoded_boundary_lf_rms": 0.12827596068382263,
+              "left_decoded_boundary_lf_max_abs": 0.3409090042114258,
+              "right_decoded_boundary_lf_rms": 0.13199710845947266,
+              "right_decoded_boundary_lf_max_abs": 0.35384419560432434
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.3591676950454712,
+              "locked_state_error_after_rms": 0.3591676950454712,
+              "restored": false
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.47991886734962463,
+              "locked_state_error_after_rms": 0.47991886734962463,
+              "restored": false
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.5515533089637756,
+              "locked_state_error_after_rms": 0.5515533089637756,
+              "restored": false
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.5877516269683838,
+              "locked_state_error_after_rms": 0.5877516269683838,
+              "restored": false
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.593239963054657,
+              "locked_state_error_after_rms": 0.593239963054657,
+              "restored": false
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.5537748336791992,
+              "locked_state_error_after_rms": 0.5537748336791992,
+              "restored": false
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.4300910234451294,
+              "locked_state_error_after_rms": 0.4300910234451294,
+              "restored": false
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.24198311567306519,
+              "locked_state_error_after_rms": 0.24198311567306519,
+              "restored": false
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.24243739247322083,
+              "locked_state_error_after_rms": 0.24243739247322083,
+              "restored": false
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.03165244683623314,
+            "locked_source_max_abs": 0.712890625,
+            "editable_change_rms": 0.238663449883461,
+            "left_seam_gradient_rms": 0.11251160502433777,
+            "left_inside_adjacent_gradient_rms": 0.06315150111913681,
+            "left_outside_adjacent_gradient_rms": 0.05746125429868698,
+            "right_seam_gradient_rms": 0.05522412806749344,
+            "right_inside_adjacent_gradient_rms": 0.04578250274062157,
+            "right_outside_adjacent_gradient_rms": 0.04199538752436638
+          },
+          "terminal_locked_latent_error_rms": 0.24243739247322083
+        },
+        "B_STATE_RESTORATION": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 0.3866383731365204,
+              "locked_derivative_error_rms": 0.3866383731365204,
+              "boundary_predicted_x0_error_rms": 0.30900728702545166,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.16646762192249298,
+              "left_decoded_boundary_lf_max_abs": 0.43634992837905884,
+              "right_decoded_boundary_lf_rms": 0.18402571976184845,
+              "right_decoded_boundary_lf_max_abs": 0.43955475091934204
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 0.5228778719902039,
+              "locked_derivative_error_rms": 0.5321104526519775,
+              "boundary_predicted_x0_error_rms": 0.323104590177536,
+              "editable_raw_to_effective_prediction_rms": 1.5010531706494135e-09,
+              "left_decoded_boundary_lf_rms": 0.10141799598932266,
+              "left_decoded_boundary_lf_max_abs": 0.31198596954345703,
+              "right_decoded_boundary_lf_rms": 0.1232169046998024,
+              "right_decoded_boundary_lf_max_abs": 0.312577486038208
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 0.49486932158470154,
+              "locked_derivative_error_rms": 0.5152579545974731,
+              "boundary_predicted_x0_error_rms": 0.32215696573257446,
+              "editable_raw_to_effective_prediction_rms": 3.4357932054973617e-09,
+              "left_decoded_boundary_lf_rms": 0.11115387082099915,
+              "left_decoded_boundary_lf_max_abs": 0.307995468378067,
+              "right_decoded_boundary_lf_rms": 0.13269905745983124,
+              "right_decoded_boundary_lf_max_abs": 0.3345029950141907
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 0.48652592301368713,
+              "locked_derivative_error_rms": 0.5226069092750549,
+              "boundary_predicted_x0_error_rms": 0.32700109481811523,
+              "editable_raw_to_effective_prediction_rms": 5.155409876778094e-09,
+              "left_decoded_boundary_lf_rms": 0.10912343114614487,
+              "left_decoded_boundary_lf_max_abs": 0.3297450542449951,
+              "right_decoded_boundary_lf_rms": 0.13452863693237305,
+              "right_decoded_boundary_lf_max_abs": 0.35256102681159973
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 0.46552416682243347,
+              "locked_derivative_error_rms": 0.5230632424354553,
+              "boundary_predicted_x0_error_rms": 0.32149240374565125,
+              "editable_raw_to_effective_prediction_rms": 6.459887735843495e-09,
+              "left_decoded_boundary_lf_rms": 0.13003750145435333,
+              "left_decoded_boundary_lf_max_abs": 0.340019166469574,
+              "right_decoded_boundary_lf_rms": 0.1485615074634552,
+              "right_decoded_boundary_lf_max_abs": 0.380292683839798
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 0.4419098496437073,
+              "locked_derivative_error_rms": 0.5329437851905823,
+              "boundary_predicted_x0_error_rms": 0.31711244583129883,
+              "editable_raw_to_effective_prediction_rms": 7.87476839292367e-09,
+              "left_decoded_boundary_lf_rms": 0.12368730455636978,
+              "left_decoded_boundary_lf_max_abs": 0.3454468846321106,
+              "right_decoded_boundary_lf_rms": 0.14969858527183533,
+              "right_decoded_boundary_lf_max_abs": 0.38561972975730896
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 0.38817113637924194,
+              "locked_derivative_error_rms": 0.5321057438850403,
+              "boundary_predicted_x0_error_rms": 0.3093916177749634,
+              "editable_raw_to_effective_prediction_rms": 7.340910990194516e-09,
+              "left_decoded_boundary_lf_rms": 0.12537625432014465,
+              "left_decoded_boundary_lf_max_abs": 0.35072004795074463,
+              "right_decoded_boundary_lf_rms": 0.15037626028060913,
+              "right_decoded_boundary_lf_max_abs": 0.38892504572868347
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 0.28684312105178833,
+              "locked_derivative_error_rms": 0.5350210070610046,
+              "boundary_predicted_x0_error_rms": 0.29896965622901917,
+              "editable_raw_to_effective_prediction_rms": 3.5058942415844285e-09,
+              "left_decoded_boundary_lf_rms": 0.1204802468419075,
+              "left_decoded_boundary_lf_max_abs": 0.3347770571708679,
+              "right_decoded_boundary_lf_rms": 0.13997426629066467,
+              "right_decoded_boundary_lf_max_abs": 0.3715076744556427
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.3591676950454712,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.3513529300689697,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.34133267402648926,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.3267081081867218,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.3071906268596649,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.2770639955997467,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.2337591052055359,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.28649938106536865,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.00040305269067175686,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.04315158724784851,
+            "locked_source_max_abs": 0.642578125,
+            "editable_change_rms": 0.23003828525543213,
+            "left_seam_gradient_rms": 0.09809530526399612,
+            "left_inside_adjacent_gradient_rms": 0.04781782254576683,
+            "left_outside_adjacent_gradient_rms": 0.047125834971666336,
+            "right_seam_gradient_rms": 0.08890005201101303,
+            "right_inside_adjacent_gradient_rms": 0.04618008807301521,
+            "right_outside_adjacent_gradient_rms": 0.040735382586717606
+          },
+          "terminal_locked_latent_error_rms": 0.0
+        },
+        "C_PREDICTION_AND_STATE": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 2.0947117818082006e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2749454975128174,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.16780361533164978,
+              "left_decoded_boundary_lf_max_abs": 0.42603909969329834,
+              "right_decoded_boundary_lf_rms": 0.18135835230350494,
+              "right_decoded_boundary_lf_max_abs": 0.43210089206695557
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 2.1299966235233114e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.25979775190353394,
+              "editable_raw_to_effective_prediction_rms": 1.5010531706494135e-09,
+              "left_decoded_boundary_lf_rms": 0.1031922847032547,
+              "left_decoded_boundary_lf_max_abs": 0.31468647718429565,
+              "right_decoded_boundary_lf_rms": 0.12347447127103806,
+              "right_decoded_boundary_lf_max_abs": 0.3239549696445465
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 2.216968830737187e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2634824812412262,
+              "editable_raw_to_effective_prediction_rms": 3.4357932054973617e-09,
+              "left_decoded_boundary_lf_rms": 0.11218499392271042,
+              "left_decoded_boundary_lf_max_abs": 0.30701273679733276,
+              "right_decoded_boundary_lf_rms": 0.13401173055171967,
+              "right_decoded_boundary_lf_max_abs": 0.33618855476379395
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 2.2777888020186765e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2700634002685547,
+              "editable_raw_to_effective_prediction_rms": 5.155409876778094e-09,
+              "left_decoded_boundary_lf_rms": 0.10781194269657135,
+              "left_decoded_boundary_lf_max_abs": 0.3211437463760376,
+              "right_decoded_boundary_lf_rms": 0.1351466029882431,
+              "right_decoded_boundary_lf_max_abs": 0.34826967120170593
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 2.3325169351551267e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.26639533042907715,
+              "editable_raw_to_effective_prediction_rms": 6.459887735843495e-09,
+              "left_decoded_boundary_lf_rms": 0.1285220831632614,
+              "left_decoded_boundary_lf_max_abs": 0.3387538194656372,
+              "right_decoded_boundary_lf_rms": 0.15498942136764526,
+              "right_decoded_boundary_lf_max_abs": 0.3798965811729431
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 2.3701392848352043e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.26944470405578613,
+              "editable_raw_to_effective_prediction_rms": 7.87476839292367e-09,
+              "left_decoded_boundary_lf_rms": 0.12859416007995605,
+              "left_decoded_boundary_lf_max_abs": 0.3487892150878906,
+              "right_decoded_boundary_lf_rms": 0.16033774614334106,
+              "right_decoded_boundary_lf_max_abs": 0.39081284403800964
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 2.191011994057135e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.27231085300445557,
+              "editable_raw_to_effective_prediction_rms": 7.340910990194516e-09,
+              "left_decoded_boundary_lf_rms": 0.13076122105121613,
+              "left_decoded_boundary_lf_max_abs": 0.35548216104507446,
+              "right_decoded_boundary_lf_rms": 0.16409677267074585,
+              "right_decoded_boundary_lf_max_abs": 0.3978572189807892
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 1.2721972808549253e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2792463004589081,
+              "editable_raw_to_effective_prediction_rms": 3.5058942415844285e-09,
+              "left_decoded_boundary_lf_rms": 0.127088725566864,
+              "left_decoded_boundary_lf_max_abs": 0.34387725591659546,
+              "right_decoded_boundary_lf_rms": 0.15596716105937958,
+              "right_decoded_boundary_lf_max_abs": 0.3859209418296814
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.35845130681991577,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.3513818681240082,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.34092119336128235,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.325260728597641,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.30314645171165466,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.2667818069458008,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.19606459140777588,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.00027617928571999073,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 7.41819661254084e-11,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.04315158724784851,
+            "locked_source_max_abs": 0.642578125,
+            "editable_change_rms": 0.23003828525543213,
+            "left_seam_gradient_rms": 0.09809530526399612,
+            "left_inside_adjacent_gradient_rms": 0.04781782254576683,
+            "left_outside_adjacent_gradient_rms": 0.047125834971666336,
+            "right_seam_gradient_rms": 0.08890005201101303,
+            "right_inside_adjacent_gradient_rms": 0.04618008807301521,
+            "right_outside_adjacent_gradient_rms": 0.040735382586717606
+          },
+          "terminal_locked_latent_error_rms": 0.0,
+          "editable_prediction_difference_vs_A": [
+            {
+              "step": 0,
+              "editable_prediction_A_to_C_rms": 0.0,
+              "editable_prediction_A_to_C_max_abs": 0.0
+            },
+            {
+              "step": 1,
+              "editable_prediction_A_to_C_rms": 0.34584909677505493,
+              "editable_prediction_A_to_C_max_abs": 5.765386581420898
+            },
+            {
+              "step": 2,
+              "editable_prediction_A_to_C_rms": 0.603680431842804,
+              "editable_prediction_A_to_C_max_abs": 6.944055557250977
+            },
+            {
+              "step": 3,
+              "editable_prediction_A_to_C_rms": 0.6097054481506348,
+              "editable_prediction_A_to_C_max_abs": 6.4437055587768555
+            },
+            {
+              "step": 4,
+              "editable_prediction_A_to_C_rms": 0.629548192024231,
+              "editable_prediction_A_to_C_max_abs": 6.567315101623535
+            },
+            {
+              "step": 5,
+              "editable_prediction_A_to_C_rms": 0.6454676389694214,
+              "editable_prediction_A_to_C_max_abs": 6.879065036773682
+            },
+            {
+              "step": 6,
+              "editable_prediction_A_to_C_rms": 0.656889796257019,
+              "editable_prediction_A_to_C_max_abs": 6.646290302276611
+            },
+            {
+              "step": 7,
+              "editable_prediction_A_to_C_rms": 0.6476483941078186,
+              "editable_prediction_A_to_C_max_abs": 6.552773952484131
+            }
+          ]
+        }
+      }
+    },
+    "organic_tree": {
+      "prompt": "A wide cinematic photograph continuing one coherent dry desert scene, exactly one full-body woman in a long gray dress left of center, exactly one tall green tree crossing the right region, continuous tree canopy and branches, continuous ground plane and distant hills, warm sunset light, no duplicate people, no duplicate trees, no cropped or repeated tree",
+      "arms": {
+        "A_EPSILON_BASELINE": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 0.3962053656578064,
+              "locked_derivative_error_rms": 0.3962053656578064,
+              "boundary_predicted_x0_error_rms": 0.3266509175300598,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.23550282418727875,
+              "left_decoded_boundary_lf_max_abs": 0.49634605646133423,
+              "right_decoded_boundary_lf_rms": 0.19713358581066132,
+              "right_decoded_boundary_lf_max_abs": 0.4852312207221985
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 0.52745521068573,
+              "locked_derivative_error_rms": 0.5367686152458191,
+              "boundary_predicted_x0_error_rms": 0.32951676845550537,
+              "editable_raw_to_effective_prediction_rms": 1.124929926987761e-09,
+              "left_decoded_boundary_lf_rms": 0.1972620189189911,
+              "left_decoded_boundary_lf_max_abs": 0.47280627489089966,
+              "right_decoded_boundary_lf_rms": 0.17810633778572083,
+              "right_decoded_boundary_lf_max_abs": 0.4370993673801422
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 0.49692198634147644,
+              "locked_derivative_error_rms": 0.5173952579498291,
+              "boundary_predicted_x0_error_rms": 0.32890212535858154,
+              "editable_raw_to_effective_prediction_rms": 3.6116023505172734e-09,
+              "left_decoded_boundary_lf_rms": 0.21787354350090027,
+              "left_decoded_boundary_lf_max_abs": 0.4828542470932007,
+              "right_decoded_boundary_lf_rms": 0.18390220403671265,
+              "right_decoded_boundary_lf_max_abs": 0.4445566236972809
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 0.47720301151275635,
+              "locked_derivative_error_rms": 0.5125926733016968,
+              "boundary_predicted_x0_error_rms": 0.3313446342945099,
+              "editable_raw_to_effective_prediction_rms": 5.19185316960602e-09,
+              "left_decoded_boundary_lf_rms": 0.23192045092582703,
+              "left_decoded_boundary_lf_max_abs": 0.48343396186828613,
+              "right_decoded_boundary_lf_rms": 0.1961364448070526,
+              "right_decoded_boundary_lf_max_abs": 0.44420281052589417
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 0.4427736699581146,
+              "locked_derivative_error_rms": 0.49750077724456787,
+              "boundary_predicted_x0_error_rms": 0.3274247348308563,
+              "editable_raw_to_effective_prediction_rms": 6.424209164634931e-09,
+              "left_decoded_boundary_lf_rms": 0.24326609075069427,
+              "left_decoded_boundary_lf_max_abs": 0.48770254850387573,
+              "right_decoded_boundary_lf_rms": 0.1977037787437439,
+              "right_decoded_boundary_lf_max_abs": 0.4571969509124756
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 0.40823110938072205,
+              "locked_derivative_error_rms": 0.4923272430896759,
+              "boundary_predicted_x0_error_rms": 0.32486239075660706,
+              "editable_raw_to_effective_prediction_rms": 7.586916872526217e-09,
+              "left_decoded_boundary_lf_rms": 0.232439324259758,
+              "left_decoded_boundary_lf_max_abs": 0.4889644384384155,
+              "right_decoded_boundary_lf_rms": 0.19115105271339417,
+              "right_decoded_boundary_lf_max_abs": 0.46025046706199646
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 0.33986857533454895,
+              "locked_derivative_error_rms": 0.465892493724823,
+              "boundary_predicted_x0_error_rms": 0.3157241642475128,
+              "editable_raw_to_effective_prediction_rms": 7.208885932641351e-09,
+              "left_decoded_boundary_lf_rms": 0.23212234675884247,
+              "left_decoded_boundary_lf_max_abs": 0.48708128929138184,
+              "right_decoded_boundary_lf_rms": 0.19279895722866058,
+              "right_decoded_boundary_lf_max_abs": 0.46319207549095154
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 0.23237715661525726,
+              "locked_derivative_error_rms": 0.43343088030815125,
+              "boundary_predicted_x0_error_rms": 0.3055335581302643,
+              "editable_raw_to_effective_prediction_rms": 3.550935767648866e-09,
+              "left_decoded_boundary_lf_rms": 0.23052513599395752,
+              "left_decoded_boundary_lf_max_abs": 0.4758874177932739,
+              "right_decoded_boundary_lf_rms": 0.1947411596775055,
+              "right_decoded_boundary_lf_max_abs": 0.4627523124217987
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.3592076599597931,
+              "locked_state_error_after_rms": 0.3592076599597931,
+              "restored": false
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.47996699810028076,
+              "locked_state_error_after_rms": 0.47996699810028076,
+              "restored": false
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.5518093705177307,
+              "locked_state_error_after_rms": 0.5518093705177307,
+              "restored": false
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.5880837440490723,
+              "locked_state_error_after_rms": 0.5880837440490723,
+              "restored": false
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.5941224098205566,
+              "locked_state_error_after_rms": 0.5941224098205566,
+              "restored": false
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.555783748626709,
+              "locked_state_error_after_rms": 0.555783748626709,
+              "restored": false
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.43375107645988464,
+              "locked_state_error_after_rms": 0.43375107645988464,
+              "restored": false
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.231996551156044,
+              "locked_state_error_after_rms": 0.231996551156044,
+              "restored": false
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.23241892457008362,
+              "locked_state_error_after_rms": 0.23241892457008362,
+              "restored": false
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.04135719686746597,
+            "locked_source_max_abs": 0.9375,
+            "editable_change_rms": 0.3561915159225464,
+            "left_seam_gradient_rms": 0.035440895706415176,
+            "left_inside_adjacent_gradient_rms": 0.02416345290839672,
+            "left_outside_adjacent_gradient_rms": 0.05302393063902855,
+            "right_seam_gradient_rms": 0.1465696543455124,
+            "right_inside_adjacent_gradient_rms": 0.13541826605796814,
+            "right_outside_adjacent_gradient_rms": 0.180592879652977
+          },
+          "terminal_locked_latent_error_rms": 0.2324189394712448
+        },
+        "B_STATE_RESTORATION": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 0.3962053656578064,
+              "locked_derivative_error_rms": 0.3962053656578064,
+              "boundary_predicted_x0_error_rms": 0.3266509175300598,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.23550282418727875,
+              "left_decoded_boundary_lf_max_abs": 0.49634605646133423,
+              "right_decoded_boundary_lf_rms": 0.19713358581066132,
+              "right_decoded_boundary_lf_max_abs": 0.4852312207221985
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 0.5368031859397888,
+              "locked_derivative_error_rms": 0.546281635761261,
+              "boundary_predicted_x0_error_rms": 0.3268839120864868,
+              "editable_raw_to_effective_prediction_rms": 1.7152134157427668e-09,
+              "left_decoded_boundary_lf_rms": 0.18758052587509155,
+              "left_decoded_boundary_lf_max_abs": 0.4598633050918579,
+              "right_decoded_boundary_lf_rms": 0.17246831953525543,
+              "right_decoded_boundary_lf_max_abs": 0.4206179678440094
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 0.49891117215156555,
+              "locked_derivative_error_rms": 0.5194663405418396,
+              "boundary_predicted_x0_error_rms": 0.33039262890815735,
+              "editable_raw_to_effective_prediction_rms": 3.7357916760072385e-09,
+              "left_decoded_boundary_lf_rms": 0.2127343863248825,
+              "left_decoded_boundary_lf_max_abs": 0.47738760709762573,
+              "right_decoded_boundary_lf_rms": 0.18802927434444427,
+              "right_decoded_boundary_lf_max_abs": 0.4500541687011719
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 0.5026715397834778,
+              "locked_derivative_error_rms": 0.539949893951416,
+              "boundary_predicted_x0_error_rms": 0.33926957845687866,
+              "editable_raw_to_effective_prediction_rms": 4.927134256149657e-09,
+              "left_decoded_boundary_lf_rms": 0.22821582853794098,
+              "left_decoded_boundary_lf_max_abs": 0.4793984293937683,
+              "right_decoded_boundary_lf_rms": 0.18480555713176727,
+              "right_decoded_boundary_lf_max_abs": 0.44994062185287476
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 0.48490145802497864,
+              "locked_derivative_error_rms": 0.5448355674743652,
+              "boundary_predicted_x0_error_rms": 0.34836897253990173,
+              "editable_raw_to_effective_prediction_rms": 6.1518639071778125e-09,
+              "left_decoded_boundary_lf_rms": 0.2332763969898224,
+              "left_decoded_boundary_lf_max_abs": 0.4831327199935913,
+              "right_decoded_boundary_lf_rms": 0.18405617773532867,
+              "right_decoded_boundary_lf_max_abs": 0.46408793330192566
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 0.4480283856391907,
+              "locked_derivative_error_rms": 0.5403227210044861,
+              "boundary_predicted_x0_error_rms": 0.340110719203949,
+              "editable_raw_to_effective_prediction_rms": 7.2200396772359454e-09,
+              "left_decoded_boundary_lf_rms": 0.2360127717256546,
+              "left_decoded_boundary_lf_max_abs": 0.48606252670288086,
+              "right_decoded_boundary_lf_rms": 0.18783317506313324,
+              "right_decoded_boundary_lf_max_abs": 0.4673266112804413
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 0.39384299516677856,
+              "locked_derivative_error_rms": 0.5398806929588318,
+              "boundary_predicted_x0_error_rms": 0.3355625569820404,
+              "editable_raw_to_effective_prediction_rms": 7.417252589903001e-09,
+              "left_decoded_boundary_lf_rms": 0.2393474280834198,
+              "left_decoded_boundary_lf_max_abs": 0.49180370569229126,
+              "right_decoded_boundary_lf_rms": 0.1896713227033615,
+              "right_decoded_boundary_lf_max_abs": 0.47290757298469543
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 0.2871638536453247,
+              "locked_derivative_error_rms": 0.5356192588806152,
+              "boundary_predicted_x0_error_rms": 0.3229670822620392,
+              "editable_raw_to_effective_prediction_rms": 3.2777685010643154e-09,
+              "left_decoded_boundary_lf_rms": 0.23893851041793823,
+              "left_decoded_boundary_lf_max_abs": 0.490872859954834,
+              "right_decoded_boundary_lf_rms": 0.19068945944309235,
+              "right_decoded_boundary_lf_max_abs": 0.4725370407104492
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.3592076599597931,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.3513967990875244,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.34154054522514343,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.32683393359184265,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.3069843649864197,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.2771795988082886,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.23458115756511688,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.28681525588035583,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.0004035033634863794,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.03758539631962776,
+            "locked_source_max_abs": 0.8828125,
+            "editable_change_rms": 0.36120283603668213,
+            "left_seam_gradient_rms": 0.025171780958771706,
+            "left_inside_adjacent_gradient_rms": 0.0205299761146307,
+            "left_outside_adjacent_gradient_rms": 0.0416489876806736,
+            "right_seam_gradient_rms": 0.13709057867527008,
+            "right_inside_adjacent_gradient_rms": 0.17452025413513184,
+            "right_outside_adjacent_gradient_rms": 0.14844663441181183
+          },
+          "terminal_locked_latent_error_rms": 0.0
+        },
+        "C_PREDICTION_AND_STATE": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 2.12251922704354e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.29895925521850586,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.24662508070468903,
+              "left_decoded_boundary_lf_max_abs": 0.49781084060668945,
+              "right_decoded_boundary_lf_rms": 0.2176603227853775,
+              "right_decoded_boundary_lf_max_abs": 0.49241432547569275
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 2.1988469711686776e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2728783190250397,
+              "editable_raw_to_effective_prediction_rms": 1.7152134157427668e-09,
+              "left_decoded_boundary_lf_rms": 0.21397536993026733,
+              "left_decoded_boundary_lf_max_abs": 0.49201643466949463,
+              "right_decoded_boundary_lf_rms": 0.19606813788414001,
+              "right_decoded_boundary_lf_max_abs": 0.45896294713020325
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 2.267776011422029e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.27721449732780457,
+              "editable_raw_to_effective_prediction_rms": 3.7357916760072385e-09,
+              "left_decoded_boundary_lf_rms": 0.2231295108795166,
+              "left_decoded_boundary_lf_max_abs": 0.4897434711456299,
+              "right_decoded_boundary_lf_rms": 0.19121317565441132,
+              "right_decoded_boundary_lf_max_abs": 0.4628177583217621
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 2.3396905746153607e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.28275153040885925,
+              "editable_raw_to_effective_prediction_rms": 4.927134256149657e-09,
+              "left_decoded_boundary_lf_rms": 0.23830311000347137,
+              "left_decoded_boundary_lf_max_abs": 0.48785585165023804,
+              "right_decoded_boundary_lf_rms": 0.18914371728897095,
+              "right_decoded_boundary_lf_max_abs": 0.46111270785331726
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 2.3793999659460496e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2934994399547577,
+              "editable_raw_to_effective_prediction_rms": 6.1518639071778125e-09,
+              "left_decoded_boundary_lf_rms": 0.24280330538749695,
+              "left_decoded_boundary_lf_max_abs": 0.49085837602615356,
+              "right_decoded_boundary_lf_rms": 0.18501947820186615,
+              "right_decoded_boundary_lf_max_abs": 0.47164857387542725
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 2.4217634120304865e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2914383113384247,
+              "editable_raw_to_effective_prediction_rms": 7.2200396772359454e-09,
+              "left_decoded_boundary_lf_rms": 0.24232342839241028,
+              "left_decoded_boundary_lf_max_abs": 0.4910898804664612,
+              "right_decoded_boundary_lf_rms": 0.19112810492515564,
+              "right_decoded_boundary_lf_max_abs": 0.47077250480651855
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 2.247372599128994e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2971828579902649,
+              "editable_raw_to_effective_prediction_rms": 7.417252589903001e-09,
+              "left_decoded_boundary_lf_rms": 0.24233093857765198,
+              "left_decoded_boundary_lf_max_abs": 0.4924529790878296,
+              "right_decoded_boundary_lf_rms": 0.1959388107061386,
+              "right_decoded_boundary_lf_max_abs": 0.4767981767654419
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 1.2938238036497296e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.3028152287006378,
+              "editable_raw_to_effective_prediction_rms": 3.2777685010643154e-09,
+              "left_decoded_boundary_lf_rms": 0.241805762052536,
+              "left_decoded_boundary_lf_max_abs": 0.49177002906799316,
+              "right_decoded_boundary_lf_rms": 0.19490432739257812,
+              "right_decoded_boundary_lf_max_abs": 0.4760032296180725
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.35845130681991577,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.3513818681240082,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.34092119336128235,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.325260728597641,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.30314645171165466,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.2667818069458008,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.19606459140777588,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.0002761792275123298,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 7.788320682822203e-11,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.03758539631962776,
+            "locked_source_max_abs": 0.8828125,
+            "editable_change_rms": 0.36120283603668213,
+            "left_seam_gradient_rms": 0.025171780958771706,
+            "left_inside_adjacent_gradient_rms": 0.0205299761146307,
+            "left_outside_adjacent_gradient_rms": 0.0416489876806736,
+            "right_seam_gradient_rms": 0.13709057867527008,
+            "right_inside_adjacent_gradient_rms": 0.17452025413513184,
+            "right_outside_adjacent_gradient_rms": 0.14844663441181183
+          },
+          "terminal_locked_latent_error_rms": 0.0,
+          "editable_prediction_difference_vs_A": [
+            {
+              "step": 0,
+              "editable_prediction_A_to_C_rms": 0.0,
+              "editable_prediction_A_to_C_max_abs": 0.0
+            },
+            {
+              "step": 1,
+              "editable_prediction_A_to_C_rms": 0.14702950417995453,
+              "editable_prediction_A_to_C_max_abs": 3.569779872894287
+            },
+            {
+              "step": 2,
+              "editable_prediction_A_to_C_rms": 0.20860320329666138,
+              "editable_prediction_A_to_C_max_abs": 4.230557918548584
+            },
+            {
+              "step": 3,
+              "editable_prediction_A_to_C_rms": 0.26085472106933594,
+              "editable_prediction_A_to_C_max_abs": 4.287649154663086
+            },
+            {
+              "step": 4,
+              "editable_prediction_A_to_C_rms": 0.3102820813655853,
+              "editable_prediction_A_to_C_max_abs": 4.755125999450684
+            },
+            {
+              "step": 5,
+              "editable_prediction_A_to_C_rms": 0.31088176369667053,
+              "editable_prediction_A_to_C_max_abs": 5.299759864807129
+            },
+            {
+              "step": 6,
+              "editable_prediction_A_to_C_rms": 0.3176124393939972,
+              "editable_prediction_A_to_C_max_abs": 5.68887996673584
+            },
+            {
+              "step": 7,
+              "editable_prediction_A_to_C_rms": 0.3187788724899292,
+              "editable_prediction_A_to_C_max_abs": 5.458952903747559
+            }
+          ]
+        }
+      }
+    },
+    "photometric_desert": {
+      "prompt": "A wide cinematic photograph of exactly one astronaut standing centered in a continuous open desert, pale clear sky, warm sand and a straight distant horizon continuing naturally to both sides, coherent lighting and texture, no duplicate astronauts, no duplicate horizon, no vertical seams",
+      "arms": {
+        "A_EPSILON_BASELINE": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 0.41889169812202454,
+              "locked_derivative_error_rms": 0.41889169812202454,
+              "boundary_predicted_x0_error_rms": 0.290615051984787,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.2454254925251007,
+              "left_decoded_boundary_lf_max_abs": 0.4956390857696533,
+              "right_decoded_boundary_lf_rms": 0.24707528948783875,
+              "right_decoded_boundary_lf_max_abs": 0.49812185764312744
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 0.544218897819519,
+              "locked_derivative_error_rms": 0.5538283586502075,
+              "boundary_predicted_x0_error_rms": 0.29008057713508606,
+              "editable_raw_to_effective_prediction_rms": 1.4237099277281118e-09,
+              "left_decoded_boundary_lf_rms": 0.20422959327697754,
+              "left_decoded_boundary_lf_max_abs": 0.4322265386581421,
+              "right_decoded_boundary_lf_rms": 0.19020485877990723,
+              "right_decoded_boundary_lf_max_abs": 0.4134323000907898
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 0.481450617313385,
+              "locked_derivative_error_rms": 0.5012864470481873,
+              "boundary_predicted_x0_error_rms": 0.28919246792793274,
+              "editable_raw_to_effective_prediction_rms": 2.932310172454322e-09,
+              "left_decoded_boundary_lf_rms": 0.22299663722515106,
+              "left_decoded_boundary_lf_max_abs": 0.4536900520324707,
+              "right_decoded_boundary_lf_rms": 0.20715969800949097,
+              "right_decoded_boundary_lf_max_abs": 0.458000123500824
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 0.46260789036750793,
+              "locked_derivative_error_rms": 0.49691513180732727,
+              "boundary_predicted_x0_error_rms": 0.26784390211105347,
+              "editable_raw_to_effective_prediction_rms": 4.4219148342961034e-09,
+              "left_decoded_boundary_lf_rms": 0.21407419443130493,
+              "left_decoded_boundary_lf_max_abs": 0.4508935809135437,
+              "right_decoded_boundary_lf_rms": 0.2117035835981369,
+              "right_decoded_boundary_lf_max_abs": 0.4421094059944153
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 0.4314441978931427,
+              "locked_derivative_error_rms": 0.4847709536552429,
+              "boundary_predicted_x0_error_rms": 0.2546912729740143,
+              "editable_raw_to_effective_prediction_rms": 5.94078253257635e-09,
+              "left_decoded_boundary_lf_rms": 0.22030319273471832,
+              "left_decoded_boundary_lf_max_abs": 0.46260565519332886,
+              "right_decoded_boundary_lf_rms": 0.22312520444393158,
+              "right_decoded_boundary_lf_max_abs": 0.4615058898925781
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 0.3908122479915619,
+              "locked_derivative_error_rms": 0.4713200330734253,
+              "boundary_predicted_x0_error_rms": 0.24171556532382965,
+              "editable_raw_to_effective_prediction_rms": 6.492931969859228e-09,
+              "left_decoded_boundary_lf_rms": 0.20565956830978394,
+              "left_decoded_boundary_lf_max_abs": 0.43375730514526367,
+              "right_decoded_boundary_lf_rms": 0.2166881412267685,
+              "right_decoded_boundary_lf_max_abs": 0.4446614384651184
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 0.33192679286003113,
+              "locked_derivative_error_rms": 0.45500585436820984,
+              "boundary_predicted_x0_error_rms": 0.23645681142807007,
+              "editable_raw_to_effective_prediction_rms": 6.594378376689747e-09,
+              "left_decoded_boundary_lf_rms": 0.1979009360074997,
+              "left_decoded_boundary_lf_max_abs": 0.4234554171562195,
+              "right_decoded_boundary_lf_rms": 0.2140512317419052,
+              "right_decoded_boundary_lf_max_abs": 0.43516844511032104
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 0.23547084629535675,
+              "locked_derivative_error_rms": 0.4392012357711792,
+              "boundary_predicted_x0_error_rms": 0.2308235466480255,
+              "editable_raw_to_effective_prediction_rms": 3.0903639647306136e-09,
+              "left_decoded_boundary_lf_rms": 0.1920744925737381,
+              "left_decoded_boundary_lf_max_abs": 0.4024128317832947,
+              "right_decoded_boundary_lf_rms": 0.19893984496593475,
+              "right_decoded_boundary_lf_max_abs": 0.40021204948425293
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.3592361509799957,
+              "locked_state_error_after_rms": 0.3592361509799957,
+              "restored": false
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.4800621569156647,
+              "locked_state_error_after_rms": 0.4800621569156647,
+              "restored": false
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.5519056916236877,
+              "locked_state_error_after_rms": 0.5519056916236877,
+              "restored": false
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.5879843235015869,
+              "locked_state_error_after_rms": 0.5879843235015869,
+              "restored": false
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.5938565731048584,
+              "locked_state_error_after_rms": 0.5938565731048584,
+              "restored": false
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.5554779767990112,
+              "locked_state_error_after_rms": 0.5554779767990112,
+              "restored": false
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.4328576922416687,
+              "locked_state_error_after_rms": 0.4328576922416687,
+              "restored": false
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.23508530855178833,
+              "locked_state_error_after_rms": 0.23508530855178833,
+              "restored": false
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.23551420867443085,
+              "locked_state_error_after_rms": 0.23551420867443085,
+              "restored": false
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.033765655010938644,
+            "locked_source_max_abs": 0.8203125,
+            "editable_change_rms": 0.3189500868320465,
+            "left_seam_gradient_rms": 0.031699471175670624,
+            "left_inside_adjacent_gradient_rms": 0.01265291590243578,
+            "left_outside_adjacent_gradient_rms": 0.032203834503889084,
+            "right_seam_gradient_rms": 0.029130302369594574,
+            "right_inside_adjacent_gradient_rms": 0.04240647330880165,
+            "right_outside_adjacent_gradient_rms": 0.015416079200804234
+          },
+          "terminal_locked_latent_error_rms": 0.23551420867443085
+        },
+        "B_STATE_RESTORATION": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 0.41889169812202454,
+              "locked_derivative_error_rms": 0.41889169812202454,
+              "boundary_predicted_x0_error_rms": 0.290615051984787,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.2454254925251007,
+              "left_decoded_boundary_lf_max_abs": 0.4956390857696533,
+              "right_decoded_boundary_lf_rms": 0.24707528948783875,
+              "right_decoded_boundary_lf_max_abs": 0.49812185764312744
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 0.5509113669395447,
+              "locked_derivative_error_rms": 0.560638964176178,
+              "boundary_predicted_x0_error_rms": 0.28889957070350647,
+              "editable_raw_to_effective_prediction_rms": 1.2888923262011076e-09,
+              "left_decoded_boundary_lf_rms": 0.20234337449073792,
+              "left_decoded_boundary_lf_max_abs": 0.43063074350357056,
+              "right_decoded_boundary_lf_rms": 0.18917147815227509,
+              "right_decoded_boundary_lf_max_abs": 0.40887898206710815
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 0.5210894346237183,
+              "locked_derivative_error_rms": 0.5425583720207214,
+              "boundary_predicted_x0_error_rms": 0.2943248152732849,
+              "editable_raw_to_effective_prediction_rms": 3.2736391375465246e-09,
+              "left_decoded_boundary_lf_rms": 0.2178078591823578,
+              "left_decoded_boundary_lf_max_abs": 0.44737762212753296,
+              "right_decoded_boundary_lf_rms": 0.20523211359977722,
+              "right_decoded_boundary_lf_max_abs": 0.43636804819107056
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 0.4857257008552551,
+              "locked_derivative_error_rms": 0.521747350692749,
+              "boundary_predicted_x0_error_rms": 0.28568246960639954,
+              "editable_raw_to_effective_prediction_rms": 5.00715424678333e-09,
+              "left_decoded_boundary_lf_rms": 0.231106698513031,
+              "left_decoded_boundary_lf_max_abs": 0.45722317695617676,
+              "right_decoded_boundary_lf_rms": 0.2155245691537857,
+              "right_decoded_boundary_lf_max_abs": 0.45732706785202026
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 0.46186575293540955,
+              "locked_derivative_error_rms": 0.5189526677131653,
+              "boundary_predicted_x0_error_rms": 0.2771798372268677,
+              "editable_raw_to_effective_prediction_rms": 5.669670510854985e-09,
+              "left_decoded_boundary_lf_rms": 0.23920705914497375,
+              "left_decoded_boundary_lf_max_abs": 0.45572638511657715,
+              "right_decoded_boundary_lf_rms": 0.2304791808128357,
+              "right_decoded_boundary_lf_max_abs": 0.45932185649871826
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 0.43211793899536133,
+              "locked_derivative_error_rms": 0.5211347341537476,
+              "boundary_predicted_x0_error_rms": 0.2721595764160156,
+              "editable_raw_to_effective_prediction_rms": 6.395368234990428e-09,
+              "left_decoded_boundary_lf_rms": 0.2332494854927063,
+              "left_decoded_boundary_lf_max_abs": 0.4466513395309448,
+              "right_decoded_boundary_lf_rms": 0.22756758332252502,
+              "right_decoded_boundary_lf_max_abs": 0.45135045051574707
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 0.38132861256599426,
+              "locked_derivative_error_rms": 0.5227259993553162,
+              "boundary_predicted_x0_error_rms": 0.2624206244945526,
+              "editable_raw_to_effective_prediction_rms": 6.551632125706419e-09,
+              "left_decoded_boundary_lf_rms": 0.22356882691383362,
+              "left_decoded_boundary_lf_max_abs": 0.44143080711364746,
+              "right_decoded_boundary_lf_rms": 0.2246488481760025,
+              "right_decoded_boundary_lf_max_abs": 0.45064741373062134
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 0.2838912010192871,
+              "locked_derivative_error_rms": 0.5295150876045227,
+              "boundary_predicted_x0_error_rms": 0.25131335854530334,
+              "editable_raw_to_effective_prediction_rms": 3.12214054609683e-09,
+              "left_decoded_boundary_lf_rms": 0.21280471980571747,
+              "left_decoded_boundary_lf_max_abs": 0.42549508810043335,
+              "right_decoded_boundary_lf_rms": 0.2112751007080078,
+              "right_decoded_boundary_lf_max_abs": 0.4259088635444641
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.3592361509799957,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.35133618116378784,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.341601699590683,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.3271028697490692,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.30703994631767273,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.2769029438495636,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.23228438198566437,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.28354719281196594,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.0003989048709627241,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.05360546335577965,
+            "locked_source_max_abs": 0.8984375,
+            "editable_change_rms": 0.35236623883247375,
+            "left_seam_gradient_rms": 0.021306198090314865,
+            "left_inside_adjacent_gradient_rms": 0.006952766794711351,
+            "left_outside_adjacent_gradient_rms": 0.0481078214943409,
+            "right_seam_gradient_rms": 0.03090929426252842,
+            "right_inside_adjacent_gradient_rms": 0.038832660764455795,
+            "right_outside_adjacent_gradient_rms": 0.009575359523296356
+          },
+          "terminal_locked_latent_error_rms": 0.0
+        },
+        "C_PREDICTION_AND_STATE": {
+          "timesteps": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_row": 1.0,
+              "locked_predicted_x0_error_rms": 2.0946467671478786e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.26129359006881714,
+              "editable_raw_to_effective_prediction_rms": 0.0,
+              "left_decoded_boundary_lf_rms": 0.23955337703227997,
+              "left_decoded_boundary_lf_max_abs": 0.4956545829772949,
+              "right_decoded_boundary_lf_rms": 0.23994112014770508,
+              "right_decoded_boundary_lf_max_abs": 0.49795788526535034
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_row": 0.9826490879058838,
+              "locked_predicted_x0_error_rms": 2.1462335908495334e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.23513351380825043,
+              "editable_raw_to_effective_prediction_rms": 1.2888923262011076e-09,
+              "left_decoded_boundary_lf_rms": 0.2145223319530487,
+              "left_decoded_boundary_lf_max_abs": 0.4357283115386963,
+              "right_decoded_boundary_lf_rms": 0.19998006522655487,
+              "right_decoded_boundary_lf_max_abs": 0.42895281314849854
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_row": 0.9604301452636719,
+              "locked_predicted_x0_error_rms": 2.2465791005288338e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.24074169993400574,
+              "editable_raw_to_effective_prediction_rms": 3.2736391375465246e-09,
+              "left_decoded_boundary_lf_rms": 0.22356154024600983,
+              "left_decoded_boundary_lf_max_abs": 0.4529094099998474,
+              "right_decoded_boundary_lf_rms": 0.21129918098449707,
+              "right_decoded_boundary_lf_max_abs": 0.4460691213607788
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_row": 0.9309595823287964,
+              "locked_predicted_x0_error_rms": 2.3156673023549956e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.2318044751882553,
+              "editable_raw_to_effective_prediction_rms": 5.00715424678333e-09,
+              "left_decoded_boundary_lf_rms": 0.2305711805820465,
+              "left_decoded_boundary_lf_max_abs": 0.46432292461395264,
+              "right_decoded_boundary_lf_rms": 0.21743477880954742,
+              "right_decoded_boundary_lf_max_abs": 0.4612368941307068
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_row": 0.8899959325790405,
+              "locked_predicted_x0_error_rms": 2.3466098397761925e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.22323475778102875,
+              "editable_raw_to_effective_prediction_rms": 5.669670510854985e-09,
+              "left_decoded_boundary_lf_rms": 0.24112656712532043,
+              "left_decoded_boundary_lf_max_abs": 0.4670379161834717,
+              "right_decoded_boundary_lf_rms": 0.2374124675989151,
+              "right_decoded_boundary_lf_max_abs": 0.46842843294143677
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_row": 0.8291866183280945,
+              "locked_predicted_x0_error_rms": 2.3910105895197376e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.22499339282512665,
+              "editable_raw_to_effective_prediction_rms": 6.395368234990428e-09,
+              "left_decoded_boundary_lf_rms": 0.23846754431724548,
+              "left_decoded_boundary_lf_max_abs": 0.4589763879776001,
+              "right_decoded_boundary_lf_rms": 0.23258976638317108,
+              "right_decoded_boundary_lf_max_abs": 0.4597738981246948
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_row": 0.7294999957084656,
+              "locked_predicted_x0_error_rms": 2.1958493690021896e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.22526845335960388,
+              "editable_raw_to_effective_prediction_rms": 6.551632125706419e-09,
+              "left_decoded_boundary_lf_rms": 0.23477622866630554,
+              "left_decoded_boundary_lf_max_abs": 0.4550153613090515,
+              "right_decoded_boundary_lf_rms": 0.23086291551589966,
+              "right_decoded_boundary_lf_max_abs": 0.4577064514160156
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_row": 0.5361343026161194,
+              "locked_predicted_x0_error_rms": 1.2956896000559937e-08,
+              "locked_derivative_error_rms": 0.0,
+              "boundary_predicted_x0_error_rms": 0.23041152954101562,
+              "editable_raw_to_effective_prediction_rms": 3.12214054609683e-09,
+              "left_decoded_boundary_lf_rms": 0.2257576286792755,
+              "left_decoded_boundary_lf_max_abs": 0.44029152393341064,
+              "right_decoded_boundary_lf_rms": 0.22079184651374817,
+              "right_decoded_boundary_lf_max_abs": 0.43675416707992554
+            }
+          ],
+          "acceptances": [
+            {
+              "step": 0,
+              "sigma": 1.0,
+              "sigma_next": 0.9826490879058838,
+              "locked_state_error_before_rms": 0.35845130681991577,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 1,
+              "sigma": 0.9826490879058838,
+              "sigma_next": 0.9604301452636719,
+              "locked_state_error_before_rms": 0.3513818681240082,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 2,
+              "sigma": 0.9604301452636719,
+              "sigma_next": 0.9309595823287964,
+              "locked_state_error_before_rms": 0.34092119336128235,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 3,
+              "sigma": 0.9309595823287964,
+              "sigma_next": 0.8899959325790405,
+              "locked_state_error_before_rms": 0.325260728597641,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 4,
+              "sigma": 0.8899959325790405,
+              "sigma_next": 0.8291866183280945,
+              "locked_state_error_before_rms": 0.30314645171165466,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 5,
+              "sigma": 0.8291866183280945,
+              "sigma_next": 0.7294999957084656,
+              "locked_state_error_before_rms": 0.2667818069458008,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 6,
+              "sigma": 0.7294999957084656,
+              "sigma_next": 0.5361343026161194,
+              "locked_state_error_before_rms": 0.19606459140777588,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": 7,
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 0.0002761793148238212,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            },
+            {
+              "step": "terminal",
+              "sigma": 0.5361343026161194,
+              "sigma_next": 0.0007533399038948119,
+              "locked_state_error_before_rms": 7.528041384707862e-11,
+              "locked_state_error_after_rms": 0.0,
+              "restored": true
+            }
+          ],
+          "final_decoded": {
+            "locked_source_mae": 0.05360546335577965,
+            "locked_source_max_abs": 0.8984375,
+            "editable_change_rms": 0.35236623883247375,
+            "left_seam_gradient_rms": 0.021306198090314865,
+            "left_inside_adjacent_gradient_rms": 0.006952766794711351,
+            "left_outside_adjacent_gradient_rms": 0.0481078214943409,
+            "right_seam_gradient_rms": 0.03090929426252842,
+            "right_inside_adjacent_gradient_rms": 0.038832660764455795,
+            "right_outside_adjacent_gradient_rms": 0.009575359523296356
+          },
+          "terminal_locked_latent_error_rms": 0.0,
+          "editable_prediction_difference_vs_A": [
+            {
+              "step": 0,
+              "editable_prediction_A_to_C_rms": 0.0,
+              "editable_prediction_A_to_C_max_abs": 0.0
+            },
+            {
+              "step": 1,
+              "editable_prediction_A_to_C_rms": 0.09956228733062744,
+              "editable_prediction_A_to_C_max_abs": 2.483492136001587
+            },
+            {
+              "step": 2,
+              "editable_prediction_A_to_C_rms": 0.2459803819656372,
+              "editable_prediction_A_to_C_max_abs": 3.7505340576171875
+            },
+            {
+              "step": 3,
+              "editable_prediction_A_to_C_rms": 0.24196647107601166,
+              "editable_prediction_A_to_C_max_abs": 3.4563722610473633
+            },
+            {
+              "step": 4,
+              "editable_prediction_A_to_C_rms": 0.2682790756225586,
+              "editable_prediction_A_to_C_max_abs": 3.707360029220581
+            },
+            {
+              "step": 5,
+              "editable_prediction_A_to_C_rms": 0.30807584524154663,
+              "editable_prediction_A_to_C_max_abs": 4.199007987976074
+            },
+            {
+              "step": 6,
+              "editable_prediction_A_to_C_rms": 0.31922435760498047,
+              "editable_prediction_A_to_C_max_abs": 4.776911735534668
+            },
+            {
+              "step": 7,
+              "editable_prediction_A_to_C_rms": 0.3181435167789459,
+              "editable_prediction_A_to_C_max_abs": 4.4119391441345215
+            }
+          ]
+        }
+      }
+    }
+  },
+  "runtime_seconds": 181.22731699998258,
+  "diffusion_executed": true,
+  "production_changed": false
+}

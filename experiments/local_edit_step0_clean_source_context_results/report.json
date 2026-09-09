@@ -1,0 +1,1367 @@
+{
+  "experiment": "Local Edit step-0 clean-source feature/KV context",
+  "contract": {
+    "target": "ordinary step-0 accepted input at sigma=1",
+    "source_feature_input": "Comfy-processed clean source latent y",
+    "source_feature_modulation": "fixed target sigma=1 timestep embedding",
+    "classification": "experimental untrained feature extractor; not a same-sigma diffusion trajectory",
+    "source_coordinates": "native full-canvas RoPE retained before source K capture",
+    "query_policy": "only editable generated queries retain augmented attention output",
+    "restored_outputs": "all text queries and locked generated queries restored to ordinary attention",
+    "blocks_modified": "all 5 double and all 20 single attention blocks",
+    "attention_q_by_k": [
+      2560,
+      3584
+    ],
+    "added_source_kv_tokens": 1024,
+    "sampler_updates": 0
+  },
+  "clean_source_capture_layout": [
+    {
+      "block_type": "double",
+      "block_index": 0,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "double",
+      "block_index": 1,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "double",
+      "block_index": 2,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "double",
+      "block_index": 3,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "double",
+      "block_index": 4,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 0,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 1,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 2,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 3,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 4,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 5,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 6,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 7,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 8,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 9,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 10,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 11,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 12,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 13,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 14,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 15,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 16,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 17,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 18,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    },
+    {
+      "block_type": "single",
+      "block_index": 19,
+      "text_tokens": 512,
+      "full_generated_tokens": 2048,
+      "source_generated_tokens": 1024,
+      "heads": 24,
+      "head_dim": 128
+    }
+  ],
+  "clean_source_context_layout": [
+    {
+      "block_type": "double",
+      "block_index": 0,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "double",
+      "block_index": 1,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "double",
+      "block_index": 2,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "double",
+      "block_index": 3,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "double",
+      "block_index": 4,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 0,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 1,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 2,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 3,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 4,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 5,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 6,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 7,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 8,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 9,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 10,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 11,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 12,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 13,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 14,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 15,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 16,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 17,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 18,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    },
+    {
+      "block_type": "single",
+      "block_index": 19,
+      "text_queries": 512,
+      "editable_generated_queries": 1024,
+      "locked_generated_queries_restored": 1024,
+      "ordinary_kv_tokens": 2560,
+      "added_source_kv_tokens": 1024,
+      "augmented_kv_tokens": 3584,
+      "q_by_k": [
+        2560,
+        3584
+      ]
+    }
+  ],
+  "cases": {
+    "rigid_bridge": {
+      "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+      "editable_raw_x0_D2_vs_D0": {
+        "rms": 0.6437786221504211,
+        "mean_abs": 0.3902910649776459,
+        "max_abs": 6.3125
+      },
+      "editable_raw_x0_D2_vs_D1": {
+        "rms": 0.7035487294197083,
+        "mean_abs": 0.4222754240036011,
+        "max_abs": 6.421875
+      },
+      "locked_raw_x0_D2_vs_D0": {
+        "rms": 0.4065118432044983,
+        "mean_abs": 0.2517264187335968,
+        "max_abs": 4.6171875
+      },
+      "decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.19997528195381165,
+          "left_seam_gradient_rms": 0.03548360988497734,
+          "right_lf_source_discrepancy_rms": 0.21227630972862244,
+          "right_seam_gradient_rms": 0.05106285586953163
+        },
+        "D1_NOISY_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.20068520307540894,
+          "left_seam_gradient_rms": 0.04079028591513634,
+          "right_lf_source_discrepancy_rms": 0.20756879448890686,
+          "right_seam_gradient_rms": 0.059159450232982635
+        },
+        "D2_CLEAN_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.16860045492649078,
+          "left_seam_gradient_rms": 0.05271853879094124,
+          "right_lf_source_discrepancy_rms": 0.17763933539390564,
+          "right_seam_gradient_rms": 0.04613828286528587
+        }
+      },
+      "authoritative_decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.1630581021308899,
+          "left_seam_gradient_rms": 0.06444218754768372,
+          "right_lf_source_discrepancy_rms": 0.18304665386676788,
+          "right_seam_gradient_rms": 0.06792514026165009
+        },
+        "D1_NOISY_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.1618386059999466,
+          "left_seam_gradient_rms": 0.04422145336866379,
+          "right_lf_source_discrepancy_rms": 0.17800725996494293,
+          "right_seam_gradient_rms": 0.06960712373256683
+        },
+        "D2_CLEAN_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.14257961511611938,
+          "left_seam_gradient_rms": 0.047919292002916336,
+          "right_lf_source_discrepancy_rms": 0.1530940979719162,
+          "right_seam_gradient_rms": 0.05617222189903259
+        }
+      },
+      "D1_frozen_decoded_png_max_abs": 0.0019608139991760254,
+      "calls": {
+        "D0_CONTROL": {
+          "seconds": 1.017393100017216,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 469.77191162109375,
+            "rms": 0.9175233244895935,
+            "mean": -0.049647510051727295,
+            "std": 0.9161808490753174,
+            "min": -5.034737586975098,
+            "max": 6.2480010986328125,
+            "finite": true
+          }
+        },
+        "D1_NOISY_CAPTURE": {
+          "seconds": 0.5427024000091478,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 469.77191162109375,
+            "rms": 0.9175233244895935,
+            "mean": -0.049647510051727295,
+            "std": 0.9161808490753174,
+            "min": -5.034737586975098,
+            "max": 6.2480010986328125,
+            "finite": true
+          }
+        },
+        "D1_CONTEXT": {
+          "seconds": 0.678178200032562,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 473.203857421875,
+            "rms": 0.9242262840270996,
+            "mean": -0.0466495007276535,
+            "std": 0.9230499863624573,
+            "min": -4.937678337097168,
+            "max": 6.6098432540893555,
+            "finite": true
+          }
+        },
+        "D2_CLEAN_CAPTURE": {
+          "seconds": 0.4765097000054084,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 427.2715759277344,
+            "rms": 0.8345147967338562,
+            "mean": -0.027974331751465797,
+            "std": 0.8340474367141724,
+            "min": -5.71875,
+            "max": 6.59375,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 635.7198486328125,
+            "rms": 1.241640329360962,
+            "mean": -0.0264936164021492,
+            "std": 1.241360068321228,
+            "min": -8.875,
+            "max": 8.484375,
+            "finite": true
+          }
+        },
+        "D2_CONTEXT": {
+          "seconds": 0.6756085000233725,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 462.357421875,
+            "rms": 0.9030418395996094,
+            "mean": -0.05518085137009621,
+            "std": 0.901356041431427,
+            "min": -5.559607982635498,
+            "max": 6.240062713623047,
+            "finite": true
+          }
+        },
+        "state": {
+          "D0_D1_D2_target_input_difference": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "noisy_source_vs_fixed_noise": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "clean_source_vs_sampler_latent_image": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "clean_source_vs_fixed_noise": {
+            "rms": 1.303917407989502,
+            "mean_abs": 1.03443443775177,
+            "max_abs": 7.141762733459473
+          },
+          "clean_source_equal_fixed_noise": false,
+          "sampler_updates": 0,
+          "returned_state_vs_accepted": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          }
+        }
+      }
+    },
+    "organic_tree": {
+      "prompt": "A wide cinematic photograph continuing one coherent dry desert scene, exactly one full-body woman in a long gray dress left of center, exactly one tall green tree crossing the right region, continuous tree canopy and branches, continuous ground plane and distant hills, warm sunset light, no duplicate people, no duplicate trees, no cropped or repeated tree",
+      "editable_raw_x0_D2_vs_D0": {
+        "rms": 0.48376160860061646,
+        "mean_abs": 0.2909344434738159,
+        "max_abs": 4.69921875
+      },
+      "editable_raw_x0_D2_vs_D1": {
+        "rms": 0.5253200531005859,
+        "mean_abs": 0.3122771084308624,
+        "max_abs": 4.85546875
+      },
+      "locked_raw_x0_D2_vs_D0": {
+        "rms": 0.42188286781311035,
+        "mean_abs": 0.25175899267196655,
+        "max_abs": 3.796875
+      },
+      "decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.24842409789562225,
+          "left_seam_gradient_rms": 0.019206400960683823,
+          "right_lf_source_discrepancy_rms": 0.2883220314979553,
+          "right_seam_gradient_rms": 0.10660888999700546
+        },
+        "D1_NOISY_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.2507432699203491,
+          "left_seam_gradient_rms": 0.01927625946700573,
+          "right_lf_source_discrepancy_rms": 0.29164454340934753,
+          "right_seam_gradient_rms": 0.11199358105659485
+        },
+        "D2_CLEAN_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.23585975170135498,
+          "left_seam_gradient_rms": 0.024109138175845146,
+          "right_lf_source_discrepancy_rms": 0.2549538314342499,
+          "right_seam_gradient_rms": 0.11313209682703018
+        }
+      },
+      "authoritative_decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.24450986087322235,
+          "left_seam_gradient_rms": 0.02758157253265381,
+          "right_lf_source_discrepancy_rms": 0.22484073042869568,
+          "right_seam_gradient_rms": 0.10830887407064438
+        },
+        "D1_NOISY_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.24551494419574738,
+          "left_seam_gradient_rms": 0.02793240360915661,
+          "right_lf_source_discrepancy_rms": 0.21867583692073822,
+          "right_seam_gradient_rms": 0.12515880167484283
+        },
+        "D2_CLEAN_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.23138129711151123,
+          "left_seam_gradient_rms": 0.030365781858563423,
+          "right_lf_source_discrepancy_rms": 0.21158567070960999,
+          "right_seam_gradient_rms": 0.13814318180084229
+        }
+      },
+      "D1_frozen_decoded_png_max_abs": 0.0019608139991760254,
+      "calls": {
+        "D0_CONTROL": {
+          "seconds": 0.45313629996962845,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 500.0849304199219,
+            "rms": 0.9767283797264099,
+            "mean": -0.011440597474575043,
+            "std": 0.9766632318496704,
+            "min": -5.593958854675293,
+            "max": 5.719101428985596,
+            "finite": true
+          }
+        },
+        "D1_NOISY_CAPTURE": {
+          "seconds": 0.47593269997742027,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 500.0849304199219,
+            "rms": 0.9767283797264099,
+            "mean": -0.011440597474575043,
+            "std": 0.9766632318496704,
+            "min": -5.593958854675293,
+            "max": 5.719101428985596,
+            "finite": true
+          }
+        },
+        "D1_CONTEXT": {
+          "seconds": 0.6742159000132233,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 494.7129211425781,
+            "rms": 0.9662361741065979,
+            "mean": -0.010465295985341072,
+            "std": 0.9661813378334045,
+            "min": -4.530494213104248,
+            "max": 4.357941627502441,
+            "finite": true
+          }
+        },
+        "D2_CLEAN_CAPTURE": {
+          "seconds": 0.4772242000326514,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 442.4201965332031,
+            "rms": 0.8641019463539124,
+            "mean": -0.052641842514276505,
+            "std": 0.8624985814094543,
+            "min": -5.71875,
+            "max": 5.875,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 655.6888427734375,
+            "rms": 1.2806422710418701,
+            "mean": -0.06391095370054245,
+            "std": 1.279049038887024,
+            "min": -8.640625,
+            "max": 8.625,
+            "finite": true
+          }
+        },
+        "D2_CONTEXT": {
+          "seconds": 0.6743716999772005,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 496.18255615234375,
+            "rms": 0.9691065549850464,
+            "mean": -0.0020347116515040398,
+            "std": 0.9691063165664673,
+            "min": -6.093958854675293,
+            "max": 6.500351428985596,
+            "finite": true
+          }
+        },
+        "state": {
+          "D0_D1_D2_target_input_difference": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "noisy_source_vs_fixed_noise": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "clean_source_vs_sampler_latent_image": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "clean_source_vs_fixed_noise": {
+            "rms": 1.3235841989517212,
+            "mean_abs": 1.046332597732544,
+            "max_abs": 7.797896862030029
+          },
+          "clean_source_equal_fixed_noise": false,
+          "sampler_updates": 0,
+          "returned_state_vs_accepted": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          }
+        }
+      }
+    },
+    "photometric_desert": {
+      "prompt": "A wide cinematic photograph of exactly one astronaut standing centered in a continuous open desert, pale clear sky, warm sand and a straight distant horizon continuing naturally to both sides, coherent lighting and texture, no duplicate astronauts, no duplicate horizon, no vertical seams",
+      "editable_raw_x0_D2_vs_D0": {
+        "rms": 0.2934795618057251,
+        "mean_abs": 0.19731441140174866,
+        "max_abs": 2.67578125
+      },
+      "editable_raw_x0_D2_vs_D1": {
+        "rms": 0.3019750714302063,
+        "mean_abs": 0.19744491577148438,
+        "max_abs": 2.89453125
+      },
+      "locked_raw_x0_D2_vs_D0": {
+        "rms": 0.22911801934242249,
+        "mean_abs": 0.15167710185050964,
+        "max_abs": 2.8984375
+      },
+      "decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.21136188507080078,
+          "left_seam_gradient_rms": 0.009024334140121937,
+          "right_lf_source_discrepancy_rms": 0.23122557997703552,
+          "right_seam_gradient_rms": 0.011363268829882145
+        },
+        "D1_NOISY_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.21219277381896973,
+          "left_seam_gradient_rms": 0.010164720937609673,
+          "right_lf_source_discrepancy_rms": 0.22854964435100555,
+          "right_seam_gradient_rms": 0.012264026328921318
+        },
+        "D2_CLEAN_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.1992771178483963,
+          "left_seam_gradient_rms": 0.014520062133669853,
+          "right_lf_source_discrepancy_rms": 0.2191697061061859,
+          "right_seam_gradient_rms": 0.015529444441199303
+        }
+      },
+      "authoritative_decoded": {
+        "D0_STATE_RESTORATION": {
+          "left_lf_source_discrepancy_rms": 0.22376081347465515,
+          "left_seam_gradient_rms": 0.025305362418293953,
+          "right_lf_source_discrepancy_rms": 0.24230769276618958,
+          "right_seam_gradient_rms": 0.02497250773012638
+        },
+        "D1_NOISY_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.2236310839653015,
+          "left_seam_gradient_rms": 0.026886271312832832,
+          "right_lf_source_discrepancy_rms": 0.23944887518882751,
+          "right_seam_gradient_rms": 0.02747616544365883
+        },
+        "D2_CLEAN_SOURCE_CONTEXT": {
+          "left_lf_source_discrepancy_rms": 0.210187628865242,
+          "left_seam_gradient_rms": 0.03411310538649559,
+          "right_lf_source_discrepancy_rms": 0.22864916920661926,
+          "right_seam_gradient_rms": 0.03362858295440674
+        }
+      },
+      "D1_frozen_decoded_png_max_abs": 0.0019608139991760254,
+      "calls": {
+        "D0_CONTROL": {
+          "seconds": 0.4555021999985911,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 486.77276611328125,
+            "rms": 0.9507280588150024,
+            "mean": -0.08460810780525208,
+            "std": 0.9469575881958008,
+            "min": -5.954766273498535,
+            "max": 6.807804107666016,
+            "finite": true
+          }
+        },
+        "D1_NOISY_CAPTURE": {
+          "seconds": 0.47862210002494976,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 486.77276611328125,
+            "rms": 0.9507280588150024,
+            "mean": -0.08460810780525208,
+            "std": 0.9469575881958008,
+            "min": -5.954766273498535,
+            "max": 6.807804107666016,
+            "finite": true
+          }
+        },
+        "D1_CONTEXT": {
+          "seconds": 0.6753698000102304,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 485.8006896972656,
+            "rms": 0.9488294720649719,
+            "mean": -0.08278872817754745,
+            "std": 0.9452125430107117,
+            "min": -5.923516273498535,
+            "max": 6.714054107666016,
+            "finite": true
+          }
+        },
+        "D2_CLEAN_CAPTURE": {
+          "seconds": 0.47682899999199435,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 427.1330261230469,
+            "rms": 0.8342441916465759,
+            "mean": -0.03375872224569321,
+            "std": 0.833562433719635,
+            "min": -4.96875,
+            "max": 5.59375,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 628.7632446289062,
+            "rms": 1.2280532121658325,
+            "mean": -0.017855968326330185,
+            "std": 1.2279258966445923,
+            "min": -7.28125,
+            "max": 7.375,
+            "finite": true
+          }
+        },
+        "D2_CONTEXT": {
+          "seconds": 0.6773810000158846,
+          "input": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 512.0966796875,
+            "rms": 1.0001888275146484,
+            "mean": -0.0033909627236425877,
+            "std": 1.0001850128173828,
+            "min": -4.34328031539917,
+            "max": 4.658237934112549,
+            "finite": true
+          },
+          "output": {
+            "shape": [
+              1,
+              128,
+              32,
+              64
+            ],
+            "norm": 479.2356262207031,
+            "rms": 0.9360070824623108,
+            "mean": -0.08090522885322571,
+            "std": 0.93250572681427,
+            "min": -5.710083961486816,
+            "max": 6.714054107666016,
+            "finite": true
+          }
+        },
+        "state": {
+          "D0_D1_D2_target_input_difference": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "noisy_source_vs_fixed_noise": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "clean_source_vs_sampler_latent_image": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          },
+          "clean_source_vs_fixed_noise": {
+            "rms": 1.302931308746338,
+            "mean_abs": 1.0343233346939087,
+            "max_abs": 6.389719486236572
+          },
+          "clean_source_equal_fixed_noise": false,
+          "sampler_updates": 0,
+          "returned_state_vs_accepted": {
+            "rms": 0.0,
+            "mean_abs": 0.0,
+            "max_abs": 0.0
+          }
+        }
+      }
+    }
+  },
+  "diffusion_trajectory_executed": false,
+  "production_changed": false
+}
