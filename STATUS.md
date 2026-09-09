@@ -978,3 +978,56 @@ raising low-frequency residual RMS from `0.006106` to `0.022914`. Scalar/affine
 reconciliation stops without coefficient, neighborhood, or channel tuning. The
 next eligible compositor branch is gradient-domain or multiband. No production
 source changed.
+
+The zero-diffusion fixed multiband discriminator is complete and rejected. A
+shared 2/8-pixel, 24/64/128-pixel high/mid/low policy preserves exact source
+interior and byte-exact generated exterior in all cases, but does not remove
+the desert tonal band and worsens desert-left and both tree strip residuals.
+Bridge/tree contours remain sharp without new doubling. Stop post-decode
+frequency-domain blending; one fixed gradient-domain compositor is the next
+eligible discriminator. No diffusion, VAE, or production change occurred.
+
+The final zero-diffusion fixed gradient-domain discriminator is complete and
+rejected. Its bounded 64-pixel Poisson regions preserve exact source interior
+and byte-exact generated exterior, but produce severe tonal ramps, a tree halo,
+and bridge-boundary damage. Desert-right low-frequency RMS rises by 5.68 times
+and derivative discontinuity by 7.36 times relative to C. Post-decode
+compositor research is closed; Local Edit research returns to diffusion-stage
+epsilon/projection. No diffusion, VAE, or production change occurred.
+
+The diffusion-stage prediction-versus-state discriminator is complete across
+bridge, tree, and desert. A is the current free-running epsilon-projection
+baseline; B restores the locked source trajectory after every Euler proposal;
+C also uses the exact locked CONST source derivative. B and C are visually
+identical, have identical raw x0 decodes at every sigma, and finish with zero
+locked latent error. C's exact locked prediction does not affect editable
+coordinates because accepted restoration discards the only changed proposal
+coordinates. Hard prediction/state projection is insufficient; the next
+eligible direction is a narrow model-level source-context/KV discriminator.
+No production code changed.
+
+The step-0 dense native source-context diagnostic is complete and stopped
+before a trajectory. D1 appends same-coordinate locked-region K/V to editable
+queries across all 25 Klein attention blocks while preserving text/locked-query
+outputs and sampler state. It materially changes editable raw x0, but does not
+improve bridge boundary geometry in the expected direction; tree metrics also
+worsen and desert changes are mixed. At sigma 1, the native CONST source state
+equals fixed noise exactly, so clean source appearance is absent from this
+contract. No block/strength/context sweep or production change was made.
+
+The step-0 clean-source K/V diagnostic is complete and stopped before a
+trajectory. D2 uses clean encoded source `y` in a separate native full-canvas
+feature forward with fixed sigma-one modulation, then exposes its RoPE-aware
+source K/V only to editable queries. It strongly changes editable raw x0 and
+improves scalar low-frequency mismatch, but fails the rigid-bridge gate by
+creating independently organized/differently scaled tower and cable systems.
+No sampler update, trajectory, parameter sweep, or production change occurred.
+
+The exact epsilon mechanism discriminator is complete. Plain epsilon and
+epsilon projection directly alter only source-region derivatives; editable raw
+x0 changes one interval later through dense model coupling to the accepted,
+co-evolving source state. The editable-only correction ablation is bit-exact to
+ordinary T2I across bridge, tree, and desert, proving the useful action is not a
+direct editable correction. Projection changes globally computed direction and
+magnitude while retaining source-only final support. No second ablation,
+parameter tuning, or production change was made.
