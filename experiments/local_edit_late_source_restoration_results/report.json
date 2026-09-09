@@ -1,0 +1,473 @@
+{
+  "experiment": "Late accepted-state source restoration from reproduced arm D",
+  "invariant": "Identical full-canvas epsilon_projection and pre-model states until an arm's declared post-Euler restoration step",
+  "configuration": {
+    "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+    "seed": 0,
+    "steps": 8,
+    "sigmas": [
+      1.0,
+      0.9826490879058838,
+      0.9604301452636719,
+      0.9309595823287964,
+      0.8899959325790405,
+      0.8291866183280945,
+      0.7294999957084656,
+      0.5361343026161194,
+      0.0
+    ],
+    "sampler": "installed RES4LYF linear/euler",
+    "guide": "epsilon_projection, non-channelwise, weight=1, cutoff=1, constant",
+    "native_noise_mask": null,
+    "source_mask": "binary center source at latent columns 16:48; 1=source"
+  },
+  "frozen_D_integrity": {
+    "sampled_bit_exact": true,
+    "sampled_rms": 0.0,
+    "sampled_max_abs": 0.0
+  },
+  "arms": {
+    "A_frozen_D_reference": {
+      "latent": {
+        "source_latent_rms": 0.24251559376716614,
+        "source_latent_max_abs": 1.8735253810882568,
+        "editable_change_rms": 0.8257205486297607
+      },
+      "decoded": {
+        "locked_source_mae": 0.031627628952264786,
+        "locked_source_max_abs": 0.70703125,
+        "editable_change_rms": 0.23869235813617706,
+        "left_seam_gradient_rms": 0.11245226860046387,
+        "left_inside_adjacent_gradient_rms": 0.06370510905981064,
+        "left_outside_adjacent_gradient_rms": 0.05865633487701416,
+        "right_seam_gradient_rms": 0.05531987175345421,
+        "right_inside_adjacent_gradient_rms": 0.04557419940829277,
+        "right_outside_adjacent_gradient_rms": 0.04341718554496765
+      },
+      "first_divergence_vs_A": {
+        "first_step": null,
+        "per_step": [
+          {
+            "step": 0,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 1,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 2,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 3,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 4,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 5,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 6,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 7,
+            "rms": 0.0,
+            "max_abs": 0.0
+          }
+        ]
+      },
+      "restoration_records": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9826490879058838,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 1,
+          "sigma": 0.9826490879058838,
+          "sigma_next": 0.9604301452636719,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 2,
+          "sigma": 0.9604301452636719,
+          "sigma_next": 0.9309595823287964,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 3,
+          "sigma": 0.9309595823287964,
+          "sigma_next": 0.8899959325790405,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 4,
+          "sigma": 0.8899959325790405,
+          "sigma_next": 0.8291866183280945,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 5,
+          "sigma": 0.8291866183280945,
+          "sigma_next": 0.7294999957084656,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 6,
+          "sigma": 0.7294999957084656,
+          "sigma_next": 0.5361343026161194,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 7,
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0007533399038948119,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": "terminal",
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0007533399038948119,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        }
+      ],
+      "returned_equals_terminal_callback": false
+    },
+    "B_final_accepted_only": {
+      "latent": {
+        "source_latent_rms": 0.0,
+        "source_latent_max_abs": 0.0,
+        "editable_change_rms": 0.8257205486297607
+      },
+      "decoded": {
+        "locked_source_mae": 0.0406092070043087,
+        "locked_source_max_abs": 0.51025390625,
+        "editable_change_rms": 0.24209041893482208,
+        "left_seam_gradient_rms": 0.11645206063985825,
+        "left_inside_adjacent_gradient_rms": 0.06483766436576843,
+        "left_outside_adjacent_gradient_rms": 0.061435192823410034,
+        "right_seam_gradient_rms": 0.05450734496116638,
+        "right_inside_adjacent_gradient_rms": 0.04125277325510979,
+        "right_outside_adjacent_gradient_rms": 0.034973934292793274
+      },
+      "first_divergence_vs_A": {
+        "first_step": 7,
+        "per_step": [
+          {
+            "step": 0,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 1,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 2,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 3,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 4,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 5,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 6,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 7,
+            "rms": 0.24206091463565826,
+            "max_abs": 1.8708100318908691
+          }
+        ]
+      },
+      "restoration_records": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9826490879058838,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 1,
+          "sigma": 0.9826490879058838,
+          "sigma_next": 0.9604301452636719,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 2,
+          "sigma": 0.9604301452636719,
+          "sigma_next": 0.9309595823287964,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 3,
+          "sigma": 0.9309595823287964,
+          "sigma_next": 0.8899959325790405,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 4,
+          "sigma": 0.8899959325790405,
+          "sigma_next": 0.8291866183280945,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 5,
+          "sigma": 0.8291866183280945,
+          "sigma_next": 0.7294999957084656,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 6,
+          "sigma": 0.7294999957084656,
+          "sigma_next": 0.5361343026161194,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 7,
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0007533399038948119,
+          "restored": true,
+          "accepted_change_rms": 0.24206092953681946,
+          "source_target_error_before_rms": 0.24206092953681946,
+          "source_target_error_after_rms": 0.0
+        },
+        {
+          "step": "terminal",
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0007533399038948119,
+          "restored": true,
+          "accepted_change_rms": 0.0007479434134438634,
+          "source_target_error_before_rms": 0.0007479434134438634,
+          "source_target_error_after_rms": 0.0
+        }
+      ],
+      "returned_equals_terminal_callback": false
+    },
+    "C_final_two_accepted": {
+      "latent": {
+        "source_latent_rms": 0.0,
+        "source_latent_max_abs": 0.0,
+        "editable_change_rms": 0.8249301910400391
+      },
+      "decoded": {
+        "locked_source_mae": 0.041176918894052505,
+        "locked_source_max_abs": 0.556640625,
+        "editable_change_rms": 0.2473595142364502,
+        "left_seam_gradient_rms": 0.11431707441806793,
+        "left_inside_adjacent_gradient_rms": 0.06715288758277893,
+        "left_outside_adjacent_gradient_rms": 0.059898294508457184,
+        "right_seam_gradient_rms": 0.05352047085762024,
+        "right_inside_adjacent_gradient_rms": 0.03858817368745804,
+        "right_outside_adjacent_gradient_rms": 0.032822031527757645
+      },
+      "first_divergence_vs_A": {
+        "first_step": 6,
+        "per_step": [
+          {
+            "step": 0,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 1,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 2,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 3,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 4,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 5,
+            "rms": 0.0,
+            "max_abs": 0.0
+          },
+          {
+            "step": 6,
+            "rms": 0.43010738492012024,
+            "max_abs": 3.2658472061157227
+          },
+          {
+            "step": 7,
+            "rms": 0.24502208828926086,
+            "max_abs": 1.8708100318908691
+          }
+        ]
+      },
+      "restoration_records": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9826490879058838,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 1,
+          "sigma": 0.9826490879058838,
+          "sigma_next": 0.9604301452636719,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 2,
+          "sigma": 0.9604301452636719,
+          "sigma_next": 0.9309595823287964,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 3,
+          "sigma": 0.9309595823287964,
+          "sigma_next": 0.8899959325790405,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 4,
+          "sigma": 0.8899959325790405,
+          "sigma_next": 0.8291866183280945,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 5,
+          "sigma": 0.8291866183280945,
+          "sigma_next": 0.7294999957084656,
+          "restored": false,
+          "accepted_change_rms": 0.0,
+          "source_target_error_before_rms": null,
+          "source_target_error_after_rms": null
+        },
+        {
+          "step": 6,
+          "sigma": 0.7294999957084656,
+          "sigma_next": 0.5361343026161194,
+          "restored": true,
+          "accepted_change_rms": 0.43010735511779785,
+          "source_target_error_before_rms": 0.43010735511779785,
+          "source_target_error_after_rms": 0.0
+        },
+        {
+          "step": 7,
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0007533399038948119,
+          "restored": true,
+          "accepted_change_rms": 0.2856065034866333,
+          "source_target_error_before_rms": 0.2856065034866333,
+          "source_target_error_after_rms": 0.0
+        },
+        {
+          "step": "terminal",
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0007533399038948119,
+          "restored": true,
+          "accepted_change_rms": 0.0004017951723653823,
+          "source_target_error_before_rms": 0.0004017951723653823,
+          "source_target_error_after_rms": 0.0
+        }
+      ],
+      "returned_equals_terminal_callback": false
+    }
+  },
+  "runtime_seconds": 28.273689800000284
+}

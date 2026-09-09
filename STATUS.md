@@ -927,3 +927,44 @@ tuning. A zero-diffusion guard diagnostic shows editable latent changes affect
 decoded pixels broadly across the locked source side rather than only in a
 narrow boundary strip. The next eligible branch is a model-visible or
 prediction-refresh boundary mechanism. No production source changed.
+
+The uploaded real-user Clown Guide workflow has now been audited and reproduced
+in an experiment-only direct-RES4LYF harness. The serialized workflow bypasses
+`SetLatentNoiseMask`; its actual reference arm is full-canvas Klein Euler plus
+non-channelwise `epsilon_projection`, not projection plus native noise masking.
+That arm matches the uploaded PNG with decoded MAE `0.00195592` and maximum
+error of one 8-bit code value. Forced blurred/binary noise-mask arms fail to
+reproduce it and show worse joins. Plain epsilon without the mask retains broad
+continuity but duplicates left-side structure; no-guide full-canvas sampling is
+coherent but replaces source identity. The two-column scalar-transition
+rejection remains narrow; epsilon guidance as a family is not rejected. No
+production source or registrations changed.
+
+The late source-restoration discriminator is complete. Frozen arm D reruns
+bit-exactly. Restoring the source only at the final accepted interval, or at the
+final two intervals, preserves D's single-bridge geometry and substantial edit
+freedom; neither arm recreates the independent-bridge failure. Both reach exact
+terminal source latent coordinates. However decoded source MAE worsens from
+`0.031628` for D to `0.040609` final-only and `0.041177` final-two, including
+deep source-side insets. The conditional inset/overlap follow-up was therefore
+not run. No production source changed.
+
+The zero-diffusion post-decode compositing discriminator is complete. A hard
+pixel composite restores 100% of the source footprint exactly but increases
+both vertical boundary jumps. One predeclared 24-pixel raised-cosine transition
+per side, derived by shrinking the source interior, keeps columns 280-743
+exactly equal to the original source and leaves every generated exterior pixel
+bit-exact to frozen D. It reduces the hard composite's left/right seam-gradient
+RMS by approximately 8.8%/35.7% without duplicate bridge structure. A subtle
+narrow tonal band remains. No diffusion, VAE execution, production code, or
+registration change occurred.
+
+The fixed-policy post-decode robustness discriminator is complete across three
+eligible epsilon generations: rigid bridge geometry, an organic tree contour,
+and photometric desert continuity. Every 24-pixel inset composite keeps the
+declared source interior exact and generated exterior bit-exact, with no new
+double bridge, tree trunk, or ghost contour. It is not robust enough to qualify
+as the default: smooth desert sky/sand exposes an obvious full-height tonal band
+despite improved nominal-boundary scalar metrics. Two structurally failed
+organic epsilon attempts were excluded before compositing. No production source
+or registration changed.

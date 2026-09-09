@@ -1,0 +1,64 @@
+{
+  "experiment": "Zero-diffusion post-decode source compositing",
+  "source": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_late_source_restoration_results\\PADDED_RESIZED.png",
+  "frozen_generated": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\local_edit_late_source_restoration_results\\A_frozen_D_reference_FINAL.png",
+  "source_footprint": {
+    "left_inclusive": 256,
+    "right_exclusive": 768
+  },
+  "transition": {
+    "width_pixels_per_boundary": 24,
+    "left_columns": [
+      256,
+      279
+    ],
+    "right_columns": [
+      744,
+      767
+    ],
+    "exact_source_interior": [
+      280,
+      743
+    ],
+    "falloff": "raised cosine, source weight 0 at nominal footprint boundary and 1 at exact-interior edge"
+  },
+  "arms": {
+    "A_frozen_D_decode": {
+      "source_interior_mae": 0.03106295207558598,
+      "transition_strip_mae_vs_source": 0.058942089205473856,
+      "source_interior_exact_pixel_fraction": 1.683728448275862e-05,
+      "source_footprint_exact_pixel_fraction": 1.9073486328125e-05,
+      "generated_exterior_bit_exact": true,
+      "generated_exterior_max_abs": 0,
+      "left_seam_gradient_rms": 0.1125532521664348,
+      "left_first_derivative_discontinuity_rms": 0.10814583558534936,
+      "right_seam_gradient_rms": 0.05537308437339567,
+      "right_first_derivative_discontinuity_rms": 0.06516981263626988
+    },
+    "B_hard_pixel_composite": {
+      "source_interior_mae": 0.0,
+      "transition_strip_mae_vs_source": 0.0,
+      "source_interior_exact_pixel_fraction": 1.0,
+      "source_footprint_exact_pixel_fraction": 1.0,
+      "generated_exterior_bit_exact": true,
+      "generated_exterior_max_abs": 0,
+      "left_seam_gradient_rms": 0.12336517443336989,
+      "left_first_derivative_discontinuity_rms": 0.1348814022728774,
+      "right_seam_gradient_rms": 0.08616058933723937,
+      "right_first_derivative_discontinuity_rms": 0.10365256642797109
+    },
+    "C_inset_24px_composite": {
+      "source_interior_mae": 0.0,
+      "transition_strip_mae_vs_source": 0.035431134259259256,
+      "source_interior_exact_pixel_fraction": 1.0,
+      "source_footprint_exact_pixel_fraction": 0.9192237854003906,
+      "generated_exterior_bit_exact": true,
+      "generated_exterior_max_abs": 0,
+      "left_seam_gradient_rms": 0.1125532521664348,
+      "left_first_derivative_discontinuity_rms": 0.10814583558534936,
+      "right_seam_gradient_rms": 0.05537308437339567,
+      "right_first_derivative_discontinuity_rms": 0.06516981263626988
+    }
+  },
+  "diffusion_or_vae_executed": false
+}

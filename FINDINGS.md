@@ -2719,3 +2719,107 @@ error. This establishes broad full-canvas VAE decode coupling in this case,
 not merely a narrow cross-boundary effect. The responsible internal decoder
 operation was not isolated. Evidence:
 `experiments/LOCAL_EDIT_TRANSITION_KLEIN_REPORT.md`.
+
+## 2026-09-09 — The uploaded Clown epsilon reference is projected and unmasked
+
+The uploaded `local_edit_test.json` serializes `SetLatentNoiseMask` node 1069
+with `mode=4` (bypass). Although the mask connection remains visible, the
+sampler latent therefore has no incoming `noise_mask`. A controlled harness
+using the installed RES4LYF nodes and live ComfyUI model, scheduler, VAE, and
+conditioning reproduces the uploaded PNG with decoded MAE `0.00195592` and
+maximum absolute error `0.00392160`. The matching arm is Clown
+`epsilon_projection` plus full-canvas sampling and no native mask.
+
+For Klein CONST, RES4LYF obtains the post-model sampler derivative
+`d=(x-x0_model)/sigma` and guide derivative `g=(x-y)/sigma`. With
+`projection_mode=true` and `channelwise_mode=false`, it selects
+`epsilon_projection`, masks the guide as `q=G*g`, flattens all channels and
+spatial coordinates per batch item, and forms
+`p=proj_q(d)+(q-proj_d(q))`; the output is `d+W*(p-d)`. This happens after
+model prediction, CFG/guider combination, and denoised conversion but before
+the RK/Euler update. There is no clipping, norm preservation, magnitude
+rescaling, or model-visible guide condition. `cutoff=1` is a masked Pearson
+similarity threshold, not a sigma threshold.
+
+The direct outpaint guide mask is complemented inside `ClownGuide_Beta`, so its
+internal binary guide mask is 1 on the center source and 0 on the editable
+sides. The separately constructed radius-32 sampling mask has 132 values,
+nonzero fraction `0.5791`, and exact-one fraction `0.4209`, but is inactive in
+the reference graph. When forced active, blurred and binary native-mask arms
+both fail to reproduce the reference and visibly worsen joins.
+
+The successful arm's guide correction is active at the first interval and
+remains comparable to the model derivative: correction/model RMS ranges from
+`0.9327` to `1.2376`. Projection contributes RMS `0.3866` to `0.5128` beyond
+plain epsilon. Plain epsilon without a noise mask preserves broad bridge
+continuity but duplicates left bridge/tower structure and drifts farther from
+the source; unmasked no-guide sampling produces coherent geometry but replaces
+source identity. Thus the reference continuity comes from allowing full-canvas
+accepted-state/model evolution, while the global nonlinear projection supplies
+the source anchor needed for the close visual match.
+
+At the primary Euler row, the unprojected epsilon correction equals the earlier
+hard-source derivative replacement on masked coordinates. The behavioral
+difference is that the real reference neither enforces the native mask nor
+restores the accepted source state, and adds a batch-global projection. This
+explains why exact hard source can restart adjacent geometry while the real
+Clown reference remains continuous, at the cost of nonzero source drift.
+Evidence: `experiments/LOCAL_EDIT_USER_CLOWN_EPSILON_REPORT.md`.
+
+## 2026-09-09 — Late source restoration preserves geometry but worsens decoded source error
+
+Starting from the bit-exact reproduced Clown D arm, final-only accepted-state
+source restoration first diverges at Euler interval 7; final-two restoration
+first diverges at interval 6. All earlier accepted states are bit-exact to D,
+and the projected epsilon/model path is unchanged. Both arms finish with exact
+clean source latent coordinates and retain the same single bridge without a
+restarted or duplicate bridge.
+
+Exact terminal latent authority does not improve decoded source fidelity in
+this full-canvas VAE decode. Source-region decoded MAE changes from `0.031628`
+for D to `0.040609` for final-only and `0.041177` for final-two. The regression
+persists 192 pixels inside both source boundaries, while editable decoded change
+RMS remains substantial (`0.242090` and `0.247360`). Seam-gradient values remain
+close to D and do not capture a new geometric break.
+
+The scheduler's last explicit Euler target is `sigma=0.0007533399`; RES4LYF
+then performs a post-loop terminal denoised conversion. Correct terminal source
+authority therefore requires restoring the last Euler source trajectory and
+clean `y` after that post-loop conversion. Evidence:
+`experiments/LOCAL_EDIT_LATE_SOURCE_RESTORATION_REPORT.md`.
+
+## 2026-09-09 — Inward post-decode compositing preserves exact source and D geometry
+
+Using only saved PNGs, hard replacement of the complete source footprint makes
+all source pixels exact but increases left/right seam-gradient RMS from
+`0.112553/0.055373` to `0.123365/0.086161` and first-derivative discontinuity
+RMS from `0.108146/0.065170` to `0.134881/0.103653`.
+
+A fixed 24-pixel raised-cosine strip wholly inside each source boundary keeps
+the 464-pixel-wide source interior bit-exact, keeps every generated exterior
+pixel bit-exact to frozen D, and restores nominal-boundary gradient metrics to
+D's values. The full source footprint is exactly equal to the source at
+`91.9224%` of pixels. Visual inspection finds continuous deck/cables and no new
+duplicate or ghost bridge. A subtle narrow sky/water tonal band remains, which
+is photometric rather than structural evidence. Evidence:
+`experiments/LOCAL_EDIT_POSTDECODE_COMPOSITE_REPORT.md`.
+
+## 2026-09-09 — Fixed inward compositing is structurally safe but photometrically brittle
+
+The unchanged 24-pixel inward raised-cosine policy was tested on three eligible
+epsilon generations: bridge deck/cables, a tree contour, and smooth desert
+sky/horizon/sand. In all cases the exact interior fraction is 100%, generated
+exterior maximum error is zero, and no new doubled or ghost structural contour
+is visible. Full-footprint exact-source fractions range from `91.9224%` to
+`92.1036%`.
+
+The predominantly photometric case fails perceptually. Its C arm restores the
+nominal left/right gradient RMS to A (`0.032333/0.029884`) from B's
+`0.075627/0.091130`, yet an obvious full-height tonal band remains because the
+mismatch is distributed through the inward strip. Nominal-edge scalar metrics
+therefore cannot qualify seam invisibility for a graded composite.
+
+Two candidate organic layouts were rejected before compositing because their A
+epsilon outputs already cut a person or duplicated a car/tree. Those remain
+epsilon-generation failures, not composite failures. Evidence:
+`experiments/LOCAL_EDIT_COMPOSITE_ROBUSTNESS_REPORT.md`.
