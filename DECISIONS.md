@@ -1479,3 +1479,27 @@ Do not reduce the carrier to latent energy or channel statistics alone. The
 observed response is not a clean transformed relocation,
 so do not claim a coordinate-transfer mechanism. This result authorizes no
 block tracing, algorithm optimization, or production implementation.
+
+## 2026-09-09 — Classify source-context transfer as depth-distributed
+
+Classify the fixed rigid-bridge block-localization discriminator as DISTRIBUTED
+SOURCE-CONTEXT TRANSFER. Correct source state remains causally necessary across
+a broad depth range; the predeclared boundaries show progressive accumulation,
+not a sharp early or late transfer point.
+
+Qualified source-K/V substitutions prove a causal attention pathway, especially
+in the double stage, but do not establish K/V sufficiency or a skippable source
+stage. Do not infer a cache, sparse-execution boundary, or production policy from
+this one-evaluation result. No further block probes are authorized by this task.
+
+## 2026-09-09 — Reject an independently evolving one-way source provider
+
+Classify the fixed directional-coupling discriminator as BIDIRECTIONAL
+CO-EVOLUTION. Blocking direct editable-to-source generated-token attention is
+itself strongly destructive, while blocking source-to-editable communication is
+also strongly destructive. Do not treat source context as a branch that can
+evolve independently of editable-token feedback under the tested native Klein
+contract.
+
+This does not select an implementation or authorize caches, sparse execution,
+block/head tuning, backend changes, or production work.

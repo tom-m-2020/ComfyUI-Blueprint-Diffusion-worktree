@@ -2956,3 +2956,33 @@ Correct low-frequency spatial layout is materially required; full-canvas
 spectral magnitude was not held fixed, and the response does not show a clean
 predictable spatial relocation.
 Evidence: `experiments/LOCAL_EDIT_SOURCE_SPATIAL_STRUCTURE_REPORT.md`.
+
+## 2026-09-09 — Scene-spatial source context transfers cumulatively across Klein depth
+
+In the single dense evaluation after the rigid-bridge interval-0 pulse, replacing
+TRUE_LOW source hidden state with TRANSLATED_LOW at progressively later block
+boundaries retains `0.120`, `0.212`, `0.449`, `0.589`, `0.774`, and `0.834`
+projection onto the full-epsilon editable response (before double 0 through
+after single 19). No tested boundary produces a sharp early handoff; correct
+source state remains causally relevant across both double and single stages.
+
+Exact one-block source-K/V substitutions under the native joint softmax are
+also causal. Double blocks 0 and 4 reduce projection from TRUE_LOW's `0.834` to
+`0.689` and `0.637`; individual single-block substitutions have smaller but
+nonzero effects through block 19. The signal begins transferring in the double
+stage but accumulates through repeated dense processing. Evidence:
+`experiments/LOCAL_EDIT_SOURCE_BLOCK_LOCALIZATION_REPORT.md`.
+
+## 2026-09-09 — TRUE_LOW requires bidirectional generated-token attention
+
+In the archived rigid-bridge next-call evaluation, removing direct editable K/V
+from source generated queries across all 25 Klein blocks reduces editable
+projection onto TRUE_LOW from `1.000` to `0.509` (cosine `0.403`) and changes
+source raw x0 by `0.785` RMS. Removing source K/V from editable queries reduces
+TRUE_LOW projection to `0.450` (cosine `0.379`).
+
+Both masks act inside the native joint softmax, block exactly the intended
+`1024 x 1024` directed edge set, and leave text edges and unrelated generated
+interactions allowed. Source context is therefore not produced by an
+independently evolving one-way source branch under this contract. Evidence:
+`experiments/LOCAL_EDIT_SOURCE_DIRECTIONAL_COUPLING_REPORT.md`.

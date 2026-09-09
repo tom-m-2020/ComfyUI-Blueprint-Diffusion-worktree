@@ -1,0 +1,1296 @@
+{
+  "experiment": "TRUE_LOW versus TRANSLATED_LOW causal block localization",
+  "classification": "DISTRIBUTED SOURCE-CONTEXT TRANSFER",
+  "configuration": {
+    "sigma": 0.9826490879058838,
+    "boundaries": [
+      "before_double_0",
+      "after_double_4",
+      "after_single_4",
+      "after_single_9",
+      "after_single_14",
+      "after_single_19"
+    ],
+    "attention_blocks": [
+      [
+        "double",
+        0
+      ],
+      [
+        "double",
+        4
+      ],
+      [
+        "single",
+        4
+      ],
+      [
+        "single",
+        9
+      ],
+      [
+        "single",
+        14
+      ],
+      [
+        "single",
+        19
+      ]
+    ],
+    "generated_token_order": "row-major 32x64; center columns 16:48 are source",
+    "sampler_updates": 0
+  },
+  "baseline": {
+    "ORDINARY": {
+      "vs_full_epsilon": {
+        "recovery_ratio": 0.0,
+        "cosine": null,
+        "projection": 0.0,
+        "degenerate": "pulse delta is near zero"
+      },
+      "pulse_vs_ordinary": {
+        "rms": 0.0,
+        "mean_abs": 0.0,
+        "max_abs": 0.0
+      },
+      "full_epsilon_vs_ordinary": {
+        "rms": 0.6156941056251526,
+        "mean_abs": 0.41336631774902344,
+        "max_abs": 5.381539344787598
+      },
+      "variant_vs_true_low": {
+        "rms": 0.5630796551704407,
+        "mean_abs": 0.3742240071296692,
+        "max_abs": 5.803771018981934
+      },
+      "vs_true_low_direction": {
+        "recovery_ratio": 0.0,
+        "cosine": null,
+        "projection": 0.0,
+        "degenerate": "pulse delta is near zero"
+      },
+      "editable_grid": {
+        "left_r0_c0": {
+          "rms": 0.0,
+          "projection": 0.0
+        },
+        "left_r0_c1": {
+          "rms": 0.0,
+          "projection": 0.0
+        },
+        "left_r1_c0": {
+          "rms": 0.0,
+          "projection": 0.0
+        },
+        "left_r1_c1": {
+          "rms": 0.0,
+          "projection": 0.0
+        },
+        "right_r0_c0": {
+          "rms": 0.0,
+          "projection": 0.0
+        },
+        "right_r0_c1": {
+          "rms": 0.0,
+          "projection": 0.0
+        },
+        "right_r1_c0": {
+          "rms": 0.0,
+          "projection": 0.0
+        },
+        "right_r1_c1": {
+          "rms": 0.0,
+          "projection": 0.0
+        }
+      }
+    },
+    "FULL_EPSILON": {
+      "vs_full_epsilon": {
+        "recovery_ratio": 1.0,
+        "cosine": 1.0000004768371582,
+        "projection": 1.0000004768371582,
+        "degenerate": null
+      },
+      "pulse_vs_ordinary": {
+        "rms": 0.6156941056251526,
+        "mean_abs": 0.41336631774902344,
+        "max_abs": 5.381539344787598
+      },
+      "full_epsilon_vs_ordinary": {
+        "rms": 0.6156941056251526,
+        "mean_abs": 0.41336631774902344,
+        "max_abs": 5.381539344787598
+      },
+      "variant_vs_true_low": {
+        "rms": 0.2524498403072357,
+        "mean_abs": 0.13330340385437012,
+        "max_abs": 4.160904407501221
+      },
+      "vs_true_low_direction": {
+        "recovery_ratio": 1.0934398174285889,
+        "cosine": 0.9120774865150452,
+        "projection": 0.9973018169403076,
+        "degenerate": null
+      },
+      "editable_grid": {
+        "left_r0_c0": {
+          "rms": 0.6937729716300964,
+          "projection": 1.0
+        },
+        "left_r0_c1": {
+          "rms": 0.7387291789054871,
+          "projection": 1.0
+        },
+        "left_r1_c0": {
+          "rms": 0.834475040435791,
+          "projection": 1.0
+        },
+        "left_r1_c1": {
+          "rms": 0.7608263492584229,
+          "projection": 1.0
+        },
+        "right_r0_c0": {
+          "rms": 0.31528010964393616,
+          "projection": 1.0
+        },
+        "right_r0_c1": {
+          "rms": 0.33105120062828064,
+          "projection": 1.0
+        },
+        "right_r1_c0": {
+          "rms": 0.5334806442260742,
+          "projection": 1.0
+        },
+        "right_r1_c1": {
+          "rms": 0.4866095185279846,
+          "projection": 1.0
+        }
+      }
+    },
+    "TRANSLATED_LOW": {
+      "vs_full_epsilon": {
+        "recovery_ratio": 0.3739078640937805,
+        "cosine": 0.3214453160762787,
+        "projection": 0.12019093334674835,
+        "degenerate": null
+      },
+      "pulse_vs_ordinary": {
+        "rms": 0.23021265864372253,
+        "mean_abs": 0.15168461203575134,
+        "max_abs": 2.8241567611694336
+      },
+      "full_epsilon_vs_ordinary": {
+        "rms": 0.6156941056251526,
+        "mean_abs": 0.41336631774902344,
+        "max_abs": 5.381539344787598
+      },
+      "variant_vs_true_low": {
+        "rms": 0.5239717960357666,
+        "mean_abs": 0.33949315547943115,
+        "max_abs": 5.283658027648926
+      },
+      "vs_true_low_direction": {
+        "recovery_ratio": 0.4088457524776459,
+        "cosine": 0.36840009689331055,
+        "projection": 0.1506188064813614,
+        "degenerate": null
+      },
+      "editable_grid": {
+        "left_r0_c0": {
+          "rms": 0.2475486546754837,
+          "projection": 0.16285546123981476
+        },
+        "left_r0_c1": {
+          "rms": 0.11070667207241058,
+          "projection": 0.015091118402779102
+        },
+        "left_r1_c0": {
+          "rms": 0.3559623658657074,
+          "projection": 0.15916743874549866
+        },
+        "left_r1_c1": {
+          "rms": 0.21926018595695496,
+          "projection": 0.06959563493728638
+        },
+        "right_r0_c0": {
+          "rms": 0.1543082892894745,
+          "projection": 0.3989766836166382
+        },
+        "right_r0_c1": {
+          "rms": 0.1541551649570465,
+          "projection": 0.30641889572143555
+        },
+        "right_r1_c0": {
+          "rms": 0.22236475348472595,
+          "projection": 0.08242339640855789
+        },
+        "right_r1_c1": {
+          "rms": 0.2804308235645294,
+          "projection": 0.12691918015480042
+        }
+      }
+    },
+    "TRUE_LOW": {
+      "vs_full_epsilon": {
+        "recovery_ratio": 0.9145451188087463,
+        "cosine": 0.9120774865150452,
+        "projection": 0.8341360688209534,
+        "degenerate": null
+      },
+      "pulse_vs_ordinary": {
+        "rms": 0.5630796551704407,
+        "mean_abs": 0.3742240071296692,
+        "max_abs": 5.803771018981934
+      },
+      "full_epsilon_vs_ordinary": {
+        "rms": 0.6156941056251526,
+        "mean_abs": 0.41336631774902344,
+        "max_abs": 5.381539344787598
+      },
+      "variant_vs_true_low": {
+        "rms": 0.0,
+        "mean_abs": 0.0,
+        "max_abs": 0.0
+      },
+      "vs_true_low_direction": {
+        "recovery_ratio": 1.0,
+        "cosine": 0.9999991655349731,
+        "projection": 0.9999991655349731,
+        "degenerate": null
+      },
+      "editable_grid": {
+        "left_r0_c0": {
+          "rms": 0.6620706915855408,
+          "projection": 0.9205833673477173
+        },
+        "left_r0_c1": {
+          "rms": 0.7288846373558044,
+          "projection": 0.9641502499580383
+        },
+        "left_r1_c0": {
+          "rms": 0.795291006565094,
+          "projection": 0.8363986611366272
+        },
+        "left_r1_c1": {
+          "rms": 0.5753777623176575,
+          "projection": 0.6088190674781799
+        },
+        "right_r0_c0": {
+          "rms": 0.29888543486595154,
+          "projection": 0.9396580457687378
+        },
+        "right_r0_c1": {
+          "rms": 0.3207768499851227,
+          "projection": 0.9507962465286255
+        },
+        "right_r1_c0": {
+          "rms": 0.4478054940700531,
+          "projection": 0.7588698267936707
+        },
+        "right_r1_c1": {
+          "rms": 0.4588591754436493,
+          "projection": 0.8951000571250916
+        }
+      }
+    }
+  },
+  "hidden_diagnostics": {
+    "before_double_0": {
+      "source": {
+        "difference_rms": 0.01574762351810932,
+        "cosine": 0.9995412230491638
+      },
+      "editable": {
+        "difference_rms": 0.0,
+        "cosine": 1.0
+      },
+      "editable_difference_nonzero": false,
+      "text": {
+        "difference_rms": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    "after_double_4": {
+      "source": {
+        "difference_rms": 1.8626729249954224,
+        "cosine": 0.9855479001998901
+      },
+      "editable": {
+        "difference_rms": 1.1288610696792603,
+        "cosine": 0.9946082830429077
+      },
+      "editable_difference_nonzero": true,
+      "text": {
+        "difference_rms": 3.0547714233398438,
+        "cosine": 0.9998645782470703
+      }
+    },
+    "after_single_4": {
+      "source": {
+        "difference_rms": 6.302785873413086,
+        "cosine": 0.9624333381652832
+      },
+      "editable": {
+        "difference_rms": 4.54463529586792,
+        "cosine": 0.9800199866294861
+      },
+      "editable_difference_nonzero": true,
+      "text": {
+        "difference_rms": 6.2623748779296875,
+        "cosine": 0.999435305595398
+      }
+    },
+    "after_single_9": {
+      "source": {
+        "difference_rms": 5.269034385681152,
+        "cosine": 0.9664833545684814
+      },
+      "editable": {
+        "difference_rms": 4.562523365020752,
+        "cosine": 0.9759828448295593
+      },
+      "editable_difference_nonzero": true,
+      "text": {
+        "difference_rms": 9.776934623718262,
+        "cosine": 0.9986824989318848
+      }
+    },
+    "after_single_14": {
+      "source": {
+        "difference_rms": 10.501175880432129,
+        "cosine": 0.8362983465194702
+      },
+      "editable": {
+        "difference_rms": 9.47670841217041,
+        "cosine": 0.8720536231994629
+      },
+      "editable_difference_nonzero": true,
+      "text": {
+        "difference_rms": 15.045819282531738,
+        "cosine": 0.9968884587287903
+      }
+    },
+    "after_single_19": {
+      "source": {
+        "difference_rms": 35.27047348022461,
+        "cosine": 0.8952069878578186
+      },
+      "editable": {
+        "difference_rms": 34.5725212097168,
+        "cosine": 0.896872341632843
+      },
+      "editable_difference_nonzero": true,
+      "text": {
+        "difference_rms": 30.009794235229492,
+        "cosine": 0.9893766641616821
+      }
+    }
+  },
+  "state_crossovers": {
+    "before_double_0": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.3739078640937805,
+          "cosine": 0.3214453160762787,
+          "projection": 0.12019093334674835,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.23021265864372253,
+          "mean_abs": 0.15168461203575134,
+          "max_abs": 2.8241567611694336
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.5239717960357666,
+          "mean_abs": 0.33949315547943115,
+          "max_abs": 5.283658027648926
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.4088457524776459,
+          "cosine": 0.36840009689331055,
+          "projection": 0.1506188064813614,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.2475486546754837,
+            "projection": 0.16285546123981476
+          },
+          "left_r0_c1": {
+            "rms": 0.11070667207241058,
+            "projection": 0.015091118402779102
+          },
+          "left_r1_c0": {
+            "rms": 0.3559623658657074,
+            "projection": 0.15916743874549866
+          },
+          "left_r1_c1": {
+            "rms": 0.21926018595695496,
+            "projection": 0.06959563493728638
+          },
+          "right_r0_c0": {
+            "rms": 0.1543082892894745,
+            "projection": 0.3989766836166382
+          },
+          "right_r0_c1": {
+            "rms": 0.1541551649570465,
+            "projection": 0.30641889572143555
+          },
+          "right_r1_c0": {
+            "rms": 0.22236475348472595,
+            "projection": 0.08242339640855789
+          },
+          "right_r1_c1": {
+            "rms": 0.2804308235645294,
+            "projection": 0.12691918015480042
+          }
+        }
+      },
+      "invariants": {
+        "pre_boundary_img_vs_true": {
+          "rms": 0.0,
+          "mean_abs": 0.0,
+          "max_abs": 0.0
+        },
+        "model_input_img_exact": true,
+        "model_input_text_exact": true,
+        "editable_unchanged": true,
+        "source_equals_translated": true,
+        "only_source_replaced": true,
+        "source_replacement_rms": 0.01574762351810932
+      }
+    },
+    "after_double_4": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.47967642545700073,
+          "cosine": 0.44178521633148193,
+          "projection": 0.21191394329071045,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.2953336536884308,
+          "mean_abs": 0.1894788295030594,
+          "max_abs": 4.4842963218688965
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.48376259207725525,
+          "mean_abs": 0.30218052864074707,
+          "max_abs": 5.22032356262207
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.5244972705841064,
+          "cosine": 0.5118999481201172,
+          "projection": 0.26849013566970825,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.3343125581741333,
+            "projection": 0.28197944164276123
+          },
+          "left_r0_c1": {
+            "rms": 0.1934492439031601,
+            "projection": 0.0271112360060215
+          },
+          "left_r1_c0": {
+            "rms": 0.3984615206718445,
+            "projection": 0.23982903361320496
+          },
+          "left_r1_c1": {
+            "rms": 0.223970428109169,
+            "projection": 0.07677936553955078
+          },
+          "right_r0_c0": {
+            "rms": 0.2036638855934143,
+            "projection": 0.5842983722686768
+          },
+          "right_r0_c1": {
+            "rms": 0.2210073322057724,
+            "projection": 0.5726667642593384
+          },
+          "right_r1_c0": {
+            "rms": 0.27767354249954224,
+            "projection": 0.19753482937812805
+          },
+          "right_r1_c1": {
+            "rms": 0.4150036573410034,
+            "projection": 0.43764811754226685
+          }
+        }
+      },
+      "invariants": {
+        "model_input_img_exact": true,
+        "model_input_text_exact": true,
+        "editable_unchanged": true,
+        "source_equals_translated": true,
+        "only_source_replaced": true,
+        "source_replacement_rms": 1.8626729249954224,
+        "text_unchanged": true
+      }
+    },
+    "after_single_4": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.6961466073989868,
+          "cosine": 0.6452463865280151,
+          "projection": 0.4491861164569855,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.4286123812198639,
+          "mean_abs": 0.2860822081565857,
+          "max_abs": 4.759706497192383
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.3809930682182312,
+          "mean_abs": 0.21683675050735474,
+          "max_abs": 5.036076545715332
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.7611944079399109,
+          "cosine": 0.7367331385612488,
+          "projection": 0.5607971549034119,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.5179701447486877,
+            "projection": 0.5523942708969116
+          },
+          "left_r0_c1": {
+            "rms": 0.4169057607650757,
+            "projection": 0.2786121070384979
+          },
+          "left_r1_c0": {
+            "rms": 0.6251742243766785,
+            "projection": 0.523309588432312
+          },
+          "left_r1_c1": {
+            "rms": 0.37368014454841614,
+            "projection": 0.23936691880226135
+          },
+          "right_r0_c0": {
+            "rms": 0.25797128677368164,
+            "projection": 0.7800120115280151
+          },
+          "right_r0_c1": {
+            "rms": 0.28865084052085876,
+            "projection": 0.8094800710678101
+          },
+          "right_r1_c0": {
+            "rms": 0.3549327850341797,
+            "projection": 0.40967151522636414
+          },
+          "right_r1_c1": {
+            "rms": 0.47036120295524597,
+            "projection": 0.6693112254142761
+          }
+        }
+      },
+      "invariants": {
+        "model_input_img_exact": true,
+        "model_input_text_exact": true,
+        "editable_unchanged": true,
+        "source_equals_translated": true,
+        "only_source_replaced": true,
+        "source_replacement_rms": 6.302785873413086,
+        "text_unchanged": true
+      }
+    },
+    "after_single_9": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.756640613079071,
+          "cosine": 0.778328001499176,
+          "projection": 0.5889145731925964,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.4658578932285309,
+          "mean_abs": 0.3133595287799835,
+          "max_abs": 5.128200054168701
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.26913580298423767,
+          "mean_abs": 0.143882155418396,
+          "max_abs": 4.55242919921875
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.8273409008979797,
+          "cosine": 0.8799471855163574,
+          "projection": 0.7280163168907166,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.6053961515426636,
+            "projection": 0.789466381072998
+          },
+          "left_r0_c1": {
+            "rms": 0.5126090049743652,
+            "projection": 0.4731650650501251
+          },
+          "left_r1_c0": {
+            "rms": 0.6731391549110413,
+            "projection": 0.6694148778915405
+          },
+          "left_r1_c1": {
+            "rms": 0.42681363224983215,
+            "projection": 0.30933570861816406
+          },
+          "right_r0_c0": {
+            "rms": 0.2714604139328003,
+            "projection": 0.8294548988342285
+          },
+          "right_r0_c1": {
+            "rms": 0.30127042531967163,
+            "projection": 0.8748985528945923
+          },
+          "right_r1_c0": {
+            "rms": 0.3506242632865906,
+            "projection": 0.4748001992702484
+          },
+          "right_r1_c1": {
+            "rms": 0.4292296767234802,
+            "projection": 0.7985566854476929
+          }
+        }
+      },
+      "invariants": {
+        "model_input_img_exact": true,
+        "model_input_text_exact": true,
+        "editable_unchanged": true,
+        "source_equals_translated": true,
+        "only_source_replaced": true,
+        "source_replacement_rms": 5.269034385681152,
+        "text_unchanged": true
+      }
+    },
+    "after_single_14": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.8788110613822937,
+          "cosine": 0.8808620572090149,
+          "projection": 0.774111270904541,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.5410779118537903,
+          "mean_abs": 0.35496869683265686,
+          "max_abs": 6.110849380493164
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.11162594705820084,
+          "mean_abs": 0.0665527880191803,
+          "max_abs": 3.170578718185425
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.9609269499778748,
+          "cosine": 0.9803436994552612,
+          "projection": 0.9420386552810669,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.6477182507514954,
+            "projection": 0.8935478329658508
+          },
+          "left_r0_c1": {
+            "rms": 0.6825605630874634,
+            "projection": 0.863505482673645
+          },
+          "left_r1_c0": {
+            "rms": 0.7933456301689148,
+            "projection": 0.8236777186393738
+          },
+          "left_r1_c1": {
+            "rms": 0.5283478498458862,
+            "projection": 0.5087003111839294
+          },
+          "right_r0_c0": {
+            "rms": 0.28297853469848633,
+            "projection": 0.8626658916473389
+          },
+          "right_r0_c1": {
+            "rms": 0.317692369222641,
+            "projection": 0.9238102436065674
+          },
+          "right_r1_c0": {
+            "rms": 0.4060070216655731,
+            "projection": 0.6517342329025269
+          },
+          "right_r1_c1": {
+            "rms": 0.449776291847229,
+            "projection": 0.8689920902252197
+          }
+        }
+      },
+      "invariants": {
+        "model_input_img_exact": true,
+        "model_input_text_exact": true,
+        "editable_unchanged": true,
+        "source_equals_translated": true,
+        "only_source_replaced": true,
+        "source_replacement_rms": 10.501175880432129,
+        "text_unchanged": true
+      }
+    },
+    "after_single_19": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.9145451188087463,
+          "cosine": 0.9120774865150452,
+          "projection": 0.8341360688209534,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.5630796551704407,
+          "mean_abs": 0.3742240071296692,
+          "max_abs": 5.803771018981934
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.0,
+          "mean_abs": 0.0,
+          "max_abs": 0.0
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 1.0,
+          "cosine": 0.9999991655349731,
+          "projection": 0.9999991655349731,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.6620706915855408,
+            "projection": 0.9205833673477173
+          },
+          "left_r0_c1": {
+            "rms": 0.7288846373558044,
+            "projection": 0.9641502499580383
+          },
+          "left_r1_c0": {
+            "rms": 0.795291006565094,
+            "projection": 0.8363986611366272
+          },
+          "left_r1_c1": {
+            "rms": 0.5753777623176575,
+            "projection": 0.6088190674781799
+          },
+          "right_r0_c0": {
+            "rms": 0.29888543486595154,
+            "projection": 0.9396580457687378
+          },
+          "right_r0_c1": {
+            "rms": 0.3207768499851227,
+            "projection": 0.9507962465286255
+          },
+          "right_r1_c0": {
+            "rms": 0.4478054940700531,
+            "projection": 0.7588698267936707
+          },
+          "right_r1_c1": {
+            "rms": 0.4588591754436493,
+            "projection": 0.8951000571250916
+          }
+        }
+      },
+      "invariants": {
+        "model_input_img_exact": true,
+        "model_input_text_exact": true,
+        "editable_unchanged": true,
+        "source_equals_translated": true,
+        "only_source_replaced": true,
+        "source_replacement_rms": 35.27047348022461,
+        "text_unchanged": true
+      }
+    }
+  },
+  "attention_kv_substitutions": {
+    "double_0": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.8325359225273132,
+          "cosine": 0.8276609778404236,
+          "projection": 0.6890575289726257,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.5125865340232849,
+          "mean_abs": 0.3422388434410095,
+          "max_abs": 5.150031089782715
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.20979811251163483,
+          "mean_abs": 0.11042562872171402,
+          "max_abs": 4.613844394683838
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.9103279113769531,
+          "cosine": 0.9281654953956604,
+          "projection": 0.8449349403381348,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.6469913721084595,
+            "projection": 0.8232883810997009
+          },
+          "left_r0_c1": {
+            "rms": 0.7170167565345764,
+            "projection": 0.9229521751403809
+          },
+          "left_r1_c0": {
+            "rms": 0.6547514200210571,
+            "projection": 0.6389108300209045
+          },
+          "left_r1_c1": {
+            "rms": 0.4787595272064209,
+            "projection": 0.3569953739643097
+          },
+          "right_r0_c0": {
+            "rms": 0.29188835620880127,
+            "projection": 0.9104496836662292
+          },
+          "right_r0_c1": {
+            "rms": 0.30153870582580566,
+            "projection": 0.8863546848297119
+          },
+          "right_r1_c0": {
+            "rms": 0.3786356747150421,
+            "projection": 0.5751786828041077
+          },
+          "right_r1_c1": {
+            "rms": 0.43800604343414307,
+            "projection": 0.7890043258666992
+          }
+        }
+      },
+      "intervention": {
+        "source_k_replacement_rms": 0.01864524371922016,
+        "source_v_replacement_rms": 0.4139290452003479,
+        "text_editable_kv_unchanged": true,
+        "editable_q_unchanged": true,
+        "joint_softmax": true,
+        "editable_attention_output_rms_change": 0.05139928311109543,
+        "text_output_restored_exact": true,
+        "source_query_output_restored_exact": true
+      }
+    },
+    "double_4": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.7825930118560791,
+          "cosine": 0.8142653703689575,
+          "projection": 0.6372383832931519,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.48183685541152954,
+          "mean_abs": 0.3208317160606384,
+          "max_abs": 5.180739402770996
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.23125335574150085,
+          "mean_abs": 0.12053056806325912,
+          "max_abs": 5.120522499084473
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.8557183146476746,
+          "cosine": 0.9136072993278503,
+          "projection": 0.7817904949188232,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.5863593816757202,
+            "projection": 0.7431244254112244
+          },
+          "left_r0_c1": {
+            "rms": 0.6663752794265747,
+            "projection": 0.8316614627838135
+          },
+          "left_r1_c0": {
+            "rms": 0.6228164434432983,
+            "projection": 0.5960995554924011
+          },
+          "left_r1_c1": {
+            "rms": 0.4117875397205353,
+            "projection": 0.30335310101509094
+          },
+          "right_r0_c0": {
+            "rms": 0.288981169462204,
+            "projection": 0.901643693447113
+          },
+          "right_r0_c1": {
+            "rms": 0.2992417812347412,
+            "projection": 0.8689964413642883
+          },
+          "right_r1_c0": {
+            "rms": 0.3674033582210541,
+            "projection": 0.545560896396637
+          },
+          "right_r1_c1": {
+            "rms": 0.451608806848526,
+            "projection": 0.8030465841293335
+          }
+        }
+      },
+      "intervention": {
+        "source_k_replacement_rms": 0.28207406401634216,
+        "source_v_replacement_rms": 2.810685396194458,
+        "text_editable_kv_unchanged": true,
+        "editable_q_unchanged": true,
+        "joint_softmax": true,
+        "editable_attention_output_rms_change": 0.5435788035392761,
+        "text_output_restored_exact": true,
+        "source_query_output_restored_exact": true
+      }
+    },
+    "single_4": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.8837551474571228,
+          "cosine": 0.8936144709587097,
+          "projection": 0.7897363901138306,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.5441222190856934,
+          "mean_abs": 0.3619782030582428,
+          "max_abs": 5.665586471557617
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.06610394269227982,
+          "mean_abs": 0.035798393189907074,
+          "max_abs": 1.8386286497116089
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.9663330316543579,
+          "cosine": 0.9934541583061218,
+          "projection": 0.9600075483322144,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.6453469395637512,
+            "projection": 0.8857765793800354
+          },
+          "left_r0_c1": {
+            "rms": 0.7192320823669434,
+            "projection": 0.9459647536277771
+          },
+          "left_r1_c0": {
+            "rms": 0.7617515921592712,
+            "projection": 0.7989103198051453
+          },
+          "left_r1_c1": {
+            "rms": 0.527720034122467,
+            "projection": 0.5092453956604004
+          },
+          "right_r0_c0": {
+            "rms": 0.29355722665786743,
+            "projection": 0.9204129576683044
+          },
+          "right_r0_c1": {
+            "rms": 0.3115421533584595,
+            "projection": 0.9215899109840393
+          },
+          "right_r1_c0": {
+            "rms": 0.4305166006088257,
+            "projection": 0.70888352394104
+          },
+          "right_r1_c1": {
+            "rms": 0.4554685056209564,
+            "projection": 0.8744639754295349
+          }
+        }
+      },
+      "intervention": {
+        "source_k_replacement_rms": 0.572247326374054,
+        "source_v_replacement_rms": 0.29477089643478394,
+        "text_editable_kv_unchanged": true,
+        "editable_q_unchanged": true,
+        "joint_softmax": true,
+        "editable_attention_output_rms_change": 0.02830582857131958,
+        "text_output_restored_exact": true,
+        "source_query_output_restored_exact": true
+      }
+    },
+    "single_9": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.8637648820877075,
+          "cosine": 0.884179413318634,
+          "projection": 0.7637231349945068,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.5318142175674438,
+          "mean_abs": 0.35577288269996643,
+          "max_abs": 5.272862434387207
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.11063183099031448,
+          "mean_abs": 0.05657438561320305,
+          "max_abs": 2.4796535968780518
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.9444748759269714,
+          "cosine": 0.9811943769454956,
+          "projection": 0.9267134666442871,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.6386915445327759,
+            "projection": 0.8803730010986328
+          },
+          "left_r0_c1": {
+            "rms": 0.6850994229316711,
+            "projection": 0.8833143711090088
+          },
+          "left_r1_c0": {
+            "rms": 0.7453914880752563,
+            "projection": 0.7806403040885925
+          },
+          "left_r1_c1": {
+            "rms": 0.506869375705719,
+            "projection": 0.4718758463859558
+          },
+          "right_r0_c0": {
+            "rms": 0.29899170994758606,
+            "projection": 0.9379991888999939
+          },
+          "right_r0_c1": {
+            "rms": 0.32095617055892944,
+            "projection": 0.9493898153305054
+          },
+          "right_r1_c0": {
+            "rms": 0.42465734481811523,
+            "projection": 0.6857106685638428
+          },
+          "right_r1_c1": {
+            "rms": 0.44727471470832825,
+            "projection": 0.8493604063987732
+          }
+        }
+      },
+      "intervention": {
+        "source_k_replacement_rms": 0.5655729174613953,
+        "source_v_replacement_rms": 0.25558385252952576,
+        "text_editable_kv_unchanged": true,
+        "editable_q_unchanged": true,
+        "joint_softmax": true,
+        "editable_attention_output_rms_change": 0.031155895441770554,
+        "text_output_restored_exact": true,
+        "source_query_output_restored_exact": true
+      }
+    },
+    "single_14": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.9034148454666138,
+          "cosine": 0.898163378238678,
+          "projection": 0.8114141225814819,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.5562265515327454,
+          "mean_abs": 0.36890560388565063,
+          "max_abs": 5.834478855133057
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.060304898768663406,
+          "mean_abs": 0.03342757746577263,
+          "max_abs": 1.6831703186035156
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.9878297448158264,
+          "cosine": 0.9942678213119507,
+          "projection": 0.9821673035621643,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.6590232253074646,
+            "projection": 0.9158082008361816
+          },
+          "left_r0_c1": {
+            "rms": 0.717312753200531,
+            "projection": 0.9424932599067688
+          },
+          "left_r1_c0": {
+            "rms": 0.7954062223434448,
+            "projection": 0.8319457769393921
+          },
+          "left_r1_c1": {
+            "rms": 0.5457143187522888,
+            "projection": 0.5278494358062744
+          },
+          "right_r0_c0": {
+            "rms": 0.29535385966300964,
+            "projection": 0.9259666204452515
+          },
+          "right_r0_c1": {
+            "rms": 0.3193593919277191,
+            "projection": 0.9444409608840942
+          },
+          "right_r1_c0": {
+            "rms": 0.4435013234615326,
+            "projection": 0.7502736449241638
+          },
+          "right_r1_c1": {
+            "rms": 0.45810651779174805,
+            "projection": 0.8937669396400452
+          }
+        }
+      },
+      "intervention": {
+        "source_k_replacement_rms": 0.8260921239852905,
+        "source_v_replacement_rms": 0.5389939546585083,
+        "text_editable_kv_unchanged": true,
+        "editable_q_unchanged": true,
+        "joint_softmax": true,
+        "editable_attention_output_rms_change": 0.05510557442903519,
+        "text_output_restored_exact": true,
+        "source_query_output_restored_exact": true
+      }
+    },
+    "single_19": {
+      "response": {
+        "vs_full_epsilon": {
+          "recovery_ratio": 0.9129039645195007,
+          "cosine": 0.9102641940116882,
+          "projection": 0.8309838175773621,
+          "degenerate": null
+        },
+        "pulse_vs_ordinary": {
+          "rms": 0.5620691180229187,
+          "mean_abs": 0.37266847491264343,
+          "max_abs": 5.849832534790039
+        },
+        "full_epsilon_vs_ordinary": {
+          "rms": 0.6156941056251526,
+          "mean_abs": 0.41336631774902344,
+          "max_abs": 5.381539344787598
+        },
+        "variant_vs_true_low": {
+          "rms": 0.025695472955703735,
+          "mean_abs": 0.017308328300714493,
+          "max_abs": 0.5143553018569946
+        },
+        "vs_true_low_direction": {
+          "recovery_ratio": 0.9982055425643921,
+          "cosine": 0.9989573955535889,
+          "projection": 0.997164785861969,
+          "degenerate": null
+        },
+        "editable_grid": {
+          "left_r0_c0": {
+            "rms": 0.6609099507331848,
+            "projection": 0.9190598130226135
+          },
+          "left_r0_c1": {
+            "rms": 0.7297372817993164,
+            "projection": 0.9639512300491333
+          },
+          "left_r1_c0": {
+            "rms": 0.7941085696220398,
+            "projection": 0.8332366943359375
+          },
+          "left_r1_c1": {
+            "rms": 0.5735675692558289,
+            "projection": 0.6051487922668457
+          },
+          "right_r0_c0": {
+            "rms": 0.2990016043186188,
+            "projection": 0.9357571601867676
+          },
+          "right_r0_c1": {
+            "rms": 0.3216961920261383,
+            "projection": 0.9502037763595581
+          },
+          "right_r1_c0": {
+            "rms": 0.4434405565261841,
+            "projection": 0.7492304444313049
+          },
+          "right_r1_c1": {
+            "rms": 0.4570962190628052,
+            "projection": 0.8900518417358398
+          }
+        }
+      },
+      "intervention": {
+        "source_k_replacement_rms": 0.5883046388626099,
+        "source_v_replacement_rms": 0.6334629058837891,
+        "text_editable_kv_unchanged": true,
+        "editable_q_unchanged": true,
+        "joint_softmax": true,
+        "editable_attention_output_rms_change": 0.058848634362220764,
+        "text_output_restored_exact": true,
+        "source_query_output_restored_exact": true
+      }
+    }
+  },
+  "decoded_attention_arms": [
+    "double_4",
+    "double_0"
+  ],
+  "production_changed": false
+}
