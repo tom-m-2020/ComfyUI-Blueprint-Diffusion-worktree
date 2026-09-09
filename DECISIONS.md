@@ -1467,3 +1467,15 @@ A single pulse is not selected as an algorithm. Its influence persists but
 redirects relative to full epsilon when later corrections are omitted. The
 result authorizes no production implementation, strength/support/frequency
 tuning, or final-quality claim.
+
+## 2026-09-09 — Classify the low-frequency carrier as scene-spatial
+
+Classify the fixed interval-0 discriminator as SCENE-SPATIAL SOURCE SIGNAL.
+Correct source-crop arrangement is required for the strong epsilon-like
+editable response; equal-energy and equal-channel-statistic rearrangements
+substantially weaken or redirect it.
+
+Do not reduce the carrier to latent energy or channel statistics alone. The
+observed response is not a clean transformed relocation,
+so do not claim a coordinate-transfer mechanism. This result authorizes no
+block tracing, algorithm optimization, or production implementation.

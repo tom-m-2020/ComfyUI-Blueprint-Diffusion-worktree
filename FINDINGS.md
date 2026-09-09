@@ -2940,3 +2940,19 @@ complementary high component. The useful next-call signal is therefore not
 boundary-local; it is spatially distributed across the source and predominantly
 low-frequency under this split. Evidence:
 `experiments/LOCAL_EDIT_SOURCE_COEVOLUTION_REPORT.md`.
+
+## 2026-09-09 — Low-frequency source communication requires scene-specific spatial layout
+
+At the causal interval-0 bridge pulse, fixed source-crop permutations preserve
+source support, total L2/RMS, and all per-channel mean/RMS values. TRUE_LOW
+retains `0.834` projection onto the full-epsilon editable change. Projection
+falls to `0.437` for a left/right half swap, `0.168` for vertical flip, `0.266`
+for a fixed 2x4 block permutation, and `0.120` for a toroidal `(dy=8,dx=16)`
+translation.
+
+The equal-energy block permutation/statistical surrogate and fixed spatial
+transforms therefore do not reproduce TRUE_LOW's bridge/deck/cable response.
+Correct low-frequency spatial layout is materially required; full-canvas
+spectral magnitude was not held fixed, and the response does not show a clean
+predictable spatial relocation.
+Evidence: `experiments/LOCAL_EDIT_SOURCE_SPATIAL_STRUCTURE_REPORT.md`.
