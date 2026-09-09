@@ -2924,3 +2924,19 @@ on interval 1 after the changed source state enters the next dense full-canvas
 model call. Keeping the exact projected correction only on editable coordinates
 produces zero correction and is bit-exact to ordinary T2I in all three cases.
 Evidence: `experiments/LOCAL_EDIT_EPSILON_MECHANISM_REPORT.md`.
+
+## 2026-09-09 — Source co-evolution is early, distributed, and predominantly low-frequency
+
+Bit-exact pulse experiments replaced only ordinary accepted source coordinates
+with epsilon's captured source state at one interval. An interval-0 pulse
+reproduces 100% of the next editable raw-x0 epsilon change in bridge, tree, and
+desert. With no further injection, the effect persists but redirects: bridge
+evaluation-7 recovery is `0.892`, cosine `0.526`, and aligned projection `0.469`.
+
+On the bridge at interval 0, a fixed two-column source-side boundary halo carries
+only `0.035` aligned projection, while distant source carries `0.765`. A fixed
+3x3 latent box-filter low component carries `0.834`, versus `0.071` for the
+complementary high component. The useful next-call signal is therefore not
+boundary-local; it is spatially distributed across the source and predominantly
+low-frequency under this split. Evidence:
+`experiments/LOCAL_EDIT_SOURCE_COEVOLUTION_REPORT.md`.
