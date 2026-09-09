@@ -1040,3 +1040,11 @@ continued corrections. Bridge support tests attribute most aligned response to
 distant source rather than a two-column boundary halo, and to a fixed 3x3
 low-frequency component rather than its high residual. No production changes or
 parameter sweeps were made.
+
+The interval-0 low-frequency spatial-structure falsification is complete and
+classified SCENE-SPATIAL SOURCE SIGNAL. O, E, and TRUE_LOW decoded controls
+reproduce archived PNGs byte-exactly. Equal-energy source-only half swap,
+vertical flip, fixed 2x4 block permutation, and quarter-canvas toroidal
+translation all reduce or redirect the editable response; projection falls
+from TRUE_LOW's `0.834` to `0.437/0.168/0.266/0.120`. No normalization arms,
+extra transforms, production changes, or optimization were introduced.
