@@ -1,0 +1,1191 @@
+{
+  "experiment": "simplified source stitch -> full denoise",
+  "classification": "SIMPLIFIED SOURCE-STITCH MECHANISM INSUFFICIENT",
+  "configuration": {
+    "case": "rigid_bridge",
+    "model_sampling": "ModelSampling",
+    "sampler": "deterministic Euler",
+    "steps": 8,
+    "seed": 0,
+    "sigmas": [
+      1.0,
+      0.9826490879058838,
+      0.9604301452636719,
+      0.9309595823287964,
+      0.8899959325790405,
+      0.8291866183280945,
+      0.7294999957084656,
+      0.5361343026161194,
+      0.0
+    ],
+    "prompt": "A wide cinematic photograph of one single long red suspension bridge stretching continuously from the far left edge to the far right edge over calm water, one yellow passenger train centered on the bridge, one white lighthouse at the far left, one dark stone tower at the far right, continuous bridge deck and cables, coherent perspective, no duplicate bridges, trains, lighthouses, or towers",
+    "mask": "latent columns 16:48 source; complement editable; 1=editable",
+    "source_trajectory": "(1-sigma)*source_latent + sigma*fixed_initial_noise"
+  },
+  "arms": {
+    "A_ORDINARY": {
+      "final_hash": "5ac15037ee4efcf224ccb6bdfe453b08b4e7d3a2c5be8ca9c4dfa9fbb51ede6a",
+      "intervals": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9826490879058838,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.018911926075816154,
+          "accepted_source_error_vs_trajectory_rms": 0.018911926075816154,
+          "accepted_source_error_vs_trajectory_max": 0.11989349126815796,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "raw_x0_hash": "d54dfe5a818ebc80f732470fb8bf4f79589038afc2d41f25bf0a4aef1a433d41",
+          "proposal_hash": "c9a2d7945caa0b212ca5a519358130b8abadc67c6d8f6b12315f53f767e1a5cc",
+          "source_next_hash": "fc920bd18db0d3323aadd738eb828173379557b7dae5300b760122c48790c626",
+          "accepted_hash": "c9a2d7945caa0b212ca5a519358130b8abadc67c6d8f6b12315f53f767e1a5cc",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.996588945388794,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 1,
+          "sigma": 0.9826490879058838,
+          "sigma_next": 0.9604301452636719,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.018911926075816154,
+          "proposal_source_error_vs_trajectory_rms": 0.04183344542980194,
+          "accepted_source_error_vs_trajectory_rms": 0.04183344542980194,
+          "accepted_source_error_vs_trajectory_max": 0.28123608231544495,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "c9a2d7945caa0b212ca5a519358130b8abadc67c6d8f6b12315f53f767e1a5cc",
+          "raw_x0_hash": "26fdd129c18152aafdfa18d28309ea28bb75ee0f02f5635fc33513f4d023606b",
+          "proposal_hash": "67b3566b124af688d8ca48e5286b05857d29d1c0eacb97331bee9025dff50f2d",
+          "source_next_hash": "1725d86f9bb35f4fbb99c4dffa2a96b49e8b8e840e69068c8b495962ad2a472a",
+          "accepted_hash": "67b3566b124af688d8ca48e5286b05857d29d1c0eacb97331bee9025dff50f2d",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.9809010028839111,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 2,
+          "sigma": 0.9604301452636719,
+          "sigma_next": 0.9309595823287964,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.04183344542980194,
+          "proposal_source_error_vs_trajectory_rms": 0.07360032945871353,
+          "accepted_source_error_vs_trajectory_rms": 0.07360032945871353,
+          "accepted_source_error_vs_trajectory_max": 0.48303356766700745,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "67b3566b124af688d8ca48e5286b05857d29d1c0eacb97331bee9025dff50f2d",
+          "raw_x0_hash": "d93bd13f42f163c62a3ef31233c030d17243b53a1fef720259c8c0f29591d6e1",
+          "proposal_hash": "0a818a1a14d5c0a87d06884af37ffed41bdfdecd59e6a7813bd89ff4c17207e8",
+          "source_next_hash": "356e902ff6a1d51bd05dc916264dd5e3a5bce862a76e4fc9704c204d2a22f04d",
+          "accepted_hash": "0a818a1a14d5c0a87d06884af37ffed41bdfdecd59e6a7813bd89ff4c17207e8",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.9614217877388,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 3,
+          "sigma": 0.9309595823287964,
+          "sigma_next": 0.8899959325790405,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.07360032945871353,
+          "proposal_source_error_vs_trajectory_rms": 0.11911237984895706,
+          "accepted_source_error_vs_trajectory_rms": 0.11911237984895706,
+          "accepted_source_error_vs_trajectory_max": 0.753608226776123,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "0a818a1a14d5c0a87d06884af37ffed41bdfdecd59e6a7813bd89ff4c17207e8",
+          "raw_x0_hash": "9987d7c006700e98e379e9e0be4da834c42e9837f3ffbdaf8a3a27592b373a05",
+          "proposal_hash": "82c8ec90e83fa92d0cb74bd6eda871a68e67a334b5faa92d6d3a156745684831",
+          "source_next_hash": "30e0d8b4ea1fdca074978297a8de662f45c2222a387b22863c0ee1eddee9f80d",
+          "accepted_hash": "82c8ec90e83fa92d0cb74bd6eda871a68e67a334b5faa92d6d3a156745684831",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.9346267580986023,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 4,
+          "sigma": 0.8899959325790405,
+          "sigma_next": 0.8291866183280945,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.11911237984895706,
+          "proposal_source_error_vs_trajectory_rms": 0.18889445066452026,
+          "accepted_source_error_vs_trajectory_rms": 0.18889445066452026,
+          "accepted_source_error_vs_trajectory_max": 1.149092197418213,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "82c8ec90e83fa92d0cb74bd6eda871a68e67a334b5faa92d6d3a156745684831",
+          "raw_x0_hash": "d387f02aa9a80a051a2aabbd4b629ffa6a36e2fb462e218450c9f7f3781c9019",
+          "proposal_hash": "eef02b7e5bb5f86b1ae436a654214c686ddbf87b58b1e8a935fd722d2b1d18f8",
+          "source_next_hash": "20438375c8cebb2c9e6c1fe0b00dc5b6ffb9a722ab2540b530be709b8ddb580b",
+          "accepted_hash": "eef02b7e5bb5f86b1ae436a654214c686ddbf87b58b1e8a935fd722d2b1d18f8",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.8976773619651794,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 5,
+          "sigma": 0.8291866183280945,
+          "sigma_next": 0.7294999957084656,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.18889445066452026,
+          "proposal_source_error_vs_trajectory_rms": 0.3069371283054352,
+          "accepted_source_error_vs_trajectory_rms": 0.3069371283054352,
+          "accepted_source_error_vs_trajectory_max": 1.80446195602417,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "eef02b7e5bb5f86b1ae436a654214c686ddbf87b58b1e8a935fd722d2b1d18f8",
+          "raw_x0_hash": "225fc3b24417c29b382ef470ad908505ff89fbed72685f5f71bf66aef627429f",
+          "proposal_hash": "84afbeae03310b4481f05c431c304fa73eec2b0fce2d99a418aba743039cf3e6",
+          "source_next_hash": "12ec5577feac80380ca57fc8aa56f26ef2f7bee852dd1f7ee85dcdad945f1c1b",
+          "accepted_hash": "84afbeae03310b4481f05c431c304fa73eec2b0fce2d99a418aba743039cf3e6",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.8472636342048645,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 6,
+          "sigma": 0.7294999957084656,
+          "sigma_next": 0.5361343026161194,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.3069371283054352,
+          "proposal_source_error_vs_trajectory_rms": 0.5453715920448303,
+          "accepted_source_error_vs_trajectory_rms": 0.5453715920448303,
+          "accepted_source_error_vs_trajectory_max": 3.119379997253418,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "84afbeae03310b4481f05c431c304fa73eec2b0fce2d99a418aba743039cf3e6",
+          "raw_x0_hash": "48a111c2eb2aad486eeaa7ae576aaf1428c690dd4467220629fcd03fb0b25469",
+          "proposal_hash": "284a7b3e81a281384e599afa51d29326986316f26f019315e42428fa1228d557",
+          "source_next_hash": "0dbfa28e6a4e063fce947c5a1616005cdd066376f466a26910b6acc8eb594c5b",
+          "accepted_hash": "284a7b3e81a281384e599afa51d29326986316f26f019315e42428fa1228d557",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.7963685989379883,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 7,
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.5453715920448303,
+          "proposal_source_error_vs_trajectory_rms": 1.2555389404296875,
+          "accepted_source_error_vs_trajectory_rms": 1.2555389404296875,
+          "accepted_source_error_vs_trajectory_max": 6.899213790893555,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "284a7b3e81a281384e599afa51d29326986316f26f019315e42428fa1228d557",
+          "raw_x0_hash": "e07a75b1a35c246731a39a04bfc11d6767f4707250816f5c63f267fde3816eea",
+          "proposal_hash": "5ac15037ee4efcf224ccb6bdfe453b08b4e7d3a2c5be8ca9c4dfa9fbb51ede6a",
+          "source_next_hash": "d01733ed7ffd03daaef5be2ffe9c5d387818de09f7030cf0f27695ae6acf7252",
+          "accepted_hash": "5ac15037ee4efcf224ccb6bdfe453b08b4e7d3a2c5be8ca9c4dfa9fbb51ede6a",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.9876786470413208,
+          "next_raw_x0_captured": false
+        }
+      ]
+    },
+    "B_SINGLE_STITCH": {
+      "final_hash": "295142443f985f3047557b5c566b21df1dc8768b10bd91f24608f36a65475799",
+      "intervals": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9826490879058838,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.018911926075816154,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "raw_x0_hash": "d54dfe5a818ebc80f732470fb8bf4f79589038afc2d41f25bf0a4aef1a433d41",
+          "proposal_hash": "c9a2d7945caa0b212ca5a519358130b8abadc67c6d8f6b12315f53f767e1a5cc",
+          "source_next_hash": "fc920bd18db0d3323aadd738eb828173379557b7dae5300b760122c48790c626",
+          "accepted_hash": "f306d83c5b8016ab7cacdc3496da3bb0564c5ffa1e2ee4b37b36d51c0e63608c",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.018911926075816154,
+              "max_abs": 0.11989349126815796
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.014117150567471981,
+              "max_abs": 0.11159467697143555
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.9945253133773804,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 1,
+          "sigma": 0.9826490879058838,
+          "sigma_next": 0.9604301452636719,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.023847846314311028,
+          "accepted_source_error_vs_trajectory_rms": 0.023847846314311028,
+          "accepted_source_error_vs_trajectory_max": 0.1705426275730133,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "f306d83c5b8016ab7cacdc3496da3bb0564c5ffa1e2ee4b37b36d51c0e63608c",
+          "raw_x0_hash": "a9fceefc11eff63cfdb5363ce16f8bf72d45061b4791d9061ae672be3d45b8a1",
+          "proposal_hash": "6300db8f7ec1491aa643c0916b5f5da7be731fbf84b82308f2c838854f832124",
+          "source_next_hash": "1725d86f9bb35f4fbb99c4dffa2a96b49e8b8e840e69068c8b495962ad2a472a",
+          "accepted_hash": "6300db8f7ec1491aa643c0916b5f5da7be731fbf84b82308f2c838854f832124",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.02221705950796604,
+              "max_abs": 0.17311514914035797
+            },
+            "editable": {
+              "rms": 0.009991827420890331,
+              "max_abs": 0.10935890674591064
+            },
+            "boundary": {
+              "rms": 0.016009630635380745,
+              "max_abs": 0.13718634843826294
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.46683210134506226,
+              "max_abs": 5.920126438140869
+            },
+            "editable": {
+              "rms": 0.4418959617614746,
+              "max_abs": 4.836475372314453
+            },
+            "boundary": {
+              "rms": 0.3412792384624481,
+              "max_abs": 4.784356594085693
+            }
+          },
+          "boundary_latent_rms": 0.9790264964103699,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 2,
+          "sigma": 0.9604301452636719,
+          "sigma_next": 0.9309595823287964,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.023847846314311028,
+          "proposal_source_error_vs_trajectory_rms": 0.05572441965341568,
+          "accepted_source_error_vs_trajectory_rms": 0.05572441965341568,
+          "accepted_source_error_vs_trajectory_max": 0.38891729712486267,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "6300db8f7ec1491aa643c0916b5f5da7be731fbf84b82308f2c838854f832124",
+          "raw_x0_hash": "9f95be46d914d66c462681a111935b9e93bf9f3e80bdd19af565b34b38bff81a",
+          "proposal_hash": "2512308fc71e62b83eeab3d676bac09369e81f6b8a3ecd8a34476e963d46c6f9",
+          "source_next_hash": "356e902ff6a1d51bd05dc916264dd5e3a5bce862a76e4fc9704c204d2a22f04d",
+          "accepted_hash": "2512308fc71e62b83eeab3d676bac09369e81f6b8a3ecd8a34476e963d46c6f9",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.030402451753616333,
+              "max_abs": 0.2748028635978699
+            },
+            "editable": {
+              "rms": 0.02217407152056694,
+              "max_abs": 0.22294721007347107
+            },
+            "boundary": {
+              "rms": 0.02436685562133789,
+              "max_abs": 0.21500705182552338
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.5433513522148132,
+              "max_abs": 5.358904838562012
+            },
+            "editable": {
+              "rms": 0.5053566694259644,
+              "max_abs": 5.828229904174805
+            },
+            "boundary": {
+              "rms": 0.5035034418106079,
+              "max_abs": 5.828229904174805
+            }
+          },
+          "boundary_latent_rms": 0.9595195055007935,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 3,
+          "sigma": 0.9309595823287964,
+          "sigma_next": 0.8899959325790405,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.05572441965341568,
+          "proposal_source_error_vs_trajectory_rms": 0.10104607790708542,
+          "accepted_source_error_vs_trajectory_rms": 0.10104607790708542,
+          "accepted_source_error_vs_trajectory_max": 0.6745332479476929,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "2512308fc71e62b83eeab3d676bac09369e81f6b8a3ecd8a34476e963d46c6f9",
+          "raw_x0_hash": "9edfb7c4ff9f4db52ff603fb89e91336f123cc2168cb5456787dbed8cd35554d",
+          "proposal_hash": "3c1b89e20222918864a8040fa33b722bf404773d4c1d6630a3186212c3c3a8d5",
+          "source_next_hash": "30e0d8b4ea1fdca074978297a8de662f45c2222a387b22863c0ee1eddee9f80d",
+          "accepted_hash": "3c1b89e20222918864a8040fa33b722bf404773d4c1d6630a3186212c3c3a8d5",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.047837693244218826,
+              "max_abs": 0.5064429044723511
+            },
+            "editable": {
+              "rms": 0.041332680732011795,
+              "max_abs": 0.39766961336135864
+            },
+            "boundary": {
+              "rms": 0.042529232800006866,
+              "max_abs": 0.39326733350753784
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.5686501264572144,
+              "max_abs": 6.500009536743164
+            },
+            "editable": {
+              "rms": 0.534929633140564,
+              "max_abs": 6.222754955291748
+            },
+            "boundary": {
+              "rms": 0.5413195490837097,
+              "max_abs": 6.222754955291748
+            }
+          },
+          "boundary_latent_rms": 0.93288254737854,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 4,
+          "sigma": 0.8899959325790405,
+          "sigma_next": 0.8291866183280945,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.10104607790708542,
+          "proposal_source_error_vs_trajectory_rms": 0.1701539307832718,
+          "accepted_source_error_vs_trajectory_rms": 0.1701539307832718,
+          "accepted_source_error_vs_trajectory_max": 1.0890202522277832,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "3c1b89e20222918864a8040fa33b722bf404773d4c1d6630a3186212c3c3a8d5",
+          "raw_x0_hash": "5831e33786e3453e9add8773f1d9fb3fdb607487c5ce505bb7bdbfe22bf13c46",
+          "proposal_hash": "808749809c604af0fb08d2be16c8e1b33e024d7f5a407789b77f82794371fdc2",
+          "source_next_hash": "20438375c8cebb2c9e6c1fe0b00dc5b6ffb9a722ab2540b530be709b8ddb580b",
+          "accepted_hash": "808749809c604af0fb08d2be16c8e1b33e024d7f5a407789b77f82794371fdc2",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.07916168868541718,
+              "max_abs": 0.8936272859573364
+            },
+            "editable": {
+              "rms": 0.072489432990551,
+              "max_abs": 0.7708314061164856
+            },
+            "boundary": {
+              "rms": 0.07332053035497665,
+              "max_abs": 0.7708314061164856
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.5852727293968201,
+              "max_abs": 6.173213958740234
+            },
+            "editable": {
+              "rms": 0.5532475113868713,
+              "max_abs": 5.984932899475098
+            },
+            "boundary": {
+              "rms": 0.5558866858482361,
+              "max_abs": 5.919238090515137
+            }
+          },
+          "boundary_latent_rms": 0.896254301071167,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 5,
+          "sigma": 0.8291866183280945,
+          "sigma_next": 0.7294999957084656,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.1701539307832718,
+          "proposal_source_error_vs_trajectory_rms": 0.2868642508983612,
+          "accepted_source_error_vs_trajectory_rms": 0.2868642508983612,
+          "accepted_source_error_vs_trajectory_max": 1.771616816520691,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "808749809c604af0fb08d2be16c8e1b33e024d7f5a407789b77f82794371fdc2",
+          "raw_x0_hash": "cacdf819e22a1ff2569785ae8d17720189baa48e3c3fab78d688809c23f70acf",
+          "proposal_hash": "f165b3ffb71dc78e504c6f35fac9bd29f5ceb77e4cdc5ab142733cfc466b9bc5",
+          "source_next_hash": "12ec5577feac80380ca57fc8aa56f26ef2f7bee852dd1f7ee85dcdad945f1c1b",
+          "accepted_hash": "f165b3ffb71dc78e504c6f35fac9bd29f5ceb77e4cdc5ab142733cfc466b9bc5",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.13567128777503967,
+              "max_abs": 1.2573275566101074
+            },
+            "editable": {
+              "rms": 0.12614943087100983,
+              "max_abs": 1.3658154010772705
+            },
+            "boundary": {
+              "rms": 0.12720510363578796,
+              "max_abs": 1.234997272491455
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.5942990183830261,
+              "max_abs": 5.348338603973389
+            },
+            "editable": {
+              "rms": 0.5542168617248535,
+              "max_abs": 6.700284481048584
+            },
+            "boundary": {
+              "rms": 0.5600521564483643,
+              "max_abs": 5.348338603973389
+            }
+          },
+          "boundary_latent_rms": 0.8463912606239319,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 6,
+          "sigma": 0.7294999957084656,
+          "sigma_next": 0.5361343026161194,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.2868642508983612,
+          "proposal_source_error_vs_trajectory_rms": 0.5217922925949097,
+          "accepted_source_error_vs_trajectory_rms": 0.5217922925949097,
+          "accepted_source_error_vs_trajectory_max": 3.097184658050537,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "f165b3ffb71dc78e504c6f35fac9bd29f5ceb77e4cdc5ab142733cfc466b9bc5",
+          "raw_x0_hash": "76591bd47713c0ea9216c54fc80b17b592ca7a7701dd920f74c7589cf81f1a1d",
+          "proposal_hash": "1c5c676d5a9dada883829daaf88572895cbaf3c12d9c8177677b64bf454a5e41",
+          "source_next_hash": "0dbfa28e6a4e063fce947c5a1616005cdd066376f466a26910b6acc8eb594c5b",
+          "accepted_hash": "1c5c676d5a9dada883829daaf88572895cbaf3c12d9c8177677b64bf454a5e41",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.25336888432502747,
+              "max_abs": 2.3080854415893555
+            },
+            "editable": {
+              "rms": 0.23588407039642334,
+              "max_abs": 2.7979302406311035
+            },
+            "boundary": {
+              "rms": 0.23655708134174347,
+              "max_abs": 2.193974494934082
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.5990276336669922,
+              "max_abs": 5.554211139678955
+            },
+            "editable": {
+              "rms": 0.5572691559791565,
+              "max_abs": 6.768674850463867
+            },
+            "boundary": {
+              "rms": 0.557543158531189,
+              "max_abs": 5.105016231536865
+            }
+          },
+          "boundary_latent_rms": 0.7974133491516113,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 7,
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0,
+          "stitched": false,
+          "input_source_error_vs_trajectory_rms": 0.5217922925949097,
+          "proposal_source_error_vs_trajectory_rms": 1.221204400062561,
+          "accepted_source_error_vs_trajectory_rms": 1.221204400062561,
+          "accepted_source_error_vs_trajectory_max": 6.940054893493652,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "1c5c676d5a9dada883829daaf88572895cbaf3c12d9c8177677b64bf454a5e41",
+          "raw_x0_hash": "60e6d5fd8ad9477618b59e81dfcd9756462e15c2f39e970e8793769d42b601a7",
+          "proposal_hash": "295142443f985f3047557b5c566b21df1dc8768b10bd91f24608f36a65475799",
+          "source_next_hash": "d01733ed7ffd03daaef5be2ffe9c5d387818de09f7030cf0f27695ae6acf7252",
+          "accepted_hash": "295142443f985f3047557b5c566b21df1dc8768b10bd91f24608f36a65475799",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.584890604019165,
+              "max_abs": 5.230740547180176
+            },
+            "editable": {
+              "rms": 0.549584686756134,
+              "max_abs": 6.651395797729492
+            },
+            "boundary": {
+              "rms": 0.5457929372787476,
+              "max_abs": 5.195556640625
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.584890604019165,
+              "max_abs": 5.230740547180176
+            },
+            "editable": {
+              "rms": 0.549584686756134,
+              "max_abs": 6.651395797729492
+            },
+            "boundary": {
+              "rms": 0.5457929372787476,
+              "max_abs": 5.195556640625
+            }
+          },
+          "boundary_latent_rms": 0.9940996170043945,
+          "next_raw_x0_captured": false
+        }
+      ]
+    },
+    "C_REPEATED_STITCH": {
+      "final_hash": "9f69ed16229573dcd9b2e16757538bad45dc7ea981cc3c837039aed1c8f28349",
+      "intervals": [
+        {
+          "step": 0,
+          "sigma": 1.0,
+          "sigma_next": 0.9826490879058838,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.018911926075816154,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "raw_x0_hash": "d54dfe5a818ebc80f732470fb8bf4f79589038afc2d41f25bf0a4aef1a433d41",
+          "proposal_hash": "c9a2d7945caa0b212ca5a519358130b8abadc67c6d8f6b12315f53f767e1a5cc",
+          "source_next_hash": "fc920bd18db0d3323aadd738eb828173379557b7dae5300b760122c48790c626",
+          "accepted_hash": "f306d83c5b8016ab7cacdc3496da3bb0564c5ffa1e2ee4b37b36d51c0e63608c",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.018911926075816154,
+              "max_abs": 0.11989349126815796
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.014117150567471981,
+              "max_abs": 0.11159467697143555
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "editable": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            },
+            "boundary": {
+              "rms": 0.0,
+              "max_abs": 0.0
+            }
+          },
+          "boundary_latent_rms": 0.9945253133773804,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 1,
+          "sigma": 0.9826490879058838,
+          "sigma_next": 0.9604301452636719,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.023847846314311028,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "f306d83c5b8016ab7cacdc3496da3bb0564c5ffa1e2ee4b37b36d51c0e63608c",
+          "raw_x0_hash": "a9fceefc11eff63cfdb5363ce16f8bf72d45061b4791d9061ae672be3d45b8a1",
+          "proposal_hash": "6300db8f7ec1491aa643c0916b5f5da7be731fbf84b82308f2c838854f832124",
+          "source_next_hash": "1725d86f9bb35f4fbb99c4dffa2a96b49e8b8e840e69068c8b495962ad2a472a",
+          "accepted_hash": "d6c999745be54141a5f1006f8b79095b84dc24396ad5ab4620f9df92562df38e",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.04183344542980194,
+              "max_abs": 0.28123608231544495
+            },
+            "editable": {
+              "rms": 0.009991827420890331,
+              "max_abs": 0.10935890674591064
+            },
+            "boundary": {
+              "rms": 0.030973732471466064,
+              "max_abs": 0.22744515538215637
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.46683210134506226,
+              "max_abs": 5.920126438140869
+            },
+            "editable": {
+              "rms": 0.4418959617614746,
+              "max_abs": 4.836475372314453
+            },
+            "boundary": {
+              "rms": 0.3412792384624481,
+              "max_abs": 4.784356594085693
+            }
+          },
+          "boundary_latent_rms": 0.9761121273040771,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 2,
+          "sigma": 0.9604301452636719,
+          "sigma_next": 0.9309595823287964,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.03132757171988487,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "d6c999745be54141a5f1006f8b79095b84dc24396ad5ab4620f9df92562df38e",
+          "raw_x0_hash": "ee7e4c2f154049ea97815c79e60fdbd6d5854e6fac3736545cfa4c496a75cf3b",
+          "proposal_hash": "d8cf554ab2c7ca13a154970c6b90d5e7a65c4ef96766a3ad6890982a85186608",
+          "source_next_hash": "356e902ff6a1d51bd05dc916264dd5e3a5bce862a76e4fc9704c204d2a22f04d",
+          "accepted_hash": "76901ba7bf846d32c856a97755e233ed23b30a5ed12a8dfb1cb2f86bab9584eb",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.07360032945871353,
+              "max_abs": 0.48303356766700745
+            },
+            "editable": {
+              "rms": 0.0243657436221838,
+              "max_abs": 0.23616480827331543
+            },
+            "boundary": {
+              "rms": 0.05588530749082565,
+              "max_abs": 0.3921353816986084
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.6825718879699707,
+              "max_abs": 5.793228626251221
+            },
+            "editable": {
+              "rms": 0.5687865614891052,
+              "max_abs": 5.777289390563965
+            },
+            "boundary": {
+              "rms": 0.5751529335975647,
+              "max_abs": 5.777289390563965
+            }
+          },
+          "boundary_latent_rms": 0.9528573155403137,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 3,
+          "sigma": 0.9309595823287964,
+          "sigma_next": 0.8899959325790405,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.043356139212846756,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "76901ba7bf846d32c856a97755e233ed23b30a5ed12a8dfb1cb2f86bab9584eb",
+          "raw_x0_hash": "3e644679aa259d692a0849cbd41e630b7d2995823e2d390f5cc2468841aefc22",
+          "proposal_hash": "e7bce3adbb8025202fb50e4edfddefb063655aeb4ea471319b5b8c8b0c164684",
+          "source_next_hash": "30e0d8b4ea1fdca074978297a8de662f45c2222a387b22863c0ee1eddee9f80d",
+          "accepted_hash": "09b2eb952d3b698cb1880eb93203e3f622fe8f3b791d0cfb8ad5504fa1d8f19a",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.11911237239837646,
+              "max_abs": 0.753608226776123
+            },
+            "editable": {
+              "rms": 0.04604590684175491,
+              "max_abs": 0.4310619831085205
+            },
+            "boundary": {
+              "rms": 0.09262537211179733,
+              "max_abs": 0.6330301761627197
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.7824112176895142,
+              "max_abs": 6.966934680938721
+            },
+            "editable": {
+              "rms": 0.6020370125770569,
+              "max_abs": 6.298079967498779
+            },
+            "boundary": {
+              "rms": 0.6489629745483398,
+              "max_abs": 6.298079967498779
+            }
+          },
+          "boundary_latent_rms": 0.9219334721565247,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 4,
+          "sigma": 0.8899959325790405,
+          "sigma_next": 0.8291866183280945,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.06474810838699341,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "09b2eb952d3b698cb1880eb93203e3f622fe8f3b791d0cfb8ad5504fa1d8f19a",
+          "raw_x0_hash": "8213ff2d36a9eeed99d31c89d28505554315357a8fba0b3b74ef94439b8b1324",
+          "proposal_hash": "3fc2c8783ed71e0bab6332b607f6818138847b3864a87a7649a1ae9788291a74",
+          "source_next_hash": "20438375c8cebb2c9e6c1fe0b00dc5b6ffb9a722ab2540b530be709b8ddb580b",
+          "accepted_hash": "23512dc62eb22a4f1e1409f357e7e5c403487cddac3ab17395a0254d7a1ab6dc",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.18889446556568146,
+              "max_abs": 1.149092197418213
+            },
+            "editable": {
+              "rms": 0.08139825612306595,
+              "max_abs": 0.7520740628242493
+            },
+            "boundary": {
+              "rms": 0.14947839081287384,
+              "max_abs": 0.9878400564193726
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.8288615942001343,
+              "max_abs": 6.810023307800293
+            },
+            "editable": {
+              "rms": 0.6327536106109619,
+              "max_abs": 6.731602191925049
+            },
+            "boundary": {
+              "rms": 0.6948741674423218,
+              "max_abs": 5.851895809173584
+            }
+          },
+          "boundary_latent_rms": 0.8802121877670288,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 5,
+          "sigma": 0.8291866183280945,
+          "sigma_next": 0.7294999957084656,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.10203221440315247,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "23512dc62eb22a4f1e1409f357e7e5c403487cddac3ab17395a0254d7a1ab6dc",
+          "raw_x0_hash": "db9dfdb7868529388e0a1edfbe2d5d19b3683cb7eedf30fa10fae99a81d5c5c0",
+          "proposal_hash": "1031f8a30f40e24d34723d68231aa4ac0304e5c58ad4aa9bfc554c69c3f21a4c",
+          "source_next_hash": "12ec5577feac80380ca57fc8aa56f26ef2f7bee852dd1f7ee85dcdad945f1c1b",
+          "accepted_hash": "61adfef614378cf69cf452df2c77be62b1f06a09cc4ecff9b49ca058d79dc75d",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.3069371283054352,
+              "max_abs": 1.80446195602417
+            },
+            "editable": {
+              "rms": 0.14535698294639587,
+              "max_abs": 1.4931378364562988
+            },
+            "boundary": {
+              "rms": 0.246915802359581,
+              "max_abs": 1.5831173658370972
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.8981225490570068,
+              "max_abs": 7.239766597747803
+            },
+            "editable": {
+              "rms": 0.6582088470458984,
+              "max_abs": 7.340536594390869
+            },
+            "boundary": {
+              "rms": 0.7834143042564392,
+              "max_abs": 5.497009754180908
+            }
+          },
+          "boundary_latent_rms": 0.8242419362068176,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 6,
+          "sigma": 0.7294999957084656,
+          "sigma_next": 0.5361343026161194,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.18939441442489624,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "61adfef614378cf69cf452df2c77be62b1f06a09cc4ecff9b49ca058d79dc75d",
+          "raw_x0_hash": "0ae1c6c018e043d73f5e09ea74eba50fb1bf2ebe8eceb1ed02eb93978ddc139a",
+          "proposal_hash": "4dddd19e1fb1ada5e635c199011df8e4232358a264649eb77f74286d9de169e6",
+          "source_next_hash": "0dbfa28e6a4e063fce947c5a1616005cdd066376f466a26910b6acc8eb594c5b",
+          "accepted_hash": "73884fbb7012acc55fc9c0f87536993feab91e1bc903edaee69a7864492e6c51",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 0.5453715920448303,
+              "max_abs": 3.119379997253418
+            },
+            "editable": {
+              "rms": 0.2780153453350067,
+              "max_abs": 2.937337875366211
+            },
+            "boundary": {
+              "rms": 0.44620853662490845,
+              "max_abs": 2.658298969268799
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 0.9763381481170654,
+              "max_abs": 7.282684803009033
+            },
+            "editable": {
+              "rms": 0.6676642298698425,
+              "max_abs": 7.415702819824219
+            },
+            "boundary": {
+              "rms": 0.8622212409973145,
+              "max_abs": 4.9854888916015625
+            }
+          },
+          "boundary_latent_rms": 0.7723376750946045,
+          "next_raw_x0_captured": true
+        },
+        {
+          "step": 7,
+          "sigma": 0.5361343026161194,
+          "sigma_next": 0.0,
+          "stitched": true,
+          "input_source_error_vs_trajectory_rms": 0.0,
+          "proposal_source_error_vs_trajectory_rms": 0.5494837164878845,
+          "accepted_source_error_vs_trajectory_rms": 0.0,
+          "accepted_source_error_vs_trajectory_max": 0.0,
+          "editable_proposal_to_accepted_max": 0.0,
+          "input_hash": "73884fbb7012acc55fc9c0f87536993feab91e1bc903edaee69a7864492e6c51",
+          "raw_x0_hash": "9fcdb0d4057e0c908b516dd96d5d1a179ae6e3ae79eed6b8d2964080cef90910",
+          "proposal_hash": "f82b60f31ea09674c3ba9f3bf4453407d006d4289cbbbeaa9141705b92be72f5",
+          "source_next_hash": "d01733ed7ffd03daaef5be2ffe9c5d387818de09f7030cf0f27695ae6acf7252",
+          "accepted_hash": "9f69ed16229573dcd9b2e16757538bad45dc7ea981cc3c837039aed1c8f28349",
+          "fixed_noise_hash": "00fcaca9a6cc80bf2d86de1764a96049042fed17c289b359e69835d1ada444c1",
+          "accepted_state_vs_ordinary": {
+            "source": {
+              "rms": 1.255538821220398,
+              "max_abs": 6.899213790893555
+            },
+            "editable": {
+              "rms": 0.6597106456756592,
+              "max_abs": 7.130880832672119
+            },
+            "boundary": {
+              "rms": 1.0410016775131226,
+              "max_abs": 5.907003402709961
+            }
+          },
+          "raw_x0_vs_ordinary": {
+            "source": {
+              "rms": 1.0473216772079468,
+              "max_abs": 6.973221302032471
+            },
+            "editable": {
+              "rms": 0.6597106456756592,
+              "max_abs": 7.130880832672119
+            },
+            "boundary": {
+              "rms": 0.9044877290725708,
+              "max_abs": 5.301322937011719
+            }
+          },
+          "boundary_latent_rms": 1.0307890176773071,
+          "next_raw_x0_captured": false
+        }
+      ]
+    }
+  },
+  "integrity": {
+    "same_fixed_noise_all_arms": true,
+    "fixed_noise_reused_each_interval": true,
+    "first_model_input_all_arms_exact": true,
+    "first_raw_x0_all_arms_exact": true,
+    "single_stitch_only_interval_zero": true,
+    "repeated_stitch_every_interval": true,
+    "editable_never_modified_by_stitch": true,
+    "production_changed": false,
+    "clown_or_res4lyf_used": false,
+    "noise_mask": null,
+    "attention_or_model_patch": null
+  },
+  "semantic_review": {
+    "status": "FAIL",
+    "causal_next_prediction": "The interval-0 stitch changes the next editable raw x0 by 0.440 RMS; B and C are identical at that evaluation.",
+    "single_stitch": "The effect persists but source state subsequently drifts almost as far from its trajectory as Ordinary.",
+    "repeated_stitch": "Source trajectory remains exact, but final editable bridge/cable systems restart independently at both source boundaries.",
+    "decision": "Stop this simplified branch without tuning."
+  },
+  "runtime_seconds": 48.809803600015584
+}
