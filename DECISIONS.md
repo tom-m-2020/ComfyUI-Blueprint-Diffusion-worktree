@@ -1503,3 +1503,13 @@ contract.
 
 This does not select an implementation or authorize caches, sparse execution,
 block/head tuning, backend changes, or production work.
+
+## 2026-09-10 — Stop the simplified exact source-stitch branch
+
+Classify fixed `stitch -> full denoise -> repeat` as SIMPLIFIED SOURCE-STITCH
+MECHANISM INSUFFICIENT. The accepted source stitch causally changes the next
+editable prediction, but exact repeated CONST source ownership still produces
+independent bridge systems rather than one geometrically continuous scene.
+
+Do not tune stitch strength, mask geometry, width, or schedule in this branch,
+and do not infer a production editor from the causal response alone.

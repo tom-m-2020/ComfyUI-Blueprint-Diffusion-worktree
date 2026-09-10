@@ -2986,3 +2986,19 @@ Both masks act inside the native joint softmax, block exactly the intended
 interactions allowed. Source context is therefore not produced by an
 independently evolving one-way source branch under this contract. Evidence:
 `experiments/LOCAL_EDIT_SOURCE_DIRECTIONAL_COUPLING_REPORT.md`.
+
+## 2026-09-10 — Exact source stitching changes the next prediction but fails bridge continuation
+
+In a clean deterministic-Euler experiment with no guidance, noise mask, or
+model patch, stitching only source coordinates to the exact CONST trajectory
+after interval 0 changes the next editable raw x0 by `0.440` RMS. This confirms
+the narrow causal source-state-to-editable-prediction link independently of
+Clown epsilon.
+
+Repeating the stitch holds accepted source coordinates at zero error for all
+eight intervals, but the decoded editable regions form independently organized
+bridge spans/cables at both source boundaries. A single stitch does not retain
+source authority and reaches `1.22` terminal source-trajectory RMS versus
+Ordinary's `1.26`. State influence is causal, but exact repeated ownership is
+not sufficient for geometric compatibility. Evidence:
+`experiments/LOCAL_EDIT_SOURCE_STITCH_TRAJECTORY_REPORT.md`.

@@ -1065,3 +1065,10 @@ TRUE_LOW; removing source-to-editable retains `0.450`. Both decoded predictions
 substantially reorganize bridge geometry. All edge-mask invariants passed; no
 sampler update, trajectory, cache, sparse execution, backend, or production
 change occurred.
+
+The simplified source-stitch trajectory is complete and classified SIMPLIFIED
+SOURCE-STITCH MECHANISM INSUFFICIENT. An interval-0 source-only stitch changes
+the next editable raw x0 by `0.440` RMS, proving causal influence. Repeated
+stitching maintains exact CONST source state but fails the rigid-bridge semantic
+gate with independently restarted spans and cables at both boundaries. The
+branch stopped without tuning; no production change occurred.
