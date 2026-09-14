@@ -1,0 +1,55 @@
+{
+  "verdict": "WEAK-FSS CASE-DEPENDENT",
+  "primary_weak_arm": "C_FSS_R02",
+  "nearby_weak_arm": "C_FSS_R01",
+  "strong_reference_arm": "D_STRONG_R08",
+  "acceptance_rule": "Weak FSS must preserve geometry materially better than Gaussian while allowing materially more appearance change than strong FSS.",
+  "cases": {
+    "portrait_bronze": {
+      "accepted": false,
+      "reason": "r=2 retains framing and improves edge overlap, but changes apparent age and facial identity; portrait identity/geometry does not pass qualitative review.",
+      "r2_vs_gaussian": {
+        "edge_f1": [0.760, 0.600],
+        "edge_chamfer_pixels": [6.35, 7.04],
+        "coarse_rgb_rms": [0.183, 0.555]
+      },
+      "r2_vs_strong_appearance_rgb_rms": [0.193, 0.156]
+    },
+    "astronaut_steampunk": {
+      "accepted": true,
+      "reason": "r=2 preserves stance, limb proportions, helmet and suit layout while adding brass detail and environmental change; r=8 stays substantially closer to the source appearance.",
+      "r2_vs_gaussian": {
+        "edge_f1": [0.803, 0.712],
+        "edge_chamfer_pixels": [4.01, 7.19],
+        "coarse_rgb_rms": [0.273, 0.488]
+      },
+      "r2_vs_strong_appearance_rgb_rms": [0.290, 0.212]
+    },
+    "bridge_crystal_night": {
+      "accepted": true,
+      "reason": "r=2 retains the one-tower suspension geometry, deck slope and train placement much better than Gaussian while changing lighting/material more than r=8.",
+      "r2_vs_gaussian": {
+        "edge_f1": [0.742, 0.588],
+        "edge_chamfer_pixels": [3.50, 7.66],
+        "coarse_rgb_rms": [0.160, 0.344]
+      },
+      "r2_vs_strong_appearance_rgb_rms": [0.180, 0.154]
+    },
+    "illustration_photoreal": {
+      "accepted": true,
+      "reason": "r=2 preserves the two-span layout and endpoint towers while adding realistic structure and lighting; r=8 visibly traces the flat source.",
+      "r2_vs_gaussian": {
+        "edge_f1": [0.570, 0.195],
+        "edge_chamfer_pixels": [4.13, 21.46],
+        "coarse_rgb_rms": [0.139, 0.183]
+      },
+      "r2_vs_strong_appearance_rgb_rms": [0.156, 0.138]
+    }
+  },
+  "summary": {
+    "accepted_cases": 3,
+    "failed_cases": 1,
+    "face_landmarks": "Unavailable; no landmark model was installed or used.",
+    "interpretation": "Weak FSS produces a repeatable geometry-versus-change trade-off for coarse articulated and architectural structure, but does not reliably preserve fine identity-sensitive facial geometry on stock Klein."
+  }
+}

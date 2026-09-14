@@ -1,0 +1,59 @@
+{
+  "registered_before_phase_1b_outputs": true,
+  "date": "2026-09-14",
+  "question": "Does the fixed weak-FSS regime preserve natural-source geometry better than Gaussian while changing appearance more than strong FSS?",
+  "mechanism": "Unchanged Phase 1 equation-level FSS endpoint substituted into native Klein CONST source-img2img initialization.",
+  "fixed_runtime": {
+    "model": "Flux2-Klein-4B-w4a8.safetensors",
+    "text_encoder": "qwen_3_4b_fp4_flux2.safetensors",
+    "vae": "flux2-vae.safetensors",
+    "resolution_wh": [512, 512],
+    "sampler": "Euler",
+    "cfg": 1.0,
+    "full_schedule_steps": 8,
+    "start_index": 2,
+    "seed_for_every_case": 2026091401,
+    "transition_bandwidth": 2.0,
+    "arms": ["A_GAUSSIAN", "C_FSS_R01", "C_FSS_R02", "D_STRONG_R08"]
+  },
+  "cases": [
+    {
+      "name": "portrait_bronze",
+      "role": "human portrait with facial geometry",
+      "source": "experiments/flux2_candidate3_step_count_generalization_results/h64_person_car_tree_20_dense.webp",
+      "source_sha256": "110F647A997921252C30DEE52A66D4DAD6C4842C3E04E0795C43CC175CB17685",
+      "crop_xyxy": [800, 80, 1312, 592],
+      "prompt": "The same woman with the same facial identity, expression, head pose, hairstyle silhouette, and portrait framing, transformed into a highly detailed aged bronze statue with oxidized turquoise patina, dramatic museum spot lighting, dark gallery atmosphere"
+    },
+    {
+      "name": "astronaut_steampunk",
+      "role": "full-body articulated person",
+      "source": "experiments/flux2_candidate3_step_count_generalization_results/h64_centered_astronaut_20_dense.webp",
+      "source_sha256": "BAF434DFBF5F6A464E1C46D366153C276808384430E45CA71C9C6D9763E4307F",
+      "crop_xyxy": [512, 0, 1536, 1024],
+      "prompt": "The same full-body astronaut in exactly the same stance and proportions, transformed into an ornate steampunk brass exploration suit with copper pipes and weathered metal, standing in a bioluminescent alien jungle at night, cinematic lighting"
+    },
+    {
+      "name": "bridge_crystal_night",
+      "role": "architectural scene with straight contours",
+      "source": "experiments/flux2_candidate3_step_count_generalization_results/h64_bridge_train_20_dense.webp",
+      "source_sha256": "54834E9FA9059A241692CB9BC50062859BD89616DF0E819B93D40D3DBE008CBF",
+      "crop_xyxy": [512, 0, 1536, 1024],
+      "prompt": "The same suspension bridge and train with exactly the same perspective, tower positions, deck line, cables, and composition, transformed into luminous crystalline architecture at night with glowing glass surfaces, deep blue water, dramatic reflections"
+    },
+    {
+      "name": "illustration_photoreal",
+      "role": "stylized geometric source",
+      "source": "experiments/drift_phase_preserving_results/SOURCE.png",
+      "source_sha256": "598819256ED9883A23DCE685BDB49FC39C5D1B34B398BF49F78455B3DD02A5A4",
+      "crop_xyxy": [0, 0, 512, 512],
+      "prompt": "The same lighthouse, two-span bridge, moon, river, and stone tower in exactly the same composition, transformed into a photoreal cinematic night scene with weathered materials, volumetric moonlight, detailed water reflections, realistic texture"
+    }
+  ],
+  "diagnostics": {
+    "trajectory": "Same state/x0, control RMS, source latent RMS, Fourier phase, coarse latent, and latent gradient diagnostics as Phase 1.",
+    "final": ["decoded source-relative RGB RMS", "RGB histogram Jensen-Shannon distance", "4x coarse RGB RMS", "symmetric Canny edge chamfer distance", "edge overlap F1 within 2 pixels"],
+    "face_landmarks": "Unavailable: no installed landmark model. Do not replace with a face bounding box or install a package."
+  },
+  "acceptance": "Weak FSS is useful only if it preserves geometry materially better than Gaussian while allowing materially more appearance change than D_STRONG_R08. Judge per case qualitatively and quantitatively; no per-case radius selection."
+}

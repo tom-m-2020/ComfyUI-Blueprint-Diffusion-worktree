@@ -1086,3 +1086,17 @@ synthetic geometry while producing some appearance change; stronger rigidity
 mostly traced the source. No production code or node changed. ILVR and FBSDiff
 remain out of scope and were not started. Evidence:
 `experiments/DRIFT_PHASE_PRESERVING_AUDIT.md`.
+
+Phase 1b natural-source generalization is complete on the preregistered portrait,
+full-body astronaut, bridge, and stylized cases. Each used Gaussian, `r=1`,
+`r=2`, and strong `r=8` under the unchanged stock-Klein model, seed policy,
+conditioning, VAE, schedule, CFG, CONST scaling, and Euler sampler. All 16
+six-evaluation trajectories completed finite. Per-evaluation telemetry, decoded
+appearance/coarse/edge diagnostics, final images, comparison sheets, and
+selected x0 previews are saved.
+
+Verdict: **WEAK-FSS CASE-DEPENDENT**. Primary weak `r=2` passed on astronaut,
+bridge, and stylized structure, but failed the portrait identity/age requirement.
+Face landmarks were unavailable without adding a model, so none was installed
+or substituted. No production change occurred and ILVR was not started.
+Evidence: `experiments/DRIFT_PHASE_1B_NATURAL_GENERALIZATION.md`.

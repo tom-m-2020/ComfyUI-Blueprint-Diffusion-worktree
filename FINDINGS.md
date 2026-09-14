@@ -3026,3 +3026,21 @@ source authority and reaches `1.22` terminal source-trajectory RMS versus
 Ordinary's `1.26`. State influence is causal, but exact repeated ownership is
 not sufficient for geometric compatibility. Evidence:
 `experiments/LOCAL_EDIT_SOURCE_STITCH_TRAJECTORY_REPORT.md`.
+
+## 2026-09-14 — Weak stock-Klein FSS generalizes to coarse geometry but not portrait identity
+
+A four-case preregistered Phase 1b used unchanged stock-Klein CONST/Euler
+sampling and fixed Gaussian, `r=1`, `r=2`, and strong `r=8` endpoints. The
+primary `r=2` arm passed the geometry-plus-appearance criterion on a full-body
+astronaut, a suspension bridge, and the prior stylized layout. Against Gaussian,
+edge Chamfer improved `7.19 -> 4.01`, `7.66 -> 3.50`, and `21.46 -> 4.13`
+pixels respectively; decoded RGB change remained greater than strong `r=8` in
+all three cases.
+
+The portrait did not qualify. Although `r=2` improved edge F1 `0.600 -> 0.760`
+and retained framing, it changed apparent age and facial identity. Strong `r=8`
+was closer to the source face but changed appearance less. Therefore weak FSS
+provides a repeatable coarse-geometry/change trade-off, but does not preserve
+fine identity-sensitive geometry reliably on stock Klein. Evidence:
+`experiments/DRIFT_PHASE_1B_NATURAL_GENERALIZATION.md` and
+`experiments/drift_phase_1b_natural_results/telemetry.json`.

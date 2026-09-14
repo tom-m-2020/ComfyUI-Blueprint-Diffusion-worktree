@@ -1526,3 +1526,15 @@ cutoffs/schedules, or advance to ILVR/FBSDiff from this result. Any follow-up
 must be explicitly requested and should first use the same harness on a small
 preregistered natural/stylized source set. Treat PPD fine-tuning as a separate
 trained-contract investigation.
+
+## 2026-09-14 — Classify weak-FSS natural generalization as case-dependent
+
+Classify Phase 1b as **WEAK-FSS CASE-DEPENDENT**. Fixed `r=2` satisfies the
+preregistered geometry-versus-appearance criterion on articulated-body,
+architectural, and stylized structure, but fails the identity-sensitive portrait
+gate. Favor the failed face case over aggregate success when stating scope.
+
+Keep the mechanism experiment-only. Do not select radii per image, add a face
+identity model/loss, create a node, alter production architecture, or proceed to
+ILVR. Any follow-up requires an explicit new task targeted at the observed
+fine-identity limitation.
