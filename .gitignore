@@ -16,3 +16,4 @@ docs/papers/*
 backend/*
 !backend/.gitkeep
 *.pt
+experiments/*.png
