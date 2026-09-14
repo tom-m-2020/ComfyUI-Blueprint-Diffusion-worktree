@@ -1,0 +1,2147 @@
+{
+  "verdict": "INFERENCE-ONLY FSS PARTIAL / UNCERTAIN",
+  "configuration": {
+    "model": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\diffusion_models\\f2k4_realrebelai_Rebels_w4a8s\\Flux2-Klein-4B-w4a8.safetensors",
+    "text_encoder": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\text_encoders\\f2k4_Comfy-Org_vae-text-encorder-for-flux-klein-4b_text_encoders\\qwen_3_4b_fp4_flux2.safetensors",
+    "vae": "C:\\Users\\Tom-M\\data\\a\\ai\\models-1\\models\\vae\\Comfy-Org_vae-text-encorder-for-flux-klein-9b_vae\\flux2-vae.safetensors",
+    "source": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\SOURCE.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "6804bacfaaea746ce3ebe20b594a9b635d407821ef7ca40af0bffd0ccd4d158a"
+    },
+    "prompt": "A richly textured cinematic night painting of the same bridge, lighthouse, river, moon, and tower, coherent geometry, blue and gold lighting",
+    "seed": 2026091401,
+    "resolution_wh": [
+      512,
+      512
+    ],
+    "cfg": 1.0,
+    "sampler": "Euler",
+    "full_schedule_steps": 8,
+    "start_index": 2,
+    "sigmas": [
+      0.9569222331047058,
+      0.9250433444976807,
+      0.881017804145813,
+      0.816270112991333,
+      0.7116665244102478,
+      0.5140447616577148,
+      0.0
+    ],
+    "fss_cutoffs": [
+      2.0,
+      8.0,
+      16.0
+    ],
+    "transition_bandwidth": 2.0,
+    "production_changes": false
+  },
+  "preflight": {
+    "status": "PASS_WITH_QUANTIFIED_FSS_REAL_PROJECTION",
+    "source_latent": {
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "rms": 0.7417405843734741,
+      "mean": -0.04351949691772461,
+      "variance": 0.5482851266860962,
+      "min": -4.0625,
+      "max": 4.96875,
+      "finite": true
+    },
+    "source_latent_hash": "4b7a0a420975c4e22b6628d20f42924ba581951660d31fadc9929886a7680bbf",
+    "noise": {
+      "A_GAUSSIAN": {
+        "gaussian": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995350241661072,
+          "mean": -0.002284085378050804,
+          "variance": 0.9990650415420532,
+          "min": -4.358521461486816,
+          "max": 4.527612686157227,
+          "finite": true
+        },
+        "hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2"
+      },
+      "B_FULL": {
+        "cutoff_radius_latent_frequency_pixels": null,
+        "transition_bandwidth": null,
+        "mask_mean": 1.0,
+        "imaginary_residual_rms": 1.7206514257850358e-07,
+        "gaussian": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995350241661072,
+          "mean": -0.002284085378050804,
+          "variance": 0.9990650415420532,
+          "min": -4.358521461486816,
+          "max": 4.527612686157227,
+          "finite": true
+        },
+        "structured": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995349645614624,
+          "mean": -0.004026261158287525,
+          "variance": 0.9990538954734802,
+          "min": -8.327469825744629,
+          "max": 7.900101661682129,
+          "finite": true
+        },
+        "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+        "structured_to_gaussian_variance_ratio": 0.999988853931427,
+        "fourier_magnitude_max_abs_error": 2.288818359375e-05,
+        "fourier_magnitude_relative_rms_error": 1.3468493057551564e-07,
+        "phase_rms_to_source": 3.422865972879663e-07,
+        "phase_rms_to_gaussian": 1.8155641555786133
+      },
+      "C_FSS_R02": {
+        "cutoff_radius_latent_frequency_pixels": 2.0,
+        "transition_bandwidth": 2.0,
+        "mask_mean": 0.06758638471364975,
+        "imaginary_residual_rms": 8.55313899705834e-08,
+        "gaussian": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995350241661072,
+          "mean": -0.002284085378050804,
+          "variance": 0.9990650415420532,
+          "min": -4.358521461486816,
+          "max": 4.527612686157227,
+          "finite": true
+        },
+        "structured": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995349645614624,
+          "mean": -0.004026260692626238,
+          "variance": 0.9990538954734802,
+          "min": -4.482211112976074,
+          "max": 4.286992073059082,
+          "finite": true
+        },
+        "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+        "structured_to_gaussian_variance_ratio": 0.999988853931427,
+        "fourier_magnitude_max_abs_error": 2.288818359375e-05,
+        "fourier_magnitude_relative_rms_error": 1.3206550457686884e-07,
+        "phase_rms_to_source": 1.7605984210968018,
+        "phase_rms_to_gaussian": 0.4529697000980377
+      },
+      "C_FSS_R08": {
+        "cutoff_radius_latent_frequency_pixels": 8.0,
+        "transition_bandwidth": 2.0,
+        "mask_mean": 0.3439457416534424,
+        "imaginary_residual_rms": 3.078693043789826e-05,
+        "gaussian": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995350241661072,
+          "mean": -0.002284085378050804,
+          "variance": 0.9990650415420532,
+          "min": -4.358521461486816,
+          "max": 4.527612686157227,
+          "finite": true
+        },
+        "structured": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995349645614624,
+          "mean": -0.004026261158287525,
+          "variance": 0.9990538954734802,
+          "min": -5.001009941101074,
+          "max": 4.7850542068481445,
+          "finite": true
+        },
+        "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+        "structured_to_gaussian_variance_ratio": 0.999988853931427,
+        "fourier_magnitude_max_abs_error": 3.814697265625e-05,
+        "fourier_magnitude_relative_rms_error": 1.3407352265299173e-07,
+        "phase_rms_to_source": 1.4884192943572998,
+        "phase_rms_to_gaussian": 1.0521403551101685
+      },
+      "C_FSS_R16": {
+        "cutoff_radius_latent_frequency_pixels": 16.0,
+        "transition_bandwidth": 2.0,
+        "mask_mean": 0.9165361523628235,
+        "imaginary_residual_rms": 0.000317721365718171,
+        "gaussian": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995350241661072,
+          "mean": -0.002284085378050804,
+          "variance": 0.9990650415420532,
+          "min": -4.358521461486816,
+          "max": 4.527612686157227,
+          "finite": true
+        },
+        "structured": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995349049568176,
+          "mean": -0.0040262602269649506,
+          "variance": 0.9990538358688354,
+          "min": -7.340534210205078,
+          "max": 7.999066352844238,
+          "finite": true
+        },
+        "structured_to_gaussian_rms_ratio": 0.9999998807352553,
+        "structured_to_gaussian_variance_ratio": 0.9999887943267822,
+        "fourier_magnitude_max_abs_error": 0.00841522216796875,
+        "fourier_magnitude_relative_rms_error": 2.065831526292591e-06,
+        "phase_rms_to_source": 0.5222085118293762,
+        "phase_rms_to_gaussian": 1.7421504259109497
+      }
+    },
+    "interpretation": "Paper epsilon-hat is substituted only for native CONST's noise endpoint; native sigma interpolation is unchanged."
+  },
+  "arms": {
+    "A_GAUSSIAN": {
+      "wall_seconds": 9.245084399939515,
+      "noise_hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2",
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9917353391647339,
+        "mean": 0.024917908012866974,
+        "variance": 0.9829180240631104,
+        "min": -5.549620151519775,
+        "max": 5.2084808349609375,
+        "finite": true
+      },
+      "final_structure": {
+        "source_relative_rms": 1.0886603593826294,
+        "source_fourier_phase_rms_radians": 1.7563199996948242,
+        "source_coarse_4x_rms": 0.6205378174781799,
+        "source_gradient_difference_rms": 1.1805312877236986
+      },
+      "final_rms_difference_from_control": 0.0,
+      "evaluations": [
+        {
+          "ordinal": 0,
+          "sigma": 0.9569222331047058,
+          "sigma_next": 0.9250433444976807,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9570627212524414,
+            "mean": -0.004060415085405111,
+            "variance": 0.9159525632858276,
+            "min": -4.210814952850342,
+            "max": 4.3154096603393555,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8707954287528992,
+            "mean": 0.048090189695358276,
+            "variance": 0.7559719681739807,
+            "min": -4.410021781921387,
+            "max": 5.720335483551025,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.1901443004608154,
+            "source_fourier_phase_rms_radians": 1.7979167699813843,
+            "source_coarse_4x_rms": 0.6021080017089844,
+            "source_gradient_difference_rms": 1.4530410569376366
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.994629979133606,
+            "source_fourier_phase_rms_radians": 1.7560880184173584,
+            "source_coarse_4x_rms": 0.6273142695426941,
+            "source_gradient_difference_rms": 0.9738942565914469
+          },
+          "state_rms_difference_from_control": 0.0,
+          "denoised_rms_difference_from_control": 0.0
+        },
+        {
+          "ordinal": 1,
+          "sigma": 0.9250433444976807,
+          "sigma_next": 0.881017804145813,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9359049797058105,
+            "mean": -0.002323071239516139,
+            "variance": 0.8759128451347351,
+            "min": -4.105216026306152,
+            "max": 4.187893867492676,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8733189702033997,
+            "mean": 0.028353162109851837,
+            "variance": 0.7618820667266846,
+            "min": -4.376394271850586,
+            "max": 5.526906490325928,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.1693655252456665,
+            "source_fourier_phase_rms_radians": 1.7957254648208618,
+            "source_coarse_4x_rms": 0.5946012735366821,
+            "source_gradient_difference_rms": 1.4236100288516889
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.9867545366287231,
+            "source_fourier_phase_rms_radians": 1.7602347135543823,
+            "source_coarse_4x_rms": 0.6104078888893127,
+            "source_gradient_difference_rms": 0.9771241393234185
+          },
+          "state_rms_difference_from_control": 0.0,
+          "denoised_rms_difference_from_control": 0.0
+        },
+        {
+          "ordinal": 2,
+          "sigma": 0.881017804145813,
+          "sigma_next": 0.816270112991333,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9063310623168945,
+            "mean": -0.000863098306581378,
+            "variance": 0.821435272693634,
+            "min": -3.958005666732788,
+            "max": 4.046512126922607,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9003483057022095,
+            "mean": 0.01775946468114853,
+            "variance": 0.8103116750717163,
+            "min": -4.183524131774902,
+            "max": 4.623852252960205,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.1399928331375122,
+            "source_fourier_phase_rms_radians": 1.7930206060409546,
+            "source_coarse_4x_rms": 0.5837634205818176,
+            "source_gradient_difference_rms": 1.3815862002147077
+          },
+          "denoised_structure": {
+            "source_relative_rms": 1.0067838430404663,
+            "source_fourier_phase_rms_radians": 1.7582842111587524,
+            "source_coarse_4x_rms": 0.617334246635437,
+            "source_gradient_difference_rms": 1.0183383421800618
+          },
+          "state_rms_difference_from_control": 0.0,
+          "denoised_rms_difference_from_control": 0.0
+        },
+        {
+          "ordinal": 3,
+          "sigma": 0.816270112991333,
+          "sigma_next": 0.7116665244102478,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8671390414237976,
+            "mean": 0.0005055088549852371,
+            "variance": 0.7519299387931824,
+            "min": -3.734423875808716,
+            "max": 3.9149932861328125,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9224856495857239,
+            "mean": 0.017770590260624886,
+            "variance": 0.850663959980011,
+            "min": -4.591658592224121,
+            "max": 4.993685722351074,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.099934458732605,
+            "source_fourier_phase_rms_radians": 1.7884364128112793,
+            "source_coarse_4x_rms": 0.5695727467536926,
+            "source_gradient_difference_rms": 1.3231027731141831
+          },
+          "denoised_structure": {
+            "source_relative_rms": 1.0224145650863647,
+            "source_fourier_phase_rms_radians": 1.7513983249664307,
+            "source_coarse_4x_rms": 0.6177971363067627,
+            "source_gradient_difference_rms": 1.0506336670250849
+          },
+          "state_rms_difference_from_control": 0.0,
+          "denoised_rms_difference_from_control": 0.0
+        },
+        {
+          "ordinal": 4,
+          "sigma": 0.7116665244102478,
+          "sigma_next": 0.5140447616577148,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8163506388664246,
+            "mean": 0.002717998344451189,
+            "variance": 0.6664209961891174,
+            "min": -3.6186716556549072,
+            "max": 3.7382402420043945,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9521859288215637,
+            "mean": 0.018755853176116943,
+            "variance": 0.9063063263893127,
+            "min": -5.437172889709473,
+            "max": 5.144225120544434,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.0443072319030762,
+            "source_fourier_phase_rms_radians": 1.7804278135299683,
+            "source_coarse_4x_rms": 0.5517013669013977,
+            "source_gradient_difference_rms": 1.237827702063749
+          },
+          "denoised_structure": {
+            "source_relative_rms": 1.0504329204559326,
+            "source_fourier_phase_rms_radians": 1.75344979763031,
+            "source_coarse_4x_rms": 0.6179134845733643,
+            "source_gradient_difference_rms": 1.105733759829117
+          },
+          "state_rms_difference_from_control": 0.0,
+          "denoised_rms_difference_from_control": 0.0
+        },
+        {
+          "ordinal": 5,
+          "sigma": 0.5140447616577148,
+          "sigma_next": 0.0,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.7740387916564941,
+            "mean": 0.007171529345214367,
+            "variance": 0.5990846157073975,
+            "min": -3.408698558807373,
+            "max": 3.5853922367095947,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9917353391647339,
+            "mean": 0.024917909875512123,
+            "variance": 0.9829179644584656,
+            "min": -5.549620151519775,
+            "max": 5.2084808349609375,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.9798669815063477,
+            "source_fourier_phase_rms_radians": 1.7697535753250122,
+            "source_coarse_4x_rms": 0.5381025075912476,
+            "source_gradient_difference_rms": 1.1221563968242438
+          },
+          "denoised_structure": {
+            "source_relative_rms": 1.0886603593826294,
+            "source_fourier_phase_rms_radians": 1.7563199996948242,
+            "source_coarse_4x_rms": 0.6205378770828247,
+            "source_gradient_difference_rms": 1.1805312877236986
+          },
+          "state_rms_difference_from_control": 0.0,
+          "denoised_rms_difference_from_control": 0.0
+        }
+      ],
+      "selected_preview_ordinals": [
+        0,
+        2,
+        5
+      ],
+      "selected_previews": {
+        "eval_00_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\A_GAUSSIAN_EVAL_00_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "64ac48415809ea6b8a2de0a9e5d200775b36ff3c50402e5c9604d329f52bbb4e"
+        },
+        "eval_00_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\A_GAUSSIAN_EVAL_00_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "0d5f13366a310c930f4cbc3aeba676499f8b5571c0bec4c32bd3d89ae6a81240"
+        },
+        "eval_02_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\A_GAUSSIAN_EVAL_02_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "335625b03bdb4fd3b493d2ce6259feaaa91ebb59df9ebcd7e8d33848a1ab3901"
+        },
+        "eval_02_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\A_GAUSSIAN_EVAL_02_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "7ca689d135b307c22fcf048e6ecaf4e033dbb7aabb837b67b9443d8b83bb3956"
+        },
+        "eval_05_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\A_GAUSSIAN_EVAL_05_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "16b3a82215a94e9096ec69cd878723d34775c6cddf03586d245edc3d326d5750"
+        },
+        "eval_05_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\A_GAUSSIAN_EVAL_05_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "4ca716a20204adf4bb9dc7e7196908abf8fe340beea82fd638a9075dea6b16e9"
+        }
+      }
+    },
+    "B_FULL": {
+      "wall_seconds": 1.5999711999902502,
+      "noise_hash": "8869a875f6b44cc00f838d9545bbe0c28d9bf6b61df671f06e205f53b10b025d",
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 1.1729960441589355,
+        "mean": -0.040774766355752945,
+        "variance": 1.3742573261260986,
+        "min": -7.729232311248779,
+        "max": 9.132190704345703,
+        "finite": true
+      },
+      "final_structure": {
+        "source_relative_rms": 0.6488920450210571,
+        "source_fourier_phase_rms_radians": 0.5803858637809753,
+        "source_coarse_4x_rms": 0.27071496844291687,
+        "source_gradient_difference_rms": 0.7702966168977858
+      },
+      "final_rms_difference_from_control": 1.3803563117980957,
+      "evaluations": [
+        {
+          "ordinal": 0,
+          "sigma": 0.9569222331047058,
+          "sigma_next": 0.9250433444976807,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.972229540348053,
+            "mean": -0.005727541632950306,
+            "variance": 0.9451974034309387,
+            "min": -8.096628189086914,
+            "max": 7.680344581604004,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0002472400665283,
+            "mean": -0.0328102707862854,
+            "variance": 0.9994181990623474,
+            "min": -6.616389274597168,
+            "max": 7.895397663116455,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.8754637837409973,
+            "source_fourier_phase_rms_radians": 5.668574090123002e-07,
+            "source_coarse_4x_rms": 0.5032762289047241,
+            "source_gradient_difference_rms": 1.0680286905189673
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.4537355303764343,
+            "source_fourier_phase_rms_radians": 0.576382577419281,
+            "source_coarse_4x_rms": 0.21094277501106262,
+            "source_gradient_difference_rms": 0.5233122314526963
+          },
+          "state_rms_difference_from_control": 1.352176308631897,
+          "denoised_rms_difference_from_control": 1.1659663915634155
+        },
+        {
+          "ordinal": 1,
+          "sigma": 0.9250433444976807,
+          "sigma_next": 0.881017804145813,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9609177708625793,
+            "mean": -0.006629775278270245,
+            "variance": 0.9233189821243286,
+            "min": -8.04731559753418,
+            "max": 7.649960041046143,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0356910228729248,
+            "mean": -0.0366380475461483,
+            "variance": 1.071313500404358,
+            "min": -6.5585737228393555,
+            "max": 8.003801345825195,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.8509136438369751,
+            "source_fourier_phase_rms_radians": 0.015324223786592484,
+            "source_coarse_4x_rms": 0.48765453696250916,
+            "source_gradient_difference_rms": 1.0400517759053989
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.5052528977394104,
+            "source_fourier_phase_rms_radians": 0.6192237734794617,
+            "source_coarse_4x_rms": 0.2317812740802765,
+            "source_gradient_difference_rms": 0.5736090808781433
+          },
+          "state_rms_difference_from_control": 1.3272931575775146,
+          "denoised_rms_difference_from_control": 1.1911239624023438
+        },
+        {
+          "ordinal": 2,
+          "sigma": 0.881017804145813,
+          "sigma_next": 0.816270112991333,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9475685954093933,
+            "mean": -0.008057957515120506,
+            "variance": 0.897821307182312,
+            "min": -7.976461887359619,
+            "max": 7.605590343475342,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0676493644714355,
+            "mean": -0.03837379813194275,
+            "variance": 1.1384024620056152,
+            "min": -6.751296520233154,
+            "max": 8.093278884887695,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.8180230855941772,
+            "source_fourier_phase_rms_radians": 0.03573872521519661,
+            "source_coarse_4x_rms": 0.46671512722969055,
+            "source_gradient_difference_rms": 1.0023046390485182
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.541608989238739,
+            "source_fourier_phase_rms_radians": 0.6307479739189148,
+            "source_coarse_4x_rms": 0.24562019109725952,
+            "source_gradient_difference_rms": 0.6177021194813254
+          },
+          "state_rms_difference_from_control": 1.2940493822097778,
+          "denoised_rms_difference_from_control": 1.231235146522522
+        },
+        {
+          "ordinal": 3,
+          "sigma": 0.816270112991333,
+          "sigma_next": 0.7116665244102478,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9325313568115234,
+            "mean": -0.01028592698276043,
+            "variance": 0.8695088624954224,
+            "min": -7.886422157287598,
+            "max": 7.547671318054199,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0970577001571655,
+            "mean": -0.03895414620637894,
+            "variance": 1.202018141746521,
+            "min": -6.897970199584961,
+            "max": 8.322854995727539,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.7716774344444275,
+            "source_fourier_phase_rms_radians": 0.06510113179683685,
+            "source_coarse_4x_rms": 0.4364887773990631,
+            "source_gradient_difference_rms": 0.9492753633400514
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.5727331042289734,
+            "source_fourier_phase_rms_radians": 0.629557192325592,
+            "source_coarse_4x_rms": 0.25498178601264954,
+            "source_gradient_difference_rms": 0.6596327337487436
+          },
+          "state_rms_difference_from_control": 1.250465989112854,
+          "denoised_rms_difference_from_control": 1.2665717601776123
+        },
+        {
+          "ordinal": 4,
+          "sigma": 0.7116665244102478,
+          "sigma_next": 0.5140447616577148,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9197303652763367,
+            "mean": -0.01395970769226551,
+            "variance": 0.8457091450691223,
+            "min": -7.759753704071045,
+            "max": 7.600069046020508,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.1302387714385986,
+            "mean": -0.04000929743051529,
+            "variance": 1.2758389711380005,
+            "min": -7.259363174438477,
+            "max": 8.634209632873535,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.703355610370636,
+            "source_fourier_phase_rms_radians": 0.11221441626548767,
+            "source_coarse_4x_rms": 0.38953685760498047,
+            "source_gradient_difference_rms": 0.8713090670779438
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6061145663261414,
+            "source_fourier_phase_rms_radians": 0.6134616136550903,
+            "source_coarse_4x_rms": 0.26210710406303406,
+            "source_gradient_difference_rms": 0.7073430388446356
+          },
+          "state_rms_difference_from_control": 1.194350004196167,
+          "denoised_rms_difference_from_control": 1.316195011138916
+        },
+        {
+          "ordinal": 5,
+          "sigma": 0.5140447616577148,
+          "sigma_next": 0.0,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9346071481704712,
+            "mean": -0.021193381398916245,
+            "variance": 0.8730413913726807,
+            "min": -7.620800971984863,
+            "max": 7.887238025665283,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.172996163368225,
+            "mean": -0.040774766355752945,
+            "variance": 1.3742573261260986,
+            "min": -7.729232311248779,
+            "max": 9.132190704345703,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.6058909296989441,
+            "source_fourier_phase_rms_radians": 0.20685841143131256,
+            "source_coarse_4x_rms": 0.31121277809143066,
+            "source_gradient_difference_rms": 0.7591671979532411
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6488920450210571,
+            "source_fourier_phase_rms_radians": 0.5803858041763306,
+            "source_coarse_4x_rms": 0.27071496844291687,
+            "source_gradient_difference_rms": 0.7702966168977858
+          },
+          "state_rms_difference_from_control": 1.1470221281051636,
+          "denoised_rms_difference_from_control": 1.3803563117980957
+        }
+      ],
+      "selected_preview_ordinals": [
+        0,
+        2,
+        5
+      ],
+      "selected_previews": {
+        "eval_00_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\B_FULL_EVAL_00_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "fa707bc92a447ab51ba2dd47b541f727b9e4e0248feb002bb0ababb9bc55b308"
+        },
+        "eval_00_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\B_FULL_EVAL_00_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "1bf63eafef7eca7508d26d372d3dfe01e9041773ae1bc5c912e08fc5445f7aa4"
+        },
+        "eval_02_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\B_FULL_EVAL_02_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "38988c18b69e2ae4963be56cb7d2ac91aa4fc05aaf9c1349f867c9de72948610"
+        },
+        "eval_02_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\B_FULL_EVAL_02_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "0cb5cba96707dc62b7dc5d6686b64365e790fe56171c5e4a90ee065dda0ec45c"
+        },
+        "eval_05_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\B_FULL_EVAL_05_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "cce67cf0db57ceacd64422965795f6ee8ecd883581b04fb2894b7b72e50267ee"
+        },
+        "eval_05_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\B_FULL_EVAL_05_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "efe05042ca9a5f2b1edc7fc2bcc25727964a1fa54823358a0f0cc14720acaade"
+        }
+      }
+    },
+    "C_FSS_R02": {
+      "wall_seconds": 1.5980501000303775,
+      "noise_hash": "9d0f0b415e3754db0064789d1c2c33a9b7a80ad82cd0ca06af458db63b2764ff",
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9257776737213135,
+        "mean": -0.023999400436878204,
+        "variance": 0.8564882874488831,
+        "min": -4.992579936981201,
+        "max": 4.92465877532959,
+        "finite": true
+      },
+      "final_structure": {
+        "source_relative_rms": 0.6998804807662964,
+        "source_fourier_phase_rms_radians": 1.5817700624465942,
+        "source_coarse_4x_rms": 0.3768887519836426,
+        "source_gradient_difference_rms": 0.7656885662388537
+      },
+      "final_rms_difference_from_control": 1.1412192583084106,
+      "evaluations": [
+        {
+          "ordinal": 0,
+          "sigma": 0.9569222331047058,
+          "sigma_next": 0.9250433444976807,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9598444104194641,
+            "mean": -0.005727541167289019,
+            "variance": 0.9212684035301208,
+            "min": -4.329176425933838,
+            "max": 4.12419319152832,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8268277645111084,
+            "mean": -0.023752624168992043,
+            "variance": 0.6830799579620361,
+            "min": -4.348289966583252,
+            "max": 4.636063575744629,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.139294147491455,
+            "source_fourier_phase_rms_radians": 1.74528968334198,
+            "source_coarse_4x_rms": 0.5259730219841003,
+            "source_gradient_difference_rms": 1.4474515070431977
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6584904193878174,
+            "source_fourier_phase_rms_radians": 1.6146295070648193,
+            "source_coarse_4x_rms": 0.3349592089653015,
+            "source_gradient_difference_rms": 0.7395033757764402
+          },
+          "state_rms_difference_from_control": 0.35930511355400085,
+          "denoised_rms_difference_from_control": 0.9875460267066956
+        },
+        {
+          "ordinal": 1,
+          "sigma": 0.9250433444976807,
+          "sigma_next": 0.881017804145813,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9342190623283386,
+            "mean": -0.006328028626739979,
+            "variance": 0.8727253079414368,
+            "min": -4.22706413269043,
+            "max": 4.024073600769043,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8562215566635132,
+            "mean": -0.016975760459899902,
+            "variance": 0.7328271269798279,
+            "min": -4.689185619354248,
+            "max": 4.56870174407959,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.1084117889404297,
+            "source_fourier_phase_rms_radians": 1.7417469024658203,
+            "source_coarse_4x_rms": 0.5111610889434814,
+            "source_gradient_difference_rms": 1.4081753524961917
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6696800589561462,
+            "source_fourier_phase_rms_radians": 1.596659541130066,
+            "source_coarse_4x_rms": 0.3496110737323761,
+            "source_gradient_difference_rms": 0.7403908666481754
+          },
+          "state_rms_difference_from_control": 0.35578036308288574,
+          "denoised_rms_difference_from_control": 1.005447506904602
+        },
+        {
+          "ordinal": 2,
+          "sigma": 0.881017804145813,
+          "sigma_next": 0.816270112991333,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9002805948257446,
+            "mean": -0.006834785919636488,
+            "variance": 0.8104585409164429,
+            "min": -4.097739219665527,
+            "max": 3.9140098094940186,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8750524520874023,
+            "mean": -0.019656188786029816,
+            "variance": 0.76533043384552,
+            "min": -5.0333333015441895,
+            "max": 4.830253601074219,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.065755844116211,
+            "source_fourier_phase_rms_radians": 1.7363924980163574,
+            "source_coarse_4x_rms": 0.4908832311630249,
+            "source_gradient_difference_rms": 1.3536936808037174
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6735595464706421,
+            "source_fourier_phase_rms_radians": 1.5877223014831543,
+            "source_coarse_4x_rms": 0.35830026865005493,
+            "source_gradient_difference_rms": 0.7386089950481315
+          },
+          "state_rms_difference_from_control": 0.3556067943572998,
+          "denoised_rms_difference_from_control": 1.0462080240249634
+        },
+        {
+          "ordinal": 3,
+          "sigma": 0.816270112991333,
+          "sigma_next": 0.7116665244102478,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8538464903831482,
+            "mean": -0.007777054328471422,
+            "variance": 0.7289934158325195,
+            "min": -3.8822507858276367,
+            "max": 3.8728396892547607,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8898010849952698,
+            "mean": -0.021521959453821182,
+            "variance": 0.7912828326225281,
+            "min": -4.713942527770996,
+            "max": 4.769719123840332,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.0037643909454346,
+            "source_fourier_phase_rms_radians": 1.7272549867630005,
+            "source_coarse_4x_rms": 0.46166685223579407,
+            "source_gradient_difference_rms": 1.2740972656699159
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6769084930419922,
+            "source_fourier_phase_rms_radians": 1.5847549438476562,
+            "source_coarse_4x_rms": 0.36361733078956604,
+            "source_gradient_difference_rms": 0.7398214949064811
+          },
+          "state_rms_difference_from_control": 0.3668428063392639,
+          "denoised_rms_difference_from_control": 1.072041630744934
+        },
+        {
+          "ordinal": 4,
+          "sigma": 0.7116665244102478,
+          "sigma_next": 0.5140447616577148,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.7900290489196777,
+            "mean": -0.00953844003379345,
+            "variance": 0.6240548491477966,
+            "min": -3.5439236164093018,
+            "max": 3.8156344890594482,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9079663157463074,
+            "mean": -0.023677686229348183,
+            "variance": 0.8238422870635986,
+            "min": -4.791780948638916,
+            "max": 4.7474799156188965,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.9078570008277893,
+            "source_fourier_phase_rms_radians": 1.7098932266235352,
+            "source_coarse_4x_rms": 0.4171895682811737,
+            "source_gradient_difference_rms": 1.1493342407173168
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6860261559486389,
+            "source_fourier_phase_rms_radians": 1.5819064378738403,
+            "source_coarse_4x_rms": 0.3692344129085541,
+            "source_gradient_difference_rms": 0.7498643574583231
+          },
+          "state_rms_difference_from_control": 0.41257598996162415,
+          "denoised_rms_difference_from_control": 1.1064766645431519
+        },
+        {
+          "ordinal": 5,
+          "sigma": 0.5140447616577148,
+          "sigma_next": 0.0,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.7231009006500244,
+            "mean": -0.013464748859405518,
+            "variance": 0.5226936936378479,
+            "min": -3.141066074371338,
+            "max": 3.761211395263672,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9257776737213135,
+            "mean": -0.023999400436878204,
+            "variance": 0.8564882874488831,
+            "min": -4.992579936981201,
+            "max": 4.92465877532959,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.7544144988059998,
+            "source_fourier_phase_rms_radians": 1.6707775592803955,
+            "source_coarse_4x_rms": 0.3501034379005432,
+            "source_gradient_difference_rms": 0.9406548517552321
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6998804807662964,
+            "source_fourier_phase_rms_radians": 1.5817700624465942,
+            "source_coarse_4x_rms": 0.3768887519836426,
+            "source_gradient_difference_rms": 0.7656885662388537
+          },
+          "state_rms_difference_from_control": 0.5673103928565979,
+          "denoised_rms_difference_from_control": 1.1412192583084106
+        }
+      ]
+    },
+    "C_FSS_R08": {
+      "wall_seconds": 1.5959230000153184,
+      "noise_hash": "0dbf7b285814582422adba5ea7fad6eb6c04f4b92cecde748c64bdd0d6def732",
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 1.0535496473312378,
+        "mean": -0.032049164175987244,
+        "variance": 1.10893976688385,
+        "min": -5.9742326736450195,
+        "max": 6.219303607940674,
+        "finite": true
+      },
+      "final_structure": {
+        "source_relative_rms": 0.6159564256668091,
+        "source_fourier_phase_rms_radians": 1.1743416786193848,
+        "source_coarse_4x_rms": 0.32184016704559326,
+        "source_gradient_difference_rms": 0.6275712591329988
+      },
+      "final_rms_difference_from_control": 1.2649502754211426,
+      "evaluations": [
+        {
+          "ordinal": 0,
+          "sigma": 0.9569222331047058,
+          "sigma_next": 0.9250433444976807,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9649472832679749,
+            "mean": -0.005727541167289019,
+            "variance": 0.9310904145240784,
+            "min": -4.838751792907715,
+            "max": 4.572446346282959,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8943213820457458,
+            "mean": -0.030094029381871223,
+            "variance": 0.798905074596405,
+            "min": -4.961738586425781,
+            "max": 5.296450138092041,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.0391377210617065,
+            "source_fourier_phase_rms_radians": 1.4775464534759521,
+            "source_coarse_4x_rms": 0.5079739689826965,
+            "source_gradient_difference_rms": 1.3754221372746094
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.45093652606010437,
+            "source_fourier_phase_rms_radians": 1.1214303970336914,
+            "source_coarse_4x_rms": 0.23545973002910614,
+            "source_gradient_difference_rms": 0.4895790606912446
+          },
+          "state_rms_difference_from_control": 0.8015283346176147,
+          "denoised_rms_difference_from_control": 1.0576773881912231
+        },
+        {
+          "ordinal": 1,
+          "sigma": 0.9250433444976807,
+          "sigma_next": 0.881017804145813,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9444102048873901,
+            "mean": -0.006539285182952881,
+            "variance": 0.8918679356575012,
+            "min": -4.743613243103027,
+            "max": 4.411691188812256,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.925176203250885,
+            "mean": -0.02962447702884674,
+            "variance": 0.8550734519958496,
+            "min": -5.135184288024902,
+            "max": 5.816786766052246,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 1.0078544616699219,
+            "source_fourier_phase_rms_radians": 1.4718546867370605,
+            "source_coarse_4x_rms": 0.49233007431030273,
+            "source_gradient_difference_rms": 1.3344107003335741
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.4847847521305084,
+            "source_fourier_phase_rms_radians": 1.130517601966858,
+            "source_coarse_4x_rms": 0.2584441602230072,
+            "source_gradient_difference_rms": 0.5110300567342001
+          },
+          "state_rms_difference_from_control": 0.7887107729911804,
+          "denoised_rms_difference_from_control": 1.0844484567642212
+        },
+        {
+          "ordinal": 2,
+          "sigma": 0.881017804145813,
+          "sigma_next": 0.816270112991333,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.917800784111023,
+            "mean": -0.007637978997081518,
+            "variance": 0.8422998785972595,
+            "min": -4.612224578857422,
+            "max": 4.344621181488037,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9581135511398315,
+            "mean": -0.03126247227191925,
+            "variance": 0.9170041680335999,
+            "min": -5.483414649963379,
+            "max": 5.83055305480957,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.9647648334503174,
+            "source_fourier_phase_rms_radians": 1.463434100151062,
+            "source_coarse_4x_rms": 0.47088995575904846,
+            "source_gradient_difference_rms": 1.277555786006018
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.5185409784317017,
+            "source_fourier_phase_rms_radians": 1.1457442045211792,
+            "source_coarse_4x_rms": 0.27799052000045776,
+            "source_gradient_difference_rms": 0.5379018317617023
+          },
+          "state_rms_difference_from_control": 0.77347332239151,
+          "denoised_rms_difference_from_control": 1.1302636861801147
+        },
+        {
+          "ordinal": 3,
+          "sigma": 0.816270112991333,
+          "sigma_next": 0.7116665244102478,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8833678364753723,
+            "mean": -0.009374188259243965,
+            "variance": 0.7802509069442749,
+            "min": -4.4179816246032715,
+            "max": 4.22473669052124,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9899148941040039,
+            "mean": -0.03254451975226402,
+            "variance": 0.9788723587989807,
+            "min": -5.61095666885376,
+            "max": 5.958095550537109,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.9025246500968933,
+            "source_fourier_phase_rms_radians": 1.449860692024231,
+            "source_coarse_4x_rms": 0.4403773546218872,
+            "source_gradient_difference_rms": 1.194386549060943
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.5533255934715271,
+            "source_fourier_phase_rms_radians": 1.1571588516235352,
+            "source_coarse_4x_rms": 0.29511773586273193,
+            "source_gradient_difference_rms": 0.5670960361698922
+          },
+          "state_rms_difference_from_control": 0.7582703828811646,
+          "denoised_rms_difference_from_control": 1.1684964895248413
+        },
+        {
+          "ordinal": 4,
+          "sigma": 0.7116665244102478,
+          "sigma_next": 0.5140447616577148,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.841080367565155,
+            "mean": -0.012343425303697586,
+            "variance": 0.7072638869285583,
+            "min": -4.30391788482666,
+            "max": 4.2588043212890625,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0204424858093262,
+            "mean": -0.03182445839047432,
+            "variance": 1.0402899980545044,
+            "min": -5.733274459838867,
+            "max": 6.042600631713867,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.8067853450775146,
+            "source_fourier_phase_rms_radians": 1.4244370460510254,
+            "source_coarse_4x_rms": 0.39416277408599854,
+            "source_gradient_difference_rms": 1.0634611821540119
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.5842476487159729,
+            "source_fourier_phase_rms_radians": 1.1692074537277222,
+            "source_coarse_4x_rms": 0.30842557549476624,
+            "source_gradient_difference_rms": 0.5968970392059495
+          },
+          "state_rms_difference_from_control": 0.7533087730407715,
+          "denoised_rms_difference_from_control": 1.2139277458190918
+        },
+        {
+          "ordinal": 5,
+          "sigma": 0.5140447616577148,
+          "sigma_next": 0.0,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.8137286901473999,
+            "mean": -0.017753086984157562,
+            "variance": 0.6618391871452332,
+            "min": -4.569472312927246,
+            "max": 4.551480770111084,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0535496473312378,
+            "mean": -0.032049164175987244,
+            "variance": 1.1089396476745605,
+            "min": -5.9742326736450195,
+            "max": 6.219303607940674,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.6534245610237122,
+            "source_fourier_phase_rms_radians": 1.361095666885376,
+            "source_coarse_4x_rms": 0.3212642967700958,
+            "source_gradient_difference_rms": 0.8395260989938482
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.6159563660621643,
+            "source_fourier_phase_rms_radians": 1.1743417978286743,
+            "source_coarse_4x_rms": 0.32184019684791565,
+            "source_gradient_difference_rms": 0.6275711995311227
+          },
+          "state_rms_difference_from_control": 0.812606692314148,
+          "denoised_rms_difference_from_control": 1.2649502754211426
+        }
+      ],
+      "selected_preview_ordinals": [
+        0,
+        2,
+        5
+      ],
+      "selected_previews": {
+        "eval_00_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R08_EVAL_00_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "2279207ef7c2314a0e8170047fcb95f1ccabf6b7ed3aed2da838d4f98c4176b3"
+        },
+        "eval_00_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R08_EVAL_00_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "04233f4e5643af9d581787db8bef2a868581dcbef74f4c7420beb9b4a8500149"
+        },
+        "eval_02_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R08_EVAL_02_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "732eb3b9e5ff7b6f1f6fa7f56b5727a12256632bd93a77108a2321599d76bf07"
+        },
+        "eval_02_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R08_EVAL_02_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "9492ba73d116ef97613bbdc9b24b27aeeb80d01af7de3c09397b55a7f748ffe8"
+        },
+        "eval_05_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R08_EVAL_05_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "1cfb956a6b8df1c7ce90886baf75dedd7f9ec8eadf595345f798f03c99cd1f64"
+        },
+        "eval_05_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R08_EVAL_05_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "98243b84ef5825ba95d52d9ef95e2bf37eeb7de1bfc1e989a37f61f7387d9d4f"
+        }
+      }
+    },
+    "C_FSS_R16": {
+      "wall_seconds": 1.604701100033708,
+      "noise_hash": "0aa4986c0c565444d4790253990ee65ed2812c745cf5cbccd45f8a170e5d305f",
+      "final_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 1.1572235822677612,
+        "mean": -0.0396060049533844,
+        "variance": 1.3375977277755737,
+        "min": -7.262795925140381,
+        "max": 8.657333374023438,
+        "finite": true
+      },
+      "final_structure": {
+        "source_relative_rms": 0.6299201846122742,
+        "source_fourier_phase_rms_radians": 0.6071171164512634,
+        "source_coarse_4x_rms": 0.26495370268821716,
+        "source_gradient_difference_rms": 0.7222128827791956
+      },
+      "final_rms_difference_from_control": 1.3674383163452148,
+      "evaluations": [
+        {
+          "ordinal": 0,
+          "sigma": 0.9569222331047058,
+          "sigma_next": 0.9250433444976807,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9714469909667969,
+            "mean": -0.005727541167289019,
+            "variance": 0.9436764121055603,
+            "min": -7.152207851409912,
+            "max": 7.803236961364746,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9851515293121338,
+            "mean": -0.03254341706633568,
+            "variance": 0.9694644808769226,
+            "min": -6.098098278045654,
+            "max": 7.437545299530029,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.8945506811141968,
+            "source_fourier_phase_rms_radians": 0.5185678601264954,
+            "source_coarse_4x_rms": 0.5033136010169983,
+            "source_gradient_difference_rms": 1.1206401557597783
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.43400853872299194,
+            "source_fourier_phase_rms_radians": 0.5982682108879089,
+            "source_coarse_4x_rms": 0.2064163088798523,
+            "source_gradient_difference_rms": 0.4820098069823863
+          },
+          "state_rms_difference_from_control": 1.3022465705871582,
+          "denoised_rms_difference_from_control": 1.1521942615509033
+        },
+        {
+          "ordinal": 1,
+          "sigma": 0.9250433444976807,
+          "sigma_next": 0.881017804145813,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9587538838386536,
+            "mean": -0.006620884872972965,
+            "variance": 0.9191651344299316,
+            "min": -7.117091178894043,
+            "max": 7.763388156890869,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0201669931411743,
+            "mean": -0.03433118388056755,
+            "variance": 1.0395619869232178,
+            "min": -6.184821128845215,
+            "max": 7.609184265136719,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.86858731508255,
+            "source_fourier_phase_rms_radians": 0.5150673985481262,
+            "source_coarse_4x_rms": 0.4875779151916504,
+            "source_gradient_difference_rms": 1.0889523060439565
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.48432573676109314,
+            "source_fourier_phase_rms_radians": 0.6289392709732056,
+            "source_coarse_4x_rms": 0.22540175914764404,
+            "source_gradient_difference_rms": 0.5303518269472056
+          },
+          "state_rms_difference_from_control": 1.278165340423584,
+          "denoised_rms_difference_from_control": 1.1777626276016235
+        },
+        {
+          "ordinal": 2,
+          "sigma": 0.881017804145813,
+          "sigma_next": 0.816270112991333,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9435765147209167,
+            "mean": -0.007939700037240982,
+            "variance": 0.8902735114097595,
+            "min": -7.072721481323242,
+            "max": 7.708700180053711,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0538990497589111,
+            "mean": -0.036631204187870026,
+            "variance": 1.1093612909317017,
+            "min": -6.3775434494018555,
+            "max": 7.743402004241943,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.8336937427520752,
+            "source_fourier_phase_rms_radians": 0.5104095935821533,
+            "source_coarse_4x_rms": 0.4664611518383026,
+            "source_gradient_difference_rms": 1.0459267286797562
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.5245317220687866,
+            "source_fourier_phase_rms_radians": 0.6431831121444702,
+            "source_coarse_4x_rms": 0.23989255726337433,
+            "source_gradient_difference_rms": 0.5772080487688029
+          },
+          "state_rms_difference_from_control": 1.2462410926818848,
+          "denoised_rms_difference_from_control": 1.2198848724365234
+        },
+        {
+          "ordinal": 3,
+          "sigma": 0.816270112991333,
+          "sigma_next": 0.7116665244102478,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9260114431381226,
+            "mean": -0.010048292577266693,
+            "variance": 0.8573961853981018,
+            "min": -7.021631717681885,
+            "max": 7.624730587005615,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0812695026397705,
+            "mean": -0.03718870133161545,
+            "variance": 1.1677607297897339,
+            "min": -6.466823101043701,
+            "max": 7.858189582824707,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.784315288066864,
+            "source_fourier_phase_rms_radians": 0.5041519999504089,
+            "source_coarse_4x_rms": 0.4360339343547821,
+            "source_gradient_difference_rms": 0.984692057637928
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.5540003776550293,
+            "source_fourier_phase_rms_radians": 0.6460955739021301,
+            "source_coarse_4x_rms": 0.2471488118171692,
+            "source_gradient_difference_rms": 0.617613156882994
+          },
+          "state_rms_difference_from_control": 1.2047863006591797,
+          "denoised_rms_difference_from_control": 1.2546312808990479
+        },
+        {
+          "ordinal": 4,
+          "sigma": 0.7116665244102478,
+          "sigma_next": 0.5140447616577148,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9091928601264954,
+            "mean": -0.01352628879249096,
+            "variance": 0.8264487385749817,
+            "min": -6.950533866882324,
+            "max": 7.507868766784668,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.1146970987319946,
+            "mean": -0.03881096839904785,
+            "variance": 1.2410433292388916,
+            "min": -6.787907123565674,
+            "max": 8.14730453491211,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.7105268836021423,
+            "source_fourier_phase_rms_radians": 0.4938669204711914,
+            "source_coarse_4x_rms": 0.38865330815315247,
+            "source_gradient_difference_rms": 0.8922515701378024
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.587393045425415,
+            "source_fourier_phase_rms_radians": 0.6359467506408691,
+            "source_coarse_4x_rms": 0.255143940448761,
+            "source_gradient_difference_rms": 0.6632265446925888
+          },
+          "state_rms_difference_from_control": 1.1522893905639648,
+          "denoised_rms_difference_from_control": 1.3039829730987549
+        },
+        {
+          "ordinal": 5,
+          "sigma": 0.5140447616577148,
+          "sigma_next": 0.0,
+          "state": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9184828400611877,
+            "mean": -0.02054756134748459,
+            "variance": 0.8431885242462158,
+            "min": -6.905374050140381,
+            "max": 7.436476707458496,
+            "finite": true
+          },
+          "denoised_x0": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.1572235822677612,
+            "mean": -0.039606012403964996,
+            "variance": 1.3375978469848633,
+            "min": -7.262795925140381,
+            "max": 8.657333374023438,
+            "finite": true
+          },
+          "state_structure": {
+            "source_relative_rms": 0.6016245484352112,
+            "source_fourier_phase_rms_radians": 0.4762780964374542,
+            "source_coarse_4x_rms": 0.30901798605918884,
+            "source_gradient_difference_rms": 0.7508122307456164
+          },
+          "denoised_structure": {
+            "source_relative_rms": 0.629920244216919,
+            "source_fourier_phase_rms_radians": 0.6071171760559082,
+            "source_coarse_4x_rms": 0.26495370268821716,
+            "source_gradient_difference_rms": 0.7222128527914359
+          },
+          "state_rms_difference_from_control": 1.1128474473953247,
+          "denoised_rms_difference_from_control": 1.3674383163452148
+        }
+      ],
+      "selected_preview_ordinals": [
+        0,
+        2,
+        5
+      ],
+      "selected_previews": {
+        "eval_00_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R16_EVAL_00_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "215dee3a902fafb3d0d0c12582a11f62d815579ff4a1678cf8466c24ec1d43f4"
+        },
+        "eval_00_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R16_EVAL_00_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "0b6bb48b9bb1fbcad70d130e2b3a4c1b50ca30a9966deaf2baeb399891188208"
+        },
+        "eval_02_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R16_EVAL_02_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "b89aba9808534bdb5ca0b5555a94c3d5b7d8705a233f24567338d06f18bfa047"
+        },
+        "eval_02_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R16_EVAL_02_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "c51991e371e1ae03977dd426a199f2edfe184f6413b8e1c65486d0e89c17e9ff"
+        },
+        "eval_05_state": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R16_EVAL_05_STATE.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "1b82ea1e17b33f777984c4910b6e9060c73b277ddeefc51921a9fca3db979a13"
+        },
+        "eval_05_x0": {
+          "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R16_EVAL_05_X0.png",
+          "dimensions_wh": [
+            512,
+            512
+          ],
+          "sha256_rgb": "f3c2eea3ecaa9026dbf0eb8ae0a35bfb9db634fd5d2de4c69f6bc3841bee0ac2"
+        }
+      }
+    }
+  },
+  "images": {
+    "SOURCE_RECONSTRUCTION": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\SOURCE_RECONSTRUCTION.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "45d927ead2e93d864a1931fc3266fdefc35b1018f3c3daaf77a01b3368ccee77"
+    },
+    "A_GAUSSIAN": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\A_GAUSSIAN.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "4ca716a20204adf4bb9dc7e7196908abf8fe340beea82fd638a9075dea6b16e9"
+    },
+    "B_FULL": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\B_FULL.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "efe05042ca9a5f2b1edc7fc2bcc25727964a1fa54823358a0f0cc14720acaade"
+    },
+    "C_FSS_R02": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R02.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "98c06178c20da8bf6cc3fe32e6aa45c4a5f328ec9030c447825939b0ad9c4bff"
+    },
+    "C_FSS_R08": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R08.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "98243b84ef5825ba95d52d9ef95e2bf37eeb7de1bfc1e989a37f61f7387d9d4f"
+    },
+    "C_FSS_R16": {
+      "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\C_FSS_R16.png",
+      "dimensions_wh": [
+        512,
+        512
+      ],
+      "sha256_rgb": "f3c2eea3ecaa9026dbf0eb8ae0a35bfb9db634fd5d2de4c69f6bc3841bee0ac2"
+    }
+  },
+  "comparison": {
+    "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_preserving_results\\COMPARISON.png",
+    "dimensions_wh": [
+      3072,
+      540
+    ],
+    "sha256_rgb": "9ae379ee30a90161012448488a54992f985ce5b51c7a0c0c113f2d70d3951cc2"
+  },
+  "integrity": {
+    "status": "SUCCESS",
+    "preflight_passed_before_model": true,
+    "same_source_prompt_seed_model_schedule_vae_conditioning": true,
+    "only_noise_endpoint_varied": true,
+    "all_finite": true
+  }
+}

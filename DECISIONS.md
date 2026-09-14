@@ -1513,3 +1513,16 @@ independent bridge systems rather than one geometrically continuous scene.
 
 Do not tune stitch strength, mask geometry, width, or schedule in this branch,
 and do not infer a production editor from the causal response alone.
+
+## 2026-09-14 — Keep inference-only FSS experimental and classify it partial / uncertain
+
+Classify the one-source stock FLUX.2 Klein 4B result as **INFERENCE-ONLY FSS
+PARTIAL / UNCERTAIN**. The fixed `r=2` arm shows a measurable structure/change
+trade-off, but higher rigidity collapses toward source tracing and the stock
+checkpoint was not trained for the source-dependent endpoint or velocity.
+
+Do not create a ComfyUI node, modify Blueprint production architecture, tune
+cutoffs/schedules, or advance to ILVR/FBSDiff from this result. Any follow-up
+must be explicitly requested and should first use the same harness on a small
+preregistered natural/stylized source set. Treat PPD fine-tuning as a separate
+trained-contract investigation.

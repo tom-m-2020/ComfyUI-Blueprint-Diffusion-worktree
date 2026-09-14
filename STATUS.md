@@ -1072,3 +1072,17 @@ the next editable raw x0 by `0.440` RMS, proving causal influence. Repeated
 stitching maintains exact CONST source state but fails the rigid-bridge semantic
 gate with independently restarted spans and cables at both boundaries. The
 branch stopped without tuning; no production change occurred.
+
+The `drift-constrained-sampling` NeuralRemaster / Phase-Preserving Diffusion
+audit and smallest stock-Klein falsification are complete. The harness compares
+one Gaussian control, full phase preservation, and FSS radii `2/8/16` with fixed
+source, prompt, seed, model, conditioning, VAE, schedule, and Euler sampler.
+Preflight magnitude/phase checks passed with the FSS real-projection discrepancy
+quantified; all five six-evaluation trajectories completed finite and saved
+per-evaluation telemetry, final decodes, and selected state/x0 previews.
+
+Verdict: **INFERENCE-ONLY FSS PARTIAL / UNCERTAIN**. `r=2` preserved broad
+synthetic geometry while producing some appearance change; stronger rigidity
+mostly traced the source. No production code or node changed. ILVR and FBSDiff
+remain out of scope and were not started. Evidence:
+`experiments/DRIFT_PHASE_PRESERVING_AUDIT.md`.

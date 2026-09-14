@@ -2957,6 +2957,30 @@ spectral magnitude was not held fixed, and the response does not show a clean
 predictable spatial relocation.
 Evidence: `experiments/LOCAL_EDIT_SOURCE_SPATIAL_STRUCTURE_REPORT.md`.
 
+## 2026-09-14 — Stock Klein responds monotonically to latent FSS rigidity, but trained semantics are absent
+
+NeuralRemaster constructs structured noise from Gaussian Fourier magnitude and
+source-latent phase. Its successful SD 1.5, FLUX-dev, and Wan experiments all
+fine-tune the base model on that changed endpoint/target distribution; the
+released FLUX inference also loads a PPD LoRA. Native Klein CONST has the same
+linear interpolation form, but stock Klein learned an independent Gaussian
+endpoint, so inference-only FSS is out of distribution.
+
+In one fixed stock Klein 4B W4A8 source-img2img probe, source-phase deviation
+decreased monotonically for latent-grid radii `2,8,16`. Final source-relative
+RMS fell from Gaussian control `1.09` to `0.70/0.62/0.63`; full preservation was
+`0.65`. The `r=2` decode retained broad geometry while changing material and
+lighting, whereas stronger rigidity mostly traced the synthetic source. This is
+partial evidence of a useful inference-only effect, not reproduction or general
+qualification. Evidence: `experiments/DRIFT_PHASE_PRESERVING_AUDIT.md` and
+`experiments/drift_phase_preserving_results/telemetry.json`.
+
+The paper's printed FSS principal-angle blend is not perfectly
+conjugate-symmetric at wrapped phases. The authors' helper takes the real IFFT
+component and additionally pads, percentile-clips, and replaces extremes. The
+focused probe uses only the equation-level blend plus disclosed real projection;
+its maximum observed FSS magnitude relative RMS error was `2.07e-6`.
+
 ## 2026-09-09 — Scene-spatial source context transfers cumulatively across Klein depth
 
 In the single dense evaluation after the rigid-bridge interval-0 pulse, replacing

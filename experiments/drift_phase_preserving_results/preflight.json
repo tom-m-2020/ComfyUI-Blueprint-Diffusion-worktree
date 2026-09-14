@@ -1,0 +1,208 @@
+{
+  "status": "PASS_WITH_QUANTIFIED_FSS_REAL_PROJECTION",
+  "source_latent": {
+    "shape": [
+      1,
+      128,
+      32,
+      32
+    ],
+    "dtype": "torch.float32",
+    "rms": 0.7417405843734741,
+    "mean": -0.04351949691772461,
+    "variance": 0.5482851266860962,
+    "min": -4.0625,
+    "max": 4.96875,
+    "finite": true
+  },
+  "source_latent_hash": "4b7a0a420975c4e22b6628d20f42924ba581951660d31fadc9929886a7680bbf",
+  "noise": {
+    "A_GAUSSIAN": {
+      "gaussian": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995350241661072,
+        "mean": -0.002284085378050804,
+        "variance": 0.9990650415420532,
+        "min": -4.358521461486816,
+        "max": 4.527612686157227,
+        "finite": true
+      },
+      "hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2"
+    },
+    "B_FULL": {
+      "cutoff_radius_latent_frequency_pixels": null,
+      "transition_bandwidth": null,
+      "mask_mean": 1.0,
+      "imaginary_residual_rms": 1.7206514257850358e-07,
+      "gaussian": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995350241661072,
+        "mean": -0.002284085378050804,
+        "variance": 0.9990650415420532,
+        "min": -4.358521461486816,
+        "max": 4.527612686157227,
+        "finite": true
+      },
+      "structured": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995349645614624,
+        "mean": -0.004026261158287525,
+        "variance": 0.9990538954734802,
+        "min": -8.327469825744629,
+        "max": 7.900101661682129,
+        "finite": true
+      },
+      "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+      "structured_to_gaussian_variance_ratio": 0.999988853931427,
+      "fourier_magnitude_max_abs_error": 2.288818359375e-05,
+      "fourier_magnitude_relative_rms_error": 1.3468493057551564e-07,
+      "phase_rms_to_source": 3.422865972879663e-07,
+      "phase_rms_to_gaussian": 1.8155641555786133
+    },
+    "C_FSS_R02": {
+      "cutoff_radius_latent_frequency_pixels": 2.0,
+      "transition_bandwidth": 2.0,
+      "mask_mean": 0.06758638471364975,
+      "imaginary_residual_rms": 8.55313899705834e-08,
+      "gaussian": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995350241661072,
+        "mean": -0.002284085378050804,
+        "variance": 0.9990650415420532,
+        "min": -4.358521461486816,
+        "max": 4.527612686157227,
+        "finite": true
+      },
+      "structured": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995349645614624,
+        "mean": -0.004026260692626238,
+        "variance": 0.9990538954734802,
+        "min": -4.482211112976074,
+        "max": 4.286992073059082,
+        "finite": true
+      },
+      "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+      "structured_to_gaussian_variance_ratio": 0.999988853931427,
+      "fourier_magnitude_max_abs_error": 2.288818359375e-05,
+      "fourier_magnitude_relative_rms_error": 1.3206550457686884e-07,
+      "phase_rms_to_source": 1.7605984210968018,
+      "phase_rms_to_gaussian": 0.4529697000980377
+    },
+    "C_FSS_R08": {
+      "cutoff_radius_latent_frequency_pixels": 8.0,
+      "transition_bandwidth": 2.0,
+      "mask_mean": 0.3439457416534424,
+      "imaginary_residual_rms": 3.078693043789826e-05,
+      "gaussian": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995350241661072,
+        "mean": -0.002284085378050804,
+        "variance": 0.9990650415420532,
+        "min": -4.358521461486816,
+        "max": 4.527612686157227,
+        "finite": true
+      },
+      "structured": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995349645614624,
+        "mean": -0.004026261158287525,
+        "variance": 0.9990538954734802,
+        "min": -5.001009941101074,
+        "max": 4.7850542068481445,
+        "finite": true
+      },
+      "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+      "structured_to_gaussian_variance_ratio": 0.999988853931427,
+      "fourier_magnitude_max_abs_error": 3.814697265625e-05,
+      "fourier_magnitude_relative_rms_error": 1.3407352265299173e-07,
+      "phase_rms_to_source": 1.4884192943572998,
+      "phase_rms_to_gaussian": 1.0521403551101685
+    },
+    "C_FSS_R16": {
+      "cutoff_radius_latent_frequency_pixels": 16.0,
+      "transition_bandwidth": 2.0,
+      "mask_mean": 0.9165361523628235,
+      "imaginary_residual_rms": 0.000317721365718171,
+      "gaussian": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995350241661072,
+        "mean": -0.002284085378050804,
+        "variance": 0.9990650415420532,
+        "min": -4.358521461486816,
+        "max": 4.527612686157227,
+        "finite": true
+      },
+      "structured": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9995349049568176,
+        "mean": -0.0040262602269649506,
+        "variance": 0.9990538358688354,
+        "min": -7.340534210205078,
+        "max": 7.999066352844238,
+        "finite": true
+      },
+      "structured_to_gaussian_rms_ratio": 0.9999998807352553,
+      "structured_to_gaussian_variance_ratio": 0.9999887943267822,
+      "fourier_magnitude_max_abs_error": 0.00841522216796875,
+      "fourier_magnitude_relative_rms_error": 2.065831526292591e-06,
+      "phase_rms_to_source": 0.5222085118293762,
+      "phase_rms_to_gaussian": 1.7421504259109497
+    }
+  },
+  "interpretation": "Paper epsilon-hat is substituted only for native CONST's noise endpoint; native sigma interpolation is unchanged."
+}
