@@ -1551,3 +1551,15 @@ Keep this correction experiment-only. Do not create a node, change production
 architecture, add a stronger setting, or combine FSS+ILVR automatically. The
 full registered coarse replacement already establishes the coarse-layout versus
 fine-identity limit; scalar edge gains cannot override visual portrait failure.
+
+## 2026-09-15 — Reject the fixed FSS+ILVR hybrid as still insufficient
+
+Classify Phase 3 as **FSS+ILVR STILL INSUFFICIENT**. The fixed hybrid shows
+nonredundant scalar contributions from both mechanisms and needs smaller
+corrections than Gaussian+ILVR, but it does not qualitatively improve decisive
+portrait identity over both standalone arms and weakens the bronze-statue
+transformation.
+
+Do not tune the radius, projection, alpha, correction schedule, or sampler from
+this result. Keep the hybrid experiment-only, make no production node or
+architecture change, and do not proceed to another method automatically.

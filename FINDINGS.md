@@ -3067,3 +3067,24 @@ changing appearance. Thus the fixed operator demonstrates modest-state coarse
 restraint but not identity-sensitive preservation. Evidence:
 `experiments/DRIFT_PHASE_2_ILVR.md` and
 `experiments/drift_phase_2_ilvr_results/telemetry.json`.
+
+## 2026-09-15 — Fixed FSS+ILVR effects are metric-complementary but remain identity-insufficient
+
+Using the same FSS `r=2` tensor for both hybrid CONST initialization and every
+matching-sigma source state reduces the mean ILVR correction RMS versus the
+Gaussian endpoint by `19.7%/19.7%/10.7%` for portrait, astronaut, and bridge.
+Relative correction magnitudes also fall from `5.12/5.19/4.65%` to
+`4.03/4.10/4.10%` of proposal RMS. This supports narrower coarse-manifold
+proximity, not membership in a learned structural manifold.
+
+Against standalone FSS, hybrid coarse RGB RMS improves from
+`0.183/0.273/0.160` to `0.107/0.124/0.090`. Against standalone ILVR, hybrid
+phase deviation improves from `1.696/1.667/1.676` to `1.618/1.612/1.618`, and
+edge F1 improves from `0.703/0.785/0.759` to `0.790/0.806/0.797`; Chamfer is
+slightly worse in every case.
+
+The portrait remains an older, different identity similar to FSS and has a
+weaker bronze-statue conversion than ILVR. The fixed combination is therefore
+quantitatively complementary but fails the required qualitative identity gate.
+Evidence: `experiments/DRIFT_PHASE_3_FSS_ILVR_HYBRID.md` and
+`experiments/drift_phase_3_fss_ilvr_results/telemetry.json`.

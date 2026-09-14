@@ -1113,3 +1113,17 @@ all cases with about 5% proposal-RMS correction, and astronaut/bridge pass
 visual geometry checks. The decisive portrait still fails identity, age, pose,
 and framing preservation. No production code changed; no stronger arm or
 FSS+ILVR combination was run. Evidence: `experiments/DRIFT_PHASE_2_ILVR.md`.
+
+Phase 3's minimal FSS+ILVR falsifier is complete on the exact Phase 2 runtime
+and three cases. Exactly Gaussian, FSS `r=2`, ILVR `N=4 alpha=1`, and their fixed
+hybrid were run. All twelve trajectories completed finite; endpoint/source
+hashes confirm that the hybrid uses the same FSS tensor for initialization and
+matching-sigma correction. No sigma-zero correction or production change
+occurred.
+
+Verdict: **FSS+ILVR STILL INSUFFICIENT**. The hybrid improves complementary
+coarse, phase, gradient, and edge-overlap metrics and reduces correction RMS by
+11-20% versus Gaussian+ILVR. It does not qualitatively improve portrait
+identity over both standalone arms and weakens the bronze transformation. No
+tuning or follow-on method was started. Evidence:
+`experiments/DRIFT_PHASE_3_FSS_ILVR_HYBRID.md`.

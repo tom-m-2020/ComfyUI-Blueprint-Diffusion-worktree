@@ -1,0 +1,33 @@
+{
+  "registered_before_phase_3_outputs": true,
+  "date": "2026-09-15",
+  "question": "Are the already-fixed FSS r=2 endpoint and ILVR N=4 alpha=1 accepted-state correction complementary without tuning?",
+  "phase_2_runtime_source": "experiments/DRIFT_PHASE_2_PREREGISTRATION.json",
+  "fixed_runtime": {
+    "model": "Flux2-Klein-4B-w4a8.safetensors",
+    "text_encoder": "qwen_3_4b_fp4_flux2.safetensors",
+    "vae": "flux2-vae.safetensors",
+    "resolution_wh": [512, 512],
+    "sampler": "Euler",
+    "cfg": 1.0,
+    "full_schedule_steps": 8,
+    "start_index": 2,
+    "seed_for_every_case": 2026091401,
+    "fss_radius": 2,
+    "fss_transition_bandwidth": 2.0,
+    "ilvr_downsample_factor_latent": 4,
+    "ilvr_blend_alpha": 1.0,
+    "terminal_sigma_zero_correction": false,
+    "arms": ["A_GAUSSIAN", "B_FSS_R02", "C_ILVR_N04_A1", "D_FSS_R02_ILVR_N04_A1"]
+  },
+  "included_cases": ["portrait_bronze", "astronaut_steampunk", "bridge_crystal_night"],
+  "decisive_case": "portrait_bronze",
+  "hybrid_contract": "Use the validated FSS r=2 endpoint for native CONST initialization and for every matching-sigma ILVR source state. After each ordinary nonterminal Euler proposal, apply the unchanged Phase 2 factor-4 full coarse replacement. Do not correct sigma zero.",
+  "critical_comparisons": {
+    "hybrid_vs_fss": "Does repeated coarse correction improve geometry?",
+    "hybrid_vs_ilvr": "Does phase-biased initialization improve fine or contour structure?",
+    "hybrid_vs_source": "Does meaningful bronze/material/lighting appearance freedom remain?"
+  },
+  "acceptance": "The hybrid qualifies only with a qualitative portrait identity or geometry improvement over both standalone FSS and standalone ILVR while retaining meaningful bronze/material transformation. Scalar improvements alone do not qualify.",
+  "tuning_policy": "No tuning or additional arms after seeing outputs. Stop after this fixed falsifier."
+}
