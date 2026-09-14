@@ -1127,3 +1127,16 @@ coarse, phase, gradient, and edge-overlap metrics and reduces correction RMS by
 identity over both standalone arms and weakens the bronze transformation. No
 tuning or follow-on method was started. Evidence:
 `experiments/DRIFT_PHASE_3_FSS_ILVR_HYBRID.md`.
+
+Phase 4's FBSDiff audit and one fixed stock-Klein internal-feature falsifier are
+complete. The audit establishes that published FBSDiff edits synchronized
+sampler latents, not hidden denoiser layers. The experiment therefore labels
+its single 32x32 post-input hidden-token high-band transfer as an explicit
+Klein extrapolation. All controls, reference trajectories, and feature arms
+completed finite with layer/shape/band-energy telemetry.
+
+Verdict: **FBSDIFF-LIKE FEATURE TRANSFER FALSIFIED**. The feature arm retains
+appearance freedom but fails portrait identity and underperforms FSS structure
+preservation across all three cases. No tuning, alternative layer/band,
+production change, or follow-on method was started. Evidence:
+`experiments/DRIFT_PHASE_4_FBSDIFF_AUDIT.md`.

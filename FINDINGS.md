@@ -3088,3 +3088,22 @@ weaker bronze-statue conversion than ILVR. The fixed combination is therefore
 quantitatively complementary but fails the required qualitative identity gate.
 Evidence: `experiments/DRIFT_PHASE_3_FSS_ILVR_HYBRID.md` and
 `experiments/drift_phase_3_fss_ilvr_results/telemetry.json`.
+
+## 2026-09-15 — FBSDiff edits sampler latents; Klein hidden-band extrapolation fails
+
+The FBSDiff paper and official source apply per-channel 2D DCT/FBS to paired
+reference and generation sampler latents, outside the denoising network and
+before paired DDIM steps. Low/mid/high bands control appearance+layout,
+layout-only, and contours respectively. Published results rely on DDIM
+inversion, synchronized reconstruction, early-step calibration, and SD 1.5
+`4x64x64` latents; there is no paper-defined attention/block layer.
+
+Native Klein's earliest internal spatial tensor is the row-major 32x32
+generated-token grid after `img_in` and before double block 0, shape
+`[1,1024,3072]`. A preregistered high-band (`u+v>3`) transfer there for the first
+three evaluations changed only `3.06-3.94%` of feature RMS on average, yet
+globally redirected outputs. It underperformed FSS `r=2` coarse, phase,
+gradient, and edge preservation on portrait, astronaut, and bridge, and failed
+portrait identity qualitatively. This rejects that fixed hidden-token mapping,
+not published FBSDiff. Evidence: `experiments/DRIFT_PHASE_4_FBSDIFF_AUDIT.md`
+and `experiments/drift_phase_4_fbsdiff_results/telemetry.json`.

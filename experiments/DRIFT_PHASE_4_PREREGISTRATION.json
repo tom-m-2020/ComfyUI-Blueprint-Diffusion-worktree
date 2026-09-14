@@ -1,0 +1,34 @@
+{
+  "registered_before_phase_4_outputs": true,
+  "date": "2026-09-15",
+  "question": "Can one spatially explicit Klein hidden-token high-band transfer preserve finer contour or identity structure than endpoint FSS while retaining appearance freedom?",
+  "runtime_source": "Phase 2 cases, prompts, model, VAE, text encoder, resolution, CFG, Euler schedule, and seed policy",
+  "arms": ["A_GAUSSIAN", "B_FSS_R02", "C_FBSDIFF_LIKE_POST_INPUT_HIGH"],
+  "feature_location": {
+    "hook": "Flux.forward_orig patches['post_input']",
+    "layer_id": "post_input/pre_double_block_0",
+    "position": "after img_in linear projection; before positional embedding use and before every attention/transformer block",
+    "shape_expected": [1, 1024, 3072],
+    "spatial_grid_hw": [32, 32],
+    "mapping": "row-major generated-image tokens with explicit img_ids; no reference tokens"
+  },
+  "band_policy": {
+    "transform": "orthonormal 2D DCT independently for every hidden channel over the 32x32 token grid",
+    "mask": "high-pass source substitution where u+v>3; generated coefficients retained where u+v<=3",
+    "threshold": 3,
+    "rationale": "The official high-FBS default used for contour preservation and appearance divergence is threshold 3. The exact absolute threshold is retained as a falsifier, not claimed scale-equivalent to SD1.5 64x64 latents."
+  },
+  "trajectory_policy": {
+    "reference": "Native Klein source-img2img Euler trajectory with the same Gaussian endpoint and empty conditioning at CFG 1.0.",
+    "generation": "Native target-prompt source-img2img Euler trajectory with the same Gaussian endpoint.",
+    "synchronization": "Precompute and capture reference post_input features at every identical sigma evaluation; transfer from the same ordinal/sigma into generation.",
+    "calibration_evaluations": [0, 1, 2],
+    "release_evaluations": [3, 4, 5],
+    "terminal_state_correction": false
+  },
+  "scope_caveat": "FBSDiff itself substitutes sampler latent states and uses DDIM inversion/reconstruction, not internal denoiser layers. This hidden-token arm deliberately tests the user's requested internal-feature hypothesis and is not a direct reproduction.",
+  "cases": ["portrait_bronze", "astronaut_steampunk", "bridge_crystal_night"],
+  "decisive_case": "portrait_bronze",
+  "acceptance": "Qualitative portrait identity or geometry must improve over both Gaussian and FSS r=2 while bronze/material transformation remains substantial. Scalar gains alone do not qualify.",
+  "tuning_policy": "One location, one band, one calibration span. Do not tune after outputs."
+}

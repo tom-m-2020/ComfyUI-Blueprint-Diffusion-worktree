@@ -1563,3 +1563,15 @@ transformation.
 Do not tune the radius, projection, alpha, correction schedule, or sampler from
 this result. Keep the hybrid experiment-only, make no production node or
 architecture change, and do not proceed to another method automatically.
+
+## 2026-09-15 — Reject the fixed internal FBSDiff-like transfer
+
+Classify Phase 4 as **FBSDIFF-LIKE FEATURE TRANSFER FALSIFIED**. The paper's FBS
+target is the sampler latent, not an internal denoiser feature. The one justified
+Klein extrapolation at spatial `post_input/pre_double_block_0` fails the
+portrait identity gate and underperforms FSS structure preservation on all
+three cases despite nontrivial appearance changes.
+
+Do not tune layer, band, threshold, calibration duration, or reference
+conditioning. Do not reinterpret this as falsifying published latent/DDIM
+FBSDiff, and do not create a node or modify Blueprint production architecture.
