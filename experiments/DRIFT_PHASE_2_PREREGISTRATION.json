@@ -1,0 +1,34 @@
+{
+  "registered_before_phase_2_outputs": true,
+  "date": "2026-09-15",
+  "question": "Can a fixed training-free ILVR-like coarse-state replacement restrain stock Klein geometry drift without merely tracing the source?",
+  "paper_rule": "x_next = phi(y_next) + proposal - phi(proposal)",
+  "klein_interpretation": "After each accepted nonterminal Euler interval, construct y_next = sigma_next * gaussian + (1 - sigma_next) * source_latent using the unchanged Gaussian endpoint and native CONST convention, then replace the proposal's fixed low-pass component. The corrected same-sigma state is used by the next model evaluation.",
+  "fixed_runtime": {
+    "model": "Flux2-Klein-4B-w4a8.safetensors",
+    "text_encoder": "qwen_3_4b_fp4_flux2.safetensors",
+    "vae": "flux2-vae.safetensors",
+    "resolution_wh": [512, 512],
+    "sampler": "Euler",
+    "cfg": 1.0,
+    "full_schedule_steps": 8,
+    "start_index": 2,
+    "seed_for_every_case": 2026091401,
+    "arms": ["A_GAUSSIAN", "B_FSS_R02", "C_ILVR_N04_A1"],
+    "ilvr_downsample_factor_latent": 4,
+    "ilvr_blend_alpha": 1.0,
+    "ilvr_downsample": "torch area interpolation to H/4,W/4",
+    "ilvr_upsample": "torch nearest interpolation (blockwise projection, so phi(phi(x)) = phi(x))",
+    "terminal_sigma_zero_correction": false
+  },
+  "cases_source": "experiments/DRIFT_PHASE_1B_PREREGISTRATION.json",
+  "included_cases": ["portrait_bronze", "astronaut_steampunk", "bridge_crystal_night"],
+  "decisive_case": "portrait_bronze",
+  "strength_policy": "Run only the registered full coarse-replacement arm. Add no stronger arm unless these results cannot distinguish restraint from overconstraint.",
+  "diagnostics": {
+    "trajectory": ["source-relative coarse latent RMS", "Fourier phase deviation", "gradient difference", "state and denoised RMS from Gaussian control", "correction RMS", "correction RMS divided by proposal RMS", "correction energy divided by proposal energy", "pre/post low-pass mismatch", "fraction of low-pass mismatch removed"],
+    "final": ["decoded source-relative coarse RGB RMS", "symmetric Canny edge Chamfer", "edge F1 within 2 px", "appearance RGB RMS"],
+    "portrait_visual": "Manual side-by-side identity and geometry judgment; no identity model or face landmarks."
+  },
+  "acceptance": "The portrait is decisive. Promising requires materially better portrait geometry than Gaussian, meaningful requested appearance change, and correction telemetry consistent with coarse restraint rather than large repeated state replacement. Cross-case consistency strengthens but cannot override portrait failure."
+}

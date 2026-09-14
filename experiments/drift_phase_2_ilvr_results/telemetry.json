@@ -1,0 +1,4692 @@
+{
+  "phase": 2,
+  "verdict": "ILVR-STYLE CORRECTION PARTIAL",
+  "preregistration": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\DRIFT_PHASE_2_PREREGISTRATION.json",
+  "configuration": {
+    "model": "Flux2-Klein-4B-w4a8.safetensors",
+    "text_encoder": "qwen_3_4b_fp4_flux2.safetensors",
+    "vae": "flux2-vae.safetensors",
+    "resolution_wh": [
+      512,
+      512
+    ],
+    "sampler": "Euler",
+    "cfg": 1.0,
+    "full_schedule_steps": 8,
+    "start_index": 2,
+    "seed_for_every_case": 2026091401,
+    "arms": [
+      "A_GAUSSIAN",
+      "B_FSS_R02",
+      "C_ILVR_N04_A1"
+    ],
+    "ilvr_downsample_factor_latent": 4,
+    "ilvr_blend_alpha": 1.0,
+    "ilvr_downsample": "torch area interpolation to H/4,W/4",
+    "ilvr_upsample": "torch nearest interpolation (blockwise projection, so phi(phi(x)) = phi(x))",
+    "terminal_sigma_zero_correction": false,
+    "sigmas": [
+      0.9569222331047058,
+      0.9250433444976807,
+      0.881017804145813,
+      0.816270112991333,
+      0.7116665244102478,
+      0.5140447616577148,
+      0.0
+    ]
+  },
+  "formulation": {
+    "paper": "x_next = phi(y_next) + proposal - phi(proposal)",
+    "implemented": "accepted = proposal + alpha * (phi(source_at_sigma_next) - phi(proposal)); only when sigma_next > 0",
+    "source_trajectory": "Native CONST noise_scaling at sigma_next using the same ordinary Gaussian endpoint and clean encoded source.",
+    "model_forward_modified": false
+  },
+  "cases": {
+    "portrait_bronze": {
+      "role": "human portrait with facial geometry",
+      "prompt": "The same woman with the same facial identity, expression, head pose, hairstyle silhouette, and portrait framing, transformed into a highly detailed aged bronze statue with oxidized turquoise patina, dramatic museum spot lighting, dark gallery atmosphere",
+      "source": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_SOURCE.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "ede4942ae72a99289682ce944f6169718dde9f06ce10ca513da4d57e5277888a"
+      },
+      "source_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.914510190486908,
+        "mean": 0.01239057444036007,
+        "variance": 0.8361753225326538,
+        "min": -5.75,
+        "max": 5.6875,
+        "finite": true
+      },
+      "preflight": {
+        "status": "PASS",
+        "factor": 4,
+        "latent_shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "coarse_shape": [
+          8,
+          8
+        ],
+        "coarse_spatial_dof_fraction": 0.0625,
+        "projection_idempotence_rms_error": 7.190001038992477e-09,
+        "projection_linearity_rms_error": 4.513016804708059e-08,
+        "full_replacement_coarse_rms_error": 4.267145214953416e-08
+      },
+      "fss_construction": {
+        "cutoff_radius_latent_frequency_pixels": 2.0,
+        "transition_bandwidth": 2.0,
+        "mask_mean": 0.06758638471364975,
+        "imaginary_residual_rms": 8.549302776827972e-08,
+        "gaussian": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995350241661072,
+          "mean": -0.002284085378050804,
+          "variance": 0.9990650415420532,
+          "min": -4.358521461486816,
+          "max": 4.527612686157227,
+          "finite": true
+        },
+        "structured": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995349645614624,
+          "mean": -0.005393872037529945,
+          "variance": 0.9990410208702087,
+          "min": -4.647385597229004,
+          "max": 4.942253589630127,
+          "finite": true
+        },
+        "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+        "structured_to_gaussian_variance_ratio": 0.9999759793281555,
+        "fourier_magnitude_max_abs_error": 2.288818359375e-05,
+        "fourier_magnitude_relative_rms_error": 1.3272971616938285e-07,
+        "phase_rms_to_source": 1.759036898612976,
+        "phase_rms_to_gaussian": 0.456953227519989
+      },
+      "arms": {
+        "A_GAUSSIAN": {
+          "wall_seconds": 10.280089300009422,
+          "noise_hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0372638702392578,
+            "mean": -0.0482674166560173,
+            "variance": 1.0735865831375122,
+            "min": -5.087103366851807,
+            "max": 5.13558292388916,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.2468363046646118,
+            "source_fourier_phase_rms_radians": 1.7589654922485352,
+            "source_coarse_4x_rms": 0.6339521408081055,
+            "source_gradient_difference_rms": 1.4355260851438987
+          },
+          "final_latent_rms_from_control": 0.0,
+          "correction_summary": {
+            "intervals_applied": 0,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.0,
+            "max_correction_to_proposal_rms_ratio": 0.0,
+            "mean_correction_to_proposal_energy_ratio": 0.0,
+            "mean_coarse_mismatch_removed_fraction": 0.0
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9573605060577393,
+                "mean": -0.0016519336495548487,
+                "variance": 0.9165365695953369,
+                "min": -4.206776142120361,
+                "max": 4.317092418670654,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8657096028327942,
+                "mean": -0.04712170362472534,
+                "variance": 0.7472326755523682,
+                "min": -4.757298946380615,
+                "max": 4.655348777770996,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2952218055725098,
+                "source_fourier_phase_rms_radians": 1.783599853515625,
+                "source_coarse_4x_rms": 0.5913241505622864,
+                "source_gradient_difference_rms": 1.6235265049335352
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1631736755371094,
+                "source_fourier_phase_rms_radians": 1.7711572647094727,
+                "source_coarse_4x_rms": 0.697269082069397,
+                "source_gradient_difference_rms": 1.1997128438461149
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9360939264297485,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9360939264297485,
+                "mean": -0.0031667128205299377,
+                "variance": 0.876261830329895,
+                "min": -4.098188877105713,
+                "max": 4.1995391845703125,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8950030207633972,
+                "mean": -0.0545758381485939,
+                "variance": 0.7980518341064453,
+                "min": -4.203394412994385,
+                "max": 4.724650859832764,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2775304317474365,
+                "source_fourier_phase_rms_radians": 1.782395839691162,
+                "source_coarse_4x_rms": 0.5856756567955017,
+                "source_gradient_difference_rms": 1.5978768442574038
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.163492202758789,
+                "source_fourier_phase_rms_radians": 1.7652099132537842,
+                "source_coarse_4x_rms": 0.6717401742935181,
+                "source_gradient_difference_rms": 1.236412409115996
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9078993201255798,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9078993201255798,
+                "mean": -0.005613424349576235,
+                "variance": 0.8242497444152832,
+                "min": -3.938596248626709,
+                "max": 4.12787389755249,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9220899343490601,
+                "mean": -0.059852130711078644,
+                "variance": 0.8466676473617554,
+                "min": -4.388853549957275,
+                "max": 4.8903279304504395,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2531663179397583,
+                "source_fourier_phase_rms_radians": 1.7805451154708862,
+                "source_coarse_4x_rms": 0.5773202180862427,
+                "source_gradient_difference_rms": 1.5628427074292532
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.171887755393982,
+                "source_fourier_phase_rms_radians": 1.7673563957214355,
+                "source_coarse_4x_rms": 0.6571820974349976,
+                "source_gradient_difference_rms": 1.2671449431473074
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.8712363839149475,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8712363839149475,
+                "mean": -0.009599531069397926,
+                "variance": 0.7589606642723083,
+                "min": -3.699307918548584,
+                "max": 4.105869770050049,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.94817715883255,
+                "mean": -0.060460012406110764,
+                "variance": 0.8953844904899597,
+                "min": -4.618429660797119,
+                "max": 4.386913299560547,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2201652526855469,
+                "source_fourier_phase_rms_radians": 1.7777434587478638,
+                "source_coarse_4x_rms": 0.5658758282661438,
+                "source_gradient_difference_rms": 1.5149864184281465
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1815956830978394,
+                "source_fourier_phase_rms_radians": 1.7595456838607788,
+                "source_coarse_4x_rms": 0.6453933119773865,
+                "source_gradient_difference_rms": 1.2973297106263892
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.8258176445960999,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8258176445960999,
+                "mean": -0.016117213293910027,
+                "variance": 0.6817148923873901,
+                "min": -3.4328956604003906,
+                "max": 4.092283725738525,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9833326935768127,
+                "mean": -0.05813464894890785,
+                "variance": 0.9635635018348694,
+                "min": -4.966198921203613,
+                "max": 4.926752090454102,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.175548791885376,
+                "source_fourier_phase_rms_radians": 1.773061990737915,
+                "source_coarse_4x_rms": 0.5515076518058777,
+                "source_gradient_difference_rms": 1.4474415604955784
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.2046294212341309,
+                "source_fourier_phase_rms_radians": 1.7576079368591309,
+                "source_coarse_4x_rms": 0.6385835409164429,
+                "source_gradient_difference_rms": 1.3483894164928794
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.7978374361991882,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.7978374361991882,
+                "mean": -0.027784978970885277,
+                "variance": 0.6357725262641907,
+                "min": -3.3371894359588623,
+                "max": 4.112161636352539,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0372638702392578,
+                "mean": -0.048267412930727005,
+                "variance": 1.0735865831375122,
+                "min": -5.087103366851807,
+                "max": 5.13558292388916,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1298553943634033,
+                "source_fourier_phase_rms_radians": 1.7660905122756958,
+                "source_coarse_4x_rms": 0.5435382723808289,
+                "source_gradient_difference_rms": 1.3641736816869747
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.2468363046646118,
+                "source_fourier_phase_rms_radians": 1.7589653730392456,
+                "source_coarse_4x_rms": 0.6339521408081055,
+                "source_gradient_difference_rms": 1.4355260851438987
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 1.0372638702392578,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_A_GAUSSIAN.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "56a75aabb5752e6f5eac3e94a603263cf1e2bbdf61bd10bd9aa64a2adece7ed3"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.5589472651481628,
+            "appearance_rgb_histogram_js": 0.4467408233167734,
+            "source_relative_coarse_rgb_rms": 0.5550442337989807,
+            "symmetric_canny_edge_chamfer_pixels": 7.0431148409843445,
+            "edge_overlap_f1_within_2px": 0.5998373833632038,
+            "source_edge_pixels": 9925,
+            "output_edge_pixels": 20654
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_A_GAUSSIAN_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "de4297f0d998326ed8d7d8bd70b4b0345213d2826e5749dbaae215d0bba780b5"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_A_GAUSSIAN_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "b43e00d14bc7d7b6aa9f70eb9da3cea0b33d71428b1d4a4d62b836e69562e076"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_A_GAUSSIAN_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "56a75aabb5752e6f5eac3e94a603263cf1e2bbdf61bd10bd9aa64a2adece7ed3"
+            }
+          }
+        },
+        "B_FSS_R02": {
+          "wall_seconds": 1.5832824000390247,
+          "noise_hash": "b703fd27e1f778f1ebd70f23d74be41897320c8537443a2495f76ae60240b805",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0888161659240723,
+            "mean": -0.013940508477389812,
+            "variance": 1.1853262186050415,
+            "min": -5.993444919586182,
+            "max": 6.121883392333984,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.010133147239685,
+            "source_fourier_phase_rms_radians": 1.6415929794311523,
+            "source_coarse_4x_rms": 0.40727734565734863,
+            "source_gradient_difference_rms": 1.2626527708264814
+          },
+          "final_latent_rms_from_control": 1.1593717336654663,
+          "correction_summary": {
+            "intervals_applied": 0,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.0,
+            "max_correction_to_proposal_rms_ratio": 0.0,
+            "mean_correction_to_proposal_energy_ratio": 0.0,
+            "mean_coarse_mismatch_removed_fraction": 0.0
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9611886143684387,
+                "mean": -0.004627758637070656,
+                "variance": 0.9238622188568115,
+                "min": -4.457198619842529,
+                "max": 4.831662178039551,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8951134085655212,
+                "mean": -0.029781002551317215,
+                "variance": 0.8003411293029785,
+                "min": -5.604344367980957,
+                "max": 5.478834629058838,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2306301593780518,
+                "source_fourier_phase_rms_radians": 1.7318806648254395,
+                "source_coarse_4x_rms": 0.48000794649124146,
+                "source_gradient_difference_rms": 1.6169004407598424
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.9201998710632324,
+                "source_fourier_phase_rms_radians": 1.661142110824585,
+                "source_coarse_4x_rms": 0.41500940918922424,
+                "source_gradient_difference_rms": 1.1132863409479028
+              },
+              "state_rms_difference_from_control": 0.3563711941242218,
+              "denoised_rms_difference_from_control": 0.970336377620697,
+              "accepted_interval": {
+                "proposal_rms": 0.9408100843429565,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9408100843429565,
+                "mean": -0.005465712398290634,
+                "variance": 0.8850938677787781,
+                "min": -4.31473970413208,
+                "max": 4.800405979156494,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.944802463054657,
+                "mean": -0.023559801280498505,
+                "variance": 0.8920966386795044,
+                "min": -5.055099964141846,
+                "max": 5.970263957977295,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.207283616065979,
+                "source_fourier_phase_rms_radians": 1.7293479442596436,
+                "source_coarse_4x_rms": 0.4676915109157562,
+                "source_gradient_difference_rms": 1.5877118211403336
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.9159039855003357,
+                "source_fourier_phase_rms_radians": 1.6455663442611694,
+                "source_coarse_4x_rms": 0.39286768436431885,
+                "source_gradient_difference_rms": 1.1219776092935065
+              },
+              "state_rms_difference_from_control": 0.35537606477737427,
+              "denoised_rms_difference_from_control": 1.0467257499694824,
+              "accepted_interval": {
+                "proposal_rms": 0.9139562249183655,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9139562249183655,
+                "mean": -0.006326864007860422,
+                "variance": 0.8352759480476379,
+                "min": -4.115249156951904,
+                "max": 4.721985340118408,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9853699207305908,
+                "mean": -0.024338942021131516,
+                "variance": 0.9703615307807922,
+                "min": -5.043680667877197,
+                "max": 6.520900249481201,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.173850178718567,
+                "source_fourier_phase_rms_radians": 1.7249188423156738,
+                "source_coarse_4x_rms": 0.44920849800109863,
+                "source_gradient_difference_rms": 1.546640627876345
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.9357267618179321,
+                "source_fourier_phase_rms_radians": 1.64657461643219,
+                "source_coarse_4x_rms": 0.39374691247940063,
+                "source_gradient_difference_rms": 1.1508491392123976
+              },
+              "state_rms_difference_from_control": 0.35956165194511414,
+              "denoised_rms_difference_from_control": 1.0817275047302246,
+              "accepted_interval": {
+                "proposal_rms": 0.8791830539703369,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8791830539703369,
+                "mean": -0.007650604471564293,
+                "variance": 0.7729043960571289,
+                "min": -3.8528552055358887,
+                "max": 4.613229274749756,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0191385746002197,
+                "mean": -0.023213163018226624,
+                "variance": 1.0381046533584595,
+                "min": -5.453465938568115,
+                "max": 6.087256908416748,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1263591051101685,
+                "source_fourier_phase_rms_radians": 1.7182663679122925,
+                "source_coarse_4x_rms": 0.42236563563346863,
+                "source_gradient_difference_rms": 1.4883960372081322
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.9566407203674316,
+                "source_fourier_phase_rms_radians": 1.6405879259109497,
+                "source_coarse_4x_rms": 0.3979462683200836,
+                "source_gradient_difference_rms": 1.1795612095327082
+              },
+              "state_rms_difference_from_control": 0.37728390097618103,
+              "denoised_rms_difference_from_control": 1.1117299795150757,
+              "accepted_interval": {
+                "proposal_rms": 0.8370829224586487,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8370829224586487,
+                "mean": -0.009644920937716961,
+                "variance": 0.700614869594574,
+                "min": -3.547654628753662,
+                "max": 4.46286153793335,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.053171992301941,
+                "mean": -0.01989876851439476,
+                "variance": 1.1087751388549805,
+                "min": -5.575783729553223,
+                "max": 5.864861011505127,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.056920051574707,
+                "source_fourier_phase_rms_radians": 1.7055079936981201,
+                "source_coarse_4x_rms": 0.3828675448894501,
+                "source_gradient_difference_rms": 1.4019949610769837
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.981463611125946,
+                "source_fourier_phase_rms_radians": 1.6393871307373047,
+                "source_coarse_4x_rms": 0.40197092294692993,
+                "source_gradient_difference_rms": 1.2182834323659895
+              },
+              "state_rms_difference_from_control": 0.431868314743042,
+              "denoised_rms_difference_from_control": 1.1376736164093018,
+              "accepted_interval": {
+                "proposal_rms": 0.8161757588386536,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8161757588386536,
+                "mean": -0.012492300942540169,
+                "variance": 0.6659867763519287,
+                "min": -3.7230207920074463,
+                "max": 4.2235541343688965,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0888161659240723,
+                "mean": -0.013940506614744663,
+                "variance": 1.1853262186050415,
+                "min": -5.993444919586182,
+                "max": 6.121883392333984,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 0.9624854326248169,
+                "source_fourier_phase_rms_radians": 1.6806718111038208,
+                "source_coarse_4x_rms": 0.33090221881866455,
+                "source_gradient_difference_rms": 1.2779206130500793
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.010133147239685,
+                "source_fourier_phase_rms_radians": 1.6415928602218628,
+                "source_coarse_4x_rms": 0.407277375459671,
+                "source_gradient_difference_rms": 1.262652830933967
+              },
+              "state_rms_difference_from_control": 0.5948091149330139,
+              "denoised_rms_difference_from_control": 1.1593717336654663,
+              "accepted_interval": {
+                "proposal_rms": 1.0888161659240723,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_B_FSS_R02.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "6ce0e391f9abb1f28ee4fa1dfab28c2e415531a5b7704ea4e95a184334639855"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.19268713891506195,
+            "appearance_rgb_histogram_js": 0.18942076579119527,
+            "source_relative_coarse_rgb_rms": 0.18323031067848206,
+            "symmetric_canny_edge_chamfer_pixels": 6.350232422351837,
+            "edge_overlap_f1_within_2px": 0.7598296743119255,
+            "source_edge_pixels": 9925,
+            "output_edge_pixels": 12420
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_B_FSS_R02_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "d995270ca0af03d0b7134dbc4f5ff6d50ea73aa550dce745cd7c805c5fdaa9ae"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_B_FSS_R02_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "fac402d1bfd56ba3f4360c587d5f5953151d99b865b92f2226c7011120e396dd"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_B_FSS_R02_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "6ce0e391f9abb1f28ee4fa1dfab28c2e415531a5b7704ea4e95a184334639855"
+            }
+          }
+        },
+        "C_ILVR_N04_A1": {
+          "wall_seconds": 1.6231949999928474,
+          "noise_hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 0.9938679933547974,
+            "mean": 0.018256081268191338,
+            "variance": 0.9874402284622192,
+            "min": -4.964086532592773,
+            "max": 6.172991752624512,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.0471068620681763,
+            "source_fourier_phase_rms_radians": 1.696217656135559,
+            "source_coarse_4x_rms": 0.2192070335149765,
+            "source_gradient_difference_rms": 1.3889831429830428
+          },
+          "final_latent_rms_from_control": 0.9036720395088196,
+          "correction_summary": {
+            "intervals_applied": 5,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.051207925766751795,
+            "max_correction_to_proposal_rms_ratio": 0.10949809704804381,
+            "mean_correction_to_proposal_energy_ratio": 0.003608318061577696,
+            "mean_coarse_mismatch_removed_fraction": 0.9999992019903201
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9573605060577393,
+                "mean": -0.0016519336495548487,
+                "variance": 0.9165365695953369,
+                "min": -4.206776142120361,
+                "max": 4.317092418670654,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8657096028327942,
+                "mean": -0.04712170362472534,
+                "variance": 0.7472326755523682,
+                "min": -4.757298946380615,
+                "max": 4.655348777770996,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2952218055725098,
+                "source_fourier_phase_rms_radians": 1.783599853515625,
+                "source_coarse_4x_rms": 0.5913241505622864,
+                "source_gradient_difference_rms": 1.6235265049335352
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1631736755371094,
+                "source_fourier_phase_rms_radians": 1.7711572647094727,
+                "source_coarse_4x_rms": 0.697269082069397,
+                "source_gradient_difference_rms": 1.1997128438461149
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9360939264297485,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.023228809237480164,
+                "correction_to_proposal_rms_ratio": 0.0248146137707298,
+                "correction_to_proposal_energy_ratio": 0.0006157650565904929,
+                "coarse_mismatch_removed_fraction": 0.9999988333859404,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.9272763133049011,
+                  "mean": -0.0011841222876682878,
+                  "variance": 0.8598400950431824,
+                  "min": -4.094480514526367,
+                  "max": 4.1613006591796875,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.023228809237480164,
+                "post_correction_coarse_mismatch_rms": 2.7099055444068654e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.023228809237480164,
+                  "mean": 0.001982591114938259,
+                  "variance": 0.0005356469191610813,
+                  "min": -0.10385796427726746,
+                  "max": 0.07940737903118134,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9355786442756653,
+                "mean": -0.0011841208906844258,
+                "variance": 0.8753060698509216,
+                "min": -4.115594863891602,
+                "max": 4.185683727264404,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8669103384017944,
+                "mean": -0.05293426290154457,
+                "variance": 0.7487316131591797,
+                "min": -5.033919811248779,
+                "max": 4.831371307373047,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2711502313613892,
+                "source_fourier_phase_rms_radians": 1.7797435522079468,
+                "source_coarse_4x_rms": 0.5716248154640198,
+                "source_gradient_difference_rms": 1.5972136210245709
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0510441064834595,
+                "source_fourier_phase_rms_radians": 1.7365182638168335,
+                "source_coarse_4x_rms": 0.5147950053215027,
+                "source_gradient_difference_rms": 1.20450683155265
+              },
+              "state_rms_difference_from_control": 0.023228809237480164,
+              "denoised_rms_difference_from_control": 0.7200608253479004,
+              "accepted_interval": {
+                "proposal_rms": 0.9067623615264893,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.024500610306859016,
+                "correction_to_proposal_rms_ratio": 0.02701988012119676,
+                "correction_to_proposal_energy_ratio": 0.0007300739217638439,
+                "coarse_mismatch_removed_fraction": 0.9999988989689538,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.8875035047531128,
+                  "mean": -0.0005380618385970592,
+                  "variance": 0.7876622676849365,
+                  "min": -3.939396858215332,
+                  "max": 3.9994685649871826,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.024500610306859016,
+                "post_correction_coarse_mismatch_rms": 2.6975932598816144e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.024500610306859016,
+                  "mean": 0.003109001787379384,
+                  "variance": 0.0005906139849685133,
+                  "min": -0.10697229206562042,
+                  "max": 0.11725199222564697,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9060851335525513,
+                "mean": -0.0005380611401051283,
+                "variance": 0.8209900259971619,
+                "min": -3.983429431915283,
+                "max": 4.1497321128845215,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.902643620967865,
+                "mean": -0.019667625427246094,
+                "variance": 0.8143786787986755,
+                "min": -4.547560691833496,
+                "max": 4.772665977478027,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2371665239334106,
+                "source_fourier_phase_rms_radians": 1.7738701105117798,
+                "source_coarse_4x_rms": 0.5444194674491882,
+                "source_gradient_difference_rms": 1.5602392119404067
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0338373184204102,
+                "source_fourier_phase_rms_radians": 1.7256277799606323,
+                "source_coarse_4x_rms": 0.43410009145736694,
+                "source_gradient_difference_rms": 1.245424677584105
+              },
+              "state_rms_difference_from_control": 0.060568276792764664,
+              "denoised_rms_difference_from_control": 0.801381528377533,
+              "accepted_interval": {
+                "proposal_rms": 0.8660613298416138,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.031902849674224854,
+                "correction_to_proposal_rms_ratio": 0.03683670956658379,
+                "correction_to_proposal_energy_ratio": 0.0013569431716928457,
+                "coarse_mismatch_removed_fraction": 0.9999991892537333,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.8333143591880798,
+                  "mean": 0.0004120888188481331,
+                  "variance": 0.6944126486778259,
+                  "min": -3.711317539215088,
+                  "max": 3.799701452255249,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.031902849674224854,
+                "post_correction_coarse_mismatch_rms": 2.5865116271006627e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.031902849674224854,
+                  "mean": 0.002356018405407667,
+                  "variance": 0.0010122410021722317,
+                  "min": -0.14725328981876373,
+                  "max": 0.16102832555770874,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8652921915054321,
+                "mean": 0.0004120888188481331,
+                "variance": 0.7487303614616394,
+                "min": -3.7831602096557617,
+                "max": 4.1022796630859375,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9305169582366943,
+                "mean": -0.0038301125168800354,
+                "variance": 0.8658470511436462,
+                "min": -4.814708709716797,
+                "max": 4.896534442901611,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.187982439994812,
+                "source_fourier_phase_rms_radians": 1.764708161354065,
+                "source_coarse_4x_rms": 0.5044090747833252,
+                "source_gradient_difference_rms": 1.5066802526452574
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0292259454727173,
+                "source_fourier_phase_rms_radians": 1.7088477611541748,
+                "source_coarse_4x_rms": 0.3675326108932495,
+                "source_gradient_difference_rms": 1.2863699766193628
+              },
+              "state_rms_difference_from_control": 0.11974335461854935,
+              "denoised_rms_difference_from_control": 0.848652184009552,
+              "accepted_interval": {
+                "proposal_rms": 0.8138654828071594,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.047098662704229355,
+                "correction_to_proposal_rms_ratio": 0.05787032832720478,
+                "correction_to_proposal_energy_ratio": 0.0033489749006984804,
+                "coarse_mismatch_removed_fraction": 0.9999994563016629,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.759089469909668,
+                  "mean": 0.0019471114501357079,
+                  "variance": 0.5762129426002502,
+                  "min": -3.3428425788879395,
+                  "max": 3.603710889816284,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.047098662704229355,
+                "post_correction_coarse_mismatch_rms": 2.5607464593235818e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.047098662704229355,
+                  "mean": 0.00207865284755826,
+                  "variance": 0.002213963307440281,
+                  "min": -0.20864877104759216,
+                  "max": 0.25077584385871887,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8131384253501892,
+                "mean": 0.001947110053151846,
+                "variance": 0.6611903309822083,
+                "min": -3.4592039585113525,
+                "max": 4.056578159332275,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9649710059165955,
+                "mean": 0.007586207240819931,
+                "variance": 0.9311115145683289,
+                "min": -4.854877471923828,
+                "max": 6.283599853515625,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1158939599990845,
+                "source_fourier_phase_rms_radians": 1.7479900121688843,
+                "source_coarse_4x_rms": 0.4397699236869812,
+                "source_gradient_difference_rms": 1.4297030397868313
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0387343168258667,
+                "source_fourier_phase_rms_radians": 1.7020957469940186,
+                "source_coarse_4x_rms": 0.3048154413700104,
+                "source_gradient_difference_rms": 1.3381143750875804
+              },
+              "state_rms_difference_from_control": 0.22007720172405243,
+              "denoised_rms_difference_from_control": 0.8862767219543457,
+              "accepted_interval": {
+                "proposal_rms": 0.7730162739753723,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.08464381098747253,
+                "correction_to_proposal_rms_ratio": 0.10949809704804381,
+                "correction_to_proposal_energy_ratio": 0.01198983325714282,
+                "coarse_mismatch_removed_fraction": 0.9999996320413101,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.6799533367156982,
+                  "mean": 0.00484714237973094,
+                  "variance": 0.4623130261898041,
+                  "min": -2.985935926437378,
+                  "max": 3.262511730194092,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.08464381098747253,
+                "post_correction_coarse_mismatch_rms": 3.114542579396584e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.08464381098747253,
+                  "mean": 0.0013341185403987765,
+                  "variance": 0.007162793539464474,
+                  "min": -0.3276612162590027,
+                  "max": 0.42854830622673035,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.7733606696128845,
+                "mean": 0.004847143776714802,
+                "variance": 0.5980632901191711,
+                "min": -3.4413442611694336,
+                "max": 4.106941223144531,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9938679933547974,
+                "mean": 0.01825607940554619,
+                "variance": 0.987440288066864,
+                "min": -4.964086532592773,
+                "max": 6.172991752624512,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.0152842998504639,
+                "source_fourier_phase_rms_radians": 1.7168251276016235,
+                "source_coarse_4x_rms": 0.31765079498291016,
+                "source_gradient_difference_rms": 1.3300663270228863
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0471068620681763,
+                "source_fourier_phase_rms_radians": 1.6962175369262695,
+                "source_coarse_4x_rms": 0.2192070335149765,
+                "source_gradient_difference_rms": 1.3889831429830428
+              },
+              "state_rms_difference_from_control": 0.4196116030216217,
+              "denoised_rms_difference_from_control": 0.9036720991134644,
+              "accepted_interval": {
+                "proposal_rms": 0.9938679933547974,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_C_ILVR_N04_A1.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "54319abfa0a617a04b1b3d58fc088fa39a114917f6f5134aeee34a94f77a595c"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.13713234663009644,
+            "appearance_rgb_histogram_js": 0.02869699174887147,
+            "source_relative_coarse_rgb_rms": 0.12368349730968475,
+            "symmetric_canny_edge_chamfer_pixels": 3.8321486711502075,
+            "edge_overlap_f1_within_2px": 0.7029532917983775,
+            "source_edge_pixels": 9925,
+            "output_edge_pixels": 14106
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_C_ILVR_N04_A1_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "de4297f0d998326ed8d7d8bd70b4b0345213d2826e5749dbaae215d0bba780b5"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_C_ILVR_N04_A1_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "ae9b5a19e9ef065dc7e16646f544f3bc4cdda80e3115b6c4086bda3ad7aced93"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_C_ILVR_N04_A1_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "54319abfa0a617a04b1b3d58fc088fa39a114917f6f5134aeee34a94f77a595c"
+            }
+          }
+        }
+      },
+      "comparison": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_COMPARISON.png",
+        "dimensions_wh": [
+          2048,
+          540
+        ],
+        "sha256_rgb": "851f2e546585a92dc714e497dfa7fe63892f290a790dec6119a435c9679aa83e"
+      }
+    },
+    "astronaut_steampunk": {
+      "role": "full-body articulated person",
+      "prompt": "The same full-body astronaut in exactly the same stance and proportions, transformed into an ornate steampunk brass exploration suit with copper pipes and weathered metal, standing in a bioluminescent alien jungle at night, cinematic lighting",
+      "source": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_SOURCE.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "c875bd28de872c9e2270b84b34b4382a98d5ccd0e33d8e93111b26030c27e55b"
+      },
+      "source_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9739304780960083,
+        "mean": 0.06700465083122253,
+        "variance": 0.9440509676933289,
+        "min": -4.53125,
+        "max": 4.65625,
+        "finite": true
+      },
+      "preflight": {
+        "status": "PASS",
+        "factor": 4,
+        "latent_shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "coarse_shape": [
+          8,
+          8
+        ],
+        "coarse_spatial_dof_fraction": 0.0625,
+        "projection_idempotence_rms_error": 9.818995394539343e-09,
+        "projection_linearity_rms_error": 4.441375267560943e-08,
+        "full_replacement_coarse_rms_error": 4.070811243650496e-08
+      },
+      "fss_construction": {
+        "cutoff_radius_latent_frequency_pixels": 2.0,
+        "transition_bandwidth": 2.0,
+        "mask_mean": 0.06758638471364975,
+        "imaginary_residual_rms": 8.58090629662911e-08,
+        "gaussian": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995350241661072,
+          "mean": -0.002284085378050804,
+          "variance": 0.9990650415420532,
+          "min": -4.358521461486816,
+          "max": 4.527612686157227,
+          "finite": true
+        },
+        "structured": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995349645614624,
+          "mean": 0.00666980491951108,
+          "variance": 0.9990256428718567,
+          "min": -4.852495193481445,
+          "max": 4.363297462463379,
+          "finite": true
+        },
+        "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+        "structured_to_gaussian_variance_ratio": 0.9999605417251587,
+        "fourier_magnitude_max_abs_error": 2.288818359375e-05,
+        "fourier_magnitude_relative_rms_error": 1.3200738357446723e-07,
+        "phase_rms_to_source": 1.7647649049758911,
+        "phase_rms_to_gaussian": 0.4519347846508026
+      },
+      "arms": {
+        "A_GAUSSIAN": {
+          "wall_seconds": 1.5989317999919876,
+          "noise_hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0695850849151611,
+            "mean": 0.008602350950241089,
+            "variance": 1.143938422203064,
+            "min": -5.880687236785889,
+            "max": 5.370325088500977,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.3237806558609009,
+            "source_fourier_phase_rms_radians": 1.7191680669784546,
+            "source_coarse_4x_rms": 0.6596083045005798,
+            "source_gradient_difference_rms": 1.58283334853758
+          },
+          "final_latent_rms_from_control": 0.0,
+          "correction_summary": {
+            "intervals_applied": 0,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.0,
+            "max_correction_to_proposal_rms_ratio": 0.0,
+            "mean_correction_to_proposal_energy_ratio": 0.0,
+            "mean_coarse_mismatch_removed_fraction": 0.0
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9574365615844727,
+                "mean": 0.0007007184904068708,
+                "variance": 0.9166842699050903,
+                "min": -4.155873775482178,
+                "max": 4.32037353515625,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9355016350746155,
+                "mean": 0.01935281604528427,
+                "variance": 0.8747888207435608,
+                "min": -5.476108074188232,
+                "max": 5.800074577331543,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.3348197937011719,
+                "source_fourier_phase_rms_radians": 1.7855507135391235,
+                "source_coarse_4x_rms": 0.5534366369247437,
+                "source_gradient_difference_rms": 1.7184148571566689
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.2565377950668335,
+                "source_fourier_phase_rms_radians": 1.7228283882141113,
+                "source_coarse_4x_rms": 0.7236526012420654,
+                "source_gradient_difference_rms": 1.3952881564244561
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9370055198669434,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9370055198669434,
+                "mean": 0.0013220940018072724,
+                "variance": 0.8779776692390442,
+                "min": -4.022380828857422,
+                "max": 4.204314231872559,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9513372182846069,
+                "mean": 0.006765524856746197,
+                "variance": 0.9049967527389526,
+                "min": -5.113117218017578,
+                "max": 4.70158576965332,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.3182048797607422,
+                "source_fourier_phase_rms_radians": 1.7826530933380127,
+                "source_coarse_4x_rms": 0.5503751635551453,
+                "source_gradient_difference_rms": 1.6941726212001051
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.2497235536575317,
+                "source_fourier_phase_rms_radians": 1.7142375707626343,
+                "source_coarse_4x_rms": 0.6877868175506592,
+                "source_gradient_difference_rms": 1.4204958338018678
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9093644022941589,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9093644022941589,
+                "mean": 0.0015811630291864276,
+                "variance": 0.8269410133361816,
+                "min": -3.8775882720947266,
+                "max": 4.069214820861816,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9766542911529541,
+                "mean": -0.0014214059337973595,
+                "variance": 0.9538515210151672,
+                "min": -5.755945205688477,
+                "max": 4.969886779785156,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2949789762496948,
+                "source_fourier_phase_rms_radians": 1.7776694297790527,
+                "source_coarse_4x_rms": 0.5459713339805603,
+                "source_gradient_difference_rms": 1.6602291342922753
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.2646127939224243,
+                "source_fourier_phase_rms_radians": 1.716508388519287,
+                "source_coarse_4x_rms": 0.6779348850250244,
+                "source_gradient_difference_rms": 1.4563817243163903
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.8725232481956482,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8725232481956482,
+                "mean": 0.0013604981359094381,
+                "variance": 0.761294960975647,
+                "min": -3.7015554904937744,
+                "max": 3.89925217628479,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.006690263748169,
+                "mean": 0.0014990209601819515,
+                "variance": 1.013422966003418,
+                "min": -5.400055408477783,
+                "max": 5.097429275512695,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2634416818618774,
+                "source_fourier_phase_rms_radians": 1.7706619501113892,
+                "source_coarse_4x_rms": 0.5410361289978027,
+                "source_gradient_difference_rms": 1.6128116616114552
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.2811003923416138,
+                "source_fourier_phase_rms_radians": 1.7196799516677856,
+                "source_coarse_4x_rms": 0.6677897572517395,
+                "source_gradient_difference_rms": 1.4948554585254146
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.8266468644142151,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8266468644142151,
+                "mean": 0.001378250541165471,
+                "variance": 0.6833431124687195,
+                "min": -3.538677215576172,
+                "max": 3.6533026695251465,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.035408854484558,
+                "mean": 0.002729471307247877,
+                "variance": 1.0720640420913696,
+                "min": -5.800367832183838,
+                "max": 5.225749969482422,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2213850021362305,
+                "source_fourier_phase_rms_radians": 1.757621169090271,
+                "source_coarse_4x_rms": 0.5369240641593933,
+                "source_gradient_difference_rms": 1.5464937806159733
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.3004508018493652,
+                "source_fourier_phase_rms_radians": 1.7173670530319214,
+                "source_coarse_4x_rms": 0.6641709804534912,
+                "source_gradient_difference_rms": 1.5354160171023044
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.8004934191703796,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8004934191703796,
+                "mean": 0.001753469929099083,
+                "variance": 0.6407867074012756,
+                "min": -3.7115962505340576,
+                "max": 3.6820101737976074,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0695852041244507,
+                "mean": 0.008602354675531387,
+                "variance": 1.143938422203064,
+                "min": -5.880687236785889,
+                "max": 5.370325088500977,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1817994117736816,
+                "source_fourier_phase_rms_radians": 1.7373172044754028,
+                "source_coarse_4x_rms": 0.5463857054710388,
+                "source_gradient_difference_rms": 1.4690860089322901
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.3237807750701904,
+                "source_fourier_phase_rms_radians": 1.7191680669784546,
+                "source_coarse_4x_rms": 0.6596082448959351,
+                "source_gradient_difference_rms": 1.5828332896061803
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 1.0695852041244507,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_A_GAUSSIAN.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "a4c61e948474ec3851a763e0cdf07680f98b125763cb8a56188ea9b9f01c3550"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.4978848695755005,
+            "appearance_rgb_histogram_js": 0.41269052071677037,
+            "source_relative_coarse_rgb_rms": 0.4881078898906708,
+            "symmetric_canny_edge_chamfer_pixels": 7.188641309738159,
+            "edge_overlap_f1_within_2px": 0.7117427680062143,
+            "source_edge_pixels": 30203,
+            "output_edge_pixels": 37709
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_A_GAUSSIAN_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "a65fb36b04429fddd0d15d8eb56c47eeca6333ba6785449e74581406da12fb11"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_A_GAUSSIAN_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "39a04b9987a140cf66d3b9e748b53ecffcda8e4dfc304ca0cd8fb3463d10a4d8"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_A_GAUSSIAN_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "a4c61e948474ec3851a763e0cdf07680f98b125763cb8a56188ea9b9f01c3550"
+            }
+          }
+        },
+        "B_FSS_R02": {
+          "wall_seconds": 1.7666528000263497,
+          "noise_hash": "ea5888fca94669342522bdcccd30578843fd268efc59869132800f475fb279fa",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.1464412212371826,
+            "mean": 0.050342459231615067,
+            "variance": 1.3117929697036743,
+            "min": -5.1206955909729,
+            "max": 5.556132793426514,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.1472243070602417,
+            "source_fourier_phase_rms_radians": 1.6335004568099976,
+            "source_coarse_4x_rms": 0.4250434935092926,
+            "source_gradient_difference_rms": 1.5107490951090163
+          },
+          "final_latent_rms_from_control": 1.1595065593719482,
+          "correction_summary": {
+            "intervals_applied": 0,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.0,
+            "max_correction_to_proposal_rms_ratio": 0.0,
+            "mean_correction_to_proposal_energy_ratio": 0.0,
+            "mean_coarse_mismatch_removed_fraction": 0.0
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9609695076942444,
+                "mean": 0.009268894791603088,
+                "variance": 0.9233765006065369,
+                "min": -4.684350967407227,
+                "max": 4.144987106323242,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9475358128547668,
+                "mean": 0.03484759107232094,
+                "variance": 0.8966097831726074,
+                "min": -5.82198429107666,
+                "max": 5.267879009246826,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2771778106689453,
+                "source_fourier_phase_rms_radians": 1.73330557346344,
+                "source_coarse_4x_rms": 0.44759681820869446,
+                "source_gradient_difference_rms": 1.7119870503848231
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.05473792552948,
+                "source_fourier_phase_rms_radians": 1.6385458707809448,
+                "source_coarse_4x_rms": 0.46435290575027466,
+                "source_gradient_difference_rms": 1.3328955014133321
+              },
+              "state_rms_difference_from_control": 0.3536740243434906,
+              "denoised_rms_difference_from_control": 0.9519169330596924,
+              "accepted_interval": {
+                "proposal_rms": 0.9431800246238708,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9431800246238708,
+                "mean": 0.010121023282408714,
+                "variance": 0.8894862532615662,
+                "min": -4.612623691558838,
+                "max": 4.1085100173950195,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.996394157409668,
+                "mean": 0.04180973023176193,
+                "variance": 0.9910533428192139,
+                "min": -5.402824401855469,
+                "max": 5.122064113616943,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2573317289352417,
+                "source_fourier_phase_rms_radians": 1.7295122146606445,
+                "source_coarse_4x_rms": 0.43854203820228577,
+                "source_gradient_difference_rms": 1.686999771850077
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0602489709854126,
+                "source_fourier_phase_rms_radians": 1.632920742034912,
+                "source_coarse_4x_rms": 0.43409737944602966,
+                "source_gradient_difference_rms": 1.3618346600100755
+              },
+              "state_rms_difference_from_control": 0.35132455825805664,
+              "denoised_rms_difference_from_control": 1.0290197134017944,
+              "accepted_interval": {
+                "proposal_rms": 0.9203259944915771,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9203259944915771,
+                "mean": 0.01162918284535408,
+                "variance": 0.8468647003173828,
+                "min": -4.516317844390869,
+                "max": 4.089334964752197,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0326217412948608,
+                "mean": 0.04131680354475975,
+                "variance": 1.0646008253097534,
+                "min": -4.8954010009765625,
+                "max": 6.140741348266602,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2294893264770508,
+                "source_fourier_phase_rms_radians": 1.723889946937561,
+                "source_coarse_4x_rms": 0.42458298802375793,
+                "source_gradient_difference_rms": 1.6527547784942551
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0754703283309937,
+                "source_fourier_phase_rms_radians": 1.6312001943588257,
+                "source_coarse_4x_rms": 0.4245648682117462,
+                "source_gradient_difference_rms": 1.3948053228535624
+              },
+              "state_rms_difference_from_control": 0.3530857264995575,
+              "denoised_rms_difference_from_control": 1.0931565761566162,
+              "accepted_interval": {
+                "proposal_rms": 0.8908603191375732,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8908603191375732,
+                "mean": 0.013810982927680016,
+                "variance": 0.7934412956237793,
+                "min": -4.351413726806641,
+                "max": 4.0501322746276855,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0659093856811523,
+                "mean": 0.04141946882009506,
+                "variance": 1.1344470977783203,
+                "min": -4.793331146240234,
+                "max": 5.592309474945068,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1899868249893188,
+                "source_fourier_phase_rms_radians": 1.71541166305542,
+                "source_coarse_4x_rms": 0.40432679653167725,
+                "source_gradient_difference_rms": 1.6043396597585429
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.088856816291809,
+                "source_fourier_phase_rms_radians": 1.629583477973938,
+                "source_coarse_4x_rms": 0.4192024767398834,
+                "source_gradient_difference_rms": 1.41953027143914
+              },
+              "state_rms_difference_from_control": 0.36749759316444397,
+              "denoised_rms_difference_from_control": 1.1374425888061523,
+              "accepted_interval": {
+                "proposal_rms": 0.8575677275657654,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8575677275657654,
+                "mean": 0.017348963767290115,
+                "variance": 0.7351213693618774,
+                "min": -4.125862121582031,
+                "max": 3.9949703216552734,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.1017003059387207,
+                "mean": 0.043816402554512024,
+                "variance": 1.2118234634399414,
+                "min": -4.959427833557129,
+                "max": 5.355334281921387,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1333274841308594,
+                "source_fourier_phase_rms_radians": 1.699536919593811,
+                "source_coarse_4x_rms": 0.37439483404159546,
+                "source_gradient_difference_rms": 1.5349622651112473
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1119543313980103,
+                "source_fourier_phase_rms_radians": 1.6291733980178833,
+                "source_coarse_4x_rms": 0.4213024377822876,
+                "source_gradient_difference_rms": 1.4556027494625516
+              },
+              "state_rms_difference_from_control": 0.42000213265419006,
+              "denoised_rms_difference_from_control": 1.1620604991912842,
+              "accepted_interval": {
+                "proposal_rms": 0.85307776927948,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.85307776927948,
+                "mean": 0.024698670953512192,
+                "variance": 0.727131724357605,
+                "min": -3.90592098236084,
+                "max": 4.066378593444824,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.1464412212371826,
+                "mean": 0.050342462956905365,
+                "variance": 1.3117930889129639,
+                "min": -5.1206955909729,
+                "max": 5.556132793426514,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.063296914100647,
+                "source_fourier_phase_rms_radians": 1.6706875562667847,
+                "source_coarse_4x_rms": 0.3391757905483246,
+                "source_gradient_difference_rms": 1.4465180115017129
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1472243070602417,
+                "source_fourier_phase_rms_radians": 1.633500337600708,
+                "source_coarse_4x_rms": 0.4250434935092926,
+                "source_gradient_difference_rms": 1.5107490368190668
+              },
+              "state_rms_difference_from_control": 0.5876936912536621,
+              "denoised_rms_difference_from_control": 1.1595065593719482,
+              "accepted_interval": {
+                "proposal_rms": 1.1464412212371826,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_B_FSS_R02.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "2f1bb514d5cd565dbdac8ff4fab64399cc518e37006f44ae7bd03af53d367832"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.28959816694259644,
+            "appearance_rgb_histogram_js": 0.20108872412687337,
+            "source_relative_coarse_rgb_rms": 0.27305200695991516,
+            "symmetric_canny_edge_chamfer_pixels": 4.013470768928528,
+            "edge_overlap_f1_within_2px": 0.8025746217426859,
+            "source_edge_pixels": 30203,
+            "output_edge_pixels": 40148
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_B_FSS_R02_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "bb6cb82a149d284d2dc72d537ab5ec9fc764c9ad03f0099260eb6ac58a7977e7"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_B_FSS_R02_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "0c4a3ae79be2ef2c1db9f46e987eacfe3685b227bec26ce91948fffa14f091e7"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_B_FSS_R02_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "2f1bb514d5cd565dbdac8ff4fab64399cc518e37006f44ae7bd03af53d367832"
+            }
+          }
+        },
+        "C_ILVR_N04_A1": {
+          "wall_seconds": 1.6051762000424787,
+          "noise_hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0684109926223755,
+            "mean": 0.06234792247414589,
+            "variance": 1.1376149654388428,
+            "min": -5.417962074279785,
+            "max": 5.22099494934082,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.1597485542297363,
+            "source_fourier_phase_rms_radians": 1.6665126085281372,
+            "source_coarse_4x_rms": 0.21795910596847534,
+            "source_gradient_difference_rms": 1.5888426789804846
+          },
+          "final_latent_rms_from_control": 0.9220725297927856,
+          "correction_summary": {
+            "intervals_applied": 5,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.0518832322789337,
+            "max_correction_to_proposal_rms_ratio": 0.10450104025447952,
+            "mean_correction_to_proposal_energy_ratio": 0.0035043413988951346,
+            "mean_coarse_mismatch_removed_fraction": 0.9999992694799538
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9574365615844727,
+                "mean": 0.0007007184904068708,
+                "variance": 0.9166842699050903,
+                "min": -4.155873775482178,
+                "max": 4.32037353515625,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9355016350746155,
+                "mean": 0.01935281604528427,
+                "variance": 0.8747888207435608,
+                "min": -5.476108074188232,
+                "max": 5.800074577331543,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.3348197937011719,
+                "source_fourier_phase_rms_radians": 1.7855507135391235,
+                "source_coarse_4x_rms": 0.5534366369247437,
+                "source_gradient_difference_rms": 1.7184148571566689
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.2565377950668335,
+                "source_fourier_phase_rms_radians": 1.7228283882141113,
+                "source_coarse_4x_rms": 0.7236526012420654,
+                "source_gradient_difference_rms": 1.3952881564244561
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9370055198669434,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.02410774864256382,
+                "correction_to_proposal_rms_ratio": 0.02572850226750763,
+                "correction_to_proposal_energy_ratio": 0.0006619558289291453,
+                "coarse_mismatch_removed_fraction": 0.9999988777893081,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.9275594353675842,
+                  "mean": 0.0029095651116222143,
+                  "variance": 0.8603580594062805,
+                  "min": -4.005908489227295,
+                  "max": 4.167010307312012,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.02410774864256382,
+                "post_correction_coarse_mismatch_rms": 2.7053973283841515e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.02410774864256382,
+                  "mean": 0.0015874720411375165,
+                  "variance": 0.0005786634283140302,
+                  "min": -0.09472064673900604,
+                  "max": 0.08339518308639526,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9366781711578369,
+                "mean": 0.0029095662757754326,
+                "variance": 0.8773574829101562,
+                "min": -4.060368061065674,
+                "max": 4.2221574783325195,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9328426122665405,
+                "mean": 0.02368902787566185,
+                "variance": 0.869634211063385,
+                "min": -5.367437839508057,
+                "max": 5.307051658630371,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.3118596076965332,
+                "source_fourier_phase_rms_radians": 1.7802715301513672,
+                "source_coarse_4x_rms": 0.5349994897842407,
+                "source_gradient_difference_rms": 1.69355177994534
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.197108507156372,
+                "source_fourier_phase_rms_radians": 1.703016996383667,
+                "source_coarse_4x_rms": 0.6085608005523682,
+                "source_gradient_difference_rms": 1.408158959693921
+              },
+              "state_rms_difference_from_control": 0.02410774864256382,
+              "denoised_rms_difference_from_control": 0.5192983746528625,
+              "accepted_interval": {
+                "proposal_rms": 0.9105309247970581,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.028963202610611916,
+                "correction_to_proposal_rms_ratio": 0.0318091366496611,
+                "correction_to_proposal_energy_ratio": 0.0010118211743968127,
+                "coarse_mismatch_removed_fraction": 0.999999088415043,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.8883083462715149,
+                  "mean": 0.0059600407257676125,
+                  "variance": 0.789056122303009,
+                  "min": -3.8038980960845947,
+                  "max": 3.9552111625671387,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.028963202610611916,
+                "post_correction_coarse_mismatch_rms": 2.6402419806004218e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.028963202610611916,
+                  "mean": 0.0020615188404917717,
+                  "variance": 0.0008346173563040793,
+                  "min": -0.11491785943508148,
+                  "max": 0.09220486879348755,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9101355075836182,
+                "mean": 0.0059600407257676125,
+                "variance": 0.8283110857009888,
+                "min": -3.945443630218506,
+                "max": 4.091373920440674,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9571773409843445,
+                "mean": 0.017641432583332062,
+                "variance": 0.9158772230148315,
+                "min": -5.490847587585449,
+                "max": 5.256417751312256,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.280840516090393,
+                "source_fourier_phase_rms_radians": 1.7716325521469116,
+                "source_coarse_4x_rms": 0.5095372796058655,
+                "source_gradient_difference_rms": 1.660210222548818
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.146619200706482,
+                "source_fourier_phase_rms_radians": 1.6869876384735107,
+                "source_coarse_4x_rms": 0.46594274044036865,
+                "source_gradient_difference_rms": 1.4442952079546927
+              },
+              "state_rms_difference_from_control": 0.05942697077989578,
+              "denoised_rms_difference_from_control": 0.7589885592460632,
+              "accepted_interval": {
+                "proposal_rms": 0.8771728277206421,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.03424302861094475,
+                "correction_to_proposal_rms_ratio": 0.03903794956796166,
+                "correction_to_proposal_energy_ratio": 0.001523961506470718,
+                "coarse_mismatch_removed_fraction": 0.9999992605086554,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.8354476094245911,
+                  "mean": 0.010446324944496155,
+                  "variance": 0.6978635787963867,
+                  "min": -3.594102382659912,
+                  "max": 3.728649616241455,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.03424302861094475,
+                "post_correction_coarse_mismatch_rms": 2.5322423269358296e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.03424302861094475,
+                  "mean": 0.0036277961917221546,
+                  "variance": 0.0011594240786507726,
+                  "min": -0.14446225762367249,
+                  "max": 0.1288696974515915,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8765537142753601,
+                "mean": 0.010446324944496155,
+                "variance": 0.7682373523712158,
+                "min": -3.7816267013549805,
+                "max": 3.938056707382202,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.992053747177124,
+                "mean": 0.027465293183922768,
+                "variance": 0.9834163784980774,
+                "min": -5.4380645751953125,
+                "max": 5.844812393188477,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2377756834030151,
+                "source_fourier_phase_rms_radians": 1.7584235668182373,
+                "source_coarse_4x_rms": 0.4720904231071472,
+                "source_gradient_difference_rms": 1.614877678825518
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1385058164596558,
+                "source_fourier_phase_rms_radians": 1.6779780387878418,
+                "source_coarse_4x_rms": 0.38075271248817444,
+                "source_gradient_difference_rms": 1.4859510999862164
+              },
+              "state_rms_difference_from_control": 0.11762931942939758,
+              "denoised_rms_difference_from_control": 0.8650286793708801,
+              "accepted_interval": {
+                "proposal_rms": 0.8363590836524963,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.048792798072099686,
+                "correction_to_proposal_rms_ratio": 0.05833953265505858,
+                "correction_to_proposal_energy_ratio": 0.0034035010704106467,
+                "coarse_mismatch_removed_fraction": 0.9999994688960498,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.7650057077407837,
+                  "mean": 0.017694175243377686,
+                  "variance": 0.5849205851554871,
+                  "min": -3.2551651000976562,
+                  "max": 3.365462303161621,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.048792798072099686,
+                "post_correction_coarse_mismatch_rms": 2.5914047796504747e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.048792798072099686,
+                  "mean": 0.005066899117082357,
+                  "variance": 0.0023550635669380426,
+                  "min": -0.20488481223583221,
+                  "max": 0.20258961617946625,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8358643054962158,
+                "mean": 0.017694175243377686,
+                "variance": 0.698356032371521,
+                "min": -3.5544233322143555,
+                "max": 3.771364212036133,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.02584707736969,
+                "mean": 0.04379548504948616,
+                "variance": 1.05044424533844,
+                "min": -5.465289115905762,
+                "max": 5.264591217041016,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1755273342132568,
+                "source_fourier_phase_rms_radians": 1.7365713119506836,
+                "source_coarse_4x_rms": 0.41159284114837646,
+                "source_gradient_difference_rms": 1.551290959054
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.142981767654419,
+                "source_fourier_phase_rms_radians": 1.6722642183303833,
+                "source_coarse_4x_rms": 0.3076133131980896,
+                "source_gradient_difference_rms": 1.5309873533475333
+              },
+              "state_rms_difference_from_control": 0.21963609755039215,
+              "denoised_rms_difference_from_control": 0.9130024313926697,
+              "accepted_interval": {
+                "proposal_rms": 0.8174152374267578,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.08542074263095856,
+                "correction_to_proposal_rms_ratio": 0.10450104025447952,
+                "correction_to_proposal_energy_ratio": 0.01092046741426835,
+                "coarse_mismatch_removed_fraction": 0.9999996517907127,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.6988961100578308,
+                  "mean": 0.03138713538646698,
+                  "variance": 0.4874706268310547,
+                  "min": -2.9344124794006348,
+                  "max": 3.5191636085510254,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.08542074263095856,
+                "post_correction_coarse_mismatch_rms": 2.9744295915179464e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.08542074263095856,
+                  "mean": 0.006444921717047691,
+                  "variance": 0.00725516676902771,
+                  "min": -0.390201598405838,
+                  "max": 0.3308842182159424,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8186502456665039,
+                "mean": 0.03138713538646698,
+                "variance": 0.6692031025886536,
+                "min": -3.6103434562683105,
+                "max": 3.560481071472168,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0684109926223755,
+                "mean": 0.062347929924726486,
+                "variance": 1.1376150846481323,
+                "min": -5.417962074279785,
+                "max": 5.22099494934082,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.0947436094284058,
+                "source_fourier_phase_rms_radians": 1.6979180574417114,
+                "source_coarse_4x_rms": 0.2972981631755829,
+                "source_gradient_difference_rms": 1.478613489925731
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1597485542297363,
+                "source_fourier_phase_rms_radians": 1.6665126085281372,
+                "source_coarse_4x_rms": 0.21795912086963654,
+                "source_gradient_difference_rms": 1.5888426188827427
+              },
+              "state_rms_difference_from_control": 0.4281528890132904,
+              "denoised_rms_difference_from_control": 0.9220725297927856,
+              "accepted_interval": {
+                "proposal_rms": 1.0684109926223755,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_C_ILVR_N04_A1.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "874dd8a3f18d70f779ddf08f3441d44e73b925be0ee9019a3d3c71e3439f2864"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.1637464016675949,
+            "appearance_rgb_histogram_js": 0.03241776020858426,
+            "source_relative_coarse_rgb_rms": 0.13171005249023438,
+            "symmetric_canny_edge_chamfer_pixels": 3.4155898690223694,
+            "edge_overlap_f1_within_2px": 0.7852487188584607,
+            "source_edge_pixels": 30203,
+            "output_edge_pixels": 39441
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_C_ILVR_N04_A1_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "a65fb36b04429fddd0d15d8eb56c47eeca6333ba6785449e74581406da12fb11"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_C_ILVR_N04_A1_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "7aae52f6e0b89d27b267d55afc223f05d18c903748cda007c81cdb127c65a8a0"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_C_ILVR_N04_A1_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "874dd8a3f18d70f779ddf08f3441d44e73b925be0ee9019a3d3c71e3439f2864"
+            }
+          }
+        }
+      },
+      "comparison": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\astronaut_steampunk_COMPARISON.png",
+        "dimensions_wh": [
+          2048,
+          540
+        ],
+        "sha256_rgb": "18b6dd46b7416a72b58a5dff0a3f4d812bce966b5f8b775498ac0db4c8db78ae"
+      }
+    },
+    "bridge_crystal_night": {
+      "role": "architectural scene with straight contours",
+      "prompt": "The same suspension bridge and train with exactly the same perspective, tower positions, deck line, cables, and composition, transformed into luminous crystalline architecture at night with glowing glass surfaces, deep blue water, dramatic reflections",
+      "source": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_SOURCE.png",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "sha256_rgb": "4f3b51383dbf1bbc1629f6af02dc70b1b2d8e61aeb2bd619dd5152e9b9dd33b2"
+      },
+      "source_latent": {
+        "shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "rms": 0.9539594650268555,
+        "mean": 0.04056323319673538,
+        "variance": 0.9083933234214783,
+        "min": -5.0625,
+        "max": 4.6875,
+        "finite": true
+      },
+      "preflight": {
+        "status": "PASS",
+        "factor": 4,
+        "latent_shape": [
+          1,
+          128,
+          32,
+          32
+        ],
+        "coarse_shape": [
+          8,
+          8
+        ],
+        "coarse_spatial_dof_fraction": 0.0625,
+        "projection_idempotence_rms_error": 8.068849588482863e-09,
+        "projection_linearity_rms_error": 4.645350415444227e-08,
+        "full_replacement_coarse_rms_error": 4.143788245869473e-08
+      },
+      "fss_construction": {
+        "cutoff_radius_latent_frequency_pixels": 2.0,
+        "transition_bandwidth": 2.0,
+        "mask_mean": 0.06758638471364975,
+        "imaginary_residual_rms": 8.619886671112909e-08,
+        "gaussian": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995350241661072,
+          "mean": -0.002284085378050804,
+          "variance": 0.9990650415420532,
+          "min": -4.358521461486816,
+          "max": 4.527612686157227,
+          "finite": true
+        },
+        "structured": {
+          "shape": [
+            1,
+            128,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "rms": 0.9995349645614624,
+          "mean": 0.002326317597180605,
+          "variance": 0.9990646839141846,
+          "min": -4.680119037628174,
+          "max": 4.566746234893799,
+          "finite": true
+        },
+        "structured_to_gaussian_rms_ratio": 0.9999999403676276,
+        "structured_to_gaussian_variance_ratio": 0.9999996423721313,
+        "fourier_magnitude_max_abs_error": 2.288818359375e-05,
+        "fourier_magnitude_relative_rms_error": 1.3216288000383762e-07,
+        "phase_rms_to_source": 1.7570040225982666,
+        "phase_rms_to_gaussian": 0.45318567752838135
+      },
+      "arms": {
+        "A_GAUSSIAN": {
+          "wall_seconds": 1.5894552000099793,
+          "noise_hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0263006687164307,
+            "mean": 0.02199145033955574,
+            "variance": 1.052809476852417,
+            "min": -5.145455837249756,
+            "max": 6.592164993286133,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.222615361213684,
+            "source_fourier_phase_rms_radians": 1.7395236492156982,
+            "source_coarse_4x_rms": 0.5771373510360718,
+            "source_gradient_difference_rms": 1.4738341221596536
+          },
+          "final_latent_rms_from_control": 0.0,
+          "correction_summary": {
+            "intervals_applied": 0,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.0,
+            "max_correction_to_proposal_rms_ratio": 0.0,
+            "mean_correction_to_proposal_energy_ratio": 0.0,
+            "mean_coarse_mismatch_removed_fraction": 0.0
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9576057195663452,
+                "mean": -0.0004383188206702471,
+                "variance": 0.9170085787773132,
+                "min": -4.181703567504883,
+                "max": 4.3486433029174805,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8692339658737183,
+                "mean": 0.023899681866168976,
+                "variance": 0.7549964785575867,
+                "min": -4.460999488830566,
+                "max": 5.229463577270508,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.3182199001312256,
+                "source_fourier_phase_rms_radians": 1.7787361145019531,
+                "source_coarse_4x_rms": 0.5728052258491516,
+                "source_gradient_difference_rms": 1.6794719505918725
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.119490146636963,
+                "source_fourier_phase_rms_radians": 1.7484791278839111,
+                "source_coarse_4x_rms": 0.5899316668510437,
+                "source_gradient_difference_rms": 1.2734920485862675
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9372734427452087,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9372734427452087,
+                "mean": 0.0003724774578586221,
+                "variance": 0.8784813284873962,
+                "min": -4.0631537437438965,
+                "max": 4.229097366333008,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8882945775985718,
+                "mean": 0.012960913591086864,
+                "variance": 0.7888992428779602,
+                "min": -4.504361152648926,
+                "max": 4.272493839263916,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.299390435218811,
+                "source_fourier_phase_rms_radians": 1.776394248008728,
+                "source_coarse_4x_rms": 0.5637881755828857,
+                "source_gradient_difference_rms": 1.6552296044488968
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.129796028137207,
+                "source_fourier_phase_rms_radians": 1.744086503982544,
+                "source_coarse_4x_rms": 0.5881261825561523,
+                "source_gradient_difference_rms": 1.2979034229664597
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9098517894744873,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9098517894744873,
+                "mean": 0.0009715980850160122,
+                "variance": 0.8278293609619141,
+                "min": -3.9001216888427734,
+                "max": 4.170389652252197,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9177535176277161,
+                "mean": 0.011953752487897873,
+                "variance": 0.8421286940574646,
+                "min": -4.58177375793457,
+                "max": 4.749759674072266,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2737396955490112,
+                "source_fourier_phase_rms_radians": 1.7732582092285156,
+                "source_coarse_4x_rms": 0.5519928336143494,
+                "source_gradient_difference_rms": 1.6215697131722935
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1431224346160889,
+                "source_fourier_phase_rms_radians": 1.7419185638427734,
+                "source_coarse_4x_rms": 0.5826953053474426,
+                "source_gradient_difference_rms": 1.3258493625964995
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.8728353381156921,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8728353381156921,
+                "mean": 0.0017786981770768762,
+                "variance": 0.761838436126709,
+                "min": -3.743441104888916,
+                "max": 4.198843002319336,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.947226881980896,
+                "mean": 0.01246723160147667,
+                "variance": 0.8970832824707031,
+                "min": -4.671053409576416,
+                "max": 5.78036642074585,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2378054857254028,
+                "source_fourier_phase_rms_radians": 1.7687532901763916,
+                "source_coarse_4x_rms": 0.5354984402656555,
+                "source_gradient_difference_rms": 1.5739334056558694
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1621172428131104,
+                "source_fourier_phase_rms_radians": 1.738863229751587,
+                "source_coarse_4x_rms": 0.5791330337524414,
+                "source_gradient_difference_rms": 1.3606556685797253
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.8258663415908813,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8258663415908813,
+                "mean": 0.003148414194583893,
+                "variance": 0.6820453405380249,
+                "min": -3.519524097442627,
+                "max": 4.401512622833252,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9808271527290344,
+                "mean": 0.015400172211229801,
+                "variance": 0.9617846608161926,
+                "min": -5.482797622680664,
+                "max": 6.158439636230469,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1881698369979858,
+                "source_fourier_phase_rms_radians": 1.7614473104476929,
+                "source_coarse_4x_rms": 0.5138890743255615,
+                "source_gradient_difference_rms": 1.505946542005709
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.1861703395843506,
+                "source_fourier_phase_rms_radians": 1.737089991569519,
+                "source_coarse_4x_rms": 0.5778898596763611,
+                "source_gradient_difference_rms": 1.4055492153176328
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.7934436798095703,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.7934436798095703,
+                "mean": 0.00655058678239584,
+                "variance": 0.6295099258422852,
+                "min": -3.5069382190704346,
+                "max": 4.8893914222717285,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0263006687164307,
+                "mean": 0.02199145220220089,
+                "variance": 1.0528095960617065,
+                "min": -5.145455837249756,
+                "max": 6.592164993286133,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1314518451690674,
+                "source_fourier_phase_rms_radians": 1.7495391368865967,
+                "source_coarse_4x_rms": 0.49463650584220886,
+                "source_gradient_difference_rms": 1.4192018407562097
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.222615361213684,
+                "source_fourier_phase_rms_radians": 1.7395236492156982,
+                "source_coarse_4x_rms": 0.5771373510360718,
+                "source_gradient_difference_rms": 1.473834063122557
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 1.0263006687164307,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_A_GAUSSIAN.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "a9c8cca698bedeca59dfcd1028003cf38e9cc4e764685a759f542994b155cf9f"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.3606707751750946,
+            "appearance_rgb_histogram_js": 0.2909735770707991,
+            "source_relative_coarse_rgb_rms": 0.3443652093410492,
+            "symmetric_canny_edge_chamfer_pixels": 7.658750593662262,
+            "edge_overlap_f1_within_2px": 0.5883893828383233,
+            "source_edge_pixels": 20307,
+            "output_edge_pixels": 42072
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_A_GAUSSIAN_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "f19f6ec9e75cb145513fe0ff8c3f47335bf4bd20affe32f60783b56d53d2acbf"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_A_GAUSSIAN_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "db01d18563529d79ef4ed895bd3f3e6948ffccef5b7ba8d1603d2e235b969f22"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_A_GAUSSIAN_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "a9c8cca698bedeca59dfcd1028003cf38e9cc4e764685a759f542994b155cf9f"
+            }
+          }
+        },
+        "B_FSS_R02": {
+          "wall_seconds": 1.59142349998001,
+          "noise_hash": "7a7a622f513a030d481ec531f6182aae1a252c728c201a252c649635447ee61f",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0894360542297363,
+            "mean": 0.014239347539842129,
+            "variance": 1.1866681575775146,
+            "min": -6.004157066345215,
+            "max": 6.544581413269043,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.0551778078079224,
+            "source_fourier_phase_rms_radians": 1.6348904371261597,
+            "source_coarse_4x_rms": 0.41906753182411194,
+            "source_gradient_difference_rms": 1.3417049742411504
+          },
+          "final_latent_rms_from_control": 1.0663480758666992,
+          "correction_summary": {
+            "intervals_applied": 0,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.0,
+            "max_correction_to_proposal_rms_ratio": 0.0,
+            "mean_correction_to_proposal_energy_ratio": 0.0,
+            "mean_coarse_mismatch_removed_fraction": 0.0
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9610493779182434,
+                "mean": 0.003973478451371193,
+                "variance": 0.9236001372337341,
+                "min": -4.486082077026367,
+                "max": 4.452474594116211,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8968976140022278,
+                "mean": 0.004182497039437294,
+                "variance": 0.8044077754020691,
+                "min": -4.574273109436035,
+                "max": 5.089727401733398,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2613211870193481,
+                "source_fourier_phase_rms_radians": 1.7273160219192505,
+                "source_coarse_4x_rms": 0.469918817281723,
+                "source_gradient_difference_rms": 1.6733985486514944
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.9616477489471436,
+                "source_fourier_phase_rms_radians": 1.6472663879394531,
+                "source_coarse_4x_rms": 0.43604862689971924,
+                "source_gradient_difference_rms": 1.1766241774198487
+              },
+              "state_rms_difference_from_control": 0.3530890941619873,
+              "denoised_rms_difference_from_control": 0.8728752136230469,
+              "accepted_interval": {
+                "proposal_rms": 0.9413577914237976,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9413577914237976,
+                "mean": 0.0039804414846003056,
+                "variance": 0.8861387372016907,
+                "min": -4.372015476226807,
+                "max": 4.355343818664551,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9365867376327515,
+                "mean": 0.009610388427972794,
+                "variance": 0.8771023750305176,
+                "min": -4.747718811035156,
+                "max": 5.142903804779053,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2390512228012085,
+                "source_fourier_phase_rms_radians": 1.724244236946106,
+                "source_coarse_4x_rms": 0.45823922753334045,
+                "source_gradient_difference_rms": 1.6456391659525165
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.9647049903869629,
+                "source_fourier_phase_rms_radians": 1.634649634361267,
+                "source_coarse_4x_rms": 0.42263686656951904,
+                "source_gradient_difference_rms": 1.1923004187334745
+              },
+              "state_rms_difference_from_control": 0.3504253923892975,
+              "denoised_rms_difference_from_control": 0.9448235034942627,
+              "accepted_interval": {
+                "proposal_rms": 0.9155460596084595,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9155460596084595,
+                "mean": 0.004248388111591339,
+                "variance": 0.8382064700126648,
+                "min": -4.222053527832031,
+                "max": 4.217076301574707,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9751592874526978,
+                "mean": 0.008471586741507053,
+                "variance": 0.9508638381958008,
+                "min": -5.184309005737305,
+                "max": 5.996389865875244,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2078783512115479,
+                "source_fourier_phase_rms_radians": 1.7193187475204468,
+                "source_coarse_4x_rms": 0.441530704498291,
+                "source_gradient_difference_rms": 1.607027719842442
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.9771704077720642,
+                "source_fourier_phase_rms_radians": 1.6326686143875122,
+                "source_coarse_4x_rms": 0.4164307415485382,
+                "source_gradient_difference_rms": 1.2139317481335112
+              },
+              "state_rms_difference_from_control": 0.3511078655719757,
+              "denoised_rms_difference_from_control": 0.994889497756958,
+              "accepted_interval": {
+                "proposal_rms": 0.8822223544120789,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8822223544120789,
+                "mean": 0.004558758344501257,
+                "variance": 0.7782955169677734,
+                "min": -4.019717216491699,
+                "max": 4.166677474975586,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0080958604812622,
+                "mean": 0.00696656946092844,
+                "variance": 1.016208529472351,
+                "min": -5.362868309020996,
+                "max": 6.379016399383545,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1634992361068726,
+                "source_fourier_phase_rms_radians": 1.711824893951416,
+                "source_coarse_4x_rms": 0.4173204302787781,
+                "source_gradient_difference_rms": 1.5519937061458635
+              },
+              "denoised_structure": {
+                "source_relative_rms": 0.9941529035568237,
+                "source_fourier_phase_rms_radians": 1.6297578811645508,
+                "source_coarse_4x_rms": 0.4160960018634796,
+                "source_gradient_difference_rms": 1.2413147253007615
+              },
+              "state_rms_difference_from_control": 0.362471342086792,
+              "denoised_rms_difference_from_control": 1.029469609260559,
+              "accepted_interval": {
+                "proposal_rms": 0.8421705365180969,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8421705365180969,
+                "mean": 0.004867316223680973,
+                "variance": 0.7092275023460388,
+                "min": -3.7222506999969482,
+                "max": 4.1673126220703125,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0454235076904297,
+                "mean": 0.008807536214590073,
+                "variance": 1.0928328037261963,
+                "min": -5.618623733520508,
+                "max": 6.512454032897949,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.0987945795059204,
+                "source_fourier_phase_rms_radians": 1.697891354560852,
+                "source_coarse_4x_rms": 0.3820295035839081,
+                "source_gradient_difference_rms": 1.4707311551705093
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0183402299880981,
+                "source_fourier_phase_rms_radians": 1.6304506063461304,
+                "source_coarse_4x_rms": 0.41802549362182617,
+                "source_gradient_difference_rms": 1.2799167833718657
+              },
+              "state_rms_difference_from_control": 0.4061151146888733,
+              "denoised_rms_difference_from_control": 1.0574074983596802,
+              "accepted_interval": {
+                "proposal_rms": 0.8239386081695557,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8239386081695557,
+                "mean": 0.00596146984025836,
+                "variance": 0.6788392066955566,
+                "min": -3.9158501625061035,
+                "max": 4.211121559143066,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0894360542297363,
+                "mean": 0.014239347539842129,
+                "variance": 1.1866681575775146,
+                "min": -6.004157066345215,
+                "max": 6.544581413269043,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.0115017890930176,
+                "source_fourier_phase_rms_radians": 1.671499490737915,
+                "source_coarse_4x_rms": 0.33786746859550476,
+                "source_gradient_difference_rms": 1.355034374032528
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.055177927017212,
+                "source_fourier_phase_rms_radians": 1.6348904371261597,
+                "source_coarse_4x_rms": 0.41906753182411194,
+                "source_gradient_difference_rms": 1.3417049742411504
+              },
+              "state_rms_difference_from_control": 0.5509458184242249,
+              "denoised_rms_difference_from_control": 1.0663480758666992,
+              "accepted_interval": {
+                "proposal_rms": 1.0894360542297363,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_B_FSS_R02.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "d09454f0e87b8009b684c1b49a9acde5eafe4a5818ea6b83eed09cdff7f6efe4"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.18015439808368683,
+            "appearance_rgb_histogram_js": 0.13801291138921226,
+            "source_relative_coarse_rgb_rms": 0.15984246134757996,
+            "symmetric_canny_edge_chamfer_pixels": 3.5016857385635376,
+            "edge_overlap_f1_within_2px": 0.7415867840810562,
+            "source_edge_pixels": 20307,
+            "output_edge_pixels": 26198
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_B_FSS_R02_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "886384e4facf1e4bbe8c0c9d4cf6c9fa13ee78c8eed92037d8d8e860007b9bcb"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_B_FSS_R02_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "48905525385a58d5f9ac30a4d53040136e1ccecc8369864bac934c5872cf19e3"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_B_FSS_R02_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "d09454f0e87b8009b684c1b49a9acde5eafe4a5818ea6b83eed09cdff7f6efe4"
+            }
+          }
+        },
+        "C_ILVR_N04_A1": {
+          "wall_seconds": 1.6027459999313578,
+          "noise_hash": "93bf129dc349a17d40a6a5746ee62abe814422e7e8d9567ef66952f3b63cf5c2",
+          "final_latent": {
+            "shape": [
+              1,
+              128,
+              32,
+              32
+            ],
+            "dtype": "torch.float32",
+            "rms": 1.0425230264663696,
+            "mean": 0.03980731591582298,
+            "variance": 1.0852696895599365,
+            "min": -5.818882942199707,
+            "max": 6.020551681518555,
+            "finite": true
+          },
+          "final_latent_structure": {
+            "source_relative_rms": 1.0934865474700928,
+            "source_fourier_phase_rms_radians": 1.6760913133621216,
+            "source_coarse_4x_rms": 0.20690672099590302,
+            "source_gradient_difference_rms": 1.49255261830165
+          },
+          "final_latent_rms_from_control": 0.8643055558204651,
+          "correction_summary": {
+            "intervals_applied": 5,
+            "terminal_intervals_skipped": 1,
+            "mean_correction_to_proposal_rms_ratio": 0.04650514341028182,
+            "max_correction_to_proposal_rms_ratio": 0.09866260559818059,
+            "mean_correction_to_proposal_energy_ratio": 0.0029627033278285834,
+            "mean_coarse_mismatch_removed_fraction": 0.9999991269791227
+          },
+          "evaluations": [
+            {
+              "ordinal": 0,
+              "sigma": 0.9569222331047058,
+              "sigma_next": 0.9250433444976807,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9576057195663452,
+                "mean": -0.0004383188206702471,
+                "variance": 0.9170085787773132,
+                "min": -4.181703567504883,
+                "max": 4.3486433029174805,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8692339658737183,
+                "mean": 0.023899681866168976,
+                "variance": 0.7549964785575867,
+                "min": -4.460999488830566,
+                "max": 5.229463577270508,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.3182199001312256,
+                "source_fourier_phase_rms_radians": 1.7787361145019531,
+                "source_coarse_4x_rms": 0.5728052258491516,
+                "source_gradient_difference_rms": 1.6794719505918725
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.119490146636963,
+                "source_fourier_phase_rms_radians": 1.7484791278839111,
+                "source_coarse_4x_rms": 0.5899316668510437,
+                "source_gradient_difference_rms": 1.2734920485862675
+              },
+              "state_rms_difference_from_control": 0.0,
+              "denoised_rms_difference_from_control": 0.0,
+              "accepted_interval": {
+                "proposal_rms": 0.9372734427452087,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.019652971997857094,
+                "correction_to_proposal_rms_ratio": 0.02096823733775589,
+                "correction_to_proposal_energy_ratio": 0.0004396669770524602,
+                "coarse_mismatch_removed_fraction": 0.9999986348236702,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.9278013110160828,
+                  "mean": 0.0009276058990508318,
+                  "variance": 0.8608143925666809,
+                  "min": -4.050853252410889,
+                  "max": 4.216200351715088,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.019652971997857094,
+                "post_correction_coarse_mismatch_rms": 2.682977218171345e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.019652971997857094,
+                  "mean": 0.000555129605345428,
+                  "variance": 0.00038593116914853454,
+                  "min": -0.08058556914329529,
+                  "max": 0.07600787281990051,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 1,
+              "sigma": 0.9250433444976807,
+              "sigma_next": 0.881017804145813,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9367442727088928,
+                "mean": 0.0009276068303734064,
+                "variance": 0.877488911151886,
+                "min": -4.0690789222717285,
+                "max": 4.251871585845947,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8928393125534058,
+                "mean": 0.022091094404459,
+                "variance": 0.7966740131378174,
+                "min": -4.687614440917969,
+                "max": 4.393418312072754,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2950550317764282,
+                "source_fourier_phase_rms_radians": 1.774269938468933,
+                "source_coarse_4x_rms": 0.5537227988243103,
+                "source_gradient_difference_rms": 1.654552519524556
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0700932741165161,
+                "source_fourier_phase_rms_radians": 1.717543601989746,
+                "source_coarse_4x_rms": 0.4943161606788635,
+                "source_gradient_difference_rms": 1.2911195129076152
+              },
+              "state_rms_difference_from_control": 0.019652973860502243,
+              "denoised_rms_difference_from_control": 0.6214728951454163,
+              "accepted_interval": {
+                "proposal_rms": 0.9107705354690552,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.023525962606072426,
+                "correction_to_proposal_rms_ratio": 0.025830834101320966,
+                "correction_to_proposal_energy_ratio": 0.0006672319903699662,
+                "coarse_mismatch_removed_fraction": 0.9999988755135177,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.8885675072669983,
+                  "mean": 0.0028139823116362095,
+                  "variance": 0.7895443439483643,
+                  "min": -3.870145320892334,
+                  "max": 4.0332932472229,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.023525962606072426,
+                "post_correction_coarse_mismatch_rms": 2.645462693351419e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.023525962606072426,
+                  "mean": 0.0008791437139734626,
+                  "variance": 0.0005526980967260897,
+                  "min": -0.1033703088760376,
+                  "max": 0.0871160700917244,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 2,
+              "sigma": 0.881017804145813,
+              "sigma_next": 0.816270112991333,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9099221229553223,
+                "mean": 0.0028139837086200714,
+                "variance": 0.8279502987861633,
+                "min": -3.8758630752563477,
+                "max": 4.143939018249512,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9391067028045654,
+                "mean": 0.02220180258154869,
+                "variance": 0.8814284801483154,
+                "min": -5.179926872253418,
+                "max": 4.936539173126221,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2634356021881104,
+                "source_fourier_phase_rms_radians": 1.7675341367721558,
+                "source_coarse_4x_rms": 0.527369499206543,
+                "source_gradient_difference_rms": 1.6209244246627648
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0474263429641724,
+                "source_fourier_phase_rms_radians": 1.690256118774414,
+                "source_coarse_4x_rms": 0.40499624609947205,
+                "source_gradient_difference_rms": 1.3257062813274207
+              },
+              "state_rms_difference_from_control": 0.05233728885650635,
+              "denoised_rms_difference_from_control": 0.7720102667808533,
+              "accepted_interval": {
+                "proposal_rms": 0.8757584095001221,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.029763951897621155,
+                "correction_to_proposal_rms_ratio": 0.033986487111908235,
+                "correction_to_proposal_energy_ratio": 0.0011550813062079046,
+                "coarse_mismatch_removed_fraction": 0.9999991302767633,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.8355308175086975,
+                  "mean": 0.005588246509432793,
+                  "variance": 0.6980804800987244,
+                  "min": -3.6043810844421387,
+                  "max": 3.7651352882385254,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.029763951897621155,
+                "post_correction_coarse_mismatch_rms": 2.588640057865632e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.029763951897621155,
+                  "mean": 0.0013494158629328012,
+                  "variance": 0.0008840719237923622,
+                  "min": -0.11541974544525146,
+                  "max": 0.10230690240859985,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 3,
+              "sigma": 0.816270112991333,
+              "sigma_next": 0.7116665244102478,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8744967579841614,
+                "mean": 0.005588247440755367,
+                "variance": 0.7647133469581604,
+                "min": -3.7391884326934814,
+                "max": 4.133670806884766,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.9697182178497314,
+                "mean": 0.021391339600086212,
+                "variance": 0.9398958683013916,
+                "min": -5.4778313636779785,
+                "max": 5.390629291534424,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.2177271842956543,
+                "source_fourier_phase_rms_radians": 1.7549467086791992,
+                "source_coarse_4x_rms": 0.4886121153831482,
+                "source_gradient_difference_rms": 1.573018052137398
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.051684021949768,
+                "source_fourier_phase_rms_radians": 1.683480143547058,
+                "source_coarse_4x_rms": 0.34489262104034424,
+                "source_gradient_difference_rms": 1.3689985670445257
+              },
+              "state_rms_difference_from_control": 0.10700451582670212,
+              "denoised_rms_difference_from_control": 0.8390795588493347,
+              "accepted_interval": {
+                "proposal_rms": 0.8326945304870605,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.044197387993335724,
+                "correction_to_proposal_rms_ratio": 0.05307755290224345,
+                "correction_to_proposal_energy_ratio": 0.0028172266220904516,
+                "coarse_mismatch_removed_fraction": 0.9999993930708145,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.7641997337341309,
+                  "mean": 0.010070230811834335,
+                  "variance": 0.5838998556137085,
+                  "min": -3.1750235557556152,
+                  "max": 3.492236614227295,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.044197387993335724,
+                "post_correction_coarse_mismatch_rms": 2.682468469572541e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.044197387993335724,
+                  "mean": 0.002456844551488757,
+                  "variance": 0.0019473729189485312,
+                  "min": -0.2046487182378769,
+                  "max": 0.1548164188861847,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 4,
+              "sigma": 0.7116665244102478,
+              "sigma_next": 0.5140447616577148,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8308201432228088,
+                "mean": 0.01007023174315691,
+                "variance": 0.6901607513427734,
+                "min": -3.5577127933502197,
+                "max": 4.1503143310546875,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0028421878814697,
+                "mean": 0.027971753850579262,
+                "variance": 1.0049099922180176,
+                "min": -5.667900085449219,
+                "max": 5.573647499084473,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.1509851217269897,
+                "source_fourier_phase_rms_radians": 1.7344295978546143,
+                "source_coarse_4x_rms": 0.4259973168373108,
+                "source_gradient_difference_rms": 1.505057506329185
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0675777196884155,
+                "source_fourier_phase_rms_radians": 1.6806036233901978,
+                "source_coarse_4x_rms": 0.2871193587779999,
+                "source_gradient_difference_rms": 1.422553300114057
+              },
+              "state_rms_difference_from_control": 0.20452627539634705,
+              "denoised_rms_difference_from_control": 0.865176796913147,
+              "accepted_interval": {
+                "proposal_rms": 0.8081055879592896,
+                "correction_applied": true,
+                "terminal_sigma_zero_skipped": false,
+                "correction_rms": 0.07972980290651321,
+                "correction_to_proposal_rms_ratio": 0.09866260559818059,
+                "correction_to_proposal_energy_ratio": 0.009734309743422136,
+                "coarse_mismatch_removed_fraction": 0.9999996012108472,
+                "source_at_matching_sigma": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.6940892338752747,
+                  "mean": 0.018537793308496475,
+                  "variance": 0.4814162254333496,
+                  "min": -3.2849233150482178,
+                  "max": 3.379960775375366,
+                  "finite": true
+                },
+                "source_sigma_formula_rms_error": 0.0,
+                "pre_correction_coarse_mismatch_rms": 0.07972980290651321,
+                "post_correction_coarse_mismatch_rms": 3.179538055064768e-08,
+                "correction": {
+                  "shape": [
+                    1,
+                    128,
+                    32,
+                    32
+                  ],
+                  "dtype": "torch.float32",
+                  "rms": 0.07972980290651321,
+                  "mean": 0.003496511373668909,
+                  "variance": 0.006344615947455168,
+                  "min": -0.3783380389213562,
+                  "max": 0.2776728868484497,
+                  "finite": true
+                }
+              }
+            },
+            {
+              "ordinal": 5,
+              "sigma": 0.5140447616577148,
+              "sigma_next": 0.0,
+              "state": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 0.8057124614715576,
+                "mean": 0.018537793308496475,
+                "variance": 0.6488288640975952,
+                "min": -3.4206321239471436,
+                "max": 4.3820343017578125,
+                "finite": true
+              },
+              "denoised_x0": {
+                "shape": [
+                  1,
+                  128,
+                  32,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "rms": 1.0425230264663696,
+                "mean": 0.03980731964111328,
+                "variance": 1.0852696895599365,
+                "min": -5.818882942199707,
+                "max": 6.020551681518555,
+                "finite": true
+              },
+              "state_structure": {
+                "source_relative_rms": 1.059756875038147,
+                "source_fourier_phase_rms_radians": 1.6998294591903687,
+                "source_coarse_4x_rms": 0.3077026605606079,
+                "source_gradient_difference_rms": 1.4210009859473158
+              },
+              "denoised_structure": {
+                "source_relative_rms": 1.0934865474700928,
+                "source_fourier_phase_rms_radians": 1.6760914325714111,
+                "source_coarse_4x_rms": 0.20690672099590302,
+                "source_gradient_difference_rms": 1.49255261830165
+              },
+              "state_rms_difference_from_control": 0.3999156951904297,
+              "denoised_rms_difference_from_control": 0.8643055558204651,
+              "accepted_interval": {
+                "proposal_rms": 1.0425230264663696,
+                "correction_applied": false,
+                "terminal_sigma_zero_skipped": true,
+                "correction_rms": 0.0,
+                "correction_to_proposal_rms_ratio": 0.0,
+                "correction_to_proposal_energy_ratio": 0.0,
+                "coarse_mismatch_removed_fraction": 0.0
+              }
+            }
+          ],
+          "final_image": {
+            "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_C_ILVR_N04_A1.png",
+            "dimensions_wh": [
+              512,
+              512
+            ],
+            "sha256_rgb": "18354b4316f9cb8e9a95e5d3a4302329e4b8f0f3cee95253882b1fb2bd59720d"
+          },
+          "final_decoded_metrics": {
+            "appearance_rgb_rms": 0.11681612581014633,
+            "appearance_rgb_histogram_js": 0.0251449609253227,
+            "source_relative_coarse_rgb_rms": 0.09120944142341614,
+            "symmetric_canny_edge_chamfer_pixels": 2.49191552400589,
+            "edge_overlap_f1_within_2px": 0.7590990521034391,
+            "source_edge_pixels": 20307,
+            "output_edge_pixels": 26965
+          },
+          "selected_x0_previews": {
+            "0": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_C_ILVR_N04_A1_EVAL_00_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "f19f6ec9e75cb145513fe0ff8c3f47335bf4bd20affe32f60783b56d53d2acbf"
+            },
+            "2": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_C_ILVR_N04_A1_EVAL_02_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "df8463fd68e7ca22c574e73e08a9c0b787b79e318fc8a8495f87123c8e6c23c3"
+            },
+            "5": {
+              "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_C_ILVR_N04_A1_EVAL_05_X0.png",
+              "dimensions_wh": [
+                512,
+                512
+              ],
+              "sha256_rgb": "18354b4316f9cb8e9a95e5d3a4302329e4b8f0f3cee95253882b1fb2bd59720d"
+            }
+          }
+        }
+      },
+      "comparison": {
+        "path": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\bridge_crystal_night_COMPARISON.png",
+        "dimensions_wh": [
+          2048,
+          540
+        ],
+        "sha256_rgb": "6550a4780f7eaf0926075d405e25fcf24761f05e0a7d60f3642a27338abbade8"
+      }
+    }
+  },
+  "visual_assessment": {
+    "portrait_bronze": "FAIL: better placement/coarse structure than Gaussian, but facial identity, apparent age, arm pose, and framing are not preserved.",
+    "astronaut_steampunk": "PASS: stance and silhouette remain close while suit material and scene appearance change substantially.",
+    "bridge_crystal_night": "PASS: towers, deck, cables, train, and perspective remain close while lighting/material change.",
+    "decisive_interpretation": "Portrait failure overrides the two cross-case successes; the fixed setting is useful for coarse layout but not identity-sensitive geometry."
+  },
+  "integrity": {
+    "production_changes": false,
+    "status": "SUCCESS",
+    "all_finite": true,
+    "same_model_vae_text_encoder_cfg_sampler_schedule_seed_policy": true,
+    "native_const_noise_scaling_preserved": true,
+    "ordinary_model_forward_untouched": true,
+    "correction_after_accepted_nonterminal_euler_intervals_only": true,
+    "no_terminal_sigma_zero_correction": true,
+    "no_fss_ilvr_combination": true
+  }
+}

@@ -1100,3 +1100,16 @@ bridge, and stylized structure, but failed the portrait identity/age requirement
 Face landmarks were unavailable without adding a model, so none was installed
 or substituted. No production change occurred and ILVR was not started.
 Evidence: `experiments/DRIFT_PHASE_1B_NATURAL_GENERALIZATION.md`.
+
+Phase 2 ILVR-style drift restraint is complete for portrait bronze, astronaut
+steampunk, and bridge crystal night. Gaussian, Phase 1b FSS `r=2`, and one
+preregistered matching-sigma ILVR arm ran under the unchanged stock-Klein
+model, VAE, text encoder, CFG, Euler schedule, seed policy, and source-img2img
+contract. All nine trajectories completed finite with per-interval correction
+and overwrite telemetry; no terminal sigma-zero correction was applied.
+
+Verdict: **ILVR-STYLE CORRECTION PARTIAL**. Coarse/edge structure improves in
+all cases with about 5% proposal-RMS correction, and astronaut/bridge pass
+visual geometry checks. The decisive portrait still fails identity, age, pose,
+and framing preservation. No production code changed; no stronger arm or
+FSS+ILVR combination was run. Evidence: `experiments/DRIFT_PHASE_2_ILVR.md`.

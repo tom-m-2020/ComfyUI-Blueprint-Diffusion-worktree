@@ -3044,3 +3044,26 @@ provides a repeatable coarse-geometry/change trade-off, but does not preserve
 fine identity-sensitive geometry reliably on stock Klein. Evidence:
 `experiments/DRIFT_PHASE_1B_NATURAL_GENERALIZATION.md` and
 `experiments/drift_phase_1b_natural_results/telemetry.json`.
+
+## 2026-09-15 — Matching-sigma ILVR correction restrains coarse Klein drift, not portrait identity
+
+The original ILVR rule replaces the unconditional proposal's low-pass component
+with the reference latent at the same DDPM noise level. The controlled Klein
+interpretation retains native CONST interpolation and Euler prediction, then
+applies `proposal + phi(source_at_sigma_next) - phi(proposal)` only after
+nonterminal accepted intervals. A factor-4 area/nearest block projection is
+linear and idempotent; numerical replacement and native CONST formula errors
+were at floating-point noise or zero.
+
+Across portrait, astronaut, and bridge, decoded coarse RGB RMS improved from
+Gaussian `0.555/0.488/0.344` to `0.124/0.132/0.091`; Chamfer improved from
+`7.04/7.19/7.66` to `3.83/3.42/2.49` pixels. Mean correction magnitude was
+`4.65-5.19%` of proposal RMS and `0.296-0.361%` of proposal energy, despite
+fully replacing the declared 8x8 coarse subspace at five intervals.
+
+The portrait remains a qualitative failure: identity, apparent age, arm pose,
+and framing change materially. Astronaut and bridge retain geometry while
+changing appearance. Thus the fixed operator demonstrates modest-state coarse
+restraint but not identity-sensitive preservation. Evidence:
+`experiments/DRIFT_PHASE_2_ILVR.md` and
+`experiments/drift_phase_2_ilvr_results/telemetry.json`.

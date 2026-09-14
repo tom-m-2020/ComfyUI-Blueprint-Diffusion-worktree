@@ -1538,3 +1538,16 @@ Keep the mechanism experiment-only. Do not select radii per image, add a face
 identity model/loss, create a node, alter production architecture, or proceed to
 ILVR. Any follow-up requires an explicit new task targeted at the observed
 fine-identity limitation.
+
+## 2026-09-15 — Classify fixed ILVR-style coarse correction as partial
+
+Classify Phase 2 as **ILVR-STYLE CORRECTION PARTIAL**. Fixed factor-4 latent
+coarse replacement at every nonterminal accepted Euler interval materially
+improves coarse and edge structure for portrait, astronaut, and bridge, while
+its mean correction is only about 5% of proposal RMS. However, the decisive
+portrait still loses facial identity, age, pose, and framing.
+
+Keep this correction experiment-only. Do not create a node, change production
+architecture, add a stronger setting, or combine FSS+ILVR automatically. The
+full registered coarse replacement already establishes the coarse-layout versus
+fine-identity limit; scalar edge gains cannot override visual portrait failure.
