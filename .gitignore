@@ -17,3 +17,6 @@ backend/*
 !backend/.gitkeep
 *.pt
 experiments/*.png
+/experiments/*.png
+experiments/**/*.png
+/experiments/**/*.png
