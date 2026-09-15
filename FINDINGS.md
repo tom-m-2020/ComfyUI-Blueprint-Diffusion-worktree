@@ -3107,3 +3107,27 @@ gradient, and edge preservation on portrait, astronaut, and bridge, and failed
 portrait identity qualitatively. This rejects that fixed hidden-token mapping,
 not published FBSDiff. Evidence: `experiments/DRIFT_PHASE_4_FBSDIFF_AUDIT.md`
 and `experiments/drift_phase_4_fbsdiff_results/telemetry.json`.
+
+## 2026-09-15 — Normalized sampler-latent high-FBS does not preserve Klein contours
+
+The preregistered Phase 5 mapping converts the published default high-FBS
+boundary from a 64x64 grid by preserving normalized axis frequency: `5/63`.
+For Klein's 32x32 sampler latent this is a continuous threshold of `2.460317`,
+so the mask selects integer coordinates `u+v>=3`: 1018/1024 coefficients per
+channel. It ran on `[1,128,32,32]` states for evaluations 0-2, exactly 50% of
+the fixed six-evaluation schedule, before ordinary untouched model forwards.
+
+The same-sigma source analogue was an independent empty-conditioned CFG-1
+CONST/Euler branch initialized from the same source-img2img Gaussian endpoint.
+Its final state remained `1.176/1.228/1.226` latent RMS from the clean
+portrait/astronaut/bridge source, confirming that sigma synchronization does
+not make it equivalent to FBSDiff's DDIM inversion/reconstruction trajectory.
+
+The actual substitution was small despite the 99.414% coefficient mask:
+`2.13/2.66/2.18%` of target-state RMS and `0.070/0.109/0.073%` of its energy.
+The arm retained appearance change but underperformed FSS `r=2` on all measured
+structural metrics in every case. Portrait edge Chamfer/F1 worsened from
+Gaussian `7.043/0.600` to `10.353/0.516`, and visual identity, age, pose, and
+framing all changed. Evidence:
+`experiments/DRIFT_PHASE_5_SAMPLER_LATENT_FBSDIFF.md` and
+`experiments/drift_phase_5_sampler_latent_fbsdiff_results/telemetry.json`.

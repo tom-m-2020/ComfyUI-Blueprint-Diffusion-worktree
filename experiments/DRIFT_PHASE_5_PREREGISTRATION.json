@@ -1,0 +1,35 @@
+{
+  "registered_before_phase_5_outputs": true,
+  "date": "2026-09-15",
+  "question": "Can a normalized high-frequency substitution between synchronized Klein sampler-latent trajectories preserve contours or portrait identity while leaving appearance free?",
+  "runtime_source": "Exact Phase 4 cases, model, VAE, text encoder, resolution, CFG, Euler schedule, prompts, and seed policy",
+  "arms": ["A_GAUSSIAN", "B_FSS_R02", "C_SAMPLER_LATENT_FBSDIFF_HIGH"],
+  "reference_analogue": {
+    "initialization": "Native Klein CONST source-img2img initialization with the same clean source, ordinary Gaussian endpoint, start sigma, and seed as target.",
+    "conditioning": "Empty conditioning at CFG 1.0, matching published FBSDiff reconstruction rather than inventing a source prompt.",
+    "limitation": "This is not DDIM inversion/reconstruction. It is the smallest deterministic stock-Klein analogue available under the fixed source-img2img contract.",
+    "synchronization": "Precompute reference accepted states at every target sigma; substitute reference state ordinal i into target state ordinal i before the target model evaluation."
+  },
+  "band_policy": {
+    "type": "high-FBS for contour preservation and appearance divergence",
+    "transform": "orthonormal channel-wise 2D DCT over each [128,32,32] sampler latent",
+    "paper_grid": 64,
+    "paper_default_high_pass_threshold": 5.0,
+    "normalization": "Preserve threshold/max-axis-frequency: 5/63.",
+    "klein_grid": 32,
+    "klein_continuous_threshold": 2.4603174603174605,
+    "mask": "reference coefficients where (u+v)/31 > 5/63, equivalently integer u+v >= 3; target coefficients otherwise",
+    "expected_substituted_coefficients": 1018,
+    "expected_substituted_fraction": 0.994140625
+  },
+  "calibration": {
+    "active_evaluations": [0, 1, 2],
+    "released_evaluations": [3, 4, 5],
+    "fraction": 0.5,
+    "rationale": "Three of six evaluations is the nearest unswept integer span to published approximately 45-55% early calibration."
+  },
+  "cases": ["portrait_bronze", "astronaut_steampunk", "bridge_crystal_night"],
+  "decisive_case": "portrait_bronze",
+  "acceptance": "The arm must qualitatively improve portrait identity, age, pose, and framing over Gaussian and FSS r=2 while retaining substantial bronze/material transformation. Scalar gains alone do not qualify.",
+  "tuning_policy": "One normalized high band and one fixed calibration span. Do not tune after outputs."
+}

@@ -1140,3 +1140,17 @@ appearance freedom but fails portrait identity and underperforms FSS structure
 preservation across all three cases. No tuning, alternative layer/band,
 production change, or follow-on method was started. Evidence:
 `experiments/DRIFT_PHASE_4_FBSDIFF_AUDIT.md`.
+
+Phase 5's sampler-latent FBSDiff adaptation is complete on the exact Phase 4
+runtime and three cases. Gaussian, FSS `r=2`, and one normalized high-FBS arm
+ran successfully. The new arm substituted synchronized empty-reference DCT
+coefficients on `[1,128,32,32]` sampler states for the first three of six
+evaluations; model internals and native Euler semantics remained untouched.
+
+Verdict: **SAMPLER-LATENT FBSDIFF FALSIFIED**. The arm retained substantial
+appearance change but failed portrait identity, age, pose, and framing, worsened
+portrait edge metrics versus Gaussian, and underperformed FSS structure
+preservation across all cases. The missing qualified Klein equivalent of
+FBSDiff's DDIM inversion/reconstruction remains the central transfer mismatch.
+No tuning, combination, or production change followed. Evidence:
+`experiments/DRIFT_PHASE_5_SAMPLER_LATENT_FBSDIFF.md`.

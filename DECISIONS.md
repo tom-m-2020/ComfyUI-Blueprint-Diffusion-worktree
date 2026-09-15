@@ -1575,3 +1575,16 @@ three cases despite nontrivial appearance changes.
 Do not tune layer, band, threshold, calibration duration, or reference
 conditioning. Do not reinterpret this as falsifying published latent/DDIM
 FBSDiff, and do not create a node or modify Blueprint production architecture.
+
+## 2026-09-15 — Reject the fixed sampler-latent FBSDiff adaptation
+
+Classify Phase 5 as **SAMPLER-LATENT FBSDIFF FALSIFIED**. The normalized
+high-FBS sampler-latent arm keeps appearance freedom but fails portrait
+identity, age, pose, and framing, worsens portrait edge Chamfer/F1 versus
+Gaussian, and underperforms FSS `r=2` structure preservation in all three cases.
+
+Keep the result experiment-only. Do not tune the band, threshold, calibration
+span, conditioning, or reference construction. Do not reinterpret it as a
+falsification of published DDIM FBSDiff: stock Klein lacks the method's
+inverted/reconstructed source trajectory, and the controlled empty-conditioned
+CONST/Euler analogue did not reconstruct the source.
