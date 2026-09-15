@@ -1617,3 +1617,16 @@ conditioning. Defer implementation until the complete five-mode slice and its
 provenance, batch, lifecycle, and research-equivalence tests can land together.
 Do not add generic drift strength, geometry thresholds, untested ILVR schedules,
 untested FBSDiff bands, or FBSDiff combinations.
+
+## 2026-09-15 — Implement the complete five-mode drift production slice
+
+Implement the Phase 7 boundary as two public nodes. `Drift-Constrained
+Sampling` produces a frozen compositional policy plus provenance-bound NOISE;
+`Drift-Constrained Euler Sampler` produces a CONST/Euler SAMPLER for native
+`SamplerCustomAdvanced`.
+
+Keep modes exactly `none`, `fss`, `ilvr`, `fss_ilvr`, and `fbsdiff`. The
+optional CONDITIONING socket is mandatory only for FBSDiff. Reject masks,
+nested latents, non-CONST models, arbitrary samplers, stateful reference
+conditioning, source/cardinality mismatch, and untested combinations. Existing
+experimental, partial, and falsified perceptual labels remain unchanged.

@@ -1180,3 +1180,15 @@ requires explicit empty/reference CONDITIONING and strict lifecycle validation.
 No production file changed; implementation is gated on landing the complete
 five-mode slice with provenance, cardinality, lifecycle, and research-harness
 equivalence tests. Evidence: `experiments/DRIFT_PRODUCTION_BOUNDARY_AUDIT.md`.
+
+The complete Drift-Constrained Sampling production slice is implemented. Two
+public nodes expose exactly `none`, `fss`, `ilvr`, `fss_ilvr`, and `fbsdiff`;
+their policy-bound NOISE and CONST/Euler SAMPLER plug into native
+`SamplerCustomAdvanced`. Provenance, source fingerprint, tensor batch, sigma,
+mask, model-family, and reference-conditioning checks fail closed.
+
+Verdict: **DRIFT PRODUCTION SLICE IMPLEMENTED — PARITY VERIFIED**. Focused tests
+pass 17/17 and the repository suite passes 99/99. Real stock-Klein B=1 runs for
+all five modes have zero final and trajectory RMS error against Phase 1-5
+research implementations within `2e-5`. Existing perceptual qualifications are
+unchanged. Evidence: `experiments/DRIFT_PRODUCTION_SLICE_REPORT.md`.

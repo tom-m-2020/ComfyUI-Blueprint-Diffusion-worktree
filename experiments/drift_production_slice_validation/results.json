@@ -1,0 +1,218 @@
+{
+  "status": "PASS",
+  "source": "C:\\Users\\Tom-M\\data\\a\\ai\\dev\\ComfyUI-Blueprint-Diffusion\\experiments\\drift_phase_2_ilvr_results\\portrait_bronze_SOURCE.png",
+  "modes": {
+    "none": {
+      "wall_seconds": 1.5323287000646815,
+      "final_rms_error": 0.0,
+      "max_trajectory_rms_error": 0.0,
+      "evaluations": 6,
+      "trajectory_errors": [
+        {
+          "ordinal": 0,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 1,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 2,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 3,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 4,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 5,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        }
+      ],
+      "finite": true
+    },
+    "fss": {
+      "wall_seconds": 1.518994800047949,
+      "final_rms_error": 0.0,
+      "max_trajectory_rms_error": 0.0,
+      "evaluations": 6,
+      "trajectory_errors": [
+        {
+          "ordinal": 0,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 1,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 2,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 3,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 4,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 5,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        }
+      ],
+      "finite": true
+    },
+    "ilvr": {
+      "wall_seconds": 1.6304065000731498,
+      "final_rms_error": 0.0,
+      "max_trajectory_rms_error": 0.0,
+      "evaluations": 6,
+      "trajectory_errors": [
+        {
+          "ordinal": 0,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 1,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 2,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 3,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 4,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 5,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        }
+      ],
+      "finite": true
+    },
+    "fss_ilvr": {
+      "wall_seconds": 1.5242615999886766,
+      "final_rms_error": 0.0,
+      "max_trajectory_rms_error": 0.0,
+      "evaluations": 6,
+      "trajectory_errors": [
+        {
+          "ordinal": 0,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 1,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 2,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 3,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 4,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 5,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        }
+      ],
+      "finite": true
+    },
+    "fbsdiff": {
+      "wall_seconds": 3.0326507000718266,
+      "final_rms_error": 0.0,
+      "max_trajectory_rms_error": 0.0,
+      "evaluations": 6,
+      "trajectory_errors": [
+        {
+          "ordinal": 0,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 1,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 2,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 3,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 4,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        },
+        {
+          "ordinal": 5,
+          "denoised_rms": 0.0,
+          "accepted_state_rms": 0.0
+        }
+      ],
+      "finite": true
+    }
+  },
+  "configuration": {
+    "seed": 2026091401,
+    "sigmas": [
+      0.9569222331047058,
+      0.9250433444976807,
+      0.881017804145813,
+      0.816270112991333,
+      0.7116665244102478,
+      0.5140447616577148,
+      0.0
+    ],
+    "sampler": "Euler",
+    "cfg": 1.0,
+    "batch": 1,
+    "native_entrypoint": "SamplerCustomAdvanced.execute"
+  },
+  "tolerance": 2e-05
+}

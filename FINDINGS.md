@@ -3169,3 +3169,19 @@ lifecycle. The FBSDiff-like mode additionally needs explicit empty/reference
 CONDITIONING in the policy. Source and target tensors require exact `[B,C,H,W]`
 cardinality with reference row `b` owned only by target row `b`. Evidence:
 `experiments/DRIFT_PRODUCTION_BOUNDARY_AUDIT.md`.
+
+## 2026-09-15 — Five-mode drift migration is trajectory-exact
+
+The production policy/NOISE/fixed-Euler SAMPLER implements all five modes
+through native `SamplerCustomAdvanced`. A real fixed stock-Klein portrait run
+measured zero RMS error for final latent, every denoised estimate, and every
+accepted state against Phase 1-5 samplers in `none`, `fss`, `ilvr`, `fss_ilvr`,
+and `fbsdiff` (tolerance `2e-5`).
+
+Native random endpoints remain exact with identical seed and `batch_index`.
+Focused tests cover FSS endpoint math, ILVR projection, normalized 1018/1024 DCT
+mask, calibration, synchronized reference ordinal, callback placement, terminal
+ILVR skip, and batch-two row ownership. Same-shape swapped sources and unrelated
+endpoint provenance fail closed. Evidence:
+`experiments/DRIFT_PRODUCTION_SLICE_REPORT.md` and
+`experiments/drift_production_slice_validation/results.json`.
