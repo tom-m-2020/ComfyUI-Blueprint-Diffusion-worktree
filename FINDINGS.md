@@ -3131,3 +3131,24 @@ Gaussian `7.043/0.600` to `10.353/0.516`, and visual identity, age, pose, and
 framing all changed. Evidence:
 `experiments/DRIFT_PHASE_5_SAMPLER_LATENT_FBSDIFF.md` and
 `experiments/drift_phase_5_sampler_latent_fbsdiff_results/telemetry.json`.
+
+## 2026-09-15 — Native spatial features measure gross change, not decisive identity drift
+
+Phase 6 compared local radius-4 cosine correspondence on re-encoded saved x0
+previews using the VAE latent, Klein post-input tokens, double block 0 output,
+and midpoint single block 7 output. No trajectory was rerun; paired Klein
+measurement forwards used identical prompt conditioning and sigma.
+
+At final evaluation, portrait Gaussian has the largest mean displacement in all
+four representations (`3.200/3.264/2.983/3.149` tokens). The still-failed
+portrait FSS arm measures `2.348/2.438/2.120/1.997`, overlapping or ranking
+below successful astronaut/bridge ILVR arms. Gradient-weighted displacement,
+same-position cosine distance, and structure/background gradient proxies do not
+restore the required separation.
+
+Midpoint best cosine is high (`0.898-0.933`) but best-minus-second-best margins
+are only `0.0041-0.0092`, indicating ambiguous matches among globally mixed
+tokens. Positional indexing survives transformer processing, but it does not
+provide reliable object-part correspondence. Evidence:
+`experiments/DRIFT_PHASE_6_SOURCE_RELATIVE_SIGNAL_AUDIT.md` and
+`experiments/drift_phase_6_native_signal_results/telemetry.json`.

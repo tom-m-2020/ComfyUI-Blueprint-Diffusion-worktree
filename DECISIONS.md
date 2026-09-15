@@ -1588,3 +1588,16 @@ span, conditioning, or reference construction. Do not reinterpret it as a
 falsification of published DDIM FBSDiff: stock Klein lacks the method's
 inverted/reconstructed source trajectory, and the controlled empty-conditioned
 CONST/Euler analogue did not reconstruct the source.
+
+## 2026-09-15 — Reject native Klein features as a sufficient fine-drift signal
+
+Classify Phase 6 as **NATIVE FEATURES NOT SUFFICIENT FOR DRIFT MEASUREMENT**.
+VAE latent and post-input correspondence detect gross portrait Gaussian drift,
+but the failed portrait FSS `r=2` case overlaps successful astronaut/bridge
+FSS and ILVR cases. Early and midpoint transformer features do not repair the
+ranking and have near-tied correspondence candidates after global mixing.
+
+Do not implement a sampler restraint from these signals. Do not tune arbitrary
+layers, search radii, feature normalization, or region heuristics. Any external
+vision model or new correspondence representation requires a separate explicit
+task. Keep all Phase 6 machinery experiment-only.

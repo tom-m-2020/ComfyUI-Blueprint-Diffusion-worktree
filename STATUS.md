@@ -1154,3 +1154,16 @@ preservation across all cases. The missing qualified Klein equivalent of
 FBSDiff's DDIM inversion/reconstruction remains the central transfer mismatch.
 No tuning, combination, or production change followed. Evidence:
 `experiments/DRIFT_PHASE_5_SAMPLER_LATENT_FBSDIFF.md`.
+
+Phase 6's source-relative drift-signal audit is complete. It reused Phase 2's
+saved decoded x0 previews at evaluations 0, 2, and 5, re-encoded them with the
+fixed VAE, and ran only the measurement forwards required to capture fixed
+post-input, early, and midpoint Klein representations. No diffusion trajectory
+was rerun and no sampling constraint or production change was introduced.
+
+Verdict: **NATIVE FEATURES NOT SUFFICIENT FOR DRIFT MEASUREMENT**. Native
+correspondence detects gross portrait Gaussian drift, but the decisive failed
+portrait FSS arm overlaps successful astronaut/bridge FSS and ILVR cases.
+Deeper representations have high cosine similarity but low correspondence
+margin after global mixing. No layer/radius tuning or external vision model was
+started. Evidence: `experiments/DRIFT_PHASE_6_SOURCE_RELATIVE_SIGNAL_AUDIT.md`.

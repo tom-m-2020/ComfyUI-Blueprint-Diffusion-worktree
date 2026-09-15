@@ -1,0 +1,37 @@
+{
+  "registered_before_phase_6_measurements": true,
+  "date": "2026-09-15",
+  "question": "Can native VAE/Klein spatial features distinguish known fine-geometry failure from substantially successful geometry without merely ranking global appearance change?",
+  "saved_artifact_policy": "Use Phase 2 decoded x0 previews. No diffusion trajectory is rerun. Re-encode saved previews because exact latent/hidden tensors were not persisted.",
+  "cases_and_arms": {
+    "portrait_bronze": ["A_GAUSSIAN", "B_FSS_R02"],
+    "astronaut_steampunk": ["B_FSS_R02", "C_ILVR_N04_A1"],
+    "bridge_crystal_night": ["B_FSS_R02", "C_ILVR_N04_A1"]
+  },
+  "known_labels": {
+    "portrait_bronze/A_GAUSSIAN": "failure",
+    "portrait_bronze/B_FSS_R02": "failure",
+    "astronaut_steampunk/B_FSS_R02": "substantially successful geometry",
+    "astronaut_steampunk/C_ILVR_N04_A1": "substantially successful geometry",
+    "bridge_crystal_night/B_FSS_R02": "substantially successful geometry",
+    "bridge_crystal_night/C_ILVR_N04_A1": "substantially successful geometry"
+  },
+  "evaluation_ordinals": [0, 2, 5],
+  "representations": [
+    "VAE latent [B,128,32,32]",
+    "Klein post_input/pre_double_block_0 [B,1024,3072]",
+    "Klein after double_block_0 [B,1024,3072]",
+    "Klein midpoint after single_block_7 generated slice [B,1024,3072]"
+  ],
+  "conditioning_policy": "For each source/current pair, use the same case transformation conditioning and the saved evaluation sigma. This prevents prompt choice from differing between paired features.",
+  "correspondence": {
+    "search_radius_tokens": 4,
+    "metric": "cosine nearest neighbor in a clipped 9x9 window around each source token",
+    "confidence": "best cosine minus second-best cosine, plus best cosine",
+    "displacement": "Euclidean token displacement from source coordinate to best current coordinate",
+    "local_distance": "one minus cosine at the unchanged coordinate",
+    "weighted_distribution": "weight displacement by normalized source spatial gradient magnitude",
+    "regions": "top gradient quartile is structure-bearing source-region proxy; bottom gradient quartile is background proxy"
+  },
+  "selection_rule": "A useful signal must rank both portrait arms as more drifted than the four successful astronaut/bridge arms at final evaluation, with trajectory behavior and confidence supporting the separation. No layer or radius tuning after results."
+}
