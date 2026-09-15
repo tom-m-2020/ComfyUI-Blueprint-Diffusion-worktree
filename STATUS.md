@@ -1167,3 +1167,16 @@ portrait FSS arm overlaps successful astronaut/bridge FSS and ILVR cases.
 Deeper representations have high cosine similarity but low correspondence
 margin after global mixing. No layer/radius tuning or external vision model was
 started. Evidence: `experiments/DRIFT_PHASE_6_SOURCE_RELATIVE_SIGNAL_AUDIT.md`.
+
+Phase 7's production-boundary audit is complete against installed native
+ComfyUI source. The qualified separation is a compositional DRIFT_CONSTRAINT,
+policy-bound NOISE for FSS endpoints, and a fixed Euler SAMPLER for accepted
+ILVR corrections and pre-evaluation sampler-latent DCT substitution, feeding
+native `SamplerCustomAdvanced`. MODEL patching is rejected because it lacks
+`sigma_next` and accepted-state ownership.
+
+Verdict: **PRODUCTION BOUNDARY QUALIFIED — IMPLEMENTATION DEFERRED**. FBSDiff
+requires explicit empty/reference CONDITIONING and strict lifecycle validation.
+No production file changed; implementation is gated on landing the complete
+five-mode slice with provenance, cardinality, lifecycle, and research-harness
+equivalence tests. Evidence: `experiments/DRIFT_PRODUCTION_BOUNDARY_AUDIT.md`.

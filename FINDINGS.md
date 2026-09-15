@@ -3152,3 +3152,20 @@ tokens. Positional indexing survives transformer processing, but it does not
 provide reliable object-part correspondence. Evidence:
 `experiments/DRIFT_PHASE_6_SOURCE_RELATIVE_SIGNAL_AUDIT.md` and
 `experiments/drift_phase_6_native_signal_results/telemetry.json`.
+
+## 2026-09-15 — Comfy separates endpoint generation from trajectory ownership
+
+In the inspected native checkout, `SamplerCustomAdvanced` calls
+`NOISE.generate_noise(LATENT)` before passing raw endpoint, source latent, full
+SIGMAS, mask, seed, and callback through the GUIDER to `SAMPLER.sample`. Native
+`KSAMPLER` performs model-specific `noise_scaling` inside the sampler. A custom
+sampler therefore receives both ends of every interval and can preserve Klein
+CONST initialization exactly.
+
+FSS is consequently a NOISE concern, while matching-sigma ILVR and DCT
+substitution are SAMPLER concerns. MODEL is not equivalent: it sees input and
+current sigma, but not `sigma_next`, accepted state, or sampler/reference
+lifecycle. The FBSDiff-like mode additionally needs explicit empty/reference
+CONDITIONING in the policy. Source and target tensors require exact `[B,C,H,W]`
+cardinality with reference row `b` owned only by target row `b`. Evidence:
+`experiments/DRIFT_PRODUCTION_BOUNDARY_AUDIT.md`.

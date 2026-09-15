@@ -1601,3 +1601,19 @@ Do not implement a sampler restraint from these signals. Do not tune arbitrary
 layers, search radii, feature normalization, or region heuristics. Any external
 vision model or new correspondence representation requires a separate explicit
 task. Keep all Phase 6 machinery experiment-only.
+
+## 2026-09-15 — Qualify NOISE + fixed-Euler SAMPLER as the drift boundary
+
+Use a compositional `DRIFT_CONSTRAINT` policy, a policy-bound source-aware
+`NOISE`, and a fixed Euler `SAMPLER` feeding native `SamplerCustomAdvanced`.
+Keep MODEL, GUIDER, SIGMAS, conditioning, source LATENT, and model forwards
+native. FSS owns endpoint construction; ILVR and sampler-latent FBSDiff-like
+operations are sampler-owned accepted-state and pre-evaluation interventions.
+
+Reject MODEL patching as the common boundary because model forwards do not own
+`sigma_next`, accepted updates, sampler state, or reference acceptance. Require
+explicit empty/reference CONDITIONING for FBSDiff rather than target
+conditioning. Defer implementation until the complete five-mode slice and its
+provenance, batch, lifecycle, and research-equivalence tests can land together.
+Do not add generic drift strength, geometry thresholds, untested ILVR schedules,
+untested FBSDiff bands, or FBSDiff combinations.
